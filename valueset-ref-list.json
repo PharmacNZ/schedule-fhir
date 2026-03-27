@@ -1,0 +1,44 @@
+{
+  "codeSystems" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes",
+    "version" : "0.0.1",
+    "status" : "draft",
+    "name" : "MedicationFormCodes",
+    "title" : "Medication Form Codes",
+    "description" : "",
+    "systems" : ["http://snomed.info/sct"]
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code",
+    "version" : "0.0.1",
+    "status" : "active",
+    "name" : "PharmacMedicationCode",
+    "title" : "PHARMAC Medication Code ValueSet",
+    "description" : "ValueSet containing medication codes from NZMT CTPP, PackID, and SNOMED CT code systems used for PHARMAC pharmaceutical schedule medications.",
+    "systems" : ["http://nzmt.org.nz", "http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-medication.html" : "PHARMAC Medication"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/snomed-ct-device-types",
+    "version" : "0.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTDeviceTypes",
+    "title" : "SNOMED CT Device Types",
+    "description" : "",
+    "systems" : ["http://snomed.info/sct"]
+  },
+  {
+    "url" : "https://nzhts.digital.health.nz/fhir/ValueSet/nzmt-mp",
+    "version" : "20260316",
+    "status" : "draft",
+    "name" : "NZMT___MP",
+    "title" : "NZMT - MP",
+    "description" : "",
+    "systems" : ["http://nzmt.org.nz"],
+    "uses" : {
+    },
+    "ValueSet-pharmac-medication-code.html" : "PHARMAC Medication Code ValueSet"
+  }]
+}

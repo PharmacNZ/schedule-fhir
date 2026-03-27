@@ -1,0 +1,36 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "medication-form-codes",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes",
+  "version" : "0.0.1",
+  "name" : "MedicationFormCodes",
+  "title" : "Medication Form Codes",
+  "status" : "draft",
+  "date" : "2026-03-27T00:29:47+00:00",
+  "publisher" : "Pharmac",
+  "contact" : [{
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.pharmac.govt.nz/about/contact"
+    }]
+  },
+  {
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "enquiry@pharmac.govt.nz",
+      "use" : "work"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "385055003"
+      }]
+    }]
+  }
+}

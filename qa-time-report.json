@@ -1,0 +1,2427 @@
+{
+  "date" : "Fri, 27 Mar, 2026 00:29:47 +0000",
+  "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
+  "files" : [{
+    "name" : "/fsh-generated/resources/ImplementationGuide-pharmac.fhir.pharmac-schedules.json",
+    "size" : 22158,
+    "processes" : [{
+      "activity" : "load",
+      "start" : 46,
+      "length" : 32
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 15
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 68,
+      "length" : 2860
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 71,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 124
+    },
+    {
+      "activity" : "generate2",
+      "start" : 94,
+      "length" : 239
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 12
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/Bundle-SearchSet-Bundle-Leuprorelin-Pricing.json",
+    "size" : 22770,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 9
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 32
+    },
+    {
+      "activity" : "load-configure",
+      "start" : 49,
+      "length" : 2
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 4
+    },
+    {
+      "activity" : "validate",
+      "start" : 71,
+      "length" : 6417
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 37
+    },
+    {
+      "activity" : "generate2",
+      "start" : 95,
+      "length" : 5494
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/Bundle-SearchSet-Bundle-Medication.json",
+    "size" : 8603,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 3
+    },
+    {
+      "activity" : "validate",
+      "start" : 78,
+      "length" : 4384
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 14
+    },
+    {
+      "activity" : "generate2",
+      "start" : 100,
+      "length" : 27
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/Bundle-SearchSet-Bundle-Ricovir-Pricing.json",
+    "size" : 26533,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 11
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 4
+    },
+    {
+      "activity" : "validate",
+      "start" : 82,
+      "length" : 285
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 40
+    },
+    {
+      "activity" : "generate2",
+      "start" : 100,
+      "length" : 1971
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/Bundle-SearchSet-Bundle-SA2139-Authorization.json",
+    "size" : 13849,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 82,
+      "length" : 4456
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 31
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 20
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/CapabilityStatement-PharmacSchedulesCapabilityStatement.json",
+    "size" : 3525,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 61,
+      "length" : 1729
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 71,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 13
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 46
+    },
+    {
+      "activity" : "makeDependencies",
+      "start" : 121,
+      "length" : 1
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 4
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1.json",
+    "size" : 2284,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 1710
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 9
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 18
+    },
+    {
+      "activity" : "generateExampleZip",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1.json",
+    "size" : 2313,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "validate",
+      "start" : 65,
+      "length" : 105
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 5
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 15
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-1.json",
+    "size" : 2884,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "scan",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 3
+    },
+    {
+      "activity" : "validate",
+      "start" : 65,
+      "length" : 100
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 5
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 13
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-2.json",
+    "size" : 2303,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 39
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "validate",
+      "start" : 65,
+      "length" : 100
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 6
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 13
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ChargeItemDefinition-ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing.json",
+    "size" : 4116,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 65,
+      "length" : 61
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 13
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ChargeItemDefinition-ChargeItemDefinition-Ricovir-Pricing.json",
+    "size" : 4050,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 65,
+      "length" : 36
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 14
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ChargeItemDefinition-ChargeItemDefinition-SA2139-Authorization.json",
+    "size" : 4392,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 65,
+      "length" : 2081
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 9
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 11
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ChargeItemDefinition-ChargeItemDefinition-SA2520-Authorization.json",
+    "size" : 3579,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "load-configure",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 67,
+      "length" : 967
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 10
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 9
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-1.json",
+    "size" : 2860,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "validate",
+      "start" : 68,
+      "length" : 101
+    },
+    {
+      "activity" : "validate",
+      "start" : 71,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 13
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-2.json",
+    "size" : 2860,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "validate",
+      "start" : 68,
+      "length" : 101
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 19
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/Medication-Medication-Lucrin-Depot-1-Month.json",
+    "size" : 3334,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 87,
+      "length" : 26
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 8
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/Medication-Medication-Ricovir-Tenofovir.json",
+    "size" : 3308,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "validate",
+      "start" : 87,
+      "length" : 23
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 10
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 7
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/Medication-Medication-Viramune-Suspension.json",
+    "size" : 3306,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "validate",
+      "start" : 87,
+      "length" : 22
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 7
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 8
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/OperationOutcome-APIError-Unauthorised.json",
+    "size" : 313,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 87,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 3
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/SearchParameter-ChargeItemDefinitionCodeSearchParam.json",
+    "size" : 500,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 11
+    },
+    {
+      "activity" : "load",
+      "start" : 47,
+      "length" : 7
+    },
+    {
+      "activity" : "validate",
+      "start" : 61,
+      "length" : 10
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 5
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 7
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/SearchParameter-MedicationBrandNameSearchParam.json",
+    "size" : 686,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 47,
+      "length" : 4
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 2
+    },
+    {
+      "activity" : "validate",
+      "start" : 61,
+      "length" : 11
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 4
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 6
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/SearchParameter-MedicationNameSearchParam.json",
+    "size" : 551,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 47,
+      "length" : 4
+    },
+    {
+      "activity" : "load-configure",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 61,
+      "length" : 4
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 5
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 9
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-authorization-case-count.json",
+    "size" : 1726,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 9
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 20
+    },
+    {
+      "activity" : "validate",
+      "start" : 55,
+      "length" : 3412
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 15
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 1021
+    },
+    {
+      "activity" : "generate2",
+      "start" : 117,
+      "length" : 440
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 2
+    },
+    {
+      "activity" : "scanProfilesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-authorization-form.json",
+    "size" : 1676,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 19
+    },
+    {
+      "activity" : "validate",
+      "start" : 59,
+      "length" : 48
+    },
+    {
+      "activity" : "validate",
+      "start" : 87,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 103,
+      "length" : 89
+    },
+    {
+      "activity" : "generate2",
+      "start" : 117,
+      "length" : 149
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-authorization-title.json",
+    "size" : 1612,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 16
+    },
+    {
+      "activity" : "validate",
+      "start" : 59,
+      "length" : 67
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 71,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 13
+    },
+    {
+      "activity" : "generate2",
+      "start" : 103,
+      "length" : 104
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 76
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-brand-switch-fee.json",
+    "size" : 1392,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 15
+    },
+    {
+      "activity" : "validate",
+      "start" : 59,
+      "length" : 59
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 104,
+      "length" : 85
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 98
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 2
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-contract-type.json",
+    "size" : 1432,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 59,
+      "length" : 33
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 13
+    },
+    {
+      "activity" : "generate2",
+      "start" : 104,
+      "length" : 114
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 73
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-cost-brand-source.json",
+    "size" : 1419,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 59,
+      "length" : 43
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 104,
+      "length" : 91
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 57
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-device-definition-reference.json",
+    "size" : 1967,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 59,
+      "length" : 77
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 104,
+      "length" : 90
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 50
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-dv-limit-percent.json",
+    "size" : 1404,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 59,
+      "length" : 45
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 71,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 13
+    },
+    {
+      "activity" : "generate2",
+      "start" : 104,
+      "length" : 74
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 86
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-funding-rule.json",
+    "size" : 7644,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 16
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 52
+    },
+    {
+      "activity" : "validate",
+      "start" : 59,
+      "length" : 548
+    },
+    {
+      "activity" : "checkConformanceResources",
+      "start" : 71,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 66
+    },
+    {
+      "activity" : "generate2",
+      "start" : 104,
+      "length" : 360
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 330
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 8
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-in-combination.json",
+    "size" : 1474,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 9
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 119
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 13
+    },
+    {
+      "activity" : "generate2",
+      "start" : 104,
+      "length" : 87
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 56
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-atc-category-1.json",
+    "size" : 1425,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 15
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 28
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 78
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 73
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-atc-category-2.json",
+    "size" : 1425,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 20
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 62
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 71,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 97
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 52
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 2
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-atc-category-3.json",
+    "size" : 1425,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 15
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 32
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 84
+    },
+    {
+      "activity" : "generate2",
+      "start" : 118,
+      "length" : 52
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-brand-name.json",
+    "size" : 1496,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 18
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 27
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 74
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 48
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-in-combination.json",
+    "size" : 1522,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 18
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 36
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 14
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 96
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 56
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-original-pack.json",
+    "size" : 1481,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 15
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 53
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 15
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 118
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 44
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-package-size.json",
+    "size" : 1653,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 19
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 78
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 70
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 50
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-product-multiple.json",
+    "size" : 1512,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 14
+    },
+    {
+      "activity" : "loadDepInfo",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 51
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 82
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 38
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-product-multiplier.json",
+    "size" : 1497,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 13
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 48
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 80
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 38
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 3
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-rank.json",
+    "size" : 1568,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 9
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 53
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 63
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 40
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-safety-list-medicine.json",
+    "size" : 1481,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 11
+    },
+    {
+      "activity" : "load-configure",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 35
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 73
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 52
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-statim.json",
+    "size" : 1429,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 15
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 34
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 102
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 42
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-medication-unit-of-measure.json",
+    "size" : 1597,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 25
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 106,
+      "length" : 72
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 48
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-pharmac-charge-item-definition.json",
+    "size" : 16561,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 13
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 125
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 315
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 71,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 136
+    },
+    {
+      "activity" : "generate2",
+      "start" : 106,
+      "length" : 754
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 316
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 24
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-pharmac-medication.json",
+    "size" : 14775,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 13
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 108
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 61,
+      "length" : 394
+    },
+    {
+      "activity" : "checkConformanceResources",
+      "start" : 71,
+      "length" : 1
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 71,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 164
+    },
+    {
+      "activity" : "generate2",
+      "start" : 106,
+      "length" : 465
+    },
+    {
+      "activity" : "generate2",
+      "start" : 119,
+      "length" : 387
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 18
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 143,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-pricing-effective-date.json",
+    "size" : 1414,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 11
+    },
+    {
+      "activity" : "validate",
+      "start" : 61,
+      "length" : 25
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 107,
+      "length" : 52
+    },
+    {
+      "activity" : "generate2",
+      "start" : 120,
+      "length" : 42
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-pricing-expiry-date.json",
+    "size" : 1413,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 5
+    },
+    {
+      "activity" : "validate",
+      "start" : 61,
+      "length" : 31
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 107,
+      "length" : 65
+    },
+    {
+      "activity" : "generate2",
+      "start" : 120,
+      "length" : 40
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-statim.json",
+    "size" : 1383,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 5
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 49,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 61,
+      "length" : 21
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 107,
+      "length" : 49
+    },
+    {
+      "activity" : "generate2",
+      "start" : 120,
+      "length" : 36
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-wastage-claimable.json",
+    "size" : 1392,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 47,
+      "length" : 6
+    },
+    {
+      "activity" : "validate",
+      "start" : 61,
+      "length" : 27
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 10
+    },
+    {
+      "activity" : "generate2",
+      "start" : 107,
+      "length" : 51
+    },
+    {
+      "activity" : "generate2",
+      "start" : 120,
+      "length" : 55
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ValueSet-medication-form-codes.json",
+    "size" : 502,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 11
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 49,
+      "length" : 2
+    },
+    {
+      "activity" : "validate",
+      "start" : 49,
+      "length" : 2062
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 5
+    },
+    {
+      "activity" : "generate2",
+      "start" : 107,
+      "length" : 2828
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ValueSet-pharmac-medication-code.json",
+    "size" : 1219,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "validate",
+      "start" : 51,
+      "length" : 3748
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 6
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 3903
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 131,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ValueSet-snomed-ct-device-types.json",
+    "size" : 504,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "validate",
+      "start" : 54,
+      "length" : 935
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 3
+    },
+    {
+      "activity" : "generate2",
+      "start" : 114,
+      "length" : 3166
+    }]
+  },
+  {
+    "name" : "/fsh-generated/includes/menu.xml",
+    "size" : 1917
+  },
+  {
+    "name" : "/fsh-generated/includes/fsh-link-references.md",
+    "size" : 4456
+  },
+  {
+    "name" : "/input/pagecontent/datamodel.md",
+    "size" : 4125,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 117,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/examples.md",
+    "size" : 734,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 117,
+      "length" : 5
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/index.md",
+    "size" : 617,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 117,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/api.md",
+    "size" : 4311,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 117,
+      "length" : 15
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/relationships.md",
+    "size" : 12390,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 117,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/terminology.md",
+    "size" : 1226,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 117,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/use-cases.md",
+    "size" : 1280
+  },
+  {
+    "name" : "/template/config",
+    "size" : 0
+  },
+  {
+    "name" : "/template/config/_config.yml",
+    "size" : 140
+  },
+  {
+    "name" : "/temp/pages/_includes/artifacts.xml",
+    "size" : 28547,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 117,
+      "length" : 1
+    }]
+  }]
+}

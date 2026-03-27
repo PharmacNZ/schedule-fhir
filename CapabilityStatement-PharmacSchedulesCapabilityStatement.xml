@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="PharmacSchedulesCapabilityStatement"/>
+  <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement"/>
+  <version value="0.0.1"/>
+  <name value="PharmacSchedulesCapabilityStatement"/>
+  <title value="Pharmac Schedules Capability Statement"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026"/>
+  <publisher value="Pharmac"/>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.pharmac.govt.nz/about/contact"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="email"/>
+      <value value="enquiry@pharmac.govt.nz"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Pharmac Schedules Capability Statement. This FHIR resource declares the capabilities of the Pharmac Schedules FHIR API, including supported interactions, resources, and security mechanisms."/>
+  <kind value="instance"/>
+  <software>
+    <name value="Pharmac Schedules API"/>
+    <version value="0.0.1"/>
+  </software>
+  <implementation>
+    <description value="Pharmac Schedules API"/>
+    <url value="https://example.com/fhir/ImplementationGuide/pharmac-schedules"/>
+  </implementation>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+json"/>
+  <rest>
+    <mode value="server"/>
+    <security>
+      <extension url="http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris">
+        <extension url="token">
+          <valueUri value="https://example.com/openid-connect/token"/>
+        </extension>
+        <extension url="authorize">
+          <valueUri value="https://example.com/openid-connect/token/openid-connect/authorize"/>
+        </extension>
+      </extension>
+      <extension url="http://fhir-registry.smarthealthit.org/StructureDefinition/capabilities">
+        <valueCode value="client-confidential-symmetric"/>
+      </extension>
+      <cors value="true"/>
+      <service>
+        <coding>
+          <code value="SMART-on-FHIR"/>
+        </coding>
+      </service>
+      <description value="OAuth 2.0 - Client Credential flow."/>
+    </security>
+    <resource>
+      <type value="Medication"/>
+      <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+      <interaction>
+        <code value="search-type"/>
+        <documentation value="Search for Medication resources by code, name, or identifier"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+        <documentation value="Read a single Medication resource by ID"/>
+      </interaction>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <type value="string"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="ChargeItemDefinition"/>
+      <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
+      <interaction>
+        <code value="search-type"/>
+        <documentation value="Search for ChargeItemDefinition resources (pricing information)"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+        <documentation value="Read a single ChargeItemDefinition resource by ID"/>
+      </interaction>
+      <searchParam>
+        <name value="cid-code"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+  </rest>
+</CapabilityStatement>

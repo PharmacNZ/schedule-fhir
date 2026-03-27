@@ -1,0 +1,53 @@
+# MedicationNameSearchParam - Pharmac Schedules FHIR API v0.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MedicationNameSearchParam**
+
+## SearchParameter: MedicationNameSearchParam 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-name | *Version*:0.0.1 |
+| Active as of 2026-03-27 | *Computable Name*:MedicationName |
+
+ 
+Search for medications by the text representation of the medication code (e.g., 'Gaviscon Infant', 'Acidex oral liquid'). Enables discovery by the full medication name or formulation description. 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "SearchParameter",
+  "id" : "MedicationNameSearchParam",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-name",
+  "version" : "0.0.1",
+  "name" : "MedicationName",
+  "status" : "active",
+  "date" : "2026-03-27T00:29:47+00:00",
+  "publisher" : "Pharmac",
+  "contact" : [{
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.pharmac.govt.nz/about/contact"
+    }]
+  },
+  {
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "enquiry@pharmac.govt.nz",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Search for medications by the text representation of the medication code (e.g., 'Gaviscon Infant', 'Acidex oral liquid'). Enables discovery by the full medication name or formulation description.",
+  "code" : "name",
+  "base" : ["Medication"],
+  "type" : "string",
+  "expression" : "Medication.code.text"
+}
+
+```

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Use Cases - Pharmac Schedules FHIR API v0.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/logos.css" rel="stylesheet"/>
+<link href="assets/css/colours.css" rel="stylesheet" />
+<link href="assets/css/fonts.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="pharmac-logo">
+  <img alt="Pharmac logo" src="assets/images/pharmac-logo.png"  height="35" />
+</div>
+
+<div id="blank-logo">
+  <img alt="" src="assets/images/blank-right-logo.png" height="35"/>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">0.0.1 - draft
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="use-cases.html">Use cases</a>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
+  <li>
+    <a href="relationships.html">Resource Relationships</a>
+  </li>
+  <li>
+    <a href="datamodel.html">Data Models</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a href="definitions.json.zip">Artefacts (JSON)</a>
+      </li>
+      <li>
+        <a href="definitions.xml.zip">Artefacts (XML)</a>
+      </li>
+      <li>
+        <a href="full-ig.zip">Download IG</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Use Cases</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v0.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Use Cases</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#pharmacy-system-retrieves-pharmac-schedule-data" id="markdown-toc-pharmacy-system-retrieves-pharmac-schedule-data">Pharmacy system retrieves Pharmac Schedule data</a></li>
+  <li><a href="#real-time-lookup-during-dispensing" id="markdown-toc-real-time-lookup-during-dispensing">Real-time lookup during dispensing</a></li>
+</ul>
+
+</div>
+<h3 id="pharmacy-system-retrieves-pharmac-schedule-data">Pharmacy system retrieves Pharmac Schedule data</h3>
+<p>Pharmacy dispensing systems can query the Pharmac Schedules FHIR API to keep local catalogs up to date with funded medicines and devices.</p>
+
+<p>Typical flow:</p>
+
+<ol>
+  <li>The pharmacy system authenticates with the API using approved client credentials.</li>
+  <li>It queries <code class="language-plaintext highlighter-rouge">Medication</code> resources for relevant medicines (e.g., by identifier, code, or name).</li>
+  <li>It queries <code class="language-plaintext highlighter-rouge">DeviceDefinition</code> resources for relevant devices (e.g., by identifier, code, or name).</li>
+  <li>The system stores key schedule attributes locally for dispensing and decision support.</li>
+  <li>It periodically refreshes data to reflect schedule changes.</li>
+</ol>
+
+<h3 id="real-time-lookup-during-dispensing">Real-time lookup during dispensing</h3>
+<p>During dispensing, a pharmacist can search the API for the current schedule status of a medicine or device:</p>
+
+<ol>
+  <li>Search by medicine code or name in <code class="language-plaintext highlighter-rouge">Medication</code>.</li>
+  <li>Search by device code or name in <code class="language-plaintext highlighter-rouge">DeviceDefinition</code>.</li>
+  <li>Display returned details to confirm funding and restrictions.</li>
+</ol>
+
+<div width="100%">
+<!-- Generated from `input/images-source/pharmacy-use-case.plantuml` -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="452px" preserveAspectRatio="none" style="width:752px;height:452px;background:#FFFFFF;" version="1.1" viewBox="0 0 752 452" width="752px" zoomAndPan="magnify"><title>Pharmacy System - Schedule Lookup</title><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="291.2451" x="229.7688" y="27.9951">Pharmacy System - Schedule Lookup</text><g><title>Pharmacist</title><rect fill="#000000" fill-opacity="0.00000" height="253.0625" width="8" x="43.1187" y="118.5938" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="47" x2="47" y1="118.5938" y2="371.6563" /></g><g><title>Pharmacy System</title><rect fill="#000000" fill-opacity="0.00000" height="253.0625" width="8" x="224.8706" y="118.5938" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="228.6177" x2="228.6177" y1="118.5938" y2="371.6563" /></g><g><title>Identity Server</title><rect fill="#000000" fill-opacity="0.00000" height="253.0625" width="8" x="458.6479" y="118.5938" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="462.6401" x2="462.6401" y1="118.5938" y2="371.6563" /></g><g><title>Pharmac Schedules FHIR API</title><rect fill="#000000" fill-opacity="0.00000" height="253.0625" width="8" x="635.2192" y="118.5938" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="638.6558" x2="638.6558" y1="118.5938" y2="371.6563" /></g><g class="participant participant-head" data-participant="Pharmacist"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78.2373" x="5" y="115.292">Pharmacist</text><ellipse cx="47.1187" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M47.1187,58.7969 L47.1187,85.7969 M34.1187,66.7969 L60.1187,66.7969 M47.1187,85.7969 L34.1187,100.7969 M47.1187,85.7969 L60.1187,100.7969" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="Pharmacist"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78.2373" x="5" y="383.6514">Pharmacist</text><ellipse cx="47.1187" cy="395.4531" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M47.1187,403.4531 L47.1187,430.4531 M34.1187,411.4531 L60.1187,411.4531 M47.1187,430.4531 L34.1187,445.4531 M47.1187,430.4531 L60.1187,445.4531" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="PS"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="140.5059" x="158.6177" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126.5059" x="165.6177" y="107.292">Pharmacy System</text></g><g class="participant participant-tail" data-participant="PS"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="140.5059" x="158.6177" y="370.6563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126.5059" x="165.6177" y="390.6514">Pharmacy System</text></g><g class="participant participant-head" data-participant="IDP"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="118.0156" x="403.6401" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104.0156" x="410.6401" y="107.292">Identity Server</text></g><g class="participant participant-tail" data-participant="IDP"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="118.0156" x="403.6401" y="370.6563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104.0156" x="410.6401" y="390.6514">Identity Server</text></g><g class="participant participant-head" data-participant="API"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="215.127" x="531.6558" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201.127" x="538.6558" y="107.292">Pharmac Schedules FHIR API</text></g><g class="participant participant-tail" data-participant="API"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="215.127" x="531.6558" y="370.6563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201.127" x="538.6558" y="390.6514">Pharmac Schedules FHIR API</text></g><g class="message" data-participant-1="Pharmacist" data-participant-2="PS"><polygon fill="#181818" points="216.8706,145.7266,226.8706,149.7266,216.8706,153.7266,220.8706,149.7266" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="47.1187" x2="222.8706" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100.458" x="54.1187" y="144.6606">Search for item</text></g><g class="message" data-participant-1="PS" data-participant-2="IDP"><polygon fill="#181818" points="450.6479,174.8594,460.6479,178.8594,450.6479,182.8594,454.6479,178.8594" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="228.8706" x2="456.6479" y1="178.8594" y2="178.8594" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="209.7773" x="235.8706" y="173.7935">Authenticate (client credentials)</text></g><g class="message" data-participant-1="IDP" data-participant-2="PS"><polygon fill="#181818" points="239.8706,203.9922,229.8706,207.9922,239.8706,211.9922,235.8706,207.9922" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="233.8706" x2="461.6479" y1="207.9922" y2="207.9922" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85.6807" x="245.8706" y="202.9263">Access token</text></g><g class="message" data-participant-1="PS" data-participant-2="API"><polygon fill="#181818" points="627.2192,233.125,637.2192,237.125,627.2192,241.125,631.2192,237.125" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="228.8706" x2="633.2192" y1="237.125" y2="237.125" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="284.1401" x="235.8706" y="232.0591">Query MedicinalProductDefinition or Device</text></g><g class="message" data-participant-1="API" data-participant-2="PS"><polygon fill="#181818" points="239.8706,262.2578,229.8706,266.2578,239.8706,270.2578,235.8706,266.2578" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="233.8706" x2="638.2192" y1="266.2578" y2="266.2578" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127.48" x="245.8706" y="261.1919">FHIR Bundle results</text></g><g class="message" data-participant-1="PS" data-participant-2="Pharmacist"><polygon fill="#181818" points="58.1187,291.3906,48.1187,295.3906,58.1187,299.3906,54.1187,295.3906" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="52.1187" x2="227.8706" y1="295.3906" y2="295.3906" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="157.752" x="64.1187" y="290.3247">Display schedule details</text></g><g class="message" data-participant-1="PS" data-participant-2="API"><polygon fill="#181818" points="627.2192,320.5234,637.2192,324.5234,627.2192,328.5234,631.2192,324.5234" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="228.8706" x2="633.2192" y1="324.5234" y2="324.5234" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="323.3369" x="235.8706" y="319.4575">Periodic sync (MedicinalProductDefinition/Device)</text></g><g class="message" data-participant-1="API" data-participant-2="PS"><polygon fill="#181818" points="239.8706,349.6563,229.8706,353.6563,239.8706,357.6563,235.8706,353.6563" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="233.8706" x2="638.2192" y1="353.6563" y2="353.6563" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151.1377" x="245.8706" y="348.5903">Updated schedule data</text></g></g></svg>
+</div>
+<p><br clear="all" /></p>
+
+<div width="100%">
+<!-- Generated from `input/images-source/funding-rule-sequence.plantuml` -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="800px" preserveAspectRatio="none" style="width:1011px;height:800px;background:#FFFFFF;" version="1.1" viewBox="0 0 1011 800" width="1011px" zoomAndPan="magnify"><defs /><g><g><title>FundingRule Engine</title><rect fill="#FFFFFF" height="509.6641" style="stroke:#181818;stroke-width:1;" width="10" x="638.3931" y="199.8281" /></g><rect fill="none" height="163.4688" style="stroke:#000000;stroke-width:1.5;" width="810.209" x="20" y="449.625" /><rect fill="none" height="74.0703" style="stroke:#000000;stroke-width:1.5;" width="263.751" x="556.458" y="532.0234" /><rect fill="none" height="75.3984" style="stroke:#000000;stroke-width:1.5;" width="710.3281" x="20" y="627.0938" /><g><title>User</title><rect fill="#000000" fill-opacity="0.00000" height="638.1953" width="8" x="44.9551" y="81.2969" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="48" x2="48" y1="81.2969" y2="719.4922" /></g><g><title>Client App</title><rect fill="#000000" fill-opacity="0.00000" height="638.1953" width="8" x="320.8301" y="81.2969" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="324.6646" x2="324.6646" y1="81.2969" y2="719.4922" /></g><g><title>FundingRule Engine</title><rect fill="#000000" fill-opacity="0.00000" height="638.1953" width="8" x="639.3931" y="81.2969" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="642.458" x2="642.458" y1="81.2969" y2="719.4922" /></g><g><title>PHARMAC API</title><rect fill="#000000" fill-opacity="0.00000" height="638.1953" width="8" x="946.1392" y="81.2969" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="949.9868" x2="949.9868" y1="81.2969" y2="719.4922" /></g><g class="participant participant-head" data-participant="U"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31.9102" x="30" y="77.9951">User</text><ellipse cx="48.9551" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M48.9551,21.5 L48.9551,48.5 M35.9551,29.5 L61.9551,29.5 M48.9551,48.5 L35.9551,63.5 M48.9551,48.5 L61.9551,63.5" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="U"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31.9102" x="30" y="731.4873">User</text><ellipse cx="48.9551" cy="743.2891" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M48.9551,751.2891 L48.9551,778.2891 M35.9551,759.2891 L61.9551,759.2891 M48.9551,778.2891 L35.9551,793.2891 M48.9551,778.2891 L61.9551,793.2891" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="C"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="86.3311" x="281.6646" y="50" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72.3311" x="288.6646" y="69.9951">Client App</text></g><g class="participant participant-tail" data-participant="C"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="86.3311" x="281.6646" y="718.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72.3311" x="288.6646" y="738.4873">Client App</text></g><g class="participant participant-head" data-participant="E"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="153.8701" x="566.458" y="50" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139.8701" x="573.458" y="69.9951">FundingRule Engine</text></g><g class="participant participant-tail" data-participant="E"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="153.8701" x="566.458" y="718.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139.8701" x="573.458" y="738.4873">FundingRule Engine</text></g><g class="participant participant-head" data-participant="A"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="110.3047" x="894.9868" y="50" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96.3047" x="901.9868" y="69.9951">PHARMAC API</text></g><g class="participant participant-tail" data-participant="A"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="110.3047" x="894.9868" y="718.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96.3047" x="901.9868" y="738.4873">PHARMAC API</text></g><g><title>FundingRule Engine</title><rect fill="#FFFFFF" height="509.6641" style="stroke:#181818;stroke-width:1;" width="10" x="638.3931" y="199.8281" /></g><g class="message" data-participant-1="U" data-participant-2="C"><polygon fill="#181818" points="312.8301,108.4297,322.8301,112.4297,312.8301,116.4297,316.8301,112.4297" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="48.9551" x2="318.8301" y1="112.4297" y2="112.4297" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164.7153" x="55.9551" y="107.3638">Request Medication rules</text></g><g class="message" data-participant-1="C" data-participant-2="A"><polygon fill="#181818" points="938.1392,137.5625,948.1392,141.5625,938.1392,145.5625,942.1392,141.5625" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="324.8301" x2="944.1392" y1="141.5625" y2="141.5625" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="290.5132" x="331.8301" y="136.4966">GET Medication and ChargeItemDefinition(s)</text></g><g class="message" data-participant-1="A" data-participant-2="C"><polygon fill="#181818" points="335.8301,166.6953,325.8301,170.6953,335.8301,174.6953,331.8301,170.6953" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="329.8301" x2="949.1392" y1="170.6953" y2="170.6953" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="397.7568" x="341.8301" y="165.6294">Medication + ChargeItemDefinition + FundingRule extension</text></g><g class="message" data-participant-1="C" data-participant-2="E"><polygon fill="#181818" points="626.3931,195.8281,636.3931,199.8281,626.3931,203.8281,630.3931,199.8281" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="324.8301" x2="632.3931" y1="199.8281" y2="199.8281" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="294.563" x="331.8301" y="194.7622">Analyze funding rules (ChargeItemDefinition)</text></g><g class="message" data-participant-1="E" data-participant-2="E"><line style="stroke:#181818;stroke-width:1;" x1="648.3931" x2="690.3931" y1="228.9609" y2="228.9609" /><line style="stroke:#181818;stroke-width:1;" x1="690.3931" x2="690.3931" y1="228.9609" y2="241.9609" /><line style="stroke:#181818;stroke-width:1;" x1="649.3931" x2="690.3931" y1="241.9609" y2="241.9609" /><polygon fill="#181818" points="659.3931,237.9609,649.3931,241.9609,659.3931,245.9609,655.3931,241.9609" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="196.7202" x="655.3931" y="223.895">Extract fundingRule extension</text></g><g class="message" data-participant-1="E" data-participant-2="E"><line style="stroke:#181818;stroke-width:1;" x1="648.3931" x2="690.3931" y1="271.0938" y2="271.0938" /><line style="stroke:#181818;stroke-width:1;" x1="690.3931" x2="690.3931" y1="271.0938" y2="284.0938" /><line style="stroke:#181818;stroke-width:1;" x1="649.3931" x2="690.3931" y1="284.0938" y2="284.0938" /><polygon fill="#181818" points="659.3931,280.0938,649.3931,284.0938,659.3931,288.0938,655.3931,284.0938" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123.0176" x="655.3931" y="266.0278">Collect rule entries</text></g><g class="message" data-participant-1="E" data-participant-2="E"><line style="stroke:#181818;stroke-width:1;" x1="648.3931" x2="690.3931" y1="313.2266" y2="313.2266" /><line style="stroke:#181818;stroke-width:1;" x1="690.3931" x2="690.3931" y1="313.2266" y2="326.2266" /><line style="stroke:#181818;stroke-width:1;" x1="649.3931" x2="690.3931" y1="326.2266" y2="326.2266" /><polygon fill="#181818" points="659.3931,322.2266,649.3931,326.2266,659.3931,330.2266,655.3931,326.2266" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="272.7461" x="655.3931" y="308.1606">Filter rules where type == CaseSequence</text></g><g class="message" data-participant-1="E" data-participant-2="E"><line style="stroke:#181818;stroke-width:1;" x1="648.3931" x2="690.3931" y1="355.3594" y2="355.3594" /><line style="stroke:#181818;stroke-width:1;" x1="690.3931" x2="690.3931" y1="355.3594" y2="368.3594" /><line style="stroke:#181818;stroke-width:1;" x1="649.3931" x2="690.3931" y1="368.3594" y2="368.3594" /><polygon fill="#181818" points="659.3931,364.3594,649.3931,368.3594,659.3931,372.3594,655.3931,368.3594" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="233.4033" x="655.3931" y="350.2935">Sort rules by value (case sequence)</text></g><g class="message" data-participant-1="E" data-participant-2="E"><line style="stroke:#181818;stroke-width:1;" x1="648.3931" x2="690.3931" y1="421.625" y2="421.625" /><line style="stroke:#181818;stroke-width:1;" x1="690.3931" x2="690.3931" y1="421.625" y2="434.625" /><line style="stroke:#181818;stroke-width:1;" x1="649.3931" x2="690.3931" y1="434.625" y2="434.625" /><polygon fill="#181818" points="659.3931,430.625,649.3931,434.625,659.3931,438.625,655.3931,434.625" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="210.6152" x="655.3931" y="416.5591">Evaluate applicability conditions</text></g><path d="M20,449.625 L84.4429,449.625 L84.4429,456.7578 L74.4429,466.7578 L20,466.7578 L20,449.625" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="163.4688" style="stroke:#000000;stroke-width:1.5;" width="810.209" x="20" y="449.625" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19.4429" x="35" y="462.6919">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="133.3911" x="99.4429" y="461.8354">[Conditions satisfied]</text><g class="message" data-participant-1="E" data-participant-2="C"><polygon fill="#181818" points="335.8301,483.8906,325.8301,487.8906,335.8301,491.8906,331.8301,487.8906" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="329.8301" x2="637.3931" y1="487.8906" y2="487.8906" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="204.5024" x="341.8301" y="482.8247">Return matching case outcome</text></g><g class="message" data-participant-1="C" data-participant-2="U"><polygon fill="#181818" points="59.9551,513.0234,49.9551,517.0234,59.9551,521.0234,55.9551,517.0234" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="53.9551" x2="323.8301" y1="517.0234" y2="517.0234" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="251.875" x="65.9551" y="511.9575">Display reimbursement and conditions</text></g><path d="M556.458,532.0234 L643.4097,532.0234 L643.4097,539.1563 L633.4097,549.1563 L556.458,549.1563 L556.458,532.0234" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="74.0703" style="stroke:#000000;stroke-width:1.5;" width="263.751" x="556.458" y="532.0234" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="41.9517" x="571.458" y="545.0903">break</text><line style="stroke:#000000;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="556.458" x2="820.209" y1="550.1563" y2="550.1563" /><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="157.8672" x="561.458" y="560.3667">[Conditions not satisfied]</text><g class="message" data-participant-1="E" data-participant-2="E"><line style="stroke:#181818;stroke-width:1;" x1="648.3931" x2="690.3931" y1="585.0938" y2="585.0938" /><line style="stroke:#181818;stroke-width:1;" x1="690.3931" x2="690.3931" y1="585.0938" y2="598.0938" /><line style="stroke:#181818;stroke-width:1;" x1="649.3931" x2="690.3931" y1="598.0938" y2="598.0938" /><polygon fill="#181818" points="659.3931,594.0938,649.3931,598.0938,659.3931,602.0938,655.3931,598.0938" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142.8159" x="655.3931" y="580.0278">Continue to next case</text></g><path d="M20,627.0938 L84.4429,627.0938 L84.4429,634.2266 L74.4429,644.2266 L20,644.2266 L20,627.0938" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="75.3984" style="stroke:#000000;stroke-width:1.5;" width="710.3281" x="20" y="627.0938" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19.4429" x="35" y="640.1606">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="116.2573" x="99.4429" y="639.3042">[No case matched]</text><g class="message" data-participant-1="E" data-participant-2="C"><polygon fill="#181818" points="335.8301,661.3594,325.8301,665.3594,335.8301,669.3594,331.8301,665.3594" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="329.8301" x2="637.3931" y1="665.3594" y2="665.3594" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="214.8745" x="341.8301" y="660.2935">Return "no eligible funding case"</text></g><g class="message" data-participant-1="C" data-participant-2="U"><polygon fill="#181818" points="59.9551,690.4922,49.9551,694.4922,59.9551,698.4922,55.9551,694.4922" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="53.9551" x2="323.8301" y1="694.4922" y2="694.4922" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="186.9766" x="65.9551" y="689.4263">Display not eligible message</text></g></g></svg>
+</div>
+<p><br clear="all" /></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 27, 2026 00:29+0000">2026-03-27</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

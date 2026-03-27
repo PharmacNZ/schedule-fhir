@@ -1,0 +1,198 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing> a fhir:ChargeItemDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ChargeItemDefinition-Ricovir-Pricing"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2025-12-01"^^xsd:date
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/wastage-claimable"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/wastage-claimable>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "PSS"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent>
+     ] ;
+     fhir:value [
+       a fhir:Decimal ;
+       fhir:v "5"^^xsd:decimal
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/brand-switch-fee"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/brand-switch-fee>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "Must"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "n/a"
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing"^^xsd:anyURI ;
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing>
+  ] ; # 
+  fhir:version [ fhir:v "0.0.1"] ; # 
+  fhir:title [ fhir:v "Ricovir - Pricing"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-03-27T00:29:47+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Listed price, PHARMAC subsidy, and patient co-payment for Ricovir (Tenofovir disoproxil 300 tab, 30 tab)"] ; # 
+  fhir:instance ( [
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Ricovir-Tenofovir> ;
+     fhir:reference [ fhir:v "Medication/Medication-Ricovir-Tenofovir" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Community (subsidized) pricing - fully subsidized" ]
+  ] ) ; # 
+  fhir:propertyGroup ( [
+     fhir:applicability ( [
+       fhir:description [ fhir:v "Community (subsidized) pricing" ]
+     ] ) ;
+     fhir:priceComponent ( [
+       fhir:type [ fhir:v "base" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Listed Price" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 13.45 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "discount" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "PHARMAC Subsidy" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 13.45 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "surcharge" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Patient Surcharge" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "informational" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Patient Co-Payment (with limit)" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] )
+  ] [
+     fhir:applicability ( [
+       fhir:description [ fhir:v "Alternative pricing structure" ]
+     ] ) ;
+     fhir:priceComponent ( [
+       fhir:type [ fhir:v "base" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Alternative Listed Price" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 13.45 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "discount" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Alternative Subsidy/Reimbursement" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 13.45 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "informational" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Alternative Patient Cost" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

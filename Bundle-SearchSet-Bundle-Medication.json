@@ -1,0 +1,222 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "SearchSet-Bundle-Medication",
+  "type" : "searchset",
+  "total" : 1000,
+  "link" : [{
+    "relation" : "self",
+    "url" : "https://pharmacfhirpoc-api.fhir.azurehealthcareapis.com/Medication"
+  },
+  {
+    "relation" : "next",
+    "url" : "https://pharmacfhirpoc-api.fhir.azurehealthcareapis.com/Medication?_count=1000&ct=er97f5lRTbS5qY6poaGRqaWFoamliYWRkYmxiaVlLAAAAP%2F%2F"
+  }],
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "Medication",
+      "id" : "Medication-Lucrin-Depot-1-Month",
+      "meta" : {
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
+      },
+      "extension" : [{
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name",
+        "valueString" : "Lucrin Depot 1-month"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size",
+        "valueString" : "1"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure",
+        "valueString" : "inj"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank",
+        "valueInteger" : 4
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1",
+        "valueString" : "Hormone Preparations - Systemic Excluding Contraceptive Hormones"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2",
+        "valueString" : "Trophic Hormones"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3",
+        "valueString" : "GnRH Analogues"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier",
+        "valueInteger" : 1
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack",
+        "valueBoolean" : false
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine",
+        "valueBoolean" : false
+      }],
+      "identifier" : [{
+        "system" : "http://schedule.pharmac.govt.nz/ids/brand",
+        "value" : "B14160310092925"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/pack",
+        "value" : "P2330148"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/chemical",
+        "value" : "C1416031009"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/formulation",
+        "value" : "F141603100929"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/pharmacode",
+        "value" : "2330148"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "50049431000117108",
+          "display" : "Leuprorelin 3.75 inj, 1 inj"
+        }],
+        "text" : "Leuprorelin"
+      },
+      "status" : "active",
+      "form" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "412946008",
+          "display" : "Injectable solution"
+        }],
+        "text" : "Inj 3.75 mg prefilled dual chamber syringe"
+      },
+      "ingredient" : [{
+        "itemCodeableConcept" : {
+          "coding" : [{
+            "system" : "http://nzmt.org.nz",
+            "code" : "2268011000036106",
+            "display" : "leuprorelin"
+          }],
+          "text" : "leuprorelin"
+        },
+        "isActive" : true
+      }]
+    },
+    "search" : {
+      "mode" : "match"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Medication",
+      "id" : "Medication-Ricovir-Tenofovir",
+      "meta" : {
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
+      },
+      "extension" : [{
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name",
+        "valueString" : "Ricovir"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size",
+        "valueString" : "30"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure",
+        "valueString" : "tab"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank",
+        "valueInteger" : 1
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1",
+        "valueString" : "Infections - Agents for Systemic Use"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2",
+        "valueString" : "Antivirals"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3",
+        "valueString" : "Hepatitis B Treatment"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple",
+        "valueBoolean" : false
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier",
+        "valueInteger" : 0
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack",
+        "valueBoolean" : false
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine",
+        "valueBoolean" : false
+      }],
+      "identifier" : [{
+        "system" : "http://schedule.pharmac.govt.nz/ids/brand",
+        "value" : "B16190538672526"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/pack",
+        "value" : "P2703122"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/chemical",
+        "value" : "C1619053867"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/formulation",
+        "value" : "F161905386725"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/pharmacode",
+        "value" : "2703122"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "50348251000117105",
+          "display" : "Tenofovir disoproxil 300 tab, 30 tab"
+        }],
+        "text" : "Tenofovir disoproxil"
+      },
+      "status" : "active",
+      "form" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "385055001",
+          "display" : "Tablet"
+        }],
+        "text" : "Tab 245 mg (300 mg as a fumarate)"
+      },
+      "ingredient" : [{
+        "itemCodeableConcept" : {
+          "coding" : [{
+            "system" : "http://nzmt.org.nz",
+            "code" : "46616121000116103",
+            "display" : "tenofovir disoproxil"
+          }],
+          "text" : "tenofovir disoproxil"
+        },
+        "isActive" : true
+      }]
+    },
+    "search" : {
+      "mode" : "match"
+    }
+  }]
+}

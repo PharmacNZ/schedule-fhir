@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="Medication-Viramune-Suspension"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
+    <valueString value="Viramune Suspension"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
+    <valueString value="240"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
+    <valueString value="ml"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank">
+    <valueInteger value="3"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
+    <valueString value="Infections - Agents for Systemic Use"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
+    <valueString value="Antiretrovirals"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
+    <valueString value="Non-nucleosides Reverse Transcriptase Inhibitors"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple">
+    <valueBoolean value="false"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier">
+    <valueInteger value="0"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack">
+    <valueBoolean value="false"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine">
+    <valueBoolean value="false"/>
+  </extension>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
+    <value value="B16200111702525"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
+    <value value="P2014947"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
+    <value value="C1620011170"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
+    <value value="F162001117025"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
+    <value value="2014947"/>
+  </identifier>
+  <code>
+    <coding>
+      <system value="http://nzmt.org.nz"/>
+      <code value="50002451000117104"/>
+      <display value="Nevirapine 10 ml, 240 ml"/>
+    </coding>
+    <text value="Nevirapine"/>
+  </code>
+  <status value="active"/>
+  <form>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="385013001"/>
+      <display value="Liquid"/>
+    </coding>
+    <text value="Oral suspension 10 mg per ml"/>
+  </form>
+  <ingredient>
+    <itemCodeableConcept>
+      <coding>
+        <system value="http://nzmt.org.nz"/>
+        <code value="2391011000036108"/>
+        <display value="nevirapine"/>
+      </coding>
+      <text value="nevirapine"/>
+    </itemCodeableConcept>
+    <isActive value="true"/>
+  </ingredient>
+</Medication>

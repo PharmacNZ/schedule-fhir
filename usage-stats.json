@@ -1,0 +1,457 @@
+{
+  "package": "pharmac.fhir.pharmac-schedules",
+  "version": "0.0.1",
+  "fhirVersion": "4.0.1",
+  "extensions": [
+    {
+      "url": "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule",
+      "title": "Funding Rule",
+      "types": [
+        "code",
+        "code",
+        "decimal",
+        "integer",
+        "decimal",
+        "integer",
+        "code",
+        "code",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-case-count",
+      "title": "Authorization Case Count",
+      "types": [
+        "integer"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-form",
+      "title": "Authorization Form",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title",
+      "title": "Authorization Title",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/brand-switch-fee",
+      "title": "Brand Switch Fee",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type",
+      "title": "Contract Type",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source",
+      "title": "Cost Brand Source",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/device-definition-reference",
+      "title": "Device Definition Reference",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent",
+      "title": "Daily Volume Limit Percent",
+      "types": [
+        "decimal"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination",
+      "title": "In-Combination",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1",
+      "title": "Medication ATC Category 1",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2",
+      "title": "Medication ATC Category 2",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3",
+      "title": "Medication ATC Category 3",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name",
+      "title": "Medication Brand Name",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-in-combination",
+      "title": "Medication In Combination",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack",
+      "title": "Medication Original Pack",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size",
+      "title": "Medication Package Size",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple",
+      "title": "Medication Product Multiple",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier",
+      "title": "Medication Product Multiplier",
+      "types": [
+        "integer"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank",
+      "title": "Medication Rank",
+      "types": [
+        "integer"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine",
+      "title": "Medication Safety List Medicine",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-statim",
+      "title": "Medication Statim",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure",
+      "title": "Medication Unit of Measure",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date",
+      "title": "Pricing Effective Date",
+      "types": [
+        "date"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-expiry-date",
+      "title": "Pricing Expiry Date",
+      "types": [
+        "date"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim",
+      "title": "Statim (Urgent Dispensing)",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/wastage-claimable",
+      "title": "Wastage Claimable",
+      "types": [
+        "boolean"
+      ]
+    }
+  ],
+  "profiles": {
+    "ChargeItemDefinition": [
+      {
+        "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition",
+        "title": "PHARMAC Charge Item Definition"
+      }
+    ],
+    "Medication": [
+      {
+        "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication",
+        "title": "PHARMAC Medication"
+      }
+    ]
+  },
+  "usage": {
+    "http://fhir-registry.smarthealthit.org/StructureDefinition/capabilities": [
+      "CapabilityStatement.rest.security"
+    ],
+    "http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris": [
+      "CapabilityStatement.rest.security"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-case-count": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-form": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/brand-switch-fee": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/device-definition-reference": [
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-expiry-date": [
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/wastage-claimable": [
+      "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ]
+  }
+}

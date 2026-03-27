@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationOutcome xmlns="http://hl7.org/fhir">
+  <id value="APIError-Unauthorised"/>
+  <issue>
+    <severity value="error"/>
+    <code value="suppressed"/>
+    <details>
+      <coding>
+        <code value="UNAUTHORISED"/>
+      </coding>
+    </details>
+    <diagnostics value="Unauthorised."/>
+  </issue>
+</OperationOutcome>

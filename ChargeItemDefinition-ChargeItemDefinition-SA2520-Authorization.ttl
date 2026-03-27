@@ -1,0 +1,93 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization> a fhir:ChargeItemDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ChargeItemDefinition-SA2520-Authorization"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2026-03-11"^^xsd:date
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-form"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-form>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "SA2520"
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization"^^xsd:anyURI ;
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization>
+  ] ; # 
+  fhir:version [ fhir:v "0.0.1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-03-27T00:29:47+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Special Authorization SA2520. Detailed eligibility criteria available via authorization form."] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://pharmac.govt.nz/fhir/sa"^^xsd:anyURI ;
+         fhir:l <http://pharmac.govt.nz/fhir/sa>
+       ] ;
+       fhir:code [ fhir:v "SA2520" ]
+     ] ) ;
+     fhir:text [ fhir:v "SA2520" ]
+  ] ; # 
+  fhir:instance ( [
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Ricovir-Tenofovir> ;
+     fhir:reference [ fhir:v "Medication/Medication-Ricovir-Tenofovir" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Initial application - Pre-exposure prophylaxis (PrEP). Applications from any relevant practitioner. Approvals valid for 24 months." ] ;
+     fhir:language [ fhir:v "text/cql" ] ;
+     fhir:expression [ fhir:v "exists(Condition where code in 'HIVNegativeNoAcuteSymptomsAndSeroconversionAssessed') and exists(Condition where code in 'ElevatedRiskOfHIVExposurePrEPClinicallyAppropriate')" ]
+  ] [
+     fhir:description [ fhir:v "Renewal - Pre-exposure prophylaxis (PrEP). Applications from any relevant practitioner. Approvals valid for 24 months." ] ;
+     fhir:language [ fhir:v "text/cql" ] ;
+     fhir:expression [ fhir:v "exists(Condition where code in 'HIVNegativeNoAcuteSymptomsAndSeroconversionAssessed') and exists(Condition where code in 'ElevatedRiskOfHIVExposurePrEPClinicallyAppropriate')" ]
+  ] [
+     fhir:description [ fhir:v "Initial application - post-exposure prophylaxis (PEP) following exposure to HIV. Applications from any relevant practitioner. Approvals valid for 4 weeks." ] ;
+     fhir:language [ fhir:v "text/cql" ] ;
+     fhir:expression [ fhir:v "exists(Condition where code in 'TreatmentInitiatedWithin72HoursPostExposure') and (exists(Condition where code in 'CondomlessAnalOrReceptiveVaginalIntercourseWithKnownHIVPositiveVL>200') or exists(Condition where code in 'SharedInjectingEquipmentWithKnownHIVPositive') or exists(Condition where code in 'NonConsensualIntercourseRiskAssessmentIndicatesProphylaxisAppropriate') or exists(Condition where code in 'CondomlessAnalIntercourseWithHighPrevalenceCountryOrRiskGroupStatusUnknown'))" ]
+  ] [
+     fhir:description [ fhir:v "Renewal - second or subsequent post-exposure prophylaxis (PEP). Applications from any relevant practitioner. Approvals valid for 4 weeks." ] ;
+     fhir:language [ fhir:v "text/cql" ] ;
+     fhir:expression [ fhir:v "exists(Condition where code in 'TreatmentInitiatedWithin72HoursPostExposure') and (exists(Condition where code in 'CondomlessAnalOrReceptiveVaginalIntercourseWithKnownHIVPositiveVL>200') or exists(Condition where code in 'SharedInjectingEquipmentWithKnownHIVPositive') or exists(Condition where code in 'NonConsensualIntercourseRiskAssessmentIndicatesProphylaxisAppropriate') or exists(Condition where code in 'CondomlessAnalIntercourseWithHighPrevalenceCountryOrRiskGroupStatusUnknown'))" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

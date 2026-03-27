@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="pharmac-medication-code"/>
+  <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code"/>
+  <version value="0.0.1"/>
+  <name value="PharmacMedicationCode"/>
+  <title value="PHARMAC Medication Code ValueSet"/>
+  <status value="active"/>
+  <date value="2025-01-27"/>
+  <publisher value="Pharmac"/>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.pharmac.govt.nz/about/contact"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="email"/>
+      <value value="enquiry@pharmac.govt.nz"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet containing medication codes from NZMT CTPP, PackID, and SNOMED CT code systems used for PHARMAC pharmaceutical schedule medications."/>
+  <immutable value="false"/>
+  <purpose value="To define the set of medication codes that can be used to identify medications in the PHARMAC schedule"/>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="373873005"/>
+      </filter>
+    </include>
+    <include>
+      <valueSet value="https://nzhts.digital.health.nz/fhir/ValueSet/nzmt-mp"/>
+    </include>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="763158003"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>

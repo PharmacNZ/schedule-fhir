@@ -1,0 +1,86 @@
+{
+  "resourceType" : "ChargeItemDefinition",
+  "id" : "ChargeItemDefinition-Community-Pharmacy-Sequence-1",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date",
+    "valueDate" : "2025-12-01"
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCode" : "community"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "CaseSequence"
+      },
+      {
+        "url" : "value",
+        "valueInteger" : 1
+      }],
+      "url" : "rule"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "FundingMechanism"
+      },
+      {
+        "url" : "attribute",
+        "valueCode" : "Prescription"
+      }],
+      "url" : "rule"
+    }],
+    "url" : "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"
+  }],
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1",
+  "version" : "0.0.1",
+  "status" : "active",
+  "date" : "2026-03-27T00:29:47+00:00",
+  "publisher" : "Pharmac",
+  "contact" : [{
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.pharmac.govt.nz/about/contact"
+    }]
+  },
+  {
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "enquiry@pharmac.govt.nz",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Case 1 community pharmacy prescription subsidy where the patient is unable to tolerate administration of goserelin.",
+  "applicability" : [{
+    "description" : "Condition (endorsement): Additional subsidy by endorsement where the patient is a child or adolescent and is unable to tolerate administration of goserelin and the prescription is endorsed accordingly.",
+    "language" : "text/cql",
+    "expression" : "exists(Condition where code in 'ChildOrAdolescent') and exists(Condition where code in 'UnableToTolerateGoserelin') and exists(Condition where code in 'PrescriptionEndorsedForAdditionalSubsidy')"
+  },
+  {
+    "description" : "Condition (provider): Prescription must be from an authorised prescriber.",
+    "language" : "text/cql",
+    "expression" : "exists(Condition where code in 'AuthorisedPrescriber')"
+  }],
+  "propertyGroup" : [{
+    "applicability" : [{
+      "description" : "Case 1 - community pharmacy prescription (intolerance to goserelin)"
+    }],
+    "priceComponent" : [{
+      "type" : "discount",
+      "code" : {
+        "text" : "PHARMAC Subsidy"
+      },
+      "amount" : {
+        "value" : 221.6,
+        "currency" : "NZD"
+      }
+    }]
+  }]
+}

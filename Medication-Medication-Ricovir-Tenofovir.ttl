@@ -1,0 +1,191 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Ricovir-Tenofovir> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Medication-Ricovir-Tenofovir"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "Ricovir"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "30"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "tab"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank>
+     ] ;
+     fhir:value [
+       a fhir:Integer ;
+       fhir:v 1
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "Infections - Agents for Systemic Use"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "Antivirals"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "Hepatitis B Treatment"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier>
+     ] ;
+     fhir:value [
+       a fhir:Integer ;
+       fhir:v 0
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://schedule.pharmac.govt.nz/ids/brand"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/ids/brand>
+     ] ;
+     fhir:value [ fhir:v "B16190538672526" ]
+  ] [
+     fhir:system [
+       fhir:v "http://schedule.pharmac.govt.nz/ids/pack"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/ids/pack>
+     ] ;
+     fhir:value [ fhir:v "P2703122" ]
+  ] [
+     fhir:system [
+       fhir:v "http://schedule.pharmac.govt.nz/ids/chemical"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/ids/chemical>
+     ] ;
+     fhir:value [ fhir:v "C1619053867" ]
+  ] [
+     fhir:system [
+       fhir:v "http://schedule.pharmac.govt.nz/ids/formulation"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/ids/formulation>
+     ] ;
+     fhir:value [ fhir:v "F161905386725" ]
+  ] [
+     fhir:system [
+       fhir:v "http://schedule.pharmac.govt.nz/ids/pharmacode"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/ids/pharmacode>
+     ] ;
+     fhir:value [ fhir:v "2703122" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://nzmt.org.nz"^^xsd:anyURI ;
+         fhir:l <http://nzmt.org.nz>
+       ] ;
+       fhir:code [ fhir:v "50348251000117105" ] ;
+       fhir:display [ fhir:v "Tenofovir disoproxil 300 tab, 30 tab" ]
+     ] ) ;
+     fhir:text [ fhir:v "Tenofovir disoproxil" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:form [
+     fhir:coding ( [
+       a sct:385055001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "385055001" ] ;
+       fhir:display [ fhir:v "Tablet" ]
+     ] ) ;
+     fhir:text [ fhir:v "Tab 245 mg (300 mg as a fumarate)" ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://nzmt.org.nz"^^xsd:anyURI ;
+           fhir:l <http://nzmt.org.nz>
+         ] ;
+         fhir:code [ fhir:v "46616121000116103" ] ;
+         fhir:display [ fhir:v "tenofovir disoproxil" ]
+       ] ) ;
+       fhir:text [ fhir:v "tenofovir disoproxil" ]
+     ] ;
+     fhir:isActive [ fhir:v true ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

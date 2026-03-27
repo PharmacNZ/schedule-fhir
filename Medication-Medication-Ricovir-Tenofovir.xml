@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="Medication-Ricovir-Tenofovir"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
+    <valueString value="Ricovir"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
+    <valueString value="30"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
+    <valueString value="tab"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank">
+    <valueInteger value="1"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
+    <valueString value="Infections - Agents for Systemic Use"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
+    <valueString value="Antivirals"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
+    <valueString value="Hepatitis B Treatment"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple">
+    <valueBoolean value="false"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier">
+    <valueInteger value="0"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack">
+    <valueBoolean value="false"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine">
+    <valueBoolean value="false"/>
+  </extension>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
+    <value value="B16190538672526"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
+    <value value="P2703122"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
+    <value value="C1619053867"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
+    <value value="F161905386725"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
+    <value value="2703122"/>
+  </identifier>
+  <code>
+    <coding>
+      <system value="http://nzmt.org.nz"/>
+      <code value="50348251000117105"/>
+      <display value="Tenofovir disoproxil 300 tab, 30 tab"/>
+    </coding>
+    <text value="Tenofovir disoproxil"/>
+  </code>
+  <status value="active"/>
+  <form>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="385055001"/>
+      <display value="Tablet"/>
+    </coding>
+    <text value="Tab 245 mg (300 mg as a fumarate)"/>
+  </form>
+  <ingredient>
+    <itemCodeableConcept>
+      <coding>
+        <system value="http://nzmt.org.nz"/>
+        <code value="46616121000116103"/>
+        <display value="tenofovir disoproxil"/>
+      </coding>
+      <text value="tenofovir disoproxil"/>
+    </itemCodeableConcept>
+    <isActive value="true"/>
+  </ingredient>
+</Medication>

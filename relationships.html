@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Relationships - Pharmac Schedules FHIR API v0.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/logos.css"/>
+<link rel="stylesheet" href="assets/css/colours.css"/>
+<link rel="stylesheet" href="assets/css/fonts.css"/>
+
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="pharmac-logo">
+  <img src="assets/images/pharmac-logo.png" alt="Pharmac logo" height="35"/>
+</div>
+
+<div id="blank-logo">
+  <img src="assets/images/blank-right-logo.png" alt="null" height="35"/>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">0.0.1 - draft
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="use-cases.html">Use cases</a>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
+  <li>
+    <a href="relationships.html">Resource Relationships</a>
+  </li>
+  <li>
+    <a href="datamodel.html">Data Models</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://hl7.org/fhir/index.html" target="_blank">FHIR Spec</a>
+      </li>
+      <li>
+        <a href="definitions.json.zip">Artefacts (JSON)</a>
+      </li>
+      <li>
+        <a href="definitions.xml.zip">Artefacts (XML)</a>
+      </li>
+      <li>
+        <a href="full-ig.zip">Download IG</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Relationships</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v0.0.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir-ig.digital.health.nz/pharmac-schedules/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Relationships</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#medication-and-chargeitemdefinition-relationships" id="markdown-toc-medication-and-chargeitemdefinition-relationships">Medication and ChargeItemDefinition Relationships</a>    <ul>
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+      <li><a href="#core-relationship-model" id="markdown-toc-core-relationship-model">Core Relationship Model</a>        <ul>
+          <li><a href="#key-principles" id="markdown-toc-key-principles">Key Principles</a></li>
+        </ul>
+      </li>
+      <li><a href="#chargeitemdefinition-types" id="markdown-toc-chargeitemdefinition-types">ChargeItemDefinition Types</a>        <ul>
+          <li><a href="#1-product-pricing-chargeitemdefinition" id="markdown-toc-1-product-pricing-chargeitemdefinition">1. Product Pricing ChargeItemDefinition</a></li>
+          <li><a href="#2-special-authorization-chargeitemdefinition" id="markdown-toc-2-special-authorization-chargeitemdefinition">2. Special Authorization ChargeItemDefinition</a></li>
+          <li><a href="#3-funding-mechanism-chargeitemdefinition" id="markdown-toc-3-funding-mechanism-chargeitemdefinition">3. Funding Mechanism ChargeItemDefinition</a></li>
+        </ul>
+      </li>
+      <li><a href="#relationship-diagram" id="markdown-toc-relationship-diagram">Relationship Diagram</a></li>
+      <li><a href="#search-patterns" id="markdown-toc-search-patterns">Search Patterns</a>        <ul>
+          <li><a href="#pattern-1-search-medication-with-pricing" id="markdown-toc-pattern-1-search-medication-with-pricing">Pattern 1: Search Medication with Pricing</a></li>
+          <li><a href="#pattern-2-search-medication-with-authorizations" id="markdown-toc-pattern-2-search-medication-with-authorizations">Pattern 2: Search Medication with Authorizations</a></li>
+          <li><a href="#pattern-3-search-by-special-authority-code" id="markdown-toc-pattern-3-search-by-special-authority-code">Pattern 3: Search by Special Authority Code</a></li>
+          <li><a href="#pattern-4-reverse-include-from-medication" id="markdown-toc-pattern-4-reverse-include-from-medication">Pattern 4: Reverse Include from Medication</a></li>
+          <li><a href="#pattern-5-search-by-special-authority-and-include-medications" id="markdown-toc-pattern-5-search-by-special-authority-and-include-medications">Pattern 5: Search by Special Authority and Include Medications</a></li>
+        </ul>
+      </li>
+      <li><a href="#complete-example-ricovir-tenofovir" id="markdown-toc-complete-example-ricovir-tenofovir">Complete Example: Ricovir (Tenofovir)</a></li>
+      <li><a href="#understanding-applicability-rules" id="markdown-toc-understanding-applicability-rules">Understanding Applicability Rules</a>        <ul>
+          <li><a href="#pricing-applicability" id="markdown-toc-pricing-applicability">Pricing Applicability</a></li>
+          <li><a href="#authorization-applicability" id="markdown-toc-authorization-applicability">Authorization Applicability</a></li>
+          <li><a href="#funding-mechanism-applicability" id="markdown-toc-funding-mechanism-applicability">Funding Mechanism Applicability</a></li>
+        </ul>
+      </li>
+      <li><a href="#extensions-and-attributes" id="markdown-toc-extensions-and-attributes">Extensions and Attributes</a>        <ul>
+          <li><a href="#pricing-attributes" id="markdown-toc-pricing-attributes">Pricing Attributes</a></li>
+          <li><a href="#authorization-attributes" id="markdown-toc-authorization-attributes">Authorization Attributes</a></li>
+          <li><a href="#funding-rule-attributes" id="markdown-toc-funding-rule-attributes">Funding Rule Attributes</a></li>
+        </ul>
+      </li>
+      <li><a href="#best-practices" id="markdown-toc-best-practices">Best Practices</a>        <ul>
+          <li><a href="#for-api-consumers" id="markdown-toc-for-api-consumers">For API Consumers</a></li>
+          <li><a href="#for-api-implementers" id="markdown-toc-for-api-implementers">For API Implementers</a></li>
+        </ul>
+      </li>
+      <li><a href="#related-resources" id="markdown-toc-related-resources">Related Resources</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="medication-and-chargeitemdefinition-relationships">Medication and ChargeItemDefinition Relationships</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>The PHARMAC Schedule Implementation Guide uses a sophisticated relationship model to represent medications, devices, and their associated pricing, authorization requirements, and funding rules. This page explains the relationships between these resources and how to query them effectively.</p>
+
+<h2 id="core-relationship-model">Core Relationship Model</h2>
+
+<p>The relationship between Medications and ChargeItemDefinitions is fundamental to the PHARMAC Schedule API:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Medication ←→ ChargeItemDefinition (multiple types)
+    ├── Product Pricing ChargeItemDefinition
+    ├── Special Authorization ChargeItemDefinition
+    └── Funding Mechanism ChargeItemDefinition(s)
+</code></pre></div></div>
+
+<h3 id="key-principles">Key Principles</h3>
+
+<ol>
+  <li><strong>One Medication, Multiple ChargeItemDefinitions</strong>: A single Medication resource may have multiple ChargeItemDefinition resources associated with it, each representing different aspects:
+    <ul>
+      <li>Product pricing information</li>
+      <li>Special authorization requirements</li>
+      <li>Different funding mechanism scenarios</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>ChargeItemDefinition References Medication</strong>: ChargeItemDefinitions reference Medication resources via the <code class="language-plaintext highlighter-rouge">instance</code> element, establishing the relationship from pricing/authorization back to the product.</p>
+  </li>
+  <li><strong>Search with _revinclude</strong>: The API supports <code class="language-plaintext highlighter-rouge">_revinclude=ChargeItemDefinition:instance</code> to retrieve all related ChargeItemDefinitions alongside Medication resources in a single query.</li>
+</ol>
+
+<h2 id="chargeitemdefinition-types">ChargeItemDefinition Types</h2>
+
+<h3 id="1-product-pricing-chargeitemdefinition">1. Product Pricing ChargeItemDefinition</h3>
+
+<p>Represents the base pricing information for a medication or device.</p>
+
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+  <li>Contains <code class="language-plaintext highlighter-rouge">propertyGroup</code> with <code class="language-plaintext highlighter-rouge">priceComponent</code> elements</li>
+  <li>Includes pricing attributes via extensions (costBrandSource, wastageClaimable, contractType, dvLimitPercent, brandSwitchFee, statim, inCombination)</li>
+  <li>References the product via <code class="language-plaintext highlighter-rouge">instance</code> element</li>
+  <li>May include multiple pricing scenarios (community pricing vs alternative pricing)</li>
+</ul>
+
+<p><strong>Example:</strong> <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-Ricovir-Pricing</code></p>
+
+<p><strong>Price Components:</strong></p>
+<ul>
+  <li><strong>Listed Price</strong> (type: <code class="language-plaintext highlighter-rouge">base</code>) - The pharmaceutical supplier's price</li>
+  <li><strong>PHARMAC Subsidy</strong> (type: <code class="language-plaintext highlighter-rouge">discount</code>) - The amount PHARMAC subsidizes</li>
+  <li><strong>Patient Surcharge</strong> (type: <code class="language-plaintext highlighter-rouge">surcharge</code>) - The additional cost to the patient</li>
+  <li><strong>Patient Co-Payment</strong> (type: <code class="language-plaintext highlighter-rouge">informational</code>) - The final calculated patient cost</li>
+</ul>
+
+<h3 id="2-special-authorization-chargeitemdefinition">2. Special Authorization ChargeItemDefinition</h3>
+
+<p>Represents authorization requirements for restricted medications.</p>
+
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+  <li>Contains authorization extensions (authorizationForm, authorizationTitle, authorizationCaseCount)</li>
+  <li>Uses <code class="language-plaintext highlighter-rouge">code</code> element to identify the special authority form (e.g., SA2139, SA2520)</li>
+  <li>Contains <code class="language-plaintext highlighter-rouge">applicability</code> rules with CQL expressions defining eligibility criteria</li>
+  <li>May have multiple applicability entries representing different authorization cases</li>
+  <li>References the medication via <code class="language-plaintext highlighter-rouge">instance</code> element</li>
+</ul>
+
+<p><strong>Example:</strong> <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-Tenofovir-Emtricitabine-SA2139-Authorization</code></p>
+
+<p><strong>Authorization Cases (SA2139 - Antiretrovirals):</strong></p>
+<ol>
+  <li>Initial application - Confirmed HIV</li>
+  <li>Renewal - Confirmed HIV</li>
+  <li>Initial application - Prevention of maternal transmission</li>
+  <li>Initial application - Pre-exposure prophylaxis (PEP)</li>
+  <li>Renewal - Second/subsequent post-exposure prophylaxis</li>
+  <li>Initial application - Percutaneous exposure</li>
+  <li>Renewal - Second/subsequent percutaneous exposure</li>
+</ol>
+
+<h3 id="3-funding-mechanism-chargeitemdefinition">3. Funding Mechanism ChargeItemDefinition</h3>
+
+<p>Represents specific funding scenarios and reimbursement rules.</p>
+
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+  <li>Contains <code class="language-plaintext highlighter-rouge">fundingRule</code> extension with type and rule details</li>
+  <li>Includes case sequence number and funding mechanism type (Prescription, BSO, RuralPSO, Pharmacy)</li>
+  <li>Contains <code class="language-plaintext highlighter-rouge">applicability</code> rules defining when this funding applies (e.g., provider requirements, endorsement conditions)</li>
+  <li>References the medication indirectly (applies to goserelin prescriptions in example)</li>
+</ul>
+
+<p><strong>Example:</strong> <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-Community-Pharmacy-Sequence-1</code></p>
+
+<p><strong>Funding Mechanism Types:</strong></p>
+<ul>
+  <li><strong>Prescription</strong> - Standard community pharmacy prescription subsidy</li>
+  <li><strong>BSO</strong> - Bulk Supply Order subsidy</li>
+  <li><strong>RuralPSO</strong> - Rural Practitioner Supply Order subsidy</li>
+  <li><strong>Pharmacy</strong> - Pharmacy-specific funding mechanism</li>
+</ul>
+
+<h2 id="relationship-diagram">Relationship Diagram</h2>
+
+  <!-- markdownlint-disable MD033 -->
+<div width="100%">
+  <!-- Generated from `input/images-source/data-model.plantuml` -->
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 2501 1908" zoomAndPan="magnify" data-diagram-type="CLASS" preserveAspectRatio="none" width="2501.2645px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:2501px;height:1908px;background:#FFFFFF;" version="1.1" height="1908.1942px"><title>PHARMAC Schedule - Medication and ChargeItemDefinition Relationships</title><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="770.8465" font-size="22.7618" textLength="941.8679" y="33.7734" font-family="sans-serif" fill="#000000">PHARMAC Schedule - Medication and ChargeItemDefinition Relationships</text><rect rx="3.1614" ry="3.1614" width="690.0097" x="15.1745" y="68.226" style="stroke:#000000;stroke-width:1.2645;" fill="#FFFAFA" height="376.231"></rect><text font-weight="bold" lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="259.9023" y="89.8078" font-family="Helvetica" fill="#000000">ChargeItemDefinition Types</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="5.2255" y="108.9439" font-family="Helvetica" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="217.1913" y="128.08" font-family="Helvetica" fill="#000000">Type 1: Product Pricing</text><text lengthAdjust="spacing" x="243.914" font-size="16.439" textLength="213.0254" y="128.08" font-family="Helvetica" fill="#000000">- Base pricing information</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="406.3447" y="147.2161" font-family="Helvetica" fill="#000000">• Contains propertyGroup with price components</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="416.8037" y="166.3521" font-family="Helvetica" fill="#000000">• Includes pricing attributes (contract, limits, fees)</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="480.4248" y="185.4882" font-family="Helvetica" fill="#000000">• One per medication (multiple pricing scenarios possible)</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="5.2255" y="204.6243" font-family="Helvetica" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="273.0664" y="223.7604" font-family="Helvetica" fill="#000000">Type 2: Special Authorization</text><text lengthAdjust="spacing" x="299.7891" font-size="16.439" textLength="148.7862" y="223.7604" font-family="Helvetica" fill="#000000">- SA requirements</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="340.8052" y="242.8965" font-family="Helvetica" fill="#000000">• Contains authorization code (SA####)</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="385.3384" y="262.0325" font-family="Helvetica" fill="#000000">• Multiple applicability rules (CQL expressions)</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="471.1858" y="281.1686" font-family="Helvetica" fill="#000000">• One per SA form (a medication may have multiple SAs)</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="5.2255" y="300.3047" font-family="Helvetica" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="259.8381" y="319.4408" font-family="Helvetica" fill="#000000">Type 3: Funding Mechanism</text><text lengthAdjust="spacing" x="286.5608" font-size="16.439" textLength="160.6901" y="319.4408" font-family="Helvetica" fill="#000000">- Funding scenarios</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="450.4203" y="338.5769" font-family="Helvetica" fill="#000000">• Contains funding rules (type, sequence, mechanism)</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="467.943" y="357.7129" font-family="Helvetica" fill="#000000">• Applicability rules for provider/endorsement conditions</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="474.8943" y="376.849" font-family="Helvetica" fill="#000000">• Multiple per medication (different scenarios/sequences)</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="5.2255" y="395.9851" font-family="Helvetica" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="128.3257" y="415.1212" font-family="Helvetica" fill="#000000">Key Principle:</text><text lengthAdjust="spacing" x="155.0484" font-size="16.439" textLength="408.215" y="415.1212" font-family="Helvetica" fill="#000000">One Medication → Multiple ChargeItemDefinitions</text><text lengthAdjust="spacing" x="21.4972" font-size="16.439" textLength="30.7108" y="434.2573" font-family="Helvetica" fill="#000000">Use</text><text lengthAdjust="spacing" x="57.4336" font-size="16.439" textLength="376.0914" y="434.2573" font-family="monospace" fill="#000000">_include=ChargeItemDefinition:instance</text><text lengthAdjust="spacing" x="438.7505" font-size="16.439" textLength="260.111" y="434.2573" font-family="Helvetica" fill="#000000">to retrieve all related resources</text>  <!-- cluster MedPkg --><g data-entity="MedPkg" id="cluster_MedPkg" data-uid="ent0002" class="cluster" data-source-line="31"><path d="M257.3343,468.4833 L477.5771,468.4833 A4.742,4.742 0 0 1 480.7385,471.6446 L489.5902,496.6786 L607.6125,496.6786 A3.1614,3.1614 0 0 1 610.7739,499.84 L610.7739,858.5945 A3.1614,3.1614 0 0 1 607.6125,861.7559 L257.3343,861.7559 A3.1614,3.1614 0 0 1 254.173,858.5945 L254.173,471.6446 A3.1614,3.1614 0 0 1 257.3343,468.4833" style="stroke:#000000;stroke-width:1.8968;" fill="none"></path><line y1="496.6786" x1="254.173" y2="496.6786" style="stroke:#000000;stroke-width:1.8968;" x2="489.5902"></line><text font-weight="bold" lengthAdjust="spacing" x="259.2312" font-size="17.7036" textLength="218.9782" y="487.4452" font-family="sans-serif" fill="#000000">Medication Resources</text></g>  <!-- cluster ChargePkg --><g data-entity="ChargePkg" id="cluster_ChargePkg" data-uid="ent0004" class="cluster" data-source-line="53"><path d="M10.7486,892.1049 L335.7866,892.1049 A4.742,4.742 0 0 1 338.948,895.2663 L347.7997,920.3002 L1110.9004,920.3002 A3.1614,3.1614 0 0 1 1114.0617,923.4616 L1114.0617,1647.6689 A3.1614,3.1614 0 0 1 1110.9004,1650.8303 L10.7486,1650.8303 A3.1614,3.1614 0 0 1 7.5873,1647.6689 L7.5873,895.2663 A3.1614,3.1614 0 0 1 10.7486,892.1049" style="stroke:#000000;stroke-width:1.8968;" fill="none"></path><line y1="920.3002" x1="7.5873" y2="920.3002" style="stroke:#000000;stroke-width:1.8968;" x2="347.7997"></line><text font-weight="bold" lengthAdjust="spacing" x="12.6454" font-size="17.7036" textLength="323.7734" y="911.0669" font-family="sans-serif" fill="#000000">ChargeItemDefinition Resources</text></g>  <!-- cluster Example --><g data-entity="Example" id="cluster_Example" data-uid="ent0016" class="cluster" data-source-line="147"><path d="M1147.5721,574.0725 L1535.2815,574.0725 A4.742,4.742 0 0 1 1538.4428,577.2339 L1547.2946,602.2679 L2489.2514,602.2679 A3.1614,3.1614 0 0 1 2492.4127,605.4292 L2492.4127,1155.762 A3.1614,3.1614 0 0 1 2489.2514,1158.9233 L1147.5721,1158.9233 A3.1614,3.1614 0 0 1 1144.4107,1155.762 L1144.4107,577.2339 A3.1614,3.1614 0 0 1 1147.5721,574.0725" style="stroke:#000000;stroke-width:1.8968;" fill="#F5F5F5"></path><line y1="602.2679" x1="1144.4107" y2="602.2679" style="stroke:#000000;stroke-width:1.8968;" x2="1547.2946"></line><text font-weight="bold" lengthAdjust="spacing" x="1149.4689" font-size="17.7036" textLength="386.4448" y="593.0345" font-family="sans-serif" fill="#000000">Example: Medication-Ricovir-Tenofovir</text></g>  <!-- class Medication --><g data-entity="Medication" id="entity_Medication" data-uid="ent0003" class="entity" data-source-line="32"><rect rx="3.1614" ry="3.1614" width="315.4107" x="275.0379" y="512.7422" style="stroke:#181818;stroke-width:0.6323;" fill="#FFA07A" height="328.7513"></rect><ellipse cx="365.2397" cy="537.465" rx="13.91" ry="13.91" style="stroke:#181818;stroke-width:1.2645;" fill="#ADD1B2"></ellipse><path d="M368.9938,544.5978 Q368.2627,544.9732 367.4526,545.1511 Q366.6425,545.3487 365.7534,545.3487 Q362.592,545.3487 360.9126,543.274 Q359.2529,541.1796 359.2529,537.2279 Q359.2529,533.2762 360.9126,531.1818 Q362.592,529.0874 365.7534,529.0874 Q366.6425,529.0874 367.4526,529.285 Q368.2825,529.4826 368.9938,529.858 L368.9938,533.296 Q368.2035,532.5649 367.4526,532.229 Q366.7018,531.8734 365.9115,531.8734 Q364.2122,531.8734 363.3429,533.2367 Q362.4735,534.5803 362.4735,537.2279 Q362.4735,539.8756 363.3429,541.2389 Q364.2122,542.5825 365.9115,542.5825 Q366.7018,542.5825 367.4526,542.2466 Q368.2035,541.8909 368.9938,541.1599 L368.9938,544.5978 Z " fill="#000000"></path><text lengthAdjust="spacing" x="388.6337" font-size="15.1745" textLength="129.3167" y="533.1503" font-family="sans-serif" font-style="italic" fill="#000000">«FHIR Resource»</text><text font-weight="bold" lengthAdjust="spacing" x="402.1729" font-size="16.439" textLength="102.2384" y="551.9881" font-family="sans-serif" fill="#000000">Medication</text><line y1="562.1878" x1="276.3025" y2="562.1878" style="stroke:#181818;stroke-width:0.6323;" x2="589.1841"></line><text font-weight="bold" lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="113.3649" y="580.1575" font-family="sans-serif" fill="#000000">Core Elements</text><ellipse cx="288.9479" cy="593.4309" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="12.6942" y="596.3496" font-family="sans-serif" fill="#000000">id</text><ellipse cx="288.9479" cy="609.623" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="282.5326" y="612.5417" font-family="sans-serif" fill="#000000">identifier (pharmacode, brandId, packId)</text><ellipse cx="288.9479" cy="625.815" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="128.6604" y="628.7337" font-family="sans-serif" fill="#000000">code (NZMT CTPP)</text><ellipse cx="288.9479" cy="642.0071" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="42.7419" y="644.9258" font-family="sans-serif" fill="#000000">status</text><ellipse cx="288.9479" cy="658.1992" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="32.6762" y="661.1179" font-family="sans-serif" fill="#000000">form</text><ellipse cx="288.9479" cy="674.3912" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="82.1625" y="677.3099" font-family="sans-serif" fill="#000000">ingredient[]</text><line y1="685.6486" x1="276.3025" y2="685.6486" style="stroke:#181818;stroke-width:1.2645;" x2="589.1841"></line><text font-weight="bold" lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="85.2461" y="703.6183" font-family="sans-serif" fill="#000000">Extensions</text><ellipse cx="288.9479" cy="716.8917" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="85.1849" y="719.8104" font-family="sans-serif" fill="#000000">brand-name</text><ellipse cx="288.9479" cy="733.0838" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="90.9581" y="736.0025" font-family="sans-serif" fill="#000000">package-size</text><ellipse cx="288.9479" cy="749.2759" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="111.368" y="752.1945" font-family="sans-serif" fill="#000000">unit-of-measure</text><ellipse cx="288.9479" cy="765.4679" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="31.114" y="768.3866" font-family="sans-serif" fill="#000000">rank</text><ellipse cx="288.9479" cy="781.66" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="129.0611" y="784.5787" font-family="sans-serif" fill="#000000">atc-category-1/2/3</text><ellipse cx="288.9479" cy="797.8521" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="115.6266" y="800.7708" font-family="sans-serif" fill="#000000">product-multiple</text><ellipse cx="288.9479" cy="814.0441" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="125.2101" y="816.9628" font-family="sans-serif" fill="#000000">product-multiplier</text><ellipse cx="288.9479" cy="830.2362" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="300.3288" font-size="13.91" textLength="137.0688" y="833.1549" font-family="sans-serif" fill="#000000">safety-list-medicine</text></g>  <!-- class CID --><g data-entity="CID" id="entity_CID" data-uid="ent0005" class="entity" data-source-line="55"><rect rx="3.1614" ry="3.1614" width="240.0136" x="311.0774" y="936.3639" style="stroke:#181818;stroke-width:0.6323;" fill="#ADD8E6" height="215.4069"></rect><ellipse cx="330.0455" cy="961.0867" rx="13.91" ry="13.91" style="stroke:#181818;stroke-width:1.2645;" fill="#ADD1B2"></ellipse><path d="M333.7996,968.2195 Q333.0686,968.5949 332.2585,968.7727 Q331.4484,968.9703 330.5592,968.9703 Q327.3979,968.9703 325.7184,966.8957 Q324.0587,964.8013 324.0587,960.8496 Q324.0587,956.8979 325.7184,954.8035 Q327.3979,952.7091 330.5592,952.7091 Q331.4484,952.7091 332.2585,952.9067 Q333.0883,953.1043 333.7996,953.4797 L333.7996,956.9176 Q333.0093,956.1866 332.2585,955.8507 Q331.5077,955.495 330.7173,955.495 Q329.0181,955.495 328.1487,956.8584 Q327.2793,958.2019 327.2793,960.8496 Q327.2793,963.4972 328.1487,964.8605 Q329.0181,966.2041 330.7173,966.2041 Q331.5077,966.2041 332.2585,965.8682 Q333.0093,965.5126 333.7996,964.7815 L333.7996,968.2195 Z " fill="#000000"></path><text lengthAdjust="spacing" x="382.8649" font-size="15.1745" textLength="129.3167" y="956.7719" font-family="sans-serif" font-style="italic" fill="#000000">«FHIR Resource»</text><text font-weight="bold" lengthAdjust="spacing" x="347.7491" font-size="16.439" textLength="199.5482" y="975.6098" font-family="sans-serif" fill="#000000">ChargeItemDefinition</text><line y1="985.8095" x1="312.3419" y2="985.8095" style="stroke:#181818;stroke-width:0.6323;" x2="549.8264"></line><text font-weight="bold" lengthAdjust="spacing" x="336.3682" font-size="13.91" textLength="113.3649" y="1003.7792" font-family="sans-serif" fill="#000000">Core Elements</text><ellipse cx="324.9874" cy="1017.0525" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="336.3682" font-size="13.91" textLength="12.6942" y="1019.9712" font-family="sans-serif" fill="#000000">id</text><ellipse cx="324.9874" cy="1033.2446" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="336.3682" font-size="13.91" textLength="99.8896" y="1036.1633" font-family="sans-serif" fill="#000000">url (canonical)</text><ellipse cx="324.9874" cy="1049.4367" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="336.3682" font-size="13.91" textLength="42.7419" y="1052.3554" font-family="sans-serif" fill="#000000">status</text><ellipse cx="324.9874" cy="1065.6288" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="336.3682" font-size="13.91" textLength="135.9278" y="1068.5475" font-family="sans-serif" fill="#000000">code (for SA codes)</text><ellipse cx="324.9874" cy="1081.8208" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="336.3682" font-size="13.91" textLength="166.349" y="1084.7395" font-family="sans-serif" fill="#000000">instance[] → Medication</text><line y1="1093.0782" x1="312.3419" y2="1093.0782" style="stroke:#181818;stroke-width:1.2645;" x2="549.8264"></line><text font-weight="bold" lengthAdjust="spacing" x="336.3682" font-size="13.91" textLength="158.3006" y="1111.0479" font-family="sans-serif" fill="#000000">Common Extensions</text><ellipse cx="324.9874" cy="1124.3213" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="336.3682" font-size="13.91" textLength="168.081" y="1127.24" font-family="sans-serif" fill="#000000">effectiveDate (required)</text><ellipse cx="324.9874" cy="1140.5134" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="336.3682" font-size="13.91" textLength="76.6814" y="1143.4321" font-family="sans-serif" fill="#000000">expiryDate</text></g>  <!-- class PricingCID --><g data-entity="PricingCID" id="entity_PricingCID" data-uid="ent0006" class="entity" data-source-line="68"><rect rx="3.1614" ry="3.1614" width="279.3113" x="417.9312" y="1256.2931" style="stroke:#181818;stroke-width:0.6323;" fill="#98FB98" height="358.0038"></rect><ellipse cx="454.5833" cy="1290.5839" rx="13.91" ry="13.91" style="stroke:#181818;stroke-width:1.2645;" fill="#ADD1B2"></ellipse><path d="M458.3374,1297.7167 Q457.6064,1298.0921 456.7963,1298.2699 Q455.9862,1298.4675 455.097,1298.4675 Q451.9357,1298.4675 450.2562,1296.3929 Q448.5965,1294.2985 448.5965,1290.3468 Q448.5965,1286.3951 450.2562,1284.3007 Q451.9357,1282.2063 455.097,1282.2063 Q455.9862,1282.2063 456.7963,1282.4039 Q457.6261,1282.6015 458.3374,1282.9769 L458.3374,1286.4149 Q457.5471,1285.6838 456.7963,1285.3479 Q456.0455,1284.9923 455.2551,1284.9923 Q453.5559,1284.9923 452.6865,1286.3556 Q451.8171,1287.6992 451.8171,1290.3468 Q451.8171,1292.9944 452.6865,1294.3578 Q453.5559,1295.7013 455.2551,1295.7013 Q456.0455,1295.7013 456.7963,1295.3655 Q457.5471,1295.0098 458.3374,1294.2787 L458.3374,1297.7167 Z " fill="#000000"></path><text lengthAdjust="spacing" x="540.7775" font-size="15.1745" textLength="70.4266" y="1276.7011" font-family="sans-serif" font-style="italic" fill="#000000">«Type 1»</text><text font-weight="bold" lengthAdjust="spacing" x="504.5476" font-size="16.439" textLength="142.8865" y="1295.539" font-family="sans-serif" fill="#000000">Product Pricing</text><text font-weight="bold" lengthAdjust="spacing" x="476.2167" font-size="16.439" textLength="199.5482" y="1314.675" font-family="sans-serif" fill="#000000">ChargeItemDefinition</text><line y1="1324.8747" x1="419.1958" y2="1324.8747" style="stroke:#181818;stroke-width:0.6323;" x2="695.978"></line><text font-weight="bold" lengthAdjust="spacing" x="425.5185" font-size="13.91" textLength="200.1663" y="1342.8444" font-family="sans-serif" fill="#000000">Identifies Product Pricing</text><line y1="1351.1831" x1="419.1958" y2="1351.1831" style="stroke:#181818;stroke-width:1.2645;" x2="695.978"></line><text font-weight="bold" lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="106.5865" y="1369.1529" font-family="sans-serif" fill="#000000">Key Elements</text><ellipse cx="431.8412" cy="1382.4262" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="113.3581" y="1385.3449" font-family="sans-serif" fill="#000000">propertyGroup[]</text><ellipse cx="431.8412" cy="1398.6183" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="126.2289" y="1401.537" font-family="sans-serif" fill="#000000">priceComponent[]</text><rect width="7.5873" x="428.0475" y="1411.0167" style="stroke:#C82930;stroke-width:1.2645;" fill="#F24D5C" height="7.5873"></rect><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="128.7351" y="1417.7291" font-family="sans-serif" fill="#000000">Listed Price (base)</text><rect width="7.5873" x="428.0475" y="1427.2088" style="stroke:#C82930;stroke-width:1.2645;" fill="#F24D5C" height="7.5873"></rect><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="202.788" y="1433.9211" font-family="sans-serif" fill="#000000">PHARMAC Subsidy (discount)</text><rect width="7.5873" x="428.0475" y="1443.4009" style="stroke:#C82930;stroke-width:1.2645;" fill="#F24D5C" height="7.5873"></rect><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="210.0894" y="1450.1132" font-family="sans-serif" fill="#000000">Patient Surcharge (surcharge)</text><rect width="7.5873" x="428.0475" y="1459.5929" style="stroke:#C82930;stroke-width:1.2645;" fill="#F24D5C" height="7.5873"></rect><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="246.4332" y="1466.3053" font-family="sans-serif" fill="#000000">Patient Co-Payment (informational)</text><line y1="1474.644" x1="419.1958" y2="1474.644" style="stroke:#181818;stroke-width:1.2645;" x2="695.978"></line><text font-weight="bold" lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="144.7845" y="1492.6137" font-family="sans-serif" fill="#000000">Pricing Extensions</text><ellipse cx="431.8412" cy="1505.887" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="118.3705" y="1508.8057" font-family="sans-serif" fill="#000000">costBrandSource</text><ellipse cx="431.8412" cy="1522.0791" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="127.8046" y="1524.9978" font-family="sans-serif" fill="#000000">wastageClaimable</text><ellipse cx="431.8412" cy="1538.2712" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="181.0808" y="1541.1899" font-family="sans-serif" fill="#000000">contractType (e.g., "PSS")</text><ellipse cx="431.8412" cy="1554.4632" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="104.6847" y="1557.3819" font-family="sans-serif" fill="#000000">dvLimitPercent</text><ellipse cx="431.8412" cy="1570.6553" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="111.8231" y="1573.574" font-family="sans-serif" fill="#000000">brandSwitchFee</text><ellipse cx="431.8412" cy="1586.8474" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="184.4225" y="1589.7661" font-family="sans-serif" fill="#000000">statim (e.g., "Must", "n/a")</text><ellipse cx="431.8412" cy="1603.0394" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="443.2221" font-size="13.91" textLength="186.3039" y="1605.9581" font-family="sans-serif" fill="#000000">inCombination (e.g., "n/a")</text></g>  <!-- class AuthCID --><g data-entity="AuthCID" id="entity_AuthCID" data-uid="ent0007" class="entity" data-source-line="89"><rect rx="3.1614" ry="3.1614" width="313.2237" x="27.8199" y="1243.0154" style="stroke:#181818;stroke-width:0.6323;" fill="#F5DEB3" height="384.3122"></rect><ellipse cx="79.7326" cy="1277.3062" rx="13.91" ry="13.91" style="stroke:#181818;stroke-width:1.2645;" fill="#ADD1B2"></ellipse><path d="M83.4867,1284.439 Q82.7556,1284.8144 81.9455,1284.9923 Q81.1355,1285.1898 80.2463,1285.1898 Q77.085,1285.1898 75.4055,1283.1152 Q73.7458,1281.0208 73.7458,1277.0691 Q73.7458,1273.1174 75.4055,1271.023 Q77.085,1268.9286 80.2463,1268.9286 Q81.1355,1268.9286 81.9455,1269.1262 Q82.7754,1269.3238 83.4867,1269.6992 L83.4867,1273.1372 Q82.6964,1272.4061 81.9455,1272.0702 Q81.1947,1271.7146 80.4044,1271.7146 Q78.7052,1271.7146 77.8358,1273.0779 Q76.9664,1274.4215 76.9664,1277.0691 Q76.9664,1279.7167 77.8358,1281.0801 Q78.7052,1282.4237 80.4044,1282.4237 Q81.1947,1282.4237 81.9455,1282.0878 Q82.6964,1281.7321 83.4867,1281.001 L83.4867,1284.439 Z " fill="#000000"></path><text lengthAdjust="spacing" x="169.318" font-size="15.1745" textLength="70.4266" y="1263.4234" font-family="sans-serif" font-style="italic" fill="#000000">«Type 2»</text><text font-weight="bold" lengthAdjust="spacing" x="105.1505" font-size="16.439" textLength="198.7616" y="1282.2613" font-family="sans-serif" fill="#000000">Special Authorization</text><text font-weight="bold" lengthAdjust="spacing" x="104.7572" font-size="16.439" textLength="199.5482" y="1301.3973" font-family="sans-serif" fill="#000000">ChargeItemDefinition</text><line y1="1311.597" x1="29.0845" y2="1311.597" style="stroke:#181818;stroke-width:0.6323;" x2="339.779"></line><text font-weight="bold" lengthAdjust="spacing" x="35.4072" font-size="13.91" textLength="214.7147" y="1329.5668" font-family="sans-serif" fill="#000000">Identifies SA Requirements</text><line y1="1337.9054" x1="29.0845" y2="1337.9054" style="stroke:#181818;stroke-width:1.2645;" x2="339.779"></line><text font-weight="bold" lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="106.5865" y="1355.8752" font-family="sans-serif" fill="#000000">Key Elements</text><ellipse cx="41.7299" cy="1369.1485" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="200.078" y="1372.0672" font-family="sans-serif" fill="#000000">code (SA2139, SA2520, etc.)</text><ellipse cx="41.7299" cy="1385.3406" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="95.0469" y="1388.2593" font-family="sans-serif" fill="#000000">applicability[]</text><ellipse cx="41.7299" cy="1401.5327" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="77.3402" y="1404.4514" font-family="sans-serif" fill="#000000">description</text><ellipse cx="41.7299" cy="1417.7247" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="144.4178" y="1420.6434" font-family="sans-serif" fill="#000000">language (#text/cql)</text><ellipse cx="41.7299" cy="1433.9168" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="119.2671" y="1436.8355" font-family="sans-serif" fill="#000000">expression (CQL)</text><line y1="1445.1742" x1="29.0845" y2="1445.1742" style="stroke:#181818;stroke-width:1.2645;" x2="339.779"></line><text font-weight="bold" lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="196.8518" y="1463.1439" font-family="sans-serif" fill="#000000">Authorization Extensions</text><ellipse cx="41.7299" cy="1476.4173" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="244.8439" y="1479.336" font-family="sans-serif" fill="#000000">authorizationForm (e.g., "SA2139")</text><ellipse cx="41.7299" cy="1492.6093" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="122.4118" y="1495.528" font-family="sans-serif" fill="#000000">authorizationTitle</text><ellipse cx="41.7299" cy="1508.8014" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="167.5241" y="1511.7201" font-family="sans-serif" fill="#000000">authorizationCaseCount</text><line y1="1520.0588" x1="29.0845" y2="1520.0588" style="stroke:#181818;stroke-width:1.2645;" x2="339.779"></line><text font-weight="bold" lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="116.9442" y="1538.0285" font-family="sans-serif" fill="#000000">Example Cases</text><ellipse cx="41.7299" cy="1551.3019" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="153.3085" y="1554.2206" font-family="sans-serif" fill="#000000">Initial - Confirmed HIV</text><ellipse cx="41.7299" cy="1567.494" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="174.1802" y="1570.4127" font-family="sans-serif" fill="#000000">Renewal - Confirmed HIV</text><ellipse cx="41.7299" cy="1583.686" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="207.0941" y="1586.6047" font-family="sans-serif" fill="#000000">Initial - Maternal transmission</text><ellipse cx="41.7299" cy="1599.8781" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="141.9659" y="1602.7968" font-family="sans-serif" fill="#000000">Initial/Renewal - PEP</text><ellipse cx="41.7299" cy="1616.0702" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="53.1108" font-size="13.91" textLength="280.3456" y="1618.9889" font-family="sans-serif" fill="#000000">Initial/Renewal - Percutaneous exposure</text></g>  <!-- class FundingCID --><g data-entity="FundingCID" id="entity_FundingCID" data-uid="ent0008" class="entity" data-source-line="112"><rect rx="3.1614" ry="3.1614" width="319.6828" x="773.2676" y="1239.854" style="stroke:#181818;stroke-width:0.6323;" fill="#E0FFFF" height="390.3879"></rect><ellipse cx="828.0869" cy="1274.1449" rx="13.91" ry="13.91" style="stroke:#181818;stroke-width:1.2645;" fill="#ADD1B2"></ellipse><path d="M831.841,1281.2777 Q831.1099,1281.6531 830.2998,1281.8309 Q829.4897,1282.0285 828.6006,1282.0285 Q825.4392,1282.0285 823.7598,1279.9538 Q822.1001,1277.8594 822.1001,1273.9078 Q822.1001,1269.9561 823.7598,1267.8617 Q825.4392,1265.7673 828.6006,1265.7673 Q829.4897,1265.7673 830.2998,1265.9648 Q831.1297,1266.1624 831.841,1266.5378 L831.841,1269.9758 Q831.0506,1269.2448 830.2998,1268.9089 Q829.549,1268.5532 828.7587,1268.5532 Q827.0594,1268.5532 826.1901,1269.9165 Q825.3207,1271.2601 825.3207,1273.9078 Q825.3207,1276.5554 826.1901,1277.9187 Q827.0594,1279.2623 828.7587,1279.2623 Q829.549,1279.2623 830.2998,1278.9264 Q831.0506,1278.5708 831.841,1277.8397 L831.841,1281.2777 Z " fill="#000000"></path><text lengthAdjust="spacing" x="918.3182" font-size="15.1745" textLength="70.4266" y="1260.2621" font-family="sans-serif" font-style="italic" fill="#000000">«Type 3»</text><text font-weight="bold" lengthAdjust="spacing" x="860.7649" font-size="16.439" textLength="185.5333" y="1279.0999" font-family="sans-serif" fill="#000000">Funding Mechanism</text><text font-weight="bold" lengthAdjust="spacing" x="853.7574" font-size="16.439" textLength="199.5482" y="1298.236" font-family="sans-serif" fill="#000000">ChargeItemDefinition</text><line y1="1308.4357" x1="774.5321" y2="1308.4357" style="stroke:#181818;stroke-width:0.6323;" x2="1091.6859"></line><text font-weight="bold" lengthAdjust="spacing" x="780.8548" font-size="13.91" textLength="216.1682" y="1326.4054" font-family="sans-serif" fill="#000000">Identifies Funding Scenario</text><line y1="1334.7441" x1="774.5321" y2="1334.7441" style="stroke:#181818;stroke-width:1.2645;" x2="1091.6859"></line><text font-weight="bold" lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="106.5865" y="1352.7138" font-family="sans-serif" fill="#000000">Key Elements</text><ellipse cx="787.1775" cy="1365.9872" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="95.0469" y="1368.9059" font-family="sans-serif" fill="#000000">applicability[]</text><ellipse cx="787.1775" cy="1382.1792" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="286.8047" y="1385.0979" font-family="sans-serif" fill="#000000">description (provider/endorsement rules)</text><ellipse cx="787.1775" cy="1398.3713" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="144.4178" y="1401.29" font-family="sans-serif" fill="#000000">language (#text/cql)</text><ellipse cx="787.1775" cy="1414.5634" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="119.2671" y="1417.4821" font-family="sans-serif" fill="#000000">expression (CQL)</text><ellipse cx="787.1775" cy="1430.7554" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="113.3581" y="1433.6741" font-family="sans-serif" fill="#000000">propertyGroup[]</text><ellipse cx="787.1775" cy="1446.9475" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="252.6615" y="1449.8662" font-family="sans-serif" fill="#000000">priceComponent[] (subsidy amount)</text><line y1="1458.2049" x1="774.5321" y2="1458.2049" style="stroke:#181818;stroke-width:1.2645;" x2="1091.6859"></line><text font-weight="bold" lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="153.9809" y="1476.1746" font-family="sans-serif" fill="#000000">Funding Extensions</text><ellipse cx="787.1775" cy="1489.448" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="83.7722" y="1492.3667" font-family="sans-serif" fill="#000000">fundingRule</text><ellipse cx="787.1775" cy="1505.6401" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="172.6588" y="1508.5588" font-family="sans-serif" fill="#000000">type (e.g., "community")</text><ellipse cx="787.1775" cy="1521.8321" rx="3.7936" ry="3.7936" style="stroke:#000000;stroke-width:1.2645;" fill="#000000"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="37.8109" y="1524.7508" font-family="sans-serif" fill="#000000">rule[]</text><rect width="7.5873" x="783.3839" y="1534.2306" style="stroke:#C82930;stroke-width:1.2645;" fill="#F24D5C" height="7.5873"></rect><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="179.3964" y="1540.9429" font-family="sans-serif" fill="#000000">CaseSequence (1, 2, etc.)</text><rect width="7.5873" x="783.3839" y="1550.4226" style="stroke:#C82930;stroke-width:1.2645;" fill="none" height="7.5873"></rect><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="134.9973" y="1557.135" font-family="sans-serif" fill="#000000">FundingMechanism</text><ellipse cx="787.1775" cy="1570.4083" rx="3.7936" ry="3.7936" style="stroke:#038048;stroke-width:1.2645;" fill="none"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="82.6176" y="1573.327" font-family="sans-serif" fill="#000000">Prescription</text><ellipse cx="787.1775" cy="1586.6004" rx="3.7936" ry="3.7936" style="stroke:#038048;stroke-width:1.2645;" fill="none"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="29.321" y="1589.5191" font-family="sans-serif" fill="#000000">BSO</text><ellipse cx="787.1775" cy="1602.7925" rx="3.7936" ry="3.7936" style="stroke:#038048;stroke-width:1.2645;" fill="none"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="64.7547" y="1605.7112" font-family="sans-serif" fill="#000000">RuralPSO</text><ellipse cx="787.1775" cy="1618.9845" rx="3.7936" ry="3.7936" style="stroke:#038048;stroke-width:1.2645;" fill="none"></ellipse><text lengthAdjust="spacing" x="798.5584" font-size="13.91" textLength="69.4004" y="1621.9032" font-family="sans-serif" fill="#000000">Pharmacy</text></g><g data-entity="MedRicovir" id="entity_MedRicovir" data-uid="ent0017" class="entity" data-source-line="148"><rect rx="3.1614" ry="3.1614" width="346.3389" x="1645.1694" y="618.3315" style="stroke:#181818;stroke-width:0.6323;" fill="#F1F1F1" height="118.2149"></rect><text lengthAdjust="spacing" x="1691.5654" font-size="17.7036" textLength="253.5469" y="637.2935" font-family="sans-serif" fill="#000000">Medication-Ricovir-Tenofovir</text><line y1="643.9978" x1="1646.434" y2="643.9978" style="stroke:#181818;stroke-width:0.6323;" x2="1990.2438"></line><text lengthAdjust="spacing" x="1652.7567" font-size="17.7036" textLength="312.0777" y="665.4888" font-family="sans-serif" fill="#000000">id = "Medication-Ricovir-Tenofovir"</text><text lengthAdjust="spacing" x="1652.7567" font-size="17.7036" textLength="331.1643" y="686.0969" font-family="sans-serif" fill="#000000">code = 50348251000117105 (NZMT)</text><text lengthAdjust="spacing" x="1652.7567" font-size="17.7036" textLength="154.6557" y="706.705" font-family="sans-serif" fill="#000000">brand = "Ricovir"</text><text lengthAdjust="spacing" x="1652.7567" font-size="17.7036" textLength="139.6146" y="727.3131" font-family="sans-serif" fill="#000000">form = "Tablet"</text></g><g data-entity="PriceRicovir" id="entity_PriceRicovir" data-uid="ent0018" class="entity" data-source-line="155"><rect rx="3.1614" ry="3.1614" width="340.7855" x="1648.3308" y="949.0093" style="stroke:#181818;stroke-width:0.6323;" fill="#F1F1F1" height="190.1555"></rect><text lengthAdjust="spacing" x="1657.1826" font-size="17.7036" textLength="323.0819" y="967.9713" font-family="sans-serif" fill="#000000">ChargeItemDefinition-Ricovir-Pricing</text><line y1="974.6756" x1="1649.5953" y2="974.6756" style="stroke:#181818;stroke-width:0.6323;" x2="1987.8518"></line><text font-weight="bold" lengthAdjust="spacing" x="1655.9181" font-size="17.7036" textLength="215.4167" y="996.1666" font-family="sans-serif" fill="#000000">Type: Product Pricing</text><line y1="1005.4" x1="1649.5953" y2="1005.4" style="stroke:#181818;stroke-width:1.2645;" x2="1987.8518"></line><text lengthAdjust="spacing" x="1655.9181" font-size="17.7036" textLength="175.7393" y="1026.891" font-family="sans-serif" fill="#000000">Listed Price: $13.45</text><text lengthAdjust="spacing" x="1655.9181" font-size="17.7036" textLength="143.0896" y="1047.4991" font-family="sans-serif" fill="#000000">Subsidy: $13.45</text><text lengthAdjust="spacing" x="1655.9181" font-size="17.7036" textLength="169.6969" y="1068.1072" font-family="sans-serif" fill="#000000">Patient Cost: $0.00</text><text lengthAdjust="spacing" x="1655.9181" font-size="17.7036" textLength="169.9476" y="1088.7153" font-family="sans-serif" fill="#000000">Contract Type: PSS</text><text lengthAdjust="spacing" x="1655.9181" font-size="17.7036" textLength="114.935" y="1109.3234" font-family="sans-serif" fill="#000000">DV Limit: 5%</text><text lengthAdjust="spacing" x="1655.9181" font-size="17.7036" textLength="112.385" y="1129.9315" font-family="sans-serif" fill="#000000">Statim: Must</text></g><g data-entity="AuthSA2139" id="entity_AuthSA2139" data-uid="ent0019" class="entity" data-source-line="166"><rect rx="3.1614" ry="3.1614" width="407.3209" x="2064.9975" y="949.0093" style="stroke:#181818;stroke-width:0.6323;" fill="#F1F1F1" height="190.1555"></rect><text lengthAdjust="spacing" x="2073.8493" font-size="17.7036" textLength="389.6173" y="967.9713" font-family="sans-serif" fill="#000000">ChargeItemDefinition-SA2139-Authorization</text><line y1="974.6756" x1="2066.262" y2="974.6756" style="stroke:#181818;stroke-width:0.6323;" x2="2471.0538"></line><text font-weight="bold" lengthAdjust="spacing" x="2072.5847" font-size="17.7036" textLength="275.5899" y="996.1666" font-family="sans-serif" fill="#000000">Type: Special Authorization</text><line y1="1005.4" x1="2066.262" y2="1005.4" style="stroke:#181818;stroke-width:1.2645;" x2="2471.0538"></line><text lengthAdjust="spacing" x="2090.2883" font-size="17.7036" textLength="268.2077" y="1026.891" font-family="sans-serif" fill="#000000">code: SA2139 (Antiretrovirals)</text><text lengthAdjust="spacing" x="2090.2883" font-size="17.7036" textLength="75.4045" y="1047.4991" font-family="sans-serif" fill="#000000">Cases: 7</text><rect width="7.5873" x="2075.1138" y="1060.0816" style="stroke:#C82930;stroke-width:1.2645;" fill="#F24D5C" height="7.5873"></rect><text lengthAdjust="spacing" x="2090.2883" font-size="17.7036" textLength="273.109" y="1068.1072" font-family="sans-serif" fill="#000000">Confirmed HIV (initial/renewal)</text><rect width="7.5873" x="2075.1138" y="1080.6896" style="stroke:#C82930;stroke-width:1.2645;" fill="none" height="7.5873"></rect><text lengthAdjust="spacing" x="2090.2883" font-size="17.7036" textLength="196.9438" y="1088.7153" font-family="sans-serif" fill="#000000">Maternal transmission</text><rect width="7.5873" x="2075.1138" y="1101.2977" style="stroke:#C82930;stroke-width:1.2645;" fill="none" height="7.5873"></rect><text lengthAdjust="spacing" x="2090.2883" font-size="17.7036" textLength="234.4083" y="1109.3234" font-family="sans-serif" fill="#000000">Post-exposure prophylaxis</text><rect width="7.5873" x="2075.1138" y="1121.9058" style="stroke:#C82930;stroke-width:1.2645;" fill="none" height="7.5873"></rect><text lengthAdjust="spacing" x="2090.2883" font-size="17.7036" textLength="208.6569" y="1129.9315" font-family="sans-serif" fill="#000000">Percutaneous exposure</text></g><g data-entity="AuthSA2520" id="entity_AuthSA2520" data-uid="ent0020" class="entity" data-source-line="177"><rect rx="3.1614" ry="3.1614" width="407.3209" x="1164.6434" y="969.242" style="stroke:#181818;stroke-width:0.6323;" fill="#F1F1F1" height="148.9394"></rect><text lengthAdjust="spacing" x="1173.4952" font-size="17.7036" textLength="389.6173" y="988.2039" font-family="sans-serif" fill="#000000">ChargeItemDefinition-SA2520-Authorization</text><line y1="994.9082" x1="1165.9079" y2="994.9082" style="stroke:#181818;stroke-width:0.6323;" x2="1570.6998"></line><text font-weight="bold" lengthAdjust="spacing" x="1172.2307" font-size="17.7036" textLength="275.5899" y="1016.3993" font-family="sans-serif" fill="#000000">Type: Special Authorization</text><line y1="1025.6327" x1="1165.9079" y2="1025.6327" style="stroke:#181818;stroke-width:1.2645;" x2="1570.6998"></line><text lengthAdjust="spacing" x="1189.9342" font-size="17.7036" textLength="220.4477" y="1047.1237" font-family="sans-serif" fill="#000000">code: SA2520 (PrEP/PEP)</text><text lengthAdjust="spacing" x="1189.9342" font-size="17.7036" textLength="75.4045" y="1067.7318" font-family="sans-serif" fill="#000000">Cases: 4</text><rect width="7.5873" x="1174.7597" y="1080.3142" style="stroke:#C82930;stroke-width:1.2645;" fill="#F24D5C" height="7.5873"></rect><text lengthAdjust="spacing" x="1189.9342" font-size="17.7036" textLength="184.4355" y="1088.3399" font-family="sans-serif" fill="#000000">PrEP (initial/renewal)</text><rect width="7.5873" x="1174.7597" y="1100.9223" style="stroke:#C82930;stroke-width:1.2645;" fill="#F24D5C" height="7.5873"></rect><text lengthAdjust="spacing" x="1189.9342" font-size="17.7036" textLength="177.1569" y="1108.948" font-family="sans-serif" fill="#000000">PEP (initial/renewal)</text></g><g data-entity="GMN24" id="entity_GMN24" data-uid="ent0025" class="entity" data-source-line="193"><path d="M666.4138,594.3052 L666.4138,672.0746 L590.0228,677.1327 L666.4138,682.1909 L666.4138,759.6046 A3.1614,3.1614 0 0 0 669.5751,762.7659 L1118.8136,762.7659 A3.1614,3.1614 0 0 0 1121.975,759.6046 L1121.975,603.7893 L1109.3296,591.1439 L669.5751,591.1439 A3.1614,3.1614 0 0 0 666.4138,594.3052" style="stroke:#181818;stroke-width:0.6323;" fill="#FFFFE0"></path><path d="M1109.3296,591.1439 L1109.3296,602.2086 A1.5807,1.5807 0 0 0 1110.9102,603.7893 L1121.975,603.7893 L1109.3296,591.1439" style="stroke:#181818;stroke-width:0.6323;" fill="#FFFFE0"></path><text font-weight="bold" lengthAdjust="spacing" x="674.001" font-size="15.1745" textLength="392.833" y="611.5519" font-family="sans-serif" fill="#000000">Search Pattern 1: Get Medication with Pricing</text><text lengthAdjust="spacing" x="674.001" font-size="15.1745" textLength="255.8031" y="629.216" font-family="monospace" fill="#000000">GET&nbsp;/Medication?name=Ricovir</text><text lengthAdjust="spacing" x="710.5443" font-size="15.1745" textLength="356.2971" y="646.88" font-family="monospace" fill="#000000">&amp;_include=ChargeItemDefinition:instance</text><text lengthAdjust="spacing" x="674.001" font-size="15.1745" textLength="4.8235" y="664.5441" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="674.001" font-size="15.1745" textLength="64.3212" y="682.2082" font-family="sans-serif" fill="#000000">Returns:</text><text lengthAdjust="spacing" x="674.001" font-size="15.1745" textLength="295.7547" y="699.8723" font-family="sans-serif" fill="#000000">• Medication-Ricovir-Tenofovir (match)</text><text lengthAdjust="spacing" x="674.001" font-size="15.1745" textLength="371.9755" y="717.5363" font-family="sans-serif" fill="#000000">• ChargeItemDefinition-Ricovir-Pricing (included)</text><text lengthAdjust="spacing" x="674.001" font-size="15.1745" textLength="429.0058" y="735.2004" font-family="sans-serif" fill="#000000">• ChargeItemDefinition-SA2139-Authorization (included)</text><text lengthAdjust="spacing" x="674.001" font-size="15.1745" textLength="429.0058" y="752.8645" font-family="sans-serif" fill="#000000">• ChargeItemDefinition-SA2520-Authorization (included)</text></g><g data-entity="GMN27" id="entity_GMN27" data-uid="ent0028" class="entity" data-source-line="205"><path d="M1169.7016,1387.8055 L1169.7016,1482.4485 A3.1614,3.1614 0 0 0 1172.8629,1485.6099 L1531.1211,1485.6099 A3.1614,3.1614 0 0 0 1534.2824,1482.4485 L1534.2824,1397.2895 L1521.637,1384.6441 L1172.8629,1384.6441 A3.1614,3.1614 0 0 0 1169.7016,1387.8055" style="stroke:#181818;stroke-width:0.6323;" fill="#FFFFE0"></path><path d="M1521.637,1384.6441 L1521.637,1395.7089 A1.5807,1.5807 0 0 0 1523.2177,1397.2895 L1534.2824,1397.2895 L1521.637,1384.6441" style="stroke:#181818;stroke-width:1.2645;" fill="#FFFFE0"></path><text font-weight="bold" lengthAdjust="spacing" x="1177.2888" font-size="15.1745" textLength="287.6562" y="1405.0521" font-family="sans-serif" fill="#000000">Search Pattern 2: Get by SA Code</text><text lengthAdjust="spacing" x="1177.2888" font-size="15.1745" textLength="338.0255" y="1422.7162" font-family="monospace" fill="#000000">GET&nbsp;/ChargeItemDefinition?code=SA2139</text><text lengthAdjust="spacing" x="1177.2888" font-size="15.1745" textLength="4.8235" y="1440.3803" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="1177.2888" font-size="15.1745" textLength="257.2331" y="1458.0444" font-family="sans-serif" fill="#000000">Returns all ChargeItemDefinitions</text><text lengthAdjust="spacing" x="1177.2888" font-size="15.1745" textLength="242.4439" y="1475.7084" font-family="sans-serif" fill="#000000">with authorization code SA2139</text></g><g data-entity="GMN30" id="entity_GMN30" data-uid="ent0031" class="entity" data-source-line="213"><path d="M750.5058,1722.2769 L750.5058,1869.9122 A3.1614,3.1614 0 0 0 753.6672,1873.0735 L1112.3032,1873.0735 A3.1614,3.1614 0 0 0 1115.4646,1869.9122 L1115.4646,1731.761 L1102.8191,1719.1155 L938.2903,1719.1155 L933.2322,1631.0655 L928.174,1719.1155 L753.6672,1719.1155 A3.1614,3.1614 0 0 0 750.5058,1722.2769" style="stroke:#181818;stroke-width:0.6323;" fill="#FFFFE0"></path><path d="M1102.8191,1719.1155 L1102.8191,1730.1803 A1.5807,1.5807 0 0 0 1104.3998,1731.761 L1115.4646,1731.761 L1102.8191,1719.1155" style="stroke:#181818;stroke-width:0.6323;" fill="#FFFFE0"></path><text font-weight="bold" lengthAdjust="spacing" x="758.0931" font-size="15.1745" textLength="233.0413" y="1739.5236" font-family="sans-serif" fill="#000000">Funding Mechanism Types:</text><text lengthAdjust="spacing" x="758.0931" font-size="15.1745" textLength="250.8536" y="1757.1876" font-family="sans-serif" fill="#000000">• Prescription (standard subsidy)</text><text lengthAdjust="spacing" x="758.0931" font-size="15.1745" textLength="200.2027" y="1774.8517" font-family="sans-serif" fill="#000000">• BSO (Bulk Supply Order)</text><text lengthAdjust="spacing" x="758.0931" font-size="15.1745" textLength="338.4034" y="1792.5158" font-family="sans-serif" fill="#000000">• RuralPSO (Rural Practitioner Supply Order)</text><text lengthAdjust="spacing" x="758.0931" font-size="15.1745" textLength="307.6468" y="1810.1799" font-family="sans-serif" fill="#000000">• Pharmacy (pharmacy-specific funding)</text><text lengthAdjust="spacing" x="758.0931" font-size="15.1745" textLength="4.8235" y="1827.8439" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="758.0931" font-size="15.1745" textLength="309.1361" y="1845.508" font-family="sans-serif" fill="#000000">Each may have multiple case sequences</text><text lengthAdjust="spacing" x="758.0931" font-size="15.1745" textLength="240.836" y="1863.1721" font-family="sans-serif" fill="#000000">with different applicability rules</text></g>  <!-- reverse link CID to PricingCID --><g data-entity-2="PricingCID" data-entity-1="CID" id="link_CID_PricingCID" data-uid="lnk9" class="link" data-source-line="135"><path codeLine="135" d="M462.4052,1174.591 C462.4052,1206.9506 462.4052,1220.5698 462.4052,1256.2172" style="stroke:#4169E1;stroke-width:1.2645;" id="CID-backto-PricingCID" fill="none"></path><polygon style="stroke:#4169E1;stroke-width:1.2645;" fill="none" points="462.4052,1151.8292,454.8179,1174.591,469.9924,1174.591,462.4052,1151.8292"></polygon><text lengthAdjust="spacing" x="386.5326" font-size="13.91" textLength="75.5064" y="1200.502" font-family="sans-serif" fill="#000000">specializes</text></g>  <!-- reverse link CID to AuthCID --><g data-entity-2="AuthCID" data-entity-1="CID" id="link_CID_AuthCID" data-uid="lnk10" class="link" data-source-line="136"><path codeLine="136" d="M321.1937,1174.591 C321.1937,1202.8788 321.1937,1211.4777 321.1937,1242.7372" style="stroke:#4169E1;stroke-width:1.2645;" id="CID-backto-AuthCID" fill="none"></path><polygon style="stroke:#4169E1;stroke-width:1.2645;" fill="none" points="321.1937,1151.8292,313.6065,1174.591,328.781,1174.591,321.1937,1151.8292"></polygon><text lengthAdjust="spacing" x="245.3212" font-size="13.91" textLength="75.5064" y="1193.7494" font-family="sans-serif" fill="#000000">specializes</text></g>  <!-- reverse link CID to FundingCID --><g data-entity-2="FundingCID" data-entity-1="CID" id="link_CID_FundingCID" data-uid="lnk11" class="link" data-source-line="137"><path codeLine="137" d="M506.8665,1174.6036 C506.8665,1225.5141 506.8665,1252.4994 506.8665,1252.4994 C506.8665,1252.4994 652.2762,1252.4994 773.2549,1252.4994" style="stroke:#4169E1;stroke-width:1.2645;" id="CID-backto-FundingCID" fill="none"></path><polygon style="stroke:#4169E1;stroke-width:1.2645;" fill="none" points="506.8665,1151.8419,499.2792,1174.6036,514.4537,1174.6036,506.8665,1151.8419"></polygon><text lengthAdjust="spacing" x="590.9965" font-size="13.91" textLength="75.5064" y="1248.9719" font-family="sans-serif" fill="#000000">specializes</text></g>  <!-- reverse link Medication to CID --><g data-entity-2="CID" data-entity-1="Medication" id="link_Medication_CID" data-uid="lnk12" class="link" data-source-line="141"><path codeLine="141" d="M431.2089,849.3002 C431.2089,881.2931 431.2089,906.4701 431.2089,936.0478" style="stroke:#4169E1;stroke-width:1.2645;" id="Medication-backto-CID" fill="none"></path><polygon style="stroke:#4169E1;stroke-width:1.2645;" fill="#4169E1" points="431.2089,841.7129,426.1507,853.0938,431.2089,848.0356,436.2671,853.0938,431.2089,841.7129"></polygon><text lengthAdjust="spacing" x="440.1484" font-size="13.91" textLength="58.9272" y="868.9138" font-family="sans-serif" fill="#000000">instance</text><text lengthAdjust="spacing" x="432.4734" font-size="13.91" textLength="74.277" y="885.1058" font-family="sans-serif" fill="#000000">references</text><text lengthAdjust="spacing" x="423.3501" font-size="13.91" textLength="8.8499" y="864.6081" font-family="sans-serif" fill="#000000">1</text><text lengthAdjust="spacing" x="406.0791" font-size="13.91" textLength="24.6481" y="922.8145" font-family="sans-serif" fill="#000000">0..*</text></g>  <!-- reverse link Medication to PricingCID --><g data-entity-2="PricingCID" data-entity-1="Medication" id="link_Medication_PricingCID" data-uid="lnk13" class="link" data-source-line="142"><path codeLine="142" d="M564.2008,849.2116 C564.2008,971.4676 564.2008,1130.547 564.2008,1256.154" style="stroke:#4169E1;stroke-width:1.2645;" id="Medication-backto-PricingCID" fill="none"></path><polygon style="stroke:#4169E1;stroke-width:1.2645;" fill="#4169E1" points="564.2008,841.6244,559.1426,853.0053,564.2008,847.9471,569.259,853.0053,564.2008,841.6244"></polygon><text lengthAdjust="spacing" x="565.4654" font-size="13.91" textLength="53.806" y="1028.9289" font-family="sans-serif" fill="#000000">product</text><text lengthAdjust="spacing" x="568.5829" font-size="13.91" textLength="47.571" y="1045.121" font-family="sans-serif" fill="#000000">pricing</text><text lengthAdjust="spacing" x="564.0306" font-size="13.91" textLength="8.8499" y="864.5145" font-family="sans-serif" fill="#000000">1</text><text lengthAdjust="spacing" x="538.5975" font-size="13.91" textLength="26.543" y="1243.1252" font-family="sans-serif" fill="#000000">0..1</text></g>  <!-- reverse link Medication to AuthCID --><g data-entity-2="AuthCID" data-entity-1="Medication" id="link_Medication_AuthCID" data-uid="lnk14" class="link" data-source-line="143"><path codeLine="143" d="M293.0577,849.2116 C293.0577,967.2314 293.0577,1119.027 293.0577,1242.9269" style="stroke:#4169E1;stroke-width:1.2645;" id="Medication-backto-AuthCID" fill="none"></path><polygon style="stroke:#4169E1;stroke-width:1.2645;" fill="#4169E1" points="293.0577,841.6244,287.9995,853.0053,293.0577,847.9471,298.1158,853.0053,293.0577,841.6244"></polygon><text lengthAdjust="spacing" x="222.5653" font-size="13.91" textLength="48.5355" y="1022.3154" font-family="sans-serif" fill="#000000">special</text><text lengthAdjust="spacing" x="200.7461" font-size="13.91" textLength="92.1739" y="1038.5075" font-family="sans-serif" fill="#000000">authorization</text><text lengthAdjust="spacing" x="277.212" font-size="13.91" textLength="8.8499" y="864.5145" font-family="sans-serif" fill="#000000">1</text><text lengthAdjust="spacing" x="274.3319" font-size="13.91" textLength="24.6481" y="1229.7634" font-family="sans-serif" fill="#000000">0..*</text></g>  <!-- reverse link Medication to FundingCID --><g data-entity-2="FundingCID" data-entity-1="Medication" id="link_Medication_FundingCID" data-uid="lnk15" class="link" data-source-line="144"><path codeLine="144" d="M577.0486,849.3002 C577.0486,1017.7498 577.0486,1247.4413 577.0486,1247.4413 C577.0486,1247.4413 678.3131,1247.4413 772.8503,1247.4413" style="stroke:#4169E1;stroke-width:1.2645;" id="Medication-backto-FundingCID" fill="none"></path><polygon style="stroke:#4169E1;stroke-width:1.2645;" fill="#4169E1" points="577.0486,841.7129,571.9904,853.0938,577.0486,848.0356,582.1067,853.0938,577.0486,841.7129"></polygon><text lengthAdjust="spacing" x="595.7889" font-size="13.91" textLength="52.8687" y="1122.5051" font-family="sans-serif" fill="#000000">funding</text><text lengthAdjust="spacing" x="578.3131" font-size="13.91" textLength="87.8202" y="1138.6971" font-family="sans-serif" fill="#000000">mechanisms</text><text lengthAdjust="spacing" x="577.6211" font-size="13.91" textLength="8.8499" y="864.6081" font-family="sans-serif" fill="#000000">1</text><text lengthAdjust="spacing" x="738.3451" font-size="13.91" textLength="24.6481" y="1233.3147" font-family="sans-serif" fill="#000000">0..*</text></g>  <!-- reverse link MedRicovir to PriceRicovir --><g data-entity-2="PriceRicovir" data-entity-1="MedRicovir" id="link_MedRicovir_PriceRicovir" data-uid="lnk21" class="link" data-source-line="186"><path codeLine="186" d="M1818.4117,743.635 C1818.4117,801.0326 1818.4117,881.6598 1818.4117,948.9461" style="stroke:#4169E1;stroke-width:1.2645;" id="MedRicovir-backto-PriceRicovir" fill="none"></path><polygon style="stroke:#4169E1;stroke-width:1.2645;" fill="#4169E1" points="1818.4117,736.0478,1813.3536,747.4286,1818.4117,742.3705,1823.4699,747.4286,1818.4117,736.0478"></polygon><text lengthAdjust="spacing" x="1758.9782" font-size="13.91" textLength="58.9272" y="838.9694" font-family="sans-serif" fill="#000000">instance</text></g>  <!-- reverse link MedRicovir to AuthSA2139 --><g data-entity-2="AuthSA2139" data-entity-1="MedRicovir" id="link_MedRicovir_AuthSA2139" data-uid="lnk22" class="link" data-source-line="187"><path codeLine="187" d="M1999.4057,677.1327 C2126.2266,677.1327 2268.5888,677.1327 2268.5888,677.1327 C2268.5888,677.1327 2268.5888,840.2713 2268.5888,948.9334" style="stroke:#4169E1;stroke-width:1.2645;" id="MedRicovir-backto-AuthSA2139" fill="none"></path><polygon style="stroke:#4169E1;stroke-width:1.2645;" fill="#4169E1" points="1991.8184,677.1327,2003.1993,682.1909,1998.1411,677.1327,2003.1993,672.0746,1991.8184,677.1327"></polygon><text lengthAdjust="spacing" x="2206.6768" font-size="13.91" textLength="58.9272" y="673.6052" font-family="sans-serif" fill="#000000">instance</text></g>  <!-- reverse link MedRicovir to AuthSA2520 --><g data-entity-2="AuthSA2520" data-entity-1="MedRicovir" id="link_MedRicovir_AuthSA2520" data-uid="lnk23" class="link" data-source-line="188"><path codeLine="188" d="M1637.4178,677.1327 C1510.5969,677.1327 1368.2347,677.1327 1368.2347,677.1327 C1368.2347,677.1327 1368.2347,861.9709 1368.2347,969.1914" style="stroke:#4169E1;stroke-width:1.2645;" id="MedRicovir-backto-AuthSA2520" fill="none"></path><polygon style="stroke:#4169E1;stroke-width:1.2645;" fill="#4169E1" points="1645.0051,677.1327,1633.6242,672.0746,1638.6823,677.1327,1633.6242,682.1909,1645.0051,677.1327"></polygon><text lengthAdjust="spacing" x="1308.8012" font-size="13.91" textLength="58.9272" y="681.2557" font-family="sans-serif" fill="#000000">instance</text></g>  <!-- link GMN27 to AuthCID --><g data-entity-2="AuthCID" data-entity-1="GMN27" id="link_GMN27_AuthCID" data-uid="lnk29" class="link" data-source-line="205"><path d="M1351.7956,1384.4038 C1351.7956,1314.07 1351.7956,1195.595 1351.7956,1195.595 C1351.7956,1195.595 331.3101,1195.595 331.3101,1195.595 C331.3101,1195.595 331.3101,1215.0816 331.3101,1242.9395" style="stroke:#4169E1;stroke-width:1.2645;stroke-dasharray:7.0,7.0;" id="GMN27-AuthCID" fill="none"></path></g><text lengthAdjust="spacing" x="937.1641" font-size="15.1745" textLength="609.2327" y="1894.7461" font-family="sans-serif" font-style="italic" fill="#888888">PHARMAC Schedule Implementation Guide - ChargeItemDefinition Relationships</text></g></svg>
+</div>
+<p><br clear="all"/></p>
+
+<h2 id="search-patterns">Search Patterns</h2>
+
+<h3 id="pattern-1-search-medication-with-pricing">Pattern 1: Search Medication with Pricing</h3>
+
+<p>Retrieve a medication and all its associated ChargeItemDefinitions:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /Medication?name=Ricovir&amp;_revinclude=ChargeItemDefinition:instance
+</code></pre></div></div>
+
+<p><strong>Returns:</strong></p>
+<ul>
+  <li>Medication-Ricovir-Tenofovir (match)</li>
+  <li>ChargeItemDefinition-Ricovir-Pricing (included)</li>
+</ul>
+
+<h3 id="pattern-2-search-medication-with-authorizations">Pattern 2: Search Medication with Authorizations</h3>
+
+<p>Retrieve a medication and its authorization requirements:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /Medication?code=50348251000117105&amp;_revinclude=ChargeItemDefinition:instance
+</code></pre></div></div>
+
+<p><strong>Returns:</strong></p>
+<ul>
+  <li>Medication-Ricovir-Tenofovir (match)</li>
+  <li>ChargeItemDefinition-Ricovir-Pricing (included)</li>
+  <li>ChargeItemDefinition-Tenofovir-Emtricitabine-SA2139-Authorization (included)</li>
+  <li>ChargeItemDefinition-Tenofovir-Emtricitabine-SA2520-Authorization (included)</li>
+</ul>
+
+<h3 id="pattern-3-search-by-special-authority-code">Pattern 3: Search by Special Authority Code</h3>
+
+<p>Retrieve all ChargeItemDefinitions for a specific special authority form:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /ChargeItemDefinition?code=SA2139
+</code></pre></div></div>
+
+<p><strong>Returns:</strong></p>
+<ul>
+  <li>All ChargeItemDefinitions with authorization code SA2139</li>
+</ul>
+
+<h3 id="pattern-4-reverse-include-from-medication">Pattern 4: Reverse Include from Medication</h3>
+
+<p>Retrieve a medication and include all ChargeItemDefinitions that reference it:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /Medication/Medication-Ricovir-Tenofovir?_revinclude=ChargeItemDefinition:instance
+</code></pre></div></div>
+
+<p><strong>Returns:</strong></p>
+<ul>
+  <li>Medication-Ricovir-Tenofovir</li>
+  <li>All ChargeItemDefinitions that reference this medication</li>
+</ul>
+
+<h3 id="pattern-5-search-by-special-authority-and-include-medications">Pattern 5: Search by Special Authority and Include Medications</h3>
+
+<p>Retrieve a Special Authority <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> and all associated <code class="language-plaintext highlighter-rouge">Medication</code> resources</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /ChargeItemDefinition?code=SA2139?_include=*
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /ChargeItemDefinition?code=SA2139?_include=ChargeItemDefinition:instance
+</code></pre></div></div>
+
+<h2 id="complete-example-ricovir-tenofovir">Complete Example: Ricovir (Tenofovir)</h2>
+
+<p>Ricovir demonstrates the full complexity of the relationship model:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Medication-Ricovir-Tenofovir
+  └── Referenced by:
+      ├── ChargeItemDefinition-Ricovir-Pricing (Product Pricing)
+      │   ├── Listed Price: $13.45
+      │   ├── PHARMAC Subsidy: $13.45 (fully subsidized)
+      │   ├── Contract Type: PSS
+      │   ├── DV Limit: 5%
+      │   ├── Statim: Must
+      │   └── In-Combination: n/a
+      │
+      ├── ChargeItemDefinition-Tenofovir-Emtricitabine-SA2139-Authorization (SA2139 - Antiretrovirals)
+      │   ├── Case 1: Initial - Confirmed HIV
+      │   ├── Case 2: Renewal - Confirmed HIV
+      │   ├── Case 3: Initial - Maternal transmission prevention
+      │   ├── Case 4: Initial - Post-exposure prophylaxis (PEP)
+      │   ├── Case 5: Renewal - Second/subsequent PEP
+      │   ├── Case 6: Initial - Percutaneous exposure
+      │   └── Case 7: Renewal - Second/subsequent percutaneous exposure
+      │
+      └── ChargeItemDefinition-Tenofovir-Emtricitabine-SA2520-Authorization (SA2520 - PrEP/PEP)
+          ├── Case 1: Initial - Pre-exposure prophylaxis (PrEP)
+          ├── Case 2: Renewal - PrEP
+          ├── Case 3: Initial - Post-exposure prophylaxis (PEP)
+          └── Case 4: Renewal - Second/subsequent PEP
+</code></pre></div></div>
+
+<h2 id="understanding-applicability-rules">Understanding Applicability Rules</h2>
+
+<p>ChargeItemDefinitions use the <code class="language-plaintext highlighter-rouge">applicability</code> element with CQL expressions to define when they apply:</p>
+
+<h3 id="pricing-applicability">Pricing Applicability</h3>
+
+<pre><code class="language-fsh">* applicability[0].description = "Community (subsidized) pricing - fully subsidized"
+</code></pre>
+
+<p>Simple text-based rules for pricing scenarios.</p>
+
+<h3 id="authorization-applicability">Authorization Applicability</h3>
+
+<pre><code class="language-fsh">* applicability[0].description = "Initial application - Confirmed HIV"
+* applicability[0].language = #text/cql
+* applicability[0].expression = "exists(Condition where code in 'ConfirmedHIVInfection')"
+</code></pre>
+
+<p>CQL expressions that define clinical eligibility criteria, allowing for:</p>
+<ul>
+  <li>Complex conditional logic</li>
+  <li>Multiple requirement combinations (AND/OR)</li>
+  <li>Clinical condition checks</li>
+  <li>Provider requirement validation</li>
+</ul>
+
+<h3 id="funding-mechanism-applicability">Funding Mechanism Applicability</h3>
+
+<pre><code class="language-fsh">* applicability[0].description = "Condition (endorsement): Additional subsidy by endorsement..."
+* applicability[0].language = #text/cql
+* applicability[0].expression = "exists(Condition where code in 'ChildOrAdolescent') and 
+                                  exists(Condition where code in 'UnableToTolerateGoserelin') and 
+                                  exists(Condition where code in 'PrescriptionEndorsedForAdditionalSubsidy')"
+</code></pre>
+
+<p>Complex rules combining patient demographics, clinical conditions, and administrative requirements.</p>
+
+<h2 id="extensions-and-attributes">Extensions and Attributes</h2>
+
+<h3 id="pricing-attributes">Pricing Attributes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Extension</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>effectiveDate</td>
+      <td>date</td>
+      <td>When pricing becomes effective</td>
+    </tr>
+    <tr>
+      <td>expiryDate</td>
+      <td>date</td>
+      <td>When pricing expires (optional)</td>
+    </tr>
+    <tr>
+      <td>costBrandSource</td>
+      <td>boolean</td>
+      <td>Pricing sourced from cost brand</td>
+    </tr>
+    <tr>
+      <td>wastageClaimable</td>
+      <td>boolean</td>
+      <td>Wastage may be claimed</td>
+    </tr>
+    <tr>
+      <td>contractType</td>
+      <td>string</td>
+      <td>PHARMAC contract type (e.g., PSS)</td>
+    </tr>
+    <tr>
+      <td>dvLimitPercent</td>
+      <td>decimal</td>
+      <td>Daily volume limit percentage</td>
+    </tr>
+    <tr>
+      <td>brandSwitchFee</td>
+      <td>boolean</td>
+      <td>Brand switch fee applies</td>
+    </tr>
+    <tr>
+      <td>statim</td>
+      <td>string</td>
+      <td>Urgent dispensing rules (Must/n/a)</td>
+    </tr>
+    <tr>
+      <td>inCombination</td>
+      <td>string</td>
+      <td>Combination therapy requirement (n/a)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="authorization-attributes">Authorization Attributes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Extension</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>authorizationForm</td>
+      <td>string</td>
+      <td>Special authority form code (e.g., SA2139)</td>
+    </tr>
+    <tr>
+      <td>authorizationTitle</td>
+      <td>string</td>
+      <td>Human-readable authorization title</td>
+    </tr>
+    <tr>
+      <td>authorizationCaseCount</td>
+      <td>integer</td>
+      <td>Number of distinct authorization cases</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="funding-rule-attributes">Funding Rule Attributes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Extension</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fundingRule.type</td>
+      <td>code</td>
+      <td>Funding type (e.g., community)</td>
+    </tr>
+    <tr>
+      <td>fundingRule.rule.type</td>
+      <td>code</td>
+      <td>Rule type (e.g., CaseSequence, FundingMechanism)</td>
+    </tr>
+    <tr>
+      <td>fundingRule.rule.value</td>
+      <td>integer/decimal</td>
+      <td>Rule value</td>
+    </tr>
+    <tr>
+      <td>fundingRule.rule.attribute</td>
+      <td>code</td>
+      <td>Rule attribute (e.g., Prescription, BSO)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="best-practices">Best Practices</h2>
+
+<h3 id="for-api-consumers">For API Consumers</h3>
+
+<ol>
+  <li>
+    <p><strong>Always use _include</strong>: When retrieving Medication resources, use <code class="language-plaintext highlighter-rouge">_include=ChargeItemDefinition:instance</code> to get all related pricing and authorization information in a single request.</p>
+  </li>
+  <li><strong>Check ChargeItemDefinition types</strong>: Examine the content to determine the type:
+    <ul>
+      <li>Has <code class="language-plaintext highlighter-rouge">propertyGroup</code>? → Product Pricing</li>
+      <li>Has <code class="language-plaintext highlighter-rouge">code</code> with SA prefix? → Special Authorization</li>
+      <li>Has <code class="language-plaintext highlighter-rouge">fundingRule</code> extension? → Funding Mechanism</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Process multiple scenarios</strong>: A medication may have multiple authorization forms (SA2139, SA2520) and multiple funding mechanisms (Sequence 1, 2, etc.). Process all applicable ChargeItemDefinitions.</p>
+  </li>
+  <li>
+    <p><strong>Evaluate applicability rules</strong>: Use the CQL expressions in <code class="language-plaintext highlighter-rouge">applicability</code> to determine if a ChargeItemDefinition applies to a specific clinical scenario.</p>
+  </li>
+  <li><strong>Check effective dates</strong>: Always verify that the ChargeItemDefinition is currently effective by checking <code class="language-plaintext highlighter-rouge">effectiveDate</code> and <code class="language-plaintext highlighter-rouge">expiryDate</code> extensions.</li>
+</ol>
+
+<h3 id="for-api-implementers">For API Implementers</h3>
+
+<ol>
+  <li>
+    <p><strong>Create separate ChargeItemDefinitions</strong>: Don't combine pricing, authorization, and funding rules in a single ChargeItemDefinition. Create separate instances for each concern.</p>
+  </li>
+  <li>
+    <p><strong>Use consistent URL patterns</strong>: Follow the pattern <code class="language-plaintext highlighter-rouge">ChargeItemDefinition/{Type}-{Product}-{Identifier}</code> for URLs.</p>
+  </li>
+  <li><strong>Implement proper search parameters</strong>: Support searching by:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">instance</code> (to find ChargeItemDefinitions for a Medication)</li>
+      <li><code class="language-plaintext highlighter-rouge">code</code> (to find ChargeItemDefinitions by special authority code)</li>
+      <li><code class="language-plaintext highlighter-rouge">effectiveDate</code> (to find current ChargeItemDefinitions)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Maintain referential integrity</strong>: Ensure all ChargeItemDefinitions reference valid Medication or Device resources via <code class="language-plaintext highlighter-rouge">instance</code> or <code class="language-plaintext highlighter-rouge">deviceDefinition</code> extensions.</p>
+  </li>
+  <li><strong>Document CQL expressions</strong>: Provide clear, human-readable descriptions for all <code class="language-plaintext highlighter-rouge">applicability</code> rules alongside the CQL expressions.</li>
+</ol>
+
+<h2 id="related-resources">Related Resources</h2>
+
+<ul>
+  <li><a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition Profile</a></li>
+  <li><a href="StructureDefinition-pharmac-medication.html">Medication Profile</a></li>
+  <li><a name="l1951">​</a><a href="searchparameters.html">Search Parameters</a></li>
+  <li><a href="examples.html">Examples</a></li>
+</ul>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 27, 2026 00:29+0000">2026-03-27</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

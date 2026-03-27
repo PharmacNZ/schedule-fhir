@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SearchParameter xmlns="http://hl7.org/fhir">
+  <id value="MedicationNameSearchParam"/>
+  <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-name"/>
+  <version value="0.0.1"/>
+  <name value="MedicationName"/>
+  <status value="active"/>
+  <date value="2026-03-27T00:29:47+00:00"/>
+  <publisher value="Pharmac"/>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.pharmac.govt.nz/about/contact"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="email"/>
+      <value value="enquiry@pharmac.govt.nz"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Search for medications by the text representation of the medication code (e.g., 'Gaviscon Infant', 'Acidex oral liquid'). Enables discovery by the full medication name or formulation description."/>
+  <code value="name"/>
+  <base value="Medication"/>
+  <type value="string"/>
+  <expression value="Medication.code.text"/>
+</SearchParameter>

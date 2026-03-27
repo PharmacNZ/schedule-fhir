@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ChargeItemDefinition xmlns="http://hl7.org/fhir">
+  <id value="ChargeItemDefinition-SA2520-Authorization"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date">
+    <valueDate value="2026-03-11"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-form">
+    <valueString value="SA2520"/>
+  </extension>
+  <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization"/>
+  <version value="0.0.1"/>
+  <status value="active"/>
+  <date value="2026-03-27T00:29:47+00:00"/>
+  <publisher value="Pharmac"/>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.pharmac.govt.nz/about/contact"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="email"/>
+      <value value="enquiry@pharmac.govt.nz"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Special Authorization SA2520. Detailed eligibility criteria available via authorization form."/>
+  <code>
+    <coding>
+      <system value="http://pharmac.govt.nz/fhir/sa"/>
+      <code value="SA2520"/>
+    </coding>
+    <text value="SA2520"/>
+  </code>
+  <instance>
+    <reference value="Medication/Medication-Ricovir-Tenofovir"/>
+  </instance>
+  <applicability>
+    <description value="Initial application - Pre-exposure prophylaxis (PrEP). Applications from any relevant practitioner. Approvals valid for 24 months."/>
+    <language value="text/cql"/>
+    <expression value="exists(Condition where code in 'HIVNegativeNoAcuteSymptomsAndSeroconversionAssessed') and exists(Condition where code in 'ElevatedRiskOfHIVExposurePrEPClinicallyAppropriate')"/>
+  </applicability>
+  <applicability>
+    <description value="Renewal - Pre-exposure prophylaxis (PrEP). Applications from any relevant practitioner. Approvals valid for 24 months."/>
+    <language value="text/cql"/>
+    <expression value="exists(Condition where code in 'HIVNegativeNoAcuteSymptomsAndSeroconversionAssessed') and exists(Condition where code in 'ElevatedRiskOfHIVExposurePrEPClinicallyAppropriate')"/>
+  </applicability>
+  <applicability>
+    <description value="Initial application - post-exposure prophylaxis (PEP) following exposure to HIV. Applications from any relevant practitioner. Approvals valid for 4 weeks."/>
+    <language value="text/cql"/>
+    <expression value="exists(Condition where code in 'TreatmentInitiatedWithin72HoursPostExposure') and (exists(Condition where code in 'CondomlessAnalOrReceptiveVaginalIntercourseWithKnownHIVPositiveVL&gt;200') or exists(Condition where code in 'SharedInjectingEquipmentWithKnownHIVPositive') or exists(Condition where code in 'NonConsensualIntercourseRiskAssessmentIndicatesProphylaxisAppropriate') or exists(Condition where code in 'CondomlessAnalIntercourseWithHighPrevalenceCountryOrRiskGroupStatusUnknown'))"/>
+  </applicability>
+  <applicability>
+    <description value="Renewal - second or subsequent post-exposure prophylaxis (PEP). Applications from any relevant practitioner. Approvals valid for 4 weeks."/>
+    <language value="text/cql"/>
+    <expression value="exists(Condition where code in 'TreatmentInitiatedWithin72HoursPostExposure') and (exists(Condition where code in 'CondomlessAnalOrReceptiveVaginalIntercourseWithKnownHIVPositiveVL&gt;200') or exists(Condition where code in 'SharedInjectingEquipmentWithKnownHIVPositive') or exists(Condition where code in 'NonConsensualIntercourseRiskAssessmentIndicatesProphylaxisAppropriate') or exists(Condition where code in 'CondomlessAnalIntercourseWithHighPrevalenceCountryOrRiskGroupStatusUnknown'))"/>
+  </applicability>
+</ChargeItemDefinition>

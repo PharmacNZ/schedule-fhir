@@ -1,0 +1,173 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/ValueSet/chargeitem-billingcodes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ChargeItemCode",
+    "title" : "ChargeItemCode",
+    "description" : "Example set of codes that can be used for billing purposes.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/chargeitem-billingcodes"],
+    "oids" : ["2.16.840.1.113883.4.642.3.848"],
+    "sources" : ["2.16.840.1.113883.4.642.3.848"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/identifier-type",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "Identifier Type Codes",
+    "title" : "IdentifierType",
+    "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0203"],
+    "oids" : ["2.16.840.1.113883.4.642.3.45"],
+    "sources" : ["2.16.840.1.113883.4.642.3.45"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-medication.html" : "PHARMAC Medication"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "IdentifierUse",
+    "title" : "IdentifierUse",
+    "description" : "Identifies the purpose for this identifier, if known .",
+    "systems" : ["http://hl7.org/fhir/identifier-use"],
+    "oids" : ["2.16.840.1.113883.4.642.3.57"],
+    "sources" : ["2.16.840.1.113883.4.642.3.57"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-medication.html" : "PHARMAC Medication"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/invoice-priceComponentType",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "InvoicePriceComponentType",
+    "title" : "InvoicePriceComponentType",
+    "description" : "Codes indicating the kind of the price component.",
+    "systems" : ["http://hl7.org/fhir/invoice-priceComponentType"],
+    "oids" : ["2.16.840.1.113883.4.642.3.868"],
+    "sources" : ["2.16.840.1.113883.4.642.3.868"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/jurisdiction",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "Jurisdiction ValueSet",
+    "title" : "Jurisdiction",
+    "description" : "This value set defines a base set of codes for country, country subdivision and region    for indicating where a resource is intended to be used.   \r\n   \r\n   Note: The codes for countries and country subdivisions are taken from    [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)    while the codes for \"supra-national\" regions are from    [UN Standard country or area codes for statistical use (M49)](http://unstats.un.org/unsd/methods/m49/m49.htm).",
+    "systems" : ["http://unstats.un.org/unsd/methods/m49/m49.htm",
+    "urn:iso:std:iso:3166",
+    "urn:iso:std:iso:3166:-2"],
+    "oids" : ["2.16.840.1.113883.4.642.3.48"],
+    "sources" : ["2.16.840.1.113883.4.642.3.48"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/languages",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CommonLanguages",
+    "title" : "Common Languages",
+    "description" : "This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47)",
+    "systems" : ["urn:ietf:bcp:47"],
+    "oids" : ["2.16.840.1.113883.4.642.3.20"],
+    "sources" : ["2.16.840.1.113883.4.642.3.20"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition",
+    "StructureDefinition-pharmac-medication.html" : "PHARMAC Medication"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-form-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTFormCodes",
+    "title" : "SNOMED CT Form Codes",
+    "description" : "This value set includes all dose form codes from SNOMED CT - provided as an exemplar.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.374"],
+    "sources" : ["2.16.840.1.113883.4.642.3.374"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-medication.html" : "PHARMAC Medication"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Medication Status Codes",
+    "title" : "Medication  status  codes",
+    "description" : "Medication Status Codes",
+    "systems" : ["http://hl7.org/fhir/CodeSystem/medication-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.376"],
+    "sources" : ["2.16.840.1.113883.4.642.3.376"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-medication.html" : "PHARMAC Medication"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/publication-status",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "PublicationStatus",
+    "title" : "PublicationStatus",
+    "description" : "The lifecycle status of an artifact.",
+    "systems" : ["http://hl7.org/fhir/publication-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.3"],
+    "sources" : ["2.16.840.1.113883.4.642.3.3"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes",
+    "version" : "0.0.1",
+    "status" : "draft",
+    "name" : "MedicationFormCodes",
+    "title" : "Medication Form Codes",
+    "description" : "",
+    "systems" : ["http://snomed.info/sct"]
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code",
+    "version" : "0.0.1",
+    "status" : "active",
+    "name" : "PharmacMedicationCode",
+    "title" : "PHARMAC Medication Code ValueSet",
+    "description" : "ValueSet containing medication codes from NZMT CTPP, PackID, and SNOMED CT code systems used for PHARMAC pharmaceutical schedule medications.",
+    "systems" : ["http://nzmt.org.nz", "http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-medication.html" : "PHARMAC Medication"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/snomed-ct-device-types",
+    "version" : "0.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTDeviceTypes",
+    "title" : "SNOMED CT Device Types",
+    "description" : "",
+    "systems" : ["http://snomed.info/sct"]
+  },
+  {
+    "url" : "https://nzhts.digital.health.nz/fhir/ValueSet/nzmt-mp",
+    "version" : "20260316",
+    "status" : "draft",
+    "name" : "NZMT___MP",
+    "title" : "NZMT - MP",
+    "description" : "",
+    "systems" : ["http://nzmt.org.nz"],
+    "uses" : {
+    },
+    "ValueSet-pharmac-medication-code.html" : "PHARMAC Medication Code ValueSet"
+  }]
+}

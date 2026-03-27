@@ -1,0 +1,905 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Leuprorelin-Pricing> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SearchSet-Bundle-Leuprorelin-Pricing"] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/Medication?name=Leuprorelin&_include=ChargeItemDefinition:instance"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication?name=Leuprorelin&_include=ChargeItemDefinition:instance>
+     ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Lucrin-Depot-1-Month"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Lucrin-Depot-1-Month>
+     ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Lucrin-Depot-1-Month> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing>
+     ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1>
+     ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2>
+     ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1>
+     ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1>
+     ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Lucrin-Depot-1-Month> a fhir:Medication ;
+  fhir:id [ fhir:v "Medication-Lucrin-Depot-1-Month"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "Lucrin Depot 1-month"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "1"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "inj"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank>
+     ] ;
+     fhir:value [
+       a fhir:Integer ;
+       fhir:v 4
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "Hormone Preparations - Systemic Excluding Contraceptive Hormones"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "Trophic Hormones"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "GnRH Analogues"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v true
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier>
+     ] ;
+     fhir:value [
+       a fhir:Integer ;
+       fhir:v 1
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://schedule.pharmac.govt.nz/ids/brand"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/ids/brand>
+     ] ;
+     fhir:value [ fhir:v "B14160310092925" ]
+  ] [
+     fhir:system [
+       fhir:v "http://schedule.pharmac.govt.nz/ids/pack"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/ids/pack>
+     ] ;
+     fhir:value [ fhir:v "P2330148" ]
+  ] [
+     fhir:system [
+       fhir:v "http://schedule.pharmac.govt.nz/ids/chemical"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/ids/chemical>
+     ] ;
+     fhir:value [ fhir:v "C1416031009" ]
+  ] [
+     fhir:system [
+       fhir:v "http://schedule.pharmac.govt.nz/ids/formulation"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/ids/formulation>
+     ] ;
+     fhir:value [ fhir:v "F141603100929" ]
+  ] [
+     fhir:system [
+       fhir:v "http://schedule.pharmac.govt.nz/ids/pharmacode"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/ids/pharmacode>
+     ] ;
+     fhir:value [ fhir:v "2330148" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://nzmt.org.nz"^^xsd:anyURI ;
+         fhir:l <http://nzmt.org.nz>
+       ] ;
+       fhir:code [ fhir:v "50049431000117108" ] ;
+       fhir:display [ fhir:v "Leuprorelin 3.75 inj, 1 inj" ]
+     ] ) ;
+     fhir:text [ fhir:v "Leuprorelin" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:form [
+     fhir:coding ( [
+       a sct:412946008 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "412946008" ] ;
+       fhir:display [ fhir:v "Injectable solution" ]
+     ] ) ;
+     fhir:text [ fhir:v "Inj 3.75 mg prefilled dual chamber syringe" ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://nzmt.org.nz"^^xsd:anyURI ;
+           fhir:l <http://nzmt.org.nz>
+         ] ;
+         fhir:code [ fhir:v "2268011000036106" ] ;
+         fhir:display [ fhir:v "leuprorelin" ]
+       ] ) ;
+       fhir:text [ fhir:v "leuprorelin" ]
+     ] ;
+     fhir:isActive [ fhir:v true ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2025-12-01"^^xsd:date
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/wastage-claimable"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/wastage-claimable>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "n/a"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "n/a"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "n/a"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent>
+     ] ;
+     fhir:value [
+       a fhir:Decimal ;
+       fhir:v "0"^^xsd:decimal
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/brand-switch-fee"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/brand-switch-fee>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing"^^xsd:anyURI ;
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing>
+  ] ; # 
+  fhir:version [ fhir:v "1.0"] ; # 
+  fhir:title [ fhir:v "Lucrin Depot 1-month - Pricing"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Listed price, PHARMAC subsidy, and patient co-payment for Lucrin Depot 1-month (Leuprorelin 3.75 inj, 1 inj)"] ; # 
+  fhir:instance ( [
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Lucrin-Depot-1-Month> ;
+     fhir:reference [ fhir:v "Medication/Medication-Lucrin-Depot-1-Month" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Community (subsidized) pricing applicable with valid prescription" ]
+  ] ) ; # 
+  fhir:propertyGroup ( [
+     fhir:applicability ( [
+       fhir:description [ fhir:v "Community (subsidized) pricing" ]
+     ] ) ;
+     fhir:priceComponent ( [
+       fhir:type [ fhir:v "base" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Listed Price" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 221.6 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "discount" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "PHARMAC Subsidy" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 66.48 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "surcharge" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Patient Surcharge" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 155.12 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "informational" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Patient Co-Payment (with limit)" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] )
+  ] [
+     fhir:applicability ( [
+       fhir:description [ fhir:v "Alternative pricing structure" ]
+     ] ) ;
+     fhir:priceComponent ( [
+       fhir:type [ fhir:v "base" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Alternative Listed Price" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 221.6 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "discount" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Alternative Subsidy/Reimbursement" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 221.6 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "informational" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Alternative Patient Cost" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] )
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-Community-Pharmacy-Sequence-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2025-12-01"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "type"^^xsd:anyURI ;
+         fhir:l fhir:type
+       ] ;
+       fhir:value [
+         a fhir:Code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "type"^^xsd:anyURI ;
+           fhir:l fhir:type
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:Integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "rule"^^xsd:anyURI ;
+         fhir:l fhir:rule
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "type"^^xsd:anyURI ;
+           fhir:l fhir:type
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "attribute"^^xsd:anyURI ;
+           fhir:l fhir:attribute
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "Prescription"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "rule"^^xsd:anyURI ;
+         fhir:l fhir:rule
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule>
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1"^^xsd:anyURI ;
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1>
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Case 1 community pharmacy prescription subsidy where the patient is unable to tolerate administration of goserelin."] ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Condition (endorsement): Additional subsidy by endorsement where the patient is a child or adolescent and is unable to tolerate administration of goserelin and the prescription is endorsed accordingly." ] ;
+     fhir:language [ fhir:v "text/cql" ] ;
+     fhir:expression [ fhir:v "exists(Condition where code in 'ChildOrAdolescent') and exists(Condition where code in 'UnableToTolerateGoserelin') and exists(Condition where code in 'PrescriptionEndorsedForAdditionalSubsidy')" ]
+  ] [
+     fhir:description [ fhir:v "Condition (provider): Prescription must be from an authorised prescriber." ] ;
+     fhir:language [ fhir:v "text/cql" ] ;
+     fhir:expression [ fhir:v "exists(Condition where code in 'AuthorisedPrescriber')" ]
+  ] ) ; # 
+  fhir:propertyGroup ( [
+     fhir:applicability ( [
+       fhir:description [ fhir:v "Case 1 - community pharmacy prescription (intolerance to goserelin)" ]
+     ] ) ;
+     fhir:priceComponent ( [
+       fhir:type [ fhir:v "discount" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "PHARMAC Subsidy" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 221.6 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] )
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-Community-Pharmacy-Sequence-2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2025-12-01"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "type"^^xsd:anyURI ;
+         fhir:l fhir:type
+       ] ;
+       fhir:value [
+         a fhir:Code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "type"^^xsd:anyURI ;
+           fhir:l fhir:type
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:Integer ;
+           fhir:v 2
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "rule"^^xsd:anyURI ;
+         fhir:l fhir:rule
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "type"^^xsd:anyURI ;
+           fhir:l fhir:type
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "attribute"^^xsd:anyURI ;
+           fhir:l fhir:attribute
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "Prescription"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "rule"^^xsd:anyURI ;
+         fhir:l fhir:rule
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule>
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2"^^xsd:anyURI ;
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2>
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Case 2 community pharmacy prescription subsidy."] ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Condition (provider): Prescription must be from an authorised prescriber." ] ;
+     fhir:language [ fhir:v "text/cql" ] ;
+     fhir:expression [ fhir:v "exists(Condition where code in 'AuthorisedPrescriber')" ]
+  ] ) ; # 
+  fhir:propertyGroup ( [
+     fhir:applicability ( [
+       fhir:description [ fhir:v "Case 2 - community pharmacy prescription" ]
+     ] ) ;
+     fhir:priceComponent ( [
+       fhir:type [ fhir:v "discount" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "PHARMAC Subsidy" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 66.48 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] )
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2025-12-01"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "type"^^xsd:anyURI ;
+         fhir:l fhir:type
+       ] ;
+       fhir:value [
+         a fhir:Code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "type"^^xsd:anyURI ;
+           fhir:l fhir:type
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:Integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "rule"^^xsd:anyURI ;
+         fhir:l fhir:rule
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "type"^^xsd:anyURI ;
+           fhir:l fhir:type
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "attribute"^^xsd:anyURI ;
+           fhir:l fhir:attribute
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "BSO"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "rule"^^xsd:anyURI ;
+         fhir:l fhir:rule
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule>
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1"^^xsd:anyURI ;
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1>
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Case 1 community pharmacy BSO subsidy."] ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Condition (provider): Prescription must be from a hospital care operator." ] ;
+     fhir:language [ fhir:v "text/cql" ] ;
+     fhir:expression [ fhir:v "exists(Condition where code in 'HospitalCareOperator')" ]
+  ] ) ; # 
+  fhir:propertyGroup ( [
+     fhir:applicability ( [
+       fhir:description [ fhir:v "Case 1 - community pharmacy BSO" ]
+     ] ) ;
+     fhir:priceComponent ( [
+       fhir:type [ fhir:v "discount" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "PHARMAC Subsidy" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 66.48 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] )
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2025-12-01"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "type"^^xsd:anyURI ;
+         fhir:l fhir:type
+       ] ;
+       fhir:value [
+         a fhir:Code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "type"^^xsd:anyURI ;
+           fhir:l fhir:type
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:Integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "rule"^^xsd:anyURI ;
+         fhir:l fhir:rule
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "type"^^xsd:anyURI ;
+           fhir:l fhir:type
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "attribute"^^xsd:anyURI ;
+           fhir:l fhir:attribute
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "RuralPSO"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "rule"^^xsd:anyURI ;
+         fhir:l fhir:rule
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ;
+       fhir:l <http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule>
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1"^^xsd:anyURI ;
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1>
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Case 1 community pharmacy Rural PSO subsidy."] ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Condition (provider): Prescription must be from an authorised prescriber." ] ;
+     fhir:language [ fhir:v "text/cql" ] ;
+     fhir:expression [ fhir:v "exists(Condition where code in 'AuthorisedPrescriber')" ]
+  ] ) ; # 
+  fhir:propertyGroup ( [
+     fhir:applicability ( [
+       fhir:description [ fhir:v "Case 1 - community pharmacy Rural PSO" ]
+     ] ) ;
+     fhir:priceComponent ( [
+       fhir:type [ fhir:v "discount" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "PHARMAC Subsidy" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 66.48 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

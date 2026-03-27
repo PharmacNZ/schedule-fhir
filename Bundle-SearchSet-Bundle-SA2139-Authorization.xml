@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="SearchSet-Bundle-SA2139-Authorization"/>
+  <type value="searchset"/>
+  <total value="1"/>
+  <link>
+    <relation value="self"/>
+    <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition?code=SA2139&amp;_include=ChargeItemDefinition:instance&amp;_total=accurate"/>
+  </link>
+  <entry>
+    <fullUrl value="https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Emtricitabine-SA2139-Authorization"/>
+    <resource>
+      <ChargeItemDefinition>
+        <id value="ChargeItemDefinition-SA2139-Authorization"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date">
+          <valueDate value="2026-03-11"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-case-count">
+          <valueInteger value="7"/>
+        </extension>
+        <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization"/>
+        <version value="1.0"/>
+        <status value="active"/>
+        <publisher value="Pharmac"/>
+        <contact>
+          <name value="Pharmac"/>
+          <telecom>
+            <system value="url"/>
+            <value value="https://www.pharmac.govt.nz/about/contact"/>
+          </telecom>
+        </contact>
+        <description value="Special Authorization SA2139. Detailed eligibility criteria available via authorization form."/>
+        <code>
+          <coding>
+            <system value="http://pharmac.govt.nz/fhir/sa"/>
+            <code value="SA2139"/>
+          </coding>
+          <text value="SA2139"/>
+        </code>
+        <instance>
+          <reference value="Medication/Medication-Ricovir-Tenofovir"/>
+        </instance>
+        <instance>
+          <reference value="Medication/Medication-Viramune-Suspension"/>
+        </instance>
+        <applicability>
+          <description value="Initial application - Confirmed HIV (Applications from named specialist. Approvals valid without further renewal unless notified)."/>
+          <language value="text/cql"/>
+          <expression value="exists(Condition where code in 'ConfirmedHIVInfection')"/>
+        </applicability>
+        <applicability>
+          <description value="Renewal - Confirmed HIV (Applications from named specialist. Approvals valid without further renewal unless notified)."/>
+          <language value="text/cql"/>
+          <expression value="exists(Condition where code in 'TreatmentRemainsAppropriate') and exists(Condition where code in 'PatientBenefitingFromTreatment')"/>
+        </applicability>
+        <applicability>
+          <description value="Initial application - Prevention of maternal transmission (Applications from named specialist. Approvals valid for 1 year)."/>
+          <language value="text/cql"/>
+          <expression value="exists(Condition where code in 'PreventionOfMaternalFoetalTransmission') or exists(Condition where code in 'TreatmentOfNewbornUpToEightWeeks')"/>
+        </applicability>
+        <applicability>
+          <description value="Initial application - pre-exposure prophylaxis following exposure to HIV (Applications from any relevant practitioner. Approvals valid for 4 weeks)."/>
+          <language value="text/cql"/>
+          <expression value="exists(Condition where code in 'TreatmentInitiatedWithin72HoursPostExposure') and (exists(Condition where code in 'CondomlessAnalOrReceptiveVaginalIntercourseWithKnownHIVPositiveVL&gt;200') or exists(Condition where code in 'SharedInjectingEquipmentWithKnownHIVPositive') or exists(Condition where code in 'NonConsensualIntercourseRiskAssessmentIndicatesProphylaxisAppropriate') or exists(Condition where code in 'CondomlessAnalIntercourseWithHighPrevalenceCountryOrRiskGroupStatusUnknown'))"/>
+        </applicability>
+        <applicability>
+          <description value="Renewal - second or subsequent post-exposure prophylaxis (Applications from any relevant practitioner. Approvals valid for 4 weeks)."/>
+          <language value="text/cql"/>
+          <expression value="exists(Condition where code in 'TreatmentInitiatedWithin72HoursPostExposure') and (exists(Condition where code in 'CondomlessAnalOrReceptiveVaginalIntercourseWithKnownHIVPositiveVL&gt;200') or exists(Condition where code in 'SharedInjectingEquipmentWithKnownHIVPositive') or exists(Condition where code in 'NonConsensualIntercourseRiskAssessmentIndicatesProphylaxisAppropriate') or exists(Condition where code in 'CondomlessAnalIntercourseWithHighPrevalenceCountryOrRiskGroupStatusUnknown'))"/>
+        </applicability>
+        <applicability>
+          <description value="Initial application - Percutaneous exposure (Applications from named specialist. Approvals valid for 6 weeks)."/>
+          <language value="text/cql"/>
+          <expression value="exists(Condition where code in 'PercutaneousExposureToHIVPositiveBlood')"/>
+        </applicability>
+        <applicability>
+          <description value="Renewal - Second or subsequent percutaneous exposure (Applications from named specialist. Approvals valid for 6 weeks)."/>
+          <language value="text/cql"/>
+          <expression value="exists(Condition where code in 'PercutaneousExposureToHIVPositiveBlood')"/>
+        </applicability>
+      </ChargeItemDefinition>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Tenofovir"/>
+    <resource>
+      <Medication>
+        <id value="Medication-Ricovir-Tenofovir"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
+          <valueString value="Ricovir"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
+          <valueString value="30"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
+          <valueString value="tab"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank">
+          <valueInteger value="1"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
+          <valueString value="Infections - Agents for Systemic Use"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
+          <valueString value="Antivirals"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
+          <valueString value="Hepatitis B Treatment"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple">
+          <valueBoolean value="false"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier">
+          <valueInteger value="0"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack">
+          <valueBoolean value="false"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine">
+          <valueBoolean value="false"/>
+        </extension>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
+          <value value="B16190538672526"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
+          <value value="P2703122"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
+          <value value="C1619053867"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
+          <value value="F161905386725"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
+          <value value="2703122"/>
+        </identifier>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50348251000117105"/>
+            <display value="Tenofovir disoproxil 300 tab, 30 tab"/>
+          </coding>
+          <text value="Tenofovir disoproxil"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="385055001"/>
+            <display value="Tablet"/>
+          </coding>
+          <text value="Tab 245 mg (300 mg as a fumarate)"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <coding>
+              <system value="http://nzmt.org.nz"/>
+              <code value="46616121000116103"/>
+              <display value="tenofovir disoproxil"/>
+            </coding>
+            <text value="tenofovir disoproxil"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="include"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Viramune-Suspension"/>
+    <resource>
+      <Medication>
+        <id value="Medication-Viramune-Suspension"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
+          <valueString value="Viramune Suspension"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
+          <valueString value="240"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
+          <valueString value="ml"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank">
+          <valueInteger value="3"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
+          <valueString value="Infections - Agents for Systemic Use"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
+          <valueString value="Antiretrovirals"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
+          <valueString value="Non-nucleosides Reverse Transcriptase Inhibitors"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple">
+          <valueBoolean value="false"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier">
+          <valueInteger value="0"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack">
+          <valueBoolean value="false"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine">
+          <valueBoolean value="false"/>
+        </extension>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
+          <value value="B16200111702525"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
+          <value value="P2014947"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
+          <value value="C1620011170"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
+          <value value="F162001117025"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
+          <value value="2014947"/>
+        </identifier>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50002451000117104"/>
+            <display value="Nevirapine 10 ml, 240 ml"/>
+          </coding>
+          <text value="Nevirapine"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="385013001"/>
+            <display value="Liquid"/>
+          </coding>
+          <text value="Oral suspension 10 mg per ml"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <coding>
+              <system value="http://nzmt.org.nz"/>
+              <code value="2391011000036108"/>
+              <display value="nevirapine"/>
+            </coding>
+            <text value="nevirapine"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="include"/>
+    </search>
+  </entry>
+</Bundle>

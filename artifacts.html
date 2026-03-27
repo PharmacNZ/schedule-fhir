@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Artifacts Summary - Pharmac Schedules FHIR API v0.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/logos.css" rel="stylesheet"/>
+<link href="assets/css/colours.css" rel="stylesheet" />
+<link href="assets/css/fonts.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="pharmac-logo">
+  <img alt="Pharmac logo" src="assets/images/pharmac-logo.png"  height="35" />
+</div>
+
+<div id="blank-logo">
+  <img alt="" src="assets/images/blank-right-logo.png" height="35"/>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">0.0.1 - draft
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="use-cases.html">Use cases</a>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
+  <li>
+    <a href="relationships.html">Resource Relationships</a>
+  </li>
+  <li>
+    <a href="datamodel.html">Data Models</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a href="definitions.json.zip">Artefacts (JSON)</a>
+      </li>
+      <li>
+        <a href="definitions.xml.zip">Artefacts (XML)</a>
+      </li>
+      <li>
+        <a href="full-ig.zip">Download IG</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Artifacts Summary</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v0.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Artifacts Summary</h2>
+  
+  
+  
+  <!--DO NOT EDIT THIS FILE - It is generated by https://github.com/HL7/ig-template-base/blob/master/scripts/createArtifactSummary.xslt and any changes made will be overwritten--><div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     class="markdown-toc">
+   <p>Contents:</p>
+   <ul>
+      <li>
+         <a href="#1">Behavior: Capability Statements</a>
+      </li>
+      <li>
+         <a href="#2">Behavior: Search Parameters</a>
+      </li>
+      <li>
+         <a href="#3">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#4">Structures: Extension Definitions</a>
+      </li>
+      <li>
+         <a href="#5">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#6">Example: Example Instances</a>
+      </li>
+   </ul>
+</div>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml">
+   <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
+   <a name="1"> </a>
+   <h3>Behavior: Capability Statements </h3>
+    <p>The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-PharmacSchedulesCapabilityStatement.html"
+                  title="CapabilityStatement/PharmacSchedulesCapabilityStatement">Pharmac Schedules Capability Statement</a>
+            </td>
+            <td>
+<p>Pharmac Schedules Capability Statement. This FHIR resource declares the capabilities of the Pharmac Schedules FHIR API, including supported interactions, resources, and security mechanisms.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
+   <h3>Behavior: Search Parameters </h3>
+    <p>These define the properties by which a RESTful server can be searched.  They can also be used for sorting and including related resources.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-ChargeItemDefinitionCodeSearchParam.html"
+                  title="SearchParameter/ChargeItemDefinitionCodeSearchParam">ChargeItemDefinitionCodeSearchParam</a>
+            </td>
+            <td>
+<p>Allow ChargeItemDefinition search by code (usually special authority code)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-MedicationBrandNameSearchParam.html"
+                  title="SearchParameter/MedicationBrandNameSearchParam">MedicationBrandNameSearchParam</a>
+            </td>
+            <td>
+<p>Search for medications by brand name (e.g., 'Gaviscon', 'Acidex', 'Budesonide'). Enables fuzzy matching on the medication-brand-name extension for discovery by product name.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-MedicationNameSearchParam.html"
+                  title="SearchParameter/MedicationNameSearchParam">MedicationNameSearchParam</a>
+            </td>
+            <td>
+<p>Search for medications by the text representation of the medication code (e.g., 'Gaviscon Infant', 'Acidex oral liquid'). Enables discovery by the full medication name or formulation description.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="3"> </a>
+   <h3>Structures: Resource Profiles </h3>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pharmac-charge-item-definition.html"
+                  title="StructureDefinition/pharmac-charge-item-definition">PHARMAC Charge Item Definition</a>
+            </td>
+            <td>
+<p>Profile for ChargeItemDefinition resources representing pricing, subsidy, and rules for devices and medications in the PHARMAC schedule. This profile allows FHIR consumers to use the _include search parameter to retrieve pricing information alongside device or medication resources.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pharmac-medication.html"
+                  title="StructureDefinition/pharmac-medication">PHARMAC Medication</a>
+            </td>
+            <td>
+<p>Profile for Medication resources representing pharmaceutical products in the PHARMAC schedule. This profile defines the structure for medications including brand identification, pack codes, product names, form, and ingredients. Pricing information is provided via related ChargeItemDefinition resources that can be retrieved using the _include search parameter.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
+   <h3>Structures: Extension Definitions </h3>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-authorization-case-count.html"
+                  title="StructureDefinition/authorization-case-count">Authorization Case Count</a>
+            </td>
+            <td>
+<p>The number of authorization cases or approval criteria specified in the authorization requirement. This indicates how many different clinical scenarios or conditions have distinct approval pathways.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-authorization-form.html"
+                  title="StructureDefinition/authorization-form">Authorization Form</a>
+            </td>
+            <td>
+<p>The special authorization form code required for this medication (e.g., 'SA2535'). This identifies the specific PHARMAC authorization form that prescribers must complete for patient eligibility.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-authorization-title.html"
+                  title="StructureDefinition/authorization-title">Authorization Title</a>
+            </td>
+            <td>
+<p>A human-readable title for the authorization requirement (e.g., 'Budesonide - Special Authorization Required'). This provides context for the authorization need.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-brand-switch-fee.html"
+                  title="StructureDefinition/brand-switch-fee">Brand Switch Fee</a>
+            </td>
+            <td>
+<p>Indicates whether a brand switch fee applies for this item.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-contract-type.html"
+                  title="StructureDefinition/contract-type">Contract Type</a>
+            </td>
+            <td>
+<p>Type of PHARMAC contract that applies to this item (for example, sole-supply, preferred).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-cost-brand-source.html"
+                  title="StructureDefinition/cost-brand-source">Cost Brand Source</a>
+            </td>
+            <td>
+<p>Indicates whether pricing for this item is sourced from a cost brand.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-dv-limit-percent.html"
+                  title="StructureDefinition/dv-limit-percent">Daily Volume Limit Percent</a>
+            </td>
+            <td>
+<p>Percentage daily volume limit that applies to this item.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-device-definition-reference.html"
+                  title="StructureDefinition/device-definition-reference">Device Definition Reference</a>
+            </td>
+            <td>
+<p>Reference to a DeviceDefinition that this pricing applies to. Used because ChargeItemDefinition.instance can only reference Device, Medication, or Substance instances, not DeviceDefinition. For Medication, use ChargeItemDefinition.instance directly.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-funding-rule.html"
+                  title="StructureDefinition/funding-rule">Funding Rule</a>
+            </td>
+            <td>
+<p>Funding rules that define medication and device funding conditions, restrictions, and special requirements</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-in-combination.html"
+                  title="StructureDefinition/in-combination">In-Combination</a>
+            </td>
+            <td>
+<p>Indicates whether this item is only subsidised when used in combination with other medicines or treatments.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-atc-category-1.html"
+                  title="StructureDefinition/medication-atc-category-1">Medication ATC Category 1</a>
+            </td>
+            <td>
+<p>Used to describe ATC Category 1 (including id and name)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-atc-category-2.html"
+                  title="StructureDefinition/medication-atc-category-2">Medication ATC Category 2</a>
+            </td>
+            <td>
+<p>Used to describe ATC Category 2 (including id and name)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-atc-category-3.html"
+                  title="StructureDefinition/medication-atc-category-3">Medication ATC Category 3</a>
+            </td>
+            <td>
+<p>Used to describe ATC Category 3 (including id and name)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-brand-name.html"
+                  title="StructureDefinition/medication-brand-name">Medication Brand Name</a>
+            </td>
+            <td>
+<p>The brand or trade name of the medication. For example, 'Budesonide Te Arai' or 'Gaviscon Infant'.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-in-combination.html"
+                  title="StructureDefinition/medication-in-combination">Medication In Combination</a>
+            </td>
+            <td>
+<p>Indicates whether this medication is only subsidised when used in combination with other medicines.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-original-pack.html"
+                  title="StructureDefinition/medication-original-pack">Medication Original Pack</a>
+            </td>
+            <td>
+<p>Indicates whether this pack represents the original pack supplied by the manufacturer.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-package-size.html"
+                  title="StructureDefinition/medication-package-size">Medication Package Size</a>
+            </td>
+            <td>
+<p>Package size for a scheduled medication. For example, '30 x 650 mg sachets' would be represented as 'Sachet' in the form property and 30 in the packageSize extension property.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-product-multiple.html"
+                  title="StructureDefinition/medication-product-multiple">Medication Product Multiple</a>
+            </td>
+            <td>
+<p>Indicates whether this pack uses product multiples when calculating pricing or claims.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-product-multiplier.html"
+                  title="StructureDefinition/medication-product-multiplier">Medication Product Multiplier</a>
+            </td>
+            <td>
+<p>Numeric multiplier applied when calculating pricing or claims for this pack.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-rank.html"
+                  title="StructureDefinition/medication-rank">Medication Rank</a>
+            </td>
+            <td>
+<p>Ranking or priority of this medication formulation within the schedule. Lower numbers typically indicate higher priority or preferred formulations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-safety-list-medicine.html"
+                  title="StructureDefinition/medication-safety-list-medicine">Medication Safety List Medicine</a>
+            </td>
+            <td>
+<p>Indicates whether this medication is on a PHARMAC safety list.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-statim.html"
+                  title="StructureDefinition/medication-statim">Medication Statim</a>
+            </td>
+            <td>
+<p>Indicates whether stat (urgent) dispensing rules apply for this medication.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-unit-of-measure.html"
+                  title="StructureDefinition/medication-unit-of-measure">Medication Unit of Measure</a>
+            </td>
+            <td>
+<p>The unit of measure used for this medication. For example, 'tab' (tablet), 'cap' (capsule), 'ml' (milliliter), 'sach' (sachet).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pricing-effective-date.html"
+                  title="StructureDefinition/pricing-effective-date">Pricing Effective Date</a>
+            </td>
+            <td>
+<p>The date from which this pricing becomes effective.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pricing-expiry-date.html"
+                  title="StructureDefinition/pricing-expiry-date">Pricing Expiry Date</a>
+            </td>
+            <td>
+<p>The date on which this pricing expires or ceases to be valid.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-statim.html"
+                  title="StructureDefinition/statim">Statim (Urgent Dispensing)</a>
+            </td>
+            <td>
+<p>Indicates whether stat (urgent) dispensing rules apply for this item.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-wastage-claimable.html"
+                  title="StructureDefinition/wastage-claimable">Wastage Claimable</a>
+            </td>
+            <td>
+<p>Indicates whether wastage for this item may be claimed.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="5"> </a>
+   <h3>Terminology: Value Sets </h3>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-medication-form-codes.html"
+                  title="ValueSet/medication-form-codes">Medication Form Codes</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-pharmac-medication-code.html"
+                  title="ValueSet/pharmac-medication-code">PHARMAC Medication Code ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet containing medication codes from NZMT CTPP, PackID, and SNOMED CT code systems used for PHARMAC pharmaceutical schedule medications.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-snomed-ct-device-types.html"
+                  title="ValueSet/snomed-ct-device-types">SNOMED CT Device Types</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="6"> </a>
+   <h3>Example: Example Instances </h3>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationOutcome-APIError-Unauthorised.html"
+                  title="OperationOutcome/APIError-Unauthorised">APIError-Unauthorised</a>
+            </td>
+            <td>
+<p>An example of an OperationOutcome resource representing an unauthorised access error.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1">ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1</a>
+            </td>
+            <td>
+<p>Community pharmacy BSO subsidy (Case 1) with provider condition for hospital care operators.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1">ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1</a>
+            </td>
+            <td>
+<p>Community pharmacy Rural PSO subsidy (Case 1) with provider condition for authorised prescribers.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1">ChargeItemDefinition-Community-Pharmacy-Sequence-1</a>
+            </td>
+            <td>
+<p>Community pharmacy prescription subsidy for patients unable to tolerate administration of goserelin. Demonstrates reimbursement with endorsement and provider conditions.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2">ChargeItemDefinition-Community-Pharmacy-Sequence-2</a>
+            </td>
+            <td>
+<p>Community pharmacy prescription subsidy (Case 2) with provider condition only.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2139-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization">ChargeItemDefinition-SA2139-Authorization</a>
+            </td>
+            <td>
+<p>Special Authorization SA2139.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2520-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization">ChargeItemDefinition-SA2520-Authorization</a>
+            </td>
+            <td>
+<p>Special Authorization SA2520</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-1">ChargeItemDefinition-Tenofovir-Case-Sequence-1</a>
+            </td>
+            <td>
+<p>Rules for Tenofovir Disoproxil</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-2">ChargeItemDefinition-Tenofovir-Case-Sequence-2</a>
+            </td>
+            <td>
+<p>Rules for Tenofovir Disoproxil</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing">Lucrin Depot 1-month - Pricing</a>
+            </td>
+            <td>
+<p>Pricing information for Lucrin Depot 1-month (leuprorelin injection). Demonstrates community subsidized pricing with subsidy, alternative pricing, and new pricing attributes including cost brand source, wastage claimable, DV limit percentage, and brand switch fee.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-Medication-Lucrin-Depot-1-Month.html"
+                  title="Medication/Medication-Lucrin-Depot-1-Month">Medication-Lucrin-Depot-1-Month</a>
+            </td>
+            <td>
+<p>Medication representation of Lucrin Depot 1-month (leuprorelin injection).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-Medication-Ricovir-Tenofovir.html"
+                  title="Medication/Medication-Ricovir-Tenofovir">Medication-Ricovir-Tenofovir</a>
+            </td>
+            <td>
+<p>Medication representation of Ricovir (tenofovir disoproxil tablets).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-Medication-Viramune-Suspension.html"
+                  title="Medication/Medication-Viramune-Suspension">Medication-Viramune-Suspension</a>
+            </td>
+            <td>
+<p>Medication representation of Viramune Suspension (nevirapine oral suspension).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Ricovir-Pricing.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing">Ricovir - Pricing</a>
+            </td>
+            <td>
+<p>Pricing information for Ricovir (tenofovir disoproxil tablets). Demonstrates fully subsidized community pricing with PSS contract type and DV limit.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-Leuprorelin-Pricing.html"
+                  title="Bundle/SearchSet-Bundle-Leuprorelin-Pricing">SearchSet-Bundle-Leuprorelin-Pricing</a>
+            </td>
+            <td>
+<p>Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Leuprorelin&amp;_include=ChargeItemDefinition:instance</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-Medication.html"
+                  title="Bundle/SearchSet-Bundle-Medication">SearchSet-Bundle-Medication</a>
+            </td>
+            <td>
+<p>Example search result demonstrating a bulk medication search.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-Ricovir-Pricing.html"
+                  title="Bundle/SearchSet-Bundle-Ricovir-Pricing">SearchSet-Bundle-Ricovir-Pricing</a>
+            </td>
+            <td>
+<p>Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Tenofovir&amp;_include=ChargeItemDefinition:instance</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-SA2139-Authorization.html"
+                  title="Bundle/SearchSet-Bundle-SA2139-Authorization">SearchSet-Bundle-SA2139-Authorization</a>
+            </td>
+            <td>
+<p>Example search result demonstrating _include to retrieve ChargeItemDefinition resource using the Special Authority ID and it's associated Medication(s)
+        Query: GET /ChargeItemDefinition?code=SA2139&amp;_include=ChargeItemDefinition:instance</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 27, 2026 00:29+0000">2026-03-27</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

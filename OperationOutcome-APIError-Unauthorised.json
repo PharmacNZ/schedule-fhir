@@ -1,0 +1,14 @@
+{
+  "resourceType" : "OperationOutcome",
+  "id" : "APIError-Unauthorised",
+  "issue" : [{
+    "severity" : "error",
+    "code" : "suppressed",
+    "details" : {
+      "coding" : [{
+        "code" : "UNAUTHORISED"
+      }]
+    },
+    "diagnostics" : "Unauthorised."
+  }]
+}
