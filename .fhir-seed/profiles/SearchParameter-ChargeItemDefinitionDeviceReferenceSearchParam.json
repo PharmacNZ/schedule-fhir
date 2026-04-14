@@ -1,0 +1,31 @@
+{
+  "resourceType" : "SearchParameter",
+  "id" : "ChargeItemDefinitionDeviceReferenceSearchParam",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-device",
+  "version" : "1.0.0",
+  "name" : "device-definition-reference",
+  "status" : "active",
+  "date" : "2026-04-12T23:35:09+00:00",
+  "publisher" : "Pharmac",
+  "contact" : [{
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.pharmac.govt.nz/about/contact"
+    }]
+  },
+  {
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "enquiry@pharmac.govt.nz",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Reference from ChargeItemDefinition to DeviceDefinition via IG extension. Enables searching for pricing and authorization rules by associated device.",
+  "code" : "device-definition-reference",
+  "base" : ["ChargeItemDefinition"],
+  "type" : "reference",
+  "expression" : "ChargeItemDefinition.extension.where(url = 'https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/device-definition-reference').value",
+  "target" : ["DeviceDefinition"]
+}

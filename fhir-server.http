@@ -1,0 +1,32 @@
+### FHIR Server Base URL
+@baseUrl = http://localhost:8881/fhir/r4
+
+### Get CapabilityStatement (R4)
+GET {{baseUrl}}/metadata
+
+### Search for Medications
+GET {{baseUrl}}/Medication
+
+### Search for ChargeItemDefinitions
+GET {{baseUrl}}/ChargeItemDefinition
+
+### Search for StructureDefinitions
+GET {{baseUrl}}/StructureDefinition
+
+### Search for SearchParameters
+GET {{baseUrl}}/SearchParameter
+
+### Get a specific medication (replace id)
+GET {{baseUrl}}/Medication/1
+
+### Search with parameter - Medications by code
+GET {{baseUrl}}/Medication?code=system|code
+
+### Search with limit
+GET {{baseUrl}}/Medication?_count=10
+
+### Get FHIR R4B endpoint
+GET http://localhost:8881/fhir/r4b/metadata
+
+### Get FHIR R5 endpoint
+GET http://localhost:8881/fhir/r5/metadata

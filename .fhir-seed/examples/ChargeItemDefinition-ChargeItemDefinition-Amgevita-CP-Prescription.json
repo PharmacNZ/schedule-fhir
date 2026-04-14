@@ -1,0 +1,80 @@
+{
+  "resourceType" : "ChargeItemDefinition",
+  "id" : "ChargeItemDefinition-Amgevita-CP-Prescription",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date",
+    "valueDate" : "2025-12-01"
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCode" : "community"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "CaseSequence"
+      },
+      {
+        "url" : "value",
+        "valueInteger" : 1
+      }],
+      "url" : "rule"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "FundingMechanism"
+      },
+      {
+        "url" : "attribute",
+        "valueCode" : "Prescription"
+      }],
+      "url" : "rule"
+    }],
+    "url" : "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema",
+    "valueBase64Binary" : "ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNvbW11bml0eSBQaGFybWFjeSBQcmVzY3JpcHRpb24gU2VxdWVuY2UgMSIsCiAgInR5cGUiOiAib2JqZWN0IiwKICAicHJvcGVydGllcyI6IHsKICAgICJhdXRob3JpdHkiOiB7CiAgICAgICIkcmVmIjogImh0dHBzOi8vZmhpci1pZy5kaWdpdGFsLmhlYWx0aC5uei9waGFybWFjLXNjaGVkdWxlcy9DaGFyZ2VJdGVtRGVmaW5pdGlvbi9DaGFyZ2VJdGVtRGVmaW5pdGlvbi1TQTI1MjUtQXV0aG9yaXphdGlvbiIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiU0EyNTI1IgogICAgfSwKICAgICJwcm92aWRlciI6IHsKICAgICAgInR5cGUiOiAiYm9vbGVhbiIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJBdXRob3Jpc2VkIFByb3ZpZGVycyIKICAgIH0KICB9LAogICJyZXF1aXJlZCI6IFsKICAgICJhdXRob3JpdHkiLAogICAgInByb3ZpZGVyIgogIF0KfQ=="
+  }],
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Amgevita-CP-Prescription",
+  "version" : "1.0.0",
+  "status" : "active",
+  "date" : "2026-04-12T23:35:09+00:00",
+  "publisher" : "Pharmac",
+  "contact" : [{
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.pharmac.govt.nz/about/contact"
+    }]
+  },
+  {
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "enquiry@pharmac.govt.nz",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Rules for Adalimumab(Amgevita). Demonstrates expressions for funding conditions relevant to a Community Pharmacy Perscription.",
+  "propertyGroup" : [{
+    "applicability" : [{
+      "description" : "Case 1 - community pharmacy prescription"
+    }],
+    "priceComponent" : [{
+      "type" : "discount",
+      "code" : {
+        "text" : "PHARMAC Subsidy"
+      },
+      "amount" : {
+        "value" : 375,
+        "currency" : "NZD"
+      }
+    }]
+  }]
+}

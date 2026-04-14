@@ -1,0 +1,89 @@
+{
+  "resourceType" : "ChargeItemDefinition",
+  "id" : "ChargeItemDefinition-Community-Pharmacy-Sequence-1",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date",
+    "valueDate" : "2025-12-01"
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCode" : "community"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "CaseSequence"
+      },
+      {
+        "url" : "value",
+        "valueInteger" : 1
+      }],
+      "url" : "rule"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "FundingMechanism"
+      },
+      {
+        "url" : "attribute",
+        "valueCode" : "Prescription"
+      }],
+      "url" : "rule"
+    }],
+    "url" : "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema",
+    "valueBase64Binary" : "ewogICAgIiRzY2hlbWEiOiAiaHR0cDovL2pzb24tc2NoZW1hLm9yZy9kcmFmdC0wNy9zY2hlbWEjIiwKICAgICJ0aXRsZSI6ICJDT1MgQ2FzZSAxIC0gQ29tbXVuaXR5IFBoYXJtYWN5IFByZXNjcmlwdGlvbiIsCiAgICAiZGVzY3JpcHRpb24iOiAiRW5kb3JzZW1lbnQtYmFzZWQgc3Vic2lkeSBmb3IgcGF0aWVudHMgdW5hYmxlIHRvIHRvbGVyYXRlIGdvc2VyZWxpbiIsCiAgICAidHlwZSI6ICJvYmplY3QiLAogICAgInByb3BlcnRpZXMiOiB7CiAgICAgICAgInBhdGllbnREZW1vZ3JhcGhpY3MiOiB7CiAgICAgICAgICAgICJ0eXBlIjogIm9iamVjdCIsCiAgICAgICAgICAgICJwcm9wZXJ0aWVzIjogeyJpc0NoaWxkT3JBZG9sZXNjZW50IjogeyJ0eXBlIjogImJvb2xlYW4ifX0sCiAgICAgICAgICAgICJyZXF1aXJlZCI6IFsiaXNDaGlsZE9yQWRvbGVzY2VudCJdCiAgICAgICAgfSwKICAgICAgICAicGF0aWVudENvbmRpdGlvbnMiOiB7CiAgICAgICAgICAgICJ0eXBlIjogIm9iamVjdCIsCiAgICAgICAgICAgICJwcm9wZXJ0aWVzIjogeyJ1bmFibGVUb1RvbGVyYXRlR29zZXJlbGluIjogeyJ0eXBlIjogImJvb2xlYW4ifX0sCiAgICAgICAgICAgICJyZXF1aXJlZCI6IFsidW5hYmxlVG9Ub2xlcmF0ZUdvc2VyZWxpbiJdCiAgICAgICAgfSwKICAgICAgICAicHJlc2NyaXB0aW9uIjogeyJ0eXBlIjogIm9iamVjdCIsICJwcm9wZXJ0aWVzIjogeyJpc0VuZG9yc2VkIjogeyJ0eXBlIjogImJvb2xlYW4ifSwgInByZXNjcmliZXJBdXRob3Jpc2VkIjogeyJ0eXBlIjogImJvb2xlYW4ifX0sICJyZXF1aXJlZCI6IFsiaXNFbmRvcnNlZCIsICJwcmVzY3JpYmVyQXV0aG9yaXNlZCJdfQogICAgfSwKICAgICJyZXF1aXJlZCI6IFsicGF0aWVudERlbW9ncmFwaGljcyIsICJwYXRpZW50Q29uZGl0aW9ucyIsICJwcmVzY3JpcHRpb24iXQp9"
+  }],
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1",
+  "version" : "1.0.0",
+  "status" : "active",
+  "date" : "2026-04-12T23:35:09+00:00",
+  "publisher" : "Pharmac",
+  "contact" : [{
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.pharmac.govt.nz/about/contact"
+    }]
+  },
+  {
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "enquiry@pharmac.govt.nz",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Case 1 community pharmacy prescription subsidy where the patient is unable to tolerate administration of goserelin.",
+  "instance" : [{
+    "reference" : "Medication/Medication-Lucrin-Depot-1-Month"
+  }],
+  "applicability" : [{
+    "description" : "Condition (endorsement): Additional subsidy by endorsement where the patient is a child or adolescent and is unable to tolerate administration of goserelin and the prescription is endorsed accordingly."
+  },
+  {
+    "description" : "Condition (provider): Prescription must be from an authorised prescriber."
+  }],
+  "propertyGroup" : [{
+    "applicability" : [{
+      "description" : "Case 1 - community pharmacy prescription (intolerance to goserelin)"
+    }],
+    "priceComponent" : [{
+      "type" : "discount",
+      "code" : {
+        "text" : "PHARMAC Subsidy"
+      },
+      "amount" : {
+        "value" : 221.6,
+        "currency" : "NZD"
+      }
+    }]
+  }]
+}
