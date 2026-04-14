@@ -1,0 +1,50 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "pharmac-medication-code",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code",
+  "version" : "1.0.0",
+  "name" : "PharmacMedicationCode",
+  "title" : "PHARMAC Medication Code ValueSet",
+  "status" : "active",
+  "date" : "2025-01-27",
+  "publisher" : "Pharmac",
+  "contact" : [{
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.pharmac.govt.nz/about/contact"
+    }]
+  },
+  {
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "enquiry@pharmac.govt.nz",
+      "use" : "work"
+    }]
+  }],
+  "description" : "ValueSet containing medication codes from NZMT CTPP, PackID, and SNOMED CT code systems used for PHARMAC pharmaceutical schedule medications.",
+  "immutable" : false,
+  "purpose" : "To define the set of medication codes that can be used to identify medications in the PHARMAC schedule",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "373873005"
+      }]
+    },
+    {
+      "valueSet" : ["https://nzhts.digital.health.nz/fhir/ValueSet/nzmt-mp"]
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "763158003"
+      }]
+    }]
+  }
+}

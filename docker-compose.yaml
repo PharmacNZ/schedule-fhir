@@ -1,0 +1,10 @@
+services:
+  fhir-candle:
+    image: ghcr.io/fhir/fhir-candle:latest
+    container_name: fhir-candle
+    ports:
+      - "8080:8080"
+    command: --r4 --port 8080 --fhir-source /fhir-seed
+    volumes:
+      - ./.fhir-seed:/fhir-seed:ro
+    restart: unless-stopped

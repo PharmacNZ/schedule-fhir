@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "fhir-candle": {
+      "version": "2025.611.1422",
+      "commands": [
+        "fhir-candle"
+      ],
+      "rollForward": false
+    },
+    "dotnet-ef": {
+      "version": "10.0.5",
+      "commands": [
+        "dotnet-ef"
+      ],
+      "rollForward": false
+    }
+  }
+}

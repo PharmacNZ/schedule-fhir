@@ -1,0 +1,75 @@
+{
+  "resourceType" : "ChargeItemDefinition",
+  "id" : "ChargeItemDefinition-Hospital-Sequence-1",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date",
+    "valueDate" : "2025-12-01"
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCode" : "hospital"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "CaseSequence"
+      },
+      {
+        "url" : "value",
+        "valueInteger" : 1
+      }],
+      "url" : "rule"
+    }],
+    "url" : "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema",
+    "valueBase64Binary" : "ewogICAgIiRzY2hlbWEiOiAiaHR0cDovL2pzb24tc2NoZW1hLm9yZy9kcmFmdC0wNy9zY2hlbWEjIiwKICAgICJ0aXRsZSI6ICJIYW50aGFtIFJpY2hhcmQgLSBIb3NwaXRhbCBEZWZhdWx0IiwKICAgICJkZXNjcmlwdGlvbiI6ICJIZWFsdGggTlogSG9zcGl0YWwgd2l0aCBkZWZhdWx0IGNvbmRpdGlvbiBhbmQgemVybyByZWltYnVyc2VtZW50IiwKICAgICJ0eXBlIjogIm9iamVjdCIsCiAgICAicHJvcGVydGllcyI6IHsiY29uZGl0aW9uIjogeyJ0eXBlIjogIm9iamVjdCIsICJwcm9wZXJ0aWVzIjogeyJpc0RlZmF1bHQiOiB7InR5cGUiOiAiYm9vbGVhbiJ9fSwgInJlcXVpcmVkIjogWyJpc0RlZmF1bHQiXX19LAogICAgInJlcXVpcmVkIjogWyJjb25kaXRpb24iXQp9"
+  }],
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Hospital-Sequence-1",
+  "version" : "1.0.0",
+  "status" : "active",
+  "date" : "2026-04-12T23:35:09+00:00",
+  "publisher" : "Pharmac",
+  "contact" : [{
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.pharmac.govt.nz/about/contact"
+    }]
+  },
+  {
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "enquiry@pharmac.govt.nz",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Case 5 Health NZ hospital with default condition. No funding mechanism or reimbursement type applies.",
+  "instance" : [{
+    "reference" : "Medication/Medication-Lucrin-Depot-1-Month"
+  }],
+  "applicability" : [{
+    "description" : "Condition: default"
+  }],
+  "propertyGroup" : [{
+    "applicability" : [{
+      "description" : "Case 5 - Health NZ hospital (default)"
+    }],
+    "priceComponent" : [{
+      "type" : "discount",
+      "code" : {
+        "text" : "PHARMAC Subsidy"
+      },
+      "amount" : {
+        "value" : 0,
+        "currency" : "NZD"
+      }
+    }]
+  }]
+}

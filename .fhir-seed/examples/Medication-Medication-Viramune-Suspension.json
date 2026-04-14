@@ -1,0 +1,99 @@
+{
+  "resourceType" : "Medication",
+  "id" : "Medication-Viramune-Suspension",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name",
+    "valueString" : "Amgevita"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size",
+    "valueString" : "1"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure",
+    "valueString" : "ml"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank",
+    "valueInteger" : 3
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1",
+    "valueString" : "Oncology Agents and Immunosuppressants"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2",
+    "valueString" : "Immunosuppressants"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3",
+    "valueString" : "Monoclonal Antibodies"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple",
+    "valueBoolean" : true
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier",
+    "valueInteger" : 1
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack",
+    "valueBoolean" : false
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine",
+    "valueBoolean" : false
+  }],
+  "identifier" : [{
+    "system" : "http://schedule.pharmac.govt.nz/ids/brand",
+    "value" : "B25070441552725"
+  },
+  {
+    "system" : "http://schedule.pharmac.govt.nz/ids/pack",
+    "value" : "P2631105"
+  },
+  {
+    "system" : "http://schedule.pharmac.govt.nz/ids/chemical",
+    "value" : "C2507044155"
+  },
+  {
+    "system" : "http://schedule.pharmac.govt.nz/ids/formulation",
+    "value" : "F250704415527"
+  },
+  {
+    "system" : "http://schedule.pharmac.govt.nz/ids/pharmacode",
+    "value" : "2631105"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://nzmt.org.nz",
+      "code" : "50252821000117106",
+      "display" : "Inj 40 mg per 0.8 ml prefilled pen"
+    }],
+    "text" : "Amgevita"
+  },
+  "status" : "active",
+  "form" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "385013001",
+      "display" : "Injectable solution"
+    }],
+    "text" : "Inj 40 mg per 0.8 ml prefilled syringe"
+  },
+  "ingredient" : [{
+    "itemCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://nzmt.org.nz",
+        "code" : "2391011000036108",
+        "display" : "Amgevita"
+      }],
+      "text" : "Amgevita"
+    },
+    "isActive" : true
+  }]
+}
