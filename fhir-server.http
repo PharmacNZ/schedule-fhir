@@ -1,5 +1,5 @@
 ### FHIR Server Base URL
-@baseUrl = http://localhost:8881/fhir/r4
+@baseUrl = http://localhost:8080/fhir/r4
 
 ### Get CapabilityStatement (R4)
 GET {{baseUrl}}/metadata
@@ -26,7 +26,7 @@ GET {{baseUrl}}/Medication?code=system|code
 GET {{baseUrl}}/Medication?_count=10
 
 ### Get FHIR R4B endpoint
-GET http://localhost:8881/fhir/r4b/metadata
+GET http://localhost:8080/fhir/r4b/metadata
 
 ### Get FHIR R5 endpoint
-GET http://localhost:8881/fhir/r5/metadata
+GET http://localhost:8080/fhir/r5/metadata
