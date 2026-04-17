@@ -1,0 +1,195 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing> a fhir:ChargeItemDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ChargeItemDefinition-Clexane-Pricing"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2026-05-01"^^xsd:date
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/wastage-claimable"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/wastage-claimable>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "PSS"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent>
+     ] ;
+     fhir:value [
+       a fhir:Decimal ;
+       fhir:v "5"^^xsd:decimal
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/brand-switch-fee"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/brand-switch-fee>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "n/a"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination"^^xsd:anyURI ;
+       fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "n/a"
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing"^^xsd:anyURI ;
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:title [ fhir:v "Clexane - Pricing"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-17T06:29:04+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Listed price, PHARMAC subsidy, and patient co-payment for Clexane (Inj 100 mg in 1 ml syringe, pack of 10)."] ; # 
+  fhir:instance ( [
+     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Clexane-100mg-1ml-Syringe> ;
+     fhir:reference [ fhir:v "Medication/Medication-Clexane-100mg-1ml-Syringe" ]
+  ] ) ; # 
+  fhir:propertyGroup ( [
+     fhir:applicability ( [
+       fhir:description [ fhir:v "Community pricing - fully subsidized where endorsed, including PRIME PSO use, or waived by Special Authority SA2628" ]
+     ] ) ;
+     fhir:priceComponent ( [
+       fhir:type [ fhir:v "base" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Listed Price" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 70.91 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "discount" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "PHARMAC Subsidy" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 70.91 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "surcharge" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Patient Surcharge" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "informational" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Patient Co-Payment" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] )
+  ] [
+     fhir:applicability ( [
+       fhir:description [ fhir:v "HML pricing - PSS with 5% DV limit" ]
+     ] ) ;
+     fhir:priceComponent ( [
+       fhir:type [ fhir:v "base" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Listed Price" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 70.91 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "discount" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "PHARMAC Subsidy" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 70.91 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:type [ fhir:v "surcharge" ] ;
+       fhir:code [
+         fhir:text [ fhir:v "Patient Surcharge" ]
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

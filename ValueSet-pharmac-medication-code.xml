@@ -3,7 +3,7 @@
 <ValueSet xmlns="http://hl7.org/fhir">
   <id value="pharmac-medication-code"/>
   <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code"/>
-  <version value="0.0.1"/>
+  <version value="1.0.0"/>
   <name value="PharmacMedicationCode"/>
   <title value="PHARMAC Medication Code ValueSet"/>
   <status value="active"/>

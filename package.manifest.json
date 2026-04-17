@@ -1,6 +1,6 @@
 {
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "fhirVersion" : ["4.0.1"],
-  "date" : "20260327002947",
+  "date" : "20260417062904",
   "name" : "pharmac.fhir.pharmac-schedules"
 }

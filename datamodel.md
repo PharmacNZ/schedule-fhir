@@ -1,4 +1,4 @@
-# Datamodel - Pharmac Schedules FHIR API v0.0.1
+# Datamodel - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * **Datamodel**
@@ -19,7 +19,7 @@ Our API utilises relationships to link resources together. There is only ever on
 
 Each instance of a `Medication` or `DeviceDefinition` will have an associated `ChargeItemDefinition` that indicates lists the price.
 
-The pricing os contained in the `propertyGroup` component of the resource. Note that this structure is extensible and contains a number of `priceComponent` properties - see example below.
+The pricing is contained in the `propertyGroup` component of the resource. Note that this structure is extensible and contains a number of `priceComponent` properties - see example below.
 
 ```
 "propertyGroup": [
@@ -117,5 +117,11 @@ The pricing os contained in the `propertyGroup` component of the resource. Note 
 
 ### Charge Item Definition Conditions and Authorisations
 
-A `ChargeItemDefinition` may also exist where there are additional rules that apply to the resource. For example, a special authority or a set of funding conditions or rules. The API stores these rules as a machine readable `Clinical Query Language (cql)` structure. For more information on FHIR and cql see the [specification here](https://cql.hl7.org/).
+A `ChargeItemDefinition` may also exist where there are additional rules that apply to the resource. For example, a special authority or a set of funding conditions or rules.
+
+**Approach:** The API stores authorization and funding rules as Base64-encoded JSON Schema documents in the `authorizationSchema` extension. These schemas enable:
+
+* Client-side form validation
+* Dynamic form generation based on authorization case requirements
+* Structured data submission validation
 

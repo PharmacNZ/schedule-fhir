@@ -15,30 +15,30 @@
   <entry>
     <resource>
       <Medication>
-        <id value="Medication-Lucrin-Depot-1-Month"/>
+        <id value="Medication-Clexane-100mg-1ml-Syringe"/>
         <meta>
           <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
         </meta>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
-          <valueString value="Lucrin Depot 1-month"/>
+          <valueString value="Clexane"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
-          <valueString value="1"/>
+          <valueString value="10"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
-          <valueString value="inj"/>
+          <valueString value="syringe"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank">
           <valueInteger value="4"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
-          <valueString value="Hormone Preparations - Systemic Excluding Contraceptive Hormones"/>
+          <valueString value="Blood and Blood Forming Organs"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
-          <valueString value="Trophic Hormones"/>
+          <valueString value="Antithrombotic Agents"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
-          <valueString value="GnRH Analogues"/>
+          <valueString value="Heparin and Antagonist Preparations"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple">
           <valueBoolean value="true"/>
@@ -52,152 +52,189 @@
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine">
           <valueBoolean value="false"/>
         </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength">
+          <valueString value="100 mg in 1 ml"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification">
+          <valueString value="Presciption"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date">
+          <valueDate value="2009-08-01"/>
+        </extension>
         <identifier>
           <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
-          <value value="B14160310092925"/>
+          <value value="B04070438932925"/>
         </identifier>
         <identifier>
           <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
-          <value value="P2330148"/>
+          <value value="P2581906"/>
         </identifier>
         <identifier>
           <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
-          <value value="C1416031009"/>
+          <value value="C0407043893"/>
         </identifier>
         <identifier>
           <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
-          <value value="F141603100929"/>
+          <value value="F040704389329"/>
         </identifier>
         <identifier>
           <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
-          <value value="2330148"/>
+          <value value="2581906"/>
+        </identifier>
+        <identifier>
+          <system value="https://www.gs1.org/gtin"/>
+          <value value="09312319039680"/>
+        </identifier>
+        <identifier>
+          <system value="https://www.gs1.org/gtin"/>
+          <value value="09319733003402"/>
         </identifier>
         <code>
           <coding>
             <system value="http://nzmt.org.nz"/>
-            <code value="50049431000117108"/>
-            <display value="Leuprorelin 3.75 inj, 1 inj"/>
+            <code value="50083501000117108"/>
+            <display value="Inj 100 mg in 1 ml syringe"/>
           </coding>
-          <text value="Leuprorelin"/>
+          <text value="Clexane"/>
         </code>
         <status value="active"/>
         <form>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="412946008"/>
-            <display value="Injectable solution"/>
-          </coding>
-          <text value="Inj 3.75 mg prefilled dual chamber syringe"/>
+          <text value="Solution for injection"/>
         </form>
         <ingredient>
           <itemCodeableConcept>
-            <coding>
-              <system value="http://nzmt.org.nz"/>
-              <code value="2268011000036106"/>
-              <display value="leuprorelin"/>
-            </coding>
-            <text value="leuprorelin"/>
+            <text value="Enoxaparin sodium"/>
           </itemCodeableConcept>
           <isActive value="true"/>
         </ingredient>
       </Medication>
     </resource>
     <search>
-      <mode value="match"/>
+      <mode value="include"/>
     </search>
   </entry>
   <entry>
     <resource>
       <Medication>
-        <id value="Medication-Ricovir-Tenofovir"/>
+        <id value="Medication-Fortisip-Multi-Fibre-Chocolate"/>
         <meta>
           <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
         </meta>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
-          <valueString value="Ricovir"/>
+          <valueString value="Fortisip Multi Fibre (chocolate)"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
-          <valueString value="30"/>
+          <valueString value="200"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
-          <valueString value="tab"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank">
-          <valueInteger value="1"/>
+          <valueString value="ml"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
-          <valueString value="Infections - Agents for Systemic Use"/>
+          <valueString value="Special Foods"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
-          <valueString value="Antivirals"/>
+          <valueString value="Standard Feeds"/>
         </extension>
         <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
-          <valueString value="Hepatitis B Treatment"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple">
-          <valueBoolean value="false"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier">
-          <valueInteger value="0"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack">
-          <valueBoolean value="false"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine">
-          <valueBoolean value="false"/>
+          <valueString value="Standard Feeds"/>
         </extension>
         <identifier>
           <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
-          <value value="B16190538672526"/>
+          <value value="B42063138522825"/>
         </identifier>
         <identifier>
           <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
-          <value value="P2703122"/>
+          <value value="P2702614"/>
         </identifier>
         <identifier>
           <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
-          <value value="C1619053867"/>
+          <value value="C4206313852"/>
         </identifier>
         <identifier>
           <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
-          <value value="F161905386725"/>
+          <value value="F420631385228"/>
         </identifier>
         <identifier>
           <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
-          <value value="2703122"/>
+          <value value="2702614"/>
         </identifier>
         <code>
           <coding>
             <system value="http://nzmt.org.nz"/>
-            <code value="50348251000117105"/>
-            <display value="Tenofovir disoproxil 300 tab, 30 tab"/>
+            <code value="50035701000117108"/>
           </coding>
-          <text value="Tenofovir disoproxil"/>
+          <text value="Fortisip Multi Fibre (chocolate)"/>
         </code>
         <status value="active"/>
         <form>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="385055001"/>
-            <display value="Tablet"/>
-          </coding>
-          <text value="Tab 245 mg (300 mg as a fumarate)"/>
+          <text value="Liquid"/>
         </form>
-        <ingredient>
-          <itemCodeableConcept>
-            <coding>
-              <system value="http://nzmt.org.nz"/>
-              <code value="46616121000116103"/>
-              <display value="tenofovir disoproxil"/>
-            </coding>
-            <text value="tenofovir disoproxil"/>
-          </itemCodeableConcept>
-          <isActive value="true"/>
-        </ingredient>
       </Medication>
     </resource>
     <search>
-      <mode value="match"/>
+      <mode value="include"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="Medication-Nutrison-800-Complete-Multi-Fibre"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
+          <valueString value="Nutrison 800 Complete Multi Fibre"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
+          <valueString value="1000"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
+          <valueString value="ml"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
+          <valueString value="Special Foods"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
+          <valueString value="Standard Feeds"/>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
+          <valueString value="Standard Feeds"/>
+        </extension>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
+          <value value="B42063140742625"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
+          <value value="P2702398"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
+          <value value="C4206314074"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
+          <value value="F420631407426"/>
+        </identifier>
+        <identifier>
+          <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
+          <value value="2702398"/>
+        </identifier>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50271881000117104"/>
+          </coding>
+          <text value="Nutrison 800 Complete Multi Fibre"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Liquid"/>
+        </form>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="include"/>
     </search>
   </entry>
 </Bundle>

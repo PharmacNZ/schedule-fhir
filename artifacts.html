@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - Pharmac Schedules FHIR API v0.0.1</title>
+    <title>Artifacts Summary - Pharmac Schedules FHIR API v1.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8"}
-    h3,h4,h5,h6{--heading-prefix:"8.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"11"}
+    h3,h4,h5,h6{--heading-prefix:"11.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -64,7 +64,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.0.1 - draft
+            <span style="display:inline-block;">1.0.0 - draft
 
 
             </span>
@@ -96,6 +96,41 @@
   </li>
   <li>
     <a href="use-cases.html">Use cases</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-pharmac-medication.html">Medication</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">ChargeItemDefinition - Special Authority</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guides
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a>
+      </li>
+      <li>
+        <a href="fr-json-schema-guide.html">JSON Schema for Funding Rules</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="examples.html">Examples</a>
@@ -166,7 +201,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v0.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -235,11 +270,47 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="SearchParameter-ChargeItemDefinitionDeviceReferenceSearchParam.html"
+                  title="SearchParameter/ChargeItemDefinitionDeviceReferenceSearchParam">ChargeItemDefinitionDeviceReferenceSearchParam</a>
+            </td>
+            <td>
+<p>Reference from ChargeItemDefinition to DeviceDefinition via IG extension. Enables searching for pricing and authorization rules by associated device.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-ChargeItemDefinitionInstanceSearchParam.html"
+                  title="SearchParameter/ChargeItemDefinitionInstanceSearchParam">ChargeItemDefinitionInstanceSearchParam</a>
+            </td>
+            <td>
+<p>Allow _revinclude from Medication to ChargeItemDefinition</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-ChargeItemDefinitionSACodeSearchParam.html"
+                  title="SearchParameter/ChargeItemDefinitionSACodeSearchParam">ChargeItemDefinitionSACodeSearchParam</a>
+            </td>
+            <td>
+<p>Allow ChargeItemDefinition search by code eg special authority code</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="SearchParameter-MedicationBrandNameSearchParam.html"
                   title="SearchParameter/MedicationBrandNameSearchParam">MedicationBrandNameSearchParam</a>
             </td>
             <td>
 <p>Search for medications by brand name (e.g., 'Gaviscon', 'Acidex', 'Budesonide'). Enables fuzzy matching on the medication-brand-name extension for discovery by product name.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-MedicationCategorySearchParam.html"
+                  title="SearchParameter/MedicationCategorySearchParam">MedicationCategorySearchParam</a>
+            </td>
+            <td>
+<p>Search for medications by category</p>
 </td>
          </tr>
          <tr>
@@ -266,6 +337,33 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Profile for ChargeItemDefinition resources representing pricing, subsidy, and rules for devices and medications in the PHARMAC schedule. This profile allows FHIR consumers to use the _include search parameter to retrieve pricing information alongside device or medication resources.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html"
+                  title="StructureDefinition/pharmac-charge-item-definition-funding-rules">PHARMAC Charge Item Definition - Funding Rules</a>
+            </td>
+            <td>
+<p>Profile for ChargeItemDefinition resources representing funding mechanisms and reimbursement rules in the PHARMAC schedule. This profile captures funding conditions, provider requirements, endorsement criteria, case sequences, and funding mechanism types (Prescription, BSO, Rural PSO, etc.).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html"
+                  title="StructureDefinition/pharmac-charge-item-definition-pricing">PHARMAC Charge Item Definition - Pricing</a>
+            </td>
+            <td>
+<p>Profile for ChargeItemDefinition resources representing product pricing information for medications and devices in the PHARMAC schedule. This profile captures listed prices, PHARMAC subsidies, patient co-payments, and pricing-specific attributes such as contract type, DV limits, and statim requirements.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html"
+                  title="StructureDefinition/pharmac-charge-item-definition-special-authority">PHARMAC Charge Item Definition - Special Authority</a>
+            </td>
+            <td>
+<p>Profile for ChargeItemDefinition resources representing Special Authorization (SA) requirements and clinical eligibility criteria in the PHARMAC schedule. This profile captures SA codes, authorization case counts, clinical eligibility, and references to medications requiring special authorization.</p>
 </td>
          </tr>
          <tr>
@@ -301,6 +399,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>The special authorization form code required for this medication (e.g., 'SA2535'). This identifies the specific PHARMAC authorization form that prescribers must complete for patient eligibility.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-authorization-schema.html"
+                  title="StructureDefinition/authorization-schema">Authorization Schema</a>
+            </td>
+            <td>
+<p>Base64-encoded JSON Schema that defines the structure and validation rules for a Special Authorization application form. The decoded content is a JSON Schema (application/schema+json).</p>
 </td>
          </tr>
          <tr>
@@ -422,6 +529,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-medication-legal-classification.html"
+                  title="StructureDefinition/medication-legal-classification">Medication Legal Classification</a>
+            </td>
+            <td>
+<p>Legal classification for a medication.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-medication-original-pack.html"
                   title="StructureDefinition/medication-original-pack">Medication Original Pack</a>
             </td>
@@ -436,6 +552,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Package size for a scheduled medication. For example, '30 x 650 mg sachets' would be represented as 'Sachet' in the form property and 30 in the packageSize extension property.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-medication-product-created-date.html"
+                  title="StructureDefinition/medication-product-created-date">Medication Product Created Date</a>
+            </td>
+            <td>
+<p>The date a medication product record was created.</p>
 </td>
          </tr>
          <tr>
@@ -485,11 +610,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-medication-strength.html"
+                  title="StructureDefinition/medication-strength">Medication Strength</a>
+            </td>
+            <td>
+<p>Strength for a medication.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-medication-unit-of-measure.html"
                   title="StructureDefinition/medication-unit-of-measure">Medication Unit of Measure</a>
             </td>
             <td>
 <p>The unit of measure used for this medication. For example, 'tab' (tablet), 'cap' (capsule), 'ml' (milliliter), 'sach' (sachet).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pricing-copayment-max.html"
+                  title="StructureDefinition/pricing-copayment-max">Pricing Co-Payment Max</a>
+            </td>
+            <td>
+<p>Indicates whether Co-Payment Max applies to this pricing record.</p>
 </td>
          </tr>
          <tr>
@@ -508,6 +651,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>The date on which this pricing expires or ceases to be valid.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pricing-not-combined.html"
+                  title="StructureDefinition/pricing-not-combined">Pricing Not Combined</a>
+            </td>
+            <td>
+<p>Indicates whether Not Combined applies to this pricing record.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pricing-section-29.html"
+                  title="StructureDefinition/pricing-section-29">Pricing Section 29</a>
+            </td>
+            <td>
+<p>Indicates whether Section 29 applies to this pricing record.</p>
 </td>
          </tr>
          <tr>
@@ -582,128 +743,83 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1">ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1">ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1</a>
             </td>
             <td>
-<p>Community pharmacy BSO subsidy (Case 1) with provider condition for hospital care operators.</p>
+<p>Rules for Clexane 100 mg in 1 ml syringe - Case 1.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1">ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2">ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2</a>
             </td>
             <td>
-<p>Community pharmacy Rural PSO subsidy (Case 1) with provider condition for authorised prescribers.</p>
+<p>Rules for Clexane 100 mg in 1 ml syringe - Case 2.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-1.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1">ChargeItemDefinition-Community-Pharmacy-Sequence-1</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3">ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3</a>
             </td>
             <td>
-<p>Community pharmacy prescription subsidy for patients unable to tolerate administration of goserelin. Demonstrates reimbursement with endorsement and provider conditions.</p>
+<p>Rules for Clexane 100 mg in 1 ml syringe - Case 3.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-2.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2">ChargeItemDefinition-Community-Pharmacy-Sequence-2</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA9999-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization">ChargeItemDefinition-SA9999-Authorization</a>
             </td>
             <td>
-<p>Community pharmacy prescription subsidy (Case 2) with provider condition only.</p>
+<p>Special Authorization SA9999</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2139-Authorization.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization">ChargeItemDefinition-SA2139-Authorization</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-Pricing.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing">Clexane - Pricing</a>
             </td>
             <td>
-<p>Special Authorization SA2139.</p>
+<p>Pricing information for Clexane (enoxaparin sodium injection). Demonstrates fully subsidized community and HML pricing.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2520-Authorization.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization">ChargeItemDefinition-SA2520-Authorization</a>
+               <a href="Medication-Medication-Clexane-100mg-1ml-Syringe.html"
+                  title="Medication/Medication-Clexane-100mg-1ml-Syringe">Medication-Clexane-100mg-1ml-Syringe</a>
             </td>
             <td>
-<p>Special Authorization SA2520</p>
+<p>Medication representation of Clexane (enoxaparin sodium) Inj 100 mg in 1 ml syringe.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-1.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-1">ChargeItemDefinition-Tenofovir-Case-Sequence-1</a>
+               <a href="Medication-Medication-Fortisip-Multi-Fibre-Chocolate.html"
+                  title="Medication/Medication-Fortisip-Multi-Fibre-Chocolate">Medication-Fortisip-Multi-Fibre-Chocolate</a>
             </td>
             <td>
-<p>Rules for Tenofovir Disoproxil</p>
+<p>Supplmentrepresentation of Fortisip Multi Fibre (chocolate) oral feed with fibre 1.5 kcal/ml.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-2.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-2">ChargeItemDefinition-Tenofovir-Case-Sequence-2</a>
+               <a href="Medication-Medication-Nutrison-800-Complete-Multi-Fibre.html"
+                  title="Medication/Medication-Nutrison-800-Complete-Multi-Fibre">Medication-Nutrison-800-Complete-Multi-Fibre</a>
             </td>
             <td>
-<p>Rules for Tenofovir Disoproxil</p>
+<p>Supplement representation of Nutrison 800 Complete Multi Fibre (enteral feed with fibre 0.83 kcal/ml).</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing">Lucrin Depot 1-month - Pricing</a>
+               <a href="Bundle-SearchSet-Bundle-Clexane-Pricing.html"
+                  title="Bundle/SearchSet-Bundle-Clexane-Pricing">SearchSet-Bundle-Clexane-Pricing</a>
             </td>
             <td>
-<p>Pricing information for Lucrin Depot 1-month (leuprorelin injection). Demonstrates community subsidized pricing with subsidy, alternative pricing, and new pricing attributes including cost brand source, wastage claimable, DV limit percentage, and brand switch fee.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Medication-Medication-Lucrin-Depot-1-Month.html"
-                  title="Medication/Medication-Lucrin-Depot-1-Month">Medication-Lucrin-Depot-1-Month</a>
-            </td>
-            <td>
-<p>Medication representation of Lucrin Depot 1-month (leuprorelin injection).</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Medication-Medication-Ricovir-Tenofovir.html"
-                  title="Medication/Medication-Ricovir-Tenofovir">Medication-Ricovir-Tenofovir</a>
-            </td>
-            <td>
-<p>Medication representation of Ricovir (tenofovir disoproxil tablets).</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Medication-Medication-Viramune-Suspension.html"
-                  title="Medication/Medication-Viramune-Suspension">Medication-Viramune-Suspension</a>
-            </td>
-            <td>
-<p>Medication representation of Viramune Suspension (nevirapine oral suspension).</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Ricovir-Pricing.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing">Ricovir - Pricing</a>
-            </td>
-            <td>
-<p>Pricing information for Ricovir (tenofovir disoproxil tablets). Demonstrates fully subsidized community pricing with PSS contract type and DV limit.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Bundle-SearchSet-Bundle-Leuprorelin-Pricing.html"
-                  title="Bundle/SearchSet-Bundle-Leuprorelin-Pricing">SearchSet-Bundle-Leuprorelin-Pricing</a>
-            </td>
-            <td>
-<p>Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Leuprorelin&amp;_include=ChargeItemDefinition:instance</p>
+<p>Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Clexane&amp;_include=ChargeItemDefinition:instance</p>
 </td>
          </tr>
          <tr>
@@ -712,26 +828,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Bundle/SearchSet-Bundle-Medication">SearchSet-Bundle-Medication</a>
             </td>
             <td>
-<p>Example search result demonstrating a bulk medication search.</p>
+<p>Example search result demonstrating a bulk medication search with GET /Medication?name=Clexane&amp;.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Bundle-SearchSet-Bundle-Ricovir-Pricing.html"
-                  title="Bundle/SearchSet-Bundle-Ricovir-Pricing">SearchSet-Bundle-Ricovir-Pricing</a>
+               <a href="Bundle-SearchSet-Bundle-Special-Authorities.html"
+                  title="Bundle/SearchSet-Bundle-Special-Authorities">SearchSet-Bundle-Special-Authorities</a>
             </td>
             <td>
-<p>Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Tenofovir&amp;_include=ChargeItemDefinition:instance</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Bundle-SearchSet-Bundle-SA2139-Authorization.html"
-                  title="Bundle/SearchSet-Bundle-SA2139-Authorization">SearchSet-Bundle-SA2139-Authorization</a>
-            </td>
-            <td>
-<p>Example search result demonstrating _include to retrieve ChargeItemDefinition resource using the Special Authority ID and it's associated Medication(s)
-        Query: GET /ChargeItemDefinition?code=SA2139&amp;_include=ChargeItemDefinition:instance</p>
+<p>Example search result demonstrating a search for all special authorization definitions.</p>
 </td>
          </tr>
       </tbody>
@@ -754,7 +860,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 27, 2026 00:29+0000">2026-03-27</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 17, 2026 06:29+0000">2026-04-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

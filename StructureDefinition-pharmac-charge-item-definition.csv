@@ -80,6 +80,22 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","In-combination funding flag","Indicates whether this item is only subsidised when used in combination with other medicines or treatments.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:authorizationSchema","ChargeItemDefinition.extension","authorizationSchema","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema]]} {[]}
+","JSON Schema for authorization form","Base64-encoded JSON Schema that defines the structure and validation rules for the Special Authorization application form. Clients should base64-decode the value to obtain the JSON Schema.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:PricingSection29","ChargeItemDefinition.extension","PricingSection29","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29]]} {[]}
+","Pricing Section 29","Indicates whether Section 29 applies to this pricing record.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:PricingNotCombined","ChargeItemDefinition.extension","PricingNotCombined","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined]]} {[]}
+","Pricing Not Combined","Indicates whether Not Combined applies to this pricing record.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:PricingCoPaymentMax","ChargeItemDefinition.extension","PricingCoPaymentMax","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max]]} {[]}
+","Pricing Co-Payment Max","Indicates whether Co-Payment Max applies to this pricing record.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ChargeItemDefinition.modifierExtension","ChargeItemDefinition.modifierExtension","","extensions
 user content","",0,*,"","Y","","Extension {[]} {[]}
 ","Extensions that cannot be ignored","May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.

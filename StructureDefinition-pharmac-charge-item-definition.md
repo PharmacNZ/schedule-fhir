@@ -1,4 +1,4 @@
-# PHARMAC Charge Item Definition - Pharmac Schedules FHIR API v0.0.1
+# PHARMAC Charge Item Definition - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition | *Version*:0.0.1 |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition | *Version*:1.0.0 |
 | Active as of 2025-01-26 | *Computable Name*:PharmacChargeItemDefinition |
 
  
@@ -17,9 +17,58 @@ Profile for ChargeItemDefinition resources representing pricing, subsidy, and ru
  
 To define the structure for PHARMAC pricing information including listed price, subsidy amounts, and applicability rules for devices and medications. Supports the use of _include search parameter for efficient data retrieval. 
 
+### Overview
+
+The **PHARMAC Charge Item Definition** profile is the base (parent) profile for all ChargeItemDefinition resources in this implementation guide. It defines the common structure shared by the three specialised child profiles:
+
+* [PHARMAC Charge Item Definition - Pricing](StructureDefinition-pharmac-charge-item-definition-pricing.md) — product pricing and subsidy amounts
+* [PHARMAC Charge Item Definition - Funding Rules](StructureDefinition-pharmac-charge-item-definition-funding-rules.md) — funding mechanisms, case sequences, and reimbursement rules
+* [PHARMAC Charge Item Definition - Special Authority](StructureDefinition-pharmac-charge-item-definition-special-authority.md) — special authorization requirements and clinical eligibility criteria
+
+### When to use this profile
+
+You would not typically create instances of this base profile directly. Instead, use one of the three child profiles above depending on the type of information you are representing. The base profile exists to define common elements that all ChargeItemDefinition types share.
+
+### Key elements
+
+| | |
+| :--- | :--- |
+| `url` | **Required.**Canonical identifier for this definition. |
+| `status` | Status of the definition (typically`#active`). |
+| `description` | Human-readable description of what this definition captures. |
+| `instance` | References to the Medication or Device resources this definition applies to. |
+| `applicability` | Rules or conditions that determine when this definition applies. |
+| `propertyGroup` | Groups of pricing or reimbursement components. |
+
+### Common extensions
+
+The base profile defines slots for all extensions used across the three child profiles. Each child profile then constrains which extensions are required, optional, or prohibited.
+
+| | | |
+| :--- | :--- | :--- |
+| `effectiveDate` | date | **Required.**Date from which this definition is effective. |
+| `expiryDate` | date | Optional expiry date. |
+| `authorizationForm` | string | SA form code (e.g., "SA2139"). Used by the Special Authority profile. |
+| `authorizationTitle` | string | Human-readable title for the authorization. |
+| `authorizationCaseCount` | integer | Number of authorization cases. |
+| `authorizationSchema` | base64Binary | Base64-encoded JSON Schema for the SA application form. |
+| `fundingRule` | complex | Funding mechanism, case sequence, and dispensary type. Used by the Funding Rules profile. |
+| `costBrandSource` | boolean | Whether pricing is from a cost brand. Used by the Pricing profile. |
+| `wastageClaimable` | boolean | Whether wastage may be claimed. |
+| `contractType` | string | PHARMAC contract type (e.g., "PSS"). |
+| `dvLimitPercent` | decimal | Daily volume limit percentage. |
+| `brandSwitchFee` | boolean | Whether a brand switch fee applies. |
+| `statim` | string | Urgent dispensing rules. |
+| `inCombination` | string | Whether the item must be used in combination. |
+| `deviceDefinition` | Reference | Reference to a DeviceDefinition (for device pricing). |
+
+### Relationship to Medication
+
+ChargeItemDefinition resources reference Medication resources via the `instance` element. A single Medication may be referenced by multiple ChargeItemDefinition resources — one for pricing, one or more for funding rules, and optionally one for special authorization. Use `_revinclude=ChargeItemDefinition:instance` when searching for Medications to retrieve all associated definitions in a single request.
+
 **Usages:**
 
-* Examples for this Profile: [ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1.md), [ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1.md), [ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-1.md), [ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-2.md)... Show 6 more, [ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing](ChargeItemDefinition-ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing.md), [ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing](ChargeItemDefinition-ChargeItemDefinition-Ricovir-Pricing.md), [ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2139-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2520-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-1.md) and [ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-2](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-2.md)
+* Derived from this Profile: [PHARMAC Charge Item Definition - Funding Rules](StructureDefinition-pharmac-charge-item-definition-funding-rules.md), [PHARMAC Charge Item Definition - Pricing](StructureDefinition-pharmac-charge-item-definition-pricing.md) and [PHARMAC Charge Item Definition - Special Authority](StructureDefinition-pharmac-charge-item-definition-special-authority.md)
 * CapabilityStatements using this Profile: [Pharmac Schedules Capability Statement](CapabilityStatement-PharmacSchedulesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/pharmac-charge-item-definition)
@@ -41,7 +90,7 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-charge-item-
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-charge-item-definition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "PharmacChargeItemDefinition",
   "title" : "PHARMAC Charge Item Definition",
   "status" : "active",
@@ -295,6 +344,52 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-charge-item-
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination"]
+      }]
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:authorizationSchema",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "authorizationSchema",
+      "short" : "JSON Schema for authorization form",
+      "definition" : "Base64-encoded JSON Schema that defines the structure and validation rules for the Special Authorization application form. Clients should base64-decode the value to obtain the JSON Schema.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"]
+      }]
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:PricingSection29",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "PricingSection29",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29"]
+      }]
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:PricingNotCombined",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "PricingNotCombined",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined"]
+      }]
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:PricingCoPaymentMax",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "PricingCoPaymentMax",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max"]
       }]
     },
     {

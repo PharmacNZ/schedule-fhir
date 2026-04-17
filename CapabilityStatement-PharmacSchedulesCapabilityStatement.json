@@ -2,7 +2,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "PharmacSchedulesCapabilityStatement",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "PharmacSchedulesCapabilityStatement",
   "title" : "Pharmac Schedules Capability Statement",
   "status" : "draft",

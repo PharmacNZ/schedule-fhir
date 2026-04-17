@@ -2,7 +2,7 @@
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-charge-item-definition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "PharmacChargeItemDefinition",
   "title" : "PHARMAC Charge Item Definition",
   "status" : "active",
@@ -859,6 +859,154 @@
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:authorizationSchema",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "authorizationSchema",
+      "short" : "JSON Schema for authorization form",
+      "definition" : "Base64-encoded JSON Schema that defines the structure and validation rules for the Special Authorization application form. Clients should base64-decode the value to obtain the JSON Schema.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "DomainResource.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:PricingSection29",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "PricingSection29",
+      "short" : "Pricing Section 29",
+      "definition" : "Indicates whether Section 29 applies to this pricing record.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "DomainResource.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:PricingNotCombined",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "PricingNotCombined",
+      "short" : "Pricing Not Combined",
+      "definition" : "Indicates whether Not Combined applies to this pricing record.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "DomainResource.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:PricingCoPaymentMax",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "PricingCoPaymentMax",
+      "short" : "Pricing Co-Payment Max",
+      "definition" : "Indicates whether Co-Payment Max applies to this pricing record.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "DomainResource.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max"]
       }],
       "condition" : ["ele-1"],
       "constraint" : [{
@@ -2988,6 +3136,52 @@
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination"]
+      }]
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:authorizationSchema",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "authorizationSchema",
+      "short" : "JSON Schema for authorization form",
+      "definition" : "Base64-encoded JSON Schema that defines the structure and validation rules for the Special Authorization application form. Clients should base64-decode the value to obtain the JSON Schema.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"]
+      }]
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:PricingSection29",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "PricingSection29",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29"]
+      }]
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:PricingNotCombined",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "PricingNotCombined",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined"]
+      }]
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:PricingCoPaymentMax",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "PricingCoPaymentMax",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max"]
       }]
     },
     {

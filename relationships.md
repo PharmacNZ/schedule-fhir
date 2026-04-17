@@ -1,4 +1,4 @@
-# Relationships - Pharmac Schedules FHIR API v0.0.1
+# Relationships - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * **Relationships**
@@ -35,18 +35,30 @@ Medication ←→ ChargeItemDefinition (multiple types)
 
 ## ChargeItemDefinition Types
 
-### 1. Product Pricing ChargeItemDefinition
+The PHARMAC Schedule Implementation Guide defines three specialized ChargeItemDefinition profiles to represent distinct types of information:
+
+1. **PharmacChargeItemDefinitionPricing**- Product pricing information
+1. **PharmacChargeItemDefinitionSpecialAuthority**- Special authorization requirements
+1. **PharmacChargeItemDefinitionFundingRules**- Funding mechanisms and reimbursement rules
+
+Each profile has specific constraints and required elements appropriate to its purpose.
+
+### Product Pricing ChargeItemDefinition (PharmacChargeItemDefinitionPricing)
 
 Represents the base pricing information for a medication or device.
 
+**Profile:** `PharmacChargeItemDefinitionPricing`
+
 **Key Characteristics:**
 
-* Contains `propertyGroup` with `priceComponent` elements
+* Contains `propertyGroup` with `priceComponent` elements (REQUIRED)
 * Includes pricing attributes via extensions (costBrandSource, wastageClaimable, contractType, dvLimitPercent, brandSwitchFee, statim, inCombination)
-* References the product via `instance` element
+* References the product via `instance` element (REQUIRED)
 * May include multiple pricing scenarios (community pricing vs alternative pricing)
+* Does NOT use `code` element (reserved for SA codes)
+* Does NOT use authorization extensions
 
-**Example:** `ChargeItemDefinition-Ricovir-Pricing`
+**Example:** `ChargeItemDefinition-Clexane-Pricing`
 
 **Price Components:**
 
@@ -55,42 +67,46 @@ Represents the base pricing information for a medication or device.
 * **Patient Surcharge** (type: `surcharge`) - The additional cost to the patient
 * **Patient Co-Payment** (type: `informational`) - The final calculated patient cost
 
-### 2. Special Authorization ChargeItemDefinition
+### Special Authorization ChargeItemDefinition (PharmacChargeItemDefinitionSpecialAuthority)
 
 Represents authorization requirements for restricted medications.
 
+NOTE: The following makes reference to SA-2139, which as of this writing is not provided fully for reference as an example. For the nature of the link as expressed in the legacy system, feel free to consult the existing Pharmac Schedule. SA-2139 will be provided as an example soon.
+
+**Profile:** `PharmacChargeItemDefinitionSpecialAuthority`
+
 **Key Characteristics:**
 
-* Contains authorization extensions (authorizationForm, authorizationTitle, authorizationCaseCount)
-* Uses `code` element to identify the special authority form (e.g., SA2139, SA2520)
-* Contains `applicability` rules with CQL expressions defining eligibility criteria
+* Uses `code` element to identify the special authority form (e.g., SA2139, SA2520) (REQUIRED)
+* Contains authorization extensions: authorizationCaseCount (REQUIRED), authorizationForm, authorizationTitle
+* Contains `authorizationSchema` extension with Base64-encoded JSON schema defining case submission structure (RECOMMENDED) 
 * May have multiple applicability entries representing different authorization cases
-* References the medication via `instance` element
+* References the medication via `instance` element (REQUIRED)
+* Does NOT use pricing attribute extensions (costBrandSource, etc.)
 
-**Example:** `ChargeItemDefinition-Tenofovir-Emtricitabine-SA2139-Authorization`
+**Example:** `ChargeItemDefinition-SA9999-Authorization`
 
-**Authorization Cases (SA2139 - Antiretrovirals):**
+A single Special Authority ChargeItemDefinition may reference multiple Medications. For example, SA9999 is a demonstration schema showing various validation patterns.
 
-1. Initial application - Confirmed HIV
-1. Renewal - Confirmed HIV
-1. Initial application - Prevention of maternal transmission
-1. Initial application - Pre-exposure prophylaxis (PEP)
-1. Renewal - Second/subsequent post-exposure prophylaxis
-1. Initial application - Percutaneous exposure
-1. Renewal - Second/subsequent percutaneous exposure
+**Authorization Cases (SA9999 - Example Template):** Multiple authorization patterns demonstrating text fields, numeric ranges, boolean selections, conditional fields, and combined logic.
 
-### 3. Funding Mechanism ChargeItemDefinition
+### Funding Mechanism ChargeItemDefinition (PharmacChargeItemDefinitionFundingRules)
 
 Represents specific funding scenarios and reimbursement rules.
 
+**Profile:** `PharmacChargeItemDefinitionFundingRules`
+
 **Key Characteristics:**
 
-* Contains `fundingRule` extension with type and rule details
+* Contains `fundingRule` extension with type and rule details (REQUIRED)
 * Includes case sequence number and funding mechanism type (Prescription, BSO, RuralPSO, Pharmacy)
-* Contains `applicability` rules defining when this funding applies (e.g., provider requirements, endorsement conditions)
-* References the medication indirectly (applies to goserelin prescriptions in example)
+* **NEW:** Contains optional `authorizationSchema` extension with Base64-encoded JSON schema for case submission validation (RECOMMENDED) 
+* May include `propertyGroup` with subsidy amounts
+* References the medication optionally via `instance` element
+* Does NOT use `code` element (reserved for SA codes)
+* Does NOT use pricing attribute extensions or authorization extensions
 
-**Example:** `ChargeItemDefinition-Community-Pharmacy-Sequence-1`
+**Example:** `ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1`
 
 **Funding Mechanism Types:**
 
@@ -105,148 +121,153 @@ Represents specific funding scenarios and reimbursement rules.
 
 ### Pattern 1: Search Medication with Pricing
 
-Retrieve a medication and all its associated ChargeItemDefinitions:
+Retrieve a medication and all its associated ChargeItemDefinitions (pricing, funding rules):
 
 ```
-GET /Medication?name=Ricovir&_revinclude=ChargeItemDefinition:instance
-
-```
-
-**Returns:**
-
-* Medication-Ricovir-Tenofovir (match)
-* ChargeItemDefinition-Ricovir-Pricing (included)
-
-### Pattern 2: Search Medication with Authorizations
-
-Retrieve a medication and its authorization requirements:
-
-```
-GET /Medication?code=50348251000117105&_revinclude=ChargeItemDefinition:instance
+GET /Medication?name=Clexane&_revinclude=ChargeItemDefinition:instance
 
 ```
 
-**Returns:**
+**Returns:** (see `SearchSet-Bundle-Clexane-Pricing`)
 
-* Medication-Ricovir-Tenofovir (match)
-* ChargeItemDefinition-Ricovir-Pricing (included)
-* ChargeItemDefinition-Tenofovir-Emtricitabine-SA2139-Authorization (included)
-* ChargeItemDefinition-Tenofovir-Emtricitabine-SA2520-Authorization (included)
+* Medication-Clexane-100mg-1ml-Syringe (match)
+* ChargeItemDefinition-Clexane-Pricing (included)
+* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1 (included)
+* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2 (included)
+* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3 (included)
+
+### Pattern 2: Search Medication with Pricing, Funding Rules, and Authorizations
+
+Retrieve a medication and all associated ChargeItemDefinitions — pricing, funding rules, and special authorizations:
+
+```
+GET /Medication?name=Clexane&_revinclude=ChargeItemDefinition:instance
+
+```
+
+**Returns:** (see `SearchSet-Bundle-Clexane-Pricing`)
+
+* Medication-Clexane-100mg-1ml-Syringe (match)
+* ChargeItemDefinition-Clexane-Pricing (included)
+* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1 (included)
+* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2 (included)
+* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3 (included)
+* ChargeItemDefinition-SA9999-Authorization (included)
 
 ### Pattern 3: Search by Special Authority Code
 
 Retrieve all ChargeItemDefinitions for a specific special authority form:
 
 ```
-GET /ChargeItemDefinition?code=SA2139
+GET /ChargeItemDefinition?code=SA9999
 
 ```
 
 **Returns:**
 
-* All ChargeItemDefinitions with authorization code SA2139
+* All ChargeItemDefinitions with authorization code SA9999
 
 ### Pattern 4: Reverse Include from Medication
 
 Retrieve a medication and include all ChargeItemDefinitions that reference it:
 
 ```
-GET /Medication/Medication-Ricovir-Tenofovir?_revinclude=ChargeItemDefinition:instance
+GET /Medication/Medication-Clexane?_revinclude=ChargeItemDefinition:instance
 
 ```
 
 **Returns:**
 
-* Medication-Ricovir-Tenofovir
+* Medication-Clexane-100mg-1ml-Syringe
 * All ChargeItemDefinitions that reference this medication
 
 ### Pattern 5: Search by Special Authority and Include Medications
 
-Retrieve a Special Authority `ChargeItemDefinition` and all associated `Medication` resources
+Retrieve a Special Authority `ChargeItemDefinition` and all associated `Medication` resources:
 
 ```
-GET /ChargeItemDefinition?code=SA2139?_include=*
-
-```
-
-```
-GET /ChargeItemDefinition?code=SA2139?_include=ChargeItemDefinition:instance
+GET /ChargeItemDefinition?code=SA9999&_include=ChargeItemDefinition:instance
 
 ```
 
-## Complete Example: Ricovir (Tenofovir)
+**Returns:** (see `SearchSet-Bundle-SA9999-Authorization`)
 
-Ricovir demonstrates the full complexity of the relationship model:
+* ChargeItemDefinition-SA9999-Authorization (match)
+* Medication-Clexane-100mg-1ml-Syringe
+
+Note: A single Special Authority ChargeItemDefinition may reference multiple Medications via the `instance` element.
+
+## Complete Example: Clexane
+
+Clexane demonstrates the full complexity of the relationship model, with pricing, funding rules, and a special authority:
 
 ```
-Medication-Ricovir-Tenofovir
+Medication-Clexane-100mg-1ml-Syringe
   └── Referenced by:
-      ├── ChargeItemDefinition-Ricovir-Pricing (Product Pricing)
-      │   ├── Listed Price: $13.45
-      │   ├── PHARMAC Subsidy: $13.45 (fully subsidized)
-      │   ├── Contract Type: PSS
-      │   ├── DV Limit: 5%
-      │   ├── Statim: Must
-      │   └── In-Combination: n/a
+      ├── ChargeItemDefinition-Clexane-Pricing (Product Pricing)
+      │   ├── Listed Price: [See actual pricing]
+      │   ├── PHARMAC Subsidy: [See actual pricing]
+      │   ├── Contract Type: [See actual contract type]
+      │   └── Other pricing attributes: [See full resource]
       │
-      ├── ChargeItemDefinition-Tenofovir-Emtricitabine-SA2139-Authorization (SA2139 - Antiretrovirals)
-      │   ├── Case 1: Initial - Confirmed HIV
-      │   ├── Case 2: Renewal - Confirmed HIV
-      │   ├── Case 3: Initial - Maternal transmission prevention
-      │   ├── Case 4: Initial - Post-exposure prophylaxis (PEP)
-      │   ├── Case 5: Renewal - Second/subsequent PEP
-      │   ├── Case 6: Initial - Percutaneous exposure
-      │   └── Case 7: Renewal - Second/subsequent percutaneous exposure
+      ├── ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1 (Funding Rules)
+      │   └── Special Authority (SA9999) + Authorised Providers
       │
-      └── ChargeItemDefinition-Tenofovir-Emtricitabine-SA2520-Authorization (SA2520 - PrEP/PEP)
-          ├── Case 1: Initial - Pre-exposure prophylaxis (PrEP)
-          ├── Case 2: Renewal - PrEP
-          ├── Case 3: Initial - Post-exposure prophylaxis (PEP)
-          └── Case 4: Renewal - Second/subsequent PEP
+      ├── ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2 (Funding Rules)
+      │   └── PRIME Service Endorsement + Authorised Providers
+      │
+      ├── ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3 (Funding Rules)
+      │   └── Hospital Use Only
+      │
+      └── ChargeItemDefinition-SA9999-Authorization (SA9999 - Example Template)
+          ├── Demonstration schema with various validation patterns
+          ├── Text fields, numeric ranges, and boolean selections
+          ├── Conditional fields and combined logic patterns
+          └── For reference and developer guidance
+          └── For reference and developer guidance
 
 ```
 
-## Understanding Applicability Rules
+## Resources in this Implementation Guide
 
-ChargeItemDefinitions use the `applicability` element with CQL expressions to define when they apply:
+The primary examples in this IG are based on **Clexane (enoxaparin sodium) 100mg 1ml Syringe**:
 
-### Pricing Applicability
+* **Medication:** `Medication-Clexane-100mg-1ml-Syringe` 
+* Identifiers: Brand ID, Pack ID, Chemical ID, Formulation ID, Pharma Code, and GTINs
+* Form: Injectable solution
+* Ingredients: Enoxaparin sodium
+ 
+* **Pricing:** `ChargeItemDefinition-Clexane-Pricing` 
+* Represents the listed price, subsidy, surcharge, and co-payment for this medication
+ 
+* **Funding Rules:** Three cases demonstrating different funding scenarios 
+* Case 1: Special Authority (SA9999) required + Authorised Providers
+* Case 2: PRIME service endorsement + Authorised Providers
+* Case 3: Hospital use only
+ 
+* **Special Authorization:** `ChargeItemDefinition-SA9999-Authorization` 
+* Demonstration schema showing various validation patterns
+* Text fields, numeric ranges, booleans, conditional logic
+* For reference and developer guidance
+ 
 
-```
-* applicability[0].description = "Community (subsidized) pricing - fully subsidized"
+## JSON Schema Validation and Authorization Structure
 
-```
+ChargeItemDefinitions now use the `authorizationSchema` extension containing a Base64-encoded JSON schema document to define validation rules for authorization case submissions and funding rules.
 
-Simple text-based rules for pricing scenarios.
+### Purpose of authorizationSchema
 
-### Authorization Applicability
+The `authorizationSchema` extension serves to:
 
-```
-* applicability[0].description = "Initial application - Confirmed HIV"
-* applicability[0].language = #text/cql
-* applicability[0].expression = "exists(Condition where code in 'ConfirmedHIVInfection')"
+1. **Define structural requirements**- Specify the exact properties and data types expected in an authorization form submission
+1. **Enable client-side validation**- Allow systems submitting authorizations to validate form data before submission
+1. **Document submission format**- Provide machine-readable documentation of the expected JSON structure
 
-```
+### Dual-Validation Architecture
 
-CQL expressions that define clinical eligibility criteria, allowing for:
+Authorization and funding rules now use **JSON schema validation exclusively**:
 
-* Complex conditional logic
-* Multiple requirement combinations (AND/OR)
-* Clinical condition checks
-* Provider requirement validation
-
-### Funding Mechanism Applicability
-
-```
-* applicability[0].description = "Condition (endorsement): Additional subsidy by endorsement..."
-* applicability[0].language = #text/cql
-* applicability[0].expression = "exists(Condition where code in 'ChildOrAdolescent') and 
-                                  exists(Condition where code in 'UnableToTolerateGoserelin') and 
-                                  exists(Condition where code in 'PrescriptionEndorsedForAdditionalSubsidy')"
-
-```
-
-Complex rules combining patient demographics, clinical conditions, and administrative requirements.
+* **JSON Schema**: Validates structured format for case submissions, ensures required fields are present with correct data types
 
 ## Extensions and Attributes
 
@@ -271,6 +292,7 @@ Complex rules combining patient demographics, clinical conditions, and administr
 | authorizationForm | string | Special authority form code (e.g., SA2139) |
 | authorizationTitle | string | Human-readable authorization title |
 | authorizationCaseCount | integer | Number of distinct authorization cases |
+| authorizationSchema | Base64Binary | Base64-encoded JSON schema defining structured format for authorization case submissions. |
 
 ### Funding Rule Attributes
 
@@ -280,32 +302,33 @@ Complex rules combining patient demographics, clinical conditions, and administr
 | fundingRule.rule.type | code | Rule type (e.g., CaseSequence, FundingMechanism) |
 | fundingRule.rule.value | integer/decimal | Rule value |
 | fundingRule.rule.attribute | code | Rule attribute (e.g., Prescription, BSO) |
+| authorizationSchema | Base64Binary | Optional: Base64-encoded JSON schema defining structured format for funding case submissions. |
 
 ## Best Practices
 
 ### For API Consumers
 
-1. **Always use _include**: When retrieving Medication resources, use `_include=ChargeItemDefinition:instance` to get all related pricing and authorization information in a single request.
+1. **Always use _revinclude**: When retrieving Medication resources, use`_revinclude=ChargeItemDefinition:instance`to get all related ChargeItemDefinitions in a single request. When retrieving ChargeItemDefinitions, use`_include=ChargeItemDefinition:instance`to get the referenced Medication(s).
 1. **Check ChargeItemDefinition types**: Examine the content to determine the type:
-* Has `propertyGroup`? → Product Pricing
+* Has `propertyGroup` with pricing and no `fundingRule`? → Product Pricing
 * Has `code` with SA prefix? → Special Authorization
-* Has `fundingRule` extension? → Funding Mechanism
+* Has `fundingRule` extension? → Funding Rules
 
-1. **Process multiple scenarios**: A medication may have multiple authorization forms (SA2139, SA2520) and multiple funding mechanisms (Sequence 1, 2, etc.). Process all applicable ChargeItemDefinitions.
-1. **Evaluate applicability rules**: Use the CQL expressions in `applicability` to determine if a ChargeItemDefinition applies to a specific clinical scenario.
+1. **Process multiple scenarios**: A medication may have multiple authorization forms (SA2139, SA2520), multiple funding mechanisms (Prescription, BSO, Rural PSO), and multiple case sequences. Process all applicable ChargeItemDefinitions. A single Special Authority may reference multiple medications.
+1. **Validate against JSON schema**: If`authorizationSchema`is present, decode and use the Base64-encoded JSON schema to validate incoming authorization or funding case submissions.
 1. **Check effective dates**: Always verify that the ChargeItemDefinition is currently effective by checking`effectiveDate`and`expiryDate`extensions.
 
 ### For API Implementers
 
 1. **Create separate ChargeItemDefinitions**: Don't combine pricing, authorization, and funding rules in a single ChargeItemDefinition. Create separate instances for each concern.
-1. **Use consistent URL patterns**: Follow the pattern `ChargeItemDefinition/{Type}-{Product}-{Identifier}` for URLs.
+1. **Use consistent URL patterns**: Follow the pattern`ChargeItemDefinition/{Type}-{Product}-{Identifier}`for URLs.
 1. **Implement proper search parameters**: Support searching by:
 * `instance` (to find ChargeItemDefinitions for a Medication)
 * `code` (to find ChargeItemDefinitions by special authority code)
 * `effectiveDate` (to find current ChargeItemDefinitions)
 
-1. **Maintain referential integrity**: Ensure all ChargeItemDefinitions reference valid Medication or Device resources via `instance` or `deviceDefinition` extensions.
-1. **Document CQL expressions**: Provide clear, human-readable descriptions for all`applicability`rules alongside the CQL expressions.
+1. **Maintain referential integrity**: Ensure all ChargeItemDefinitions reference valid Medication or Device resources via`instance`or`deviceDefinition`extensions.
+1. **Document JSON schemas**: Provide clear documentation of all`authorizationSchema`JSON documents, including the meaning of each required field and validation constraints.
 
 ## Related Resources
 

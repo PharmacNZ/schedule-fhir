@@ -1,4 +1,4 @@
-# Authorization Form - Pharmac Schedules FHIR API v0.0.1
+# Authorization Form - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-form | *Version*:0.0.1 |
-| Draft as of 2026-03-27 | *Computable Name*:AuthorizationForm |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-form | *Version*:1.0.0 |
+| Draft as of 2026-04-17 | *Computable Name*:AuthorizationForm |
 
 The special authorization form code required for this medication (e.g., 'SA2535'). This identifies the specific PHARMAC authorization form that prescribers must complete for patient eligibility.
 
@@ -20,7 +20,7 @@ The special authorization form code required for this medication (e.g., 'SA2535'
 **Usages:**
 
 * Use this Extension: [PHARMAC Charge Item Definition](StructureDefinition-pharmac-charge-item-definition.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-Ricovir-Pricing](Bundle-SearchSet-Bundle-Ricovir-Pricing.md), [ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2520-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-1.md) and [ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-2](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-2.md)
+* Examples for this Extension: [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md), [Bundle/SearchSet-Bundle-Special-Authorities](Bundle-SearchSet-Bundle-Special-Authorities.md) and [ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA9999-Authorization.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/authorization-form)
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-authorization-form.c
   "resourceType" : "StructureDefinition",
   "id" : "authorization-form",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-form",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "AuthorizationForm",
   "title" : "Authorization Form",
   "status" : "draft",
-  "date" : "2026-03-27T00:29:47+00:00",
+  "date" : "2026-04-17T06:29:04+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

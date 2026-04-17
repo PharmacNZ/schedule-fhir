@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>SearchSet-Bundle-Medication - Pharmac Schedules FHIR API v0.0.1</title>
+    <title>SearchSet-Bundle-Medication - Pharmac Schedules FHIR API v1.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.52"}
-    h3,h4,h5,h6{--heading-prefix:"8.52"}</style>
+    <style type="text/css">h2{--heading-prefix:"11.61"}
+    h3,h4,h5,h6{--heading-prefix:"11.61"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -64,7 +64,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.0.1 - draft
+            <span style="display:inline-block;">1.0.0 - draft
 
 
             </span>
@@ -96,6 +96,41 @@
   </li>
   <li>
     <a href="use-cases.html">Use cases</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-pharmac-medication.html">Medication</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">ChargeItemDefinition - Special Authority</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guides
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a>
+      </li>
+      <li>
+        <a href="fr-json-schema-guide.html">JSON Schema for Funding Rules</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="examples.html">Examples</a>
@@ -159,7 +194,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v0.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
   
 
@@ -204,7 +239,7 @@
 
 
 
-  <div data-fhir="generated"><p class="res-header-id"/><a name="SearchSet-Bundle-Medication"> </a><a name="hcSearchSet-Bundle-Medication"> </a><p>Bundle SearchSet-Bundle-Medication of type searchset</p><a name="Medication_Medication-Lucrin-Depot-1-Month"> </a><a name="hcMedication_Medication-Lucrin-Depot-1-Month"> </a><hr/><p>Entry 1</p><p>Search:Mode = match</p><p>Resource Medication:</p><blockquote><p class="res-header-id"/><a name="SearchSet-Bundle-Medication/Medication-Lucrin-Depot-1-Month"> </a><a name="hcSearchSet-Bundle-Medication/Medication-Lucrin-Depot-1-Month"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-medication.html">PHARMAC Medication</a></p></div><p><b>Medication Brand Name</b>: Lucrin Depot 1-month</p><p><b>Medication Package Size</b>: 1</p><p><b>Medication Unit of Measure</b>: inj</p><p><b>Medication Rank</b>: 4</p><p><b>Medication ATC Category 1</b>: Hormone Preparations - Systemic Excluding Contraceptive Hormones</p><p><b>Medication ATC Category 2</b>: Trophic Hormones</p><p><b>Medication ATC Category 3</b>: GnRH Analogues</p><p><b>Medication Product Multiple</b>: true</p><p><b>Medication Product Multiplier</b>: 1</p><p><b>Medication Original Pack</b>: false</p><p><b>Medication Safety List Medicine</b>: false</p><p><b>identifier</b>: <code>http://schedule.pharmac.govt.nz/ids/brand</code>/B14160310092925, <code>http://schedule.pharmac.govt.nz/ids/pack</code>/P2330148, <code>http://schedule.pharmac.govt.nz/ids/chemical</code>/C1416031009, <code>http://schedule.pharmac.govt.nz/ids/formulation</code>/F141603100929, <code>http://schedule.pharmac.govt.nz/ids/pharmacode</code>/2330148</p><p><b>code</b>: <span title="Codes:{http://nzmt.org.nz 50049431000117108}">Leuprorelin</span></p><p><b>status</b>: Active</p><h3>Ingredients</h3><table class="grid"><tr><td style="display: none">-</td><td><b>IsActive</b></td></tr><tr><td style="display: none">*</td><td>true</td></tr></table></blockquote><a name="Medication_Medication-Ricovir-Tenofovir"> </a><a name="hcMedication_Medication-Ricovir-Tenofovir"> </a><hr/><p>Entry 2</p><p>Search:Mode = match</p><p>Resource Medication:</p><blockquote><p class="res-header-id"/><a name="SearchSet-Bundle-Medication/Medication-Ricovir-Tenofovir"> </a><a name="hcSearchSet-Bundle-Medication/Medication-Ricovir-Tenofovir"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-medication.html">PHARMAC Medication</a></p></div><p><b>Medication Brand Name</b>: Ricovir</p><p><b>Medication Package Size</b>: 30</p><p><b>Medication Unit of Measure</b>: tab</p><p><b>Medication Rank</b>: 1</p><p><b>Medication ATC Category 1</b>: Infections - Agents for Systemic Use</p><p><b>Medication ATC Category 2</b>: Antivirals</p><p><b>Medication ATC Category 3</b>: Hepatitis B Treatment</p><p><b>Medication Product Multiple</b>: false</p><p><b>Medication Product Multiplier</b>: 0</p><p><b>Medication Original Pack</b>: false</p><p><b>Medication Safety List Medicine</b>: false</p><p><b>identifier</b>: <code>http://schedule.pharmac.govt.nz/ids/brand</code>/B16190538672526, <code>http://schedule.pharmac.govt.nz/ids/pack</code>/P2703122, <code>http://schedule.pharmac.govt.nz/ids/chemical</code>/C1619053867, <code>http://schedule.pharmac.govt.nz/ids/formulation</code>/F161905386725, <code>http://schedule.pharmac.govt.nz/ids/pharmacode</code>/2703122</p><p><b>code</b>: <span title="Codes:{http://nzmt.org.nz 50348251000117105}">Tenofovir disoproxil</span></p><p><b>status</b>: Active</p><h3>Ingredients</h3><table class="grid"><tr><td style="display: none">-</td><td><b>IsActive</b></td></tr><tr><td style="display: none">*</td><td>true</td></tr></table></blockquote></div>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="SearchSet-Bundle-Medication"> </a><a name="hcSearchSet-Bundle-Medication"> </a><p>Bundle SearchSet-Bundle-Medication of type searchset</p><a name="Medication_Medication-Clexane-100mg-1ml-Syringe"> </a><a name="hcMedication_Medication-Clexane-100mg-1ml-Syringe"> </a><hr/><p>Entry 1</p><p>Search:Mode = include</p><p>Resource Medication:</p><blockquote><p class="res-header-id"/><a name="SearchSet-Bundle-Medication/Medication-Clexane-100mg-1ml-Syringe"> </a><a name="hcSearchSet-Bundle-Medication/Medication-Clexane-100mg-1ml-Syringe"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-medication.html">PHARMAC Medication</a></p></div><p><b>Medication Brand Name</b>: Clexane</p><p><b>Medication Package Size</b>: 10</p><p><b>Medication Unit of Measure</b>: syringe</p><p><b>Medication Rank</b>: 4</p><p><b>Medication ATC Category 1</b>: Blood and Blood Forming Organs</p><p><b>Medication ATC Category 2</b>: Antithrombotic Agents</p><p><b>Medication ATC Category 3</b>: Heparin and Antagonist Preparations</p><p><b>Medication Product Multiple</b>: true</p><p><b>Medication Product Multiplier</b>: 1</p><p><b>Medication Original Pack</b>: false</p><p><b>Medication Safety List Medicine</b>: false</p><p><b>Medication Strength</b>: 100 mg in 1 ml</p><p><b>Medication Legal Classification</b>: Presciption</p><p><b>Medication Product Created Date</b>: 2009-08-01</p><p><b>identifier</b>: <code>http://schedule.pharmac.govt.nz/ids/brand</code>/B04070438932925, <code>http://schedule.pharmac.govt.nz/ids/pack</code>/P2581906, <code>http://schedule.pharmac.govt.nz/ids/chemical</code>/C0407043893, <code>http://schedule.pharmac.govt.nz/ids/formulation</code>/F040704389329, <code>http://schedule.pharmac.govt.nz/ids/pharmacode</code>/2581906, <a href="http://terminology.hl7.org/7.1.0/NamingSystem-gtin.html" title="The GS1 GTIN is a globally unique identifier of trade items. A trade item is any item (product or service) upon which there is a need to retrieve pre-defined information and that may be priced, or ordered, or invoiced at any point in any supply chain. Note: GTINs may be used in both Codes (http://build.fhir.org/datatypes.html#Coding) and Identifiers (http://build.fhir.org/datatypes.html#Identifier).">GTIN Global Trade Item Number</a>/09312319039680, <a href="http://terminology.hl7.org/7.1.0/NamingSystem-gtin.html" title="The GS1 GTIN is a globally unique identifier of trade items. A trade item is any item (product or service) upon which there is a need to retrieve pre-defined information and that may be priced, or ordered, or invoiced at any point in any supply chain. Note: GTINs may be used in both Codes (http://build.fhir.org/datatypes.html#Coding) and Identifiers (http://build.fhir.org/datatypes.html#Identifier).">GTIN Global Trade Item Number</a>/09319733003402</p><p><b>code</b>: <span title="Codes:{http://nzmt.org.nz 50083501000117108}">Clexane</span></p><p><b>status</b>: Active</p><h3>Ingredients</h3><table class="grid"><tr><td style="display: none">-</td><td><b>IsActive</b></td></tr><tr><td style="display: none">*</td><td>true</td></tr></table></blockquote><a name="Medication_Medication-Fortisip-Multi-Fibre-Chocolate"> </a><a name="hcMedication_Medication-Fortisip-Multi-Fibre-Chocolate"> </a><hr/><p>Entry 2</p><p>Search:Mode = include</p><p>Resource Medication:</p><blockquote><p class="res-header-id"/><a name="SearchSet-Bundle-Medication/Medication-Fortisip-Multi-Fibre-Chocolate"> </a><a name="hcSearchSet-Bundle-Medication/Medication-Fortisip-Multi-Fibre-Chocolate"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-medication.html">PHARMAC Medication</a></p></div><p><b>Medication Brand Name</b>: Fortisip Multi Fibre (chocolate)</p><p><b>Medication Package Size</b>: 200</p><p><b>Medication Unit of Measure</b>: ml</p><p><b>Medication ATC Category 1</b>: Special Foods</p><p><b>Medication ATC Category 2</b>: Standard Feeds</p><p><b>Medication ATC Category 3</b>: Standard Feeds</p><p><b>identifier</b>: <code>http://schedule.pharmac.govt.nz/ids/brand</code>/B42063138522825, <code>http://schedule.pharmac.govt.nz/ids/pack</code>/P2702614, <code>http://schedule.pharmac.govt.nz/ids/chemical</code>/C4206313852, <code>http://schedule.pharmac.govt.nz/ids/formulation</code>/F420631385228, <code>http://schedule.pharmac.govt.nz/ids/pharmacode</code>/2702614</p><p><b>code</b>: <span title="Codes:{http://nzmt.org.nz 50035701000117108}">Fortisip Multi Fibre (chocolate)</span></p><p><b>status</b>: Active</p></blockquote><a name="Medication_Medication-Nutrison-800-Complete-Multi-Fibre"> </a><a name="hcMedication_Medication-Nutrison-800-Complete-Multi-Fibre"> </a><hr/><p>Entry 3</p><p>Search:Mode = include</p><p>Resource Medication:</p><blockquote><p class="res-header-id"/><a name="SearchSet-Bundle-Medication/Medication-Nutrison-800-Complete-Multi-Fibre"> </a><a name="hcSearchSet-Bundle-Medication/Medication-Nutrison-800-Complete-Multi-Fibre"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-medication.html">PHARMAC Medication</a></p></div><p><b>Medication Brand Name</b>: Nutrison 800 Complete Multi Fibre</p><p><b>Medication Package Size</b>: 1000</p><p><b>Medication Unit of Measure</b>: ml</p><p><b>Medication ATC Category 1</b>: Special Foods</p><p><b>Medication ATC Category 2</b>: Standard Feeds</p><p><b>Medication ATC Category 3</b>: Standard Feeds</p><p><b>identifier</b>: <code>http://schedule.pharmac.govt.nz/ids/brand</code>/B42063140742625, <code>http://schedule.pharmac.govt.nz/ids/pack</code>/P2702398, <code>http://schedule.pharmac.govt.nz/ids/chemical</code>/C4206314074, <code>http://schedule.pharmac.govt.nz/ids/formulation</code>/F420631407426, <code>http://schedule.pharmac.govt.nz/ids/pharmacode</code>/2702398</p><p><b>code</b>: <span title="Codes:{http://nzmt.org.nz 50271881000117104}">Nutrison 800 Complete Multi Fibre</span></p><p><b>status</b>: Active</p></blockquote></div>
 
   
 
@@ -229,7 +264,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 27, 2026 00:29+0000">2026-03-27</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 17, 2026 06:29+0000">2026-04-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

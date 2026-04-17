@@ -1,4 +1,4 @@
-# SearchSet-Bundle-Medication - Pharmac Schedules FHIR API v0.0.1
+# SearchSet-Bundle-Medication - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -27,21 +27,21 @@
   "entry" : [{
     "resource" : {
       "resourceType" : "Medication",
-      "id" : "Medication-Lucrin-Depot-1-Month",
+      "id" : "Medication-Clexane-100mg-1ml-Syringe",
       "meta" : {
         "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
       },
       "extension" : [{
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name",
-        "valueString" : "Lucrin Depot 1-month"
+        "valueString" : "Clexane"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size",
-        "valueString" : "1"
+        "valueString" : "10"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure",
-        "valueString" : "inj"
+        "valueString" : "syringe"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank",
@@ -49,15 +49,15 @@
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1",
-        "valueString" : "Hormone Preparations - Systemic Excluding Contraceptive Hormones"
+        "valueString" : "Blood and Blood Forming Organs"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2",
-        "valueString" : "Trophic Hormones"
+        "valueString" : "Antithrombotic Agents"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3",
-        "valueString" : "GnRH Analogues"
+        "valueString" : "Heparin and Antagonist Preparations"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple",
@@ -74,162 +74,202 @@
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine",
         "valueBoolean" : false
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength",
+        "valueString" : "100 mg in 1 ml"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification",
+        "valueString" : "Presciption"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date",
+        "valueDate" : "2009-08-01"
       }],
       "identifier" : [{
         "system" : "http://schedule.pharmac.govt.nz/ids/brand",
-        "value" : "B14160310092925"
+        "value" : "B04070438932925"
       },
       {
         "system" : "http://schedule.pharmac.govt.nz/ids/pack",
-        "value" : "P2330148"
+        "value" : "P2581906"
       },
       {
         "system" : "http://schedule.pharmac.govt.nz/ids/chemical",
-        "value" : "C1416031009"
+        "value" : "C0407043893"
       },
       {
         "system" : "http://schedule.pharmac.govt.nz/ids/formulation",
-        "value" : "F141603100929"
+        "value" : "F040704389329"
       },
       {
         "system" : "http://schedule.pharmac.govt.nz/ids/pharmacode",
-        "value" : "2330148"
+        "value" : "2581906"
+      },
+      {
+        "system" : "https://www.gs1.org/gtin",
+        "value" : "09312319039680"
+      },
+      {
+        "system" : "https://www.gs1.org/gtin",
+        "value" : "09319733003402"
       }],
       "code" : {
         "coding" : [{
           "system" : "http://nzmt.org.nz",
-          "code" : "50049431000117108",
-          "display" : "Leuprorelin 3.75 inj, 1 inj"
+          "code" : "50083501000117108",
+          "display" : "Inj 100 mg in 1 ml syringe"
         }],
-        "text" : "Leuprorelin"
+        "text" : "Clexane"
       },
       "status" : "active",
       "form" : {
-        "coding" : [{
-          "system" : "http://snomed.info/sct",
-          "code" : "412946008",
-          "display" : "Injectable solution"
-        }],
-        "text" : "Inj 3.75 mg prefilled dual chamber syringe"
+        "text" : "Solution for injection"
       },
       "ingredient" : [{
         "itemCodeableConcept" : {
-          "coding" : [{
-            "system" : "http://nzmt.org.nz",
-            "code" : "2268011000036106",
-            "display" : "leuprorelin"
-          }],
-          "text" : "leuprorelin"
+          "text" : "Enoxaparin sodium"
         },
         "isActive" : true
       }]
     },
     "search" : {
-      "mode" : "match"
+      "mode" : "include"
     }
   },
   {
     "resource" : {
       "resourceType" : "Medication",
-      "id" : "Medication-Ricovir-Tenofovir",
+      "id" : "Medication-Fortisip-Multi-Fibre-Chocolate",
       "meta" : {
         "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
       },
       "extension" : [{
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name",
-        "valueString" : "Ricovir"
+        "valueString" : "Fortisip Multi Fibre (chocolate)"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size",
-        "valueString" : "30"
+        "valueString" : "200"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure",
-        "valueString" : "tab"
-      },
-      {
-        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank",
-        "valueInteger" : 1
+        "valueString" : "ml"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1",
-        "valueString" : "Infections - Agents for Systemic Use"
+        "valueString" : "Special Foods"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2",
-        "valueString" : "Antivirals"
+        "valueString" : "Standard Feeds"
       },
       {
         "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3",
-        "valueString" : "Hepatitis B Treatment"
-      },
-      {
-        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple",
-        "valueBoolean" : false
-      },
-      {
-        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier",
-        "valueInteger" : 0
-      },
-      {
-        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack",
-        "valueBoolean" : false
-      },
-      {
-        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine",
-        "valueBoolean" : false
+        "valueString" : "Standard Feeds"
       }],
       "identifier" : [{
         "system" : "http://schedule.pharmac.govt.nz/ids/brand",
-        "value" : "B16190538672526"
+        "value" : "B42063138522825"
       },
       {
         "system" : "http://schedule.pharmac.govt.nz/ids/pack",
-        "value" : "P2703122"
+        "value" : "P2702614"
       },
       {
         "system" : "http://schedule.pharmac.govt.nz/ids/chemical",
-        "value" : "C1619053867"
+        "value" : "C4206313852"
       },
       {
         "system" : "http://schedule.pharmac.govt.nz/ids/formulation",
-        "value" : "F161905386725"
+        "value" : "F420631385228"
       },
       {
         "system" : "http://schedule.pharmac.govt.nz/ids/pharmacode",
-        "value" : "2703122"
+        "value" : "2702614"
       }],
       "code" : {
         "coding" : [{
           "system" : "http://nzmt.org.nz",
-          "code" : "50348251000117105",
-          "display" : "Tenofovir disoproxil 300 tab, 30 tab"
+          "code" : "50035701000117108"
         }],
-        "text" : "Tenofovir disoproxil"
+        "text" : "Fortisip Multi Fibre (chocolate)"
       },
       "status" : "active",
       "form" : {
-        "coding" : [{
-          "system" : "http://snomed.info/sct",
-          "code" : "385055001",
-          "display" : "Tablet"
-        }],
-        "text" : "Tab 245 mg (300 mg as a fumarate)"
-      },
-      "ingredient" : [{
-        "itemCodeableConcept" : {
-          "coding" : [{
-            "system" : "http://nzmt.org.nz",
-            "code" : "46616121000116103",
-            "display" : "tenofovir disoproxil"
-          }],
-          "text" : "tenofovir disoproxil"
-        },
-        "isActive" : true
-      }]
+        "text" : "Liquid"
+      }
     },
     "search" : {
-      "mode" : "match"
+      "mode" : "include"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Medication",
+      "id" : "Medication-Nutrison-800-Complete-Multi-Fibre",
+      "meta" : {
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
+      },
+      "extension" : [{
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name",
+        "valueString" : "Nutrison 800 Complete Multi Fibre"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size",
+        "valueString" : "1000"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure",
+        "valueString" : "ml"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1",
+        "valueString" : "Special Foods"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2",
+        "valueString" : "Standard Feeds"
+      },
+      {
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3",
+        "valueString" : "Standard Feeds"
+      }],
+      "identifier" : [{
+        "system" : "http://schedule.pharmac.govt.nz/ids/brand",
+        "value" : "B42063140742625"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/pack",
+        "value" : "P2702398"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/chemical",
+        "value" : "C4206314074"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/formulation",
+        "value" : "F420631407426"
+      },
+      {
+        "system" : "http://schedule.pharmac.govt.nz/ids/pharmacode",
+        "value" : "2702398"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "50271881000117104"
+        }],
+        "text" : "Nutrison 800 Complete Multi Fibre"
+      },
+      "status" : "active",
+      "form" : {
+        "text" : "Liquid"
+      }
+    },
+    "search" : {
+      "mode" : "include"
     }
   }]
 }

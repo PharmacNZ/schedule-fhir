@@ -1,4 +1,4 @@
-# Cost Brand Source - Pharmac Schedules FHIR API v0.0.1
+# Cost Brand Source - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source | *Version*:0.0.1 |
-| Draft as of 2026-03-27 | *Computable Name*:CostBrandSource |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source | *Version*:1.0.0 |
+| Draft as of 2026-04-17 | *Computable Name*:CostBrandSource |
 
 Indicates whether pricing for this item is sourced from a cost brand.
 
@@ -20,7 +20,7 @@ Indicates whether pricing for this item is sourced from a cost brand.
 **Usages:**
 
 * Use this Extension: [PHARMAC Charge Item Definition](StructureDefinition-pharmac-charge-item-definition.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-Leuprorelin-Pricing](Bundle-SearchSet-Bundle-Leuprorelin-Pricing.md), [Bundle/SearchSet-Bundle-Ricovir-Pricing](Bundle-SearchSet-Bundle-Ricovir-Pricing.md), [ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing](ChargeItemDefinition-ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing.md) and [ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing](ChargeItemDefinition-ChargeItemDefinition-Ricovir-Pricing.md)
+* Examples for this Extension: [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md) and [ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing](ChargeItemDefinition-ChargeItemDefinition-Clexane-Pricing.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/cost-brand-source)
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-cost-brand-source.cs
   "resourceType" : "StructureDefinition",
   "id" : "cost-brand-source",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "CostBrandSource",
   "title" : "Cost Brand Source",
   "status" : "draft",
-  "date" : "2026-03-27T00:29:47+00:00",
+  "date" : "2026-04-17T06:29:04+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

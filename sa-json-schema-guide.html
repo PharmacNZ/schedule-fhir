@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Sa Json Schema Guide - Pharmac Schedules FHIR API v1.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/logos.css" rel="stylesheet"/>
+<link href="assets/css/colours.css" rel="stylesheet" />
+<link href="assets/css/fonts.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="pharmac-logo">
+  <img alt="Pharmac logo" src="assets/images/pharmac-logo.png"  height="35" />
+</div>
+
+<div id="blank-logo">
+  <img alt="" src="assets/images/blank-right-logo.png" height="35"/>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">1.0.0 - draft
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="use-cases.html">Use cases</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-pharmac-medication.html">Medication</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">ChargeItemDefinition - Special Authority</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guides
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a>
+      </li>
+      <li>
+        <a href="fr-json-schema-guide.html">JSON Schema for Funding Rules</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
+  <li>
+    <a href="relationships.html">Resource Relationships</a>
+  </li>
+  <li>
+    <a href="datamodel.html">Data Models</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a href="definitions.json.zip">Artefacts (JSON)</a>
+      </li>
+      <li>
+        <a href="definitions.xml.zip">Artefacts (XML)</a>
+      </li>
+      <li>
+        <a href="full-ig.zip">Download IG</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Sa Json Schema Guide</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Sa Json Schema Guide</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#understanding-json-schema-for-conditional-logic" id="markdown-toc-understanding-json-schema-for-conditional-logic">Understanding JSON Schema for Conditional Logic</a>    <ul>
+      <li><a href="#what-is-json-schema" id="markdown-toc-what-is-json-schema">What is JSON Schema?</a></li>
+      <li><a href="#how-pharmac-uses-json-schema-for-sas" id="markdown-toc-how-pharmac-uses-json-schema-for-sas">How PHARMAC Uses JSON Schema for SAs</a>        <ul>
+          <li><a href="#example-flow" id="markdown-toc-example-flow">Example Flow</a></li>
+          <li><a href="#schema-structure-overview" id="markdown-toc-schema-structure-overview">Schema Structure Overview</a></li>
+          <li><a href="#full-example" id="markdown-toc-full-example">Full Example</a></li>
+        </ul>
+      </li>
+      <li><a href="#common-json-schema-patterns" id="markdown-toc-common-json-schema-patterns">Common JSON Schema Patterns</a>        <ul>
+          <li><a href="#pattern-1-required-text-field" id="markdown-toc-pattern-1-required-text-field">Pattern 1: Required Text Field</a></li>
+          <li><a href="#pattern-2-number-with-range" id="markdown-toc-pattern-2-number-with-range">Pattern 2: Number with Range</a></li>
+          <li><a href="#pattern-3-checkboxes-multiple-options" id="markdown-toc-pattern-3-checkboxes-multiple-options">Pattern 3: Checkboxes (Multiple Options)</a></li>
+          <li><a href="#pattern-4-all-required-and-logic" id="markdown-toc-pattern-4-all-required-and-logic">Pattern 4: All Required (AND Logic)</a></li>
+          <li><a href="#pattern-5-at-least-one-required-or-logic" id="markdown-toc-pattern-5-at-least-one-required-or-logic">Pattern 5: At Least One Required (OR Logic)</a></li>
+          <li><a href="#pattern-6-conditional-requirements" id="markdown-toc-pattern-6-conditional-requirements">Pattern 6: Conditional Requirements</a></li>
+          <li><a href="#pattern-7-allowed-values-only-enum" id="markdown-toc-pattern-7-allowed-values-only-enum">Pattern 7: Allowed Values Only (Enum)</a></li>
+        </ul>
+      </li>
+      <li><a href="#examples" id="markdown-toc-examples">Examples</a>        <ul>
+          <li><a href="#sa9999--example-template-multiple-validation-patterns" id="markdown-toc-sa9999--example-template-multiple-validation-patterns">SA9999 — Example Template (Multiple Validation Patterns)</a></li>
+        </ul>
+      </li>
+      <li><a href="#for-developers" id="markdown-toc-for-developers">For Developers</a>        <ul>
+          <li><a href="#how-to-use-the-schema" id="markdown-toc-how-to-use-the-schema">How to Use the Schema</a></li>
+          <li><a href="#recommended-libraries" id="markdown-toc-recommended-libraries">Recommended Libraries</a></li>
+        </ul>
+      </li>
+      <li><a href="#key-concepts-summary" id="markdown-toc-key-concepts-summary">Key Concepts Summary</a></li>
+      <li><a href="#related-pages" id="markdown-toc-related-pages">Related Pages</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="understanding-json-schema-for-conditional-logic">Understanding JSON Schema for Conditional Logic</h1>
+
+<p>This page explains how PHARMAC uses JSON Schema to define conditional logic for Special Authority (SA) application forms and funding condition logic — the structure, validation rules, and eligibility criteria that determine who can access subsidised medications.</p>
+
+<h2 id="what-is-json-schema">What is JSON Schema?</h2>
+
+<p><strong>JSON Schema</strong> is a standard language for describing the structure and validation rules of JSON data. Think of it as a "blueprint" or "contract" that says:</p>
+<ul>
+  <li>What fields must be present</li>
+  <li>What type each field must be (text, number, true/false)</li>
+  <li>What values are acceptable (ranges, allowed values, patterns)</li>
+  <li>When certain fields become mandatory based on other values</li>
+</ul>
+
+<p><strong>Real-world analogy:</strong> If a form is a blank piece of paper, JSON Schema is the filled-in version with all the rules printed next to each question: "This field is required", "Enter a number between 1 and 100", "Choose one of these options".</p>
+
+<h2 id="how-pharmac-uses-json-schema-for-sas">How PHARMAC Uses JSON Schema for SAs</h2>
+
+<p>PHARMAC embeds a <strong>JSON Schema</strong> directly inside each Special Authority ChargeItemDefinition resource. This schema defines:</p>
+
+<ol>
+  <li><strong>Application Form Structure</strong> — What questions are asked</li>
+  <li><strong>Validation Rules</strong> — What answers are acceptable</li>
+  <li><strong>Authorization Cases</strong> — The different clinical scenarios an applicant can qualify under</li>
+  <li><strong>Conditional Logic</strong> — Which fields become required based on other answers</li>
+</ol>
+
+<h3 id="example-flow">Example Flow</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Doctor fills out an online form for SA2139 (Antiretrovirals)
+                    ↓
+Form renderer uses the embedded JSON Schema to:
+  • Show the right fields for the patient's condition (e.g., "Confirmed HIV" vs "PEP")
+  • Validate answers match the rules (e.g., CD4 count &gt; 50)
+  • Warn if required information is missing
+                    ↓
+When submitted, the data is validated against the schema
+                    ↓
+If valid → Application approved for initial step
+If invalid → Error message shows what's missing/wrong
+</code></pre></div></div>
+
+<h3 id="schema-structure-overview">Schema Structure Overview</h3>
+
+<figure style="display: block; margin: 20px 0;">
+  <img src="schema-overview.png" style="width: 900px; max-width: 100%;" />
+  <figcaption>This breaks downs the key components of a Special Authority and how they map to the JSON Schema structure.</figcaption>
+</figure>
+
+<h4 id="key-components">Key Components</h4>
+<ul>
+  <li>Wrapper - The entire schema is an object that defines the overall structure of the application form.</li>
+  <li>Properties - a group of <code class="language-plaintext highlighter-rouge">Subforms</code>.</li>
+  <li>SubForms - An JSON Schema object that defines nested forms Special Authority each has the required fields:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">$formType</code> - can be <code class="language-plaintext highlighter-rouge">initial</code>, <code class="language-plaintext highlighter-rouge">renewal</code> or <code class="language-plaintext highlighter-rouge">standard</code>.</li>
+      <li><code class="language-plaintext highlighter-rouge">$period</code> - the of time type can be <code class="language-plaintext highlighter-rouge">week</code>, <code class="language-plaintext highlighter-rouge">month</code>, or <code class="language-plaintext highlighter-rouge">year</code>.</li>
+      <li><code class="language-plaintext highlighter-rouge">$validFor</code> - the duration of the Special Authority in the specified period (e.g., <code class="language-plaintext highlighter-rouge">6</code> with a <code class="language-plaintext highlighter-rouge">$period</code> of <code class="language-plaintext highlighter-rouge">month</code> means 6 months).</li>
+      <li><code class="language-plaintext highlighter-rouge">properties</code> - the fields/questions that must be answered for that specific subform.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="pharmac-custom-schema-extensions">PHARMAC Custom Schema Extensions</h4>
+
+<p>PHARMAC extends the standard JSON Schema vocabulary with custom keywords (prefixed with <code class="language-plaintext highlighter-rouge">$</code>) to capture metadata specific to Special Authority applications:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Purpose</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$formType</code></td>
+      <td>string</td>
+      <td>Indicates the application type: <code class="language-plaintext highlighter-rouge">initial</code>, <code class="language-plaintext highlighter-rouge">renewal</code>, or <code class="language-plaintext highlighter-rouge">standard</code></td>
+      <td><code class="language-plaintext highlighter-rouge">"$formType": "initial"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$validFor</code></td>
+      <td>string</td>
+      <td>Duration the Special Authority remains valid (as a number)</td>
+      <td><code class="language-plaintext highlighter-rouge">"$validFor": "12"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$period</code></td>
+      <td>string</td>
+      <td>Unit of time for the validity period: <code class="language-plaintext highlighter-rouge">week</code>, <code class="language-plaintext highlighter-rouge">month</code>, or <code class="language-plaintext highlighter-rouge">year</code></td>
+      <td><code class="language-plaintext highlighter-rouge">"$period": "month"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$note</code></td>
+      <td>string</td>
+      <td>Explanatory text or special instructions for applicants or specific sections</td>
+      <td><code class="language-plaintext highlighter-rouge">"$note": "Note: Indications marked with * are unapproved"</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note:</strong> These are PHARMAC-specific extensions and are NOT part of the standard JSON Schema specification. They are preserved during schema validation and can be used by form renderers and processing systems to provide better user experience.</p>
+
+<hr />
+
+<h4 id="subforms">Subforms</h4>
+
+<p>Subforms are used to define a set of fields that are used in an approval route for a specific clinical scenario. There are three types of subforms:</p>
+<ul>
+  <li>Initial - used for the initial application of a Special Authority.</li>
+  <li>Renewal - used for the renewal application of a Special Authority.</li>
+  <li>Standard - used for both initial and renewal applications of a Special Authority.</li>
+</ul>
+
+<p>In the example below <code class="language-plaintext highlighter-rouge">SA1683 - Partial</code> there is a <code class="language-plaintext highlighter-rouge">initial</code> called <code class="language-plaintext highlighter-rouge">SA1683.1</code> subform that defines the fields required for the initial application of the Special Authority, and a <code class="language-plaintext highlighter-rouge">renewal</code> called <code class="language-plaintext highlighter-rouge">SA1683.2</code> subform that defines the fields required for the renewal application of the Special Authority.</p>
+
+<h5 id="initial-example">Initial Example</h5>
+
+<p>In the example below, the <code class="language-plaintext highlighter-rouge">SA1683.1</code> subform defines the fields required for the initial application of the Special Authority for non-cystic fibrosis bronchiectasis in patients under 18 years old. It includes custom metadata fields to indicate that this is an initial application form, valid for 12 months, and includes a note about unapproved indications.</p>
+
+<p>You can see that the it has custom fields such as <code class="language-plaintext highlighter-rouge">$formType</code>, <code class="language-plaintext highlighter-rouge">$validFor</code>, <code class="language-plaintext highlighter-rouge">$period</code>, and <code class="language-plaintext highlighter-rouge">$note</code> to provide additional context about the form and its requirements. The <code class="language-plaintext highlighter-rouge">properties</code> section defines the specific fields that applicants must fill out, along with their types, titles, descriptions, and validation rules.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"SA1683.2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initial"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Initial application — non-cystic fibrosis bronchiectasis*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Applications only from a respiratory specialist or paediatrician. Approvals valid for 12 months."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"$note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Note: Indications marked with * are unapproved indications."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"noncysticFibrosisBronchiectasis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For prophylaxis of exacerbations of non-cystic fibrosis bronchiectasis*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"ageRequirement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Age (must be under 18 years)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Must be under 18 years old."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"exacerbations12Month"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"exacerbations12Month"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient has had 3 or more exacerbations of their bronchiectasis, within a 12 month period"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"hospitalTreatment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient has had 3 acute admissions to hospital for treatment of infective respiratory exacerbations within a 12 month period"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"exacerbations12Month"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"exacerbations12Month"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"const"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"hospitalTreatment"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"hospitalTreatment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"const"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"noncysticFibrosisBronchiectasis"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Under18YearsOld"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"exacerbations12Month"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h5 id="renewal-example">Renewal Example</h5>
+
+<p>In the example below, the <code class="language-plaintext highlighter-rouge">SA1683.2</code> subform defines the fields required for the renewal application of the Special Authority for non-cystic fibrosis bronchiectasis. It includes custom metadata fields to indicate that this is a renewal application form, valid for 12 months, and includes a note about unapproved indications.</p>
+
+<p>You can see that the it has custom fields such as <code class="language-plaintext highlighter-rouge">$formType</code>, <code class="language-plaintext highlighter-rouge">$validFor</code>, <code class="language-plaintext highlighter-rouge">$period</code>, and <code class="language-plaintext highlighter-rouge">$note</code> to provide additional context about the form and its requirements. The <code class="language-plaintext highlighter-rouge">properties</code> section defines the specific fields that applicants must fill out, along with their types, titles, descriptions, and validation rules. In this case, the renewal application requires confirmation that the patient has completed 12 months of treatment, has not received further treatment for a certain period, and will not exceed a cumulative treatment limit.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"SA1683.2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"renewal"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Renewal — non-cystic fibrosis bronchiectasis*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Applications only from a respiratory specialist or paediatrician. Approvals valid for 12 months. The patient must not have had more than 1 prior approval."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"$note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Note: Indications marked with * are unapproved indications."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"completed12Months"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The patient has completed 12 months of azithromycin treatment for non-cystic fibrosis bronchiectasis"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"noFurtherTreatment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Following initial 12 months of treatment, the patient has not received any further azithromycin treatment for non-cystic fibrosis bronchiectasis for a further 12 months, unless considered clinically inappropriate to stop treatment"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"maxCumulativeTreatment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The patient will not receive more than a total of 24 months’ azithromycin cumulative treatment (see note)"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"completed12Months"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"noFurtherTreatment"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"maxCumulativeTreatment"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="full-example">Full Example</h3>
+
+<p>Below is the full JSON Schema for SA1683, which includes both the initial and renewal application forms, along with the top-level logic that requires applicants to choose one of the two forms when applying.</p>
+
+<div class="language-jsonc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ============================================================</span><span class="w">
+</span><span class="c1">// SA1683 - Non-Cystic Fibrosis Bronchiectasis</span><span class="w">
+</span><span class="c1">// ============================================================</span><span class="w">
+</span><span class="c1">// This schema defines the Special Authority application form</span><span class="w">
+</span><span class="c1">// for azithromycin prophylaxis in non-cystic fibrosis bronchiectasis.</span><span class="w">
+</span><span class="c1">// It includes both initial and renewal application pathways.</span><span class="w">
+</span><span class="c1">//</span><span class="w">
+</span><span class="c1">// CUSTOM METADATA FIELDS (non-standard JSON Schema extensions):</span><span class="w">
+</span><span class="c1">// - $formType: "initial" or "renewal" - indicates application type</span><span class="w">
+</span><span class="c1">// - $validFor: duration number - how long the approval is valid (in units below)</span><span class="w">
+</span><span class="c1">// - $period: "month", "week", "year" - unit of time for validity period</span><span class="w">
+</span><span class="c1">// - $note: explanatory text for the form or specific fields</span><span class="w">
+</span><span class="c1">// ============================================================</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema#"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SA1683 - Partial"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="c1">// INITIAL APPLICATION FORM</span><span class="w">
+    </span><span class="c1">// For first-time applications. Valid for 12 months if approved.</span><span class="w">
+    </span><span class="c1">// Only respiratory specialists or paediatricians can apply.</span><span class="w">
+    </span><span class="nl">"SA1683.1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initial"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Initial application — non-cystic fibrosis bronchiectasis*"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Applications only from a respiratory specialist or paediatrician. Approvals valid for 12 months."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Note: Indications marked with * are unapproved indications."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"noncysticFibrosisBronchiectasis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For prophylaxis of exacerbations of non-cystic fibrosis bronchiectasis*"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"ageRequirement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Age (must be under 18 years)"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Must be under 18 years old."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"exacerbations12Month"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"exacerbations12Month"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient has had 3 or more exacerbations of their bronchiectasis, within a 12 month period"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"hospitalTreatment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient has had 3 acute admissions to hospital for treatment of infective respiratory exacerbations within a 12 month period"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="c1">// anyOf: At least ONE criterion must be true</span><span class="w">
+          </span><span class="c1">// Either: 3+ exacerbations within 12 months OR 3+ hospital admissions</span><span class="w">
+          </span><span class="c1">// Patient qualifies if either condition is met (OR logic)</span><span class="w">
+          </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"exacerbations12Month"</span><span class="w">
+              </span><span class="p">],</span><span class="w">
+              </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"exacerbations12Month"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"const"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"hospitalTreatment"</span><span class="w">
+              </span><span class="p">],</span><span class="w">
+              </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"hospitalTreatment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"const"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"noncysticFibrosisBronchiectasis"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Under18YearsOld"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"exacerbations12Month"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="c1">// RENEWAL APPLICATION FORM</span><span class="w">
+    </span><span class="c1">// For applications after 12 months of initial treatment.</span><span class="w">
+    </span><span class="c1">// Valid for 12 months if approved.</span><span class="w">
+    </span><span class="c1">// Can only renew once (max 24 months total treatment).</span><span class="w">
+    </span><span class="nl">"SA1683.2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"renewal"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Renewal — non-cystic fibrosis bronchiectasis*"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Applications only from a respiratory specialist or paediatrician. Approvals valid for 12 months. The patient must not have had more than 1 prior approval."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Note: Indications marked with * are unapproved indications."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"completed12Months"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The patient has completed 12 months of azithromycin treatment for non-cystic fibrosis bronchiectasis"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"noFurtherTreatment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Following initial 12 months of treatment, the patient has not received any further azithromycin treatment for non-cystic fibrosis bronchiectasis for a further 12 months, unless considered clinically inappropriate to stop treatment"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"maxCumulativeTreatment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The patient will not receive more than a total of 24 months’ azithromycin cumulative treatment (see note)"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"completed12Months"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"noFurtherTreatment"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"maxCumulativeTreatment"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="c1">// Top-level form selection: User submits either an initial application (SA1683.1)</span><span class="w">
+  </span><span class="c1">// or a renewal application (SA1683.2), but not both</span><span class="w">
+  </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/SA1683.1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/SA1683.2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div></div>
+
+<h2 id="common-json-schema-patterns">Common JSON Schema Patterns</h2>
+
+<h3 id="pattern-1-required-text-field">Pattern 1: Required Text Field</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"freeText"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"clinicalNotes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clinical notes from the treating doctor"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"clinicalNotes"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Meaning:</strong> A text field that MUST be filled in.</p>
+
+<hr />
+
+<h3 id="pattern-2-number-with-range">Pattern 2: Number with Range</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"patientAge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient age in years"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"patientAge"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Meaning:</strong> A number field where the value must be between 18 and 120 (inclusive).</p>
+
+<hr />
+
+<h3 id="pattern-3-checkboxes-multiple-options">Pattern 3: Checkboxes (Multiple Options)</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"sevenOfNine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symptom1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"symptom2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"symptom3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"symptom4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"symptom5"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"symptom6"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"symptom7"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"symptom8"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"symptom9"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"minProperties"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Meaning:</strong> At least 7 out of 9 checkboxes must be ticked (marked <code class="language-plaintext highlighter-rouge">true</code>).</p>
+
+<hr />
+
+<h3 id="pattern-4-all-required-and-logic">Pattern 4: All Required (AND Logic)</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"allRequired"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"patientName"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"patientAge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"diagnosis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"patientName"</span><span class="p">,</span><span class="w"> </span><span class="s2">"patientAge"</span><span class="p">,</span><span class="w"> </span><span class="s2">"diagnosis"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Meaning:</strong> ALL three fields (<code class="language-plaintext highlighter-rouge">patientName</code> AND <code class="language-plaintext highlighter-rouge">patientAge</code> AND <code class="language-plaintext highlighter-rouge">diagnosis</code>) must be provided.</p>
+
+<hr />
+
+<h3 id="pattern-5-at-least-one-required-or-logic">Pattern 5: At Least One Required (OR Logic)</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"eitherOne"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"phoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"emailAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"phoneNumber"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"emailAddress"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Meaning:</strong> Either <code class="language-plaintext highlighter-rouge">phoneNumber</code> OR <code class="language-plaintext highlighter-rouge">emailAddress</code> (or both) must be provided.</p>
+
+<hr />
+
+<h3 id="pattern-6-conditional-requirements">Pattern 6: Conditional Requirements</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"oneAndEither"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"alwaysRequired"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"conditionalA"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"conditionalB"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"alwaysRequired"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"conditionalA"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"conditionalB"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Meaning:</strong> <code class="language-plaintext highlighter-rouge">alwaysRequired</code> is mandatory, AND at least one of (<code class="language-plaintext highlighter-rouge">conditionalA</code> OR <code class="language-plaintext highlighter-rouge">conditionalB</code>) must also be provided.</p>
+
+<hr />
+
+<h3 id="pattern-7-allowed-values-only-enum">Pattern 7: Allowed Values Only (Enum)</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"prescriber"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"GP"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Specialist"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hospital"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"type"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Meaning:</strong> The <code class="language-plaintext highlighter-rouge">type</code> field can ONLY be one of: "GP", "Specialist", or "Hospital". Any other value is invalid.</p>
+
+<hr />
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="sa9999--example-template-multiple-validation-patterns">SA9999 — Example Template (Multiple Validation Patterns)</h3>
+
+<p>A demonstration schema showing <strong>all common JSON Schema validation patterns</strong> in one place:</p>
+<ul>
+  <li><strong>Free text field</strong> — Required string input</li>
+  <li><strong>Numeric field with range</strong> — Values between 0 and 100 (exclusive)</li>
+  <li><strong>Age field with minimum</strong> — Age must be 18+</li>
+  <li><strong>Checkboxes (7 of 9)</strong> — At least 7 must be selected</li>
+  <li><strong>AND condition</strong> — All fields required together</li>
+  <li><strong>OR condition</strong> — At least one field required</li>
+  <li><strong>AND + OR combined</strong> — One mandatory, plus at least one of two others</li>
+  <li><strong>Nested AND + OR</strong> — Complex logic with grouped conditions</li>
+  <li><strong>Duration with time periods</strong> — Validity periods with units (weeks, months, years)</li>
+  <li><strong>Percentage ranges</strong> — Different percentage thresholds with flexible boundaries</li>
+</ul>
+
+<p>Perfect for understanding how to structure validation rules. <strong><a href="sa9999-schema-example.html">View the full annotated schema with detailed comments</a></strong> to see real examples and learn how to adapt these patterns for your own SAs.</p>
+
+<hr />
+
+<h2 id="for-developers">For Developers</h2>
+
+<h3 id="how-to-use-the-schema">How to Use the Schema</h3>
+
+<ol>
+  <li><strong>Fetch the SA resource:</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Extract the encoded schema:</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension[authorizationSchema].valueBase64Binary
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Decode from Base64:</strong>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="nx">resource</span><span class="p">.</span><span class="nx">extension</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">url</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">...authorizationSchema</span><span class="dl">'</span><span class="p">).</span><span class="nx">valueBase64Binary</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">decoded</span> <span class="o">=</span> <span class="nf">atob</span><span class="p">(</span><span class="nx">encoded</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">schema</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="nx">decoded</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Validate user input:</strong>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Ajv</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">ajv</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">ajv</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Ajv</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">validate</span> <span class="o">=</span> <span class="nx">ajv</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="nx">schema</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">isValid</span> <span class="o">=</span> <span class="nf">validate</span><span class="p">(</span><span class="nx">userData</span><span class="p">);</span>
+<span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">isValid</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">validate</span><span class="p">.</span><span class="nx">errors</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Render dynamic forms:</strong>
+    <ul>
+      <li>Use the schema's <code class="language-plaintext highlighter-rouge">properties</code> to build form fields</li>
+      <li>Apply type constraints (text input vs number input vs checkbox)</li>
+      <li>Show validation errors based on <code class="language-plaintext highlighter-rouge">required</code> and <code class="language-plaintext highlighter-rouge">anyOf</code> rules</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="recommended-libraries">Recommended Libraries</h3>
+
+<ul>
+  <li><strong>AJV</strong> (JavaScript) — Fast JSON Schema validator</li>
+  <li><strong>python-jsonschema</strong> (Python) — Standard JSON Schema validation</li>
+  <li><strong>jsonschema</strong> (Java) — Full-featured validator</li>
+  <li><strong>json-schema-validator</strong> (Go) — Pure Go implementation</li>
+</ul>
+
+<hr />
+
+<h2 id="key-concepts-summary">Key Concepts Summary</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Concept</th>
+      <th>Meaning</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">type: "string"</code></td>
+      <td>Text field</td>
+      <td>Name, address, notes</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">type: "number"</code></td>
+      <td>Numeric field</td>
+      <td>Age, CD4 count, weight</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">type: "boolean"</code></td>
+      <td>True/False checkbox</td>
+      <td>Symptom present?</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">type: "object"</code></td>
+      <td>Group of fields</td>
+      <td>A section of the form</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">required</code></td>
+      <td>All listed fields MUST be present</td>
+      <td><code class="language-plaintext highlighter-rouge">"required": ["name", "age"]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">anyOf</code></td>
+      <td>At least ONE sub-schema must pass</td>
+      <td>Either field A or field B</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enum</code></td>
+      <td>Only these exact values allowed</td>
+      <td><code class="language-plaintext highlighter-rouge">"enum": ["Yes", "No"]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">minimum</code> / <code class="language-plaintext highlighter-rouge">maximum</code></td>
+      <td>Range limits (inclusive)</td>
+      <td>Age 18–120</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">exclusiveMinimum</code> / <code class="language-plaintext highlighter-rouge">exclusiveMaximum</code></td>
+      <td>Range limits (exclusive)</td>
+      <td>&gt; 0, &lt; 100 (not including 0 or 100)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">minProperties</code></td>
+      <td>Minimum number of fields present</td>
+      <td>At least 7 of 9 checkboxes</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="related-pages">Related Pages</h2>
+
+<ul>
+  <li><a href="examples.html">SA Examples</a> — Browse SA9999</li>
+  <li><a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">Charge Item Definition - Special Authority Profile</a> — Technical profile details</li>
+  <li><a href="https://json-schema.org/">JSON Schema Specification</a> — Official JSON Schema documentation</li>
+</ul>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 17, 2026 06:29+0000">2026-04-17</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

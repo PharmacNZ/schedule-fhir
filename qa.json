@@ -5,15 +5,15 @@
   "description" : "Pharmac Schedules FHIR Implementation Guide",
   "status" : "draft",
   "package-id" : "pharmac.fhir.pharmac-schedules",
-  "ig-ver" : "0.0.1",
-  "date" : "Fri, 27 Mar, 2026 00:29:47 +0000",
-  "dateISO8601" : "2026-03-27T00:29:47+00:00",
-  "errs" : 142,
-  "warnings" : 144,
-  "hints" : 13,
+  "ig-ver" : "1.0.0",
+  "date" : "Fri, 17 Apr, 2026 06:29:04 +0000",
+  "dateISO8601" : "2026-04-17T06:29:04+00:00",
+  "errs" : 99,
+  "warnings" : 138,
+  "hints" : 10,
   "suppressed-hints" : 0,
   "suppressed-warnings" : 0,
   "version" : "4.0.1",
   "tool" : "5.0.0 (3)",
-  "maxMemory" : 1009723280
+  "maxMemory" : 1140776952
 }

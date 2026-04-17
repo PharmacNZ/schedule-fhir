@@ -1,4 +1,4 @@
-# Authorization Case Count - Pharmac Schedules FHIR API v0.0.1
+# Authorization Case Count - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-case-count | *Version*:0.0.1 |
-| Draft as of 2026-03-27 | *Computable Name*:AuthorizationCaseCount |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-case-count | *Version*:1.0.0 |
+| Draft as of 2026-04-17 | *Computable Name*:AuthorizationCaseCount |
 
 The number of authorization cases or approval criteria specified in the authorization requirement. This indicates how many different clinical scenarios or conditions have distinct approval pathways.
 
@@ -20,7 +20,7 @@ The number of authorization cases or approval criteria specified in the authoriz
 **Usages:**
 
 * Use this Extension: [PHARMAC Charge Item Definition](StructureDefinition-pharmac-charge-item-definition.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-Ricovir-Pricing](Bundle-SearchSet-Bundle-Ricovir-Pricing.md), [Bundle/SearchSet-Bundle-SA2139-Authorization](Bundle-SearchSet-Bundle-SA2139-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2139-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-1.md) and [ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-2](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-2.md)
+* Examples for this Extension: [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md), [Bundle/SearchSet-Bundle-Special-Authorities](Bundle-SearchSet-Bundle-Special-Authorities.md) and [ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA9999-Authorization.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/authorization-case-count)
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-authorization-case-c
   "resourceType" : "StructureDefinition",
   "id" : "authorization-case-count",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-case-count",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "AuthorizationCaseCount",
   "title" : "Authorization Case Count",
   "status" : "draft",
-  "date" : "2026-03-27T00:29:47+00:00",
+  "date" : "2026-04-17T06:29:04+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

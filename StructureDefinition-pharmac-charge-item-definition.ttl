@@ -13,7 +13,7 @@
      fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
      fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
   ] ; # 
-  fhir:version [ fhir:v "0.0.1"] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
   fhir:name [ fhir:v "PharmacChargeItemDefinition"] ; # 
   fhir:title [ fhir:v "PHARMAC Charge Item Definition"] ; # 
   fhir:status [ fhir:v "active"] ; # 
@@ -1095,6 +1095,194 @@
          fhir:profile ( [
            fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination"^^xsd:anyURI ;
            fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination>
+         ] )
+       ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
+       fhir:constraint ( [
+         fhir:key [ fhir:v "ele-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
+         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
+         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ] [
+         fhir:key [ fhir:v "ext-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
+         fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
+         ]
+       ] ) ;
+       fhir:isModifier [ fhir:v false ] ;
+       fhir:isSummary [ fhir:v false ]
+     ] [
+       fhir:id [ fhir:v "ChargeItemDefinition.extension:authorizationSchema" ] ;
+       fhir:path [ fhir:v "ChargeItemDefinition.extension" ] ;
+       fhir:sliceName [ fhir:v "authorizationSchema" ] ;
+       fhir:short [ fhir:v "JSON Schema for authorization form" ] ;
+       fhir:definition [ fhir:v "Base64-encoded JSON Schema that defines the structure and validation rules for the Special Authorization application form. Clients should base64-decode the value to obtain the JSON Schema." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "DomainResource.extension" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Extension"^^xsd:anyURI ;
+           fhir:l fhir:Extension
+         ] ;
+         fhir:profile ( [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema>
+         ] )
+       ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
+       fhir:constraint ( [
+         fhir:key [ fhir:v "ele-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
+         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
+         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ] [
+         fhir:key [ fhir:v "ext-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
+         fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
+         ]
+       ] ) ;
+       fhir:isModifier [ fhir:v false ] ;
+       fhir:isSummary [ fhir:v false ]
+     ] [
+       fhir:id [ fhir:v "ChargeItemDefinition.extension:PricingSection29" ] ;
+       fhir:path [ fhir:v "ChargeItemDefinition.extension" ] ;
+       fhir:sliceName [ fhir:v "PricingSection29" ] ;
+       fhir:short [ fhir:v "Pricing Section 29" ] ;
+       fhir:definition [ fhir:v "Indicates whether Section 29 applies to this pricing record." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "DomainResource.extension" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Extension"^^xsd:anyURI ;
+           fhir:l fhir:Extension
+         ] ;
+         fhir:profile ( [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29>
+         ] )
+       ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
+       fhir:constraint ( [
+         fhir:key [ fhir:v "ele-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
+         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
+         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ] [
+         fhir:key [ fhir:v "ext-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
+         fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
+         ]
+       ] ) ;
+       fhir:isModifier [ fhir:v false ] ;
+       fhir:isSummary [ fhir:v false ]
+     ] [
+       fhir:id [ fhir:v "ChargeItemDefinition.extension:PricingNotCombined" ] ;
+       fhir:path [ fhir:v "ChargeItemDefinition.extension" ] ;
+       fhir:sliceName [ fhir:v "PricingNotCombined" ] ;
+       fhir:short [ fhir:v "Pricing Not Combined" ] ;
+       fhir:definition [ fhir:v "Indicates whether Not Combined applies to this pricing record." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "DomainResource.extension" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Extension"^^xsd:anyURI ;
+           fhir:l fhir:Extension
+         ] ;
+         fhir:profile ( [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined>
+         ] )
+       ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
+       fhir:constraint ( [
+         fhir:key [ fhir:v "ele-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
+         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
+         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ] [
+         fhir:key [ fhir:v "ext-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
+         fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
+         ]
+       ] ) ;
+       fhir:isModifier [ fhir:v false ] ;
+       fhir:isSummary [ fhir:v false ]
+     ] [
+       fhir:id [ fhir:v "ChargeItemDefinition.extension:PricingCoPaymentMax" ] ;
+       fhir:path [ fhir:v "ChargeItemDefinition.extension" ] ;
+       fhir:sliceName [ fhir:v "PricingCoPaymentMax" ] ;
+       fhir:short [ fhir:v "Pricing Co-Payment Max" ] ;
+       fhir:definition [ fhir:v "Indicates whether Co-Payment Max applies to this pricing record." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "DomainResource.extension" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Extension"^^xsd:anyURI ;
+           fhir:l fhir:Extension
+         ] ;
+         fhir:profile ( [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max>
          ] )
        ] ) ;
        fhir:condition ( [ fhir:v "ele-1" ] ) ;
@@ -3602,6 +3790,72 @@
          fhir:profile ( [
            fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination"^^xsd:anyURI ;
            fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination>
+         ] )
+       ] )
+     ] [
+       fhir:id [ fhir:v "ChargeItemDefinition.extension:authorizationSchema" ] ;
+       fhir:path [ fhir:v "ChargeItemDefinition.extension" ] ;
+       fhir:sliceName [ fhir:v "authorizationSchema" ] ;
+       fhir:short [ fhir:v "JSON Schema for authorization form" ] ;
+       fhir:definition [ fhir:v "Base64-encoded JSON Schema that defines the structure and validation rules for the Special Authorization application form. Clients should base64-decode the value to obtain the JSON Schema." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Extension"^^xsd:anyURI ;
+           fhir:l fhir:Extension
+         ] ;
+         fhir:profile ( [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema>
+         ] )
+       ] )
+     ] [
+       fhir:id [ fhir:v "ChargeItemDefinition.extension:PricingSection29" ] ;
+       fhir:path [ fhir:v "ChargeItemDefinition.extension" ] ;
+       fhir:sliceName [ fhir:v "PricingSection29" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Extension"^^xsd:anyURI ;
+           fhir:l fhir:Extension
+         ] ;
+         fhir:profile ( [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29>
+         ] )
+       ] )
+     ] [
+       fhir:id [ fhir:v "ChargeItemDefinition.extension:PricingNotCombined" ] ;
+       fhir:path [ fhir:v "ChargeItemDefinition.extension" ] ;
+       fhir:sliceName [ fhir:v "PricingNotCombined" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Extension"^^xsd:anyURI ;
+           fhir:l fhir:Extension
+         ] ;
+         fhir:profile ( [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined>
+         ] )
+       ] )
+     ] [
+       fhir:id [ fhir:v "ChargeItemDefinition.extension:PricingCoPaymentMax" ] ;
+       fhir:path [ fhir:v "ChargeItemDefinition.extension" ] ;
+       fhir:sliceName [ fhir:v "PricingCoPaymentMax" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Extension"^^xsd:anyURI ;
+           fhir:l fhir:Extension
+         ] ;
+         fhir:profile ( [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max>
          ] )
        ] )
      ] [

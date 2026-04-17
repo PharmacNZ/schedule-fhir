@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>SearchSet-Bundle-Clexane-Pricing - Pharmac Schedules FHIR API v1.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/logos.css"/>
+<link rel="stylesheet" href="assets/css/colours.css"/>
+<link rel="stylesheet" href="assets/css/fonts.css"/>
+
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"11.60"}
+    h3,h4,h5,h6{--heading-prefix:"11.60"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="pharmac-logo">
+  <img src="assets/images/pharmac-logo.png" alt="Pharmac logo" height="35"/>
+</div>
+
+<div id="blank-logo">
+  <img src="assets/images/blank-right-logo.png" alt="null" height="35"/>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">1.0.0 - draft
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="use-cases.html">Use cases</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-pharmac-medication.html">Medication</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">ChargeItemDefinition - Special Authority</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guides
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a>
+      </li>
+      <li>
+        <a href="fr-json-schema-guide.html">JSON Schema for Funding Rules</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
+  <li>
+    <a href="relationships.html">Resource Relationships</a>
+  </li>
+  <li>
+    <a href="datamodel.html">Data Models</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://hl7.org/fhir/index.html" target="_blank">FHIR Spec</a>
+      </li>
+      <li>
+        <a href="definitions.json.zip">Artefacts (JSON)</a>
+      </li>
+      <li>
+        <a href="definitions.xml.zip">Artefacts (XML)</a>
+      </li>
+      <li>
+        <a href="full-ig.zip">Download IG</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>SearchSet-Bundle-Clexane-Pricing</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir-ig.digital.health.nz/pharmac-schedules/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+
+  
+    <li>
+      <a href="Bundle-SearchSet-Bundle-Clexane-Pricing.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">Example Bundle: SearchSet-Bundle-Clexane-Pricing</h2>
+
+
+
+
+    <!-- insert intro if present -->
+  
+
+
+
+  <div data-fhir="generated"><p class="res-header-id"></p><a name="SearchSet-Bundle-Clexane-Pricing"> </a><a name="hcSearchSet-Bundle-Clexane-Pricing"> </a><p>Bundle SearchSet-Bundle-Clexane-Pricing of type searchset</p><a name="https-//fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Clexane-100mg-1ml-Syringe"> </a><a name="Medication_Medication-Clexane-100mg-1ml-Syringe"> </a><a name="hcMedication_Medication-Clexane-100mg-1ml-Syringe"> </a><hr/><p>Entry 1 - fullUrl = https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Clexane-100mg-1ml-Syringe</p><p>Search:Mode = match</p><p>Resource Medication:</p><blockquote><p class="res-header-id"></p><a name="SearchSet-Bundle-Clexane-Pricing/Medication-Clexane-100mg-1ml-Syringe"> </a><a name="hcSearchSet-Bundle-Clexane-Pricing/Medication-Clexane-100mg-1ml-Syringe"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-medication.html">PHARMAC Medication</a></p></div><p><b>Medication Brand Name</b>: Clexane</p><p><b>Medication Package Size</b>: 10</p><p><b>Medication Unit of Measure</b>: syringe</p><p><b>Medication Rank</b>: 4</p><p><b>Medication ATC Category 1</b>: Blood and Blood Forming Organs</p><p><b>Medication ATC Category 2</b>: Antithrombotic Agents</p><p><b>Medication ATC Category 3</b>: Heparin and Antagonist Preparations</p><p><b>Medication Product Multiple</b>: true</p><p><b>Medication Product Multiplier</b>: 1</p><p><b>Medication Original Pack</b>: false</p><p><b>Medication Safety List Medicine</b>: false</p><p><b>Medication Strength</b>: 100 mg in 1 ml</p><p><b>Medication Legal Classification</b>: Presciption</p><p><b>Medication Product Created Date</b>: 2009-08-01</p><p><b>identifier</b>: <code>http://schedule.pharmac.govt.nz/ids/brand</code>/B04070438932925, <code>http://schedule.pharmac.govt.nz/ids/pack</code>/P2581906, <code>http://schedule.pharmac.govt.nz/ids/chemical</code>/C0407043893, <code>http://schedule.pharmac.govt.nz/ids/formulation</code>/F040704389329, <code>http://schedule.pharmac.govt.nz/ids/pharmacode</code>/2581906, <a href="http://terminology.hl7.org/7.1.0/NamingSystem-gtin.html" title="The GS1 GTIN is a globally unique identifier of trade items. A trade item is any item (product or service) upon which there is a need to retrieve pre-defined information and that may be priced, or ordered, or invoiced at any point in any supply chain. Note: GTINs may be used in both Codes (http://build.fhir.org/datatypes.html#Coding) and Identifiers (http://build.fhir.org/datatypes.html#Identifier).">GTIN Global Trade Item Number</a>/09312319039680, <a href="http://terminology.hl7.org/7.1.0/NamingSystem-gtin.html" title="The GS1 GTIN is a globally unique identifier of trade items. A trade item is any item (product or service) upon which there is a need to retrieve pre-defined information and that may be priced, or ordered, or invoiced at any point in any supply chain. Note: GTINs may be used in both Codes (http://build.fhir.org/datatypes.html#Coding) and Identifiers (http://build.fhir.org/datatypes.html#Identifier).">GTIN Global Trade Item Number</a>/09319733003402</p><p><b>code</b>: <span title="Codes:{http://nzmt.org.nz 50083501000117108}">Clexane</span></p><p><b>status</b>: Active</p><h3>Ingredients</h3><table class="grid"><tr><td style="display: none">-</td><td><b>IsActive</b></td></tr><tr><td style="display: none">*</td><td>true</td></tr></table></blockquote><a name="https-//fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing"> </a><a name="ChargeItemDefinition_ChargeItemDefinition-Clexane-Pricing"> </a><a name="hcChargeItemDefinition_ChargeItemDefinition-Clexane-Pricing"> </a><hr/><p>Entry 2 - fullUrl = https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing</p><p>Search:Mode = include</p><p>Resource ChargeItemDefinition:</p><blockquote><p class="res-header-id"></p><a name="SearchSet-Bundle-Clexane-Pricing/ChargeItemDefinition-Clexane-Pricing"> </a><a name="hcSearchSet-Bundle-Clexane-Pricing/ChargeItemDefinition-Clexane-Pricing"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">PHARMAC Charge Item Definition - Pricing</a></p></div><p><b>Pricing Effective Date</b>: 2026-05-01</p><p><b>Cost Brand Source</b>: false</p><p><b>Wastage Claimable</b>: false</p><p><b>Contract Type</b>: PSS</p><p><b>Daily Volume Limit Percent</b>: 5</p><p><b>Brand Switch Fee</b>: false</p><p><b>Statim (Urgent Dispensing)</b>: n/a</p><p><b>In-Combination</b>: n/a</p><p><b>url</b>: <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-Pricing.html">ChargeItemDefinition Clexane - Pricing</a></p><p><b>version</b>: 1.0</p><p><b>title</b>: Clexane - Pricing</p><p><b>status</b>: Active</p><p><b>publisher</b>: Pharmac</p><p><b>contact</b>: Pharmac: <a href="https://www.pharmac.govt.nz/about/contact">https://www.pharmac.govt.nz/about/contact</a></p><p><b>description</b>: </p><div><p>Listed price, PHARMAC subsidy, and patient co-payment for Clexane (Inj 100 mg in 1 ml syringe, pack of 10).</p>
+</div><p><b>instance</b>: <a href="Medication-Medication-Clexane-100mg-1ml-Syringe.html">Medication Inj 100 mg in 1 ml syringe</a></p><blockquote><p><b>propertyGroup</b></p><blockquote><p><b>applicability</b></p></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: base</p><p><b>code</b>: <span title="Codes:">Listed Price</span></p><h3>Amounts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style="display: none">*</td><td>70.91</td><td>NZD</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: discount</p><p><b>code</b>: <span title="Codes:">PHARMAC Subsidy</span></p><h3>Amounts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style="display: none">*</td><td>70.91</td><td>NZD</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: surcharge</p><p><b>code</b>: <span title="Codes:">Patient Surcharge</span></p><h3>Amounts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style="display: none">*</td><td>0</td><td>NZD</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: informational</p><p><b>code</b>: <span title="Codes:">Patient Co-Payment</span></p><h3>Amounts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style="display: none">*</td><td>0</td><td>NZD</td></tr></table></blockquote></blockquote><blockquote><p><b>propertyGroup</b></p><blockquote><p><b>applicability</b></p></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: base</p><p><b>code</b>: <span title="Codes:">Listed Price</span></p><h3>Amounts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style="display: none">*</td><td>70.91</td><td>NZD</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: discount</p><p><b>code</b>: <span title="Codes:">PHARMAC Subsidy</span></p><h3>Amounts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style="display: none">*</td><td>70.91</td><td>NZD</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: surcharge</p><p><b>code</b>: <span title="Codes:">Patient Surcharge</span></p><h3>Amounts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style="display: none">*</td><td>0</td><td>NZD</td></tr></table></blockquote></blockquote></blockquote><a name="https-//fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"> </a><a name="ChargeItemDefinition_ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"> </a><a name="hcChargeItemDefinition_ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"> </a><hr/><p>Entry 3 - fullUrl = https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1</p><p>Search:Mode = include</p><p>Resource ChargeItemDefinition:</p><blockquote><p class="res-header-id"></p><a name="SearchSet-Bundle-Clexane-Pricing/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"> </a><a name="hcSearchSet-Bundle-Clexane-Pricing/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">PHARMAC Charge Item Definition - Funding Rules</a></p></div><p><b>Pricing Effective Date</b>: 2026-02-01</p><blockquote><p><b>Funding Rule</b></p><blockquote><p><b>url</b></p>type</blockquote><p><b>value</b>: community</p><p><b>type</b>: CaseSequence</p><p><b>value</b>: 1</p><blockquote><p><b>url</b></p>rule</blockquote><p><b>type</b>: FundingMechanism</p><p><b>attribute</b>: Prescription</p><blockquote><p><b>url</b></p>rule</blockquote><p><b>type</b>: SubsidyType</p><p><b>attribute</b>: Full</p><blockquote><p><b>url</b></p>rule</blockquote></blockquote><p><b>Authorization Schema</b>: <code>ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNsZXhhbmUgMTAwbWcgMW1sIFN5cmluZ2UgQ2FzZSAxIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImF1dGhvcml0eSI6IHsKICAgICAgInRpdGxlIjogIlNBOTk5OSIsCiAgICAgICIkdXJsIjogImh0dHBzOi8vZmhpci1pZy5kaWdpdGFsLmhlYWx0aC5uei9waGFybWFjLXNjaGVkdWxlcy9DaGFyZ2VJdGVtRGVmaW5pdGlvbi9DaGFyZ2VJdGVtRGVmaW5pdGlvbi1TQTk5OTktQXV0aG9yaXphdGlvbiIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiSGFzIFNBOTk5OSIKICAgIH0sCiAgICAicHJvdmlkZXIiOiB7CiAgICAgICJ0aXRsZSI6ICJBdXRob3Jpc2VkIFByb3ZpZGVycyIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiUHJvdmlkZXIgVHlwZSBpcyBBdXRob3Jpc2VkIFByb3ZpZGVycyIKICAgIH0KICB9LAogICJyZXF1aXJlZCI6IFsKICAgICJhdXRob3JpdHkiLAogICAgInByb3ZpZGVyIgogIF0KfQo=</code></p><p><b>url</b>: <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1.html">ChargeItemDefinition: extension = 2026-02-01,,ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNsZXhhbmUgMTAwbWcgMW1sIFN5cmluZ2UgQ2FzZSAxIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImF1dGhvcml0eSI6IHsKICAgICAgInRpdGxlIjogIlNBOTk5OSIsCiAgICAgICIkdXJsIjogImh0dHBzOi8vZmhpci1pZy5kaWdpdGFsLmhlYWx0aC5uei9waGFybWFjLXNjaGVkdWxlcy9DaGFyZ2VJdGVtRGVmaW5pdGlvbi9DaGFyZ2VJdGVtRGVmaW5pdGlvbi1TQTk5OTktQXV0aG9yaXphdGlvbiIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiSGFzIFNBOTk5OSIKICAgIH0sCiAgICAicHJvdmlkZXIiOiB7CiAgICAgICJ0aXRsZSI6ICJBdXRob3Jpc2VkIFByb3ZpZGVycyIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiUHJvdmlkZXIgVHlwZSBpcyBBdXRob3Jpc2VkIFByb3ZpZGVycyIKICAgIH0KICB9LAogICJyZXF1aXJlZCI6IFsKICAgICJhdXRob3JpdHkiLAogICAgInByb3ZpZGVyIgogIF0KfQo=; url = https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-Sequence-1; version = 1.0.0; status = active; experimental = ; date = 2026-04-17 06:29:04+0000; publisher = Pharmac; contact = Pharmac (https://www.pharmac.govt.nz/about/contact),Pharmac (enquiry@pharmac.govt.nz(Work)); description = Rules for Clexane 100 mg in 1 ml syringe. Community pharmacy prescription case sequence 1.; jurisdiction = ; copyright = </a></p><p><b>version</b>: 1.0</p><p><b>status</b>: Active</p><p><b>publisher</b>: Pharmac</p><p><b>contact</b>: Pharmac: <a href="https://www.pharmac.govt.nz/about/contact">https://www.pharmac.govt.nz/about/contact</a></p><p><b>description</b>: </p><div><p>Rules for Clexane 100 mg in 1 ml syringe. Community pharmacy prescription case sequence 1.</p>
+</div><p><b>instance</b>: <a href="Medication-Medication-Clexane-100mg-1ml-Syringe.html">Medication Inj 100 mg in 1 ml syringe</a></p><blockquote><p><b>propertyGroup</b></p><blockquote><p><b>priceComponent</b></p><p><b>type</b>: discount</p><p><b>code</b>: <span title="Codes:">PHARMAC Subsidy</span></p><h3>Amounts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style="display: none">*</td><td>70.91</td><td>NZD</td></tr></table></blockquote></blockquote></blockquote><a name="https-//fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2"> </a><a name="ChargeItemDefinition_ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2"> </a><a name="hcChargeItemDefinition_ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2"> </a><hr/><p>Entry 4 - fullUrl = https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2</p><p>Search:Mode = include</p><p>Resource ChargeItemDefinition:</p><blockquote><p class="res-header-id"></p><a name="SearchSet-Bundle-Clexane-Pricing/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2"> </a><a name="hcSearchSet-Bundle-Clexane-Pricing/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">PHARMAC Charge Item Definition - Funding Rules</a></p></div><p><b>Pricing Effective Date</b>: 2026-02-01</p><blockquote><p><b>Funding Rule</b></p><blockquote><p><b>url</b></p>type</blockquote><p><b>value</b>: community</p><p><b>type</b>: CaseSequence</p><p><b>value</b>: 1</p><blockquote><p><b>url</b></p>rule</blockquote><p><b>type</b>: FundingMechanism</p><p><b>attribute</b>: RuralPSO</p><blockquote><p><b>url</b></p>rule</blockquote></blockquote><p><b>Authorization Schema</b>: <code>ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNsZXhhbmUgMTAwbWcgMW1sIFN5cmluZ2UgQ2FzZSAyIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImVuZG9yc2VtZW50IjogewogICAgICAidGl0bGUiOiAiUFJJTUUgU2VydmljZSBFbmRvcnNlbWVudCIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiRm9yIHVzZSB3aXRoaW4gYSBQcmltYXJ5IFJlc3BvbnNlIGluIE1lZGljYWwgRW1lcmdlbmNpZXMgKFBSSU1FKSBzZXJ2aWNlIgogICAgfSwKICAgICJwcm92aWRlciI6IHsKICAgICAgInRpdGxlIjogIkF1dGhvcmlzZWQgUHJvdmlkZXJzIiwKICAgICAgInR5cGUiOiAiYm9vbGVhbiIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJQcm92aWRlciBUeXBlIGlzIEF1dGhvcmlzZWQgUHJvdmlkZXJzIgogICAgfQogIH0sCiAgInJlcXVpcmVkIjogWwogICAgImVuZG9yc2VtZW50IiwKICAgICJwcm92aWRlciIKICBdCn0K</code></p><p><b>url</b>: <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2.html">ChargeItemDefinition: extension = 2026-02-01,,ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNsZXhhbmUgMTAwbWcgMW1sIFN5cmluZ2UgQ2FzZSAyIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImVuZG9yc2VtZW50IjogewogICAgICAidGl0bGUiOiAiUFJJTUUgU2VydmljZSBFbmRvcnNlbWVudCIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiRm9yIHVzZSB3aXRoaW4gYSBQcmltYXJ5IFJlc3BvbnNlIGluIE1lZGljYWwgRW1lcmdlbmNpZXMgKFBSSU1FKSBzZXJ2aWNlIgogICAgfSwKICAgICJwcm92aWRlciI6IHsKICAgICAgInRpdGxlIjogIkF1dGhvcmlzZWQgUHJvdmlkZXJzIiwKICAgICAgInR5cGUiOiAiYm9vbGVhbiIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJQcm92aWRlciBUeXBlIGlzIEF1dGhvcmlzZWQgUHJvdmlkZXJzIgogICAgfQogIH0sCiAgInJlcXVpcmVkIjogWwogICAgImVuZG9yc2VtZW50IiwKICAgICJwcm92aWRlciIKICBdCn0K; url = https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2; version = 1.0.0; status = active; experimental = ; date = 2026-04-17 06:29:04+0000; publisher = Pharmac; contact = Pharmac (https://www.pharmac.govt.nz/about/contact),Pharmac (enquiry@pharmac.govt.nz(Work)); description = Rules for Clexane 100 mg in 1 ml syringe. Community rural PSO case 2.; jurisdiction = ; copyright = </a></p><p><b>version</b>: 1.0</p><p><b>status</b>: Active</p><p><b>publisher</b>: Pharmac</p><p><b>contact</b>: Pharmac: <a href="https://www.pharmac.govt.nz/about/contact">https://www.pharmac.govt.nz/about/contact</a></p><p><b>description</b>: </p><div><p>Rules for Clexane 100 mg in 1 ml syringe. Community rural PSO case 2.</p>
+</div><p><b>instance</b>: <a href="Medication-Medication-Clexane-100mg-1ml-Syringe.html">Medication Inj 100 mg in 1 ml syringe</a></p><blockquote><p><b>propertyGroup</b></p><blockquote><p><b>applicability</b></p></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: discount</p><p><b>code</b>: <span title="Codes:">PHARMAC Subsidy</span></p><h3>Amounts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style="display: none">*</td><td>70.91</td><td>NZD</td></tr></table></blockquote></blockquote></blockquote><a name="https-//fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3"> </a><a name="ChargeItemDefinition_ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3"> </a><a name="hcChargeItemDefinition_ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3"> </a><hr/><p>Entry 5 - fullUrl = https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3</p><p>Search:Mode = include</p><p>Resource ChargeItemDefinition:</p><blockquote><p class="res-header-id"></p><a name="SearchSet-Bundle-Clexane-Pricing/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3"> </a><a name="hcSearchSet-Bundle-Clexane-Pricing/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">PHARMAC Charge Item Definition - Funding Rules</a></p></div><p><b>Pricing Effective Date</b>: 2026-02-01</p><blockquote><p><b>Funding Rule</b></p><blockquote><p><b>url</b></p>type</blockquote><p><b>value</b>: hospital</p><p><b>type</b>: CaseSequence</p><p><b>value</b>: 1</p><blockquote><p><b>url</b></p>rule</blockquote><p><b>type</b>: SubsidyType</p><p><b>attribute</b>: None</p><blockquote><p><b>url</b></p>rule</blockquote></blockquote><p><b>Authorization Schema</b>: <code>ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNsZXhhbmUgMTAwbWcgMW1sIFN5cmluZ2UgQ2FzZSAzIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgInByb3ZpZGVyIjogewogICAgICAidGl0bGUiOiAiSG9zcGl0YWwiLAogICAgICAidHlwZSI6ICJib29sZWFuIiwKICAgICAgImRlc2NyaXB0aW9uIjogIlByb3ZpZGVyIFR5cGUgaXMgSG9zcGl0YWwiCiAgICB9CiAgfSwKICAicmVxdWlyZWQiOiBbCiAgICAicHJvdmlkZXIiCiAgXQp9Cg==</code></p><p><b>url</b>: <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3.html">ChargeItemDefinition: extension = 2026-02-01,,ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNsZXhhbmUgMTAwbWcgMW1sIFN5cmluZ2UgQ2FzZSAzIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgInByb3ZpZGVyIjogewogICAgICAidGl0bGUiOiAiSG9zcGl0YWwiLAogICAgICAidHlwZSI6ICJib29sZWFuIiwKICAgICAgImRlc2NyaXB0aW9uIjogIlByb3ZpZGVyIFR5cGUgaXMgSG9zcGl0YWwiCiAgICB9CiAgfSwKICAicmVxdWlyZWQiOiBbCiAgICAicHJvdmlkZXIiCiAgXQp9Cg==; url = https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3; version = 1.0.0; status = active; experimental = ; date = 2026-04-17 06:29:04+0000; publisher = Pharmac; contact = Pharmac (https://www.pharmac.govt.nz/about/contact),Pharmac (enquiry@pharmac.govt.nz(Work)); description = Rules for Clexane 100 mg in 1 ml syringe. Hospital case 3.; jurisdiction = ; copyright = </a></p><p><b>version</b>: 1.0</p><p><b>status</b>: Active</p><p><b>publisher</b>: Pharmac</p><p><b>contact</b>: Pharmac: <a href="https://www.pharmac.govt.nz/about/contact">https://www.pharmac.govt.nz/about/contact</a></p><p><b>description</b>: </p><div><p>Rules for Clexane 100 mg in 1 ml syringe. Hospital case 3.</p>
+</div><p><b>instance</b>: <a href="Medication-Medication-Clexane-100mg-1ml-Syringe.html">Medication Inj 100 mg in 1 ml syringe</a></p><blockquote><p><b>propertyGroup</b></p><blockquote><p><b>applicability</b></p></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: discount</p><p><b>code</b>: <span title="Codes:">PHARMAC Subsidy</span></p><h3>Amounts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style="display: none">*</td><td>0</td><td>NZD</td></tr></table></blockquote></blockquote></blockquote><a name="https-//fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization"> </a><a name="ChargeItemDefinition_ChargeItemDefinition-SA9999-Authorization"> </a><a name="hcChargeItemDefinition_ChargeItemDefinition-SA9999-Authorization"> </a><hr/><p>Entry 6 - fullUrl = https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization</p><p>Search:Mode = include</p><p>Resource ChargeItemDefinition:</p><blockquote><p class="res-header-id"></p><a name="SearchSet-Bundle-Clexane-Pricing/ChargeItemDefinition-SA9999-Authorization"> </a><a name="hcSearchSet-Bundle-Clexane-Pricing/ChargeItemDefinition-SA9999-Authorization"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">PHARMAC Charge Item Definition - Special Authority</a></p></div><p><b>Pricing Effective Date</b>: 2026-03-11</p><p><b>Authorization Case Count</b>: 4</p><p><b>Authorization Schema</b>: (base64 data - 33,812 base64 chars)</p><p><b>Authorization Form</b>: SA9999</p><p><b>url</b>: <a href="ChargeItemDefinition-ChargeItemDefinition-SA9999-Authorization.html">ChargeItemDefinition SA9999</a></p><p><b>version</b>: 1.0</p><p><b>status</b>: Active</p><p><b>publisher</b>: Pharmac</p><p><b>contact</b>: Pharmac: <a href="https://www.pharmac.govt.nz/about/contact">https://www.pharmac.govt.nz/about/contact</a></p><p><b>description</b>: </p><div><p>Special Authorization SA9999. Detailed eligibility criteria available via authorization form.</p>
+</div><p><b>code</b>: <span title="Codes:{http://pharmac.govt.nz/fhir/sa SA9999}">SA9999</span></p><p><a name="l1427">​</a><b>instance</b>: <a href="Medication/Nutrison-800-Complete-Multi-Fibre">Medication/Nutrison-800-Complete-Multi-Fibre</a></p></blockquote></div>
+
+  
+
+    <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 17, 2026 06:29+0000">2026-04-17</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

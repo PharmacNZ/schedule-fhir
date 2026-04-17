@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>SearchSet-Bundle-Medication - XML Representation - Pharmac Schedules FHIR API v0.0.1</title>
+    <title>SearchSet-Bundle-Medication - XML Representation - Pharmac Schedules FHIR API v1.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -47,8 +47,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.52"}
-    h3,h4,h5,h6{--heading-prefix:"8.52"}</style>
+    <style type="text/css">h2{--heading-prefix:"11.61"}
+    h3,h4,h5,h6{--heading-prefix:"11.61"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -66,7 +66,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.0.1 - draft
+            <span style="display:inline-block;">1.0.0 - draft
 
 
             </span>
@@ -98,6 +98,41 @@
   </li>
   <li>
     <a href="use-cases.html">Use cases</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-pharmac-medication.html">Medication</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">ChargeItemDefinition - Special Authority</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guides
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a>
+      </li>
+      <li>
+        <a href="fr-json-schema-guide.html">JSON Schema for Funding Rules</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="examples.html">Examples</a>
@@ -161,7 +196,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v0.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -223,22 +258,22 @@
   &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication">resource</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication">Medication</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/resource.html#Medication.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;Medication-Lucrin-Depot-1-Month&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/resource.html#Medication.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;Medication-Clexane-100mg-1ml-Syringe&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">meta</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">meta</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lucrin Depot 1-month&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Clexane&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;10&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;inj&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;syringe&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank&quot;&gt;
@@ -246,16 +281,15 @@
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>
-                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Hormone Preparations - Systemic Excluding Contraceptive Hormones&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Blood and Blood Forming Organs&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Trophic Hormones&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Antithrombotic Agents&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;GnRH Analogues&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Heparin and Antagonist Preparations&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple&quot;&gt;
@@ -273,164 +307,206 @@
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine&quot;&gt;
           &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueBoolean</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;100 mg in 1 ml&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Presciption&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDate</a> <a href="http://hl7.org/fhir/R4/datatypes.html#date">value</a>=&quot;2009-08-01&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/brand&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;B14160310092925&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;B04070438932925&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/pack&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;P2330148&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;P2581906&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/chemical&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;C1416031009&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;C0407043893&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/formulation&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;F141603100929&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;F040704389329&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/pharmacode&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2330148&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2581906&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.gs1.org/gtin&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;09312319039680&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.gs1.org/gtin&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;09319733003402&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.code">code</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://nzmt.org.nz&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;50049431000117108&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Leuprorelin 3.75 inj, 1 inj&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;50083501000117108&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Inj 100 mg in 1 ml syringe&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Leuprorelin&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Clexane&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.code">code</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.form">form</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://snomed.info/sct&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;412946008&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Injectable solution&quot;/&gt;
-          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Inj 3.75 mg prefilled dual chamber syringe&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Solution for injection&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.form">form</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient">ingredient</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.item_x_">itemCodeableConcept</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://nzmt.org.nz&quot;/&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;2268011000036106&quot;/&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;leuprorelin&quot;/&gt;
-            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;leuprorelin&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Enoxaparin sodium&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.item_x_">itemCodeableConcept</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.isActive">isActive</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient">ingredient</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication">Medication</a>&gt;
     &lt;/resource&gt;
     &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;match&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;include&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication">resource</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication">Medication</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/resource.html#Medication.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;Medication-Ricovir-Tenofovir&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/resource.html#Medication.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;Medication-Fortisip-Multi-Fibre-Chocolate&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">meta</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">meta</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ricovir&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Fortisip Multi Fibre (chocolate)&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;30&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;200&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;tab&quot;/&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;1&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ml&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Infections - Agents for Systemic Use&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Special Foods&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Antivirals&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Standard Feeds&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Hepatitis B Treatment&quot;/&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueBoolean</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueBoolean</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueBoolean</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Standard Feeds&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/brand&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;B16190538672526&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;B42063138522825&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/pack&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;P2703122&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;P2702614&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/chemical&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;C1619053867&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;C4206313852&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/formulation&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;F161905386725&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;F420631385228&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/pharmacode&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2703122&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2702614&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.code">code</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://nzmt.org.nz&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;50348251000117105&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Tenofovir disoproxil 300 tab, 30 tab&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;50035701000117108&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Tenofovir disoproxil&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Fortisip Multi Fibre (chocolate)&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.code">code</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.form">form</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://snomed.info/sct&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;385055001&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Tablet&quot;/&gt;
-          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Tab 245 mg (300 mg as a fumarate)&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Liquid&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.form">form</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient">ingredient</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.item_x_">itemCodeableConcept</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://nzmt.org.nz&quot;/&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;46616121000116103&quot;/&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;tenofovir disoproxil&quot;/&gt;
-            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;tenofovir disoproxil&quot;/&gt;
-          &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.item_x_">itemCodeableConcept</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.isActive">isActive</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient">ingredient</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication">Medication</a>&gt;
     &lt;/resource&gt;
     &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;match&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;include&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication">resource</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication">Medication</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/resource.html#Medication.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;Medication-Nutrison-800-Complete-Multi-Fibre&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">meta</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Nutrison 800 Complete Multi Fibre&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1000&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ml&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Special Foods&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Standard Feeds&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Standard Feeds&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/brand&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;B42063140742625&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/pack&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;P2702398&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/chemical&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;C4206314074&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/formulation&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;F420631407426&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://schedule.pharmac.govt.nz/ids/pharmacode&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2702398&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.code">code</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://nzmt.org.nz&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;50271881000117104&quot;/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Nutrison 800 Complete Multi Fibre&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/medication.html#Medication.form">form</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Liquid&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication.form">form</a>&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/medication.html#Medication">Medication</a>&gt;
+    &lt;/resource&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;include&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
 &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">Bundle</a>&gt;</code></pre>
@@ -457,7 +533,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 27, 2026 00:29+0000">2026-03-27</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 17, 2026 06:29+0000">2026-04-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

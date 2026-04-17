@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="Medication-Fortisip-Multi-Fibre-Chocolate"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
+    <valueString value="Fortisip Multi Fibre (chocolate)"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
+    <valueString value="200"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
+    <valueString value="ml"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
+    <valueString value="Special Foods"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
+    <valueString value="Standard Feeds"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
+    <valueString value="Standard Feeds"/>
+  </extension>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
+    <value value="B42063138522825"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
+    <value value="P2702614"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
+    <value value="C4206313852"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
+    <value value="F420631385228"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
+    <value value="2702614"/>
+  </identifier>
+  <code>
+    <coding>
+      <system value="http://nzmt.org.nz"/>
+      <code value="50035701000117108"/>
+    </coding>
+    <text value="Fortisip Multi Fibre (chocolate)"/>
+  </code>
+  <status value="active"/>
+  <form>
+    <text value="Liquid"/>
+  </form>
+</Medication>

@@ -3,7 +3,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="pharmac-charge-item-definition"/>
   <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
-  <version value="0.0.1"/>
+  <version value="1.0.0"/>
   <name value="PharmacChargeItemDefinition"/>
   <title value="PHARMAC Charge Item Definition"/>
   <status value="active"/>
@@ -832,6 +832,150 @@
       <type>
         <code value="Extension"/>
         <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
+    <element id="ChargeItemDefinition.extension:authorizationSchema">
+      <path value="ChargeItemDefinition.extension"/>
+      <sliceName value="authorizationSchema"/>
+      <short value="JSON Schema for authorization form"/>
+      <definition value="Base64-encoded JSON Schema that defines the structure and validation rules for the Special Authorization application form. Clients should base64-decode the value to obtain the JSON Schema."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="DomainResource.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
+    <element id="ChargeItemDefinition.extension:PricingSection29">
+      <path value="ChargeItemDefinition.extension"/>
+      <sliceName value="PricingSection29"/>
+      <short value="Pricing Section 29"/>
+      <definition value="Indicates whether Section 29 applies to this pricing record."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="DomainResource.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
+    <element id="ChargeItemDefinition.extension:PricingNotCombined">
+      <path value="ChargeItemDefinition.extension"/>
+      <sliceName value="PricingNotCombined"/>
+      <short value="Pricing Not Combined"/>
+      <definition value="Indicates whether Not Combined applies to this pricing record."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="DomainResource.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
+    <element id="ChargeItemDefinition.extension:PricingCoPaymentMax">
+      <path value="ChargeItemDefinition.extension"/>
+      <sliceName value="PricingCoPaymentMax"/>
+      <short value="Pricing Co-Payment Max"/>
+      <definition value="Indicates whether Co-Payment Max applies to this pricing record."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="DomainResource.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -2883,6 +3027,48 @@
       <type>
         <code value="Extension"/>
         <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination"/>
+      </type>
+    </element>
+    <element id="ChargeItemDefinition.extension:authorizationSchema">
+      <path value="ChargeItemDefinition.extension"/>
+      <sliceName value="authorizationSchema"/>
+      <short value="JSON Schema for authorization form"/>
+      <definition value="Base64-encoded JSON Schema that defines the structure and validation rules for the Special Authorization application form. Clients should base64-decode the value to obtain the JSON Schema."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"/>
+      </type>
+    </element>
+    <element id="ChargeItemDefinition.extension:PricingSection29">
+      <path value="ChargeItemDefinition.extension"/>
+      <sliceName value="PricingSection29"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29"/>
+      </type>
+    </element>
+    <element id="ChargeItemDefinition.extension:PricingNotCombined">
+      <path value="ChargeItemDefinition.extension"/>
+      <sliceName value="PricingNotCombined"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined"/>
+      </type>
+    </element>
+    <element id="ChargeItemDefinition.extension:PricingCoPaymentMax">
+      <path value="ChargeItemDefinition.extension"/>
+      <sliceName value="PricingCoPaymentMax"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max"/>
       </type>
     </element>
     <element id="ChargeItemDefinition.url">

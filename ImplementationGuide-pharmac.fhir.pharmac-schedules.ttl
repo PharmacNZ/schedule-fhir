@@ -13,11 +13,11 @@
      fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules"^^xsd:anyURI ;
      fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules>
   ] ; # 
-  fhir:version [ fhir:v "0.0.1"] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
   fhir:name [ fhir:v "pharmacschedules"] ; # 
   fhir:title [ fhir:v "Pharmac Schedules FHIR API"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-03-27T00:29:47+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-04-17T06:29:04+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Pharmac"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Pharmac" ] ;
@@ -1504,6 +1504,27 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema> ;
+         fhir:reference [ fhir:v "StructureDefinition/authorization-schema" ]
+       ] ;
+       fhir:name [ fhir:v "Authorization Schema" ] ;
+       fhir:description [ fhir:v "Base64-encoded JSON Schema that defines the structure and validation rules for a Special Authorization application form. The decoded content is a JSON Schema (application/schema+json)." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title> ;
          fhir:reference [ fhir:v "StructureDefinition/authorization-title" ]
        ] ;
@@ -1546,15 +1567,15 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1> ;
-         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1" ]
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1> ;
+         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1" ]
        ] ;
-       fhir:name [ fhir:v "ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1" ] ;
-       fhir:description [ fhir:v "Community pharmacy BSO subsidy (Case 1) with provider condition for hospital care operators." ] ;
+       fhir:name [ fhir:v "ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1" ] ;
+       fhir:description [ fhir:v "Rules for Clexane 100 mg in 1 ml syringe - Case 1." ] ;
        fhir:example [
          a fhir:Canonical ;
-         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
        ]
      ] [
        fhir:extension ( [
@@ -1568,15 +1589,15 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1> ;
-         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1" ]
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2> ;
+         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2" ]
        ] ;
-       fhir:name [ fhir:v "ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1" ] ;
-       fhir:description [ fhir:v "Community pharmacy Rural PSO subsidy (Case 1) with provider condition for authorised prescribers." ] ;
+       fhir:name [ fhir:v "ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2" ] ;
+       fhir:description [ fhir:v "Rules for Clexane 100 mg in 1 ml syringe - Case 2." ] ;
        fhir:example [
          a fhir:Canonical ;
-         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
        ]
      ] [
        fhir:extension ( [
@@ -1590,15 +1611,15 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1> ;
-         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1" ]
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3> ;
+         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3" ]
        ] ;
-       fhir:name [ fhir:v "ChargeItemDefinition-Community-Pharmacy-Sequence-1" ] ;
-       fhir:description [ fhir:v "Community pharmacy prescription subsidy for patients unable to tolerate administration of goserelin. Demonstrates reimbursement with endorsement and provider conditions." ] ;
+       fhir:name [ fhir:v "ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3" ] ;
+       fhir:description [ fhir:v "Rules for Clexane 100 mg in 1 ml syringe - Case 3." ] ;
        fhir:example [
          a fhir:Canonical ;
-         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
        ]
      ] [
        fhir:extension ( [
@@ -1612,103 +1633,15 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2> ;
-         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2" ]
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization> ;
+         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization" ]
        ] ;
-       fhir:name [ fhir:v "ChargeItemDefinition-Community-Pharmacy-Sequence-2" ] ;
-       fhir:description [ fhir:v "Community pharmacy prescription subsidy (Case 2) with provider condition only." ] ;
+       fhir:name [ fhir:v "ChargeItemDefinition-SA9999-Authorization" ] ;
+       fhir:description [ fhir:v "Special Authorization SA9999" ] ;
        fhir:example [
          a fhir:Canonical ;
-         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ChargeItemDefinition"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization> ;
-         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization" ]
-       ] ;
-       fhir:name [ fhir:v "ChargeItemDefinition-SA2139-Authorization" ] ;
-       fhir:description [ fhir:v "Special Authorization SA2139." ] ;
-       fhir:example [
-         a fhir:Canonical ;
-         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ChargeItemDefinition"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization> ;
-         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization" ]
-       ] ;
-       fhir:name [ fhir:v "ChargeItemDefinition-SA2520-Authorization" ] ;
-       fhir:description [ fhir:v "Special Authorization SA2520" ] ;
-       fhir:example [
-         a fhir:Canonical ;
-         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ChargeItemDefinition"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-1> ;
-         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-1" ]
-       ] ;
-       fhir:name [ fhir:v "ChargeItemDefinition-Tenofovir-Case-Sequence-1" ] ;
-       fhir:description [ fhir:v "Rules for Tenofovir Disoproxil" ] ;
-       fhir:example [
-         a fhir:Canonical ;
-         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ChargeItemDefinition"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-2> ;
-         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-2" ]
-       ] ;
-       fhir:name [ fhir:v "ChargeItemDefinition-Tenofovir-Case-Sequence-2" ] ;
-       fhir:description [ fhir:v "Rules for Tenofovir Disoproxil" ] ;
-       fhir:example [
-         a fhir:Canonical ;
-         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"^^xsd:anyURI ;
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority>
        ]
      ] [
        fhir:extension ( [
@@ -1730,6 +1663,91 @@
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "SearchParameter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/ChargeItemDefinitionDeviceReferenceSearchParam> ;
+         fhir:reference [ fhir:v "SearchParameter/ChargeItemDefinitionDeviceReferenceSearchParam" ]
+       ] ;
+       fhir:name [ fhir:v "ChargeItemDefinitionDeviceReferenceSearchParam" ] ;
+       fhir:description [ fhir:v "Reference from ChargeItemDefinition to DeviceDefinition via IG extension. Enables searching for pricing and authorization rules by associated device." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "SearchParameter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/ChargeItemDefinitionInstanceSearchParam> ;
+         fhir:reference [ fhir:v "SearchParameter/ChargeItemDefinitionInstanceSearchParam" ]
+       ] ;
+       fhir:name [ fhir:v "ChargeItemDefinitionInstanceSearchParam" ] ;
+       fhir:description [ fhir:v "Allow _revinclude from Medication to ChargeItemDefinition" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "SearchParameter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/ChargeItemDefinitionSACodeSearchParam> ;
+         fhir:reference [ fhir:v "SearchParameter/ChargeItemDefinitionSACodeSearchParam" ]
+       ] ;
+       fhir:name [ fhir:v "ChargeItemDefinitionSACodeSearchParam" ] ;
+       fhir:description [ fhir:v "Allow ChargeItemDefinition search by code eg special authority code" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ChargeItemDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing> ;
+         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing" ]
+       ] ;
+       fhir:name [ fhir:v "Clexane - Pricing" ] ;
+       fhir:description [ fhir:v "Pricing information for Clexane (enoxaparin sodium injection). Demonstrates fully subsidized community and HML pricing." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing"^^xsd:anyURI ;
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing>
        ]
      ] [
        fhir:extension ( [
@@ -1856,28 +1874,6 @@
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ChargeItemDefinition"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing> ;
-         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing" ]
-       ] ;
-       fhir:name [ fhir:v "Lucrin Depot 1-month - Pricing" ] ;
-       fhir:description [ fhir:v "Pricing information for Lucrin Depot 1-month (leuprorelin injection). Demonstrates community subsidized pricing with subsidy, alternative pricing, and new pricing attributes including cost brand source, wastage claimable, DV limit percentage, and brand switch fee." ] ;
-       fhir:example [
-         a fhir:Canonical ;
-         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
        ]
      ] [
        fhir:extension ( [
@@ -2016,6 +2012,27 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification> ;
+         fhir:reference [ fhir:v "StructureDefinition/medication-legal-classification" ]
+       ] ;
+       fhir:name [ fhir:v "Medication Legal Classification" ] ;
+       fhir:description [ fhir:v "Legal classification for a medication." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack> ;
          fhir:reference [ fhir:v "StructureDefinition/medication-original-pack" ]
        ] ;
@@ -2042,6 +2059,27 @@
        ] ;
        fhir:name [ fhir:v "Medication Package Size" ] ;
        fhir:description [ fhir:v "Package size for a scheduled medication. For example, '30 x 650 mg sachets' would be represented as 'Sachet' in the form property and 30 in the packageSize extension property." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date> ;
+         fhir:reference [ fhir:v "StructureDefinition/medication-product-created-date" ]
+       ] ;
+       fhir:name [ fhir:v "Medication Product Created Date" ] ;
+       fhir:description [ fhir:v "The date a medication product record was created." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -2163,6 +2201,27 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength> ;
+         fhir:reference [ fhir:v "StructureDefinition/medication-strength" ]
+       ] ;
+       fhir:name [ fhir:v "Medication Strength" ] ;
+       fhir:description [ fhir:v "Strength for a medication." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure> ;
          fhir:reference [ fhir:v "StructureDefinition/medication-unit-of-measure" ]
        ] ;
@@ -2184,11 +2243,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Lucrin-Depot-1-Month> ;
-         fhir:reference [ fhir:v "Medication/Medication-Lucrin-Depot-1-Month" ]
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Clexane-100mg-1ml-Syringe> ;
+         fhir:reference [ fhir:v "Medication/Medication-Clexane-100mg-1ml-Syringe" ]
        ] ;
-       fhir:name [ fhir:v "Medication-Lucrin-Depot-1-Month" ] ;
-       fhir:description [ fhir:v "Medication representation of Lucrin Depot 1-month (leuprorelin injection)." ] ;
+       fhir:name [ fhir:v "Medication-Clexane-100mg-1ml-Syringe" ] ;
+       fhir:description [ fhir:v "Medication representation of Clexane (enoxaparin sodium) Inj 100 mg in 1 ml syringe." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
@@ -2206,11 +2265,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Ricovir-Tenofovir> ;
-         fhir:reference [ fhir:v "Medication/Medication-Ricovir-Tenofovir" ]
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Fortisip-Multi-Fibre-Chocolate> ;
+         fhir:reference [ fhir:v "Medication/Medication-Fortisip-Multi-Fibre-Chocolate" ]
        ] ;
-       fhir:name [ fhir:v "Medication-Ricovir-Tenofovir" ] ;
-       fhir:description [ fhir:v "Medication representation of Ricovir (tenofovir disoproxil tablets)." ] ;
+       fhir:name [ fhir:v "Medication-Fortisip-Multi-Fibre-Chocolate" ] ;
+       fhir:description [ fhir:v "Supplmentrepresentation of Fortisip Multi Fibre (chocolate) oral feed with fibre 1.5 kcal/ml." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
@@ -2228,11 +2287,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Viramune-Suspension> ;
-         fhir:reference [ fhir:v "Medication/Medication-Viramune-Suspension" ]
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/Medication-Nutrison-800-Complete-Multi-Fibre> ;
+         fhir:reference [ fhir:v "Medication/Medication-Nutrison-800-Complete-Multi-Fibre" ]
        ] ;
-       fhir:name [ fhir:v "Medication-Viramune-Suspension" ] ;
-       fhir:description [ fhir:v "Medication representation of Viramune Suspension (nevirapine oral suspension)." ] ;
+       fhir:name [ fhir:v "Medication-Nutrison-800-Complete-Multi-Fibre" ] ;
+       fhir:description [ fhir:v "Supplement representation of Nutrison 800 Complete Multi Fibre (enteral feed with fibre 0.83 kcal/ml)." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
@@ -2255,6 +2314,27 @@
        ] ;
        fhir:name [ fhir:v "MedicationBrandNameSearchParam" ] ;
        fhir:description [ fhir:v "Search for medications by brand name (e.g., 'Gaviscon', 'Acidex', 'Budesonide'). Enables fuzzy matching on the medication-brand-name extension for discovery by product name." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "SearchParameter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/MedicationCategorySearchParam> ;
+         fhir:reference [ fhir:v "SearchParameter/MedicationCategorySearchParam" ]
+       ] ;
+       fhir:name [ fhir:v "MedicationCategorySearchParam" ] ;
+       fhir:description [ fhir:v "Search for medications by category" ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -2297,6 +2377,69 @@
        ] ;
        fhir:name [ fhir:v "PHARMAC Charge Item Definition" ] ;
        fhir:description [ fhir:v "Profile for ChargeItemDefinition resources representing pricing, subsidy, and rules for devices and medications in the PHARMAC schedule. This profile allows FHIR consumers to use the _include search parameter to retrieve pricing information alongside device or medication resources." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules> ;
+         fhir:reference [ fhir:v "StructureDefinition/pharmac-charge-item-definition-funding-rules" ]
+       ] ;
+       fhir:name [ fhir:v "PHARMAC Charge Item Definition - Funding Rules" ] ;
+       fhir:description [ fhir:v "Profile for ChargeItemDefinition resources representing funding mechanisms and reimbursement rules in the PHARMAC schedule. This profile captures funding conditions, provider requirements, endorsement criteria, case sequences, and funding mechanism types (Prescription, BSO, Rural PSO, etc.)." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing> ;
+         fhir:reference [ fhir:v "StructureDefinition/pharmac-charge-item-definition-pricing" ]
+       ] ;
+       fhir:name [ fhir:v "PHARMAC Charge Item Definition - Pricing" ] ;
+       fhir:description [ fhir:v "Profile for ChargeItemDefinition resources representing product pricing information for medications and devices in the PHARMAC schedule. This profile captures listed prices, PHARMAC subsidies, patient co-payments, and pricing-specific attributes such as contract type, DV limits, and statim requirements." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority> ;
+         fhir:reference [ fhir:v "StructureDefinition/pharmac-charge-item-definition-special-authority" ]
+       ] ;
+       fhir:name [ fhir:v "PHARMAC Charge Item Definition - Special Authority" ] ;
+       fhir:description [ fhir:v "Profile for ChargeItemDefinition resources representing Special Authorization (SA) requirements and clinical eligibility criteria in the PHARMAC schedule. This profile captures SA codes, authorization case counts, clinical eligibility, and references to medications requiring special authorization." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -2376,6 +2519,27 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max> ;
+         fhir:reference [ fhir:v "StructureDefinition/pricing-copayment-max" ]
+       ] ;
+       fhir:name [ fhir:v "Pricing Co-Payment Max" ] ;
+       fhir:description [ fhir:v "Indicates whether Co-Payment Max applies to this pricing record." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date> ;
          fhir:reference [ fhir:v "StructureDefinition/pricing-effective-date" ]
        ] ;
@@ -2414,19 +2578,39 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "ChargeItemDefinition"
+           fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing> ;
-         fhir:reference [ fhir:v "ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing" ]
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined> ;
+         fhir:reference [ fhir:v "StructureDefinition/pricing-not-combined" ]
        ] ;
-       fhir:name [ fhir:v "Ricovir - Pricing" ] ;
-       fhir:description [ fhir:v "Pricing information for Ricovir (tenofovir disoproxil tablets). Demonstrates fully subsidized community pricing with PSS contract type and DV limit." ] ;
+       fhir:name [ fhir:v "Pricing Not Combined" ] ;
+       fhir:description [ fhir:v "Indicates whether Not Combined applies to this pricing record." ] ;
        fhir:example [
-         a fhir:Canonical ;
-         fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29> ;
+         fhir:reference [ fhir:v "StructureDefinition/pricing-section-29" ]
+       ] ;
+       fhir:name [ fhir:v "Pricing Section 29" ] ;
+       fhir:description [ fhir:v "Indicates whether Section 29 applies to this pricing record." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
        ]
      ] [
        fhir:extension ( [
@@ -2440,11 +2624,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Leuprorelin-Pricing> ;
-         fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-Leuprorelin-Pricing" ]
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Clexane-Pricing> ;
+         fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-Clexane-Pricing" ]
        ] ;
-       fhir:name [ fhir:v "SearchSet-Bundle-Leuprorelin-Pricing" ] ;
-       fhir:description [ fhir:v "Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Leuprorelin&_include=ChargeItemDefinition:instance" ] ;
+       fhir:name [ fhir:v "SearchSet-Bundle-Clexane-Pricing" ] ;
+       fhir:description [ fhir:v "Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Clexane&_include=ChargeItemDefinition:instance" ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v true
@@ -2465,7 +2649,7 @@
          fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-Medication" ]
        ] ;
        fhir:name [ fhir:v "SearchSet-Bundle-Medication" ] ;
-       fhir:description [ fhir:v "Example search result demonstrating a bulk medication search." ] ;
+       fhir:description [ fhir:v "Example search result demonstrating a bulk medication search with GET /Medication?name=Clexane&." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v true
@@ -2482,32 +2666,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Ricovir-Pricing> ;
-         fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-Ricovir-Pricing" ]
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Special-Authorities> ;
+         fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-Special-Authorities" ]
        ] ;
-       fhir:name [ fhir:v "SearchSet-Bundle-Ricovir-Pricing" ] ;
-       fhir:description [ fhir:v "Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Tenofovir&_include=ChargeItemDefinition:instance" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "Bundle"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-SA2139-Authorization> ;
-         fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-SA2139-Authorization" ]
-       ] ;
-       fhir:name [ fhir:v "SearchSet-Bundle-SA2139-Authorization" ] ;
-       fhir:description [ fhir:v "Example search result demonstrating _include to retrieve ChargeItemDefinition resource using the Special Authority ID and it's associated Medication(s)\n        Query: GET /ChargeItemDefinition?code=SA2139&_include=ChargeItemDefinition:instance" ] ;
+       fhir:name [ fhir:v "SearchSet-Bundle-Special-Authorities" ] ;
+       fhir:description [ fhir:v "Example search result demonstrating a search for all special authorization definitions." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v true
@@ -2678,6 +2841,25 @@
            ] ;
            fhir:value [
              a fhir:Url ;
+             fhir:v "fr-json-schema-guide.html"^^xsd:anyURI ;
+             fhir:l fhir:fr-json-schema-guide.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "fr-json-schema-guide.html"^^xsd:anyURI ;
+           fhir:l fhir:fr-json-schema-guide.html
+         ] ;
+         fhir:title [ fhir:v "Fr Json Schema Guide" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
              fhir:v "relationships.html"^^xsd:anyURI ;
              fhir:l fhir:relationships.html
            ]
@@ -2688,6 +2870,44 @@
            fhir:l fhir:relationships.html
          ] ;
          fhir:title [ fhir:v "Relationships" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "sa-json-schema-guide.html"^^xsd:anyURI ;
+             fhir:l fhir:sa-json-schema-guide.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "sa-json-schema-guide.html"^^xsd:anyURI ;
+           fhir:l fhir:sa-json-schema-guide.html
+         ] ;
+         fhir:title [ fhir:v "Sa Json Schema Guide" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "sa9999-schema-example.html"^^xsd:anyURI ;
+             fhir:l fhir:sa9999-schema-example.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "sa9999-schema-example.html"^^xsd:anyURI ;
+           fhir:l fhir:sa9999-schema-example.html
+         ] ;
+         fhir:title [ fhir:v "Sa 9999 Schema Example" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

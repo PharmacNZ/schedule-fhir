@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SearchParameter xmlns="http://hl7.org/fhir">
+  <id value="MedicationCategorySearchParam"/>
+  <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-category"/>
+  <version value="1.0.0"/>
+  <name value="medication-category"/>
+  <status value="active"/>
+  <date value="2026-04-17T06:29:04+00:00"/>
+  <publisher value="Pharmac"/>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.pharmac.govt.nz/about/contact"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="email"/>
+      <value value="enquiry@pharmac.govt.nz"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Search for medications by category"/>
+  <code value="category"/>
+  <base value="Medication"/>
+  <type value="string"/>
+  <expression value="Medication.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1').value.ofType(string) | Medication.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2').value.ofType(string) | DeviceDefinition.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3').value.ofType(string)"/>
+  <xpathUsage value="normal"/>
+  <target value="Medication"/>
+</SearchParameter>

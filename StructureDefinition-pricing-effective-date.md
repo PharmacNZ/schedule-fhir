@@ -1,4 +1,4 @@
-# Pricing Effective Date - Pharmac Schedules FHIR API v0.0.1
+# Pricing Effective Date - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date | *Version*:0.0.1 |
-| Draft as of 2026-03-27 | *Computable Name*:PricingEffectiveDate |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date | *Version*:1.0.0 |
+| Draft as of 2026-04-17 | *Computable Name*:PricingEffectiveDate |
 
 The date from which this pricing becomes effective.
 
@@ -20,7 +20,7 @@ The date from which this pricing becomes effective.
 **Usages:**
 
 * Use this Extension: [PHARMAC Charge Item Definition](StructureDefinition-pharmac-charge-item-definition.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-Leuprorelin-Pricing](Bundle-SearchSet-Bundle-Leuprorelin-Pricing.md), [Bundle/SearchSet-Bundle-Ricovir-Pricing](Bundle-SearchSet-Bundle-Ricovir-Pricing.md), [Bundle/SearchSet-Bundle-SA2139-Authorization](Bundle-SearchSet-Bundle-SA2139-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1.md)... Show 9 more, [ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1.md), [ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-1.md), [ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-2.md), [ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing](ChargeItemDefinition-ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing.md), [ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing](ChargeItemDefinition-ChargeItemDefinition-Ricovir-Pricing.md), [ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2139-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2520-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-1.md) and [ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-2](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-2.md)
+* Examples for this Extension: [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md), [Bundle/SearchSet-Bundle-Special-Authorities](Bundle-SearchSet-Bundle-Special-Authorities.md), [ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2.md)... Show 3 more, [ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3.md), [ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing](ChargeItemDefinition-ChargeItemDefinition-Clexane-Pricing.md) and [ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA9999-Authorization.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/pricing-effective-date)
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-pricing-effective-da
   "resourceType" : "StructureDefinition",
   "id" : "pricing-effective-date",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "PricingEffectiveDate",
   "title" : "Pricing Effective Date",
   "status" : "draft",
-  "date" : "2026-03-27T00:29:47+00:00",
+  "date" : "2026-04-17T06:29:04+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

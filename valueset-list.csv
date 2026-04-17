@@ -1,4 +1,4 @@
 URL,Version,Status,OIDs,Name,Title,Description,Uses,Used,Sources
-https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes,0.0.1,draft,,MedicationFormCodes,Medication Form Codes,"",,"SCT"
-https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code,0.0.1,active,,PharmacMedicationCode,PHARMAC Medication Code ValueSet,"ValueSet containing medication codes from NZMT CTPP, PackID, and SNOMED CT code systems used for PHARMAC pharmaceutical schedule medications.",,"SCT"
-https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/snomed-ct-device-types,0.0.1,draft,,SNOMEDCTDeviceTypes,SNOMED CT Device Types,"",,"SCT"
+https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes,1.0.0,draft,,MedicationFormCodes,Medication Form Codes,"",,"SCT"
+https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code,1.0.0,active,,PharmacMedicationCode,PHARMAC Medication Code ValueSet,"ValueSet containing medication codes from NZMT CTPP, PackID, and SNOMED CT code systems used for PHARMAC pharmaceutical schedule medications.",,"SCT"
+https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/snomed-ct-device-types,1.0.0,draft,,SNOMEDCTDeviceTypes,SNOMED CT Device Types,"",,"SCT"

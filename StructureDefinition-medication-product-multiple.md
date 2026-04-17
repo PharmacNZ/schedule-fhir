@@ -1,4 +1,4 @@
-# Medication Product Multiple - Pharmac Schedules FHIR API v0.0.1
+# Medication Product Multiple - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple | *Version*:0.0.1 |
-| Draft as of 2026-03-27 | *Computable Name*:MedicationProductMultiple |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple | *Version*:1.0.0 |
+| Draft as of 2026-04-17 | *Computable Name*:MedicationProductMultiple |
 
 Indicates whether this pack uses product multiples when calculating pricing or claims.
 
@@ -20,7 +20,7 @@ Indicates whether this pack uses product multiples when calculating pricing or c
 **Usages:**
 
 * Use this Extension: [PHARMAC Medication](StructureDefinition-pharmac-medication.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-Leuprorelin-Pricing](Bundle-SearchSet-Bundle-Leuprorelin-Pricing.md), [Bundle/SearchSet-Bundle-Medication](Bundle-SearchSet-Bundle-Medication.md), [Bundle/SearchSet-Bundle-Ricovir-Pricing](Bundle-SearchSet-Bundle-Ricovir-Pricing.md), [Bundle/SearchSet-Bundle-SA2139-Authorization](Bundle-SearchSet-Bundle-SA2139-Authorization.md)... Show 3 more, [Medication/Medication-Lucrin-Depot-1-Month](Medication-Medication-Lucrin-Depot-1-Month.md), [Medication/Medication-Ricovir-Tenofovir](Medication-Medication-Ricovir-Tenofovir.md) and [Medication/Medication-Viramune-Suspension](Medication-Medication-Viramune-Suspension.md)
+* Examples for this Extension: [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md), [Bundle/SearchSet-Bundle-Medication](Bundle-SearchSet-Bundle-Medication.md) and [Medication/Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/medication-product-multiple)
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-medication-product-m
   "resourceType" : "StructureDefinition",
   "id" : "medication-product-multiple",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "MedicationProductMultiple",
   "title" : "Medication Product Multiple",
   "status" : "draft",
-  "date" : "2026-03-27T00:29:47+00:00",
+  "date" : "2026-04-17T06:29:04+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

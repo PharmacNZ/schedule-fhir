@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SearchParameter xmlns="http://hl7.org/fhir">
+  <id value="ChargeItemDefinitionDeviceReferenceSearchParam"/>
+  <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-device"/>
+  <version value="1.0.0"/>
+  <name value="device-definition-reference"/>
+  <status value="active"/>
+  <date value="2026-04-17T06:29:04+00:00"/>
+  <publisher value="Pharmac"/>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.pharmac.govt.nz/about/contact"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="email"/>
+      <value value="enquiry@pharmac.govt.nz"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Reference from ChargeItemDefinition to DeviceDefinition via IG extension. Enables searching for pricing and authorization rules by associated device."/>
+  <code value="device-definition-reference"/>
+  <base value="ChargeItemDefinition"/>
+  <type value="reference"/>
+  <expression value="ChargeItemDefinition.extension.where(url = 'https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/device-definition-reference').value"/>
+  <target value="DeviceDefinition"/>
+</SearchParameter>

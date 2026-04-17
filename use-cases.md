@@ -1,4 +1,4 @@
-# Use Cases - Pharmac Schedules FHIR API v0.0.1
+# Use Cases - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * **Use Cases**

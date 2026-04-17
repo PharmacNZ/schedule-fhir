@@ -1,15 +1,18 @@
-# pharmac.fhir.pharmac-schedules#0.0.1: Pharmac Schedules FHIR API
+# pharmac.fhir.pharmac-schedules#1.0.0: Pharmac Schedules FHIR API
 
 ## Pages
 
 * [Home](index.md)
-* [Examples](examples.md)
-* [Use Cases](use-cases.md)
-* [Terminology](terminology.md)
+* [Sa Json Schema Guide](sa-json-schema-guide.md)
+* [Fr Json Schema Guide](fr-json-schema-guide.md)
 * [Artifacts Summary](artifacts.md)
+* [Examples](examples.md)
+* [Relationships](relationships.md)
+* [Sa 9999 Schema Example](sa9999-schema-example.md)
+* [Terminology](terminology.md)
 * [Api](api.md)
 * [Datamodel](datamodel.md)
-* [Relationships](relationships.md)
+* [Use Cases](use-cases.md)
 
 ## Resources
 
@@ -21,6 +24,9 @@
 
 ### Resource Profiles
 
+* [PHARMAC Charge Item Definition - Funding Rules](StructureDefinition-pharmac-charge-item-definition-funding-rules.md)
+* [PHARMAC Charge Item Definition - Pricing](StructureDefinition-pharmac-charge-item-definition-pricing.md)
+* [PHARMAC Charge Item Definition - Special Authority](StructureDefinition-pharmac-charge-item-definition-special-authority.md)
 * [PHARMAC Charge Item Definition](StructureDefinition-pharmac-charge-item-definition.md)
 * [PHARMAC Medication](StructureDefinition-pharmac-medication.md)
 
@@ -28,6 +34,7 @@
 
 * [Authorization Case Count](StructureDefinition-authorization-case-count.md)
 * [Authorization Form](StructureDefinition-authorization-form.md)
+* [Authorization Schema](StructureDefinition-authorization-schema.md)
 * [Authorization Title](StructureDefinition-authorization-title.md)
 * [Brand Switch Fee](StructureDefinition-brand-switch-fee.md)
 * [Contract Type](StructureDefinition-contract-type.md)
@@ -41,16 +48,22 @@
 * [Medication ATC Category 3](StructureDefinition-medication-atc-category-3.md)
 * [Medication Brand Name](StructureDefinition-medication-brand-name.md)
 * [Medication In Combination](StructureDefinition-medication-in-combination.md)
+* [Medication Legal Classification](StructureDefinition-medication-legal-classification.md)
 * [Medication Original Pack](StructureDefinition-medication-original-pack.md)
 * [Medication Package Size](StructureDefinition-medication-package-size.md)
+* [Medication Product Created Date](StructureDefinition-medication-product-created-date.md)
 * [Medication Product Multiple](StructureDefinition-medication-product-multiple.md)
 * [Medication Product Multiplier](StructureDefinition-medication-product-multiplier.md)
 * [Medication Rank](StructureDefinition-medication-rank.md)
 * [Medication Safety List Medicine](StructureDefinition-medication-safety-list-medicine.md)
 * [Medication Statim](StructureDefinition-medication-statim.md)
+* [Medication Strength](StructureDefinition-medication-strength.md)
 * [Medication Unit of Measure](StructureDefinition-medication-unit-of-measure.md)
+* [Pricing Co-Payment Max](StructureDefinition-pricing-copayment-max.md)
 * [Pricing Effective Date](StructureDefinition-pricing-effective-date.md)
 * [Pricing Expiry Date](StructureDefinition-pricing-expiry-date.md)
+* [Pricing Not Combined](StructureDefinition-pricing-not-combined.md)
+* [Pricing Section 29](StructureDefinition-pricing-section-29.md)
 * [Statim (Urgent Dispensing)](StructureDefinition-statim.md)
 * [Wastage Claimable](StructureDefinition-wastage-claimable.md)
 
@@ -65,26 +78,24 @@
 ### SearchParameters
 
 * [ChargeItemDefinitionCode](SearchParameter-ChargeItemDefinitionCodeSearchParam.md)
+* [device-definition-reference](SearchParameter-ChargeItemDefinitionDeviceReferenceSearchParam.md)
+* [ChargeItemDefinitionInstance](SearchParameter-ChargeItemDefinitionInstanceSearchParam.md)
+* [ChargeItemDefinitionSACode](SearchParameter-ChargeItemDefinitionSACodeSearchParam.md)
 * [brand](SearchParameter-MedicationBrandNameSearchParam.md)
+* [medication-category](SearchParameter-MedicationCategorySearchParam.md)
 * [MedicationName](SearchParameter-MedicationNameSearchParam.md)
 
 ### Examples
 
-* [SearchSet-Bundle-Leuprorelin-Pricing (Bundle)](Bundle-SearchSet-Bundle-Leuprorelin-Pricing.md)
+* [SearchSet-Bundle-Clexane-Pricing (Bundle)](Bundle-SearchSet-Bundle-Clexane-Pricing.md)
 * [SearchSet-Bundle-Medication (Bundle)](Bundle-SearchSet-Bundle-Medication.md)
-* [SearchSet-Bundle-Ricovir-Pricing (Bundle)](Bundle-SearchSet-Bundle-Ricovir-Pricing.md)
-* [SearchSet-Bundle-SA2139-Authorization (Bundle)](Bundle-SearchSet-Bundle-SA2139-Authorization.md)
-* [ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1.md)
-* [ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1.md)
-* [ChargeItemDefinition-Community-Pharmacy-Sequence-1 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-1.md)
-* [ChargeItemDefinition-Community-Pharmacy-Sequence-2 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Community-Pharmacy-Sequence-2.md)
-* [Lucrin Depot 1-month - Pricing (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing.md)
-* [Ricovir - Pricing (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Ricovir-Pricing.md)
-* [ChargeItemDefinition-SA2139-Authorization (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-SA2139-Authorization.md)
-* [ChargeItemDefinition-SA2520-Authorization (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-SA2520-Authorization.md)
-* [ChargeItemDefinition-Tenofovir-Case-Sequence-1 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-1.md)
-* [ChargeItemDefinition-Tenofovir-Case-Sequence-2 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-2.md)
-* [Medication-Lucrin-Depot-1-Month (Medication)](Medication-Medication-Lucrin-Depot-1-Month.md)
-* [Medication-Ricovir-Tenofovir (Medication)](Medication-Medication-Ricovir-Tenofovir.md)
-* [Medication-Viramune-Suspension (Medication)](Medication-Medication-Viramune-Suspension.md)
+* [SearchSet-Bundle-Special-Authorities (Bundle)](Bundle-SearchSet-Bundle-Special-Authorities.md)
+* [ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1.md)
+* [ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2.md)
+* [ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3.md)
+* [Clexane - Pricing (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Clexane-Pricing.md)
+* [ChargeItemDefinition-SA9999-Authorization (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-SA9999-Authorization.md)
+* [Medication-Clexane-100mg-1ml-Syringe (Medication)](Medication-Medication-Clexane-100mg-1ml-Syringe.md)
+* [Medication-Fortisip-Multi-Fibre-Chocolate (Medication)](Medication-Medication-Fortisip-Multi-Fibre-Chocolate.md)
+* [Medication-Nutrison-800-Complete-Multi-Fibre (Medication)](Medication-Medication-Nutrison-800-Complete-Multi-Fibre.md)
 * [APIError-Unauthorised (OperationOutcome)](OperationOutcome-APIError-Unauthorised.md)

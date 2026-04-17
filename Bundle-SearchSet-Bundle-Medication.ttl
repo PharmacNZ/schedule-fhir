@@ -2,7 +2,6 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
@@ -28,7 +27,7 @@
   fhir:entry ( [
      fhir:resource ( [
        a fhir:Medication ;
-       fhir:id [ fhir:v "Medication-Lucrin-Depot-1-Month" ] ;
+       fhir:id [ fhir:v "Medication-Clexane-100mg-1ml-Syringe" ] ;
        fhir:meta [
          fhir:profile ( [
            fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
@@ -42,7 +41,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "Lucrin Depot 1-month"
+           fhir:v "Clexane"
          ]
        ] [
          fhir:url [
@@ -51,7 +50,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "1"
+           fhir:v "10"
          ]
        ] [
          fhir:url [
@@ -60,7 +59,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "inj"
+           fhir:v "syringe"
          ]
        ] [
          fhir:url [
@@ -78,7 +77,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "Hormone Preparations - Systemic Excluding Contraceptive Hormones"
+           fhir:v "Blood and Blood Forming Organs"
          ]
        ] [
          fhir:url [
@@ -87,7 +86,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "Trophic Hormones"
+           fhir:v "Antithrombotic Agents"
          ]
        ] [
          fhir:url [
@@ -96,7 +95,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "GnRH Analogues"
+           fhir:v "Heparin and Antagonist Preparations"
          ]
        ] [
          fhir:url [
@@ -134,37 +133,76 @@
            a fhir:Boolean ;
            fhir:v false
          ]
+       ] [
+         fhir:url [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "100 mg in 1 ml"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Presciption"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date>
+         ] ;
+         fhir:value [
+           a fhir:Date ;
+           fhir:v "2009-08-01"^^xsd:date
+         ]
        ] ) ;
        fhir:identifier ( [
          fhir:system [
            fhir:v "http://schedule.pharmac.govt.nz/ids/brand"^^xsd:anyURI ;
            fhir:l <http://schedule.pharmac.govt.nz/ids/brand>
          ] ;
-         fhir:value [ fhir:v "B14160310092925" ]
+         fhir:value [ fhir:v "B04070438932925" ]
        ] [
          fhir:system [
            fhir:v "http://schedule.pharmac.govt.nz/ids/pack"^^xsd:anyURI ;
            fhir:l <http://schedule.pharmac.govt.nz/ids/pack>
          ] ;
-         fhir:value [ fhir:v "P2330148" ]
+         fhir:value [ fhir:v "P2581906" ]
        ] [
          fhir:system [
            fhir:v "http://schedule.pharmac.govt.nz/ids/chemical"^^xsd:anyURI ;
            fhir:l <http://schedule.pharmac.govt.nz/ids/chemical>
          ] ;
-         fhir:value [ fhir:v "C1416031009" ]
+         fhir:value [ fhir:v "C0407043893" ]
        ] [
          fhir:system [
            fhir:v "http://schedule.pharmac.govt.nz/ids/formulation"^^xsd:anyURI ;
            fhir:l <http://schedule.pharmac.govt.nz/ids/formulation>
          ] ;
-         fhir:value [ fhir:v "F141603100929" ]
+         fhir:value [ fhir:v "F040704389329" ]
        ] [
          fhir:system [
            fhir:v "http://schedule.pharmac.govt.nz/ids/pharmacode"^^xsd:anyURI ;
            fhir:l <http://schedule.pharmac.govt.nz/ids/pharmacode>
          ] ;
-         fhir:value [ fhir:v "2330148" ]
+         fhir:value [ fhir:v "2581906" ]
+       ] [
+         fhir:system [
+           fhir:v "https://www.gs1.org/gtin"^^xsd:anyURI ;
+           fhir:l <https://www.gs1.org/gtin>
+         ] ;
+         fhir:value [ fhir:v "09312319039680" ]
+       ] [
+         fhir:system [
+           fhir:v "https://www.gs1.org/gtin"^^xsd:anyURI ;
+           fhir:l <https://www.gs1.org/gtin>
+         ] ;
+         fhir:value [ fhir:v "09319733003402" ]
        ] ) ;
        fhir:code [
          fhir:coding ( [
@@ -172,47 +210,30 @@
              fhir:v "http://nzmt.org.nz"^^xsd:anyURI ;
              fhir:l <http://nzmt.org.nz>
            ] ;
-           fhir:code [ fhir:v "50049431000117108" ] ;
-           fhir:display [ fhir:v "Leuprorelin 3.75 inj, 1 inj" ]
+           fhir:code [ fhir:v "50083501000117108" ] ;
+           fhir:display [ fhir:v "Inj 100 mg in 1 ml syringe" ]
          ] ) ;
-         fhir:text [ fhir:v "Leuprorelin" ]
+         fhir:text [ fhir:v "Clexane" ]
        ] ;
        fhir:status [ fhir:v "active" ] ;
        fhir:form [
-         fhir:coding ( [
-           a sct:412946008 ;
-           fhir:system [
-             fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-             fhir:l <http://snomed.info/sct>
-           ] ;
-           fhir:code [ fhir:v "412946008" ] ;
-           fhir:display [ fhir:v "Injectable solution" ]
-         ] ) ;
-         fhir:text [ fhir:v "Inj 3.75 mg prefilled dual chamber syringe" ]
+         fhir:text [ fhir:v "Solution for injection" ]
        ] ;
        fhir:ingredient ( [
          fhir:item [
            a fhir:CodeableConcept ;
-           fhir:coding ( [
-             fhir:system [
-               fhir:v "http://nzmt.org.nz"^^xsd:anyURI ;
-               fhir:l <http://nzmt.org.nz>
-             ] ;
-             fhir:code [ fhir:v "2268011000036106" ] ;
-             fhir:display [ fhir:v "leuprorelin" ]
-           ] ) ;
-           fhir:text [ fhir:v "leuprorelin" ]
+           fhir:text [ fhir:v "Enoxaparin sodium" ]
          ] ;
          fhir:isActive [ fhir:v true ]
        ] )
      ] ) ;
      fhir:search [
-       fhir:mode [ fhir:v "match" ]
+       fhir:mode [ fhir:v "include" ]
      ]
   ] [
      fhir:resource ( [
        a fhir:Medication ;
-       fhir:id [ fhir:v "Medication-Ricovir-Tenofovir" ] ;
+       fhir:id [ fhir:v "Medication-Fortisip-Multi-Fibre-Chocolate" ] ;
        fhir:meta [
          fhir:profile ( [
            fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
@@ -226,7 +247,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "Ricovir"
+           fhir:v "Fortisip Multi Fibre (chocolate)"
          ]
        ] [
          fhir:url [
@@ -235,7 +256,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "30"
+           fhir:v "200"
          ]
        ] [
          fhir:url [
@@ -244,16 +265,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "tab"
-         ]
-       ] [
-         fhir:url [
-           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank"^^xsd:anyURI ;
-           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank>
-         ] ;
-         fhir:value [
-           a fhir:Integer ;
-           fhir:v 1
+           fhir:v "ml"
          ]
        ] [
          fhir:url [
@@ -262,7 +274,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "Infections - Agents for Systemic Use"
+           fhir:v "Special Foods"
          ]
        ] [
          fhir:url [
@@ -271,7 +283,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "Antivirals"
+           fhir:v "Standard Feeds"
          ]
        ] [
          fhir:url [
@@ -280,43 +292,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "Hepatitis B Treatment"
-         ]
-       ] [
-         fhir:url [
-           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple"^^xsd:anyURI ;
-           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple>
-         ] ;
-         fhir:value [
-           a fhir:Boolean ;
-           fhir:v false
-         ]
-       ] [
-         fhir:url [
-           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier"^^xsd:anyURI ;
-           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier>
-         ] ;
-         fhir:value [
-           a fhir:Integer ;
-           fhir:v 0
-         ]
-       ] [
-         fhir:url [
-           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack"^^xsd:anyURI ;
-           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack>
-         ] ;
-         fhir:value [
-           a fhir:Boolean ;
-           fhir:v false
-         ]
-       ] [
-         fhir:url [
-           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine"^^xsd:anyURI ;
-           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine>
-         ] ;
-         fhir:value [
-           a fhir:Boolean ;
-           fhir:v false
+           fhir:v "Standard Feeds"
          ]
        ] ) ;
        fhir:identifier ( [
@@ -324,31 +300,31 @@
            fhir:v "http://schedule.pharmac.govt.nz/ids/brand"^^xsd:anyURI ;
            fhir:l <http://schedule.pharmac.govt.nz/ids/brand>
          ] ;
-         fhir:value [ fhir:v "B16190538672526" ]
+         fhir:value [ fhir:v "B42063138522825" ]
        ] [
          fhir:system [
            fhir:v "http://schedule.pharmac.govt.nz/ids/pack"^^xsd:anyURI ;
            fhir:l <http://schedule.pharmac.govt.nz/ids/pack>
          ] ;
-         fhir:value [ fhir:v "P2703122" ]
+         fhir:value [ fhir:v "P2702614" ]
        ] [
          fhir:system [
            fhir:v "http://schedule.pharmac.govt.nz/ids/chemical"^^xsd:anyURI ;
            fhir:l <http://schedule.pharmac.govt.nz/ids/chemical>
          ] ;
-         fhir:value [ fhir:v "C1619053867" ]
+         fhir:value [ fhir:v "C4206313852" ]
        ] [
          fhir:system [
            fhir:v "http://schedule.pharmac.govt.nz/ids/formulation"^^xsd:anyURI ;
            fhir:l <http://schedule.pharmac.govt.nz/ids/formulation>
          ] ;
-         fhir:value [ fhir:v "F161905386725" ]
+         fhir:value [ fhir:v "F420631385228" ]
        ] [
          fhir:system [
            fhir:v "http://schedule.pharmac.govt.nz/ids/pharmacode"^^xsd:anyURI ;
            fhir:l <http://schedule.pharmac.govt.nz/ids/pharmacode>
          ] ;
-         fhir:value [ fhir:v "2703122" ]
+         fhir:value [ fhir:v "2702614" ]
        ] ) ;
        fhir:code [
          fhir:coding ( [
@@ -356,42 +332,131 @@
              fhir:v "http://nzmt.org.nz"^^xsd:anyURI ;
              fhir:l <http://nzmt.org.nz>
            ] ;
-           fhir:code [ fhir:v "50348251000117105" ] ;
-           fhir:display [ fhir:v "Tenofovir disoproxil 300 tab, 30 tab" ]
+           fhir:code [ fhir:v "50035701000117108" ]
          ] ) ;
-         fhir:text [ fhir:v "Tenofovir disoproxil" ]
+         fhir:text [ fhir:v "Fortisip Multi Fibre (chocolate)" ]
        ] ;
        fhir:status [ fhir:v "active" ] ;
        fhir:form [
-         fhir:coding ( [
-           a sct:385055001 ;
-           fhir:system [
-             fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-             fhir:l <http://snomed.info/sct>
-           ] ;
-           fhir:code [ fhir:v "385055001" ] ;
-           fhir:display [ fhir:v "Tablet" ]
-         ] ) ;
-         fhir:text [ fhir:v "Tab 245 mg (300 mg as a fumarate)" ]
-       ] ;
-       fhir:ingredient ( [
-         fhir:item [
-           a fhir:CodeableConcept ;
-           fhir:coding ( [
-             fhir:system [
-               fhir:v "http://nzmt.org.nz"^^xsd:anyURI ;
-               fhir:l <http://nzmt.org.nz>
-             ] ;
-             fhir:code [ fhir:v "46616121000116103" ] ;
-             fhir:display [ fhir:v "tenofovir disoproxil" ]
-           ] ) ;
-           fhir:text [ fhir:v "tenofovir disoproxil" ]
-         ] ;
-         fhir:isActive [ fhir:v true ]
-       ] )
+         fhir:text [ fhir:v "Liquid" ]
+       ]
      ] ) ;
      fhir:search [
-       fhir:mode [ fhir:v "match" ]
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:resource ( [
+       a fhir:Medication ;
+       fhir:id [ fhir:v "Medication-Nutrison-800-Complete-Multi-Fibre" ] ;
+       fhir:meta [
+         fhir:profile ( [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
+         ] )
+       ] ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Nutrison 800 Complete Multi Fibre"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "1000"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ml"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Special Foods"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Standard Feeds"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3"^^xsd:anyURI ;
+           fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Standard Feeds"
+         ]
+       ] ) ;
+       fhir:identifier ( [
+         fhir:system [
+           fhir:v "http://schedule.pharmac.govt.nz/ids/brand"^^xsd:anyURI ;
+           fhir:l <http://schedule.pharmac.govt.nz/ids/brand>
+         ] ;
+         fhir:value [ fhir:v "B42063140742625" ]
+       ] [
+         fhir:system [
+           fhir:v "http://schedule.pharmac.govt.nz/ids/pack"^^xsd:anyURI ;
+           fhir:l <http://schedule.pharmac.govt.nz/ids/pack>
+         ] ;
+         fhir:value [ fhir:v "P2702398" ]
+       ] [
+         fhir:system [
+           fhir:v "http://schedule.pharmac.govt.nz/ids/chemical"^^xsd:anyURI ;
+           fhir:l <http://schedule.pharmac.govt.nz/ids/chemical>
+         ] ;
+         fhir:value [ fhir:v "C4206314074" ]
+       ] [
+         fhir:system [
+           fhir:v "http://schedule.pharmac.govt.nz/ids/formulation"^^xsd:anyURI ;
+           fhir:l <http://schedule.pharmac.govt.nz/ids/formulation>
+         ] ;
+         fhir:value [ fhir:v "F420631407426" ]
+       ] [
+         fhir:system [
+           fhir:v "http://schedule.pharmac.govt.nz/ids/pharmacode"^^xsd:anyURI ;
+           fhir:l <http://schedule.pharmac.govt.nz/ids/pharmacode>
+         ] ;
+         fhir:value [ fhir:v "2702398" ]
+       ] ) ;
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://nzmt.org.nz"^^xsd:anyURI ;
+             fhir:l <http://nzmt.org.nz>
+           ] ;
+           fhir:code [ fhir:v "50271881000117104" ]
+         ] ) ;
+         fhir:text [ fhir:v "Nutrison 800 Complete Multi Fibre" ]
+       ] ;
+       fhir:status [ fhir:v "active" ] ;
+       fhir:form [
+         fhir:text [ fhir:v "Liquid" ]
+       ]
+     ] ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
      ]
   ] ) . # 
 

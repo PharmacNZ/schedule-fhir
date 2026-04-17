@@ -1,4 +1,4 @@
-# Examples - Pharmac Schedules FHIR API v0.0.1
+# Examples - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * **Examples**
@@ -11,7 +11,31 @@ This page provides a small set of representative examples for each resource type
 
 These examples show the simplified Medication representation used for schedule items.
 
-### Ricovir - 30 300mg tab
+### Clexane - 100mg/1ml Syringe
 
-### Nevirapine Oral Suspension 240ml
+### Nutrison 800 Complete Multi Fibre
+
+### Fortisip Multi Fibre Chocolate
+
+## ChargeItemDefinition - Pricing
+
+These examples show pricing information for medications.
+
+### Clexane - 100mg/1ml Syringe Pricing
+
+## ChargeItemDefinition - Funding Rules
+
+These examples demonstrate funding rules for medications, with different funding pathways and reimbursement mechanisms. Each includes JSON Schema validation via the `authorizationSchema` extension.
+
+### Clexane - 100mg/1ml Syringe Case 1 (Special Authority)
+
+### Clexane - 100mg/1ml Syringe Case 2 (PRIME Endorsement)
+
+### Clexane - 100mg/1ml Syringe Case 3 (Hospital Use)
+
+## ChargeItemDefinition - Special Authority
+
+These examples capture special authorization requirements and clinical eligibility criteria with authorization form schema.
+
+### SA9999 - Example Template
 

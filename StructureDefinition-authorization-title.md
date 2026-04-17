@@ -1,4 +1,4 @@
-# Authorization Title - Pharmac Schedules FHIR API v0.0.1
+# Authorization Title - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title | *Version*:0.0.1 |
-| Draft as of 2026-03-27 | *Computable Name*:AuthorizationTitle |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title | *Version*:1.0.0 |
+| Draft as of 2026-04-17 | *Computable Name*:AuthorizationTitle |
 
 A human-readable title for the authorization requirement (e.g., 'Budesonide - Special Authorization Required'). This provides context for the authorization need.
 
@@ -20,7 +20,6 @@ A human-readable title for the authorization requirement (e.g., 'Budesonide - Sp
 **Usages:**
 
 * Use this Extension: [PHARMAC Charge Item Definition](StructureDefinition-pharmac-charge-item-definition.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-Ricovir-Pricing](Bundle-SearchSet-Bundle-Ricovir-Pricing.md), [ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-1](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-1.md) and [ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-2](ChargeItemDefinition-ChargeItemDefinition-Tenofovir-Case-Sequence-2.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/authorization-title)
 
@@ -43,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-authorization-title.
   "resourceType" : "StructureDefinition",
   "id" : "authorization-title",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "AuthorizationTitle",
   "title" : "Authorization Title",
   "status" : "draft",
-  "date" : "2026-03-27T00:29:47+00:00",
+  "date" : "2026-04-17T06:29:04+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

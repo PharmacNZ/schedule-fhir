@@ -1,6 +1,6 @@
 {
   "package": "pharmac.fhir.pharmac-schedules",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "fhirVersion": "4.0.1",
   "extensions": [
     {
@@ -132,6 +132,13 @@
       ]
     },
     {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema",
+      "title": "Authorization Schema",
+      "types": [
+        "base64Binary"
+      ]
+    },
+    {
       "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title",
       "title": "Authorization Title",
       "types": [
@@ -216,6 +223,13 @@
       ]
     },
     {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification",
+      "title": "Medication Legal Classification",
+      "types": [
+        "string"
+      ]
+    },
+    {
       "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack",
       "title": "Medication Original Pack",
       "types": [
@@ -227,6 +241,13 @@
       "title": "Medication Package Size",
       "types": [
         "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date",
+      "title": "Medication Product Created Date",
+      "types": [
+        "date"
       ]
     },
     {
@@ -265,8 +286,22 @@
       ]
     },
     {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength",
+      "title": "Medication Strength",
+      "types": [
+        "string"
+      ]
+    },
+    {
       "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure",
       "title": "Medication Unit of Measure",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max",
+      "title": "Pricing Co-Payment Max",
       "types": [
         "string"
       ]
@@ -283,6 +318,20 @@
       "title": "Pricing Expiry Date",
       "types": [
         "date"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined",
+      "title": "Pricing Not Combined",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29",
+      "title": "Pricing Section 29",
+      "types": [
+        "boolean"
       ]
     },
     {
@@ -305,6 +354,18 @@
       {
         "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition",
         "title": "PHARMAC Charge Item Definition"
+      },
+      {
+        "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules",
+        "title": "PHARMAC Charge Item Definition - Funding Rules"
+      },
+      {
+        "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing",
+        "title": "PHARMAC Charge Item Definition - Pricing"
+      },
+      {
+        "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority",
+        "title": "PHARMAC Charge Item Definition - Special Authority"
       }
     ],
     "Medication": [
@@ -367,8 +428,11 @@
       "Bundle.entry.resource",
       "ChargeItemDefinition"
     ],
-    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title": [
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema": [
       "Bundle.entry.resource",
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title": [
       "ChargeItemDefinition"
     ],
     "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/brand-switch-fee": [
@@ -410,11 +474,19 @@
       "Bundle.entry.resource",
       "Medication"
     ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
     "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack": [
       "Bundle.entry.resource",
       "Medication"
     ],
     "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date": [
       "Bundle.entry.resource",
       "Medication"
     ],
@@ -434,15 +506,28 @@
       "Bundle.entry.resource",
       "Medication"
     ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength": [
+      "Bundle.entry.resource",
+      "Medication"
+    ],
     "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure": [
       "Bundle.entry.resource",
       "Medication"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max": [
+      "ChargeItemDefinition"
     ],
     "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date": [
       "Bundle.entry.resource",
       "ChargeItemDefinition"
     ],
     "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-expiry-date": [
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined": [
+      "ChargeItemDefinition"
+    ],
+    "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29": [
       "ChargeItemDefinition"
     ],
     "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim": [

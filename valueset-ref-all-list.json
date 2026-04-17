@@ -11,7 +11,25 @@
     "sources" : ["2.16.840.1.113883.4.642.3.848"],
     "uses" : {
     },
-    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition"
+    "StructureDefinition-pharmac-charge-item-definition-special-authority.html" : "PHARMAC Charge Item Definition - Special Authority",
+    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition",
+    "StructureDefinition-pharmac-charge-item-definition-funding-rules.html" : "PHARMAC Charge Item Definition - Funding Rules",
+    "StructureDefinition-pharmac-charge-item-definition-pricing.html" : "PHARMAC Charge Item Definition - Pricing"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/currencies",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "Currencies",
+    "title" : "CurrencyCode",
+    "description" : "Currency codes from ISO 4217 (see https://www.iso.org/iso-4217-currency-codes.html)",
+    "systems" : ["urn:iso:std:iso:4217"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1025"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1025"],
+    "uses" : {
+    },
+    "StructureDefinition-pharmac-charge-item-definition-funding-rules.html" : "PHARMAC Charge Item Definition - Funding Rules",
+    "StructureDefinition-pharmac-charge-item-definition-pricing.html" : "PHARMAC Charge Item Definition - Pricing"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/identifier-type",
@@ -53,7 +71,10 @@
     "sources" : ["2.16.840.1.113883.4.642.3.868"],
     "uses" : {
     },
-    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition"
+    "StructureDefinition-pharmac-charge-item-definition-special-authority.html" : "PHARMAC Charge Item Definition - Special Authority",
+    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition",
+    "StructureDefinition-pharmac-charge-item-definition-funding-rules.html" : "PHARMAC Charge Item Definition - Funding Rules",
+    "StructureDefinition-pharmac-charge-item-definition-pricing.html" : "PHARMAC Charge Item Definition - Pricing"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/jurisdiction",
@@ -69,7 +90,10 @@
     "sources" : ["2.16.840.1.113883.4.642.3.48"],
     "uses" : {
     },
-    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition"
+    "StructureDefinition-pharmac-charge-item-definition-special-authority.html" : "PHARMAC Charge Item Definition - Special Authority",
+    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition",
+    "StructureDefinition-pharmac-charge-item-definition-funding-rules.html" : "PHARMAC Charge Item Definition - Funding Rules",
+    "StructureDefinition-pharmac-charge-item-definition-pricing.html" : "PHARMAC Charge Item Definition - Pricing"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/languages",
@@ -83,7 +107,10 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
+    "StructureDefinition-pharmac-charge-item-definition-special-authority.html" : "PHARMAC Charge Item Definition - Special Authority",
     "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition",
+    "StructureDefinition-pharmac-charge-item-definition-funding-rules.html" : "PHARMAC Charge Item Definition - Funding Rules",
+    "StructureDefinition-pharmac-charge-item-definition-pricing.html" : "PHARMAC Charge Item Definition - Pricing",
     "StructureDefinition-pharmac-medication.html" : "PHARMAC Medication"
   },
   {
@@ -126,11 +153,14 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3"],
     "uses" : {
     },
-    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition"
+    "StructureDefinition-pharmac-charge-item-definition-special-authority.html" : "PHARMAC Charge Item Definition - Special Authority",
+    "StructureDefinition-pharmac-charge-item-definition.html" : "PHARMAC Charge Item Definition",
+    "StructureDefinition-pharmac-charge-item-definition-funding-rules.html" : "PHARMAC Charge Item Definition - Funding Rules",
+    "StructureDefinition-pharmac-charge-item-definition-pricing.html" : "PHARMAC Charge Item Definition - Pricing"
   },
   {
     "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes",
-    "version" : "0.0.1",
+    "version" : "1.0.0",
     "status" : "draft",
     "name" : "MedicationFormCodes",
     "title" : "Medication Form Codes",
@@ -139,7 +169,7 @@
   },
   {
     "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code",
-    "version" : "0.0.1",
+    "version" : "1.0.0",
     "status" : "active",
     "name" : "PharmacMedicationCode",
     "title" : "PHARMAC Medication Code ValueSet",
@@ -151,7 +181,7 @@
   },
   {
     "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/snomed-ct-device-types",
-    "version" : "0.0.1",
+    "version" : "1.0.0",
     "status" : "draft",
     "name" : "SNOMEDCTDeviceTypes",
     "title" : "SNOMED CT Device Types",
@@ -160,7 +190,7 @@
   },
   {
     "url" : "https://nzhts.digital.health.nz/fhir/ValueSet/nzmt-mp",
-    "version" : "20260316",
+    "version" : "20260414",
     "status" : "draft",
     "name" : "NZMT___MP",
     "title" : "NZMT - MP",

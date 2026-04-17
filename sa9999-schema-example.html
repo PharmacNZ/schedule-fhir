@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Sa 9999 Schema Example - Pharmac Schedules FHIR API v1.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/logos.css" rel="stylesheet"/>
+<link href="assets/css/colours.css" rel="stylesheet" />
+<link href="assets/css/fonts.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="pharmac-logo">
+  <img alt="Pharmac logo" src="assets/images/pharmac-logo.png"  height="35" />
+</div>
+
+<div id="blank-logo">
+  <img alt="" src="assets/images/blank-right-logo.png" height="35"/>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">1.0.0 - draft
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="use-cases.html">Use cases</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-pharmac-medication.html">Medication</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">ChargeItemDefinition - Special Authority</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guides
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a>
+      </li>
+      <li>
+        <a href="fr-json-schema-guide.html">JSON Schema for Funding Rules</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
+  <li>
+    <a href="relationships.html">Resource Relationships</a>
+  </li>
+  <li>
+    <a href="datamodel.html">Data Models</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a href="definitions.json.zip">Artefacts (JSON)</a>
+      </li>
+      <li>
+        <a href="definitions.xml.zip">Artefacts (XML)</a>
+      </li>
+      <li>
+        <a href="full-ig.zip">Download IG</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Sa 9999 Schema Example</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Sa 9999 Schema Example</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#sa9999--example-schema" id="markdown-toc-sa9999--example-schema">SA9999 — Example Schema</a>    <ul>
+      <li><a href="#schema-overview" id="markdown-toc-schema-overview">Schema Overview</a></li>
+      <li><a href="#full-schema-json-with-detailed-comments" id="markdown-toc-full-schema-json-with-detailed-comments">Full Schema (JSON with Detailed Comments)</a></li>
+      <li><a href="#how-to-use-this-schema" id="markdown-toc-how-to-use-this-schema">How to Use This Schema</a></li>
+      <li><a href="#validation-examples" id="markdown-toc-validation-examples">Validation Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="#pattern-explanations" id="markdown-toc-pattern-explanations">Pattern Explanations</a>    <ul>
+      <li><a href="#pattern-9-duration-with-time-period-units" id="markdown-toc-pattern-9-duration-with-time-period-units">Pattern 9: Duration with Time Period Units</a></li>
+      <li><a href="#pattern-10-percentage-ranges-with-different-constraints" id="markdown-toc-pattern-10-percentage-ranges-with-different-constraints">Pattern 10: Percentage Ranges with Different Constraints</a></li>
+      <li><a href="#related-documentation" id="markdown-toc-related-documentation">Related Documentation</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h2 id="sa9999--example-schema">SA9999 — Example Schema</h2>
+
+<p>This page displays the complete <strong>SA9999</strong> schema, a demonstration template showing all common JSON Schema validation patterns used in PHARMAC Special Authority applications.</p>
+
+<h3 id="schema-overview">Schema Overview</h3>
+
+<p>SA9999 includes <strong>10 different form examples</strong> demonstrating all common JSON Schema patterns:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Example</th>
+      <th>Pattern</th>
+      <th>Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong>freeText</strong></td>
+      <td>Required text input</td>
+      <td>Clinical notes, patient descriptions</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>clinicalMeasurement</strong></td>
+      <td>Number (exclusive range)</td>
+      <td>CD4 count, viral load (0 &lt; value &lt; 100)</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>age</strong></td>
+      <td>Number (inclusive minimum)</td>
+      <td>Age must be 18+</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>sevenOfNine</strong></td>
+      <td>Minimum checkboxes</td>
+      <td>At least 7 of 9 symptoms must be present</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>conditionAnd</strong></td>
+      <td>AND logic</td>
+      <td>Field1 AND Field2 both mandatory</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong>conditionOr</strong></td>
+      <td>OR logic</td>
+      <td>Field1 OR Field2 (or both)</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><strong>conditionAndOr</strong></td>
+      <td>AND + OR logic</td>
+      <td>Field3 required PLUS (Field1 OR Field2)</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><strong>conditionAndSubOr</strong></td>
+      <td>Nested groups</td>
+      <td>(Field1 OR Field2) AND (Field3 OR Field4)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><strong>durationExample</strong></td>
+      <td>Time periods</td>
+      <td>SA validity duration with unit (months, years)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><strong>percentageExample</strong></td>
+      <td>Percentage ranges</td>
+      <td>Different percentage thresholds (0-100%, &lt; 20%, etc)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="full-schema-json-with-detailed-comments">Full Schema (JSON with Detailed Comments)</h3>
+
+<div class="language-jsonc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ============================================================</span><span class="w">
+</span><span class="c1">// SA9999 - COMPREHENSIVE SCHEMA EXAMPLES</span><span class="w">
+</span><span class="c1">// ============================================================</span><span class="w">
+</span><span class="c1">//</span><span class="w">
+</span><span class="c1">// PURPOSE:</span><span class="w">
+</span><span class="c1">// This file demonstrates all common JSON Schema validation patterns</span><span class="w">
+</span><span class="c1">// used in PHARMAC Special Authority application forms. Each top-level</span><span class="w">
+</span><span class="c1">// property (freeText, age, conditionOr, etc.) is a complete example</span><span class="w">
+</span><span class="c1">// showing a different validation technique.</span><span class="w">
+</span><span class="c1">//</span><span class="w">
+</span><span class="c1">// HOW THIS WORKS:</span><span class="w">
+</span><span class="c1">// When a doctor submits a Special Authority application, the form data</span><span class="w">
+</span><span class="c1">// is validated against this schema. The top-level "anyOf" at the end</span><span class="w">
+</span><span class="c1">// means the submitted data must match AT LEAST ONE of these form types.</span><span class="w">
+</span><span class="c1">//</span><span class="w">
+</span><span class="c1">// WHAT YOU'LL LEARN:</span><span class="w">
+</span><span class="c1">// - Pattern 1: Simple required text field</span><span class="w">
+</span><span class="c1">// - Pattern 2: Numeric field with exclusive range (&gt; 0 and &lt; 100)</span><span class="w">
+</span><span class="c1">// - Pattern 3: Numeric field with inclusive minimum (≥ 18)</span><span class="w">
+</span><span class="c1">// - Pattern 4: Multiple checkboxes with minimum count (7 of 9)</span><span class="w">
+</span><span class="c1">// - Pattern 5: AND logic (all fields required together)</span><span class="w">
+</span><span class="c1">// - Pattern 6: OR logic (at least one field required)</span><span class="w">
+</span><span class="c1">// - Pattern 7: Combined AND + OR logic</span><span class="w">
+</span><span class="c1">// - Pattern 8: Nested AND + OR conditions</span><span class="w">
+</span><span class="c1">// - Pattern 9: Duration with time period units</span><span class="w">
+</span><span class="c1">// - Pattern 10: Percentage ranges with different constraints</span><span class="w">
+</span><span class="c1">//</span><span class="w">
+</span><span class="c1">// CUSTOM PHARMAC KEYWORDS:</span><span class="w">
+</span><span class="c1">// - $formType: "initial" | "renewal" | "standard" (application type)</span><span class="w">
+</span><span class="c1">// - $validFor: number (how long the approval lasts)</span><span class="w">
+</span><span class="c1">// - $period: "week" | "month" | "year" (unit for validity)</span><span class="w">
+</span><span class="c1">// - $measure: string (unit of measurement for display: percent, units, etc)</span><span class="w">
+</span><span class="c1">// - $note: string (help text shown to applicants)</span><span class="w">
+</span><span class="c1">//</span><span class="w">
+</span><span class="c1">// STANDARD JSON SCHEMA KEYWORDS:</span><span class="w">
+</span><span class="c1">// - type: Data type (string, number, boolean, object)</span><span class="w">
+</span><span class="c1">// - required: Array of field names that MUST be present</span><span class="w">
+</span><span class="c1">// - anyOf: At least ONE sub-schema must validate (OR logic)</span><span class="w">
+</span><span class="c1">// - properties: Object defining available fields</span><span class="w">
+</span><span class="c1">// - enum: Array of allowed values (whitelist)</span><span class="w">
+</span><span class="c1">// - minimum/maximum: Numeric range (INCLUSIVE bounds)</span><span class="w">
+</span><span class="c1">// - exclusiveMinimum/exclusiveMaximum: Numeric range (EXCLUSIVE bounds)</span><span class="w">
+</span><span class="c1">// - minProperties: Minimum number of fields that must have values</span><span class="w">
+</span><span class="c1">//</span><span class="w">
+</span><span class="c1">// ============================================================</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema#"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SA9999 - Example Schema"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// PATTERN 1: FREE TEXT FIELD (Simple Required String)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// USE CASE: Clinical notes, provider comments, patient descriptions</span><span class="w">
+    </span><span class="c1">// EXAMPLE: "Patient reports difficulty breathing"</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHAT THIS VALIDATES:</span><span class="w">
+    </span><span class="c1">// - Field is required (must be present)</span><span class="w">
+    </span><span class="c1">// - Value must be a string (text)</span><span class="w">
+    </span><span class="c1">// - Any text is accepted (no length limits in this example)</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// HOW FORM RENDERING WORKS:</span><span class="w">
+    </span><span class="c1">// UI renders a text input box, marks it as required (*)</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// REAL-WORLD EXAMPLES:</span><span class="w">
+    </span><span class="c1">// - SA2139 (Antiretrovirals): Clinical justification text</span><span class="w">
+    </span><span class="c1">// - SA1859 (Supplements): Reason for nutritional support</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="nl">"freeText"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free Text Example"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an example of a required free text field."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"renewal"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Required Text"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the free text field."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"field"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// PATTERN 2: NUMERIC RANGE (EXCLUSIVE bounds: &gt; 0 and &lt; 100)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// USE CASE: Measurements that must fall STRICTLY within a range</span><span class="w">
+    </span><span class="c1">// EXAMPLE: CD4 count must be &gt; 50 (not including 50 itself)</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHAT THIS VALIDATES:</span><span class="w">
+    </span><span class="c1">// - Value must be numeric (45.5 is valid, "45" as text is not)</span><span class="w">
+    </span><span class="c1">// - Value must be STRICTLY GREATER than 0 (0 is rejected)</span><span class="w">
+    </span><span class="c1">// - Value must be STRICTLY LESS than 100 (100 is rejected)</span><span class="w">
+    </span><span class="c1">// - Valid range: 0.001 to 99.999...</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// EXCLUSIVE vs INCLUSIVE:</span><span class="w">
+    </span><span class="c1">// - exclusiveMinimum: value &gt; minimum (does NOT include minimum)</span><span class="w">
+    </span><span class="c1">// - exclusiveMaximum: value &lt; maximum (does NOT include maximum)</span><span class="w">
+    </span><span class="c1">// - minimum: value &gt;= minimum (INCLUDES minimum)</span><span class="w">
+    </span><span class="c1">// - maximum: value &lt;= maximum (INCLUDES maximum)</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// REAL-WORLD EXAMPLES:</span><span class="w">
+    </span><span class="c1">// - SA2139: CD4 count range validation (must be between thresholds)</span><span class="w">
+    </span><span class="c1">// - SA2525: PASI score for psoriasis (0 to 72, not exact boundaries)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="nl">"clinicalMeasurement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clinical Measurement Example"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an example of a required clinical measurement field."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standalone"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clinical Measurement"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the clinical measurement field needs to be greater than zero and less than 100."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"$measure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"units"</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// exclusiveMinimum: Must be STRICTLY greater than 0 (0 is not allowed)</span><span class="w">
+          </span><span class="nl">"exclusiveMinimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// exclusiveMaximum: Must be STRICTLY less than 100 (100 is not allowed)</span><span class="w">
+          </span><span class="nl">"exclusiveMaximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"field"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// PATTERN 3: NUMERIC RANGE (INCLUSIVE minimum: ≥ 18)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// USE CASE: Age restrictions where boundary values ARE allowed</span><span class="w">
+    </span><span class="c1">// EXAMPLE: Must be 18 or older (18 is minimum eligible age)</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHAT THIS VALIDATES:</span><span class="w">
+    </span><span class="c1">// - Value must be numeric</span><span class="w">
+    </span><span class="c1">// - Value must be &gt;= 18 (18 itself IS allowed)</span><span class="w">
+    </span><span class="c1">// - No maximum limit in this example</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHY INCLUSIVE vs EXCLUSIVE:</span><span class="w">
+    </span><span class="c1">// - Age 18: Use minimum (&gt; includes 18)</span><span class="w">
+    </span><span class="c1">// - Age &gt; 18: Use exclusiveMinimum (&gt; excludes 18)</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// REAL-WORLD EXAMPLES:</span><span class="w">
+    </span><span class="c1">// - SA1683: Patient age must be ≤ 18 years (for paediatric forms)</span><span class="w">
+    </span><span class="c1">// - SA1859: Adult forms require age ≥ 18</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Age Example"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an example of a required age field."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standalone"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Age"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the age field needs to be at least 18."</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// minimum: &gt;= 18 (allows exactly 18)</span><span class="w">
+          </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"field"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// PATTERN 4: MULTIPLE CHECKBOXES WITH MINIMUM COUNT</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// USE CASE: Symptom checklists where at least N symptoms required</span><span class="w">
+    </span><span class="c1">// EXAMPLE: "Check at least 7 of these 9 symptoms"</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHAT THIS VALIDATES:</span><span class="w">
+    </span><span class="c1">// - Each field is boolean (true = checked, false = unchecked)</span><span class="w">
+    </span><span class="c1">// - Use minProperties: At least 7 fields must have values</span><span class="w">
+    </span><span class="c1">// - Only include/submit the "true" fields to count towards minimum</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// HOW FORM RENDERING WORKS:</span><span class="w">
+    </span><span class="c1">// UI renders 9 checkboxes, shows error if &lt; 7 are checked</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// REAL-WORLD EXAMPLES:</span><span class="w">
+    </span><span class="c1">// - SA1859: ACR/EULAR criteria for rheumatoid arthritis (7 of 9)</span><span class="w">
+    </span><span class="c1">// - SA2525: DLQI/PASI scoring for dermatology (multiple criteria)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="nl">"sevenOfNine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multi select example"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an example of a required field that needs at least 7 of the 9 boolean fields to be true."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standalone"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"fieldOne"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field One"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true or false."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldTwo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Two"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true or false."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldThree"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Three"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true or false."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldFour"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Four"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true or false."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldFive"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Five"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true or false."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldSix"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Six"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true or false."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldSeven"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Seven"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true or false."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldEight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Eight"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true or false."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldNine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Nine"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true or false."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="c1">// minProperties: At least 7 of these fields must be present with values</span><span class="w">
+      </span><span class="nl">"minProperties"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// PATTERN 5: AND CONDITION (All fields required together)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// USE CASE: Multiple criteria that all must be true simultaneously</span><span class="w">
+    </span><span class="c1">// EXAMPLE: "Patient confirms HIV AND CD4 &lt; 50 AND on treatment"</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHAT THIS VALIDATES:</span><span class="w">
+    </span><span class="c1">// - BOTH fieldOne AND fieldTwo must be present</span><span class="w">
+    </span><span class="c1">// - fieldOne must equal exactly "Yes" (enum constraint)</span><span class="w">
+    </span><span class="c1">// - fieldTwo must be &gt; 10 (numeric constraint)</span><span class="w">
+    </span><span class="c1">// - If either field is missing → validation fails</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// LOGIC: AND</span><span class="w">
+    </span><span class="c1">// Both conditions must be TRUE for form to be valid</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// REAL-WORLD EXAMPLES:</span><span class="w">
+    </span><span class="c1">// - SA2139: Confirmed HIV status AND recent CD4 count</span><span class="w">
+    </span><span class="c1">// - SA1859: Patient age &gt;= 18 AND BMI &lt; 18.5</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="nl">"conditionAnd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"AndExample"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an example of a required field that needs to meet multiple conditions."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standalone"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"fieldOne"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field One"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be 'Yes'."</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// enum: Only "Yes" is allowed (whitelist of valid values)</span><span class="w">
+          </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"Yes"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldTwo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Two"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be greater than 10."</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// exclusiveMinimum: Must be &gt; 10 (not including 10)</span><span class="w">
+          </span><span class="nl">"exclusiveMinimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="c1">// required: BOTH fields must be present for validation to pass</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"fieldOne"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fieldTwo"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// PATTERN 6: OR CONDITION (At least one field required)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// USE CASE: Multiple pathways where any ONE criterion can qualify</span><span class="w">
+    </span><span class="c1">// EXAMPLE: "Either recent CD4 test OR recent viral load test required"</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHAT THIS VALIDATES:</span><span class="w">
+    </span><span class="c1">// - fieldOne OR fieldTwo (or both) must be present</span><span class="w">
+    </span><span class="c1">// - At least ONE of the sub-schemas in "anyOf" must validate</span><span class="w">
+    </span><span class="c1">// - If both are missing → validation fails</span><span class="w">
+    </span><span class="c1">// - If both are present and valid → validation passes</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// LOGIC: OR (Logical Disjunction)</span><span class="w">
+    </span><span class="c1">// At least one condition must be TRUE for form to be valid</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// REAL-WORLD EXAMPLES:</span><span class="w">
+    </span><span class="c1">// - SA1683: Patient had 3+ exacerbations OR 3+ hospital admissions</span><span class="w">
+    </span><span class="c1">// - SA2139: Confirmed HIV OR presumed HIV (different evidence paths)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="nl">"conditionOr"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrExample"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an example of a required field that needs to meet at least one of multiple conditions."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standalone"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"fieldOne"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field One"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be 'Yes'."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"Yes"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldTwo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Two"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be greater than 10."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"exclusiveMinimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="c1">// anyOf: At least ONE of these sub-schemas must validate (OR logic)</span><span class="w">
+      </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="c1">// Option 1: fieldOne must be present</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"fieldOne"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="c1">// Option 2: fieldTwo must be present</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"fieldTwo"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// PATTERN 7: COMBINED AND + OR (One mandatory + choice of two)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// USE CASE: One mandatory field PLUS at least one of alternatives</span><span class="w">
+    </span><span class="c1">// EXAMPLE: "Always require patient ID AND (either CD4 test OR symptoms)"</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHAT THIS VALIDATES:</span><span class="w">
+    </span><span class="c1">// - fieldThree MUST be present (AND condition)</span><span class="w">
+    </span><span class="c1">// - PLUS at least ONE of (fieldOne OR fieldTwo) must be present</span><span class="w">
+    </span><span class="c1">// - Both "required" and "anyOf" must be satisfied simultaneously</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// LOGIC: AND + OR</span><span class="w">
+    </span><span class="c1">// Mandatory field is required, PLUS at least one of the optional fields</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// REAL-WORLD EXAMPLES:</span><span class="w">
+    </span><span class="c1">// - SA2139: Requires patient identifier AND (CD4 count OR viral load)</span><span class="w">
+    </span><span class="c1">// - SA1859: Requires diagnosis AND (BMI &lt; 18.5 OR weight loss &gt; 10%)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="nl">"conditionAndOr"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"And and Or Example"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an example of a required field that needs to meet a combination of conditions."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standalone"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"fieldOne"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field One"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be 'Yes'."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"Yes"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldTwo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Two"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be greater than 10."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"exclusiveMinimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fieldThree"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Three"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="c1">// required: fieldThree is unconditionally required (AND)</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"fieldThree"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="c1">// anyOf: In addition to fieldThree, at least one of fieldOne/fieldTwo (OR)</span><span class="w">
+      </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"fieldOne"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"fieldTwo"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// PATTERN 8: NESTED AND + OR (Multiple grouped conditions)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// USE CASE: Complex logic with multiple condition groups</span><span class="w">
+    </span><span class="c1">// EXAMPLE: "(fieldOne OR fieldTwo) AND (fieldThree OR fieldFour)"</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHAT THIS VALIDATES:</span><span class="w">
+    </span><span class="c1">// - groupOne must be present AND satisfy its internal anyOf</span><span class="w">
+    </span><span class="c1">//   → At least one of (fieldOne OR fieldTwo) must be present</span><span class="w">
+    </span><span class="c1">// - groupTwo must be present AND satisfy its internal anyOf</span><span class="w">
+    </span><span class="c1">//   → At least one of (fieldThree OR fieldFour) must be present</span><span class="w">
+    </span><span class="c1">// - BOTH groups must be valid (AND at top level)</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// LOGIC: Complex Boolean Expression</span><span class="w">
+    </span><span class="c1">// (Group1a OR Group1b) AND (Group2a OR Group2b)</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// REAL-WORLD EXAMPLES:</span><span class="w">
+    </span><span class="c1">// - SA1859: Complex rheumatology criteria with multiple grouped symptoms</span><span class="w">
+    </span><span class="c1">// - SA2525: Multiple disease categories with OR within each, AND between</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="nl">"conditionAndSubOr"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"And and Sub-Or Example"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an example of a required field that needs to meet a combination of conditions with a nested OR condition."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standalone"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="c1">// GROUP ONE: Must satisfy internal OR condition</span><span class="w">
+        </span><span class="nl">"groupOne"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This group needs to meet at least one of the conditions."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"fieldOne"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field One"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be 'Yes'."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Yes"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"fieldTwo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Two"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be greater than 10."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"exclusiveMinimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="c1">// Internal OR: At least one field required in this group</span><span class="w">
+          </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"fieldOne"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"fieldTwo"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="c1">// GROUP TWO: Must satisfy internal OR condition</span><span class="w">
+        </span><span class="nl">"groupTwo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This group needs to meet at least one of the conditions."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"fieldThree"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Three"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be true."</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"fieldFour"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Field Four"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The value of the field must be 'Yes'."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Yes"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="c1">// Internal OR: At least one field required in this group</span><span class="w">
+          </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"fieldThree"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"fieldFour"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="c1">// External AND: BOTH groups must be present</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"groupOne"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"groupTwo"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// PATTERN 9: DURATION WITH TIME PERIOD UNITS</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// USE CASE: Time-based values (validity periods, treatment durations)</span><span class="w">
+    </span><span class="c1">// EXAMPLE: "SA approval valid for 12 months"</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHAT THIS VALIDATES:</span><span class="w">
+    </span><span class="c1">// - Value must be numeric</span><span class="w">
+    </span><span class="c1">// - Value must be &gt;= 0 (0 allowed, negative not allowed)</span><span class="w">
+    </span><span class="c1">// - Value must be &lt;= 6</span><span class="w">
+    </span><span class="c1">// - Custom $period keyword indicates units: "months"</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// CUSTOM KEYWORDS:</span><span class="w">
+    </span><span class="c1">// - $period: "weeks" | "months" | "years" (unit indicator)</span><span class="w">
+    </span><span class="c1">// - $validFor: Duration as number (applies at form level)</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// REAL-WORLD EXAMPLES:</span><span class="w">
+    </span><span class="c1">// - SA1683: Valid for 12 months</span><span class="w">
+    </span><span class="c1">// - SA2139 (Renewal): Valid for 12 months</span><span class="w">
+    </span><span class="c1">// - SA9999 (Example): Valid for 6 years</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="nl">"durationExample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duration Example"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an example of a required field that needs to be a duration of time measured in months."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initial"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom field used to display additional notes at the end of a section"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"specialAuthorityValidFor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Special Authority Validity Period"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duration in months. Must be at least 0 and at most 6 months."</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// $period: Indicates the unit of time for this duration field</span><span class="w">
+          </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"months"</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// minimum: &gt;= 0 (allows zero-length periods)</span><span class="w">
+          </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// maximum: &lt;= 6 months</span><span class="w">
+          </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"specialAuthorityValidFor"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// PATTERN 10: PERCENTAGE RANGES WITH DIFFERENT CONSTRAINTS</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="c1">// USE CASE: Percentage-based thresholds with flexible boundaries</span><span class="w">
+    </span><span class="c1">// EXAMPLE: "PASI improvement &gt;= 75% OR DLQI improvement &lt; 5%"</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// WHAT THIS VALIDATES:</span><span class="w">
+    </span><span class="c1">// - anyPercentage: 0 to 100 inclusive (full range)</span><span class="w">
+    </span><span class="c1">// - lowPercentage: 0 to &lt; 20 exclusive (not including 20)</span><span class="w">
+    </span><span class="c1">// - At least ONE of these fields must be present (OR logic)</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// PERCENTAGE BOUNDARIES:</span><span class="w">
+    </span><span class="c1">// - 0-100 inclusive: minimum: 0, maximum: 100</span><span class="w">
+    </span><span class="c1">// - &gt; 0 to &lt; 100 exclusive: exclusiveMinimum: 0, exclusiveMaximum: 100</span><span class="w">
+    </span><span class="c1">// - &gt;= 75% to &lt;= 100%: minimum: 75, maximum: 100</span><span class="w">
+    </span><span class="c1">// - &lt; 20%: exclusiveMaximum: 20</span><span class="w">
+    </span><span class="c1">//</span><span class="w">
+    </span><span class="c1">// REAL-WORLD EXAMPLES:</span><span class="w">
+    </span><span class="c1">// - SA2525: PASI/DLQI improvement thresholds (50%, 75%, 90%)</span><span class="w">
+    </span><span class="c1">// - SA1859: Weight loss percentage (&gt;10% vs specific thresholds)</span><span class="w">
+    </span><span class="c1">// ============================================================</span><span class="w">
+    </span><span class="nl">"percentageExample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an example of required fields with percentage values."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initial"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"years"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"$note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Percentage fields can have different range constraints"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"anyPercentage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Percentage"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A percentage value. Must be between 0 and 100 percent (inclusive)."</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// $measure: Indicates unit of measurement for display</span><span class="w">
+          </span><span class="nl">"$measure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percent"</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// minimum: &gt;= 0 (includes 0)</span><span class="w">
+          </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// maximum: &lt;= 100 (includes 100)</span><span class="w">
+          </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"lowPercentage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Percentage (Less Than 20%)"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A percentage value. Must be greater than or equal to 0 and strictly less than 20 percent."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"$measure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percent"</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// minimum: &gt;= 0 (includes 0)</span><span class="w">
+          </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="c1">// exclusiveMaximum: &lt; 20 (20 is NOT allowed)</span><span class="w">
+          </span><span class="nl">"exclusiveMaximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="c1">// anyOf: At least one percentage field must be present</span><span class="w">
+      </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"anyPercentage"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"lowPercentage"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+
+  </span><span class="c1">// ============================================================</span><span class="w">
+  </span><span class="c1">// TOP-LEVEL FORM SELECTION (anyOf)</span><span class="w">
+  </span><span class="c1">// ============================================================</span><span class="w">
+  </span><span class="c1">// PURPOSE: Allow submission of any ONE of the example forms above</span><span class="w">
+  </span><span class="c1">//</span><span class="w">
+  </span><span class="c1">// WHAT THIS MEANS:</span><span class="w">
+  </span><span class="c1">// When a doctor submits data to this schema, it must match at least</span><span class="w">
+  </span><span class="c1">// ONE of these form types. For example:</span><span class="w">
+  </span><span class="c1">// - Submitting just freeText data → Valid</span><span class="w">
+  </span><span class="c1">// - Submitting just age data → Valid</span><span class="w">
+  </span><span class="c1">// - Submitting conditionOr data → Valid</span><span class="w">
+  </span><span class="c1">// - Submitting mix of age + conditionOr → Usually invalid</span><span class="w">
+  </span><span class="c1">//</span><span class="w">
+  </span><span class="c1">// REAL-WORLD USE:</span><span class="w">
+  </span><span class="c1">// In PHARMAC Special Authorities, each SA can have multiple</span><span class="w">
+  </span><span class="c1">// application types (initial, renewal, standard). Submitted data</span><span class="w">
+  </span><span class="c1">// must match one of the defined types.</span><span class="w">
+  </span><span class="c1">//</span><span class="w">
+  </span><span class="c1">// REFERENCES ($ref):</span><span class="w">
+  </span><span class="c1">// "#/properties/freeText" points to the "freeText" form defined above</span><span class="w">
+  </span><span class="c1">// This creates reusable schema components</span><span class="w">
+  </span><span class="c1">// ============================================================</span><span class="w">
+  </span><span class="nl">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/freeText"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/clinicalMeasurement"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/age"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/sevenOfNine"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/conditionAnd"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/conditionOr"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/conditionAndOr"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/conditionAndSubOr"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/durationExample"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/properties/percentageExample"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="how-to-use-this-schema">How to Use This Schema</h3>
+
+<ol>
+  <li><strong>Copy this schema</strong> for your own SA definitions</li>
+  <li><strong>Modify the properties</strong> to match your specific form fields</li>
+  <li><strong>Adjust validation rules</strong> (ranges, required fields, conditional logic)</li>
+  <li><strong>Base64-encode it</strong> and embed in the <code class="language-plaintext highlighter-rouge">authorizationSchema</code> extension</li>
+  <li><strong>Validate test data</strong> using an AJV validator or similar</li>
+</ol>
+
+<h3 id="validation-examples">Validation Examples</h3>
+
+<h4 id="example-1-valid-freetext-submission">Example 1: Valid freeText submission</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"freeText"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient presents with severe symptoms"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>✅ <strong>Valid</strong> — <code class="language-plaintext highlighter-rouge">field</code> is present and is a string</p>
+
+<h4 id="example-2-invalid-freetext-submission">Example 2: Invalid freeText submission</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"freeText"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>❌ <strong>Invalid</strong> — <code class="language-plaintext highlighter-rouge">field</code> is required but missing</p>
+
+<h4 id="example-3-valid-sevenofnine-submission">Example 3: Valid sevenOfNine submission</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sevenOfNine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"fieldOne"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldTwo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldThree"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldFour"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldFive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldSix"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldSeven"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>✅ <strong>Valid</strong> — 7 fields present (meets <code class="language-plaintext highlighter-rouge">minProperties: 7</code>)</p>
+
+<h4 id="example-4-invalid-sevenofnine-submission">Example 4: Invalid sevenOfNine submission</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sevenOfNine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"fieldOne"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldTwo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldThree"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldFour"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldFive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fieldSix"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>❌ <strong>Invalid</strong> — Only 6 fields present (needs at least 7)</p>
+
+<h4 id="example-5-valid-conditionor-submission">Example 5: Valid conditionOr submission</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"conditionOr"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"fieldOne"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>✅ <strong>Valid</strong> — <code class="language-plaintext highlighter-rouge">fieldOne</code> is present (satisfies <code class="language-plaintext highlighter-rouge">anyOf</code>)</p>
+
+<h4 id="example-6-invalid-conditionor-submission">Example 6: Invalid conditionOr submission</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"conditionOr"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"fieldThree"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>❌ <strong>Invalid</strong> — Neither <code class="language-plaintext highlighter-rouge">fieldOne</code> nor <code class="language-plaintext highlighter-rouge">fieldTwo</code> is present</p>
+
+<h4 id="example-7-valid-durationexample-submission">Example 7: Valid durationExample submission</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"durationExample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"specialAuthorityValidFor"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>✅ <strong>Valid</strong> — Duration is 6 months (within 0 to 6 months inclusive)</p>
+
+<h4 id="example-8-invalid-durationexample-submission">Example 8: Invalid durationExample submission</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"durationExample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"specialAuthorityValidFor"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>❌ <strong>Invalid</strong> — Duration exceeds maximum of 6 months</p>
+
+<h4 id="example-9-valid-percentageexample-submission-full-range">Example 9: Valid percentageExample submission (full range)</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"percentageExample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"anyPercentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>✅ <strong>Valid</strong> — 75% is within 0-100 inclusive range</p>
+
+<h4 id="example-10-valid-percentageexample-submission-threshold">Example 10: Valid percentageExample submission (threshold)</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"percentageExample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"lowPercentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>✅ <strong>Valid</strong> — 15% is &gt;= 0 and &lt; 20 (meets exclusiveMaximum: 20)</p>
+
+<h4 id="example-11-invalid-percentageexample-submission">Example 11: Invalid percentageExample submission</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"percentageExample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"lowPercentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>❌ <strong>Invalid</strong> — 20% is NOT strictly less than 20 (exclusiveMaximum rejects it)</p>
+
+<hr />
+
+<h2 id="pattern-explanations">Pattern Explanations</h2>
+
+<h3 id="pattern-9-duration-with-time-period-units">Pattern 9: Duration with Time Period Units</h3>
+
+<p>Used for time-based values like Special Authority validity periods or treatment durations.</p>
+
+<p><strong>Key Keywords:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">$validFor</code>: Duration number (how long the approval lasts)</li>
+  <li><code class="language-plaintext highlighter-rouge">$period</code>: Unit of time — "week", "month", or "year"</li>
+  <li><code class="language-plaintext highlighter-rouge">minimum</code>/<code class="language-plaintext highlighter-rouge">maximum</code>: Numeric range for the duration value</li>
+</ul>
+
+<p><strong>Real-World Example:</strong></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"$formType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initial"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"$validFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"$period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="w">
+</span><span class="err">//</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">form</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">valid</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="err">months</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">approved</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Use in PHARMAC:</strong></p>
+<ul>
+  <li>SA1683: Initial approval valid for 12 months</li>
+  <li>SA2139 (Renewal): Renewal approval valid for 12 months</li>
+  <li>Custom durations for different SAs</li>
+</ul>
+
+<hr />
+
+<h3 id="pattern-10-percentage-ranges-with-different-constraints">Pattern 10: Percentage Ranges with Different Constraints</h3>
+
+<p>Used for percentage-based eligibility criteria with flexible boundary conditions (inclusive vs exclusive).</p>
+
+<p><strong>Key Patterns:</strong></p>
+<ul>
+  <li><strong>Full range (0-100%):</strong> <code class="language-plaintext highlighter-rouge">minimum: 0, maximum: 100</code> (both inclusive)</li>
+  <li><strong>Threshold exclusion (&lt;20%):</strong> <code class="language-plaintext highlighter-rouge">minimum: 0, exclusiveMaximum: 20</code></li>
+  <li><strong>High improvement (≥75%):</strong> <code class="language-plaintext highlighter-rouge">minimum: 75, maximum: 100</code></li>
+</ul>
+
+<p><strong>Real-World Examples:</strong></p>
+<ul>
+  <li>SA2525 (Adalimumab): PASI improvement &gt;= 75% OR DLQI improvement &lt; 5%</li>
+  <li>SA1859 (Supplements): Weight loss &gt; 10% requirement</li>
+  <li>Various disease-specific improvement thresholds (50%, 75%, 90%)</li>
+</ul>
+
+<p><strong>Custom Keyword:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">$measure: "percent"</code> — Indicates this is a percentage for form rendering</li>
+</ul>
+
+<hr />
+
+<h3 id="related-documentation">Related Documentation</h3>
+
+<ul>
+  <li><a href="sa-json-schema-guide.html">JSON Schema for SAs Guide</a> — Detailed explanation of patterns and concepts</li>
+  <li><a href="ChargeItemDefinition-ChargeItemDefinition-SA9999-Authorization.html">SA9999 Resource</a> — FHIR resource containing this schema</li>
+  <li><a href="https://json-schema.org/draft-07/json-schema-core.html">JSON Schema Draft-07 Spec</a> — Official specification</li>
+</ul>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 17, 2026 06:29+0000">2026-04-17</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

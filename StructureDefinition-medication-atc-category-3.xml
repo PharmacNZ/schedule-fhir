@@ -3,11 +3,11 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="medication-atc-category-3"/>
   <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3"/>
-  <version value="0.0.1"/>
+  <version value="1.0.0"/>
   <name value="MedicationATCCategory3"/>
   <title value="Medication ATC Category 3"/>
   <status value="draft"/>
-  <date value="2026-03-27T00:29:47+00:00"/>
+  <date value="2026-04-17T06:29:04+00:00"/>
   <publisher value="Pharmac"/>
   <contact>
     <name value="Pharmac"/>

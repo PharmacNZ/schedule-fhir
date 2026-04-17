@@ -13,7 +13,7 @@
      fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement"^^xsd:anyURI ;
      fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement>
   ] ; # 
-  fhir:version [ fhir:v "0.0.1"] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
   fhir:name [ fhir:v "PharmacSchedulesCapabilityStatement"] ; # 
   fhir:title [ fhir:v "Pharmac Schedules Capability Statement"] ; # 
   fhir:status [ fhir:v "draft"] ; # 

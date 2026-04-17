@@ -3,11 +3,11 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="pharmac.fhir.pharmac-schedules"/>
   <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules"/>
-  <version value="0.0.1"/>
+  <version value="1.0.0"/>
   <name value="pharmacschedules"/>
   <title value="Pharmac Schedules FHIR API"/>
   <status value="draft"/>
-  <date value="2026-03-27T00:29:47+00:00"/>
+  <date value="2026-04-17T06:29:04+00:00"/>
   <publisher value="Pharmac"/>
   <contact>
     <name value="Pharmac"/>
@@ -534,6 +534,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/authorization-schema"/>
+      </reference>
+      <name value="Authorization Schema"/>
+      <description value="Base64-encoded JSON Schema that defines the structure and validation rules for a Special Authorization application form. The decoded content is a JSON Schema (application/schema+json)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/authorization-title"/>
       </reference>
       <name value="Authorization Title"/>
@@ -556,88 +567,44 @@
         <valueString value="ChargeItemDefinition"/>
       </extension>
       <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1"/>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"/>
       </reference>
-      <name value="ChargeItemDefinition-Community-Pharmacy-BSO-Sequence-1"/>
-      <description value="Community pharmacy BSO subsidy (Case 1) with provider condition for hospital care operators."/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
+      <name value="ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"/>
+      <description value="Rules for Clexane 100 mg in 1 ml syringe - Case 1."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ChargeItemDefinition"/>
       </extension>
       <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1"/>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2"/>
       </reference>
-      <name value="ChargeItemDefinition-Community-Pharmacy-Rural-PSO-Sequence-1"/>
-      <description value="Community pharmacy Rural PSO subsidy (Case 1) with provider condition for authorised prescribers."/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
+      <name value="ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2"/>
+      <description value="Rules for Clexane 100 mg in 1 ml syringe - Case 2."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ChargeItemDefinition"/>
       </extension>
       <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-1"/>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3"/>
       </reference>
-      <name value="ChargeItemDefinition-Community-Pharmacy-Sequence-1"/>
-      <description value="Community pharmacy prescription subsidy for patients unable to tolerate administration of goserelin. Demonstrates reimbursement with endorsement and provider conditions."/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
+      <name value="ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3"/>
+      <description value="Rules for Clexane 100 mg in 1 ml syringe - Case 3."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ChargeItemDefinition"/>
       </extension>
       <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Community-Pharmacy-Sequence-2"/>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization"/>
       </reference>
-      <name value="ChargeItemDefinition-Community-Pharmacy-Sequence-2"/>
-      <description value="Community pharmacy prescription subsidy (Case 2) with provider condition only."/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ChargeItemDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization"/>
-      </reference>
-      <name value="ChargeItemDefinition-SA2139-Authorization"/>
-      <description value="Special Authorization SA2139."/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ChargeItemDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA2520-Authorization"/>
-      </reference>
-      <name value="ChargeItemDefinition-SA2520-Authorization"/>
-      <description value="Special Authorization SA2520"/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ChargeItemDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-1"/>
-      </reference>
-      <name value="ChargeItemDefinition-Tenofovir-Case-Sequence-1"/>
-      <description value="Rules for Tenofovir Disoproxil"/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ChargeItemDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Tenofovir-Case-Sequence-2"/>
-      </reference>
-      <name value="ChargeItemDefinition-Tenofovir-Case-Sequence-2"/>
-      <description value="Rules for Tenofovir Disoproxil"/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
+      <name value="ChargeItemDefinition-SA9999-Authorization"/>
+      <description value="Special Authorization SA9999"/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -649,6 +616,50 @@
       <name value="ChargeItemDefinitionCodeSearchParam"/>
       <description value="Allow ChargeItemDefinition search by code (usually special authority code)"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/ChargeItemDefinitionDeviceReferenceSearchParam"/>
+      </reference>
+      <name value="ChargeItemDefinitionDeviceReferenceSearchParam"/>
+      <description value="Reference from ChargeItemDefinition to DeviceDefinition via IG extension. Enables searching for pricing and authorization rules by associated device."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/ChargeItemDefinitionInstanceSearchParam"/>
+      </reference>
+      <name value="ChargeItemDefinitionInstanceSearchParam"/>
+      <description value="Allow _revinclude from Medication to ChargeItemDefinition"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/ChargeItemDefinitionSACodeSearchParam"/>
+      </reference>
+      <name value="ChargeItemDefinitionSACodeSearchParam"/>
+      <description value="Allow ChargeItemDefinition search by code eg special authority code"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing"/>
+      </reference>
+      <name value="Clexane - Pricing"/>
+      <description value="Pricing information for Clexane (enoxaparin sodium injection). Demonstrates fully subsidized community and HML pricing."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -715,17 +726,6 @@
       <name value="In-Combination"/>
       <description value="Indicates whether this item is only subsidised when used in combination with other medicines or treatments."/>
       <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ChargeItemDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Lucrin-Depot-1-Month-Pricing"/>
-      </reference>
-      <name value="Lucrin Depot 1-month - Pricing"/>
-      <description value="Pricing information for Lucrin Depot 1-month (leuprorelin injection). Demonstrates community subsidized pricing with subsidy, alternative pricing, and new pricing attributes including cost brand source, wastage claimable, DV limit percentage, and brand switch fee."/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -797,6 +797,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/medication-legal-classification"/>
+      </reference>
+      <name value="Medication Legal Classification"/>
+      <description value="Legal classification for a medication."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/medication-original-pack"/>
       </reference>
       <name value="Medication Original Pack"/>
@@ -812,6 +823,17 @@
       </reference>
       <name value="Medication Package Size"/>
       <description value="Package size for a scheduled medication. For example, '30 x 650 mg sachets' would be represented as 'Sachet' in the form property and 30 in the packageSize extension property."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/medication-product-created-date"/>
+      </reference>
+      <name value="Medication Product Created Date"/>
+      <description value="The date a medication product record was created."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -874,6 +896,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/medication-strength"/>
+      </reference>
+      <name value="Medication Strength"/>
+      <description value="Strength for a medication."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/medication-unit-of-measure"/>
       </reference>
       <name value="Medication Unit of Measure"/>
@@ -885,10 +918,10 @@
         <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="Medication/Medication-Lucrin-Depot-1-Month"/>
+        <reference value="Medication/Medication-Clexane-100mg-1ml-Syringe"/>
       </reference>
-      <name value="Medication-Lucrin-Depot-1-Month"/>
-      <description value="Medication representation of Lucrin Depot 1-month (leuprorelin injection)."/>
+      <name value="Medication-Clexane-100mg-1ml-Syringe"/>
+      <description value="Medication representation of Clexane (enoxaparin sodium) Inj 100 mg in 1 ml syringe."/>
       <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
     </resource>
     <resource>
@@ -896,10 +929,10 @@
         <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="Medication/Medication-Ricovir-Tenofovir"/>
+        <reference value="Medication/Medication-Fortisip-Multi-Fibre-Chocolate"/>
       </reference>
-      <name value="Medication-Ricovir-Tenofovir"/>
-      <description value="Medication representation of Ricovir (tenofovir disoproxil tablets)."/>
+      <name value="Medication-Fortisip-Multi-Fibre-Chocolate"/>
+      <description value="Supplmentrepresentation of Fortisip Multi Fibre (chocolate) oral feed with fibre 1.5 kcal/ml."/>
       <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
     </resource>
     <resource>
@@ -907,10 +940,10 @@
         <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="Medication/Medication-Viramune-Suspension"/>
+        <reference value="Medication/Medication-Nutrison-800-Complete-Multi-Fibre"/>
       </reference>
-      <name value="Medication-Viramune-Suspension"/>
-      <description value="Medication representation of Viramune Suspension (nevirapine oral suspension)."/>
+      <name value="Medication-Nutrison-800-Complete-Multi-Fibre"/>
+      <description value="Supplement representation of Nutrison 800 Complete Multi Fibre (enteral feed with fibre 0.83 kcal/ml)."/>
       <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
     </resource>
     <resource>
@@ -922,6 +955,17 @@
       </reference>
       <name value="MedicationBrandNameSearchParam"/>
       <description value="Search for medications by brand name (e.g., 'Gaviscon', 'Acidex', 'Budesonide'). Enables fuzzy matching on the medication-brand-name extension for discovery by product name."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/MedicationCategorySearchParam"/>
+      </reference>
+      <name value="MedicationCategorySearchParam"/>
+      <description value="Search for medications by category"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -944,6 +988,39 @@
       </reference>
       <name value="PHARMAC Charge Item Definition"/>
       <description value="Profile for ChargeItemDefinition resources representing pricing, subsidy, and rules for devices and medications in the PHARMAC schedule. This profile allows FHIR consumers to use the _include search parameter to retrieve pricing information alongside device or medication resources."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+      </reference>
+      <name value="PHARMAC Charge Item Definition - Funding Rules"/>
+      <description value="Profile for ChargeItemDefinition resources representing funding mechanisms and reimbursement rules in the PHARMAC schedule. This profile captures funding conditions, provider requirements, endorsement criteria, case sequences, and funding mechanism types (Prescription, BSO, Rural PSO, etc.)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pharmac-charge-item-definition-pricing"/>
+      </reference>
+      <name value="PHARMAC Charge Item Definition - Pricing"/>
+      <description value="Profile for ChargeItemDefinition resources representing product pricing information for medications and devices in the PHARMAC schedule. This profile captures listed prices, PHARMAC subsidies, patient co-payments, and pricing-specific attributes such as contract type, DV limits, and statim requirements."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pharmac-charge-item-definition-special-authority"/>
+      </reference>
+      <name value="PHARMAC Charge Item Definition - Special Authority"/>
+      <description value="Profile for ChargeItemDefinition resources representing Special Authorization (SA) requirements and clinical eligibility criteria in the PHARMAC schedule. This profile captures SA codes, authorization case counts, clinical eligibility, and references to medications requiring special authorization."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -984,6 +1061,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/pricing-copayment-max"/>
+      </reference>
+      <name value="Pricing Co-Payment Max"/>
+      <description value="Indicates whether Co-Payment Max applies to this pricing record."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/pricing-effective-date"/>
       </reference>
       <name value="Pricing Effective Date"/>
@@ -1003,24 +1091,35 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ChargeItemDefinition"/>
+        <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Ricovir-Pricing"/>
+        <reference value="StructureDefinition/pricing-not-combined"/>
       </reference>
-      <name value="Ricovir - Pricing"/>
-      <description value="Pricing information for Ricovir (tenofovir disoproxil tablets). Demonstrates fully subsidized community pricing with PSS contract type and DV limit."/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"/>
+      <name value="Pricing Not Combined"/>
+      <description value="Indicates whether Not Combined applies to this pricing record."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pricing-section-29"/>
+      </reference>
+      <name value="Pricing Section 29"/>
+      <description value="Indicates whether Section 29 applies to this pricing record."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/SearchSet-Bundle-Leuprorelin-Pricing"/>
+        <reference value="Bundle/SearchSet-Bundle-Clexane-Pricing"/>
       </reference>
-      <name value="SearchSet-Bundle-Leuprorelin-Pricing"/>
-      <description value="Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Leuprorelin&amp;_include=ChargeItemDefinition:instance"/>
+      <name value="SearchSet-Bundle-Clexane-Pricing"/>
+      <description value="Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Clexane&amp;_include=ChargeItemDefinition:instance"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1031,7 +1130,7 @@
         <reference value="Bundle/SearchSet-Bundle-Medication"/>
       </reference>
       <name value="SearchSet-Bundle-Medication"/>
-      <description value="Example search result demonstrating a bulk medication search."/>
+      <description value="Example search result demonstrating a bulk medication search with GET /Medication?name=Clexane&amp;."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1039,21 +1138,10 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/SearchSet-Bundle-Ricovir-Pricing"/>
+        <reference value="Bundle/SearchSet-Bundle-Special-Authorities"/>
       </reference>
-      <name value="SearchSet-Bundle-Ricovir-Pricing"/>
-      <description value="Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Tenofovir&amp;_include=ChargeItemDefinition:instance"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/SearchSet-Bundle-SA2139-Authorization"/>
-      </reference>
-      <name value="SearchSet-Bundle-SA2139-Authorization"/>
-      <description value="Example search result demonstrating _include to retrieve ChargeItemDefinition resource using the Special Authority ID and it's associated Medication(s)&#xA;        Query: GET /ChargeItemDefinition?code=SA2139&amp;_include=ChargeItemDefinition:instance"/>
+      <name value="SearchSet-Bundle-Special-Authorities"/>
+      <description value="Example search result demonstrating a search for all special authorization definitions."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1129,10 +1217,34 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fr-json-schema-guide.html"/>
+        </extension>
+        <nameUrl value="fr-json-schema-guide.html"/>
+        <title value="Fr Json Schema Guide"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="relationships.html"/>
         </extension>
         <nameUrl value="relationships.html"/>
         <title value="Relationships"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="sa-json-schema-guide.html"/>
+        </extension>
+        <nameUrl value="sa-json-schema-guide.html"/>
+        <title value="Sa Json Schema Guide"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="sa9999-schema-example.html"/>
+        </extension>
+        <nameUrl value="sa9999-schema-example.html"/>
+        <title value="Sa 9999 Schema Example"/>
         <generation value="markdown"/>
       </page>
       <page>

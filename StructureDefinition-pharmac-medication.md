@@ -1,4 +1,4 @@
-# PHARMAC Medication - Pharmac Schedules FHIR API v0.0.1
+# PHARMAC Medication - Pharmac Schedules FHIR API v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication | *Version*:0.0.1 |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication | *Version*:1.0.0 |
 | Active as of 2025-01-26 | *Computable Name*:PharmacMedication |
 
  
@@ -17,9 +17,55 @@ Profile for Medication resources representing pharmaceutical products in the PHA
  
 To define the structure for PHARMAC scheduled medications including brand and pack identifiers, product names, dosage forms, and ingredients. Pricing information should be accessed via ChargeItemDefinition resources using _include=Medication:medication in search queries. 
 
+### Overview
+
+The **PHARMAC Medication** profile defines how pharmaceutical products from the PHARMAC schedule are represented as FHIR Medication resources. Each Medication resource corresponds to a specific branded pack — a particular product, strength, form, and pack size — as listed in the schedule.
+
+### When to use this profile
+
+Use this profile to represent any medication listed in the PHARMAC Pharmaceutical Schedule. Medication resources are the central product catalogue entries and serve as the anchor for related pricing, funding rules, and special authorization information held in ChargeItemDefinition resources.
+
+### Key elements
+
+| | |
+| :--- | :--- |
+| `identifier` | At least three identifiers are required:**brandId**(PHARMAC brand code),**packId**(PHARMAC pack code), and optionally**pharmaCode**,**chemicalId**, and**formulationId**. These provide cross-referencing into PHARMAC and NZMT systems. |
+| `code.text` | The marketed brand name of the medication (e.g., "Ricovir"). |
+| `form.text` | The pharmaceutical dosage form (e.g., "tablet", "oral liquid"). |
+| `ingredient` | Active ingredients with`isActive = true`. The ingredient is expressed as a`CodeableConcept`with a text description. |
+| `status` | Fixed to`#active`— all scheduled medications are active. |
+
+### Extensions
+
+| | | |
+| :--- | :--- | :--- |
+| `MedicationBrandName` | string | The PHARMAC brand name. |
+| `MedicationPackageSize` | string | Pack size description. |
+| `MedicationUnitOfMeasure` | string | Unit of measure for the pack. |
+| `MedicationRank` | integer | Display ranking within the schedule. |
+| `MedicationATCCategory1–3` | string | ATC classification levels. |
+| `MedicationProductMultiple` | string | Product multiple indicator. |
+| `MedicationProductMultiplier` | decimal | Product multiplier value. |
+
+### Retrieving related information
+
+Medication resources on their own describe the product. To retrieve pricing, funding rules, and special authorization information, use the `_revinclude` search parameter:
+
+```
+GET /Medication?identifier=http://schedule.pharmac.govt.nz/ids/pack|1234
+    &_revinclude=ChargeItemDefinition:instance
+
+```
+
+This returns the Medication along with all ChargeItemDefinition resources (pricing, funding rules, and special authorizations) that reference it.
+
+### Example
+
+See [Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md) for a complete example of an enoxaparin (anticoagulant) injectable medication.
+
 **Usages:**
 
-* Examples for this Profile: [Medication/Medication-Lucrin-Depot-1-Month](Medication-Medication-Lucrin-Depot-1-Month.md), [Medication/Medication-Ricovir-Tenofovir](Medication-Medication-Ricovir-Tenofovir.md) and [Medication/Medication-Viramune-Suspension](Medication-Medication-Viramune-Suspension.md)
+* Examples for this Profile: [Medication/Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md), [Medication/Medication-Fortisip-Multi-Fibre-Chocolate](Medication-Medication-Fortisip-Multi-Fibre-Chocolate.md) and [Medication/Medication-Nutrison-800-Complete-Multi-Fibre](Medication-Medication-Nutrison-800-Complete-Multi-Fibre.md)
 * CapabilityStatements using this Profile: [Pharmac Schedules Capability Statement](CapabilityStatement-PharmacSchedulesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/pharmac-medication)
@@ -41,7 +87,7 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-medication.c
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-medication",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "PharmacMedication",
   "title" : "PHARMAC Medication",
   "status" : "active",
@@ -255,6 +301,45 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-medication.c
       }]
     },
     {
+      "id" : "Medication.extension:MedicationStrength",
+      "path" : "Medication.extension",
+      "sliceName" : "MedicationStrength",
+      "short" : "Medication strength",
+      "definition" : "Strength for a medication.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength"]
+      }]
+    },
+    {
+      "id" : "Medication.extension:MedicationLegalClassification",
+      "path" : "Medication.extension",
+      "sliceName" : "MedicationLegalClassification",
+      "short" : "Legal classification for a medication.",
+      "definition" : "Legal classification for a medication.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification"]
+      }]
+    },
+    {
+      "id" : "Medication.extension:MedicationProductCreatedDate",
+      "path" : "Medication.extension",
+      "sliceName" : "MedicationProductCreatedDate",
+      "short" : "Medication product created date",
+      "definition" : "The date a medication product record was created.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date"]
+      }]
+    },
+    {
       "id" : "Medication.identifier",
       "path" : "Medication.identifier",
       "slicing" : {
@@ -370,6 +455,27 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-medication.c
     },
     {
       "id" : "Medication.identifier:formulationId.value",
+      "path" : "Medication.identifier.value",
+      "min" : 1
+    },
+    {
+      "id" : "Medication.identifier:gtin",
+      "path" : "Medication.identifier",
+      "sliceName" : "gtin",
+      "short" : "GS1 GTIN",
+      "definition" : "Global Trade Item Number(s) for this pack — multiple GTINs are allowed (e.g. different barcode formats)",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.identifier:gtin.system",
+      "path" : "Medication.identifier.system",
+      "min" : 1,
+      "fixedUri" : "https://www.gs1.org/gtin"
+    },
+    {
+      "id" : "Medication.identifier:gtin.value",
       "path" : "Medication.identifier.value",
       "min" : 1
     },

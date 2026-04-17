@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="Medication-Nutrison-800-Complete-Multi-Fibre"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
+    <valueString value="Nutrison 800 Complete Multi Fibre"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
+    <valueString value="1000"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
+    <valueString value="ml"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
+    <valueString value="Special Foods"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
+    <valueString value="Standard Feeds"/>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
+    <valueString value="Standard Feeds"/>
+  </extension>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
+    <value value="B42063140742625"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
+    <value value="P2702398"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
+    <value value="C4206314074"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
+    <value value="F420631407426"/>
+  </identifier>
+  <identifier>
+    <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
+    <value value="2702398"/>
+  </identifier>
+  <code>
+    <coding>
+      <system value="http://nzmt.org.nz"/>
+      <code value="50271881000117104"/>
+    </coding>
+    <text value="Nutrison 800 Complete Multi Fibre"/>
+  </code>
+  <status value="active"/>
+  <form>
+    <text value="Liquid"/>
+  </form>
+</Medication>

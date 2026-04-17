@@ -2,7 +2,7 @@
   "resourceType" : "ValueSet",
   "id" : "pharmac-medication-code",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "name" : "PharmacMedicationCode",
   "title" : "PHARMAC Medication Code ValueSet",
   "status" : "active",
