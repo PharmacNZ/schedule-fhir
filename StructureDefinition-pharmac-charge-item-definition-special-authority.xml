@@ -3,7 +3,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="pharmac-charge-item-definition-special-authority"/>
   <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
-  <version value="1.0.0"/>
+  <version value="1.0.1"/>
   <name value="PharmacChargeItemDefinitionSpecialAuthority"/>
   <title value="PHARMAC Charge Item Definition - Special Authority"/>
   <status value="active"/>
@@ -54,7 +54,7 @@
   <derivation value="constraint"/>
   <snapshot>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version">
-      <valueString value="1.0.0"/>
+      <valueString value="1.0.1"/>
     </extension>
     <element id="ChargeItemDefinition">
       <path value="ChargeItemDefinition"/>

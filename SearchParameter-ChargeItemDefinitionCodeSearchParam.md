@@ -1,4 +1,4 @@
-# ChargeItemDefinitionCodeSearchParam - Pharmac Schedules FHIR API v1.0.0
+# ChargeItemDefinitionCodeSearchParam - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-code | *Version*:1.0.0 |
-| Active as of 2026-04-17 | *Computable Name*:ChargeItemDefinitionCode |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-code | *Version*:1.0.1 |
+| Active as of 2026-04-24 | *Computable Name*:ChargeItemDefinitionCode |
 
  
 Allow ChargeItemDefinition search by code (usually special authority code) 
@@ -23,10 +23,10 @@ Allow ChargeItemDefinition search by code (usually special authority code)
   "resourceType" : "SearchParameter",
   "id" : "ChargeItemDefinitionCodeSearchParam",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-code",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "ChargeItemDefinitionCode",
   "status" : "active",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

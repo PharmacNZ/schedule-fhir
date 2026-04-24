@@ -1,4 +1,4 @@
-# ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2 - Pharmac Schedules FHIR API v1.0.0
+# ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2 - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | |
 | :--- |
-| Active as of 2026-04-17 |
+| Active as of 2026-04-24 |
 
 
 
@@ -59,9 +59,9 @@
     "valueBase64Binary" : "ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNsZXhhbmUgMTAwbWcgMW1sIFN5cmluZ2UgQ2FzZSAyIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImVuZG9yc2VtZW50IjogewogICAgICAidGl0bGUiOiAiUFJJTUUgU2VydmljZSBFbmRvcnNlbWVudCIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiRm9yIHVzZSB3aXRoaW4gYSBQcmltYXJ5IFJlc3BvbnNlIGluIE1lZGljYWwgRW1lcmdlbmNpZXMgKFBSSU1FKSBzZXJ2aWNlIgogICAgfSwKICAgICJwcm92aWRlciI6IHsKICAgICAgInRpdGxlIjogIkF1dGhvcmlzZWQgUHJvdmlkZXJzIiwKICAgICAgInR5cGUiOiAiYm9vbGVhbiIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJQcm92aWRlciBUeXBlIGlzIEF1dGhvcmlzZWQgUHJvdmlkZXJzIgogICAgfQogIH0sCiAgInJlcXVpcmVkIjogWwogICAgImVuZG9yc2VtZW50IiwKICAgICJwcm92aWRlciIKICBdCn0K"
   }],
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "status" : "active",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

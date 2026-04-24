@@ -1,4 +1,4 @@
-# Medication Safety List Medicine - Pharmac Schedules FHIR API v1.0.0
+# Medication Safety List Medicine - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine | *Version*:1.0.0 |
-| Draft as of 2026-04-17 | *Computable Name*:MedicationSafetyListMedicine |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine | *Version*:1.0.1 |
+| Draft as of 2026-04-24 | *Computable Name*:MedicationSafetyListMedicine |
 
 Indicates whether this medication is on a PHARMAC safety list.
 
@@ -20,7 +20,7 @@ Indicates whether this medication is on a PHARMAC safety list.
 **Usages:**
 
 * Use this Extension: [PHARMAC Medication](StructureDefinition-pharmac-medication.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md), [Bundle/SearchSet-Bundle-Medication](Bundle-SearchSet-Bundle-Medication.md) and [Medication/Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md)
+* Examples for this Extension: [Bundle/SearchSet-Bundle-All-Medications](Bundle-SearchSet-Bundle-All-Medications.md), [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md) and [Medication/Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/medication-safety-list-medicine)
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-medication-safety-li
   "resourceType" : "StructureDefinition",
   "id" : "medication-safety-list-medicine",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "MedicationSafetyListMedicine",
   "title" : "Medication Safety List Medicine",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

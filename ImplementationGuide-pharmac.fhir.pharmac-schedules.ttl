@@ -13,11 +13,11 @@
      fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules"^^xsd:anyURI ;
      fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules>
   ] ; # 
-  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
   fhir:name [ fhir:v "pharmacschedules"] ; # 
   fhir:title [ fhir:v "Pharmac Schedules FHIR API"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-04-17T06:29:04+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-04-24T01:18:12+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Pharmac"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Pharmac" ] ;
@@ -1718,6 +1718,27 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/ChargeItemDefinitionPricingEffectiveDateSearchParam> ;
+         fhir:reference [ fhir:v "SearchParameter/ChargeItemDefinitionPricingEffectiveDateSearchParam" ]
+       ] ;
+       fhir:name [ fhir:v "ChargeItemDefinitionPricingEffectiveDateSearchParam" ] ;
+       fhir:description [ fhir:v "Search ChargeItemDefinition by pricing effective date extension" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "SearchParameter"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/ChargeItemDefinitionSACodeSearchParam> ;
          fhir:reference [ fhir:v "SearchParameter/ChargeItemDefinitionSACodeSearchParam" ]
        ] ;
@@ -2624,53 +2645,53 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-All-Medications> ;
+         fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-All-Medications" ]
+       ] ;
+       fhir:name [ fhir:v "SearchSet-Bundle-All-Medications" ] ;
+       fhir:description [ fhir:v "Example search result demonstrating a bulk medication search with GET [base]/Medication?_count=1000&_total=accurate" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Bundle"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-All-Special-Authorities> ;
+         fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-All-Special-Authorities" ]
+       ] ;
+       fhir:name [ fhir:v "SearchSet-Bundle-All-Special-Authorities" ] ;
+       fhir:description [ fhir:v "Example search result demonstrating a search for all special authorization definitions. GET [base]/pharmac-charge-item-definition-special-authority?_count=1000&_total=accurate" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Bundle"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Clexane-Pricing> ;
          fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-Clexane-Pricing" ]
        ] ;
        fhir:name [ fhir:v "SearchSet-Bundle-Clexane-Pricing" ] ;
        fhir:description [ fhir:v "Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Clexane&_include=ChargeItemDefinition:instance" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "Bundle"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Medication> ;
-         fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-Medication" ]
-       ] ;
-       fhir:name [ fhir:v "SearchSet-Bundle-Medication" ] ;
-       fhir:description [ fhir:v "Example search result demonstrating a bulk medication search with GET /Medication?name=Clexane&." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "Bundle"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Special-Authorities> ;
-         fhir:reference [ fhir:v "Bundle/SearchSet-Bundle-Special-Authorities" ]
-       ] ;
-       fhir:name [ fhir:v "SearchSet-Bundle-Special-Authorities" ] ;
-       fhir:description [ fhir:v "Example search result demonstrating a search for all special authorization definitions." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v true
@@ -2774,7 +2795,7 @@
            fhir:v "index.html"^^xsd:anyURI ;
            fhir:l fhir:index.html
          ] ;
-         fhir:title [ fhir:v "Home" ] ;
+         fhir:title [ fhir:v "Pharmac Medicine & Medical Device Schedule" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -2784,16 +2805,16 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "api.html"^^xsd:anyURI ;
-             fhir:l fhir:api.html
+             fhir:v "use-cases.html"^^xsd:anyURI ;
+             fhir:l fhir:use-cases.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "api.html"^^xsd:anyURI ;
-           fhir:l fhir:api.html
+           fhir:v "use-cases.html"^^xsd:anyURI ;
+           fhir:l fhir:use-cases.html
          ] ;
-         fhir:title [ fhir:v "Api" ] ;
+         fhir:title [ fhir:v "Use Cases" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -2803,16 +2824,54 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "datamodel.html"^^xsd:anyURI ;
-             fhir:l fhir:datamodel.html
+             fhir:v "fhir-ig-to-xml.html"^^xsd:anyURI ;
+             fhir:l fhir:fhir-ig-to-xml.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "datamodel.html"^^xsd:anyURI ;
-           fhir:l fhir:datamodel.html
+           fhir:v "fhir-ig-to-xml.html"^^xsd:anyURI ;
+           fhir:l fhir:fhir-ig-to-xml.html
          ] ;
-         fhir:title [ fhir:v "Datamodel" ] ;
+         fhir:title [ fhir:v "XML to FHIR Mapping" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "sa-json-schema-guide.html"^^xsd:anyURI ;
+             fhir:l fhir:sa-json-schema-guide.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "sa-json-schema-guide.html"^^xsd:anyURI ;
+           fhir:l fhir:sa-json-schema-guide.html
+         ] ;
+         fhir:title [ fhir:v "JSON Schema for Special Authorities" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "fr-json-schema-guide.html"^^xsd:anyURI ;
+             fhir:l fhir:fr-json-schema-guide.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "fr-json-schema-guide.html"^^xsd:anyURI ;
+           fhir:l fhir:fr-json-schema-guide.html
+         ] ;
+         fhir:title [ fhir:v "JSON Schema for Funding Rules" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -2841,16 +2900,16 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "fr-json-schema-guide.html"^^xsd:anyURI ;
-             fhir:l fhir:fr-json-schema-guide.html
+             fhir:v "api.html"^^xsd:anyURI ;
+             fhir:l fhir:api.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "fr-json-schema-guide.html"^^xsd:anyURI ;
-           fhir:l fhir:fr-json-schema-guide.html
+           fhir:v "api.html"^^xsd:anyURI ;
+           fhir:l fhir:api.html
          ] ;
-         fhir:title [ fhir:v "Fr Json Schema Guide" ] ;
+         fhir:title [ fhir:v "API" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -2869,7 +2928,7 @@
            fhir:v "relationships.html"^^xsd:anyURI ;
            fhir:l fhir:relationships.html
          ] ;
-         fhir:title [ fhir:v "Relationships" ] ;
+         fhir:title [ fhir:v "Resource Relationships" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -2879,35 +2938,16 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "sa-json-schema-guide.html"^^xsd:anyURI ;
-             fhir:l fhir:sa-json-schema-guide.html
+             fhir:v "datamodel.html"^^xsd:anyURI ;
+             fhir:l fhir:datamodel.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "sa-json-schema-guide.html"^^xsd:anyURI ;
-           fhir:l fhir:sa-json-schema-guide.html
+           fhir:v "datamodel.html"^^xsd:anyURI ;
+           fhir:l fhir:datamodel.html
          ] ;
-         fhir:title [ fhir:v "Sa Json Schema Guide" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
-           fhir:value [
-             a fhir:Url ;
-             fhir:v "sa9999-schema-example.html"^^xsd:anyURI ;
-             fhir:l fhir:sa9999-schema-example.html
-           ]
-         ] ) ;
-         fhir:name [
-           a fhir:Url ;
-           fhir:v "sa9999-schema-example.html"^^xsd:anyURI ;
-           fhir:l fhir:sa9999-schema-example.html
-         ] ;
-         fhir:title [ fhir:v "Sa 9999 Schema Example" ] ;
+         fhir:title [ fhir:v "Data Models" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -2936,16 +2976,16 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "use-cases.html"^^xsd:anyURI ;
-             fhir:l fhir:use-cases.html
+             fhir:v "version-history.html"^^xsd:anyURI ;
+             fhir:l fhir:version-history.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "use-cases.html"^^xsd:anyURI ;
-           fhir:l fhir:use-cases.html
+           fhir:v "version-history.html"^^xsd:anyURI ;
+           fhir:l fhir:version-history.html
          ] ;
-         fhir:title [ fhir:v "Use Cases" ] ;
+         fhir:title [ fhir:v "Version History" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] )
      ] ;

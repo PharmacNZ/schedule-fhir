@@ -1,4 +1,4 @@
-# Device Definition Reference - Pharmac Schedules FHIR API v1.0.0
+# Device Definition Reference - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/device-definition-reference | *Version*:1.0.0 |
-| Draft as of 2026-04-17 | *Computable Name*:DeviceDefinitionReference |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/device-definition-reference | *Version*:1.0.1 |
+| Draft as of 2026-04-24 | *Computable Name*:DeviceDefinitionReference |
 
 Reference to a DeviceDefinition that this pricing applies to. Used because ChargeItemDefinition.instance can only reference Device, Medication, or Substance instances, not DeviceDefinition. For Medication, use ChargeItemDefinition.instance directly.
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-device-definition-re
   "resourceType" : "StructureDefinition",
   "id" : "device-definition-reference",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/device-definition-reference",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "DeviceDefinitionReference",
   "title" : "Device Definition Reference",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

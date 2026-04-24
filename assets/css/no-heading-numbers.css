@@ -1,0 +1,8 @@
+/* Hide auto-generated heading numbers */
+h2:before,
+h3:before,
+h4:before,
+h5:before,
+h6:before {
+  display: none;
+}

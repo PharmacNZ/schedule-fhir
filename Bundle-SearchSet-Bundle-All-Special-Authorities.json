@@ -1,6 +1,6 @@
 {
   "resourceType" : "Bundle",
-  "id" : "SearchSet-Bundle-Special-Authorities",
+  "id" : "SearchSet-Bundle-All-Special-Authorities",
   "type" : "searchset",
   "total" : 4,
   "link" : [{

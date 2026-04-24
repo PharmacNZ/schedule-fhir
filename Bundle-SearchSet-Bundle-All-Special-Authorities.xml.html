@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>SearchSet-Bundle-Special-Authorities - XML Representation - Pharmac Schedules FHIR API v1.0.0</title>
+    <title>SearchSet-Bundle-All-Special-Authorities - XML Representation - Pharmac Schedules FHIR API v1.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -25,6 +25,7 @@
 <link href="assets/css/logos.css" rel="stylesheet"/>
 <link href="assets/css/colours.css" rel="stylesheet" />
 <link href="assets/css/fonts.css" rel="stylesheet" />
+<link href="assets/css/no-heading-numbers.css" rel="stylesheet" />
 
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -47,8 +48,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.62"}
-    h3,h4,h5,h6{--heading-prefix:"11.62"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.62"}
+    h3,h4,h5,h6{--heading-prefix:"12.62"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -66,7 +67,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">1.0.0 - draft
+            <span style="display:inline-block;">1.0.1 - draft
 
 
             </span>
@@ -127,6 +128,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="fhir-ig-to-xml.html">XML to FHIR Mapping</a>
+      </li>
+      <li>
         <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a>
       </li>
       <li>
@@ -158,6 +162,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="version-history.html">Version History</a>
+      </li>
+      <li>
         <a target="_blank" href="https://hl7.org/fhir/index.html">FHIR Spec</a>
       </li>
       <li>
@@ -183,7 +190,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>SearchSet-Bundle-Special-Authorities</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>SearchSet-Bundle-All-Special-Authorities</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -196,7 +203,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -209,7 +216,7 @@
 <ul class="nav nav-tabs">
 
   <li>
-    <a href="Bundle-SearchSet-Bundle-Special-Authorities.html">Narrative Content</a>
+    <a href="Bundle-SearchSet-Bundle-All-Special-Authorities.html">Narrative Content</a>
   </li>
 
 
@@ -217,7 +224,7 @@
 
   
     <li>
-      <a href="Bundle-SearchSet-Bundle-Special-Authorities.json.html">JSON</a>
+      <a href="Bundle-SearchSet-Bundle-All-Special-Authorities.json.html">JSON</a>
     </li>
   
 
@@ -230,10 +237,10 @@
 <a name="root"> </a>
 
 
-<h2 id="root">: SearchSet-Bundle-Special-Authorities - XML Representation</h2>
+<h2 id="root">: SearchSet-Bundle-All-Special-Authorities - XML Representation</h2>
 
 
-<p><a href="Bundle-SearchSet-Bundle-Special-Authorities.xml" no-download="true">Raw xml</a> | <a href="Bundle-SearchSet-Bundle-Special-Authorities.xml" download>Download</a></p>
+<p><a href="Bundle-SearchSet-Bundle-All-Special-Authorities.xml" no-download="true">Raw xml</a> | <a href="Bundle-SearchSet-Bundle-All-Special-Authorities.xml" download>Download</a></p>
 
   <!-- insert intro if present -->
   
@@ -242,7 +249,7 @@
 
   <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">Bundle</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Bundle.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;SearchSet-Bundle-Special-Authorities&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Bundle.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;SearchSet-Bundle-All-Special-Authorities&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;searchset&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.total">total</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>=&quot;4&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link">link</a>&gt;
@@ -329,7 +336,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 17, 2026 06:29+0000">2026-04-17</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 24, 2026 01:18+0000">2026-04-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

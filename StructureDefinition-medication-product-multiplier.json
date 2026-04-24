@@ -2,11 +2,11 @@
   "resourceType" : "StructureDefinition",
   "id" : "medication-product-multiplier",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "MedicationProductMultiplier",
   "title" : "Medication Product Multiplier",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

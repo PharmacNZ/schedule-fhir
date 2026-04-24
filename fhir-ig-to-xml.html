@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>XML to FHIR Mapping - Pharmac Schedules FHIR API v1.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/logos.css" rel="stylesheet"/>
+<link href="assets/css/colours.css" rel="stylesheet" />
+<link href="assets/css/fonts.css" rel="stylesheet" />
+<link href="assets/css/no-heading-numbers.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="pharmac-logo">
+  <img alt="Pharmac logo" src="assets/images/pharmac-logo.png"  height="35" />
+</div>
+
+<div id="blank-logo">
+  <img alt="" src="assets/images/blank-right-logo.png" height="35"/>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">1.0.1 - draft
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="use-cases.html">Use cases</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-pharmac-medication.html">Medication</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">ChargeItemDefinition - Special Authority</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guides
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="fhir-ig-to-xml.html">XML to FHIR Mapping</a>
+      </li>
+      <li>
+        <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a>
+      </li>
+      <li>
+        <a href="fr-json-schema-guide.html">JSON Schema for Funding Rules</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
+  <li>
+    <a href="relationships.html">Resource Relationships</a>
+  </li>
+  <li>
+    <a href="datamodel.html">Data Models</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="version-history.html">Version History</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a href="definitions.json.zip">Artefacts (JSON)</a>
+      </li>
+      <li>
+        <a href="definitions.xml.zip">Artefacts (XML)</a>
+      </li>
+      <li>
+        <a href="full-ig.zip">Download IG</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>XML to FHIR Mapping</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>XML to FHIR Mapping</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<p>The examples used in this section are limited to the published example instances listed in the current IG Artifacts page. Clexane is used as the worked example for product, pricing, funding rules, and retrieval. The published <code class="language-plaintext highlighter-rouge">SA9999</code> example is included separately to illustrate the FHIR structure of a Special Authority record and is not presented as a real Clexane Special Authority.</p>
+
+<p>The legacy XML presents schedule content as a nested structure. In the current Pharmac FHIR service, core product information is held in <code class="language-plaintext highlighter-rouge">Medication</code>, while pricing, funding rules, and Special Authority content are held in related <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources using the profiles <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code>, <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code>, and <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code>. The recommended retrieval pattern is to retrieve the <code class="language-plaintext highlighter-rouge">Medication</code> and include related <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources using <code class="language-plaintext highlighter-rouge">_revinclude=ChargeItemDefinition:instance</code>.</p>
+
+<h2 id="product-and-identifiers">Product and identifiers</h2>
+
+<p>Product identity is anchored in <code class="language-plaintext highlighter-rouge">Medication</code>. In the Pharmac FHIR service, ATC hierarchy values, identifiers, brand name, pack size, unit of measure, rank, and strength are held on the <code class="language-plaintext highlighter-rouge">Medication</code> resource using core fields and named extensions such as <code class="language-plaintext highlighter-rouge">MedicationATCCategory1</code>, <code class="language-plaintext highlighter-rouge">MedicationATCCategory2</code>, <code class="language-plaintext highlighter-rouge">MedicationATCCategory3</code>, <code class="language-plaintext highlighter-rouge">MedicationBrandName</code>, <code class="language-plaintext highlighter-rouge">MedicationPackageSize</code>, <code class="language-plaintext highlighter-rouge">MedicationUnitOfMeasure</code>, <code class="language-plaintext highlighter-rouge">MedicationRank</code>, and <code class="language-plaintext highlighter-rouge">MedicationStrength</code>. The published Clexane example is the reference point for the FHIR examples below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML</th>
+      <th>XML example</th>
+      <th>Current FHIR resource / exact profile</th>
+      <th>Current FHIR field(s)</th>
+      <th>FHIR example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ATC1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;ATC1 ID="..."&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:MedicationATCCategory1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationATCCategory1].valueString = "Blood and Blood Forming Organs"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ATC2</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;ATC2 ID="..."&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:MedicationATCCategory2</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationATCCategory2].valueString = "Antithrombotic Agents"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ATC3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;ATC3 ID="..."&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:MedicationATCCategory3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationATCCategory3].valueString = "Heparin and Antagonist Preparations"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Chemical/@ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Chemical ID="..."&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td>identifier for chemical</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.identifier[chemicalId].value = "C0407043893"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Chemical/Name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Chemical&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ingredient.itemCodeableConcept.text</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.ingredient.itemCodeableConcept.text = "Enoxaparin sodium"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Formulation/@ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Formulation ID="..."&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td>identifier for formulation</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.identifier[formulationId].value = "F040704389329"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Formulation/Name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Formulation&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">form</code>, <code class="language-plaintext highlighter-rouge">extension:MedicationStrength</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.form = "Solution for injection"</code> and <code class="language-plaintext highlighter-rouge">Medication.extension[MedicationStrength].valueString = "100 mg in 1 ml"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Formulation/@Rank</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Rank="4"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:MedicationRank</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationRank].valueInteger = 4</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Formulation/@Units</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Units="syringe"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:MedicationUnitOfMeasure</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationUnitOfMeasure].valueString = "syringe"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Brand/@ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Brand ID="..."&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td>identifier for brand</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.identifier[brandId].value = "B04070438932925"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Brand/Name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Brand&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">code.text</code>, <code class="language-plaintext highlighter-rouge">extension:MedicationBrandName</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.code.text = "Clexane"</code> and <code class="language-plaintext highlighter-rouge">Medication.extension[MedicationBrandName].valueString = "Clexane"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/@ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Pack ID="..."&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td>identifier for pack</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.identifier[packId].value = "P2581906"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/@nzmt:ctpp_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">nzmt:ctpp_id="..."</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">GET [base]/Medication?code=&lt;NZMT/CTPP code&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Quantity</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Quantity&gt;10&lt;/Quantity&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:MedicationPackageSize</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationPackageSize].valueString = "10"</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The published <code class="language-plaintext highlighter-rouge">Medication-Clexane-100mg-1ml-Syringe</code> example is the reference point for the values shown above, including brand name <code class="language-plaintext highlighter-rouge">Clexane</code>, package size <code class="language-plaintext highlighter-rouge">10</code>, unit of measure <code class="language-plaintext highlighter-rouge">syringe</code>, rank <code class="language-plaintext highlighter-rouge">4</code>, ATC Category 1 <code class="language-plaintext highlighter-rouge">Blood and Blood Forming Organs</code>, ATC Category 2 <code class="language-plaintext highlighter-rouge">Antithrombotic Agents</code>, ATC Category 3 <code class="language-plaintext highlighter-rouge">Heparin and Antagonist Preparations</code>, and strength <code class="language-plaintext highlighter-rouge">100 mg in 1 ml</code>.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>Pricing is held in a linked <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> conforming to <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code>. Listed price, PHARMAC subsidy, patient surcharge, and patient co-payment are carried in <code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent</code>, and pricing-specific attributes such as <code class="language-plaintext highlighter-rouge">contractType</code>, <code class="language-plaintext highlighter-rouge">costBrandSource</code>, <code class="language-plaintext highlighter-rouge">wastageClaimable</code>, <code class="language-plaintext highlighter-rouge">dvLimitPercent</code>, and <code class="language-plaintext highlighter-rouge">brandSwitchFee</code> are carried as extensions. The published Clexane pricing example is the reference point for the FHIR examples below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML</th>
+      <th>XML example</th>
+      <th>Current FHIR resource / exact profile</th>
+      <th>Current FHIR field(s)</th>
+      <th>FHIR example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Price&gt;...&lt;/Price&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.type</code>, <code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.amount</code></td>
+      <td><code class="language-plaintext highlighter-rouge">type = "base"</code> and <code class="language-plaintext highlighter-rouge">amount = 70.91 NZD</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Subsidy</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Subsidy&gt;...&lt;/Subsidy&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.type</code>, <code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.amount</code></td>
+      <td><code class="language-plaintext highlighter-rouge">type = "discount"</code> and <code class="language-plaintext highlighter-rouge">amount = 70.91 NZD</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Surcharge</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Surcharge&gt;...&lt;/Surcharge&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.type</code>, <code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.amount</code></td>
+      <td><code class="language-plaintext highlighter-rouge">type = "surcharge"</code> and <code class="language-plaintext highlighter-rouge">amount = 0 NZD</code></td>
+    </tr>
+    <tr>
+      <td>patient co-payment outcome</td>
+      <td>derived from the price block</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.type</code>, <code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.amount</code></td>
+      <td><code class="language-plaintext highlighter-rouge">type = "informational"</code> and <code class="language-plaintext highlighter-rouge">amount = 0 NZD</code></td>
+    </tr>
+    <tr>
+      <td>pricing effective date</td>
+      <td>pricing date attribute in the published schedule context</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:pricingEffectiveDate</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[pricingEffectiveDate].valueDate = "2026-05-01"</code></td>
+    </tr>
+    <tr>
+      <td>contract type</td>
+      <td>legacy commercial contract marker</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:contractType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[contractType].valueString = "PSS"</code></td>
+    </tr>
+    <tr>
+      <td>cost brand source indicator</td>
+      <td>legacy cost brand context</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:costBrandSource</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[costBrandSource].valueBoolean = false</code></td>
+    </tr>
+    <tr>
+      <td>wastage claimable indicator</td>
+      <td>legacy wastage-related pricing context</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:wastageClaimable</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[wastageClaimable].valueBoolean = false</code></td>
+    </tr>
+    <tr>
+      <td>daily volume limit percent</td>
+      <td>legacy DV limit context</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:dvLimitPercent</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[dvLimitPercent].valueDecimal = 5</code></td>
+    </tr>
+    <tr>
+      <td>brand switch fee</td>
+      <td>legacy switch-fee context</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:brandSwitchFee</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[brandSwitchFee].valueBoolean = false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The published <code class="language-plaintext highlighter-rouge">Clexane - Pricing</code> example is the reference point for the pricing values shown above.</p>
+
+<h2 id="funding-rules">Funding rules</h2>
+
+<p>Funding rules are held in linked <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources conforming to <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code>. Each Funding Rules CID represents a single funding case. The required complex extension <code class="language-plaintext highlighter-rouge">fundingRule</code> carries the dispensary type in <code class="language-plaintext highlighter-rouge">type</code>, and carries rule content through <code class="language-plaintext highlighter-rouge">rule[].type</code>, <code class="language-plaintext highlighter-rouge">rule[].value</code>, and <code class="language-plaintext highlighter-rouge">rule[].attribute</code>. A single product can have multiple funding-rule instances representing different pathways. The published Clexane funding-rule examples are the reference point for the FHIR examples below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML</th>
+      <th>XML example</th>
+      <th>Current FHIR resource / exact profile</th>
+      <th>Current FHIR field(s)</th>
+      <th>FHIR example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule Type="FormMax" Value="..." Attribute="Rx"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Rule Type="FormMax" Value="..." Attribute="Rx"/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:fundingRule.type</code>, <code class="language-plaintext highlighter-rouge">rule[].type</code>, <code class="language-plaintext highlighter-rouge">rule[].value</code>, <code class="language-plaintext highlighter-rouge">rule[].attribute</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fundingRule.type = "community"</code>, <code class="language-plaintext highlighter-rouge">rule.type = "CaseSequence"</code>, <code class="language-plaintext highlighter-rouge">rule.value = 1</code>, <code class="language-plaintext highlighter-rouge">rule.attribute = "Prescription"</code></td>
+    </tr>
+    <tr>
+      <td>prescription funding pathway</td>
+      <td><code class="language-plaintext highlighter-rouge">Attribute="Rx"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rule[].type = "FundingMechanism"</code>, <code class="language-plaintext highlighter-rouge">rule[].attribute</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rule.type = "FundingMechanism"</code> and <code class="language-plaintext highlighter-rouge">rule.attribute = "Prescription"</code></td>
+    </tr>
+    <tr>
+      <td>subsidy type</td>
+      <td>subsidy outcome implied by the XML rule set</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rule[].type = "SubsidyType"</code>, <code class="language-plaintext highlighter-rouge">rule[].attribute</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rule.type = "SubsidyType"</code> and <code class="language-plaintext highlighter-rouge">rule.attribute = "Full"</code></td>
+    </tr>
+    <tr>
+      <td>community dispensary type</td>
+      <td>community branch in the published schedule context</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:fundingRule.type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fundingRule.type = "community"</code></td>
+    </tr>
+    <tr>
+      <td>case sequencing</td>
+      <td>ordered rule grouping in XML</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rule[].type = "CaseSequence"</code>, <code class="language-plaintext highlighter-rouge">rule[].value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rule.type = "CaseSequence"</code> and <code class="language-plaintext highlighter-rouge">rule.value = 1</code></td>
+    </tr>
+    <tr>
+      <td>structured rule logic</td>
+      <td>inline rule combinations in XML</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorizationSchema</code> where present in the example</td>
+      <td>published example includes a Base64 JSON Schema value for the case structure</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The published <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1</code> example is the reference point for the funding-rule values shown above. The Artifacts page also lists <code class="language-plaintext highlighter-rouge">Case-2</code> and <code class="language-plaintext highlighter-rouge">Case-3</code> for the same Clexane product.</p>
+
+<h2 id="special-authority">Special Authority</h2>
+
+<p>Special Authority is held in a linked <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> conforming to <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code>. The published IG currently includes <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-SA9999-Authorization</code> as an illustrative example of the SA structure. It shows the SA identifier in <code class="language-plaintext highlighter-rouge">code</code>, linked products in <code class="language-plaintext highlighter-rouge">instance</code>, the number of cases in <code class="language-plaintext highlighter-rouge">extension:authorizationCaseCount</code>, and the structured form logic in <code class="language-plaintext highlighter-rouge">extension:authorizationSchema</code>. This example illustrates the FHIR representation of an SA record and is not a real Clexane Special Authority.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML</th>
+      <th>XML example</th>
+      <th>Current FHIR resource / exact profile</th>
+      <th>Current FHIR field(s)</th>
+      <th>FHIR example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule Attribute="Subsidy" Type="Special" xlink:href="SAxxxx"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Rule Attribute="Subsidy" Type="Special" xlink:href="SAxxxx"/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
+      <td><code class="language-plaintext highlighter-rouge">code.coding.code</code>, <code class="language-plaintext highlighter-rouge">code.text</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.code.coding.code = "SA9999"</code> and <code class="language-plaintext highlighter-rouge">ChargeItemDefinition.code.text = "SA9999"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/@Form</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Request ... Form="SAxxxx"&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
+      <td><code class="language-plaintext highlighter-rouge">code.coding.code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">GET [base]/ChargeItemDefinition?cid-code=SA9999</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Title</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Title&gt;&lt;range&gt;...&lt;/range&gt;&lt;/Title&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
+      <td>SA title field on the CID</td>
+      <td>published example is titled <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-SA9999-Authorization</code> and described as <code class="language-plaintext highlighter-rouge">Special Authorization SA9999</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Case</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Case When="..."&gt;...&lt;/Case&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorizationCaseCount</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[authorizationCaseCount].valueInteger = 4</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Case/math</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;math&gt;...&lt;/math&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorizationSchema</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[authorizationSchema].valueBase64Binary = "...base64..."</code></td>
+    </tr>
+    <tr>
+      <td>linked product reference</td>
+      <td>same XML branch contains the request and the related product</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
+      <td><code class="language-plaintext highlighter-rouge">instance</code></td>
+      <td>published example links by <code class="language-plaintext highlighter-rouge">instance</code> to <code class="language-plaintext highlighter-rouge">Medication/Nutrison-800-Complete-Multi-Fibre</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The published <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-SA9999-Authorization</code> example is used here only to show the Special Authority structure in FHIR.</p>
+
+<h2 id="retrieval-pattern">Retrieval pattern</h2>
+
+<p>The legacy XML presents product, pricing, rules, and SA content as a single nested structure. In the Pharmac FHIR service, the same content is separated into linked resources. Product identity is held in <code class="language-plaintext highlighter-rouge">Medication</code>, pricing attributes are held in <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code>, funding pathways are held in <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code>, and Special Authority definitions are held in <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code>. Complete schedule context is retrieved by starting from <code class="language-plaintext highlighter-rouge">Medication</code> and returning related CID records using <code class="language-plaintext highlighter-rouge">_revinclude=ChargeItemDefinition:instance</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML</th>
+      <th>XML example</th>
+      <th>Current FHIR representation</th>
+      <th>FHIR example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>single nested XML branch containing product, price, rules, and SA together</td>
+      <td><code class="language-plaintext highlighter-rouge">ATC1 &gt; ATC2 &gt; ATC3 &gt; Chemical &gt; Formulation &gt; Brand &gt; Pack</code>, with inline <code class="language-plaintext highlighter-rouge">Rule</code> and <code class="language-plaintext highlighter-rouge">Request/Case</code> content</td>
+      <td>anchor-and-linked-resource model</td>
+      <td><code class="language-plaintext highlighter-rouge">GET [base]/Medication?name=Clexane&amp;_revinclude=ChargeItemDefinition:instance</code></td>
+    </tr>
+    <tr>
+      <td>inline pack pricing beneath the branded product</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Pack&gt;...&lt;Subsidy&gt;...&lt;Price&gt;...&lt;Surcharge&gt;...&lt;/Pack&gt;</code></td>
+      <td>linked Pricing CID</td>
+      <td>bundle returns <code class="language-plaintext highlighter-rouge">Medication</code> plus <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+    </tr>
+    <tr>
+      <td>inline reimbursement rules beneath the product</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Rule Type="FormMax".../&gt;</code> and related rule content</td>
+      <td>linked Funding Rules CID</td>
+      <td>bundle returns <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
+    </tr>
+    <tr>
+      <td>inline SA request beneath the product</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Rule Attribute="Subsidy" Type="Special".../&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;Request ...&gt;</code></td>
+      <td>linked Special Authority CID</td>
+      <td>bundle returns <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code> where applicable</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 24, 2026 01:18+0000">2026-04-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

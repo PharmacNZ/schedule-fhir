@@ -1,4 +1,4 @@
-# Medication ATC Category 2 - Pharmac Schedules FHIR API v1.0.0
+# Medication ATC Category 2 - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2 | *Version*:1.0.0 |
-| Draft as of 2026-04-17 | *Computable Name*:MedicationATCCategory2 |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2 | *Version*:1.0.1 |
+| Draft as of 2026-04-24 | *Computable Name*:MedicationATCCategory2 |
 
 Used to describe ATC Category 2 (including id and name)
 
@@ -20,7 +20,7 @@ Used to describe ATC Category 2 (including id and name)
 **Usages:**
 
 * Use this Extension: [PHARMAC Medication](StructureDefinition-pharmac-medication.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md), [Bundle/SearchSet-Bundle-Medication](Bundle-SearchSet-Bundle-Medication.md), [Medication/Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md), [Medication/Medication-Fortisip-Multi-Fibre-Chocolate](Medication-Medication-Fortisip-Multi-Fibre-Chocolate.md) and [Medication/Medication-Nutrison-800-Complete-Multi-Fibre](Medication-Medication-Nutrison-800-Complete-Multi-Fibre.md)
+* Examples for this Extension: [Bundle/SearchSet-Bundle-All-Medications](Bundle-SearchSet-Bundle-All-Medications.md), [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md), [Medication/Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md), [Medication/Medication-Fortisip-Multi-Fibre-Chocolate](Medication-Medication-Fortisip-Multi-Fibre-Chocolate.md) and [Medication/Medication-Nutrison-800-Complete-Multi-Fibre](Medication-Medication-Nutrison-800-Complete-Multi-Fibre.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/medication-atc-category-2)
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-medication-atc-categ
   "resourceType" : "StructureDefinition",
   "id" : "medication-atc-category-2",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "MedicationATCCategory2",
   "title" : "Medication ATC Category 2",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

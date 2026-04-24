@@ -1,4 +1,4 @@
-# Artifacts Summary - Pharmac Schedules FHIR API v1.0.0
+# Artifacts Summary - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * **Artifacts Summary**
@@ -24,6 +24,7 @@ These define the properties by which a RESTful server can be searched. They can 
 | [ChargeItemDefinitionCodeSearchParam](SearchParameter-ChargeItemDefinitionCodeSearchParam.md) | Allow ChargeItemDefinition search by code (usually special authority code) |
 | [ChargeItemDefinitionDeviceReferenceSearchParam](SearchParameter-ChargeItemDefinitionDeviceReferenceSearchParam.md) | Reference from ChargeItemDefinition to DeviceDefinition via IG extension. Enables searching for pricing and authorization rules by associated device. |
 | [ChargeItemDefinitionInstanceSearchParam](SearchParameter-ChargeItemDefinitionInstanceSearchParam.md) | Allow _revinclude from Medication to ChargeItemDefinition |
+| [ChargeItemDefinitionPricingEffectiveDateSearchParam](SearchParameter-ChargeItemDefinitionPricingEffectiveDateSearchParam.md) | Search ChargeItemDefinition by pricing effective date extension |
 | [ChargeItemDefinitionSACodeSearchParam](SearchParameter-ChargeItemDefinitionSACodeSearchParam.md) | Allow ChargeItemDefinition search by code eg special authority code |
 | [MedicationBrandNameSearchParam](SearchParameter-MedicationBrandNameSearchParam.md) | Search for medications by brand name (e.g., 'Gaviscon', 'Acidex', 'Budesonide'). Enables fuzzy matching on the medication-brand-name extension for discovery by product name. |
 | [MedicationCategorySearchParam](SearchParameter-MedicationCategorySearchParam.md) | Search for medications by category |
@@ -107,7 +108,7 @@ These are example instances that show what data produced and consumed by systems
 | [Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md) | Medication representation of Clexane (enoxaparin sodium) Inj 100 mg in 1 ml syringe. |
 | [Medication-Fortisip-Multi-Fibre-Chocolate](Medication-Medication-Fortisip-Multi-Fibre-Chocolate.md) | Supplmentrepresentation of Fortisip Multi Fibre (chocolate) oral feed with fibre 1.5 kcal/ml. |
 | [Medication-Nutrison-800-Complete-Multi-Fibre](Medication-Medication-Nutrison-800-Complete-Multi-Fibre.md) | Supplement representation of Nutrison 800 Complete Multi Fibre (enteral feed with fibre 0.83 kcal/ml). |
+| [SearchSet-Bundle-All-Medications](Bundle-SearchSet-Bundle-All-Medications.md) | Example search result demonstrating a bulk medication search with GET [base]/Medication?_count=1000&_total=accurate |
+| [SearchSet-Bundle-All-Special-Authorities](Bundle-SearchSet-Bundle-All-Special-Authorities.md) | Example search result demonstrating a search for all special authorization definitions. GET [base]/pharmac-charge-item-definition-special-authority?_count=1000&_total=accurate |
 | [SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md) | Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Clexane&_include=ChargeItemDefinition:instance |
-| [SearchSet-Bundle-Medication](Bundle-SearchSet-Bundle-Medication.md) | Example search result demonstrating a bulk medication search with GET /Medication?name=Clexane&. |
-| [SearchSet-Bundle-Special-Authorities](Bundle-SearchSet-Bundle-Special-Authorities.md) | Example search result demonstrating a search for all special authorization definitions. |
 

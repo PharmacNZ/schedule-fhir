@@ -3,7 +3,7 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
   <id value="PharmacSchedulesCapabilityStatement"/>
   <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement"/>
-  <version value="1.0.0"/>
+  <version value="1.0.1"/>
   <name value="PharmacSchedulesCapabilityStatement"/>
   <title value="Pharmac Schedules Capability Statement"/>
   <status value="draft"/>

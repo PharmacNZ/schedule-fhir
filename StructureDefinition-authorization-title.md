@@ -1,4 +1,4 @@
-# Authorization Title - Pharmac Schedules FHIR API v1.0.0
+# Authorization Title - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title | *Version*:1.0.0 |
-| Draft as of 2026-04-17 | *Computable Name*:AuthorizationTitle |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title | *Version*:1.0.1 |
+| Draft as of 2026-04-24 | *Computable Name*:AuthorizationTitle |
 
 A human-readable title for the authorization requirement (e.g., 'Budesonide - Special Authorization Required'). This provides context for the authorization need.
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-authorization-title.
   "resourceType" : "StructureDefinition",
   "id" : "authorization-title",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "AuthorizationTitle",
   "title" : "Authorization Title",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

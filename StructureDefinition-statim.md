@@ -1,4 +1,4 @@
-# Statim (Urgent Dispensing) - Pharmac Schedules FHIR API v1.0.0
+# Statim (Urgent Dispensing) - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim | *Version*:1.0.0 |
-| Draft as of 2026-04-17 | *Computable Name*:Statim |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim | *Version*:1.0.1 |
+| Draft as of 2026-04-24 | *Computable Name*:Statim |
 
 Indicates whether stat (urgent) dispensing rules apply for this item.
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-statim.csv), [Excel]
   "resourceType" : "StructureDefinition",
   "id" : "statim",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "Statim",
   "title" : "Statim (Urgent Dispensing)",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

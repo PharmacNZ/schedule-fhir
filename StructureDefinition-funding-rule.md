@@ -1,4 +1,4 @@
-# Funding Rule - Pharmac Schedules FHIR API v1.0.0
+# Funding Rule - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule | *Version*:1.0.0 |
+| *Official URL*:http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule | *Version*:1.0.1 |
 | Active as of 2025-01-29 | *Computable Name*:FundingRule |
 
 Funding rules that define medication and device funding conditions, restrictions, and special requirements
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-funding-rule.csv), [
   "resourceType" : "StructureDefinition",
   "id" : "funding-rule",
   "url" : "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "FundingRule",
   "title" : "Funding Rule",
   "status" : "active",

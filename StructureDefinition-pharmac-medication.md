@@ -1,4 +1,4 @@
-# PHARMAC Medication - Pharmac Schedules FHIR API v1.0.0
+# PHARMAC Medication - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication | *Version*:1.0.0 |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication | *Version*:1.0.1 |
 | Active as of 2025-01-26 | *Computable Name*:PharmacMedication |
 
  
@@ -87,7 +87,7 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-medication.c
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-medication",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "PharmacMedication",
   "title" : "PHARMAC Medication",
   "status" : "active",

@@ -1,14 +1,14 @@
-# Home - Pharmac Schedules FHIR API v1.0.0
+# Pharmac Medicine & Medical Device Schedule - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
-* **Home**
+* **Pharmac Medicine & Medical Device Schedule**
 
-## Home
+## Pharmac Medicine & Medical Device Schedule
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules | *Version*:1.0.0 |
-| Draft as of 2026-04-17 | *Computable Name*:pharmacschedules |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules | *Version*:1.0.1 |
+| Draft as of 2026-04-24 | *Computable Name*:pharmacschedules |
 
 # Pharmac Schedules FHIR API
 
@@ -31,11 +31,11 @@ Contact the Pharmac team to request access and onboarding details.
   "resourceType" : "ImplementationGuide",
   "id" : "pharmac.fhir.pharmac-schedules",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "pharmacschedules",
   "title" : "Pharmac Schedules FHIR API",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",
@@ -859,6 +859,18 @@ Contact the Pharmac team to request access and onboarding details.
         "valueString" : "SearchParameter"
       }],
       "reference" : {
+        "reference" : "SearchParameter/ChargeItemDefinitionPricingEffectiveDateSearchParam"
+      },
+      "name" : "ChargeItemDefinitionPricingEffectiveDateSearchParam",
+      "description" : "Search ChargeItemDefinition by pricing effective date extension",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
         "reference" : "SearchParameter/ChargeItemDefinitionSACodeSearchParam"
       },
       "name" : "ChargeItemDefinitionSACodeSearchParam",
@@ -1374,34 +1386,34 @@ Contact the Pharmac team to request access and onboarding details.
         "valueString" : "Bundle"
       }],
       "reference" : {
+        "reference" : "Bundle/SearchSet-Bundle-All-Medications"
+      },
+      "name" : "SearchSet-Bundle-All-Medications",
+      "description" : "Example search result demonstrating a bulk medication search with GET [base]/Medication?_count=1000&_total=accurate",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/SearchSet-Bundle-All-Special-Authorities"
+      },
+      "name" : "SearchSet-Bundle-All-Special-Authorities",
+      "description" : "Example search result demonstrating a search for all special authorization definitions. GET [base]/pharmac-charge-item-definition-special-authority?_count=1000&_total=accurate",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
         "reference" : "Bundle/SearchSet-Bundle-Clexane-Pricing"
       },
       "name" : "SearchSet-Bundle-Clexane-Pricing",
       "description" : "Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Clexane&_include=ChargeItemDefinition:instance",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/SearchSet-Bundle-Medication"
-      },
-      "name" : "SearchSet-Bundle-Medication",
-      "description" : "Example search result demonstrating a bulk medication search with GET /Medication?name=Clexane&.",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/SearchSet-Bundle-Special-Authorities"
-      },
-      "name" : "SearchSet-Bundle-Special-Authorities",
-      "description" : "Example search result demonstrating a search for all special authorization definitions.",
       "exampleBoolean" : true
     },
     {
@@ -1453,25 +1465,43 @@ Contact the Pharmac team to request access and onboarding details.
           "valueUrl" : "index.html"
         }],
         "nameUrl" : "index.html",
-        "title" : "Home",
+        "title" : "Pharmac Medicine & Medical Device Schedule",
         "generation" : "markdown"
       },
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "api.html"
+          "valueUrl" : "use-cases.html"
         }],
-        "nameUrl" : "api.html",
-        "title" : "Api",
+        "nameUrl" : "use-cases.html",
+        "title" : "Use Cases",
         "generation" : "markdown"
       },
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "datamodel.html"
+          "valueUrl" : "fhir-ig-to-xml.html"
         }],
-        "nameUrl" : "datamodel.html",
-        "title" : "Datamodel",
+        "nameUrl" : "fhir-ig-to-xml.html",
+        "title" : "XML to FHIR Mapping",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "sa-json-schema-guide.html"
+        }],
+        "nameUrl" : "sa-json-schema-guide.html",
+        "title" : "JSON Schema for Special Authorities",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fr-json-schema-guide.html"
+        }],
+        "nameUrl" : "fr-json-schema-guide.html",
+        "title" : "JSON Schema for Funding Rules",
         "generation" : "markdown"
       },
       {
@@ -1486,10 +1516,10 @@ Contact the Pharmac team to request access and onboarding details.
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "fr-json-schema-guide.html"
+          "valueUrl" : "api.html"
         }],
-        "nameUrl" : "fr-json-schema-guide.html",
-        "title" : "Fr Json Schema Guide",
+        "nameUrl" : "api.html",
+        "title" : "API",
         "generation" : "markdown"
       },
       {
@@ -1498,25 +1528,16 @@ Contact the Pharmac team to request access and onboarding details.
           "valueUrl" : "relationships.html"
         }],
         "nameUrl" : "relationships.html",
-        "title" : "Relationships",
+        "title" : "Resource Relationships",
         "generation" : "markdown"
       },
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "sa-json-schema-guide.html"
+          "valueUrl" : "datamodel.html"
         }],
-        "nameUrl" : "sa-json-schema-guide.html",
-        "title" : "Sa Json Schema Guide",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "sa9999-schema-example.html"
-        }],
-        "nameUrl" : "sa9999-schema-example.html",
-        "title" : "Sa 9999 Schema Example",
+        "nameUrl" : "datamodel.html",
+        "title" : "Data Models",
         "generation" : "markdown"
       },
       {
@@ -1531,10 +1552,10 @@ Contact the Pharmac team to request access and onboarding details.
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "use-cases.html"
+          "valueUrl" : "version-history.html"
         }],
-        "nameUrl" : "use-cases.html",
-        "title" : "Use Cases",
+        "nameUrl" : "version-history.html",
+        "title" : "Version History",
         "generation" : "markdown"
       }]
     },

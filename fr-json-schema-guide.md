@@ -1,15 +1,13 @@
-# Fr Json Schema Guide - Pharmac Schedules FHIR API v1.0.0
+# JSON Schema for Funding Rules - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
-* **Fr Json Schema Guide**
+* **JSON Schema for Funding Rules**
 
-## Fr Json Schema Guide
+## JSON Schema for Funding Rules
 
-# Understanding JSON Schema for Funding Rules
+This page explains how Pharmac defines funding rule conditions and authorization cases for medications — the eligibility criteria, provider restrictions, and special conditions that determine how medications are funded.
 
-This page explains how Pharmac uses JSON Schema to define funding rule conditions and authorization cases for medications — the eligibility criteria, provider restrictions, and special conditions that determine how medications are funded.
-
-## Funding Condition Relationship Overview
+#### Funding Condition Relationship Overview
 
 Within Pharmac’s implementation of FHIR, a linked resource model is used rather than placing all funding conditions, pricing, and Special Authority content directly on the `Medication` resource. The `Medication` resource acts as the anchor resource, while related `ChargeItemDefinition` resources carry the associated funding conditions, pricing, and Special Authority information.
 
@@ -21,7 +19,7 @@ The approach can be broken into three main principles:
 1. The relationship is carried through the`instance`element on`ChargeItemDefinition`, which references the associated`Medication`.
 1. The API supports retrieval patterns that allow a vendor to query a medication and return the linked`ChargeItemDefinition`resources in the same response.
 
-### Pharmac ChargeItemDefinition Funding Rules
+#### Pharmac ChargeItemDefinition Funding Rules
 
 The funding conditions `ChargeItemDefinition` defines particular funding scenarios and reimbursement rules. It includes a `funding-rule` extension, case sequence information, funding mechanism type, and the condition logic that provides the circumstances in which the funding scenario applies.
 
@@ -29,7 +27,7 @@ Where a Special Authority is present, the detailed approval criteria and case lo
 
 From a business perspective, it provides the contextual funding scenarios for the medicine, where reimbursement is determined through context, ordering, and conditions rather than through a single flat value.
 
-## Funding Conditions Context Overview
+#### Funding Conditions Context Overview
 
 At a high level, funding conditions begin at the pack level and are then assessed through a series of contextual steps.
 
@@ -37,9 +35,9 @@ At a high level, funding conditions begin at the pack level and are then assesse
 * A medicine may be linked to one or more funding condition cases. Within a given dispensary context, one or more funding mechanisms may apply. Within a funding mechanism, one or more ordered sequences may exist. Each sequence may contain one or more conditions. Each condition set leads to a single reimbursement outcome.
 * This means that one medicine may have multiple distinct funding condition cases. Those cases may differ in funding mechanism, processing order, applicable conditions, and reimbursement result.
 
-## Reimbursement Case Types
+#### Funding Condition Case Types
 
-### Pricing and Product Attributes
+##### Case 1 - JSON Payload
 
 The following JSON shows the returned payload for the Clexane example. While three cases exist, the example below shows only **Case 1**.
 
@@ -157,111 +155,19 @@ The following JSON shows the returned payload for the Clexane example. While thr
 
 ```
 
-This can be broken down as follows.
+#### Funding Rule Attributes
 
-#### Pack / Product Anchor
+| | | | |
+| :--- | :--- | :--- | :--- |
+| **Pack / Product Anchor** | The medicine remains the anchor point for the case. | `resource.instance.reference = Medication/Medication-Clexane-100mg-1ml-Syringe` | This is the element that links the funding condition case back to the medicine. |
+| **Profile / Resource Type** | The profile identifies the type of`ChargeItemDefinition`being returned. | `resource.meta.profile = pharmac-charge-item-definition-funding-rules` | This shows that the payload is a funding rules`ChargeItemDefinition` |
+| **Dispensary Type** | A medicine may be associated with one or many dispensary contexts. (Community, Wholesale, General Practice, and Hospital) | `resource.extension.valueCode = community` | The same medicine may be reimbursed differently depending on the dispensary context in which it is assessed.In this case, the dispensary context is`Community` |
+| **Funding Mechanism** | Within a given dispensary context, reimbursement is further qualified by the funding mechanism. (Prescription, BSO, PSO, Rural PSO, and Quitcard) | `resource.extension.valueCode = Prescription` | Funding mechanism forms part of the reimbursement context. It affects how the reimbursement case is assessed and what outcome may result.In this case, the Funding mechinism is`Prescription` |
+| **Sequence** | Sequence represents the order in which reimbursement cases are to be assessed. Where multiple cases exist for the same medicine within a broader context, they are assumed to be ordered.Each sequence may have one or more conditions which form the rule set that determines whether the reimbursement case applies. A condition set may include a single condition or multiple conditions grouped together within the same case. | `resource.extension.valueInteger = 1` | Sequence is an important part of case evaluation and must be preserved as ordered logic.In this case, the sequence is`1`meaning there is only a single sequence |
+| **Conditions / Case Logic** | Conditions may represent matters such as endorsement, provider, authority, restriction-based criteria, or other qualifying rules. | `resource.extension.valueBase64Binary = "Encoded base64 string"` | Condtional logic is held in a encoded base64 string.This is an important distinction. The funding case is not holding the detailed logic as flat text. Instead, the case logic is encoded into the`valueBase64Binary`element and must be decoded to retrieve the JSON Schema.(Refer to later in this guide for a full explanation) |
+| **Reimbursement Outcome / Price Component** | Each condition set results in one reimbursement outcome. One assessed case leads to**one**reimbursement outcome, even where that case contains multiple conditions.Reimbursment Outcomes include Subsidy, Alternate, Price, and None. | `resource.propertyGroup.priceComponent.type = discount``resource.propertyGroup.priceComponent.code.text = PHARMAC Subsidy``resource.propertyGroup.priceComponent.amount.value = 70.91``resource.propertyGroup.priceComponent.amount.currency = NZD` | In this example, the reimbursement outcome is held in the`priceComponent`block. This is the part of the payload that holds the actual funding value returned for the case. |
 
-The medicine remains the anchor point for the case.
-
-The link back to the product is held in:
-
-* `resource.instance[0].reference = Medication/Medication-Clexane-100mg-1ml-Syringe`
-
-This is the element that links the funding condition case back to the medicine.
-
-### Profile / Resource Type
-
-The profile identifies the type of `ChargeItemDefinition` being returned.
-
-This is held in:
-
-* `resource.meta.profile[0] = pharmac-charge-item-definition-funding-rules`
-
-This shows that the payload is a funding rules `ChargeItemDefinition`, rather than a pricing-only or Special Authority-only record.
-
-### Dispensary Type
-
-A medicine may be associated with one or many dispensary contexts.
-
-The dispensary types include Community, Wholesale, General Practice, and Hospital.
-
-The same medicine may be reimbursed differently depending on the dispensary context in which it is assessed.
-
-In this example, the dispensary context is carried in the funding rule extension:
-
-* `resource.extension[1].extension[0].valueCode = community`
-
-### Funding Mechanism
-
-Within a given dispensary context, reimbursement is further qualified by the funding mechanism.
-
-Examples in the current flow include Prescription, BSO, PSO, Rural PSO, and Quitcard.
-
-Funding mechanism forms part of the reimbursement context. It affects how the reimbursement case is assessed and what outcome may result.
-
-In this example, the funding mechanism is carried in:
-
-* `resource.extension[1].extension[2].extension[1].valueCode = Prescription`
-
-### Sequence
-
-A funding mechanism may have one or more sequences.
-
-Sequence represents the order in which reimbursement cases are to be assessed. Where multiple cases exist for the same medicine within a broader context, they are assumed to be ordered.
-
-Sequence is an important part of case evaluation and must be preserved as ordered logic.
-
-In this example, the sequence is carried in:
-
-* `resource.extension[1].extension[1].extension[1].valueInteger = 1`
-
-This identifies the payload as **Case Sequence 1**.
-
-### Conditions / Case Logic
-
-Each sequence may have one or more conditions which form the rule set that determines whether the reimbursement case applies. A condition set may include a single condition or multiple conditions grouped together within the same case.
-
-Conditions may represent matters such as endorsement, provider, authority, restriction-based criteria, or other qualifying rules.
-
-In this example, the case logic is held in the following extension:
-
-* `resource.extension[2].url = https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema`
-
-The actual case logic itself is then held in:
-
-* `resource.extension[2].valueBase64Binary = "Encoded base64 sting"`
-
-This is the **BASE64-encoded string** that carries the JSON Schema for the condition logic.
-
-This is an important distinction. The funding case is not holding the detailed logic as flat text. Instead, the case logic is encoded into the `valueBase64Binary` element and must be decoded to retrieve the JSON Schema.
-
-Once decoded, the schema describes the actual case conditions. In this example, it includes:
-
-* `authority = required`
-* `provider = required`
-
-This is the main element to call out when referring to the case logic.
-
-Much more information about using the JSON Schema is provided below.
-
-### Reimbursement Outcome / Price Component
-
-Each condition set results in one reimbursement outcome.
-
-Examples shown in the current conceptual flow include Subsidy, Alternate, Price, and None.
-
-One assessed case leads to one reimbursement outcome, even where that case contains multiple conditions.
-
-In this example, the reimbursement outcome is held in the `priceComponent` block:
-
-* `resource.propertyGroup[0].priceComponent[0].type = discount`
-* `resource.propertyGroup[0].priceComponent[0].code.text = PHARMAC Subsidy`
-* `resource.propertyGroup[0].priceComponent[0].amount.value = 70.91`
-* `resource.propertyGroup[0].priceComponent[0].amount.currency = NZD`
-
-This is the part of the payload that holds the actual funding value returned for the case.
-
-## What is JSON Schema?
+#### What is JSON Schema?
 
 **JSON Schema** is a standard language for describing the structure and validation rules of JSON data. Think of it as a "blueprint" that specifies:
 
@@ -272,7 +178,7 @@ This is the part of the payload that holds the actual funding value returned for
 
 **Real-world analogy:** If a funding rule is a set of eligibility criteria, JSON Schema is the structured specification that says: "This medication is funded only if: Provider type is X, AND special conditions Y are met."
 
-## How Pharmac Uses JSON Schema for Funding Rules
+#### How Pharmac Uses JSON Schema for Funding Rules
 
 Pharmac embeds a **JSON Schema** inside each Funding Rules ChargeItemDefinition resource. This schema defines:
 
@@ -282,7 +188,7 @@ Pharmac embeds a **JSON Schema** inside each Funding Rules ChargeItemDefinition 
 1. **Special Authorizations**— When a Special Authority (SA) is required
 1. **Validation Rules**— What combination of conditions is valid
 
-### Example Flow
+#### Example Flow
 
 ```
 Pharmacy requests reimbursement for a medication
@@ -299,11 +205,11 @@ If invalid → Error shows what conditions are not met
 
 ```
 
-## Funding Rule Schema Structure
+#### Funding Rule Schema Structure
 
 Each Funding Rule schema is an object containing **Case definitions**. Each case represents a specific funding scenario with its own set of conditions and requirements.
 
-### Key Components
+##### Key Components
 
 | | | |
 | :--- | :--- | :--- |
@@ -313,7 +219,7 @@ Each Funding Rule schema is an object containing **Case definitions**. Each case
 | **Type** | Data type for each field | `boolean`,`string`,`integer` |
 | **Description** | Explanation of what the field represents | `"Authorised Providers"`,`"Hospital"` |
 
-### Pharmac Custom Schema Extensions
+#### Pharmac Custom Schema Extensions
 
 Pharmac uses custom keywords (prefixed with `$`) to add metadata specific to funding rules:
 
@@ -325,11 +231,11 @@ Pharmac uses custom keywords (prefixed with `$`) to add metadata specific to fun
 
 -------
 
-## Clexane 100mg 1ml Syringe — Example Cases
+#### Clexane 100mg 1ml Syringe — Example Cases
 
 The medication **Clexane 100mg 1ml Syringe** has **three distinct funding cases**, each with different conditions:
 
-### Case 1: Special Authority Required
+#### Case 1: Special Authority Required
 
 ```
 {
@@ -365,7 +271,7 @@ The medication **Clexane 100mg 1ml Syringe** has **three distinct funding cases*
 
 -------
 
-### Case 2: Endorsed Service Use
+#### Case 2: Endorsed Service Use
 
 ```
 {
@@ -401,7 +307,7 @@ The medication **Clexane 100mg 1ml Syringe** has **three distinct funding cases*
 
 -------
 
-### Case 3: Hospital Use Only
+#### Case 3: Hospital Use Only
 
 ```
 {
@@ -430,7 +336,7 @@ The medication **Clexane 100mg 1ml Syringe** has **three distinct funding cases*
 
 -------
 
-## How Cases Are Applied
+#### How Cases Are Applied
 
 When a claim for Clexane is submitted, the funding system:
 
@@ -445,21 +351,21 @@ When a claim for Clexane is submitted, the funding system:
 
 -------
 
-## Key Concepts
+#### Key Concepts
 
-### Required vs. Optional Fields
+#### Required vs. Optional Fields
 
 * **`"required": ["authority", "provider"]`** means **both** fields must be true for the case to apply
 * **`"required": ["provider"]`** means only the provider restriction applies; other conditions are optional
 * If a field is not in `required`, it doesn't need to be checked
 
-### Field Types
+#### Field Types
 
 * **`"type": "boolean"`** → Yes/No decision (true = condition met, false = not met)
 * **`"type": "string"`** → Text value (e.g., provider name, authorization code)
 * **`"type": "integer"`** → Numeric value (e.g., age, dosage quantity)
 
-### Property Descriptions
+#### Property Descriptions
 
 The `description` field explains what each condition means in plain language. This helps:
 

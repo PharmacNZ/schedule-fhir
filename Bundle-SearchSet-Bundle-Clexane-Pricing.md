@@ -1,4 +1,4 @@
-# SearchSet-Bundle-Clexane-Pricing - Pharmac Schedules FHIR API v1.0.0
+# SearchSet-Bundle-Clexane-Pricing - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

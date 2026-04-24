@@ -1,9 +1,9 @@
-# Api - Pharmac Schedules FHIR API v1.0.0
+# API - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
-* **Api**
+* **API**
 
-## Api
+## API
 
 # FHIR API search examples
 
@@ -45,6 +45,7 @@ GET [base]/Medication?name:contains=paracetamol HTTP/1.1
 | `instance` | reference | Reference to associated Medication — enables`_revinclude` | `ChargeItemDefinition?instance=Medication/123` |
 | `cid-code` | token | Search by code (e.g. special authority code) | `ChargeItemDefinition?cid-code=SA2520` |
 | `device-definition-reference` | reference | Reference to associated DeviceDefinition via extension | `ChargeItemDefinition?device-definition-reference=DeviceDefinition/456` |
+| `pricing-effective-date` | date | Search by pricing effective date extension - date search so literal or greater than / less than | `ChargeItemDefinition?pricing-effective-date=2024-01-01``ChargeItemDefinition?pricing-effective-date=gt2024-01-01``ChargeItemDefinition?pricing-effective-date=lt2024-01-01` |
 | `_profile` | uri | Filter by profile (standard FHIR) | `ChargeItemDefinition?_profile=...special-authority` |
 
 ### DeviceDefinition search parameters
@@ -78,63 +79,4 @@ Accept: application/fhir+json
 Authorization: Bearer xyz
 
 ```
-
-### Search Medication by brand name
-
-```
-GET [base]/Medication?brand=Gaviscon HTTP/1.1
-Accept: application/fhir+json
-Authorization: Bearer xyz
-
-```
-
-### Search Medication by ATC category
-
-```
-GET [base]/Medication?category=Alimentary+tract HTTP/1.1
-Accept: application/fhir+json
-Authorization: Bearer xyz
-
-```
-
-### Search Medication with associated ChargeItemDefinitions
-
-Search for Medications including associated `ChargeItemDefinition` resources. A `Medication` may have multiple associated `ChargeItemDefinition` resources — e.g. one for pricing and another for special authority rules.
-
-```
-GET [base]/Medication?name=Clexane&_revinclude=ChargeItemDefinition:instance HTTP/1.1
-Accept: application/fhir+json
-Authorization: Bearer xyz
-
-```
-
-### Complex medication with pricing and special authorization
-
-Search for a medication by NZMT code, returning pricing and special authorization requirements.
-
-```
-GET [base]/Medication?code=46616121000116103&_revinclude=ChargeItemDefinition:instance HTTP/1.1
-Accept: application/fhir+json
-Authorization: Bearer xyz
-
-```
-
-This search demonstrates a real-world scenario where a pharmaceutical product has multiple `ChargeItemDefinition` resources:
-
-1. **Medication Resource**— The base medication record containing product identifiers, brand name, dosage form, and clinical information
-1. **Pricing ChargeItemDefinition**— Contains listed price, PHARMAC subsidy amount, patient surcharge, and calculated patient co-payment
-1. **Authorization ChargeItemDefinition**— Contains special authorization (SA) requirements, including the SA form code and eligibility criteria
-
-In this example:
-
-* **Product**: Tenofovir disoproxil
-* **Pricing**: Listed at NZD with PHARMAC subsidy
-* **Authorization**: Requires SA2139 or SA2520 form with different approval criteria for conditions like HIV positive status
-
-The search response returns all three resources, allowing clients to:
-
-* Display medication details and brand information
-* Calculate patient costs using pricing components
-* Check authorization requirements before dispensing
-* Access eligibility criteria for special authorization
 

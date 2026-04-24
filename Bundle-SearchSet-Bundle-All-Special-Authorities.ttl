@@ -6,9 +6,9 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Special-Authorities> a fhir:Bundle ;
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-All-Special-Authorities> a fhir:Bundle ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "SearchSet-Bundle-Special-Authorities"] ; # 
+  fhir:id [ fhir:v "SearchSet-Bundle-All-Special-Authorities"] ; # 
   fhir:type [ fhir:v "searchset"] ; # 
   fhir:total [ fhir:v "4"^^xsd:nonNegativeInteger] ; # 
   fhir:link ( [

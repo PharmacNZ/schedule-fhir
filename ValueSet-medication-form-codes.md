@@ -1,4 +1,4 @@
-# Medication Form Codes - Pharmac Schedules FHIR API v1.0.0
+# Medication Form Codes - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes | *Version*:1.0.0 |
-| Draft as of 2026-04-17 | *Computable Name*:MedicationFormCodes |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes | *Version*:1.0.1 |
+| Draft as of 2026-04-24 | *Computable Name*:MedicationFormCodes |
 
  **References** 
 
@@ -45,11 +45,11 @@ No Expansion for this valueset (Unsupported Code System Version)
   "resourceType" : "ValueSet",
   "id" : "medication-form-codes",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "MedicationFormCodes",
   "title" : "Medication Form Codes",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

@@ -1,10 +1,10 @@
-# SearchSet-Bundle-Special-Authorities - Pharmac Schedules FHIR API v1.0.0
+# SearchSet-Bundle-All-Special-Authorities - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **SearchSet-Bundle-Special-Authorities**
+* **SearchSet-Bundle-All-Special-Authorities**
 
-## Example Bundle: SearchSet-Bundle-Special-Authorities
+## Example Bundle: SearchSet-Bundle-All-Special-Authorities
 
 
 
@@ -13,7 +13,7 @@
 ```json
 {
   "resourceType" : "Bundle",
-  "id" : "SearchSet-Bundle-Special-Authorities",
+  "id" : "SearchSet-Bundle-All-Special-Authorities",
   "type" : "searchset",
   "total" : 4,
   "link" : [{

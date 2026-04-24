@@ -1,15 +1,13 @@
-# Sa Json Schema Guide - Pharmac Schedules FHIR API v1.0.0
+# JSON Schema for Special Authorities - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
-* **Sa Json Schema Guide**
+* **JSON Schema for Special Authorities**
 
-## Sa Json Schema Guide
-
-# Understanding JSON Schema for Conditional Logic
+## JSON Schema for Special Authorities
 
 This page explains how PHARMAC uses JSON Schema to define conditional logic for Special Authority (SA) application forms and funding condition logic — the structure, validation rules, and eligibility criteria that determine who can access subsidised medications.
 
-## What is JSON Schema?
+### What is JSON Schema?
 
 **JSON Schema** is a standard language for describing the structure and validation rules of JSON data. Think of it as a "blueprint" or "contract" that says:
 
@@ -20,7 +18,7 @@ This page explains how PHARMAC uses JSON Schema to define conditional logic for 
 
 **Real-world analogy:** If a form is a blank piece of paper, JSON Schema is the filled-in version with all the rules printed next to each question: "This field is required", "Enter a number between 1 and 100", "Choose one of these options".
 
-## How PHARMAC Uses JSON Schema for SAs
+### How PHARMAC Uses JSON Schema for SAs
 
 PHARMAC embeds a **JSON Schema** directly inside each Special Authority ChargeItemDefinition resource. This schema defines:
 
@@ -29,7 +27,7 @@ PHARMAC embeds a **JSON Schema** directly inside each Special Authority ChargeIt
 1. **Authorization Cases**— The different clinical scenarios an applicant can qualify under
 1. **Conditional Logic**— Which fields become required based on other answers
 
-### Example Flow
+#### Example Flow
 
 ```
 Doctor fills out an online form for SA2139 (Antiretrovirals)
@@ -46,10 +44,10 @@ If invalid → Error message shows what's missing/wrong
 
 ```
 
-### Schema Structure Overview
+#### Schema Structure Overview
 
 This breaks downs the key components of a Special Authority and how they map to the JSON Schema structure.
-#### Key Components
+##### Key Components
 
 * Wrapper - The entire schema is an object that defines the overall structure of the application form.
 * Properties - a group of `Subforms`.
@@ -60,7 +58,7 @@ This breaks downs the key components of a Special Authority and how they map to 
 * `properties` - the fields/questions that must be answered for that specific subform.
  
 
-#### PHARMAC Custom Schema Extensions
+##### PHARMAC Custom Schema Extensions
 
 PHARMAC extends the standard JSON Schema vocabulary with custom keywords (prefixed with `$`) to capture metadata specific to Special Authority applications:
 
@@ -75,7 +73,7 @@ PHARMAC extends the standard JSON Schema vocabulary with custom keywords (prefix
 
 -------
 
-#### Subforms
+##### Subforms
 
 Subforms are used to define a set of fields that are used in an approval route for a specific clinical scenario. There are three types of subforms:
 
@@ -85,7 +83,7 @@ Subforms are used to define a set of fields that are used in an approval route f
 
 In the example below `SA1683 - Partial` there is a `initial` called `SA1683.1` subform that defines the fields required for the initial application of the Special Authority, and a `renewal` called `SA1683.2` subform that defines the fields required for the renewal application of the Special Authority.
 
-##### Initial Example
+###### Initial Example
 
 In the example below, the `SA1683.1` subform defines the fields required for the initial application of the Special Authority for non-cystic fibrosis bronchiectasis in patients under 18 years old. It includes custom metadata fields to indicate that this is an initial application form, valid for 12 months, and includes a note about unapproved indications.
 
@@ -157,7 +155,7 @@ You can see that the it has custom fields such as `$formType`, `$validFor`, `$pe
 
 ```
 
-##### Renewal Example
+###### Renewal Example
 
 In the example below, the `SA1683.2` subform defines the fields required for the renewal application of the Special Authority for non-cystic fibrosis bronchiectasis. It includes custom metadata fields to indicate that this is a renewal application form, valid for 12 months, and includes a note about unapproved indications.
 
@@ -196,7 +194,7 @@ You can see that the it has custom fields such as `$formType`, `$validFor`, `$pe
 
 ```
 
-### Full Example
+#### Full Example
 
 Below is the full JSON Schema for SA1683, which includes both the initial and renewal application forms, along with the top-level logic that requires applicants to choose one of the two forms when applying.
 
@@ -337,9 +335,9 @@ Below is the full JSON Schema for SA1683, which includes both the initial and re
 
 ```
 
-## Common JSON Schema Patterns
+### Common JSON Schema Patterns
 
-### Pattern 1: Required Text Field
+#### Pattern 1: Required Text Field
 
 ```
 "freeText": {
@@ -359,7 +357,7 @@ Below is the full JSON Schema for SA1683, which includes both the initial and re
 
 -------
 
-### Pattern 2: Number with Range
+#### Pattern 2: Number with Range
 
 ```
 "age": {
@@ -381,7 +379,7 @@ Below is the full JSON Schema for SA1683, which includes both the initial and re
 
 -------
 
-### Pattern 3: Checkboxes (Multiple Options)
+#### Pattern 3: Checkboxes (Multiple Options)
 
 ```
 "sevenOfNine": {
@@ -406,7 +404,7 @@ Below is the full JSON Schema for SA1683, which includes both the initial and re
 
 -------
 
-### Pattern 4: All Required (AND Logic)
+#### Pattern 4: All Required (AND Logic)
 
 ```
 "allRequired": {
@@ -425,7 +423,7 @@ Below is the full JSON Schema for SA1683, which includes both the initial and re
 
 -------
 
-### Pattern 5: At Least One Required (OR Logic)
+#### Pattern 5: At Least One Required (OR Logic)
 
 ```
 "eitherOne": {
@@ -446,7 +444,7 @@ Below is the full JSON Schema for SA1683, which includes both the initial and re
 
 -------
 
-### Pattern 6: Conditional Requirements
+#### Pattern 6: Conditional Requirements
 
 ```
 "oneAndEither": {
@@ -469,7 +467,7 @@ Below is the full JSON Schema for SA1683, which includes both the initial and re
 
 -------
 
-### Pattern 7: Allowed Values Only (Enum)
+#### Pattern 7: Allowed Values Only (Enum)
 
 ```
 "prescriber": {
@@ -489,9 +487,9 @@ Below is the full JSON Schema for SA1683, which includes both the initial and re
 
 -------
 
-## Examples
+### Examples
 
-### SA9999 — Example Template (Multiple Validation Patterns)
+#### SA9999 — Example Template (Multiple Validation Patterns)
 
 A demonstration schema showing **all common JSON Schema validation patterns** in one place:
 
@@ -510,9 +508,9 @@ Perfect for understanding how to structure validation rules. **[View the full an
 
 -------
 
-## For Developers
+### For Developers
 
-### How to Use the Schema
+#### How to Use the Schema
 
 1. **Fetch the SA resource:**
 
@@ -557,7 +555,7 @@ if (!isValid) console.log(validate.errors);
 * Apply type constraints (text input vs number input vs checkbox)
 * Show validation errors based on `required` and `anyOf` rules
 
-### Recommended Libraries
+#### Recommended Libraries
 
 * **AJV** (JavaScript) — Fast JSON Schema validator
 * **python-jsonschema** (Python) — Standard JSON Schema validation
@@ -566,7 +564,7 @@ if (!isValid) console.log(validate.errors);
 
 -------
 
-## Key Concepts Summary
+### Key Concepts Summary
 
 | | | |
 | :--- | :--- | :--- |
@@ -583,7 +581,7 @@ if (!isValid) console.log(validate.errors);
 
 -------
 
-## Related Pages
+### Related Pages
 
 * [SA Examples](examples.md) — Browse SA9999
 * [Charge Item Definition - Special Authority Profile](StructureDefinition-pharmac-charge-item-definition-special-authority.md) — Technical profile details

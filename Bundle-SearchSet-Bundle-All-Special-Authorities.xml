@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="SearchSet-Bundle-Special-Authorities"/>
+  <id value="SearchSet-Bundle-All-Special-Authorities"/>
   <type value="searchset"/>
   <total value="4"/>
   <link>

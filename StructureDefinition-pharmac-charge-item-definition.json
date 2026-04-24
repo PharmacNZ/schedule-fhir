@@ -2,7 +2,7 @@
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-charge-item-definition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "PharmacChargeItemDefinition",
   "title" : "PHARMAC Charge Item Definition",
   "status" : "active",

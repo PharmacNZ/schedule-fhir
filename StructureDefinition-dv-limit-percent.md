@@ -1,4 +1,4 @@
-# Daily Volume Limit Percent - Pharmac Schedules FHIR API v1.0.0
+# Daily Volume Limit Percent - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent | *Version*:1.0.0 |
-| Draft as of 2026-04-17 | *Computable Name*:DVLimitPercent |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent | *Version*:1.0.1 |
+| Draft as of 2026-04-24 | *Computable Name*:DVLimitPercent |
 
 Percentage daily volume limit that applies to this item.
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-dv-limit-percent.csv
   "resourceType" : "StructureDefinition",
   "id" : "dv-limit-percent",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "DVLimitPercent",
   "title" : "Daily Volume Limit Percent",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

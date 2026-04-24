@@ -1,10 +1,10 @@
-# SearchSet-Bundle-Medication - Pharmac Schedules FHIR API v1.0.0
+# SearchSet-Bundle-All-Medications - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **SearchSet-Bundle-Medication**
+* **SearchSet-Bundle-All-Medications**
 
-## Example Bundle: SearchSet-Bundle-Medication
+## Example Bundle: SearchSet-Bundle-All-Medications
 
 
 
@@ -13,7 +13,7 @@
 ```json
 {
   "resourceType" : "Bundle",
-  "id" : "SearchSet-Bundle-Medication",
+  "id" : "SearchSet-Bundle-All-Medications",
   "type" : "searchset",
   "total" : 1000,
   "link" : [{

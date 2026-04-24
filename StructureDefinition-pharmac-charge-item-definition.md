@@ -1,4 +1,4 @@
-# PHARMAC Charge Item Definition - Pharmac Schedules FHIR API v1.0.0
+# PHARMAC Charge Item Definition - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition | *Version*:1.0.0 |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition | *Version*:1.0.1 |
 | Active as of 2025-01-26 | *Computable Name*:PharmacChargeItemDefinition |
 
  
@@ -90,7 +90,7 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-charge-item-
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-charge-item-definition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "PharmacChargeItemDefinition",
   "title" : "PHARMAC Charge Item Definition",
   "status" : "active",

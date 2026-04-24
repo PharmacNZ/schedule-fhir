@@ -6,9 +6,9 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Medication> a fhir:Bundle ;
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-All-Medications> a fhir:Bundle ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "SearchSet-Bundle-Medication"] ; # 
+  fhir:id [ fhir:v "SearchSet-Bundle-All-Medications"] ; # 
   fhir:type [ fhir:v "searchset"] ; # 
   fhir:total [ fhir:v "1000"^^xsd:nonNegativeInteger] ; # 
   fhir:link ( [

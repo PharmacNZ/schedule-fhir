@@ -1,4 +1,4 @@
-# Cost Brand Source - Pharmac Schedules FHIR API v1.0.0
+# Cost Brand Source - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source | *Version*:1.0.0 |
-| Draft as of 2026-04-17 | *Computable Name*:CostBrandSource |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source | *Version*:1.0.1 |
+| Draft as of 2026-04-24 | *Computable Name*:CostBrandSource |
 
 Indicates whether pricing for this item is sourced from a cost brand.
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-cost-brand-source.cs
   "resourceType" : "StructureDefinition",
   "id" : "cost-brand-source",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "CostBrandSource",
   "title" : "Cost Brand Source",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

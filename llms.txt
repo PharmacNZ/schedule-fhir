@@ -1,17 +1,18 @@
-# pharmac.fhir.pharmac-schedules#1.0.0: Pharmac Schedules FHIR API
+# pharmac.fhir.pharmac-schedules#1.0.1: Pharmac Schedules FHIR API
 
 ## Pages
 
-* [Home](index.md)
-* [Sa Json Schema Guide](sa-json-schema-guide.md)
-* [Fr Json Schema Guide](fr-json-schema-guide.md)
+* [Pharmac Medicine & Medical Device Schedule](index.md)
+* [JSON Schema for Special Authorities](sa-json-schema-guide.md)
+* [JSON Schema for Funding Rules](fr-json-schema-guide.md)
 * [Artifacts Summary](artifacts.md)
 * [Examples](examples.md)
-* [Relationships](relationships.md)
-* [Sa 9999 Schema Example](sa9999-schema-example.md)
+* [Resource Relationships](relationships.md)
+* [XML to FHIR Mapping](fhir-ig-to-xml.md)
 * [Terminology](terminology.md)
-* [Api](api.md)
-* [Datamodel](datamodel.md)
+* [Version History](version-history.md)
+* [API](api.md)
+* [Data Models](datamodel.md)
 * [Use Cases](use-cases.md)
 
 ## Resources
@@ -80,6 +81,7 @@
 * [ChargeItemDefinitionCode](SearchParameter-ChargeItemDefinitionCodeSearchParam.md)
 * [device-definition-reference](SearchParameter-ChargeItemDefinitionDeviceReferenceSearchParam.md)
 * [ChargeItemDefinitionInstance](SearchParameter-ChargeItemDefinitionInstanceSearchParam.md)
+* [PricingEffectiveDate](SearchParameter-ChargeItemDefinitionPricingEffectiveDateSearchParam.md)
 * [ChargeItemDefinitionSACode](SearchParameter-ChargeItemDefinitionSACodeSearchParam.md)
 * [brand](SearchParameter-MedicationBrandNameSearchParam.md)
 * [medication-category](SearchParameter-MedicationCategorySearchParam.md)
@@ -87,9 +89,9 @@
 
 ### Examples
 
+* [SearchSet-Bundle-All-Medications (Bundle)](Bundle-SearchSet-Bundle-All-Medications.md)
+* [SearchSet-Bundle-All-Special-Authorities (Bundle)](Bundle-SearchSet-Bundle-All-Special-Authorities.md)
 * [SearchSet-Bundle-Clexane-Pricing (Bundle)](Bundle-SearchSet-Bundle-Clexane-Pricing.md)
-* [SearchSet-Bundle-Medication (Bundle)](Bundle-SearchSet-Bundle-Medication.md)
-* [SearchSet-Bundle-Special-Authorities (Bundle)](Bundle-SearchSet-Bundle-Special-Authorities.md)
 * [ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1.md)
 * [ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2.md)
 * [ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3 (ChargeItemDefinition)](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3.md)

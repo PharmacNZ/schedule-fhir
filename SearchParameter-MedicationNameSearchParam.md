@@ -1,4 +1,4 @@
-# MedicationNameSearchParam - Pharmac Schedules FHIR API v1.0.0
+# MedicationNameSearchParam - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-name | *Version*:1.0.0 |
-| Active as of 2026-04-17 | *Computable Name*:MedicationName |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-name | *Version*:1.0.1 |
+| Active as of 2026-04-24 | *Computable Name*:MedicationName |
 
  
 Search for medications by the text representation of the medication code (e.g., 'Gaviscon Infant', 'Acidex oral liquid'). Enables discovery by the full medication name or formulation description. 
@@ -23,10 +23,10 @@ Search for medications by the text representation of the medication code (e.g., 
   "resourceType" : "SearchParameter",
   "id" : "MedicationNameSearchParam",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-name",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "MedicationName",
   "status" : "active",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

@@ -30,10 +30,10 @@
     <valueString value="n/a"/>
   </extension>
   <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing"/>
-  <version value="1.0.0"/>
+  <version value="1.0.1"/>
   <title value="Clexane - Pricing"/>
   <status value="active"/>
-  <date value="2026-04-17T06:29:04+00:00"/>
+  <date value="2026-04-24T01:18:12+00:00"/>
   <publisher value="Pharmac"/>
   <contact>
     <name value="Pharmac"/>

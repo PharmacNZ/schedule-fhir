@@ -1,4 +1,4 @@
-# Pricing Expiry Date - Pharmac Schedules FHIR API v1.0.0
+# Pricing Expiry Date - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-expiry-date | *Version*:1.0.0 |
-| Draft as of 2026-04-17 | *Computable Name*:PricingExpiryDate |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-expiry-date | *Version*:1.0.1 |
+| Draft as of 2026-04-24 | *Computable Name*:PricingExpiryDate |
 
 The date on which this pricing expires or ceases to be valid.
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-pricing-expiry-date.
   "resourceType" : "StructureDefinition",
   "id" : "pricing-expiry-date",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-expiry-date",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "PricingExpiryDate",
   "title" : "Pricing Expiry Date",
   "status" : "draft",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

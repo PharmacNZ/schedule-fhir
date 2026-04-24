@@ -13,7 +13,7 @@
      fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ;
      fhir:l <http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule>
   ] ; # 
-  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
   fhir:name [ fhir:v "FundingRule"] ; # 
   fhir:title [ fhir:v "Funding Rule"] ; # 
   fhir:status [ fhir:v "active"] ; # 

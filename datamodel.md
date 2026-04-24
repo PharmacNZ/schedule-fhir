@@ -1,15 +1,13 @@
-# Datamodel - Pharmac Schedules FHIR API v1.0.0
+# Data Models - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
-* **Datamodel**
+* **Data Models**
 
-## Datamodel
-
-### FHIR Data Models
+## Data Models
 
 This section provides an overview of the design of the FHIR data representations that authorised applications can use to record and interchange PHARMAC FHIR data.
 
-#### Overview
+### Overview
 
 ### Relationships
 

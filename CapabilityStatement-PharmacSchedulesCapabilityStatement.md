@@ -1,4 +1,4 @@
-# Pharmac Schedules Capability Statement - Pharmac Schedules FHIR API v1.0.0
+# Pharmac Schedules Capability Statement - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement | *Version*:1.0.0 |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement | *Version*:1.0.1 |
 | Draft as of 1970-01-01 | *Computable Name*:PharmacSchedulesCapabilityStatement |
 
  
@@ -25,7 +25,7 @@ Pharmac Schedules Capability Statement. This FHIR resource declares the capabili
   "resourceType" : "CapabilityStatement",
   "id" : "PharmacSchedulesCapabilityStatement",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "PharmacSchedulesCapabilityStatement",
   "title" : "Pharmac Schedules Capability Statement",
   "status" : "draft",

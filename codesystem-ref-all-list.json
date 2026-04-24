@@ -57,10 +57,10 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "ValueSet-medication-form-codes.html" : "Medication Form Codes",
+    "ValueSet-snomed-ct-device-types.html" : "SNOMED CT Device Types",
     "ValueSet-pharmac-medication-code.html" : "PHARMAC Medication Code ValueSet",
-    "http://hl7.org/fhir/R4/valueset-medication-form-codes.html" : "SNOMED CT Form Codes",
-    "ValueSet-snomed-ct-device-types.html" : "SNOMED CT Device Types"
+    "ValueSet-medication-form-codes.html" : "Medication Form Codes",
+    "http://hl7.org/fhir/R4/valueset-medication-form-codes.html" : "SNOMED CT Form Codes"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/chargeitem-billingcodes",

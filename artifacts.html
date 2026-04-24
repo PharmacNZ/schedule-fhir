@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - Pharmac Schedules FHIR API v1.0.0</title>
+    <title>Artifacts Summary - Pharmac Schedules FHIR API v1.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -23,6 +23,7 @@
 <link href="assets/css/logos.css" rel="stylesheet"/>
 <link href="assets/css/colours.css" rel="stylesheet" />
 <link href="assets/css/fonts.css" rel="stylesheet" />
+<link href="assets/css/no-heading-numbers.css" rel="stylesheet" />
 
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -45,8 +46,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11"}
-    h3,h4,h5,h6{--heading-prefix:"11.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -64,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">1.0.0 - draft
+            <span style="display:inline-block;">1.0.1 - draft
 
 
             </span>
@@ -125,6 +126,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="fhir-ig-to-xml.html">XML to FHIR Mapping</a>
+      </li>
+      <li>
         <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a>
       </li>
       <li>
@@ -155,6 +159,9 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
+      <li>
+        <a href="version-history.html">Version History</a>
+      </li>
       <li>
         <a target="_blank" href="https://hl7.org/fhir/index.html">FHIR Spec</a>
       </li>
@@ -201,7 +208,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -284,6 +291,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Allow _revinclude from Medication to ChargeItemDefinition</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-ChargeItemDefinitionPricingEffectiveDateSearchParam.html"
+                  title="SearchParameter/ChargeItemDefinitionPricingEffectiveDateSearchParam">ChargeItemDefinitionPricingEffectiveDateSearchParam</a>
+            </td>
+            <td>
+<p>Search ChargeItemDefinition by pricing effective date extension</p>
 </td>
          </tr>
          <tr>
@@ -815,29 +831,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-All-Medications.html"
+                  title="Bundle/SearchSet-Bundle-All-Medications">SearchSet-Bundle-All-Medications</a>
+            </td>
+            <td>
+<p>Example search result demonstrating a bulk medication search with GET [base]/Medication?_count=1000&amp;_total=accurate</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-All-Special-Authorities.html"
+                  title="Bundle/SearchSet-Bundle-All-Special-Authorities">SearchSet-Bundle-All-Special-Authorities</a>
+            </td>
+            <td>
+<p>Example search result demonstrating a search for all special authorization definitions. GET [base]/pharmac-charge-item-definition-special-authority?_count=1000&amp;_total=accurate</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Bundle-SearchSet-Bundle-Clexane-Pricing.html"
                   title="Bundle/SearchSet-Bundle-Clexane-Pricing">SearchSet-Bundle-Clexane-Pricing</a>
             </td>
             <td>
 <p>Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Clexane&amp;_include=ChargeItemDefinition:instance</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Bundle-SearchSet-Bundle-Medication.html"
-                  title="Bundle/SearchSet-Bundle-Medication">SearchSet-Bundle-Medication</a>
-            </td>
-            <td>
-<p>Example search result demonstrating a bulk medication search with GET /Medication?name=Clexane&amp;.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Bundle-SearchSet-Bundle-Special-Authorities.html"
-                  title="Bundle/SearchSet-Bundle-Special-Authorities">SearchSet-Bundle-Special-Authorities</a>
-            </td>
-            <td>
-<p>Example search result demonstrating a search for all special authorization definitions.</p>
 </td>
          </tr>
       </tbody>
@@ -860,7 +876,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 17, 2026 06:29+0000">2026-04-17</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 24, 2026 01:18+0000">2026-04-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

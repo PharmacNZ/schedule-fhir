@@ -1,9 +1,9 @@
-# Relationships - Pharmac Schedules FHIR API v1.0.0
+# Resource Relationships - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
-* **Relationships**
+* **Resource Relationships**
 
-## Relationships
+## Resource Relationships
 
 # Medication and ChargeItemDefinition Relationships
 

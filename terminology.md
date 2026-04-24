@@ -1,4 +1,4 @@
-# Terminology - Pharmac Schedules FHIR API v1.0.0
+# Terminology - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * **Terminology**

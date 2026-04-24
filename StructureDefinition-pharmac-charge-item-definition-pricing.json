@@ -2,7 +2,7 @@
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-charge-item-definition-pricing",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "name" : "PharmacChargeItemDefinitionPricing",
   "title" : "PHARMAC Charge Item Definition - Pricing",
   "status" : "active",
@@ -54,7 +54,7 @@
   "snapshot" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version",
-      "valueString" : "1.0.0"
+      "valueString" : "1.0.1"
     }],
     "element" : [{
       "id" : "ChargeItemDefinition",

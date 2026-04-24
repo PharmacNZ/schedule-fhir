@@ -13,7 +13,7 @@
      fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
      fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
   ] ; # 
-  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
   fhir:name [ fhir:v "PharmacChargeItemDefinition"] ; # 
   fhir:title [ fhir:v "PHARMAC Charge Item Definition"] ; # 
   fhir:status [ fhir:v "active"] ; # 

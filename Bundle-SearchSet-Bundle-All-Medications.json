@@ -1,6 +1,6 @@
 {
   "resourceType" : "Bundle",
-  "id" : "SearchSet-Bundle-Medication",
+  "id" : "SearchSet-Bundle-All-Medications",
   "type" : "searchset",
   "total" : 1000,
   "link" : [{

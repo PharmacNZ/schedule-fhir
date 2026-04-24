@@ -3,11 +3,11 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="pharmac.fhir.pharmac-schedules"/>
   <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules"/>
-  <version value="1.0.0"/>
+  <version value="1.0.1"/>
   <name value="pharmacschedules"/>
   <title value="Pharmac Schedules FHIR API"/>
   <status value="draft"/>
-  <date value="2026-04-17T06:29:04+00:00"/>
+  <date value="2026-04-24T01:18:12+00:00"/>
   <publisher value="Pharmac"/>
   <contact>
     <name value="Pharmac"/>
@@ -644,6 +644,17 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
+        <reference value="SearchParameter/ChargeItemDefinitionPricingEffectiveDateSearchParam"/>
+      </reference>
+      <name value="ChargeItemDefinitionPricingEffectiveDateSearchParam"/>
+      <description value="Search ChargeItemDefinition by pricing effective date extension"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
         <reference value="SearchParameter/ChargeItemDefinitionSACodeSearchParam"/>
       </reference>
       <name value="ChargeItemDefinitionSACodeSearchParam"/>
@@ -1116,32 +1127,32 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
+        <reference value="Bundle/SearchSet-Bundle-All-Medications"/>
+      </reference>
+      <name value="SearchSet-Bundle-All-Medications"/>
+      <description value="Example search result demonstrating a bulk medication search with GET [base]/Medication?_count=1000&amp;_total=accurate"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/SearchSet-Bundle-All-Special-Authorities"/>
+      </reference>
+      <name value="SearchSet-Bundle-All-Special-Authorities"/>
+      <description value="Example search result demonstrating a search for all special authorization definitions. GET [base]/pharmac-charge-item-definition-special-authority?_count=1000&amp;_total=accurate"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
         <reference value="Bundle/SearchSet-Bundle-Clexane-Pricing"/>
       </reference>
       <name value="SearchSet-Bundle-Clexane-Pricing"/>
       <description value="Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Clexane&amp;_include=ChargeItemDefinition:instance"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/SearchSet-Bundle-Medication"/>
-      </reference>
-      <name value="SearchSet-Bundle-Medication"/>
-      <description value="Example search result demonstrating a bulk medication search with GET /Medication?name=Clexane&amp;."/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/SearchSet-Bundle-Special-Authorities"/>
-      </reference>
-      <name value="SearchSet-Bundle-Special-Authorities"/>
-      <description value="Example search result demonstrating a search for all special authorization definitions."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1188,23 +1199,39 @@
           <valueUrl value="index.html"/>
         </extension>
         <nameUrl value="index.html"/>
-        <title value="Home"/>
+        <title value="Pharmac Medicine &amp; Medical Device Schedule"/>
         <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="api.html"/>
+          <valueUrl value="use-cases.html"/>
         </extension>
-        <nameUrl value="api.html"/>
-        <title value="Api"/>
+        <nameUrl value="use-cases.html"/>
+        <title value="Use Cases"/>
         <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="datamodel.html"/>
+          <valueUrl value="fhir-ig-to-xml.html"/>
         </extension>
-        <nameUrl value="datamodel.html"/>
-        <title value="Datamodel"/>
+        <nameUrl value="fhir-ig-to-xml.html"/>
+        <title value="XML to FHIR Mapping"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="sa-json-schema-guide.html"/>
+        </extension>
+        <nameUrl value="sa-json-schema-guide.html"/>
+        <title value="JSON Schema for Special Authorities"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fr-json-schema-guide.html"/>
+        </extension>
+        <nameUrl value="fr-json-schema-guide.html"/>
+        <title value="JSON Schema for Funding Rules"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -1217,10 +1244,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="fr-json-schema-guide.html"/>
+          <valueUrl value="api.html"/>
         </extension>
-        <nameUrl value="fr-json-schema-guide.html"/>
-        <title value="Fr Json Schema Guide"/>
+        <nameUrl value="api.html"/>
+        <title value="API"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -1228,23 +1255,15 @@
           <valueUrl value="relationships.html"/>
         </extension>
         <nameUrl value="relationships.html"/>
-        <title value="Relationships"/>
+        <title value="Resource Relationships"/>
         <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="sa-json-schema-guide.html"/>
+          <valueUrl value="datamodel.html"/>
         </extension>
-        <nameUrl value="sa-json-schema-guide.html"/>
-        <title value="Sa Json Schema Guide"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="sa9999-schema-example.html"/>
-        </extension>
-        <nameUrl value="sa9999-schema-example.html"/>
-        <title value="Sa 9999 Schema Example"/>
+        <nameUrl value="datamodel.html"/>
+        <title value="Data Models"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -1257,10 +1276,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="use-cases.html"/>
+          <valueUrl value="version-history.html"/>
         </extension>
-        <nameUrl value="use-cases.html"/>
-        <title value="Use Cases"/>
+        <nameUrl value="version-history.html"/>
+        <title value="Version History"/>
         <generation value="markdown"/>
       </page>
     </page>

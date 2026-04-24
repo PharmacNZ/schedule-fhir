@@ -1,4 +1,4 @@
-# Clexane - Pricing - Pharmac Schedules FHIR API v1.0.0
+# Clexane - Pricing - Pharmac Schedules FHIR API v1.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | |
 | :--- |
-| Active as of 2026-04-17 |
+| Active as of 2026-04-24 |
 
 
 
@@ -54,10 +54,10 @@
     "valueString" : "n/a"
   }],
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "title" : "Clexane - Pricing",
   "status" : "active",
-  "date" : "2026-04-17T06:29:04+00:00",
+  "date" : "2026-04-24T01:18:12+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",
