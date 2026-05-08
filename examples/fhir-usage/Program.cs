@@ -4,6 +4,8 @@ using Hl7.Fhir.Rest;
 
 using System.Text.Json;
 using Microsoft.Extensions.Options;
+//using Microsoft.Extensions.Options;
+//using Newtonsoft.Json;
 
 namespace FhirUsage
 {
@@ -13,67 +15,90 @@ namespace FhirUsage
 		FhirClient client = new FhirClient("http://localhost:8080/fhir/r4");
     static int Main(string[] args)
     {
+			// --search Medication (--name Leuprorelin || --id 123)
 
 			// --search Medication, Rules
-			Option<string[]> searchResourceOption = new ("--search")
+			Option<string[]> searchResourceOption = new ("--search", new[] { "-s" })
 			{
 				Description = "Search for a resource type, e.g. --search Medication",
 				AllowMultipleArgumentsPerToken = false,
+				Required = false,
+			};
+
+			Option<string[]> nameOption = new ("--name", new[] { "-n" })
+			{
+				Description = "Search for a resource by name, e.g. --name Leuprorelin",
+				AllowMultipleArgumentsPerToken = false,
+				Required = false,
+			};
+
+			Option<string[]> idOption = new ("--id", new[] { "-i" })
+			{
+				Description = "Search for a resource by id, e.g. --id 123",
+				AllowMultipleArgumentsPerToken = false,
+				Required = false,
+			};
+
+			Option<string[]> brandOption = new ("--brand", new[] { "-b" })
+			{
+				Description = "Search for a resource by brand, e.g. --brand Ricovir",
+				AllowMultipleArgumentsPerToken = false,
+				Required = false,
 			};
 
 			RootCommand rootCommand = new("Sample app for FHIR client usage");
 			rootCommand.Options.Add(searchResourceOption);
-
+			rootCommand.Options.Add(nameOption);
+			rootCommand.Options.Add(idOption);
+			rootCommand.Options.Add(brandOption);
 			rootCommand.SetAction(ParseResult => SearchResources(
-				ParseResult.GetValue(searchResourceOption)?.FirstOrDefault() ?? string.Empty
+				ParseResult.GetValue(searchResourceOption)?.FirstOrDefault() ?? string.Empty,
+				ParseResult.GetValue(nameOption)?.FirstOrDefault() ?? string.Empty,
+				ParseResult.GetValue(idOption)?.FirstOrDefault() ?? string.Empty,
+				ParseResult.GetValue(brandOption)?.FirstOrDefault() ?? string.Empty
 			));
 
 
-			// medication --medicationName
-			Option<string[]> medicationNameOption = new ("--medicationName")
-			{
-				Description = "Search for Medication resources by name",
-				AllowMultipleArgumentsPerToken = false,
-			};
-
-			Command medicationCommand = new("medication", "Search for Medication resources");
-			medicationCommand.Options.Add(medicationNameOption);
-			rootCommand.Subcommands.Add(medicationCommand);
-
-			medicationCommand.SetAction(ParseResult => new Program().SearchMedicationByName(
-				ParseResult.GetValue(medicationNameOption)?.FirstOrDefault() ?? string.Empty
-			));
 
 			// metadata
 			Command metadataCommand = new("metadata", "Fetch FHIR server metadata");
 			rootCommand.Subcommands.Add(metadataCommand);
 
-			metadataCommand.SetAction(ParseResult => new Program().FetchMetadata());
+			metadataCommand.SetAction(ParseResult => new GetMetadata(new FhirClient("http://localhost:8080/fhir/r4/")).Execute(new GetMetadata.Parameters()).Wait());
 			
 
 			return rootCommand.Parse(args).Invoke();
 
-      /*var client = new FhirClient("http://localhost:8080/fhir/r4");
-       //client.Create(patient);
-       Bundle? searchResult = await client.SearchAsync<Medication>();
 
-       foreach (var result in (searchResult?.Entry ?? Enumerable.Empty<Bundle.EntryComponent>()))
-       {
-         var med = result.Resource as Medication;
-         Console.WriteLine($"Received medication with {med?.Code?.Text}");
-       }*/
 
     }
 
-		internal static async Task<int> SearchResources(string resourceType)
+		internal static async Task<int> SearchResources(string resourceType, string name, string id, string brand)
 		{
-			//var client = new FhirClient("http://localhost:8080/fhir/r4");
+			var client = new FhirClient("http://localhost:8080/fhir/r4/");
 		
 				Console.WriteLine($"Searching for resources of type {resourceType}...");
 				switch (resourceType)
 				{
 					case "Medication":
-						await new Program().SearchMedication();
+						if (!string.IsNullOrEmpty(name))
+						{
+							//await new Program().SearchMedicationByName(name);
+							new GetMedicationByName(client).Execute(new GetMedicationByName.Parameters(name)).Wait();
+						}
+						else if (!string.IsNullOrEmpty(id))
+						{
+							new GetMedicationById(client).Execute(new GetMedicationById.Parameters(id)).Wait();
+						}
+						else if (!string.IsNullOrEmpty(brand))
+						{
+							new GetMedicationByBrand(client).Execute(new GetMedicationByBrand.Parameters(brand)).Wait();
+						}
+						else
+						{
+							//await new Program().SearchAllMedication();
+							new GetAllMedications(client).Execute(new GetAllMedications.Parameters()).Wait();
+						}
 						break;
 					case "Rules":
 						await new Program().SearchRules();
@@ -86,7 +111,9 @@ namespace FhirUsage
 			return 0;
 		}
 
-		internal async Task<int> SearchMedication()
+	
+
+		internal async Task<int> SearchAllMedication()
 		{
 			Bundle? searchResult = await this.client.SearchAsync<Medication>();
 			foreach (var result in (searchResult?.Entry ?? Enumerable.Empty<Bundle.EntryComponent>()))
@@ -156,7 +183,8 @@ namespace FhirUsage
 			var options = new JsonSerializerOptions { WriteIndented = true };
 			string jsonString = JsonSerializer.Serialize(metadata, options);
 
-			Console.WriteLine(jsonString);
+			//Console.WriteLine(jsonString);
+			File.WriteAllText("metadata.json", jsonString);
 			return 0;
 		}
 	}
