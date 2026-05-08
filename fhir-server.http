@@ -30,3 +30,7 @@ GET http://localhost:8080/fhir/r4b/metadata
 
 ### Get FHIR R5 endpoint
 GET http://localhost:8080/fhir/r5/metadata
+
+### Search for Special Authorities (all)
+GET {{baseUrl}}/ChargeItemDefinition?_profile=https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority
+
