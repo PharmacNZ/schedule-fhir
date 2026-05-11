@@ -10,7 +10,7 @@ public class HelperFunctions
 		}
 		else
 		{
-			Console.WriteLine($"Returned {searchResult?.Entry?.Count ?? 0} {resourceType}s.");
+			Console.WriteLine($"Returned {searchResult?.Entry?.Count ?? 0} {resourceType} results.");
 		}
 	}
 

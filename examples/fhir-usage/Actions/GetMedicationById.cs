@@ -20,9 +20,13 @@ public class GetMedicationById(FhirClient _client) : IAction<GetMedicationById.P
 				// 	Console.WriteLine($"Received medication with ID: {med?.Id}");
 				// }
 				var getResult = await _client.GetAsync($"Medication/{parameters.Id}") as Medication;
-				Console.WriteLine($"Medication ID: {parameters.Id}");
-				Console.WriteLine($"Received medication with ID: {getResult?.Id}");
-				Console.WriteLine($"Received medication with code: {getResult?.Code?.Text}");
+				if (getResult != null)
+				{
+					Console.WriteLine($"Medication ID: {parameters.Id}");
+						Console.WriteLine($"Received medication with ID: {getResult?.Id}");
+						Console.WriteLine($"Received medication with code: {getResult?.Code?.Text}");
+				}
+				
 
 				HelperFunctions.PrintResultsCountFromUrl("Medication", getResult);
 		}

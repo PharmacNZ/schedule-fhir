@@ -15,9 +15,8 @@ namespace FhirUsage
 		FhirClient client = new FhirClient("http://localhost:8080/fhir/r4");
     static int Main(string[] args)
     {
-			// --resource Medication (--name Leuprorelin || --id 123)
+			// search options
 
-			// --resource Medication, Rules
 			Option<string[]> resourceOption = new ("--resource", new[] { "--r" })
 			{
 				Description = "Search for a resource type, e.g. --resource Medication",
@@ -46,12 +45,8 @@ namespace FhirUsage
 				Required = false,
 			};
 
-			// Option<string[]> codeOption = new ("--code", new[] { "--c" })
-			// {
-			// 	Description = "Search for a resource by code, e.g. --code SA1234",
-			// 	AllowMultipleArgumentsPerToken = false,
-			// 	Required = false,
-			// };
+			// export options
+
 
 			RootCommand rootCommand = new("Sample app for FHIR client usage");
 
@@ -67,9 +62,15 @@ namespace FhirUsage
 				ParseResult.GetValue(resourceOption)?.FirstOrDefault() ?? string.Empty,
 				ParseResult.GetValue(nameOption)?.FirstOrDefault() ?? string.Empty,
 				ParseResult.GetValue(idOption)?.FirstOrDefault() ?? string.Empty,
-				ParseResult.GetValue(brandOption)?.FirstOrDefault() ?? string.Empty//,
-				//ParseResult.GetValue(codeOption)?.FirstOrDefault() ?? string.Empty
+				ParseResult.GetValue(brandOption)?.FirstOrDefault() ?? string.Empty
 			));
+
+
+			// bulk exports
+			Command exportCommand = new("export", "Perform bulk export of FHIR resources");
+			exportCommand.Options.Add(resourceOption);
+			rootCommand.Subcommands.Add(exportCommand);
+			exportCommand.SetAction(ParseResult => ExportResources(ParseResult.GetValue(resourceOption)?.FirstOrDefault() ?? string.Empty));
 
 			// metadata
 			Command metadataCommand = new("metadata", "Fetch FHIR server metadata");
@@ -84,7 +85,7 @@ namespace FhirUsage
 
     }
 
-		internal static async Task<int> SearchResources(string resource, string name, string id, string brand/*, string code*/)
+		internal static async Task<int> SearchResources(string resource, string name, string id, string brand)
 		{
 			var client = new FhirClient("http://localhost:8080/fhir/r4/");
 		
@@ -118,8 +119,16 @@ namespace FhirUsage
 						}
 						else
 						{
-							new GetAllSAs(client).Execute(new GetAllSAs.Parameters()).Wait();
+							new GetAllSpecialAuthorities(client).Execute(new GetAllSpecialAuthorities.Parameters()).Wait();
 						}
+						break;
+					case "FundingRule":
+						
+							new GetAllFundingRules(client).Execute(new GetAllFundingRules.Parameters()).Wait();
+						break;
+					case "PricingRule":
+						
+							new GetAllPricingRules(client).Execute(new GetAllPricingRules.Parameters()).Wait();
 						break;
 					default:
 						Console.WriteLine("Currently no search method for resource type...");
@@ -131,29 +140,51 @@ namespace FhirUsage
 
 	
 
-		
-
-		internal async Task<int> SearchRules()
+		internal static async Task<int> ExportResources(string resource)
 		{
-			Bundle? searchResult = await this.client.SearchAsync<ChargeItemDefinition>();
-			foreach (var result in (searchResult?.Entry ?? Enumerable.Empty<Bundle.EntryComponent>()))
+			var client = new FhirClient("http://localhost:8080/fhir/r4/");
+				Console.WriteLine($"Exporting resources of type {resource}...");
+
+				switch (resource)
 				{
-					var rule = result.Resource as ChargeItemDefinition;
-					//Console.WriteLine($"Received pricing with {rule?.Applicability?[0].Description}");
-					Console.WriteLine($"Received rule with {rule?.Id}");
+					case "Medication":
 
-					/*var options = new JsonSerializerOptions { WriteIndented = true };
-					string jsonString = JsonSerializer.Serialize(rule, options);
+							new GetAllMedications(client).Execute(new GetAllMedications.Parameters()).Wait();
+							//new ExportMedications(client).Execute(new ExportMedications.Parameters()).Wait();
 
-					Console.WriteLine(jsonString);
-					break;*/
+						break;
+					case "SpecialAuthority":
+
+							new GetAllSpecialAuthorities(client).Execute(new GetAllSpecialAuthorities.Parameters()).Wait();
+						
+						break;
+					case "ChargeItemDefinition":
+
+							new GetAllChargeItemDefinitions(client).Execute(new GetAllChargeItemDefinitions.Parameters()).Wait();
+						
+						break;
+					case "FundingRule":
+
+							new GetAllFundingRules(client).Execute(new GetAllFundingRules.Parameters()).Wait();
+						
+						break;
+					case "PricingRule":
+
+							new GetAllPricingRules(client).Execute(new GetAllPricingRules.Parameters()).Wait();
+						
+						break;
+					case "All":
+
+							new GetAllMedications(client).Execute(new GetAllMedications.Parameters()).Wait();
+
+						
+						break;
+					default:
+						Console.WriteLine("Currently no search method for resource type...");
+						break;
 				}
+			
 			return 0;
-		}
-  
-
-	
-
-		
 	}
+}
 }
