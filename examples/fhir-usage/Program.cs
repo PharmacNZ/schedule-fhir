@@ -33,7 +33,7 @@ namespace FhirUsage
 
 			Option<string[]> idOption = new ("--id", new[] { "--i" })
 			{
-				Description = "Search for a resource by id, e.g. --id 123",
+				Description = "Search for a resource by id, e.g. --id SA9999",
 				AllowMultipleArgumentsPerToken = false,
 				Required = false,
 			};
@@ -45,7 +45,12 @@ namespace FhirUsage
 				Required = false,
 			};
 
-			// export options
+			Option<bool> decodeOption = new ("--authSchema", new[] { "--a" })
+			{
+				Description = "Decode the authorization schema of the result, e.g. --authSchema",
+				AllowMultipleArgumentsPerToken = false,
+				Required = false,
+			};
 
 
 			RootCommand rootCommand = new("Sample app for FHIR client usage");
@@ -56,13 +61,15 @@ namespace FhirUsage
 			searchCommand.Options.Add(nameOption);
 			searchCommand.Options.Add(idOption);
 			searchCommand.Options.Add(brandOption);
-			//searchCommand.Options.Add(codeOption);
+			searchCommand.Options.Add(decodeOption);
 			rootCommand.Subcommands.Add(searchCommand);
 			searchCommand.SetAction(ParseResult => SearchResources(
 				ParseResult.GetValue(resourceOption)?.FirstOrDefault() ?? string.Empty,
 				ParseResult.GetValue(nameOption)?.FirstOrDefault() ?? string.Empty,
 				ParseResult.GetValue(idOption)?.FirstOrDefault() ?? string.Empty,
-				ParseResult.GetValue(brandOption)?.FirstOrDefault() ?? string.Empty
+				ParseResult.GetValue(brandOption)?.FirstOrDefault() ?? string.Empty,
+				ParseResult.GetValue(decodeOption)
+
 			));
 
 
@@ -85,11 +92,12 @@ namespace FhirUsage
 
     }
 
-		internal static async Task<int> SearchResources(string resource, string name, string id, string brand)
+		internal static async Task<int> SearchResources(string resource, string name, string id, string brand, bool decode)
 		{
 			var client = new FhirClient("http://localhost:8080/fhir/r4/");
 		
 				Console.WriteLine($"Searching for resources of type {resource}...");
+				//Console.WriteLine($"Search parameters - name: {name}, id: {id}, brand: {brand}, decode: {decode}");
 				switch (resource)
 				{
 					case "Medication":
@@ -115,7 +123,15 @@ namespace FhirUsage
 					case "SpecialAuthority":
 						if (!string.IsNullOrEmpty(id))
 						{
-							new GetSAById(client).Execute(new GetSAById.Parameters(id)).Wait();
+							if (decode)
+							{
+								//get sa by id and decode auth schema
+								new GetSAAuthSchema(client).Execute(new GetSAAuthSchema.Parameters(id)).Wait();
+							} 
+							else
+							{
+								new GetSAById(client).Execute(new GetSAById.Parameters(id)).Wait();
+							}
 						}
 						else
 						{
@@ -123,9 +139,24 @@ namespace FhirUsage
 						}
 						break;
 					case "FundingRule":
-						
+						if (!string.IsNullOrEmpty(id))
+						{
+							if (decode)
+							{
+								//get funding rule by id and decode auth schema
+								new GetFundingAuthSchema(client).Execute(new GetFundingAuthSchema.Parameters(id)).Wait();
+							}
+							else
+							{
+								new GetFundingRulesById(client).Execute(new GetFundingRulesById.Parameters(id)).Wait();
+							}
+						}
+						else
+						{
 							new GetAllFundingRules(client).Execute(new GetAllFundingRules.Parameters()).Wait();
+						}
 						break;
+						
 					case "PricingRule":
 						
 							new GetAllPricingRules(client).Execute(new GetAllPricingRules.Parameters()).Wait();

@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "COS Case 1 - Community Pharmacy Prescription",
+    "description": "Endorsement-based subsidy for patients unable to tolerate goserelin",
+    "type": "object",
+    "properties": {
+        "patientDemographics": {
+            "type": "object",
+            "properties": {"isChildOrAdolescent": {"type": "boolean"}},
+            "required": ["isChildOrAdolescent"]
+        },
+        "patientConditions": {
+            "type": "object",
+            "properties": {"unableToTolerateGoserelin": {"type": "boolean"}},
+            "required": ["unableToTolerateGoserelin"]
+        },
+        "prescription": {"type": "object", "properties": {"isEndorsed": {"type": "boolean"}, "prescriberAuthorised": {"type": "boolean"}}, "required": ["isEndorsed", "prescriberAuthorised"]}
+    },
+    "required": ["patientDemographics", "patientConditions", "prescription"]
+}
