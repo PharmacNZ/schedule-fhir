@@ -16,7 +16,7 @@ public class GetMedicationByBrand(FhirClient _client) : IAction<GetMedicationByB
 				foreach (var result in (searchResult?.Entry ?? Enumerable.Empty<Bundle.EntryComponent>()))
 				{
 					var med = result.Resource as Medication;
-					Console.WriteLine($"Medication Brand: {parameters.Brand}");
+					Console.WriteLine($"Medication Input Brand: {parameters.Brand}");
 					Console.WriteLine($"Received medication with Brand: {med?.Extension?[0].Value}"); //Assumes brand is at index 0
 				}
 

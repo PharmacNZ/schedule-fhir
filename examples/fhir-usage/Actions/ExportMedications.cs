@@ -11,7 +11,7 @@ public class ExportMedications(FhirClient _client) : IAction<ExportMedications.P
 				Console.WriteLine("Executing ExportMedications action...");
 
 				
-			var getResult = await _client.GetAsync($"Medication/$export") as Medication;
+			var getResult = await _client.GetAsync($"Patient/$export") as Patient;
 				if (getResult != null)
 				{
 					//var options = new JsonSerializerOptions { WriteIndented = true };

@@ -11,7 +11,12 @@ public class GetAllSpecialAuthorities(FhirClient _client) : IAction<GetAllSpecia
 				Console.WriteLine("Executing GetAllSpecialAuthorities action...");
 
 			var query = new SearchParams().Add("_profile", "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority");
-				
+				if (!string.IsNullOrEmpty(parameters.lastUpdated))
+				{
+					Console.WriteLine($"Filtering medications by last updated date: {parameters.lastUpdated}");
+					query = query.Add("_lastUpdated", $"ge{parameters.lastUpdated}");
+
+				}
 			 Bundle? searchResult = await _client.SearchAsync<ChargeItemDefinition>(query);
 				foreach (var result in (searchResult?.Entry ?? Enumerable.Empty<Bundle.EntryComponent>()))
 				{
@@ -24,5 +29,5 @@ public class GetAllSpecialAuthorities(FhirClient _client) : IAction<GetAllSpecia
 		}
 
 
-	public record Parameters();
+	public record Parameters(string lastUpdated);
 }

@@ -52,6 +52,26 @@ namespace FhirUsage
 				Required = false,
 			};
 
+			Option<string[]> categoryOption = new ("--category", new[] { "--c" })
+			{
+				Description = "Search for a resource by category, e.g. --category 'Special Foods'",
+				AllowMultipleArgumentsPerToken = false,
+				Required = false,
+			};
+
+			Option<string[]> lastUpdatedOption = new ("--lastUpdated", new[] { "--lu" })
+			{
+				Description = "Search for a resource by last updated date, e.g. --lastUpdated 2024-01-01",
+				AllowMultipleArgumentsPerToken = false,
+				Required = false,
+			};
+
+			Option<string[]> instanceOption = new ("--instance", new[] { "--ins" })
+			{
+				Description = "Search for a resource by instance, e.g. --instance Ricovir-Tenofovir",
+				AllowMultipleArgumentsPerToken = false,
+				Required = false,
+			};
 
 			RootCommand rootCommand = new("Sample app for FHIR client usage");
 
@@ -62,22 +82,28 @@ namespace FhirUsage
 			searchCommand.Options.Add(idOption);
 			searchCommand.Options.Add(brandOption);
 			searchCommand.Options.Add(decodeOption);
+			searchCommand.Options.Add(categoryOption);
+			searchCommand.Options.Add(lastUpdatedOption);
+			searchCommand.Options.Add(instanceOption);
 			rootCommand.Subcommands.Add(searchCommand);
 			searchCommand.SetAction(ParseResult => SearchResources(
 				ParseResult.GetValue(resourceOption)?.FirstOrDefault() ?? string.Empty,
 				ParseResult.GetValue(nameOption)?.FirstOrDefault() ?? string.Empty,
 				ParseResult.GetValue(idOption)?.FirstOrDefault() ?? string.Empty,
 				ParseResult.GetValue(brandOption)?.FirstOrDefault() ?? string.Empty,
-				ParseResult.GetValue(decodeOption)
-
+				ParseResult.GetValue(decodeOption),
+				ParseResult.GetValue(categoryOption)?.FirstOrDefault() ?? string.Empty,
+				ParseResult.GetValue(lastUpdatedOption)?.FirstOrDefault() ?? string.Empty,
+				ParseResult.GetValue(instanceOption)?.FirstOrDefault() ?? string.Empty
+				).Wait(
 			));
 
 
 			// bulk exports
-			Command exportCommand = new("export", "Perform bulk export of FHIR resources");
+			/*Command exportCommand = new("export", "Perform bulk export of FHIR resources");
 			exportCommand.Options.Add(resourceOption);
 			rootCommand.Subcommands.Add(exportCommand);
-			exportCommand.SetAction(ParseResult => ExportResources(ParseResult.GetValue(resourceOption)?.FirstOrDefault() ?? string.Empty));
+			exportCommand.SetAction(ParseResult => ExportResources(ParseResult.GetValue(resourceOption)?.FirstOrDefault() ?? string.Empty));*/
 
 			// metadata
 			Command metadataCommand = new("metadata", "Fetch FHIR server metadata");
@@ -92,12 +118,12 @@ namespace FhirUsage
 
     }
 
-		internal static async Task<int> SearchResources(string resource, string name, string id, string brand, bool decode)
+		internal static async Task<int> SearchResources(string resource, string name, string id, string brand, bool decode, string category, string lastUpdated, string instance)
 		{
 			var client = new FhirClient("http://localhost:8080/fhir/r4/");
 		
 				Console.WriteLine($"Searching for resources of type {resource}...");
-				//Console.WriteLine($"Search parameters - name: {name}, id: {id}, brand: {brand}, decode: {decode}");
+				//Console.WriteLine($"Search parameters - name: {name}, id: {id}, brand: {brand}, decode: {decode}, category: {category}, lastUpdated: {lastUpdated}, instance: {instance}");
 				switch (resource)
 				{
 					case "Medication":
@@ -114,10 +140,17 @@ namespace FhirUsage
 						{
 							new GetMedicationByBrand(client).Execute(new GetMedicationByBrand.Parameters(brand)).Wait();
 						}
+						else if (!string.IsNullOrEmpty(category))
+						{
+							new GetMedicationByCategory(client).Execute(new GetMedicationByCategory.Parameters(category)).Wait();
+						}
+						else if (!string.IsNullOrEmpty(instance))
+						{
+							new GetAllCIDByInstance(client).Execute(new GetAllCIDByInstance.Parameters(instance)).Wait();
+						}
 						else
 						{
-							//await new Program().SearchAllMedication();
-							new GetAllMedications(client).Execute(new GetAllMedications.Parameters()).Wait();
+							new GetAllMedications(client).Execute(new GetAllMedications.Parameters(lastUpdated)).Wait();
 						}
 						break;
 					case "SpecialAuthority":
@@ -132,10 +165,13 @@ namespace FhirUsage
 							{
 								new GetSAById(client).Execute(new GetSAById.Parameters(id)).Wait();
 							}
+						} else if (!string.IsNullOrEmpty(instance))
+						{
+							new GetSAByInstance(client).Execute(new GetSAByInstance.Parameters(instance)).Wait();
 						}
 						else
 						{
-							new GetAllSpecialAuthorities(client).Execute(new GetAllSpecialAuthorities.Parameters()).Wait();
+							new GetAllSpecialAuthorities(client).Execute(new GetAllSpecialAuthorities.Parameters(lastUpdated)).Wait();
 						}
 						break;
 					case "FundingRule":
@@ -150,16 +186,28 @@ namespace FhirUsage
 							{
 								new GetFundingRulesById(client).Execute(new GetFundingRulesById.Parameters(id)).Wait();
 							}
+						} else if (!string.IsNullOrEmpty(instance))
+						{
+							new GetFundingByInstance(client).Execute(new GetFundingByInstance.Parameters(instance)).Wait();
 						}
 						else
 						{
-							new GetAllFundingRules(client).Execute(new GetAllFundingRules.Parameters()).Wait();
+							new GetAllFundingRules(client).Execute(new GetAllFundingRules.Parameters(lastUpdated)).Wait();
 						}
 						break;
 						
 					case "PricingRule":
-						
-							new GetAllPricingRules(client).Execute(new GetAllPricingRules.Parameters()).Wait();
+						if (!string.IsNullOrEmpty(id))
+						{
+							new GetPricingRulesById(client).Execute(new GetPricingRulesById.Parameters(id)).Wait();
+						} else if (!string.IsNullOrEmpty(instance))
+						{
+							new GetPricingByInstance(client).Execute(new GetPricingByInstance.Parameters(instance)).Wait();
+						}
+						else
+						{
+							new GetAllPricingRules(client).Execute(new GetAllPricingRules.Parameters(lastUpdated)).Wait();
+						}
 						break;
 					default:
 						Console.WriteLine("Currently no search method for resource type...");
@@ -171,8 +219,9 @@ namespace FhirUsage
 
 	
 
-		internal static async Task<int> ExportResources(string resource)
+		/*internal static async Task<int> ExportResources(string resource)
 		{
+			
 			var client = new FhirClient("http://localhost:8080/fhir/r4/");
 				Console.WriteLine($"Exporting resources of type {resource}...");
 
@@ -180,8 +229,8 @@ namespace FhirUsage
 				{
 					case "Medication":
 
-							new GetAllMedications(client).Execute(new GetAllMedications.Parameters()).Wait();
-							//new ExportMedications(client).Execute(new ExportMedications.Parameters()).Wait();
+							//new GetAllMedications(client).Execute(new GetAllMedications.Parameters()).Wait();
+							new ExportMedications(client).Execute(new ExportMedications.Parameters()).Wait();
 
 						break;
 					case "SpecialAuthority":
@@ -206,7 +255,7 @@ namespace FhirUsage
 						break;
 					case "All":
 
-							new GetAllMedications(client).Execute(new GetAllMedications.Parameters()).Wait();
+							//new GetAllMedications(client).Execute(new GetAllMedications.Parameters()).Wait();
 
 						
 						break;
@@ -216,6 +265,6 @@ namespace FhirUsage
 				}
 			
 			return 0;
-	}
+	}*/
 }
 }
