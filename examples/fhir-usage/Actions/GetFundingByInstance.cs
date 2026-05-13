@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using Task = System.Threading.Tasks.Task;
 using System.Text.Json;
 
-public class GetFundingByInstance(FhirClient _client) : IAction<GetFundingByInstance.Parameters>
+public class GetFundingByInstance(IFhirClient _client) : IAction<GetFundingByInstance.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{

@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using System.Text.Json;
 using Task = System.Threading.Tasks.Task;
 
-public class ExportMedications(FhirClient _client) : IAction<ExportMedications.Parameters>
+public class ExportMedications(IFhirClient _client) : IAction<ExportMedications.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{

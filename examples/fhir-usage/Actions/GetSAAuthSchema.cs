@@ -4,7 +4,7 @@ using Task = System.Threading.Tasks.Task;
 using System.Text.Json;
 using System.Text;
 
-public class GetSAAuthSchema(FhirClient _client) : IAction<GetSAAuthSchema.Parameters>
+public class GetSAAuthSchema(IFhirClient _client) : IAction<GetSAAuthSchema.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{

@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using Task = System.Threading.Tasks.Task;
 using System.Text.Json;
 
-public class GetFundingRulesById(FhirClient _client) : IAction<GetFundingRulesById.Parameters>
+public class GetFundingRulesById(IFhirClient _client) : IAction<GetFundingRulesById.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{
@@ -19,7 +19,7 @@ public class GetFundingRulesById(FhirClient _client) : IAction<GetFundingRulesBy
 				{
 						Console.WriteLine($"Funding Rule Id: {parameters.Id}");
 						Console.WriteLine($"Received funding rule with ID: {getResult?.Id}");
-						Console.WriteLine($"Received funding rule with description: {getResult?.PropertyGroup?[0]?.Applicability[0]?.Description}");
+						Console.WriteLine($"Received funding rule with description: {getResult?.Description}");
 				}
 
 				HelperFunctions.PrintResultsCountFromUrl("Funding Rule", getResult);

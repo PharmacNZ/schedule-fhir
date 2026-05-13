@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using System.Text.Json;
 using Task = System.Threading.Tasks.Task;
 
-public class GetAllSpecialAuthorities(FhirClient _client) : IAction<GetAllSpecialAuthorities.Parameters>
+public class GetAllSpecialAuthorities(IFhirClient _client) : IAction<GetAllSpecialAuthorities.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{

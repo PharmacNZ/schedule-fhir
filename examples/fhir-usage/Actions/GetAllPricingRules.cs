@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using System.Text.Json;
 using Task = System.Threading.Tasks.Task;
 
-public class GetAllPricingRules(FhirClient _client) : IAction<GetAllPricingRules.Parameters>
+public class GetAllPricingRules(IFhirClient _client) : IAction<GetAllPricingRules.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{
@@ -13,7 +13,7 @@ public class GetAllPricingRules(FhirClient _client) : IAction<GetAllPricingRules
 			var query = new SearchParams().Add("_profile", "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing");
 				if (!string.IsNullOrEmpty(parameters.lastUpdated))
 				{
-					Console.WriteLine($"Filtering medications by last updated date: {parameters.lastUpdated}");
+					Console.WriteLine($"Filtering Pricing Rules by last updated date: {parameters.lastUpdated}");
 					query = query.Add("_lastUpdated", $"ge{parameters.lastUpdated}");
 
 				}

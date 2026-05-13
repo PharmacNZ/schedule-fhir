@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using Task = System.Threading.Tasks.Task;
 using System.Text.Json;
 
-public class GetPricingByInstance(FhirClient _client) : IAction<GetPricingByInstance.Parameters>
+public class GetPricingByInstance(IFhirClient _client) : IAction<GetPricingByInstance.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{

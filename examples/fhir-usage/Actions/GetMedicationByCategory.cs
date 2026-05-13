@@ -2,7 +2,7 @@ using Hl7.Fhir.Rest;
 using Hl7.Fhir.Model;
 using Task = System.Threading.Tasks.Task;
 
-public class GetMedicationByCategory(FhirClient _client) : IAction<GetMedicationByCategory.Parameters>
+public class GetMedicationByCategory(IFhirClient _client) : IAction<GetMedicationByCategory.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{

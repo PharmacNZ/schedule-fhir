@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using Task = System.Threading.Tasks.Task;
 using System.Text.Json;
 
-public class GetSAByInstance(FhirClient _client) : IAction<GetSAByInstance.Parameters>
+public class GetSAByInstance(IFhirClient _client) : IAction<GetSAByInstance.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{

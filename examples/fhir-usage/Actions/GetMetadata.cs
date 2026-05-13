@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using System.Text.Json;
 using Task = System.Threading.Tasks.Task;
 
-public class GetMetadata(FhirClient _client) : IAction<GetMetadata.Parameters>
+public class GetMetadata(IFhirClient _client) : IAction<GetMetadata.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{

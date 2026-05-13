@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using System.Text.Json;
 using Task = System.Threading.Tasks.Task;
 
-public class GetAllFundingRules(FhirClient _client) : IAction<GetAllFundingRules.Parameters>
+public class GetAllFundingRules(IFhirClient _client) : IAction<GetAllFundingRules.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{
@@ -13,7 +13,7 @@ public class GetAllFundingRules(FhirClient _client) : IAction<GetAllFundingRules
 			var query = new SearchParams().Add("_profile", "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules");
 				if (!string.IsNullOrEmpty(parameters.lastUpdated))
 				{
-					Console.WriteLine($"Filtering medications by last updated date: {parameters.lastUpdated}");
+					Console.WriteLine($"Filtering Funding Rules by last updated date: {parameters.lastUpdated}");
 					query = query.Add("_lastUpdated", $"ge{parameters.lastUpdated}");
 
 				}

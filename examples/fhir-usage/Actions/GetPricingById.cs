@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using Task = System.Threading.Tasks.Task;
 using System.Text.Json;
 
-public class GetPricingRulesById(FhirClient _client) : IAction<GetPricingRulesById.Parameters>
+public class GetPricingRulesById(IFhirClient _client) : IAction<GetPricingRulesById.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{
@@ -19,7 +19,7 @@ public class GetPricingRulesById(FhirClient _client) : IAction<GetPricingRulesBy
 				{
 						Console.WriteLine($"Pricing Rule Id: {parameters.Id}");
 						Console.WriteLine($"Received pricing rule with ID: {getResult?.Id}");
-						Console.WriteLine($"Received pricing rule with description: {getResult?.PropertyGroup?[0]?.Applicability[0]?.Description}");
+						Console.WriteLine($"Received pricing rule with description: {getResult?.Description}");
 				}
 
 				HelperFunctions.PrintResultsCountFromUrl("Pricing Rule", getResult);

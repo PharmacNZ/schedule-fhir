@@ -2,7 +2,7 @@ using Hl7.Fhir.Rest;
 using Hl7.Fhir.Model;
 using Task = System.Threading.Tasks.Task;
 
-public class GetMedicationByName(FhirClient _client) : IAction<GetMedicationByName.Parameters>
+public class GetMedicationByName(IFhirClient _client) : IAction<GetMedicationByName.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{
@@ -10,8 +10,6 @@ public class GetMedicationByName(FhirClient _client) : IAction<GetMedicationByNa
 				Console.WriteLine($"Executing GetByName action for resource with name: {parameters.Name}");
 
 				var query = new SearchParams().Add("name", parameters.Name);
-				//var query = new SearchParams().Where($"Id:exact={parameters.Id}");
-        //var bundle = await client.SearchAsync<Medication>(searchParams);
 				Bundle? searchResult = await _client.SearchAsync<Medication>(query);
 				foreach (var result in (searchResult?.Entry ?? Enumerable.Empty<Bundle.EntryComponent>()))
 				{

@@ -4,7 +4,7 @@ using Task = System.Threading.Tasks.Task;
 using System.Text.Json;
 using System.Text;
 
-public class GetFundingAuthSchema(FhirClient _client) : IAction<GetFundingAuthSchema.Parameters>
+public class GetFundingAuthSchema(IFhirClient _client) : IAction<GetFundingAuthSchema.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{

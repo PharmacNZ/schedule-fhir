@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using System.Text.Json;
 using Task = System.Threading.Tasks.Task;
 
-public class GetAllMedications(FhirClient _client) : IAction<GetAllMedications.Parameters>
+public class GetAllMedications(IFhirClient _client) : IAction<GetAllMedications.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{

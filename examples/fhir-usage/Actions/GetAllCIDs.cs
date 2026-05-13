@@ -3,7 +3,7 @@ using Hl7.Fhir.Model;
 using System.Text.Json;
 using Task = System.Threading.Tasks.Task;
 
-public class GetAllChargeItemDefinitions(FhirClient _client) : IAction<GetAllChargeItemDefinitions.Parameters>
+public class GetAllChargeItemDefinitions(IFhirClient _client) : IAction<GetAllChargeItemDefinitions.Parameters>
 {
 		public async Task Execute(Parameters parameters)
 		{
