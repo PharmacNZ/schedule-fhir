@@ -23,7 +23,9 @@ Start the FHIR server with:
 cd /workspaces/schedule-fhir
 docker compose up
 ```
+If the server hangs on 'Attaching to fhir-candle' then it probably closed badly last time.
 
+Use `Ctrl + C` to cancel the action and try starting the server again.
 
 ## Running the app
 

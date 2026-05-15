@@ -1,6 +1,7 @@
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Rest;
 using Moq;
+using System.Globalization;
 
 /// <summary>
 /// Shared helpers for building test FHIR bundles and mocking IFhirClient.

@@ -22,6 +22,10 @@ public class GetAllFundingRules(IFhirClient _client) : IAction<GetAllFundingRule
 				{
 					var fr = result.Resource as ChargeItemDefinition;
 					Console.WriteLine($"Received funding rule with Id: {fr?.Id}");
+					if (!string.IsNullOrEmpty(parameters.lastUpdated))
+					{
+						Console.WriteLine($"Received funding rule with lastUpdated: {fr?.Meta?.LastUpdated}");
+					}
 					Console.WriteLine($"Received funding rule with description: {fr?.Description}");
 				}
 

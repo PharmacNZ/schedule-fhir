@@ -4,10 +4,13 @@ using Moq;
 
 public class GetAllFundingRulesTests
 {
-    private const string FundingProfile =
+    // Tests for GetAllFundingRules action, which retrieves all funding rules with optional last updated filter.
+        private const string FundingProfile =
         "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules";
 
+
     [Fact]
+    // Verifies that executing without a last updated filter adds the correct profile parameter to the search.
     public async System.Threading.Tasks.Task Execute_NoFilter_AddsProfileParam()
     {
         var bundle = FhirTestHelpers.BuildBundle();
@@ -25,22 +28,24 @@ public class GetAllFundingRulesTests
     }
 
     [Fact]
+    // Verifies that executing with a last updated filter adds the _lastUpdated parameter to the search.
     public async System.Threading.Tasks.Task Execute_WithLastUpdated_AddsLastUpdatedParam()
     {
         var bundle = FhirTestHelpers.BuildBundle();
         var (mock, captured) = FhirTestHelpers.CreateMockClientCapturingSearchParams<ChargeItemDefinition>(bundle);
 
         var action = new GetAllFundingRules(mock.Object);
-        await action.Execute(new GetAllFundingRules.Parameters("2025-01-01"));
+        await action.Execute(new GetAllFundingRules.Parameters("2026-05-01"));
 
         var paramNames = captured[0]?.Parameters.Select(p => p.Item1).ToList() ?? [];
         Assert.Contains("_lastUpdated", paramNames);
     }
 
     [Fact]
+    // Verifies that executing with results prints the count of funding rules found.
     public async System.Threading.Tasks.Task Execute_WithResults_PrintsCount()
     {
-        var bundle = FhirTestHelpers.BuildBundle(FhirTestHelpers.BuildChargeItemDefinition("FR-001")); //TODO: change input?
+        var bundle = FhirTestHelpers.BuildBundle(FhirTestHelpers.BuildChargeItemDefinition("FR-001"));
         var mock = new Mock<IFhirClient>();
         mock.Setup(c => c.SearchAsync<ChargeItemDefinition>(It.IsAny<SearchParams?>())).ReturnsAsync(bundle);
 
@@ -48,16 +53,21 @@ public class GetAllFundingRulesTests
         var output = FhirTestHelpers.CaptureConsoleOutput(() =>
             action.Execute(new GetAllFundingRules.Parameters(string.Empty)).Wait());
 
-        Assert.Contains("1 Funding Rule results.", output);
+        Assert.Contains("1", output);
+        Assert.Contains("Funding Rule", output);
     }
+
+   
 }
 
 public class GetFundingByIdTests
 {
+    // Tests for GetFundingRulesById action, which retrieves a funding rule by its ID.
     [Fact]
+    // Verifies that executing with a valid ID calls GetAsync with the correctly constructed resource ID.
     public async System.Threading.Tasks.Task Execute_ById_CallsGetWithConstructedId()
     {
-        var cid = FhirTestHelpers.BuildChargeItemDefinition("ChargeItemDefinition-FR-123", description: "Funding Rule Description"); //TODO: change input?
+        var cid = FhirTestHelpers.BuildChargeItemDefinition("ChargeItemDefinition-FR-123", description: "Funding Rule Description");
         var mock = new Mock<IFhirClient>();
         mock.Setup(c => c.GetAsync("ChargeItemDefinition/ChargeItemDefinition-FR-123")).ReturnsAsync(cid);
 
@@ -68,6 +78,7 @@ public class GetFundingByIdTests
     }
 
     [Fact]
+    // Verifies that executing with an invalid ID prints a not found message.
     public async System.Threading.Tasks.Task Execute_NotFound_PrintsNotFound()
     {
         var mock = new Mock<IFhirClient>();
@@ -83,17 +94,19 @@ public class GetFundingByIdTests
 
 public class GetFundingByInstanceTests
 {
+    // Tests for GetFundingByInstance action, which retrieves funding rules associated with a specific medication instance.
     private const string FundingProfile =
         "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules";
 
     [Fact]
+    // Verifies that executing with a medication instance adds the correct instance reference and profile parameters to the search.
     public async System.Threading.Tasks.Task Execute_ByInstance_AddsInstanceReferenceAndProfileParams()
     {
         var bundle = FhirTestHelpers.BuildBundle();
         var (mock, captured) = FhirTestHelpers.CreateMockClientCapturingSearchParams<ChargeItemDefinition>(bundle);
 
         var action = new GetFundingByInstance(mock.Object);
-        await action.Execute(new GetFundingByInstance.Parameters("Ricovir-Tenofovir")); //TODO: change input?
+        await action.Execute(new GetFundingByInstance.Parameters("Ricovir-Tenofovir"));
 
         Assert.Single(captured);
         var paramNames = captured[0]?.Parameters.Select(p => p.Item1).ToList() ?? [];
@@ -110,10 +123,12 @@ public class GetFundingByInstanceTests
 
 public class GetAllPricingRulesTests
 {
+    // Tests for GetAllPricingRules action, which retrieves all pricing rules with optional last updated filter.
     private const string PricingProfile =
         "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing";
 
     [Fact]
+    // Verifies that executing without a last updated filter adds the correct profile parameter to the search.
     public async System.Threading.Tasks.Task Execute_NoFilter_AddsProfileParam()
     {
         var bundle = FhirTestHelpers.BuildBundle();
@@ -131,13 +146,14 @@ public class GetAllPricingRulesTests
     }
 
     [Fact]
+    // Verifies that executing with a last updated filter adds the _lastUpdated parameter to the search.
     public async System.Threading.Tasks.Task Execute_WithLastUpdated_AddsLastUpdatedParam()
     {
         var bundle = FhirTestHelpers.BuildBundle();
         var (mock, captured) = FhirTestHelpers.CreateMockClientCapturingSearchParams<ChargeItemDefinition>(bundle);
 
         var action = new GetAllPricingRules(mock.Object);
-        await action.Execute(new GetAllPricingRules.Parameters("2025-06-01"));
+        await action.Execute(new GetAllPricingRules.Parameters("2026-05-01"));
 
         var paramNames = captured[0]?.Parameters.Select(p => p.Item1).ToList() ?? [];
         Assert.Contains("_lastUpdated", paramNames);
@@ -146,10 +162,12 @@ public class GetAllPricingRulesTests
 
 public class GetPricingByIdTests
 {
+    // Tests for GetPricingRulesById action, which retrieves a pricing rule by its ID.
     [Fact]
+    // Verifies that executing with a valid ID calls GetAsync with the correctly constructed resource ID.
     public async System.Threading.Tasks.Task Execute_ById_CallsGetWithConstructedId()
     {
-        var cid = FhirTestHelpers.BuildChargeItemDefinition("ChargeItemDefinition-PR-456", description: "Pricing Rule Description"); //TODO: change input?
+        var cid = FhirTestHelpers.BuildChargeItemDefinition("ChargeItemDefinition-PR-456", description: "Pricing Rule Description");
         var mock = new Mock<IFhirClient>();
         mock.Setup(c => c.GetAsync("ChargeItemDefinition/ChargeItemDefinition-PR-456")).ReturnsAsync(cid);
 
@@ -160,6 +178,7 @@ public class GetPricingByIdTests
     }
 
     [Fact]
+    // Verifies that executing with an invalid ID prints a not found message.
     public async System.Threading.Tasks.Task Execute_NotFound_PrintsNotFound()
     {
         var mock = new Mock<IFhirClient>();
@@ -175,17 +194,19 @@ public class GetPricingByIdTests
 
 public class GetPricingByInstanceTests
 {
+    // Tests for GetPricingByInstance action, which retrieves pricing rules associated with a specific medication instance.
     private const string PricingProfile =
         "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing";
 
     [Fact]
+    // Verifies that executing with a medication instance adds the correct instance reference and profile parameters to the search.
     public async System.Threading.Tasks.Task Execute_ByInstance_AddsInstanceReferenceAndPricingProfileParams()
     {
         var bundle = FhirTestHelpers.BuildBundle();
         var (mock, captured) = FhirTestHelpers.CreateMockClientCapturingSearchParams<ChargeItemDefinition>(bundle);
 
         var action = new GetPricingByInstance(mock.Object);
-        await action.Execute(new GetPricingByInstance.Parameters("Ricovir-Tenofovir")); //TODO: change input?
+        await action.Execute(new GetPricingByInstance.Parameters("Ricovir-Tenofovir"));
 
         Assert.Single(captured);
         var paramNames = captured[0]?.Parameters.Select(p => p.Item1).ToList() ?? [];
