@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/examples/">
+    <Project Path="examples/fhir-usage/fhir-usage.csproj" />
+    <Project Path="examples/fhir-usage.Tests/fhir-usage.Tests.csproj" />
+  </Folder>
+</Solution>

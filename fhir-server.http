@@ -1,5 +1,5 @@
 ### FHIR Server Base URL
-@baseUrl = http://localhost:8881/fhir/r4
+@baseUrl = http://localhost:8080/fhir/r4
 
 ### Get CapabilityStatement (R4)
 GET {{baseUrl}}/metadata
@@ -26,7 +26,32 @@ GET {{baseUrl}}/Medication?code=system|code
 GET {{baseUrl}}/Medication?_count=10
 
 ### Get FHIR R4B endpoint
-GET http://localhost:8881/fhir/r4b/metadata
+GET http://localhost:8080/fhir/r4b/metadata
 
 ### Get FHIR R5 endpoint
-GET http://localhost:8881/fhir/r5/metadata
+GET http://localhost:8080/fhir/r5/metadata
+
+### Search for Special Authorities (all)
+GET {{baseUrl}}/ChargeItemDefinition?_profile=https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority
+
+### Search for Funding Rules (all)
+GET {{baseUrl}}/ChargeItemDefinition?_profile=https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules
+
+### Search for Pricing Rules (all)
+GET {{baseUrl}}/ChargeItemDefinition?_profile=https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing
+
+### Search for Medications by name
+GET {{baseUrl}}/Medication?name=Leuprorelin
+
+### Search for Medications by brand
+GET {{baseUrl}}/Medication?brand=Ricovir
+
+### Search for Medications by category
+GET {{baseUrl}}/Medication?category=Special%20Foods
+
+### Search for Resources by last updated date
+GET {{baseUrl}}/ChargeItemDefinition?_lastUpdated=ge2025-06-01&_profile=https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority
+
+### Search for Medications updated since a date
+GET {{baseUrl}}/Medication?_lastUpdated=ge2025-01-01
+
