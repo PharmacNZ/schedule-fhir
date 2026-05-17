@@ -22,10 +22,6 @@ public class GetAllMedications(IFhirClient _client) : IAction<GetAllMedications.
 				{
 					var med = result.Resource as Medication;
       		Console.WriteLine($"Received medication with {med?.Code?.Text}");
-					//var options = new JsonSerializerOptions { WriteIndented = true };
-					//string jsonString = JsonSerializer.Serialize(med, options);
-
-					//Console.WriteLine(jsonString);
 					
 				}
 

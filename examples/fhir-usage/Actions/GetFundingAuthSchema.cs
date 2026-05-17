@@ -9,7 +9,7 @@ public class GetFundingAuthSchema(IFhirClient _client) : IAction<GetFundingAuthS
 		public async Task Execute(Parameters parameters)
 		{
 				// Implementation for getting a resource by id
-				Console.WriteLine($"Executing GetFundingAuthSchema action for resource with sa: {parameters.Id}");
+				Console.WriteLine($"Executing GetFundingAuthSchema action for resource with funding rule: {parameters.Id}");
 
 				string fullId = $"ChargeItemDefinition-{parameters.Id}";
 

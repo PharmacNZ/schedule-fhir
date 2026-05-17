@@ -13,7 +13,7 @@ public class GetAllSpecialAuthorities(IFhirClient _client) : IAction<GetAllSpeci
 			var query = new SearchParams().Add("_profile", "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority");
 				if (!string.IsNullOrEmpty(parameters.lastUpdated))
 				{
-					Console.WriteLine($"Filtering medications by last updated date: {parameters.lastUpdated}");
+					Console.WriteLine($"Filtering Special Authorities by last updated date: {parameters.lastUpdated}");
 					query = query.Add("_lastUpdated", $"ge{parameters.lastUpdated}");
 
 				}

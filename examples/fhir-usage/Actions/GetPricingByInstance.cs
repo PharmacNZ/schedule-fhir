@@ -22,10 +22,6 @@ public class GetPricingByInstance(IFhirClient _client) : IAction<GetPricingByIns
 					var cid = result.Resource as ChargeItemDefinition;
 					Console.WriteLine($"Charge Item Definition Instance: {parameters.instance}");
 					Console.WriteLine($"Received Pricing with Id: {cid?.Id}"); 
-					
-					/*var options = new JsonSerializerOptions { WriteIndented = true };
-			string jsonString = JsonSerializer.Serialize(cid?.Code?.Coding, options);
-			Console.WriteLine(jsonString);*/
 			
 				}
 

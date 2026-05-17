@@ -22,10 +22,6 @@ public class GetAllCIDByInstance(IFhirClient _client) : IAction<GetAllCIDByInsta
 					Console.WriteLine($"Charge Item Definition Instance: {parameters.instance}");
 					Console.WriteLine($"Received CID with Id: {cid?.Id}"); 
 					
-					/*var options = new JsonSerializerOptions { WriteIndented = true };
-			string jsonString = JsonSerializer.Serialize(cid?.Code?.Coding, options);
-			Console.WriteLine(jsonString);*/
-			
 				}
 
 				HelperFunctions.PrintResultsCountFromBundle("Charge Item Definition", searchResult);

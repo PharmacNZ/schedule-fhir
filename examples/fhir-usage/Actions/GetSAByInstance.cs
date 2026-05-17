@@ -22,11 +22,7 @@ public class GetSAByInstance(IFhirClient _client) : IAction<GetSAByInstance.Para
 					var cid = result.Resource as ChargeItemDefinition;
 					Console.WriteLine($"Charge Item Definition Instance: {parameters.instance}");
 					Console.WriteLine($"Received SA with Id: {cid?.Id}"); 
-					
-					/*var options = new JsonSerializerOptions { WriteIndented = true };
-			string jsonString = JsonSerializer.Serialize(cid?.Code?.Coding, options);
-			Console.WriteLine(jsonString);*/
-			
+
 				}
 
 				HelperFunctions.PrintResultsCountFromBundle("Special Authority", searchResult);

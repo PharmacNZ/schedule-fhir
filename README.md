@@ -68,7 +68,7 @@ dotnet run search --resource <ResourceType> [options]
 | `--category` | `--c` | Filter by category, e.g. `Special Foods` |
 | `--instance` | `--ins` | Filter by instance, e.g. `Ricovir-Tenofovir` |
 | `--lastUpdated` | `--lu` | Filter by last updated date (inclusive), e.g. `2024-01-01` |
-| `--authSchema` | `--a` | Decode and display the authorisation schema of the result |
+| `--authSchema` | `--a` | Decode and write the authorisation schema of the result to file |
 
 ## Resource types
 

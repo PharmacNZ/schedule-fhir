@@ -20,10 +20,6 @@ public class GetSAById(IFhirClient _client) : IAction<GetSAById.Parameters>
 					Console.WriteLine($"Received special authority with Id: {sa?.Id}");
 					Console.WriteLine($"search param: {sa?.Code?.Text}");
 
-					/*var options = new JsonSerializerOptions { WriteIndented = true };
-			string jsonString = JsonSerializer.Serialize(sa?.Code?.Coding, options);
-			Console.WriteLine(jsonString);*/
-			
 				}
 
 				HelperFunctions.PrintResultsCountFromBundle("Special Authority", searchResult);

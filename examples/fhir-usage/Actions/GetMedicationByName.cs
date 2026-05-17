@@ -15,7 +15,7 @@ public class GetMedicationByName(IFhirClient _client) : IAction<GetMedicationByN
 				{
 					var med = result.Resource as Medication;
 					Console.WriteLine($"Medication Name: {parameters.Name}");
-					Console.WriteLine($"Received medication with ID: {med?.Code?.Text}");
+					Console.WriteLine($"Received medication with name: {med?.Code?.Text}");
 				}
 
 				HelperFunctions.PrintResultsCountFromBundle("Medication", searchResult);

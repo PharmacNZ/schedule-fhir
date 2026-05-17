@@ -10,14 +10,13 @@ public class GetMedicationByBrand(IFhirClient _client) : IAction<GetMedicationBy
 				Console.WriteLine($"Executing GetByBrand action for resource with brand: {parameters.Brand}");
 
 				var query = new SearchParams().Add("brand", parameters.Brand);
-				//var query = new SearchParams().Where($"Id:exact={parameters.Id}");
-        //var bundle = await client.SearchAsync<Medication>(searchParams);
+
 				Bundle? searchResult = await _client.SearchAsync<Medication>(query);
 				foreach (var result in (searchResult?.Entry ?? Enumerable.Empty<Bundle.EntryComponent>()))
 				{
 					var med = result.Resource as Medication;
 					Console.WriteLine($"Medication Input Brand: {parameters.Brand}");
-					Console.WriteLine($"Received medication with Brand: {med?.Extension?[0].Value}"); //Assumes brand is at index 0
+					Console.WriteLine($"Received medication with Brand: {med?.GetExtension("https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name")?.Value?.ToString()}");
 				}
 
 				HelperFunctions.PrintResultsCountFromBundle("Medication", searchResult);

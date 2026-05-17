@@ -38,7 +38,7 @@ GET {{baseUrl}}/ChargeItemDefinition?_profile=https://fhir-ig.digital.health.nz/
 GET {{baseUrl}}/ChargeItemDefinition?_profile=https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules
 
 ### Search for Pricing Rules (all)
-GET {{baseUrl}}/ChargeItemDefinition?_profile=https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing-rules
+GET {{baseUrl}}/ChargeItemDefinition?_profile=https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing
 
 ### Search for Medications by name
 GET {{baseUrl}}/Medication?name=Leuprorelin

@@ -22,10 +22,6 @@ public class GetFundingByInstance(IFhirClient _client) : IAction<GetFundingByIns
 					var cid = result.Resource as ChargeItemDefinition;
 					Console.WriteLine($"Charge Item Definition Instance: {parameters.instance}");
 					Console.WriteLine($"Received Funding with Id: {cid?.Id}"); 
-					
-					/*var options = new JsonSerializerOptions { WriteIndented = true };
-			string jsonString = JsonSerializer.Serialize(cid?.Code?.Coding, options);
-			Console.WriteLine(jsonString);*/
 			
 				}
 

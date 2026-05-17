@@ -15,12 +15,10 @@ public class GetAllChargeItemDefinitions(IFhirClient _client) : IAction<GetAllCh
 			foreach (var result in (searchResult?.Entry ?? Enumerable.Empty<Bundle.EntryComponent>()))
 				{
 					var cid = result.Resource as ChargeItemDefinition;
-      		//Console.WriteLine($"Received charge item definition with {cid?.Code?.Text}");
 					var options = new JsonSerializerOptions { WriteIndented = true };
 					string jsonString = JsonSerializer.Serialize(cid, options);
 
 					Console.WriteLine(jsonString);
-					break;
 				}
 
 			HelperFunctions.PrintResultsCountFromBundle("ChargeItemDefinition", searchResult);
