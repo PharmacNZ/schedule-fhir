@@ -1,4 +1,4 @@
-# Authorization Title - Pharmac Schedules FHIR API v1.0.1
+# Authorization Title - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title | *Version*:1.0.1 |
-| Draft as of 2026-04-24 | *Computable Name*:AuthorizationTitle |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title | *Version*:1.1.0 |
+| Draft as of 2026-06-24 | *Computable Name*:AuthorizationTitle |
 
 A human-readable title for the authorization requirement (e.g., 'Budesonide - Special Authorization Required'). This provides context for the authorization need.
 
@@ -21,7 +21,7 @@ A human-readable title for the authorization requirement (e.g., 'Budesonide - Sp
 
 * Use this Extension: [PHARMAC Charge Item Definition](StructureDefinition-pharmac-charge-item-definition.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/authorization-title)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/pharmac.fhir.pharmac-schedules|current/StructureDefinition/StructureDefinition-authorization-title.json)
 
 ### Formal Views of Extension Content
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-authorization-title.
   "resourceType" : "StructureDefinition",
   "id" : "authorization-title",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "AuthorizationTitle",
   "title" : "Authorization Title",
   "status" : "draft",
-  "date" : "2026-04-24T01:18:12+00:00",
+  "date" : "2026-06-24T20:43:54+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

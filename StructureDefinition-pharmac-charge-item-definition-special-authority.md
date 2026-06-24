@@ -1,4 +1,4 @@
-# PHARMAC Charge Item Definition - Special Authority - Pharmac Schedules FHIR API v1.0.1
+# PHARMAC Charge Item Definition - Special Authority - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority | *Version*:1.0.1 |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority | *Version*:1.1.0 |
 | Active as of 2026-03-25 | *Computable Name*:PharmacChargeItemDefinitionSpecialAuthority |
 
  
@@ -19,70 +19,73 @@ To define the structure for PHARMAC Special Authorization requirements including
 
 ### Overview
 
-The **PHARMAC Charge Item Definition - Special Authority** profile captures Special Authorization (SA) requirements and clinical eligibility criteria for medications in the PHARMAC schedule. Each instance represents a single SA form with its associated authorization cases — the distinct clinical scenarios under which a medication may be approved for subsidy.
+The **PHARMAC Charge Item Definition - Special Authority** profile represents a Special Authority form definition published as part of the PHARMAC Schedule API.
 
-### When to use this profile
+A Special Authority definition is kept separate from the Funding Rules record that may refer to it. This allows the same SA definition to be associated with more than one scheduled product where applicable.
 
-Use this profile when a medication requires Special Authority approval before it can be subsidised. The profile captures:
-
-* The SA form code (e.g., SA2139, SA2520)
-* The number of authorization cases
-* Clinical eligibility criteria for each case
-* An optional inline JSON Schema that defines the structure and validation rules for the SA application form
-
-### Key constraints (vs. base profile)
+### Profile
 
 | | |
 | :--- | :--- |
-| `code` | **Required**(1..1) — must contain the SA code (e.g.,`SA2139`). |
-| `authorizationCaseCount` | **Required**(1..1) — the number of authorization cases. |
-| `instance` | **Required**(1..*) — references to medications requiring this SA. |
-| `propertyGroup.priceComponent` | **Prohibited**(0..0) — SA definitions don't carry pricing. |
-| Pricing extensions (`costBrandSource`,`contractType`, etc.) | **Prohibited**(0..0). |
+| FSH profile name | `PharmacChargeItemDefinitionSpecialAuthority` |
+| StructureDefinition id | `pharmac-charge-item-definition-special-authority` |
+| Parent profile | `PharmacChargeItemDefinition` |
+| FHIR resource | `ChargeItemDefinition` |
 
-### Authorization schema
+### Key elements
 
-The `authorizationSchema` extension allows the SA's application form structure to be included directly in the resource as a base64-encoded JSON Schema. This means API clients receive the form definition in a single request — no additional calls needed.
+| | |
+| :--- | :--- |
+| `id` | Resource identifier for the Special Authority definition |
+| `meta.profile` | Declares conformance to`pharmac-charge-item-definition-special-authority` |
+| `url` | Canonical identifier for the definition |
+| `version` | Business version of the definition |
+| `status` | Publication status |
+| `date` | Date the definitional resource was created or revised |
+| `description` | Human-readable summary of the Special Authority definition |
+| `code` | Special Authority code, such as`SA1098` |
+| `instance` | Reference to an associated`Medication`, where applicable |
+| `pricing-effective-date` | Date from which the definition applies |
+| `authorization-form` | Special Authority form identifier |
+| `authorization-case-count` | Number of application pathways represented by the definition |
+| `authorization-schema` | Structured Special Authority form content |
 
-Clients should:
+### Special Authority identifier
 
-1. Read the`valueBase64Binary`value
-1. Base64-decode it to obtain a JSON Schema (draft-07)
-1. Use the schema for form rendering and input validation
+The Special Authority code is represented in `ChargeItemDefinition.code` and repeated in the `authorization-form` extension.
 
-For a detailed walkthrough of JSON Schema patterns and examples, see the [JSON Schema for SAs Guide](sa-json-schema-guide.md).
-
-The schema uses `oneOf` to define the distinct authorization cases. Each case specifies required prerequisites and any conditional fields. For example, SA2139 has 7 cases (Confirmed HIV initial/renewal, maternal transmission, PEP initial/renewal, percutaneous initial/renewal) while SA2520 has 4 cases (PrEP initial/renewal, PEP initial/renewal).
-
-**Approach:** The `authorizationSchema` extension contains a Base64-encoded JSON Schema that defines the application form structure. The schema uses `oneOf` to represent distinct authorization cases, with each case specifying:
-
-* Required fields (e.g., diagnosis, treatment date, prescriber credentials)
-* Conditional fields and validation rules
-* Field types and constraints
-
-Clients decode the schema to dynamically generate and validate authorization application forms.
-
-### Examples
-
-* [SA9999 — Example Template](ChargeItemDefinition-ChargeItemDefinition-SA9999-Authorization.md): Demonstration schema showing different validation patterns (text, numeric ranges, boolean checkboxes, conditional fields). For reference and developer guidance.
-
-### Typical search patterns
-
-To retrieve special authorities for a specific medication:
+Example:
 
 ```
-GET /Medication?identifier=http://schedule.pharmac.govt.nz/ids/pack|1234
-    &_revinclude=ChargeItemDefinition:instance
+{
+  "code": {
+    "coding": [
+      {
+        "system": "http://pharmac.govt.nz/fhir/sa",
+        "code": "SA1098"
+      }
+    ],
+    "text": "SA1098"
+  }
+}
 
 ```
 
-The returned Bundle will include the Medication along with all ChargeItemDefinition resources — pricing, funding rules, and special authorities — that reference it. The SA instances will be identifiable by the presence of a `code` element with the SA code.
+### Relationship to funding rules
+
+A Funding Rules record may indicate that a Special Authority applies. The Funding Rules record and the Special Authority definition remain separate `ChargeItemDefinition` resources and are related by the SA identifier and, where applicable, their references to the same `Medication`.
+
+The relationship is described in more detail on the [Resource Relationships](relationships.md) page.
+
+### Example
+
+For further information about the structured form content, see [JSON Schema for Special Authorities](sa-json-schema-guide.md).
 
 **Usages:**
 
-* Examples for this Profile: [ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA9999-Authorization.md)
+* Examples for this Profile: [ChargeItemDefinition/ChargeItemDefinition-SA1098-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA1098-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-SA1329-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA1329-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-SA1683-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA1683-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2139-Authorization.md)... Show 6 more, [ChargeItemDefinition/ChargeItemDefinition-SA2185-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2185-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-SA2453-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2453-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-SA2536-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2536-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-SA2561-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2561-Authorization.md), [ChargeItemDefinition/ChargeItemDefinition-SA2620-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2620-Authorization.md) and [ChargeItemDefinition/ChargeItemDefinition-SA2628-Authorization](ChargeItemDefinition-ChargeItemDefinition-SA2628-Authorization.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/pharmac-charge-item-definition-special-authority)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/pharmac.fhir.pharmac-schedules|current/StructureDefinition/StructureDefinition-pharmac-charge-item-definition-special-authority.json)
 
 ### Formal Views of Profile Content
 
@@ -101,7 +104,7 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-charge-item-
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-charge-item-definition-special-authority",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacChargeItemDefinitionSpecialAuthority",
   "title" : "PHARMAC Charge Item Definition - Special Authority",
   "status" : "active",

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="50225401000117106"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+        <code value="ctpp"/>
+      </coding>
+      <text value="ctpp"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+    <extension url="type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://nzmt.org.nz"/>
+          <code value="20069071000116107"/>
+          <display value="Preferred Term"/>
+        </coding>
+        <text value="Preferred Term"/>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="term">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://nzmt.org.nz"/>
+          <code value="50225401000117106"/>
+          <display value="Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"/>
+        </coding>
+        <text value="Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"/>
+      </valueCodeableConcept>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://www.whocc.no/atc"/>
+        <code value="L01CB01"/>
+        <display value="etoposide"/>
+      </coding>
+      <text value="etoposide"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+    <extension url="quantity">
+      <valueQuantity>
+        <value value="1"/>
+        <unit value="vial"/>
+      </valueQuantity>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+    <extension url="price">
+      <valueMoney>
+        <value value="7.9"/>
+        <currency value="NZD"/>
+      </valueMoney>
+    </extension>
+  </extension>
+  <code>
+    <coding>
+      <system value="http://nzmt.org.nz"/>
+      <code value="50225401000117106"/>
+      <display value="Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"/>
+    </coding>
+    <coding>
+      <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+        <valueBoolean value="true"/>
+      </extension>
+      <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+      <code value="2480913"/>
+    </coding>
+    <text value="Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"/>
+  </code>
+  <status value="active"/>
+  <form>
+    <text value="Inj 20 mg per ml, 5 ml vial"/>
+  </form>
+  <ingredient>
+    <itemCodeableConcept>
+      <text value="Etoposide"/>
+    </itemCodeableConcept>
+    <isActive value="true"/>
+  </ingredient>
+</Medication>

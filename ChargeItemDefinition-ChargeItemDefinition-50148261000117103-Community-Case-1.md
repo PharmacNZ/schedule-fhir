@@ -1,0 +1,172 @@
+# ChargeItemDefinition-50148261000117103-Community-Case-1 - Pharmac Schedules FHIR API v1.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ChargeItemDefinition-50148261000117103-Community-Case-1**
+
+## Example ChargeItemDefinition: ChargeItemDefinition-50148261000117103-Community-Case-1
+
+| |
+| :--- |
+| Active as of 2026-04-24 |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ChargeItemDefinition",
+  "id" : "ChargeItemDefinition-50148261000117103-Community-Case-1",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date",
+    "valueDate" : "2026-04-24"
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCode" : "community"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "CaseSequence"
+      },
+      {
+        "url" : "value",
+        "valueInteger" : 1
+      }],
+      "url" : "rule"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "FundingMechanism"
+      },
+      {
+        "url" : "attribute",
+        "valueCode" : "Prescription"
+      }],
+      "url" : "rule"
+    }],
+    "url" : "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"
+  },
+  {
+    "extension" : [{
+      "url" : "subsidyType",
+      "valueCode" : "subsidy"
+    },
+    {
+      "url" : "subsidyStatus",
+      "valueCode" : "full"
+    },
+    {
+      "url" : "amount",
+      "valueMoney" : {
+        "value" : 8.19,
+        "currency" : "NZD"
+      }
+    },
+    {
+      "url" : "display",
+      "valueString" : "Subsidy"
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"
+  },
+  {
+    "extension" : [{
+      "url" : "costBrandSource",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "wastageClaimable",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "contractType",
+      "valueString" : "n/a"
+    },
+    {
+      "url" : "dvLimitPercent",
+      "valueDecimal" : 0
+    },
+    {
+      "url" : "brandSwitchFee",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "statim",
+      "valueString" : "n/a"
+    },
+    {
+      "url" : "inCombination",
+      "valueCode" : "no"
+    },
+    {
+      "url" : "section29",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "coPaymentMin",
+      "valueCode" : "na"
+    },
+    {
+      "url" : "coPaymentMax",
+      "valueCode" : "no"
+    },
+    {
+      "url" : "productMultiple",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "productMultiplier",
+      "valueInteger" : 0
+    },
+    {
+      "url" : "originalPack",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "safetyListMedicine",
+      "valueBoolean" : false
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema",
+    "valueBase64Binary" : "ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNvbmRpdGlvbnMtNTAxNDgyNjEwMDAxMTcxMDMtQ2FzZS0xIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImF1dGhvcml0eSI6IHsKICAgICAgInRpdGxlIjogIlNwZWNpYWwgQXV0aG9yaXR5IiwKICAgICAgInR5cGUiOiAiaW50ZWdlciIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJodHRwczovL3NjaGVkdWxlLnBoYXJtYWMuZ292dC5uei9sYXRlc3QvU0ExNjgzLnBkZiIsCiAgICAgICJjb25zdCI6IDE2ODMKICAgIH0sCiAgICAibGltaXQiOiB7CiAgICAgICJ0aXRsZSI6ICJUcmVhdG1heCIsCiAgICAgICJ0eXBlIjogIm51bWJlciIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJNYXhpbXVtIG51bWJlciBvZiB0cmVhdG1lbnQgZGF5cyIsCiAgICAgICJjb25zdCI6IDUsCiAgICAgICIkdW5pdCI6ICJkYXlzIgogICAgfSwKICAgICJwcm92aWRlciI6IHsKICAgICAgInRpdGxlIjogIlByb3ZpZGVyIEluZm9ybWF0aW9uIiwKICAgICAgInR5cGUiOiAiYm9vbGVhbiIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJBdXRob3Jpc2VkIHByZXNjcmliZXIiCiAgICB9CiAgICAibm90ZSI6IHsKICAgICAgInRpdGxlIjogIk5vdGUiLAogICAgICAidHlwZSI6ICJib29sZWFuIiwKICAgICAgImRlc2NyaXB0aW9uIjogIlNwZWNpYWwgQXV0aG9yaXR5IHJlcXVpcmVkIGZvciBzdWJzaWR5IgogICAgfQogIH0sCiAgInJlcXVpcmVkIjogWwogICAgImF1dGhvcml0eSIsCiAgICAibGltaXQiLAogICAgInByb3ZpZGVyIiwKICAgICJub3RlIgogIF0KfQo="
+  }],
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50148261000117103-Community-Case-1",
+  "version" : "1.1.0",
+  "status" : "active",
+  "date" : "2026-04-24T00:58:18+00:00",
+  "publisher" : "Pharmac",
+  "contact" : [{
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.pharmac.govt.nz/about/contact"
+    }]
+  },
+  {
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "enquiry@pharmac.govt.nz",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Rules for Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]. community Prescription.",
+  "instance" : [{
+    "reference" : "Medication/50148261000117103",
+    "display" : "Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]"
+  }],
+  "applicability" : [{
+    "description" : "Case 1 - Community - Prescription - Subsidy"
+  }]
+}
+
+```

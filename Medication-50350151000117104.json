@@ -1,0 +1,99 @@
+{
+  "resourceType" : "Medication",
+  "id" : "50350151000117104",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://standards.digital.health.nz/ns/nzmt-type-code",
+        "code" : "ctpp"
+      }],
+      "text" : "ctpp"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "20069071000116107",
+          "display" : "Preferred Term"
+        }],
+        "text" : "Preferred Term"
+      }
+    },
+    {
+      "url" : "term",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "50350151000117104",
+          "display" : "Teevir tablet: film-coated, 30 tablets, bottle"
+        }],
+        "text" : "Teevir tablet: film-coated, 30 tablets, bottle"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://www.whocc.no/atc",
+        "code" : "J05AR06",
+        "display" : "emtricitabine, tenofovir disoproxil and efavirenz"
+      }],
+      "text" : "emtricitabine, tenofovir disoproxil and efavirenz"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "quantity",
+      "valueQuantity" : {
+        "value" : 30,
+        "unit" : "tablet"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"
+  },
+  {
+    "extension" : [{
+      "url" : "price",
+      "valueMoney" : {
+        "value" : 106.88,
+        "currency" : "NZD"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://nzmt.org.nz",
+      "code" : "50350151000117104",
+      "display" : "Teevir tablet: film-coated, 30 tablets, bottle"
+    },
+    {
+      "extension" : [{
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding",
+        "valueBoolean" : true
+      }],
+      "system" : "https://standards.digital.health.nz/ns/pharmac-subsidy-code",
+      "code" : "2705508"
+    }],
+    "text" : "Teevir tablet: film-coated, 30 tablets, bottle"
+  },
+  "status" : "active",
+  "form" : {
+    "text" : "Tab 600 mg with emtricitabine 200 mg and tenofovir disoproxil 245 mg (300 mg as a fumarate)"
+  },
+  "ingredient" : [{
+    "itemCodeableConcept" : {
+      "text" : "Efavirenz with emtricitabine and tenofovir disoproxil"
+    },
+    "isActive" : true
+  }]
+}

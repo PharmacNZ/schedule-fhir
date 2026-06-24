@@ -1,0 +1,624 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Nitisinone-Hospital-Restriction> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SearchSet-Bundle-Nitisinone-Hospital-Restriction"] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/Medication?code=50324571000117108&_revinclude=ChargeItemDefinition:instance"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50324571000117108"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50324571000117108> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Community-Case-1"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Community-Case-1> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Hospital-Case-5"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Hospital-Case-5> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2561-Authorization"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2561-Authorization> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50324571000117108> a fhir:Medication ;
+  fhir:id [ fhir:v "50324571000117108"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://standards.digital.health.nz/ns/nzmt-type-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ctpp" ]
+       ] ) ;
+       fhir:text [ fhir:v "ctpp" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "20069071000116107" ] ;
+           fhir:display [ fhir:v "Preferred Term" ]
+         ] ) ;
+         fhir:text [ fhir:v "Preferred Term" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "term"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "50324571000117108" ] ;
+           fhir:display [ fhir:v "Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle" ]
+         ] ) ;
+         fhir:text [ fhir:v "Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "A16AX04" ] ;
+         fhir:display [ fhir:v "nitisinone" ]
+       ] ) ;
+       fhir:text [ fhir:v "nitisinone" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "quantity"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "60"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "capsule" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "price"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v "676"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "50324571000117108" ] ;
+       fhir:display [ fhir:v "Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://standards.digital.health.nz/ns/pharmac-subsidy-code"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "2677687" ]
+     ] ) ;
+     fhir:text [ fhir:v "Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:form [
+     fhir:text [ fhir:v "Cap 2 mg" ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "Nitisinone" ]
+     ] ;
+     fhir:isActive [ fhir:v true ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Community-Case-1> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-50324571000117108-Community-Case-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-04-24"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [ fhir:v "attribute"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "Prescription"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "subsidyType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "subsidy"
+       ]
+     ] [
+       fhir:url [ fhir:v "subsidyStatus"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "full"
+       ]
+     ] [
+       fhir:url [ fhir:v "amount"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v "676"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "display"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Subsidy"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "costBrandSource"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "wastageClaimable"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "contractType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "PSS"
+       ]
+     ] [
+       fhir:url [ fhir:v "dvLimitPercent"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:decimal ;
+         fhir:v "5"^^xsd:decimal
+       ]
+     ] [
+       fhir:url [ fhir:v "brandSwitchFee"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "statim"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "inCombination"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "section29"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMin"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "na"
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMax"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiple"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiplier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 0
+       ]
+     ] [
+       fhir:url [ fhir:v "originalPack"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "safetyListMedicine"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNvbmRpdGlvbnMtNTAzMjQ1NzEwMDAxMTcxMDgtQ2FzZS0xIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImF1dGhvcml0eSI6IHsKICAgICAgInRpdGxlIjogIlNwZWNpYWwgQXV0aG9yaXR5IiwKICAgICAgInR5cGUiOiAiaW50ZWdlciIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJodHRwczovL3NjaGVkdWxlLnBoYXJtYWMuZ292dC5uei9sYXRlc3QvU0EyNTYxLnBkZiIsCiAgICAgICJjb25zdCI6IDI1NjEKICAgIH0sCiAgICAicHJvdmlkZXIiOiB7CiAgICAgICJ0aXRsZSI6ICJQcm92aWRlciBJbmZvcm1hdGlvbiIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiQXV0aG9yaXNlZCBwcmVzY3JpYmVyIgogICAgfSwKICAgICJub3RlIjogewogICAgICAidGl0bGUiOiAiTm90ZSIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiU3BlY2lhbCBBdXRob3JpdHkgcmVxdWlyZWQgZm9yIHN1YnNpZHkiCiAgICB9CiAgfSwKICAicmVxdWlyZWQiOiBbCiAgICAiYXV0aG9yaXR5IiwKICAgICJwcm92aWRlciIsCiAgICAibm90ZSIKICBdCn0K"^^xsd:base64Binary
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Community-Case-1"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Rules for Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle. community Prescription."] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50324571000117108> ;
+     fhir:reference [ fhir:v "Medication/50324571000117108" ] ;
+     fhir:display [ fhir:v "Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Case 1 - Community - Prescription - Subsidy" ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Hospital-Case-5> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-50324571000117108-Hospital-Case-5"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-04-24"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "hospital"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [ fhir:v "attribute"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "na"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "subsidyType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "none"
+       ]
+     ] [
+       fhir:url [ fhir:v "subsidyStatus"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "none"
+       ]
+     ] [
+       fhir:url [ fhir:v "amount"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "display"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "None"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "costBrandSource"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "wastageClaimable"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "contractType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "PSS"
+       ]
+     ] [
+       fhir:url [ fhir:v "dvLimitPercent"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:decimal ;
+         fhir:v "5"^^xsd:decimal
+       ]
+     ] [
+       fhir:url [ fhir:v "brandSwitchFee"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "statim"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "inCombination"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "section29"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMin"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "na"
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMax"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiple"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiplier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 0
+       ]
+     ] [
+       fhir:url [ fhir:v "originalPack"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "safetyListMedicine"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNvbmRpdGlvbnMtNTAzMjQ1NzEwMDAxMTcxMDgtQ2FzZS01IiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgInJlc3RyaWN0aW9uIjogewogICAgICAidGl0bGUiOiAiUmVzdHJpY3Rpb24iLAogICAgICAidHlwZSI6ICJpbnRlZ2VyIiwKICAgICAgImRlc2NyaXB0aW9uIjogImh0dHBzOi8vc2NoZWR1bGUucGhhcm1hYy5nb3Z0Lm56L2xhdGVzdC9SUzIxNjQucGRmIiwKICAgIH0sCiAgICAibm90ZSI6IHsKICAgICAgInRpdGxlIjogIk5vdGUiLAogICAgICAidHlwZSI6ICJib29sZWFuIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkhvc3BpdGFsIGluZGljYXRpb24gcmVzdHJpY3Rpb24iCiAgICB9ICAgIAogIH0sCiAgInJlcXVpcmVkIjogWwogICAgInJlc3RyaWN0aW9uIiwKICAgICJub3RlIgogIF0KfQo="^^xsd:base64Binary
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Hospital-Case-5"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Rules for Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle. hospital n/a."] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50324571000117108> ;
+     fhir:reference [ fhir:v "Medication/50324571000117108" ] ;
+     fhir:display [ fhir:v "Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Case 5 - Hospital - n/a - None" ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2561-Authorization> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-SA2561-Authorization"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-03-11"^^xsd:date
+     ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-case-count"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:integer ;
+       fhir:v 1
+     ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "U3BlY2lhbCBBdXRob3JpdHkgQ29uZGl0aW9uIExvZ2ljIFRvIEJlIFByb3ZpZGVkIFNvb24="^^xsd:base64Binary
+     ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-form"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "SA2561"
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2561-Authorization"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Special Authority SA2561. Detailed eligibility criteria available via authorization form."] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://pharmac.govt.nz/fhir/sa"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SA2561" ]
+     ] ) ;
+     fhir:text [ fhir:v "SA2561" ]
+  ] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50324571000117108> ;
+     fhir:reference [ fhir:v "Medication/50324571000117108" ] ;
+     fhir:display [ fhir:v "Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

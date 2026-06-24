@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="50227471000117107"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+        <code value="ctpp"/>
+      </coding>
+      <text value="ctpp"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+    <extension url="type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://nzmt.org.nz"/>
+          <code value="20069071000116107"/>
+          <display value="Preferred Term"/>
+        </coding>
+        <text value="Preferred Term"/>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="term">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://nzmt.org.nz"/>
+          <code value="50227471000117107"/>
+          <display value="Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device"/>
+        </coding>
+        <text value="Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device"/>
+      </valueCodeableConcept>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://www.whocc.no/atc"/>
+        <code value="TODO"/>
+        <display value="No WHO ATC identified - medical device"/>
+      </coding>
+      <text value="No WHO ATC identified - medical device"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+    <extension url="quantity">
+      <valueQuantity>
+        <value value="1"/>
+        <unit value="device"/>
+      </valueQuantity>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+    <extension url="price">
+      <valueMoney>
+        <value value="9.54"/>
+        <currency value="NZD"/>
+      </valueMoney>
+    </extension>
+  </extension>
+  <code>
+    <coding>
+      <system value="http://nzmt.org.nz"/>
+      <code value="50227471000117107"/>
+      <display value="Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device"/>
+    </coding>
+    <coding>
+      <system value="https://www.gs1.org/gtin"/>
+      <code value="5023323040503"/>
+    </coding>
+    <coding>
+      <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+        <valueBoolean value="true"/>
+      </extension>
+      <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+      <code value="2489945"/>
+    </coding>
+    <text value="Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device"/>
+  </code>
+  <status value="active"/>
+  <form>
+    <text value="Low range"/>
+  </form>
+  <ingredient>
+    <itemCodeableConcept>
+      <text value="Peak flow meter"/>
+    </itemCodeableConcept>
+    <isActive value="true"/>
+  </ingredient>
+</Medication>

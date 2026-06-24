@@ -1,4 +1,4 @@
-# Resource Relationships - Pharmac Schedules FHIR API v1.0.1
+# Resource Relationships - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * **Resource Relationships**
@@ -9,331 +9,187 @@
 
 ## Overview
 
-The PHARMAC Schedule Implementation Guide uses a sophisticated relationship model to represent medications, devices, and their associated pricing, authorization requirements, and funding rules. This page explains the relationships between these resources and how to query them effectively.
+This page describes how PHARMAC Schedule FHIR resources are related to each other.
 
-## Core Relationship Model
+The relationship model is centred on the scheduled product, represented as a `Medication`, and the related `ChargeItemDefinition` resources that describe funding rules and Special Authority definitions.
 
-The relationship between Medications and ChargeItemDefinitions is fundamental to the PHARMAC Schedule API:
+This page focuses on how resources link together. Resource structure and profile-specific data elements are described in the data model section. API query syntax and search behaviour are described in the API section.
 
-```
-Medication ←→ ChargeItemDefinition (multiple types)
-    ├── Product Pricing ChargeItemDefinition
-    ├── Special Authorization ChargeItemDefinition
-    └── Funding Mechanism ChargeItemDefinition(s)
+## Relationship diagram
 
-```
+## Core relationship model
 
-### Key Principles
-
-1. **One Medication, Multiple ChargeItemDefinitions**: A single Medication resource may have multiple ChargeItemDefinition resources associated with it, each representing different aspects:
-* Product pricing information
-* Special authorization requirements
-* Different funding mechanism scenarios
-
-1. **ChargeItemDefinition References Medication**: ChargeItemDefinitions reference Medication resources via the `instance` element, establishing the relationship from pricing/authorization back to the product.
-1. **Search with _revinclude**: The API supports`_revinclude=ChargeItemDefinition:instance`to retrieve all related ChargeItemDefinitions alongside Medication resources in a single query.
-
-## ChargeItemDefinition Types
-
-The PHARMAC Schedule Implementation Guide defines three specialized ChargeItemDefinition profiles to represent distinct types of information:
-
-1. **PharmacChargeItemDefinitionPricing**- Product pricing information
-1. **PharmacChargeItemDefinitionSpecialAuthority**- Special authorization requirements
-1. **PharmacChargeItemDefinitionFundingRules**- Funding mechanisms and reimbursement rules
-
-Each profile has specific constraints and required elements appropriate to its purpose.
-
-### Product Pricing ChargeItemDefinition (PharmacChargeItemDefinitionPricing)
-
-Represents the base pricing information for a medication or device.
-
-**Profile:** `PharmacChargeItemDefinitionPricing`
-
-**Key Characteristics:**
-
-* Contains `propertyGroup` with `priceComponent` elements (REQUIRED)
-* Includes pricing attributes via extensions (costBrandSource, wastageClaimable, contractType, dvLimitPercent, brandSwitchFee, statim, inCombination)
-* References the product via `instance` element (REQUIRED)
-* May include multiple pricing scenarios (community pricing vs alternative pricing)
-* Does NOT use `code` element (reserved for SA codes)
-* Does NOT use authorization extensions
-
-**Example:** `ChargeItemDefinition-Clexane-Pricing`
-
-**Price Components:**
-
-* **Listed Price** (type: `base`) - The pharmaceutical supplier's price
-* **PHARMAC Subsidy** (type: `discount`) - The amount PHARMAC subsidizes
-* **Patient Surcharge** (type: `surcharge`) - The additional cost to the patient
-* **Patient Co-Payment** (type: `informational`) - The final calculated patient cost
-
-### Special Authorization ChargeItemDefinition (PharmacChargeItemDefinitionSpecialAuthority)
-
-Represents authorization requirements for restricted medications.
-
-NOTE: The following makes reference to SA-2139, which as of this writing is not provided fully for reference as an example. For the nature of the link as expressed in the legacy system, feel free to consult the existing Pharmac Schedule. SA-2139 will be provided as an example soon.
-
-**Profile:** `PharmacChargeItemDefinitionSpecialAuthority`
-
-**Key Characteristics:**
-
-* Uses `code` element to identify the special authority form (e.g., SA2139, SA2520) (REQUIRED)
-* Contains authorization extensions: authorizationCaseCount (REQUIRED), authorizationForm, authorizationTitle
-* Contains `authorizationSchema` extension with Base64-encoded JSON schema defining case submission structure (RECOMMENDED) 
-* May have multiple applicability entries representing different authorization cases
-* References the medication via `instance` element (REQUIRED)
-* Does NOT use pricing attribute extensions (costBrandSource, etc.)
-
-**Example:** `ChargeItemDefinition-SA9999-Authorization`
-
-A single Special Authority ChargeItemDefinition may reference multiple Medications. For example, SA9999 is a demonstration schema showing various validation patterns.
-
-**Authorization Cases (SA9999 - Example Template):** Multiple authorization patterns demonstrating text fields, numeric ranges, boolean selections, conditional fields, and combined logic.
-
-### Funding Mechanism ChargeItemDefinition (PharmacChargeItemDefinitionFundingRules)
-
-Represents specific funding scenarios and reimbursement rules.
-
-**Profile:** `PharmacChargeItemDefinitionFundingRules`
-
-**Key Characteristics:**
-
-* Contains `fundingRule` extension with type and rule details (REQUIRED)
-* Includes case sequence number and funding mechanism type (Prescription, BSO, RuralPSO, Pharmacy)
-* **NEW:** Contains optional `authorizationSchema` extension with Base64-encoded JSON schema for case submission validation (RECOMMENDED) 
-* May include `propertyGroup` with subsidy amounts
-* References the medication optionally via `instance` element
-* Does NOT use `code` element (reserved for SA codes)
-* Does NOT use pricing attribute extensions or authorization extensions
-
-**Example:** `ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1`
-
-**Funding Mechanism Types:**
-
-* **Prescription** - Standard community pharmacy prescription subsidy
-* **BSO** - Bulk Supply Order subsidy
-* **RuralPSO** - Rural Practitioner Supply Order subsidy
-* **Pharmacy** - Pharmacy-specific funding mechanism
-
-## Relationship Diagram
-
-## Search Patterns
-
-### Pattern 1: Search Medication with Pricing
-
-Retrieve a medication and all its associated ChargeItemDefinitions (pricing, funding rules):
+The current relationship model uses the following resource relationships:
 
 ```
-GET /Medication?name=Clexane&_revinclude=ChargeItemDefinition:instance
+Medication
+  ├── Funding Rules ChargeItemDefinition
+  └── Special Authority ChargeItemDefinition
 
 ```
 
-**Returns:** (see `SearchSet-Bundle-Clexane-Pricing`)
+A `Medication` represents the scheduled product. Related `ChargeItemDefinition` resources describe the funding rules and Special Authority definitions that apply to that product.
 
-* Medication-Clexane-100mg-1ml-Syringe (match)
-* ChargeItemDefinition-Clexane-Pricing (included)
-* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1 (included)
-* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2 (included)
-* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3 (included)
-
-### Pattern 2: Search Medication with Pricing, Funding Rules, and Authorizations
-
-Retrieve a medication and all associated ChargeItemDefinitions — pricing, funding rules, and special authorizations:
+The relationship is held from the `ChargeItemDefinition` back to the `Medication` using the `instance` element.
 
 ```
-GET /Medication?name=Clexane&_revinclude=ChargeItemDefinition:instance
+ChargeItemDefinition.instance -> Medication
 
 ```
 
-**Returns:** (see `SearchSet-Bundle-Clexane-Pricing`)
+This means the `Medication` does not need to contain a list of all related funding or authorisation records. Instead, each related `ChargeItemDefinition` identifies the product it applies to.
 
-* Medication-Clexane-100mg-1ml-Syringe (match)
-* ChargeItemDefinition-Clexane-Pricing (included)
-* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1 (included)
-* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2 (included)
-* ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3 (included)
-* ChargeItemDefinition-SA9999-Authorization (included)
+## Medication to Funding Rules ChargeItemDefinition
 
-### Pattern 3: Search by Special Authority Code
+A `Medication` may have one or more related Funding Rules `ChargeItemDefinition` resources.
 
-Retrieve all ChargeItemDefinitions for a specific special authority form:
+Each Funding Rules `ChargeItemDefinition` represents a funding or reimbursement rules record for the product.
+
+Examples of funding rules relationships include:
 
 ```
-GET /ChargeItemDefinition?code=SA9999
-
-```
-
-**Returns:**
-
-* All ChargeItemDefinitions with authorization code SA9999
-
-### Pattern 4: Reverse Include from Medication
-
-Retrieve a medication and include all ChargeItemDefinitions that reference it:
-
-```
-GET /Medication/Medication-Clexane?_revinclude=ChargeItemDefinition:instance
+Medication
+  ├── Community funding rules record
+  ├── Community funding rules case sequence
+  └── Hospital funding rules record
 
 ```
 
-**Returns:**
+A product may have multiple funding records because the Schedule can describe different funding contexts for the same product.
 
-* Medication-Clexane-100mg-1ml-Syringe
-* All ChargeItemDefinitions that reference this medication
+For example, a single `Medication` may have:
 
-### Pattern 5: Search by Special Authority and Include Medications
+* one or more community funding rules records;
+* one or more hospital funding rules records; or
+* multiple case sequences for the same funding type.
 
-Retrieve a Special Authority `ChargeItemDefinition` and all associated `Medication` resources:
+Each funding rules record links back to the relevant `Medication` through `ChargeItemDefinition.instance`.
 
-```
-GET /ChargeItemDefinition?code=SA9999&_include=ChargeItemDefinition:instance
+## Medication to Special Authority ChargeItemDefinition
 
-```
+A `Medication` may also have one or more related Special Authority `ChargeItemDefinition` resources.
 
-**Returns:** (see `SearchSet-Bundle-SA9999-Authorization`)
+A Special Authority `ChargeItemDefinition` represents a Special Authority form definition, such as `SA1098`.
 
-* ChargeItemDefinition-SA9999-Authorization (match)
-* Medication-Clexane-100mg-1ml-Syringe
-
-Note: A single Special Authority ChargeItemDefinition may reference multiple Medications via the `instance` element.
-
-## Complete Example: Clexane
-
-Clexane demonstrates the full complexity of the relationship model, with pricing, funding rules, and a special authority:
+The relationship allows a consumer to identify which Special Authority definitions are associated with a scheduled product.
 
 ```
-Medication-Clexane-100mg-1ml-Syringe
-  └── Referenced by:
-      ├── ChargeItemDefinition-Clexane-Pricing (Product Pricing)
-      │   ├── Listed Price: [See actual pricing]
-      │   ├── PHARMAC Subsidy: [See actual pricing]
-      │   ├── Contract Type: [See actual contract type]
-      │   └── Other pricing attributes: [See full resource]
-      │
-      ├── ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1 (Funding Rules)
-      │   └── Special Authority (SA9999) + Authorised Providers
-      │
-      ├── ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2 (Funding Rules)
-      │   └── PRIME Service Endorsement + Authorised Providers
-      │
-      ├── ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3 (Funding Rules)
-      │   └── Hospital Use Only
-      │
-      └── ChargeItemDefinition-SA9999-Authorization (SA9999 - Example Template)
-          ├── Demonstration schema with various validation patterns
-          ├── Text fields, numeric ranges, and boolean selections
-          ├── Conditional fields and combined logic patterns
-          └── For reference and developer guidance
-          └── For reference and developer guidance
+Medication
+  └── Special Authority ChargeItemDefinition
+        └── SA form code
 
 ```
 
-## Resources in this Implementation Guide
+A Special Authority definition may apply to one product or to multiple products, depending on how the Schedule represents the authority.
 
-The primary examples in this IG are based on **Clexane (enoxaparin sodium) 100mg 1ml Syringe**:
+Where applicable, the Special Authority `ChargeItemDefinition` references the associated product using `instance`.
 
-* **Medication:** `Medication-Clexane-100mg-1ml-Syringe` 
-* Identifiers: Brand ID, Pack ID, Chemical ID, Formulation ID, Pharma Code, and GTINs
-* Form: Injectable solution
-* Ingredients: Enoxaparin sodium
- 
-* **Pricing:** `ChargeItemDefinition-Clexane-Pricing` 
-* Represents the listed price, subsidy, surcharge, and co-payment for this medication
- 
-* **Funding Rules:** Three cases demonstrating different funding scenarios 
-* Case 1: Special Authority (SA9999) required + Authorised Providers
-* Case 2: PRIME service endorsement + Authorised Providers
-* Case 3: Hospital use only
- 
-* **Special Authorization:** `ChargeItemDefinition-SA9999-Authorization` 
-* Demonstration schema showing various validation patterns
-* Text fields, numeric ranges, booleans, conditional logic
-* For reference and developer guidance
- 
+## Funding Rules ChargeItemDefinition to Special Authority ChargeItemDefinition
 
-## JSON Schema Validation and Authorization Structure
+A Funding Rules `ChargeItemDefinition` may indicate that a Special Authority applies to a funding rules record.
 
-ChargeItemDefinitions now use the `authorizationSchema` extension containing a Base64-encoded JSON schema document to define validation rules for authorization case submissions and funding rules.
+This creates a logical relationship between:
 
-### Purpose of authorizationSchema
+* the funding rules record; and
+* the Special Authority form definition.
 
-The `authorizationSchema` extension serves to:
+The funding record represents the funding rules for the product. The Special Authority record represents the form definition for the authority referenced by those rules.
 
-1. **Define structural requirements**- Specify the exact properties and data types expected in an authorization form submission
-1. **Enable client-side validation**- Allow systems submitting authorizations to validate form data before submission
-1. **Document submission format**- Provide machine-readable documentation of the expected JSON structure
+```
+Funding Rules ChargeItemDefinition
+  └── authority requirement
+        └── Special Authority ChargeItemDefinition
 
-### Dual-Validation Architecture
+```
 
-Authorization and funding rules now use **JSON schema validation exclusively**:
+This relationship is based on the Special Authority identifier, such as `SA1098`.
 
-* **JSON Schema**: Validates structured format for case submissions, ensures required fields are present with correct data types
+For example:
 
-## Extensions and Attributes
+```
+Medication-50289761000117107
+  ├── ChargeItemDefinition-50289761000117107-Community-Case-1
+  │     └── authority requirement: SA1098
+  │
+  └── ChargeItemDefinition-SA1098-Authorization
+        └── Special Authority definition for SA1098
 
-### Pricing Attributes
+```
 
-| | | |
-| :--- | :--- | :--- |
-| effectiveDate | date | When pricing becomes effective |
-| expiryDate | date | When pricing expires (optional) |
-| costBrandSource | boolean | Pricing sourced from cost brand |
-| wastageClaimable | boolean | Wastage may be claimed |
-| contractType | string | PHARMAC contract type (e.g., PSS) |
-| dvLimitPercent | decimal | Daily volume limit percentage |
-| brandSwitchFee | boolean | Brand switch fee applies |
-| statim | string | Urgent dispensing rules (Must/n/a) |
-| inCombination | string | Combination therapy requirement (n/a) |
+The funding rules record and the Special Authority record remain separate resources because they describe different concepts:
 
-### Authorization Attributes
+| | |
+| :--- | :--- |
+| Funding Rules`ChargeItemDefinition` | Describes the funding rules record that applies to the product |
+| Special Authority`ChargeItemDefinition` | Describes the Special Authority form definition |
+| `Medication` | Represents the scheduled product both records relate to |
 
-| | | |
-| :--- | :--- | :--- |
-| authorizationForm | string | Special authority form code (e.g., SA2139) |
-| authorizationTitle | string | Human-readable authorization title |
-| authorizationCaseCount | integer | Number of distinct authorization cases |
-| authorizationSchema | Base64Binary | Base64-encoded JSON schema defining structured format for authorization case submissions. |
+## Example relationship
 
-### Funding Rule Attributes
+The following example shows how a product, its funding rules records, and its Special Authority definition relate to each other.
 
-| | | |
-| :--- | :--- | :--- |
-| fundingRule.type | code | Funding type (e.g., community) |
-| fundingRule.rule.type | code | Rule type (e.g., CaseSequence, FundingMechanism) |
-| fundingRule.rule.value | integer/decimal | Rule value |
-| fundingRule.rule.attribute | code | Rule attribute (e.g., Prescription, BSO) |
-| authorizationSchema | Base64Binary | Optional: Base64-encoded JSON schema defining structured format for funding case submissions. |
+```
+Medication-50289761000117107
+  Heparon Junior
 
-## Best Practices
+  Referenced by:
+    ChargeItemDefinition-50289761000117107-Community-Case-1
+      Funding rules record for the product
+      May indicate Special Authority SA1098 applies
 
-### For API Consumers
+    ChargeItemDefinition-50289761000117107-Hospital-Case-5
+      Hospital funding rules record for the product
 
-1. **Always use _revinclude**: When retrieving Medication resources, use`_revinclude=ChargeItemDefinition:instance`to get all related ChargeItemDefinitions in a single request. When retrieving ChargeItemDefinitions, use`_include=ChargeItemDefinition:instance`to get the referenced Medication(s).
-1. **Check ChargeItemDefinition types**: Examine the content to determine the type:
-* Has `propertyGroup` with pricing and no `fundingRule`? → Product Pricing
-* Has `code` with SA prefix? → Special Authorization
-* Has `fundingRule` extension? → Funding Rules
+    ChargeItemDefinition-SA1098-Authorization
+      Special Authority definition for SA1098
 
-1. **Process multiple scenarios**: A medication may have multiple authorization forms (SA2139, SA2520), multiple funding mechanisms (Prescription, BSO, Rural PSO), and multiple case sequences. Process all applicable ChargeItemDefinitions. A single Special Authority may reference multiple medications.
-1. **Validate against JSON schema**: If`authorizationSchema`is present, decode and use the Base64-encoded JSON schema to validate incoming authorization or funding case submissions.
-1. **Check effective dates**: Always verify that the ChargeItemDefinition is currently effective by checking`effectiveDate`and`expiryDate`extensions.
+```
 
-### For API Implementers
+In this example:
 
-1. **Create separate ChargeItemDefinitions**: Don't combine pricing, authorization, and funding rules in a single ChargeItemDefinition. Create separate instances for each concern.
-1. **Use consistent URL patterns**: Follow the pattern`ChargeItemDefinition/{Type}-{Product}-{Identifier}`for URLs.
-1. **Implement proper search parameters**: Support searching by:
-* `instance` (to find ChargeItemDefinitions for a Medication)
-* `code` (to find ChargeItemDefinitions by special authority code)
-* `effectiveDate` (to find current ChargeItemDefinitions)
+* the `Medication` represents the product;
+* the Funding Rules `ChargeItemDefinition` records represent funding rules records for that product; and
+* the Special Authority `ChargeItemDefinition` represents the form definition associated with the relevant SA code.
 
-1. **Maintain referential integrity**: Ensure all ChargeItemDefinitions reference valid Medication or Device resources via`instance`or`deviceDefinition`extensions.
-1. **Document JSON schemas**: Provide clear documentation of all`authorizationSchema`JSON documents, including the meaning of each required field and validation constraints.
+## Relationship principles
 
-## Related Resources
+The relationship model follows these principles:
 
-* [ChargeItemDefinition Profile](StructureDefinition-pharmac-charge-item-definition.md)
-* [Medication Profile](StructureDefinition-pharmac-medication.md)
-* [Search Parameters](searchparameters.md)
-* [Examples](examples.md)
+| | |
+| :--- | :--- |
+| Product-centred | `Medication`is the central product resource |
+| Referenced by rule resources | Funding Rules and Special Authority`ChargeItemDefinition`resources reference the relevant`Medication` |
+| Multiple related records | A single product may have multiple related`ChargeItemDefinition`resources |
+| Separate concerns | Funding rules records and Special Authority definitions are represented separately |
+| Shared authority definitions | A Special Authority definition may be associated with more than one product where applicable |
+| Logical authority link | A funding rules record may point to a Special Authority by SA identifier |
+
+## Bundle interpretation
+
+When related resources are returned together in a Bundle, consumers should distinguish between:
+
+| | |
+| :--- | :--- |
+| Match resource | The resource directly matched by the request |
+| Included resource | A related resource returned because it is linked to the matched resource |
+
+In a product-centred result, the `Medication` is typically the matched resource and the related `ChargeItemDefinition` resources are included resources.
+
+The API section describes the specific search parameters used to request these relationships.
+
+## Relationship boundaries
+
+The relationship model describes how Schedule resources are connected.
+
+It does not define:
+
+* product field structure;
+* funding rules field structure;
+* Special Authority field structure;
+* application workflow;
+* approval workflow;
+* case submission processing; or
+* consumer-side validation behaviour.
+
+Those topics are covered separately where required.
 

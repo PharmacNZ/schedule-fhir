@@ -1,27 +1,25 @@
-# Use Cases - Pharmac Schedules FHIR API v1.0.1
+# Use Cases - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * **Use Cases**
 
 ## Use Cases
 
-### Pharmacy system retrieves Pharmac Schedule data
+### Pharmacy system retrieves PHARMAC Schedule data
 
-Pharmacy dispensing systems can query the Pharmac Schedules FHIR API to keep local catalogs up to date with funded medicines and devices.
+Pharmacy and clinical systems can use the PHARMAC Schedule FHIR API to retrieve current product, funding, and Special Authority information.
 
-Typical flow:
+A typical retrieval flow is:
 
-1. The pharmacy system authenticates with the API using approved client credentials.
-1. It queries`Medication`resources for relevant medicines (e.g., by identifier, code, or name).
-1. It queries`DeviceDefinition`resources for relevant devices (e.g., by identifier, code, or name).
-1. The system stores key schedule attributes locally for dispensing and decision support.
-1. It periodically refreshes data to reflect schedule changes.
+1. The client authenticates using its approved credentials.
+1. The client retrieves the relevant`Medication`resource.
+1. The client retrieves related Funding Rules and Special Authority`ChargeItemDefinition`resources.
+1. The client displays or stores the returned Schedule information for its own business processes.
+1. The client periodically refreshes the data to reflect Schedule changes.
 
-### Real-time lookup during dispensing
+### Funding-rule lookup
 
-During dispensing, a pharmacist can search the API for the current schedule status of a medicine or device:
+A consumer can retrieve the product and the related funding-rule records needed to understand the Schedule context for that product.
 
-1. Search by medicine code or name in`Medication`.
-1. Search by device code or name in`DeviceDefinition`.
-1. Display returned details to confirm funding and restrictions.
+The API returns structured Schedule resources. It does not receive or process funding applications, validate submitted case data, or determine approval outcomes.
 

@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>MedicationCategorySearchParam - XML Representation - Pharmac Schedules FHIR API v1.0.1</title>
+    <title>MedicationCategorySearchParam - XML Representation - Pharmac Schedules FHIR API v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -48,8 +48,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"12.8"}
-    h3,h4,h5,h6{--heading-prefix:"12.8"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.6"}
+    h3,h4,h5,h6{--heading-prefix:"12.6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -67,7 +67,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">1.0.1 - draft
+            <span style="display:inline-block;">1.1.0 - draft
 
 
             </span>
@@ -110,9 +110,6 @@
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
@@ -203,7 +200,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -246,7 +243,7 @@
         
           Active
           
-            as of 2026-04-24
+            as of 2026-06-24
           
         
       </td>
@@ -267,10 +264,10 @@
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#SearchParameter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MedicationCategorySearchParam&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-category&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1.0.1&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1.1.0&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;medication-category&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-04-24T01:18:12+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-06-24T20:43:54+00:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Pharmac&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Pharmac&quot;/&gt;
@@ -287,12 +284,12 @@
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;work&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.contact">contact</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.description">description</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Search for medications by category&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.description">description</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Search for medications by ATC category&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;category&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.base">base</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Medication&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.expression">expression</a>
-              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Medication.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1').value.ofType(string) | Medication.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2').value.ofType(string) | DeviceDefinition.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3').value.ofType(string)&quot;/&gt;
+              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Medication.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc').value.ofType(CodeableConcept).text&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.xpathUsage">xpathUsage</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;normal&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.target">target</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Medication&quot;/&gt;
 &lt;/<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter">SearchParameter</a>&gt;</code></pre>
@@ -319,7 +316,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 24, 2026 01:18+0000">2026-04-24</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 20:43+0000">2026-06-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="50320741000117103"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+        <code value="ctpp"/>
+      </coding>
+      <text value="ctpp"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+    <extension url="type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://nzmt.org.nz"/>
+          <code value="20069071000116107"/>
+          <display value="Preferred Term"/>
+        </coding>
+        <text value="Preferred Term"/>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="term">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://nzmt.org.nz"/>
+          <code value="50320741000117103"/>
+          <display value="Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle"/>
+        </coding>
+        <text value="Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle"/>
+      </valueCodeableConcept>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://www.whocc.no/atc"/>
+        <code value="A11HA02"/>
+        <display value="pyridoxine (vit B6)"/>
+      </coding>
+      <text value="pyridoxine (vit B6)"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+    <extension url="quantity">
+      <valueQuantity>
+        <value value="90"/>
+        <unit value="tablet"/>
+      </valueQuantity>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+    <extension url="price">
+      <valueMoney>
+        <value value="3.43"/>
+        <currency value="NZD"/>
+      </valueMoney>
+    </extension>
+  </extension>
+  <code>
+    <coding>
+      <system value="http://nzmt.org.nz"/>
+      <code value="50320741000117103"/>
+      <display value="Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle"/>
+    </coding>
+    <coding>
+      <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+        <valueBoolean value="true"/>
+      </extension>
+      <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+      <code value="2473534"/>
+    </coding>
+    <text value="Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle"/>
+  </code>
+  <status value="active"/>
+  <form>
+    <text value="Tab 25 mg"/>
+  </form>
+  <ingredient>
+    <itemCodeableConcept>
+      <text value="Pyridoxine hydrochloride"/>
+    </itemCodeableConcept>
+    <isActive value="true"/>
+  </ingredient>
+</Medication>

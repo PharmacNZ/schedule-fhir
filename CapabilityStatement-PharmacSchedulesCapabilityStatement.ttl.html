@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Pharmac Schedules Capability Statement - TTL Representation - Pharmac Schedules FHIR API v1.0.1</title>
+    <title>Pharmac Schedules Capability Statement - TTL Representation - Pharmac Schedules FHIR API v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -67,7 +67,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">1.0.1 - draft
+            <span style="display:inline-block;">1.1.0 - draft
 
 
             </span>
@@ -110,9 +110,6 @@
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
@@ -203,7 +200,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -274,11 +271,8 @@
  a fhir:CapabilityStatement ;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
   <a href="http://hl7.org/fhir/R4/resource.html#CapabilityStatement.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;PharmacSchedulesCapabilityStatement&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.url">fhir:url</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement&gt;
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;1.0.1&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement&quot;^^xsd:anyURI] ; # 
+  <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;1.1.0&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;PharmacSchedulesCapabilityStatement&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.title">fhir:title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Pharmac Schedules Capability Statement&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;draft&quot;] ; # 
@@ -305,9 +299,7 @@
   ] ; # 
   <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.implementation">fhir:implementation</a> [
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.implementation.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Pharmac Schedules API&quot; ] ;
-<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.implementation.url">fhir:url</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#url">fhir:v</a> &quot;https://example.com/fhir/ImplementationGuide/pharmac-schedules&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#url">fhir:l</a> &lt;https://example.com/fhir/ImplementationGuide/pharmac-schedules&gt;     ]
+<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.implementation.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#url">fhir:v</a> &quot;https://example.com/fhir/ImplementationGuide/pharmac-schedules&quot;^^xsd:anyURI ]
   ] ; # 
   <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.fhirVersion">fhir:fhirVersion</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;4.0.1&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.format">fhir:format</a> ( [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;application/fhir+json&quot;] ) ; # 
@@ -316,28 +308,18 @@
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.security">fhir:security</a> [
       ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.security.extension">fhir:extension</a> [
         ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">fhir:extension</a> [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;token&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> fhir:token           ] ;
+<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;token&quot;^^xsd:anyURI ] ;
 <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">a</a> fhir:Uri ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://example.com/openid-connect/token&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;https://example.com/openid-connect/token&gt;           ]         ] [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;authorize&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> fhir:authorize           ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">a</a> fhir:uri ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://example.com/openid-connect/token&quot;^^xsd:anyURI           ]         ] [
+<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;authorize&quot;^^xsd:anyURI ] ;
 <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">a</a> fhir:Uri ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://example.com/openid-connect/token/openid-connect/authorize&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;https://example.com/openid-connect/token/openid-connect/authorize&gt;           ]         ] ) ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris&gt;         ]       ] [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://fhir-registry.smarthealthit.org/StructureDefinition/capabilities&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://fhir-registry.smarthealthit.org/StructureDefinition/capabilities&gt;         ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">a</a> fhir:uri ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://example.com/openid-connect/token/openid-connect/authorize&quot;^^xsd:anyURI           ]         ] ) ;
+<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris&quot;^^xsd:anyURI ]       ] [
+<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://fhir-registry.smarthealthit.org/StructureDefinition/capabilities&quot;^^xsd:anyURI ] ;
 <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#code">a</a> fhir:Code ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#code">a</a> fhir:code ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;client-confidential-symmetric&quot;         ]       ] ) ;
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.security.cors">fhir:cors</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> true ] ;
       ( <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.security.service">fhir:service</a> [
@@ -348,7 +330,7 @@
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;Medication&quot; ] ;
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.profile">fhir:profile</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication&gt;       ] ;
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication&gt;       ] ;
       ( <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">fhir:interaction</a> [
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;search-type&quot; ] ;
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> &quot;Search for Medication resources by code, name, or identifier&quot; ]       ] [
@@ -362,7 +344,7 @@
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ChargeItemDefinition&quot; ] ;
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.profile">fhir:profile</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition&gt;       ] ;
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition&gt;       ] ;
       ( <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">fhir:interaction</a> [
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;search-type&quot; ] ;
 <a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> &quot;Search for ChargeItemDefinition resources (pricing information)&quot; ]       ] [
@@ -398,7 +380,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 24, 2026 01:18+0000">2026-04-24</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 20:43+0000">2026-06-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,4 +1,4 @@
-# PHARMAC Medication - Pharmac Schedules FHIR API v1.0.1
+# PHARMAC Medication - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,67 +8,106 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication | *Version*:1.0.1 |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication | *Version*:1.1.0 |
 | Active as of 2025-01-26 | *Computable Name*:PharmacMedication |
 
  
-Profile for Medication resources representing pharmaceutical products in the PHARMAC schedule. This profile defines the structure for medications including brand identification, pack codes, product names, form, and ingredients. Pricing information is provided via related ChargeItemDefinition resources that can be retrieved using the _include search parameter. 
+Profile for Medication resources representing pharmaceutical products in the PHARMAC schedule. This profile defines the structure for medications including product names, coding, form, ingredients, and medication-level extensions such as ATC, pack, price, and legal class. 
 
  
-To define the structure for PHARMAC scheduled medications including brand and pack identifiers, product names, dosage forms, and ingredients. Pricing information should be accessed via ChargeItemDefinition resources using _include=Medication:medication in search queries. 
+To define the structure for PHARMAC scheduled medications including product names, dosage forms, coding, ingredients, and medication-level metadata such as pack, ATC, legal class, and price. 
 
 ### Overview
 
-The **PHARMAC Medication** profile defines how pharmaceutical products from the PHARMAC schedule are represented as FHIR Medication resources. Each Medication resource corresponds to a specific branded pack — a particular product, strength, form, and pack size — as listed in the schedule.
+The **PHARMAC Medication** profile represents a pharmaceutical product package published through the PHARMAC Schedule API.
 
-### When to use this profile
+The resource is the product-level record used to identify, describe, classify, and price a scheduled medicine.
 
-Use this profile to represent any medication listed in the PHARMAC Pharmaceutical Schedule. Medication resources are the central product catalogue entries and serve as the anchor for related pricing, funding rules, and special authorization information held in ChargeItemDefinition resources.
+### Profile
+
+| | |
+| :--- | :--- |
+| FSH profile name | `PharmacMedication` |
+| StructureDefinition id | `pharmac-medication` |
+| Parent resource | `Medication` |
 
 ### Key elements
 
 | | |
 | :--- | :--- |
-| `identifier` | At least three identifiers are required:**brandId**(PHARMAC brand code),**packId**(PHARMAC pack code), and optionally**pharmaCode**,**chemicalId**, and**formulationId**. These provide cross-referencing into PHARMAC and NZMT systems. |
-| `code.text` | The marketed brand name of the medication (e.g., "Ricovir"). |
-| `form.text` | The pharmaceutical dosage form (e.g., "tablet", "oral liquid"). |
-| `ingredient` | Active ingredients with`isActive = true`. The ingredient is expressed as a`CodeableConcept`with a text description. |
-| `status` | Fixed to`#active`— all scheduled medications are active. |
+| `id` | Resource identifier. In the current examples this is the NZMT CTPP identifier |
+| `meta.profile` | Declares conformance to`pharmac-medication` |
+| `status` | Status of the Medication record |
+| `code.coding` | Product coding, including NZMT CTPP, GTIN, and PHARMAC subsidy code where available |
+| `code.text` | Human-readable product name |
+| `form` | Dose form |
+| `ingredient` | Active ingredient information |
+| `medication-nzmt-type` | NZMT concept type represented by the resource |
+| `medication-description` | Structured product description terms |
+| `medication-atc` | ATC classification where available |
+| `medication-pack` | Pack code, quantity, and size information where available |
+| `medication-legal-classification` | Legal classification display text where supplied |
+| `medication-legal-class` | Structured legal-class code where supplied |
+| `medication-price` | Schedule date and product price information |
+| `pharmac-is-primary-coding` | Identifies the primary PHARMAC subsidy coding within`Medication.code.coding` |
 
-### Extensions
+### Resource identifier
 
-| | | |
-| :--- | :--- | :--- |
-| `MedicationBrandName` | string | The PHARMAC brand name. |
-| `MedicationPackageSize` | string | Pack size description. |
-| `MedicationUnitOfMeasure` | string | Unit of measure for the pack. |
-| `MedicationRank` | integer | Display ranking within the schedule. |
-| `MedicationATCCategory1–3` | string | ATC classification levels. |
-| `MedicationProductMultiple` | string | Product multiple indicator. |
-| `MedicationProductMultiplier` | decimal | Product multiplier value. |
-
-### Retrieving related information
-
-Medication resources on their own describe the product. To retrieve pricing, funding rules, and special authorization information, use the `_revinclude` search parameter:
+The FSH instance name and the FHIR resource `id` are separate values.
 
 ```
-GET /Medication?identifier=http://schedule.pharmac.govt.nz/ids/pack|1234
-    &_revinclude=ChargeItemDefinition:instance
+Instance: Medication-50225401000117106
+* id = "50225401000117106"
 
 ```
 
-This returns the Medication along with all ChargeItemDefinition resources (pricing, funding rules, and special authorizations) that reference it.
+References to this Medication use the FHIR resource id:
+
+```
+* instance[0] = Reference(Medication/50225401000117106)
+
+```
+
+### Product coding
+
+`Medication.code.coding` carries the product codes associated with the package. The NZMT CTPP coding identifies the product package represented by the resource. Other coding, such as GTIN or PHARMAC subsidy coding, can be included where available.
+
+The `pharmac-is-primary-coding` extension can be applied to a coding entry to identify the primary PHARMAC subsidy code.
+
+### Product price
+
+Product price is represented on the Medication using `medication-price`.
+
+```
+{
+  "url": "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price",
+  "extension": [
+    {
+      "url": "price",
+      "valueMoney": {
+        "value": 180,
+        "currency": "NZD"
+      }
+    }
+  ]
+}
+
+```
+
+### Related Schedule records
+
+Funding Rules and Special Authority `ChargeItemDefinition` resources reference the relevant Medication using `ChargeItemDefinition.instance`.
+
+The relationship model is described on the [Resource Relationships](relationships.md) page, and API retrieval examples are provided on the [API](api.md) page.
 
 ### Example
 
-See [Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md) for a complete example of an enoxaparin (anticoagulant) injectable medication.
-
 **Usages:**
 
-* Examples for this Profile: [Medication/Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md), [Medication/Medication-Fortisip-Multi-Fibre-Chocolate](Medication-Medication-Fortisip-Multi-Fibre-Chocolate.md) and [Medication/Medication-Nutrison-800-Complete-Multi-Fibre](Medication-Medication-Nutrison-800-Complete-Multi-Fibre.md)
+* Examples for this Profile: [Medication/50003171000117108](Medication-50003171000117108.md), [Medication/50014861000117106](Medication-50014861000117106.md), [Medication/50021691000117107](Medication-50021691000117107.md), [Medication/50021721000117104](Medication-50021721000117104.md)... Show 26 more, [Medication/50021991000117100](Medication-50021991000117100.md), [Medication/50038111000117102](Medication-50038111000117102.md), [Medication/50046921000117106](Medication-50046921000117106.md), [Medication/50046931000117109](Medication-50046931000117109.md), [Medication/50048881000117104](Medication-50048881000117104.md), [Medication/50055641000117102](Medication-50055641000117102.md), [Medication/50058961000117103](Medication-50058961000117103.md), [Medication/50074861000117103](Medication-50074861000117103.md), [Medication/50083491000117102](Medication-50083491000117102.md), [Medication/50085781000117107](Medication-50085781000117107.md), [Medication/50120021000117104](Medication-50120021000117104.md), [Medication/50121491000117102](Medication-50121491000117102.md), [Medication/50148261000117103](Medication-50148261000117103.md), [Medication/50225401000117106](Medication-50225401000117106.md), [Medication/50227471000117107](Medication-50227471000117107.md), [Medication/50242281000117106](Medication-50242281000117106.md), [Medication/50248381000117100](Medication-50248381000117100.md), [Medication/50270251000117100](Medication-50270251000117100.md), [Medication/50277841000117102](Medication-50277841000117102.md), [Medication/50283011000117109](Medication-50283011000117109.md), [Medication/50289761000117107](Medication-50289761000117107.md), [Medication/50301271000117101](Medication-50301271000117101.md), [Medication/50308221000117108](Medication-50308221000117108.md), [Medication/50320741000117103](Medication-50320741000117103.md), [Medication/50324571000117108](Medication-50324571000117108.md) and [Medication/50350151000117104](Medication-50350151000117104.md)
 * CapabilityStatements using this Profile: [Pharmac Schedules Capability Statement](CapabilityStatement-PharmacSchedulesCapabilityStatement.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/pharmac-medication)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/pharmac.fhir.pharmac-schedules|current/StructureDefinition/StructureDefinition-pharmac-medication.json)
 
 ### Formal Views of Profile Content
 
@@ -87,7 +126,7 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-medication.c
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-medication",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacMedication",
   "title" : "PHARMAC Medication",
   "status" : "active",
@@ -108,8 +147,8 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-medication.c
       "use" : "work"
     }]
   }],
-  "description" : "Profile for Medication resources representing pharmaceutical products in the PHARMAC schedule. This profile defines the structure for medications including brand identification, pack codes, product names, form, and ingredients. Pricing information is provided via related ChargeItemDefinition resources that can be retrieved using the _include search parameter.",
-  "purpose" : "To define the structure for PHARMAC scheduled medications including brand and pack identifiers, product names, dosage forms, and ingredients. Pricing information should be accessed via ChargeItemDefinition resources using _include=Medication:medication in search queries.",
+  "description" : "Profile for Medication resources representing pharmaceutical products in the PHARMAC schedule. This profile defines the structure for medications including product names, coding, form, ingredients, and medication-level extensions such as ATC, pack, price, and legal class.",
+  "purpose" : "To define the structure for PHARMAC scheduled medications including product names, dosage forms, coding, ingredients, and medication-level metadata such as pack, ATC, legal class, and price.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "script10.6",
@@ -154,330 +193,88 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-medication.c
       }
     },
     {
-      "id" : "Medication.extension:MedicationBrandName",
+      "id" : "Medication.extension:MedicationNZMTType",
       "path" : "Medication.extension",
-      "sliceName" : "MedicationBrandName",
-      "short" : "Brand name of the medication",
-      "definition" : "The marketed brand name for the medication (e.g., 'Budesonide Te Arai', 'Gaviscon Infant')",
+      "sliceName" : "MedicationNZMTType",
+      "short" : "NZMT type",
+      "definition" : "NZMT concept type for the medication code (e.g., CTPP).",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name"]
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type"]
       }],
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:MedicationPackageSize",
+      "id" : "Medication.extension:MedicationDescription",
       "path" : "Medication.extension",
-      "sliceName" : "MedicationPackageSize",
-      "short" : "Package size/quantity",
-      "definition" : "The quantity of medication per pack (e.g., '30' for 30 sachets, '100' for 100 tablets)",
+      "sliceName" : "MedicationDescription",
+      "short" : "Medication description",
+      "definition" : "Structured description fields (type and term) for the medication.",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size"]
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"]
       }],
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:MedicationUnitOfMeasure",
+      "id" : "Medication.extension:MedicationATC",
       "path" : "Medication.extension",
-      "sliceName" : "MedicationUnitOfMeasure",
-      "short" : "Unit of measure",
-      "definition" : "The unit used for the package size (e.g., 'tab', 'cap', 'ml', 'sach')",
+      "sliceName" : "MedicationATC",
+      "short" : "ATC code",
+      "definition" : "ATC code and display for the medication.",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure"]
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc"]
       }],
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:MedicationRank",
+      "id" : "Medication.extension:MedicationPack",
       "path" : "Medication.extension",
-      "sliceName" : "MedicationRank",
-      "short" : "Medication preference rank",
-      "definition" : "The preference rank for this medication in the schedule (1=preferred, 2=less preferred, 3=least preferred)",
+      "sliceName" : "MedicationPack",
+      "short" : "Pack details",
+      "definition" : "Structured pack details including NZMT medicine code, quantity, and size.",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank"]
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"]
       }],
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:MedicationATCCategory1",
+      "id" : "Medication.extension:MedicationPrice",
       "path" : "Medication.extension",
-      "sliceName" : "MedicationATCCategory1",
-      "short" : "ATC Category Level 1",
-      "definition" : "First level ATC classification (e.g., 'Alimentary tract and metabolism')",
+      "sliceName" : "MedicationPrice",
+      "short" : "Medication price",
+      "definition" : "Medication-level schedule date and display price information.",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1"]
-      }]
-    },
-    {
-      "id" : "Medication.extension:MedicationATCCategory2",
-      "path" : "Medication.extension",
-      "sliceName" : "MedicationATCCategory2",
-      "short" : "ATC Category Level 2",
-      "definition" : "Second level ATC classification (e.g., 'Drugs for acid related disorders')",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2"]
-      }]
-    },
-    {
-      "id" : "Medication.extension:MedicationATCCategory3",
-      "path" : "Medication.extension",
-      "sliceName" : "MedicationATCCategory3",
-      "short" : "ATC Category Level 3",
-      "definition" : "Third level ATC classification (e.g., 'Antacids')",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3"]
-      }]
-    },
-    {
-      "id" : "Medication.extension:MedicationProductMultiple",
-      "path" : "Medication.extension",
-      "sliceName" : "MedicationProductMultiple",
-      "short" : "Product multiple applies",
-      "definition" : "Indicates whether this pack uses product multiples when calculating pricing or claims.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple"]
-      }]
-    },
-    {
-      "id" : "Medication.extension:MedicationProductMultiplier",
-      "path" : "Medication.extension",
-      "sliceName" : "MedicationProductMultiplier",
-      "short" : "Product multiplier value",
-      "definition" : "Numeric multiplier applied when calculating pricing or claims for this pack.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier"]
-      }]
-    },
-    {
-      "id" : "Medication.extension:MedicationOriginalPack",
-      "path" : "Medication.extension",
-      "sliceName" : "MedicationOriginalPack",
-      "short" : "Original pack flag",
-      "definition" : "Indicates whether this pack represents the original pack supplied by the manufacturer.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack"]
-      }]
-    },
-    {
-      "id" : "Medication.extension:MedicationSafetyListMedicine",
-      "path" : "Medication.extension",
-      "sliceName" : "MedicationSafetyListMedicine",
-      "short" : "Safety list medicine flag",
-      "definition" : "Indicates whether this medication is on a PHARMAC safety list.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine"]
-      }]
-    },
-    {
-      "id" : "Medication.extension:MedicationStrength",
-      "path" : "Medication.extension",
-      "sliceName" : "MedicationStrength",
-      "short" : "Medication strength",
-      "definition" : "Strength for a medication.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength"]
-      }]
-    },
-    {
-      "id" : "Medication.extension:MedicationLegalClassification",
-      "path" : "Medication.extension",
-      "sliceName" : "MedicationLegalClassification",
-      "short" : "Legal classification for a medication.",
-      "definition" : "Legal classification for a medication.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification"]
-      }]
-    },
-    {
-      "id" : "Medication.extension:MedicationProductCreatedDate",
-      "path" : "Medication.extension",
-      "sliceName" : "MedicationProductCreatedDate",
-      "short" : "Medication product created date",
-      "definition" : "The date a medication product record was created.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date"]
-      }]
-    },
-    {
-      "id" : "Medication.identifier",
-      "path" : "Medication.identifier",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "system"
-        }],
-        "description" : "Slice based on identifier system",
-        "rules" : "open"
-      },
-      "min" : 3,
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"]
+      }],
       "mustSupport" : true
     },
     {
-      "id" : "Medication.identifier:pharmaCode",
-      "path" : "Medication.identifier",
-      "sliceName" : "pharmaCode",
-      "short" : "PHARMAC code",
-      "definition" : "The unique PHARMAC code for this medication - commonly referred to as PharmaCode - superseeded by NZMT.",
+      "id" : "Medication.extension:MedicationLegalClass",
+      "path" : "Medication.extension",
+      "sliceName" : "MedicationLegalClass",
+      "short" : "Legal class code",
+      "definition" : "Structured legal class coding for the medication.",
       "min" : 0,
       "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-class"]
+      }],
       "mustSupport" : true
-    },
-    {
-      "id" : "Medication.identifier:pharmaCode.system",
-      "path" : "Medication.identifier.system",
-      "min" : 1,
-      "fixedUri" : "http://schedule.pharmac.govt.nz/ids/pharmacode"
-    },
-    {
-      "id" : "Medication.identifier:pharmaCode.value",
-      "path" : "Medication.identifier.value",
-      "min" : 1
-    },
-    {
-      "id" : "Medication.identifier:brandId",
-      "path" : "Medication.identifier",
-      "sliceName" : "brandId",
-      "short" : "PHARMAC brand identifier",
-      "definition" : "The unique PHARMAC brand code for this medication",
-      "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.identifier:brandId.system",
-      "path" : "Medication.identifier.system",
-      "min" : 1,
-      "fixedUri" : "http://schedule.pharmac.govt.nz/ids/brand"
-    },
-    {
-      "id" : "Medication.identifier:brandId.value",
-      "path" : "Medication.identifier.value",
-      "min" : 1
-    },
-    {
-      "id" : "Medication.identifier:packId",
-      "path" : "Medication.identifier",
-      "sliceName" : "packId",
-      "short" : "PHARMAC pack identifier",
-      "definition" : "The unique PHARMAC pack code for this specific pack size/formulation",
-      "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.identifier:packId.system",
-      "path" : "Medication.identifier.system",
-      "min" : 1,
-      "fixedUri" : "http://schedule.pharmac.govt.nz/ids/pack"
-    },
-    {
-      "id" : "Medication.identifier:packId.value",
-      "path" : "Medication.identifier.value",
-      "min" : 1
-    },
-    {
-      "id" : "Medication.identifier:chemicalId",
-      "path" : "Medication.identifier",
-      "sliceName" : "chemicalId",
-      "short" : "PHARMAC chemical identifier",
-      "definition" : "The unique PHARMAC code for the chemical substance (e.g., 'C0104041168')",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.identifier:chemicalId.system",
-      "path" : "Medication.identifier.system",
-      "min" : 1,
-      "fixedUri" : "http://schedule.pharmac.govt.nz/ids/chemical"
-    },
-    {
-      "id" : "Medication.identifier:chemicalId.value",
-      "path" : "Medication.identifier.value",
-      "min" : 1
-    },
-    {
-      "id" : "Medication.identifier:formulationId",
-      "path" : "Medication.identifier",
-      "sliceName" : "formulationId",
-      "short" : "PHARMAC formulation identifier",
-      "definition" : "The unique PHARMAC code for this formulation (e.g., 'F010404116809')",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.identifier:formulationId.system",
-      "path" : "Medication.identifier.system",
-      "min" : 1,
-      "fixedUri" : "http://schedule.pharmac.govt.nz/ids/formulation"
-    },
-    {
-      "id" : "Medication.identifier:formulationId.value",
-      "path" : "Medication.identifier.value",
-      "min" : 1
-    },
-    {
-      "id" : "Medication.identifier:gtin",
-      "path" : "Medication.identifier",
-      "sliceName" : "gtin",
-      "short" : "GS1 GTIN",
-      "definition" : "Global Trade Item Number(s) for this pack — multiple GTINs are allowed (e.g. different barcode formats)",
-      "min" : 0,
-      "max" : "*",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.identifier:gtin.system",
-      "path" : "Medication.identifier.system",
-      "min" : 1,
-      "fixedUri" : "https://www.gs1.org/gtin"
-    },
-    {
-      "id" : "Medication.identifier:gtin.value",
-      "path" : "Medication.identifier.value",
-      "min" : 1
     },
     {
       "id" : "Medication.code",
@@ -486,38 +283,98 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-medication.c
       "mustSupport" : true,
       "binding" : {
         "strength" : "extensible",
-        "description" : "Codes for medications from NZMT CTPP, PackID, and SNOMED CT",
+        "description" : "Codes for medications from NZMT and SNOMED CT",
         "valueSet" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code"
       }
     },
     {
+      "id" : "Medication.code.coding",
+      "path" : "Medication.code.coding",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "system"
+        }],
+        "rules" : "open"
+      },
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.coding:nzmt",
+      "path" : "Medication.code.coding",
+      "sliceName" : "nzmt",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.coding:nzmt.system",
+      "path" : "Medication.code.coding.system",
+      "min" : 1,
+      "fixedUri" : "http://nzmt.org.nz"
+    },
+    {
+      "id" : "Medication.code.coding:nzmt.code",
+      "path" : "Medication.code.coding.code",
+      "min" : 1
+    },
+    {
+      "id" : "Medication.code.coding:gtin",
+      "path" : "Medication.code.coding",
+      "sliceName" : "gtin",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.coding:gtin.system",
+      "path" : "Medication.code.coding.system",
+      "min" : 1,
+      "fixedUri" : "https://www.gs1.org/gtin"
+    },
+    {
+      "id" : "Medication.code.coding:gtin.code",
+      "path" : "Medication.code.coding.code",
+      "min" : 1
+    },
+    {
+      "id" : "Medication.code.coding:pharmacSubsidyCode",
+      "path" : "Medication.code.coding",
+      "sliceName" : "pharmacSubsidyCode",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.coding:pharmacSubsidyCode.extension:PharmacIsPrimaryCoding",
+      "path" : "Medication.code.coding.extension",
+      "sliceName" : "PharmacIsPrimaryCoding",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding"]
+      }]
+    },
+    {
+      "id" : "Medication.code.coding:pharmacSubsidyCode.system",
+      "path" : "Medication.code.coding.system",
+      "min" : 1,
+      "fixedUri" : "https://standards.digital.health.nz/ns/pharmac-subsidy-code"
+    },
+    {
+      "id" : "Medication.code.coding:pharmacSubsidyCode.code",
+      "path" : "Medication.code.coding.code",
+      "min" : 1
+    },
+    {
       "id" : "Medication.code.text",
       "path" : "Medication.code.text",
-      "short" : "Brand name of the medication",
-      "definition" : "The marketed name or brand name of the medication (e.g., 'Gaviscon Infant', 'Acidex', 'Alu-Tab')",
+      "short" : "Medication display name",
+      "definition" : "Human-readable display name for the medication product represented by the coded concept.",
       "min" : 1,
       "mustSupport" : true
-    },
-    {
-      "id" : "Medication.status",
-      "path" : "Medication.status",
-      "short" : "Active status for scheduled medications",
-      "definition" : "All medications in the PHARMAC schedule are active",
-      "min" : 1,
-      "fixedCode" : "active",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.form",
-      "path" : "Medication.form",
-      "min" : 1,
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.form.text",
-      "path" : "Medication.form.text",
-      "short" : "Dosage form (e.g., 'tablet', 'oral liquid', 'sachet')",
-      "definition" : "The pharmaceutical dosage form of the medication"
     },
     {
       "id" : "Medication.ingredient",
@@ -533,7 +390,7 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-medication.c
       }],
       "binding" : {
         "strength" : "extensible",
-        "description" : "Codes for medication ingredients from NZMT CTPP, PackID, and SNOMED CT",
+        "description" : "Codes for medication ingredients from NZMT and SNOMED CT",
         "valueSet" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code"
       }
     },

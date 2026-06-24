@@ -1,41 +1,137 @@
-# Examples - Pharmac Schedules FHIR API v1.0.1
+# Examples - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * **Examples**
 
 ## Examples
 
-This page provides a small set of representative examples for each resource type.
+# Worked Schedule examples
 
-## Medication
+This page uses a small set of worked scenarios to explain how PHARMAC Schedule information is represented across `Medication`, Funding Rules `ChargeItemDefinition`, and Special Authority `ChargeItemDefinition` resources.
 
-These examples show the simplified Medication representation used for schedule items.
+The examples are deliberately selective. They demonstrate the main modelling patterns and condition types rather than reproduce every generated example in the Implementation Guide. The complete set remains available from the **Artifacts** page.
 
-### Clexane - 100mg/1ml Syringe
+## Coverage provided by these scenarios
 
-### Nutrison 800 Complete Multi Fibre
+| | | |
+| :--- | :--- | :--- |
+| Fluanxol Depot | Prescription, BSO, Rural PSO, PSO, and hospital | Limit and provider |
+| Etoposide | Prescription, BSO, Rural PSO, and hospital | Provider and endorsement |
+| Famotidine | Prescription and hospital | Provider, endorsement, and note |
+| Nitisinone | Prescription and hospital | Authority, restriction, and provider |
 
-### Fortisip Multi Fibre Chocolate
+Together, the scenarios cover all current funding condition types:
 
-## ChargeItemDefinition - Pricing
+* authority;
+* restriction;
+* limit;
+* provider;
+* endorsement; and
+* note.
 
-These examples show pricing information for medications.
+-------
 
-### Clexane - 100mg/1ml Syringe Pricing
+## Scenario 1: One Medication with multiple community and hospital pathways
 
-## ChargeItemDefinition - Funding Rules
+### Fluanxol Depot 40 mg/2 mL injection
 
-These examples demonstrate funding rules for medications, with different funding pathways and reimbursement mechanisms. Each includes JSON Schema validation via the `authorizationSchema` extension.
+This scenario demonstrates that each distinct funding pathway is represented by a separate Funding Rules `ChargeItemDefinition`.
 
-### Clexane - 100mg/1ml Syringe Case 1 (Special Authority)
+The product has:
 
-### Clexane - 100mg/1ml Syringe Case 2 (PRIME Endorsement)
+* community Prescription, BSO, Rural PSO, and PSO pathways;
+* a provider requirement and quantity limit on the PSO pathway; and
+* a separate hospital funding record.
 
-### Clexane - 100mg/1ml Syringe Case 3 (Hospital Use)
+The Medication remains the common product record referenced by each Funding Rules resource through `ChargeItemDefinition.instance`.
 
-## ChargeItemDefinition - Special Authority
+### Medication
 
-These examples capture special authorization requirements and clinical eligibility criteria with authorization form schema.
+### Standard community Prescription pathway
 
-### SA9999 - Example Template
+### PSO pathway with limit and provider conditions
+
+### Hospital pathway
+
+### Combined retrieval example
+
+-------
+
+## Scenario 2: Specialist endorsement
+
+### Etoposide (Rex) 100 mg/5 mL injection
+
+This scenario demonstrates specialist endorsement requirements across several community funding mechanisms.
+
+The product has:
+
+* community Prescription, BSO, and Rural PSO pathways;
+* provider and specialist endorsement conditions on each community pathway; and
+* a separate hospital funding record with no additional conditions.
+
+### Medication
+
+### Community Prescription pathway
+
+### Community BSO pathway
+
+### Community Rural PSO pathway
+
+### Combined retrieval example
+
+-------
+
+## Scenario 3: Endorsement and a Schedule note
+
+### Famotidine (Mylan) 40 mg/4 mL injection
+
+This scenario demonstrates a funding pathway where an endorsement condition is accompanied by human-readable Schedule memoranda.
+
+The community case contains:
+
+* an authorised-prescriber requirement;
+* subsidy by endorsement; and
+* the note that subsidy applies to patients receiving treatment as part of palliative care.
+
+### Medication
+
+### Community endorsement and note pathway
+
+### Combined retrieval example
+
+-------
+
+## Scenario 4: Community Special Authority and hospital restriction
+
+### Nitisinone (Logixx Pharma) 2 mg capsule
+
+This scenario demonstrates how the same Medication can have different conditions in community and hospital settings.
+
+The product has:
+
+* a community Prescription pathway requiring `SA2561`;
+* an authorised-provider requirement on the community pathway;
+* a separate hospital pathway subject to restriction `RS2164`; and
+* a related Special Authority definition represented by a separate `ChargeItemDefinition`.
+
+### Medication
+
+### Community pathway with Special Authority
+
+### Hospital pathway with restriction
+
+### Related Special Authority definition
+
+### Combined retrieval example
+
+-------
+
+## Additional generated examples
+
+These worked scenarios are not the complete example set. The **Artifacts** page provides the full generated collection of:
+
+* Medication resources;
+* Funding Rules `ChargeItemDefinition` resources;
+* Special Authority `ChargeItemDefinition` resources; and
+* search and `_revinclude` Bundles.
 

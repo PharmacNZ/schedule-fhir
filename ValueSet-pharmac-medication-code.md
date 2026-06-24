@@ -1,4 +1,4 @@
-# PHARMAC Medication Code ValueSet - Pharmac Schedules FHIR API v1.0.1
+# PHARMAC Medication Code ValueSet - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code | *Version*:1.0.1 |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code | *Version*:1.1.0 |
 | Active as of 2025-01-27 | *Computable Name*:PharmacMedicationCode |
 
  
@@ -51,7 +51,7 @@ No Expansion for this valueset (Unsupported Code System Version)
   "resourceType" : "ValueSet",
   "id" : "pharmac-medication-code",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacMedicationCode",
   "title" : "PHARMAC Medication Code ValueSet",
   "status" : "active",

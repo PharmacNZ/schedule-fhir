@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - Pharmac Schedules FHIR API v1.0.1</title>
+    <title>Artifacts Summary - Pharmac Schedules FHIR API v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">1.0.1 - draft
+            <span style="display:inline-block;">1.1.0 - draft
 
 
             </span>
@@ -108,9 +108,6 @@
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
@@ -208,7 +205,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -295,15 +292,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="SearchParameter-ChargeItemDefinitionPricingEffectiveDateSearchParam.html"
-                  title="SearchParameter/ChargeItemDefinitionPricingEffectiveDateSearchParam">ChargeItemDefinitionPricingEffectiveDateSearchParam</a>
-            </td>
-            <td>
-<p>Search ChargeItemDefinition by pricing effective date extension</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="SearchParameter-ChargeItemDefinitionSACodeSearchParam.html"
                   title="SearchParameter/ChargeItemDefinitionSACodeSearchParam">ChargeItemDefinitionSACodeSearchParam</a>
             </td>
@@ -313,20 +301,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="SearchParameter-MedicationBrandNameSearchParam.html"
-                  title="SearchParameter/MedicationBrandNameSearchParam">MedicationBrandNameSearchParam</a>
-            </td>
-            <td>
-<p>Search for medications by brand name (e.g., 'Gaviscon', 'Acidex', 'Budesonide'). Enables fuzzy matching on the medication-brand-name extension for discovery by product name.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="SearchParameter-MedicationCategorySearchParam.html"
                   title="SearchParameter/MedicationCategorySearchParam">MedicationCategorySearchParam</a>
             </td>
             <td>
-<p>Search for medications by category</p>
+<p>Search for medications by ATC category</p>
 </td>
          </tr>
          <tr>
@@ -366,15 +345,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html"
-                  title="StructureDefinition/pharmac-charge-item-definition-pricing">PHARMAC Charge Item Definition - Pricing</a>
-            </td>
-            <td>
-<p>Profile for ChargeItemDefinition resources representing product pricing information for medications and devices in the PHARMAC schedule. This profile captures listed prices, PHARMAC subsidies, patient co-payments, and pricing-specific attributes such as contract type, DV limits, and statim requirements.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html"
                   title="StructureDefinition/pharmac-charge-item-definition-special-authority">PHARMAC Charge Item Definition - Special Authority</a>
             </td>
@@ -388,7 +358,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="StructureDefinition/pharmac-medication">PHARMAC Medication</a>
             </td>
             <td>
-<p>Profile for Medication resources representing pharmaceutical products in the PHARMAC schedule. This profile defines the structure for medications including brand identification, pack codes, product names, form, and ingredients. Pricing information is provided via related ChargeItemDefinition resources that can be retrieved using the _include search parameter.</p>
+<p>Profile for Medication resources representing pharmaceutical products in the PHARMAC schedule. This profile defines the structure for medications including product names, coding, form, ingredients, and medication-level extensions such as ATC, pack, price, and legal class.</p>
 </td>
          </tr>
       </tbody>
@@ -491,6 +461,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-funding-subsidy-amount.html"
+                  title="StructureDefinition/funding-subsidy-amount">Funding Subsidy Amount</a>
+            </td>
+            <td>
+<p>Structured subsidy details for funding rule cases, including subsidy type, status, optional amount, and display label.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-in-combination.html"
                   title="StructureDefinition/in-combination">In-Combination</a>
             </td>
@@ -500,47 +479,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-medication-atc-category-1.html"
-                  title="StructureDefinition/medication-atc-category-1">Medication ATC Category 1</a>
+               <a href="StructureDefinition-medication-atc.html"
+                  title="StructureDefinition/medication-atc">Medication ATC</a>
             </td>
             <td>
-<p>Used to describe ATC Category 1 (including id and name)</p>
+<p>ATC code and display for the medication.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-medication-atc-category-2.html"
-                  title="StructureDefinition/medication-atc-category-2">Medication ATC Category 2</a>
+               <a href="StructureDefinition-medication-description.html"
+                  title="StructureDefinition/medication-description">Medication Description</a>
             </td>
             <td>
-<p>Used to describe ATC Category 2 (including id and name)</p>
+<p>Structured description fields for medication terms.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-medication-atc-category-3.html"
-                  title="StructureDefinition/medication-atc-category-3">Medication ATC Category 3</a>
+               <a href="StructureDefinition-medication-legal-class.html"
+                  title="StructureDefinition/medication-legal-class">Medication Legal Class</a>
             </td>
             <td>
-<p>Used to describe ATC Category 3 (including id and name)</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-medication-brand-name.html"
-                  title="StructureDefinition/medication-brand-name">Medication Brand Name</a>
-            </td>
-            <td>
-<p>The brand or trade name of the medication. For example, 'Budesonide Te Arai' or 'Gaviscon Infant'.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-medication-in-combination.html"
-                  title="StructureDefinition/medication-in-combination">Medication In Combination</a>
-            </td>
-            <td>
-<p>Indicates whether this medication is only subsidised when used in combination with other medicines.</p>
+<p>Structured legal class code for a medication.</p>
 </td>
          </tr>
          <tr>
@@ -554,92 +515,38 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-medication-original-pack.html"
-                  title="StructureDefinition/medication-original-pack">Medication Original Pack</a>
+               <a href="StructureDefinition-medication-nzmt-type.html"
+                  title="StructureDefinition/medication-nzmt-type">Medication NZMT Type</a>
             </td>
             <td>
-<p>Indicates whether this pack represents the original pack supplied by the manufacturer.</p>
+<p>NZMT concept type for the medication code (for example CTPP).</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-medication-package-size.html"
-                  title="StructureDefinition/medication-package-size">Medication Package Size</a>
+               <a href="StructureDefinition-medication-pack.html"
+                  title="StructureDefinition/medication-pack">Medication Pack</a>
             </td>
             <td>
-<p>Package size for a scheduled medication. For example, '30 x 650 mg sachets' would be represented as 'Sachet' in the form property and 30 in the packageSize extension property.</p>
+<p>Pack details including NZMT medicine code, quantity, and size.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-medication-product-created-date.html"
-                  title="StructureDefinition/medication-product-created-date">Medication Product Created Date</a>
+               <a href="StructureDefinition-medication-price.html"
+                  title="StructureDefinition/medication-price">Medication Price</a>
             </td>
             <td>
-<p>The date a medication product record was created.</p>
+<p>Medication-level schedule date and display price information.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-medication-product-multiple.html"
-                  title="StructureDefinition/medication-product-multiple">Medication Product Multiple</a>
+               <a href="StructureDefinition-pharmac-is-primary-coding.html"
+                  title="StructureDefinition/pharmac-is-primary-coding">Pharmac Is Primary Coding</a>
             </td>
             <td>
-<p>Indicates whether this pack uses product multiples when calculating pricing or claims.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-medication-product-multiplier.html"
-                  title="StructureDefinition/medication-product-multiplier">Medication Product Multiplier</a>
-            </td>
-            <td>
-<p>Numeric multiplier applied when calculating pricing or claims for this pack.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-medication-rank.html"
-                  title="StructureDefinition/medication-rank">Medication Rank</a>
-            </td>
-            <td>
-<p>Ranking or priority of this medication formulation within the schedule. Lower numbers typically indicate higher priority or preferred formulations.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-medication-safety-list-medicine.html"
-                  title="StructureDefinition/medication-safety-list-medicine">Medication Safety List Medicine</a>
-            </td>
-            <td>
-<p>Indicates whether this medication is on a PHARMAC safety list.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-medication-statim.html"
-                  title="StructureDefinition/medication-statim">Medication Statim</a>
-            </td>
-            <td>
-<p>Indicates whether stat (urgent) dispensing rules apply for this medication.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-medication-strength.html"
-                  title="StructureDefinition/medication-strength">Medication Strength</a>
-            </td>
-            <td>
-<p>Strength for a medication.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-medication-unit-of-measure.html"
-                  title="StructureDefinition/medication-unit-of-measure">Medication Unit of Measure</a>
-            </td>
-            <td>
-<p>The unit of measure used for this medication. For example, 'tab' (tablet), 'cap' (capsule), 'ml' (milliliter), 'sach' (sachet).</p>
+<p>Marks the primary pharmac subsidy coding within Medication.code.coding.</p>
 </td>
          </tr>
          <tr>
@@ -685,6 +592,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Indicates whether Section 29 applies to this pricing record.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-schedule-funding-attributes.html"
+                  title="StructureDefinition/schedule-funding-attributes">Schedule Funding Attributes</a>
+            </td>
+            <td>
+<p>Grouped funding attributes for schedule records, including contract and dispensing flags, co-payment markers, and related indicators.</p>
 </td>
          </tr>
          <tr>
@@ -759,74 +675,1172 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1">ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50003171000117108-Hospital-Case-7.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50003171000117108-Hospital-Case-7">ChargeItemDefinition-50003171000117108-Hospital-Case-7</a>
             </td>
             <td>
-<p>Rules for Clexane 100 mg in 1 ml syringe - Case 1.</p>
+<p>Rules for Remicade 100 mg injection: powder for, 1 x 100 mg vial. hospital Prescription.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2">ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50014861000117106-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-1">ChargeItemDefinition-50014861000117106-Community-Case-1</a>
             </td>
             <td>
-<p>Rules for Clexane 100 mg in 1 ml syringe - Case 2.</p>
+<p>Rules for Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack. community Prescription.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3">ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50014861000117106-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-2">ChargeItemDefinition-50014861000117106-Community-Case-2</a>
             </td>
             <td>
-<p>Rules for Clexane 100 mg in 1 ml syringe - Case 3.</p>
+<p>Rules for Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack. community BSO.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-SA9999-Authorization.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization">ChargeItemDefinition-SA9999-Authorization</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50014861000117106-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-3">ChargeItemDefinition-50014861000117106-Community-Case-3</a>
             </td>
             <td>
-<p>Special Authorization SA9999</p>
+<p>Rules for Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack. community Rural PSO.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ChargeItemDefinition-ChargeItemDefinition-Clexane-Pricing.html"
-                  title="ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing">Clexane - Pricing</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50014861000117106-Community-Case-4.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-4">ChargeItemDefinition-50014861000117106-Community-Case-4</a>
             </td>
             <td>
-<p>Pricing information for Clexane (enoxaparin sodium injection). Demonstrates fully subsidized community and HML pricing.</p>
+<p>Rules for Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack. community PSO.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Medication-Medication-Clexane-100mg-1ml-Syringe.html"
-                  title="Medication/Medication-Clexane-100mg-1ml-Syringe">Medication-Clexane-100mg-1ml-Syringe</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50014861000117106-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Hospital-Case-5">ChargeItemDefinition-50014861000117106-Hospital-Case-5</a>
             </td>
             <td>
-<p>Medication representation of Clexane (enoxaparin sodium) Inj 100 mg in 1 ml syringe.</p>
+<p>Rules for Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack. hospital n/a.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Medication-Medication-Fortisip-Multi-Fibre-Chocolate.html"
-                  title="Medication/Medication-Fortisip-Multi-Fibre-Chocolate">Medication-Fortisip-Multi-Fibre-Chocolate</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50021691000117107-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-1">ChargeItemDefinition-50021691000117107-Community-Case-1</a>
             </td>
             <td>
-<p>Supplmentrepresentation of Fortisip Multi Fibre (chocolate) oral feed with fibre 1.5 kcal/ml.</p>
+<p>Rules for Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack. community Prescription.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Medication-Medication-Nutrison-800-Complete-Multi-Fibre.html"
-                  title="Medication/Medication-Nutrison-800-Complete-Multi-Fibre">Medication-Nutrison-800-Complete-Multi-Fibre</a>
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50021691000117107-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-2">ChargeItemDefinition-50021691000117107-Community-Case-2</a>
             </td>
             <td>
-<p>Supplement representation of Nutrison 800 Complete Multi Fibre (enteral feed with fibre 0.83 kcal/ml).</p>
+<p>Rules for Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50021691000117107-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-3">ChargeItemDefinition-50021691000117107-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50021691000117107-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Hospital-Case-5">ChargeItemDefinition-50021691000117107-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50021721000117104-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50021721000117104-Community-Case-1">ChargeItemDefinition-50021721000117104-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Rectogesic 0.2% (2 mg/g) ointment, 30 g, tube. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50021721000117104-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50021721000117104-Hospital-Case-5">ChargeItemDefinition-50021721000117104-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Rectogesic 0.2% (2 mg/g) ointment, 30 g, tube. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50021991000117100-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-1">ChargeItemDefinition-50021991000117100-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Sulphur Precipitated (Midwest) powder, 100 g, jar. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50021991000117100-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-2">ChargeItemDefinition-50021991000117100-Community-Case-2</a>
+            </td>
+            <td>
+<p>Rules for Sulphur Precipitated (Midwest) powder, 100 g, jar. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50021991000117100-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-3">ChargeItemDefinition-50021991000117100-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Sulphur Precipitated (Midwest) powder, 100 g, jar. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50021991000117100-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Hospital-Case-5">ChargeItemDefinition-50021991000117100-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Sulphur Precipitated (Midwest) powder, 100 g, jar. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50038111000117102-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50038111000117102-Community-Case-1">ChargeItemDefinition-50038111000117102-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for EpiPen Auto-Injector 300 microgram/0.3 mL injection: solution, 1 x 0.3 mL prefilled injection device. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50038111000117102-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50038111000117102-Hospital-Case-5">ChargeItemDefinition-50038111000117102-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for EpiPen Auto-Injector 300 microgram/0.3 mL injection: solution, 1 x 0.3 mL prefilled injection device. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50046921000117106-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-1">ChargeItemDefinition-50046921000117106-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50046921000117106-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-2">ChargeItemDefinition-50046921000117106-Community-Case-2</a>
+            </td>
+            <td>
+<p>Rules for Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50046921000117106-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-3">ChargeItemDefinition-50046921000117106-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50046921000117106-Community-Case-4.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-4">ChargeItemDefinition-50046921000117106-Community-Case-4</a>
+            </td>
+            <td>
+<p>Rules for Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle. community PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50046921000117106-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Hospital-Case-5">ChargeItemDefinition-50046921000117106-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50046931000117109-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-1">ChargeItemDefinition-50046931000117109-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50046931000117109-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-2">ChargeItemDefinition-50046931000117109-Community-Case-2</a>
+            </td>
+            <td>
+<p>Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50046931000117109-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-3">ChargeItemDefinition-50046931000117109-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50046931000117109-Community-Case-4.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-4">ChargeItemDefinition-50046931000117109-Community-Case-4</a>
+            </td>
+            <td>
+<p>Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50046931000117109-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Hospital-Case-5">ChargeItemDefinition-50046931000117109-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50048881000117104-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-1">ChargeItemDefinition-50048881000117104-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Hydrocortisone (ABM) powder, 25 g, jar. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50048881000117104-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-2">ChargeItemDefinition-50048881000117104-Community-Case-2</a>
+            </td>
+            <td>
+<p>Rules for Hydrocortisone (ABM) powder, 25 g, jar. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50048881000117104-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-3">ChargeItemDefinition-50048881000117104-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Hydrocortisone (ABM) powder, 25 g, jar. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50048881000117104-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Hospital-Case-5">ChargeItemDefinition-50048881000117104-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Hydrocortisone (ABM) powder, 25 g, jar. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50055641000117102-Hospital-Case-7.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50055641000117102-Hospital-Case-7">ChargeItemDefinition-50055641000117102-Hospital-Case-7</a>
+            </td>
+            <td>
+<p>Rules for Thio-Tepa 15 mg injection: powder for, 1 x 15 mg vial. hospital Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50058961000117103-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-1">ChargeItemDefinition-50058961000117103-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50058961000117103-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-3">ChargeItemDefinition-50058961000117103-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50058961000117103-Community-Case-4.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-4">ChargeItemDefinition-50058961000117103-Community-Case-4</a>
+            </td>
+            <td>
+<p>Rules for Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial. community PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50058961000117103-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Hospital-Case-5">ChargeItemDefinition-50058961000117103-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50074861000117103-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50074861000117103-Community-Case-1">ChargeItemDefinition-50074861000117103-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Laevolac 3.34 g/5 mL oral liquid: solution, 500 mL, bottle. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50074861000117103-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50074861000117103-Hospital-Case-5">ChargeItemDefinition-50074861000117103-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Laevolac 3.34 g/5 mL oral liquid: solution, 500 mL, bottle. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50083491000117102-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50083491000117102-Community-Case-1">ChargeItemDefinition-50083491000117102-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50083491000117102-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50083491000117102-Hospital-Case-5">ChargeItemDefinition-50083491000117102-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50085781000117107-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-1">ChargeItemDefinition-50085781000117107-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50085781000117107-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-2">ChargeItemDefinition-50085781000117107-Community-Case-2</a>
+            </td>
+            <td>
+<p>Rules for Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50085781000117107-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-3">ChargeItemDefinition-50085781000117107-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50085781000117107-Community-Case-4.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-4">ChargeItemDefinition-50085781000117107-Community-Case-4</a>
+            </td>
+            <td>
+<p>Rules for Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules. community PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50085781000117107-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Hospital-Case-5">ChargeItemDefinition-50085781000117107-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50120021000117104-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-1">ChargeItemDefinition-50120021000117104-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50120021000117104-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-2">ChargeItemDefinition-50120021000117104-Community-Case-2</a>
+            </td>
+            <td>
+<p>Rules for Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50120021000117104-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-3">ChargeItemDefinition-50120021000117104-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50120021000117104-Hospital-Case-7.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Hospital-Case-7">ChargeItemDefinition-50120021000117104-Hospital-Case-7</a>
+            </td>
+            <td>
+<p>Rules for Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack. hospital Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50121491000117102-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50121491000117102-Community-Case-1">ChargeItemDefinition-50121491000117102-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Estradot 75 microgram/24 hours patch, 8, sachet. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50121491000117102-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50121491000117102-Hospital-Case-5">ChargeItemDefinition-50121491000117102-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Estradot 75 microgram/24 hours patch, 8, sachet. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50148261000117103-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50148261000117103-Community-Case-1">ChargeItemDefinition-50148261000117103-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50148261000117103-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50148261000117103-Hospital-Case-5">ChargeItemDefinition-50148261000117103-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50225401000117106-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Community-Case-1">ChargeItemDefinition-50225401000117106-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50225401000117106-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Community-Case-2">ChargeItemDefinition-50225401000117106-Community-Case-2</a>
+            </td>
+            <td>
+<p>Rules for Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50225401000117106-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Community-Case-3">ChargeItemDefinition-50225401000117106-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50225401000117106-Hospital-Case-7.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Hospital-Case-7">ChargeItemDefinition-50225401000117106-Hospital-Case-7</a>
+            </td>
+            <td>
+<p>Rules for Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial. hospital Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50227471000117107-Community-Case-4.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50227471000117107-Community-Case-4">ChargeItemDefinition-50227471000117107-Community-Case-4</a>
+            </td>
+            <td>
+<p>Rules for Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device. community PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50227471000117107-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50227471000117107-Hospital-Case-5">ChargeItemDefinition-50227471000117107-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50242281000117106-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Community-Case-1">ChargeItemDefinition-50242281000117106-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50242281000117106-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Community-Case-2">ChargeItemDefinition-50242281000117106-Community-Case-2</a>
+            </td>
+            <td>
+<p>Rules for Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50242281000117106-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Community-Case-3">ChargeItemDefinition-50242281000117106-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50242281000117106-Hospital-Case-7.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Hospital-Case-7">ChargeItemDefinition-50242281000117106-Hospital-Case-7</a>
+            </td>
+            <td>
+<p>Rules for Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle. hospital Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50248381000117100-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Community-Case-1">ChargeItemDefinition-50248381000117100-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50248381000117100-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Community-Case-2">ChargeItemDefinition-50248381000117100-Community-Case-2</a>
+            </td>
+            <td>
+<p>Rules for Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50248381000117100-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Community-Case-3">ChargeItemDefinition-50248381000117100-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50248381000117100-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Hospital-Case-5">ChargeItemDefinition-50248381000117100-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50270251000117100-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50270251000117100-Community-Case-1">ChargeItemDefinition-50270251000117100-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50270251000117100-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50270251000117100-Hospital-Case-5">ChargeItemDefinition-50270251000117100-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50277841000117102-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50277841000117102-Community-Case-1">ChargeItemDefinition-50277841000117102-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50277841000117102-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50277841000117102-Hospital-Case-5">ChargeItemDefinition-50277841000117102-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50283011000117109-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Community-Case-1">ChargeItemDefinition-50283011000117109-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50283011000117109-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Hospital-Case-5">ChargeItemDefinition-50283011000117109-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50289761000117107-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50289761000117107-Community-Case-1">ChargeItemDefinition-50289761000117107-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50289761000117107-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50289761000117107-Hospital-Case-5">ChargeItemDefinition-50289761000117107-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50301271000117101-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-1">ChargeItemDefinition-50301271000117101-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50301271000117101-Community-Case-2.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-2">ChargeItemDefinition-50301271000117101-Community-Case-2</a>
+            </td>
+            <td>
+<p>Rules for Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack. community BSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50301271000117101-Community-Case-3.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-3">ChargeItemDefinition-50301271000117101-Community-Case-3</a>
+            </td>
+            <td>
+<p>Rules for Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack. community Rural PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50301271000117101-Community-Case-4.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-4">ChargeItemDefinition-50301271000117101-Community-Case-4</a>
+            </td>
+            <td>
+<p>Rules for Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack. community PSO.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50301271000117101-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Hospital-Case-5">ChargeItemDefinition-50301271000117101-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50308221000117108-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50308221000117108-Community-Case-1">ChargeItemDefinition-50308221000117108-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Vegzelma 100 mg/4 mL injection: concentrated, 1 x 4 mL vial. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50320741000117103-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50320741000117103-Community-Case-1">ChargeItemDefinition-50320741000117103-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50320741000117103-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50320741000117103-Hospital-Case-5">ChargeItemDefinition-50320741000117103-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50324571000117108-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Community-Case-1">ChargeItemDefinition-50324571000117108-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50324571000117108-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Hospital-Case-5">ChargeItemDefinition-50324571000117108-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50350151000117104-Community-Case-1.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50350151000117104-Community-Case-1">ChargeItemDefinition-50350151000117104-Community-Case-1</a>
+            </td>
+            <td>
+<p>Rules for Teevir tablet: film-coated, 30 tablets, bottle. community Prescription.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-50350151000117104-Hospital-Case-5.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-50350151000117104-Hospital-Case-5">ChargeItemDefinition-50350151000117104-Hospital-Case-5</a>
+            </td>
+            <td>
+<p>Rules for Teevir tablet: film-coated, 30 tablets, bottle. hospital n/a.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA1098-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA1098-Authorization">ChargeItemDefinition-SA1098-Authorization</a>
+            </td>
+            <td>
+<p>Special Authority SA1098. Detailed eligibility criteria available via authorization form.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA1329-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA1329-Authorization">ChargeItemDefinition-SA1329-Authorization</a>
+            </td>
+            <td>
+<p>Special Authority SA1329. Detailed eligibility criteria available via authorization form.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA1683-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA1683-Authorization">ChargeItemDefinition-SA1683-Authorization</a>
+            </td>
+            <td>
+<p>Special Authority SA1683. Detailed eligibility criteria available via authorization form.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2139-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization">ChargeItemDefinition-SA2139-Authorization</a>
+            </td>
+            <td>
+<p>Special Authority SA2139. Detailed eligibility criteria available via authorization form.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2185-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA2185-Authorization">ChargeItemDefinition-SA2185-Authorization</a>
+            </td>
+            <td>
+<p>Special Authority SA2185. Detailed eligibility criteria available via authorization form.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2453-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA2453-Authorization">ChargeItemDefinition-SA2453-Authorization</a>
+            </td>
+            <td>
+<p>Special Authority SA2453. Detailed eligibility criteria available via authorization form.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2536-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA2536-Authorization">ChargeItemDefinition-SA2536-Authorization</a>
+            </td>
+            <td>
+<p>Special Authority SA2536. Detailed eligibility criteria available via authorization form.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2561-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA2561-Authorization">ChargeItemDefinition-SA2561-Authorization</a>
+            </td>
+            <td>
+<p>Special Authority SA2561. Detailed eligibility criteria available via authorization form.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2620-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA2620-Authorization">ChargeItemDefinition-SA2620-Authorization</a>
+            </td>
+            <td>
+<p>Special Authority SA2620. Detailed eligibility criteria available via authorization form.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ChargeItemDefinition-ChargeItemDefinition-SA2628-Authorization.html"
+                  title="ChargeItemDefinition/ChargeItemDefinition-SA2628-Authorization">ChargeItemDefinition-SA2628-Authorization</a>
+            </td>
+            <td>
+<p>Special Authority SA2628. Detailed eligibility criteria available via authorization form.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50003171000117108.html"
+                  title="Medication/50003171000117108">Medication-50003171000117108</a>
+            </td>
+            <td>
+<p>Medication representation of Remicade 100 mg injection: powder for, 1 x 100 mg vial.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50014861000117106.html"
+                  title="Medication/50014861000117106">Medication-50014861000117106</a>
+            </td>
+            <td>
+<p>Medication representation of Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50021691000117107.html"
+                  title="Medication/50021691000117107">Medication-50021691000117107</a>
+            </td>
+            <td>
+<p>Medication representation of Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50021721000117104.html"
+                  title="Medication/50021721000117104">Medication-50021721000117104</a>
+            </td>
+            <td>
+<p>Medication representation of Rectogesic 0.2% (2 mg/g) ointment, 30 g, tube.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50021991000117100.html"
+                  title="Medication/50021991000117100">Medication-50021991000117100</a>
+            </td>
+            <td>
+<p>Medication representation of Sulphur Precipitated (Midwest) powder, 100 g, jar.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50038111000117102.html"
+                  title="Medication/50038111000117102">Medication-50038111000117102</a>
+            </td>
+            <td>
+<p>Medication representation of EpiPen Auto-Injector 300 microgram/0.3 mL injection: solution, 1 x 0.3 mL prefilled injection device.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50046921000117106.html"
+                  title="Medication/50046921000117106">Medication-50046921000117106</a>
+            </td>
+            <td>
+<p>Medication representation of Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50046931000117109.html"
+                  title="Medication/50046931000117109">Medication-50046931000117109</a>
+            </td>
+            <td>
+<p>Medication representation of Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50048881000117104.html"
+                  title="Medication/50048881000117104">Medication-50048881000117104</a>
+            </td>
+            <td>
+<p>Medication representation of Hydrocortisone (ABM) powder, 25 g, jar.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50055641000117102.html"
+                  title="Medication/50055641000117102">Medication-50055641000117102</a>
+            </td>
+            <td>
+<p>Medication representation of Thio-Tepa 15 mg injection: powder for, 1 x 15 mg vial.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50058961000117103.html"
+                  title="Medication/50058961000117103">Medication-50058961000117103</a>
+            </td>
+            <td>
+<p>Medication representation of Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50074861000117103.html"
+                  title="Medication/50074861000117103">Medication-50074861000117103</a>
+            </td>
+            <td>
+<p>Medication representation of Laevolac 3.34 g/5 mL oral liquid: solution, 500 mL, bottle.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50083491000117102.html"
+                  title="Medication/50083491000117102">Medication-50083491000117102</a>
+            </td>
+            <td>
+<p>Medication representation of Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50085781000117107.html"
+                  title="Medication/50085781000117107">Medication-50085781000117107</a>
+            </td>
+            <td>
+<p>Medication representation of Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50120021000117104.html"
+                  title="Medication/50120021000117104">Medication-50120021000117104</a>
+            </td>
+            <td>
+<p>Medication representation of Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50121491000117102.html"
+                  title="Medication/50121491000117102">Medication-50121491000117102</a>
+            </td>
+            <td>
+<p>Medication representation of Estradot 75 microgram/24 hours patch, 8, sachet.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50148261000117103.html"
+                  title="Medication/50148261000117103">Medication-50148261000117103</a>
+            </td>
+            <td>
+<p>Medication representation of Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete].</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50225401000117106.html"
+                  title="Medication/50225401000117106">Medication-50225401000117106</a>
+            </td>
+            <td>
+<p>Medication representation of Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50227471000117107.html"
+                  title="Medication/50227471000117107">Medication-50227471000117107</a>
+            </td>
+            <td>
+<p>Medication representation of Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50242281000117106.html"
+                  title="Medication/50242281000117106">Medication-50242281000117106</a>
+            </td>
+            <td>
+<p>Medication representation of Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50248381000117100.html"
+                  title="Medication/50248381000117100">Medication-50248381000117100</a>
+            </td>
+            <td>
+<p>Medication representation of Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50270251000117100.html"
+                  title="Medication/50270251000117100">Medication-50270251000117100</a>
+            </td>
+            <td>
+<p>Medication representation of Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50277841000117102.html"
+                  title="Medication/50277841000117102">Medication-50277841000117102</a>
+            </td>
+            <td>
+<p>Medication representation of MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50283011000117109.html"
+                  title="Medication/50283011000117109">Medication-50283011000117109</a>
+            </td>
+            <td>
+<p>Medication representation of Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50289761000117107.html"
+                  title="Medication/50289761000117107">Medication-50289761000117107</a>
+            </td>
+            <td>
+<p>Medication representation of Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50301271000117101.html"
+                  title="Medication/50301271000117101">Medication-50301271000117101</a>
+            </td>
+            <td>
+<p>Medication representation of Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50308221000117108.html"
+                  title="Medication/50308221000117108">Medication-50308221000117108</a>
+            </td>
+            <td>
+<p>Medication representation of Vegzelma 100 mg/4 mL injection: concentrated, 1 x 4 mL vial.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50320741000117103.html"
+                  title="Medication/50320741000117103">Medication-50320741000117103</a>
+            </td>
+            <td>
+<p>Medication representation of Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50324571000117108.html"
+                  title="Medication/50324571000117108">Medication-50324571000117108</a>
+            </td>
+            <td>
+<p>Medication representation of Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-50350151000117104.html"
+                  title="Medication/50350151000117104">Medication-50350151000117104</a>
+            </td>
+            <td>
+<p>Medication representation of Teevir tablet: film-coated, 30 tablets, bottle.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-Adrenaline-Note-And-Limit.html"
+                  title="Bundle/SearchSet-Bundle-Adrenaline-Note-And-Limit">SearchSet-Bundle-Adrenaline-Note-And-Limit</a>
+            </td>
+            <td>
+<p>Example search result demonstrating _revinclude to retrieve Adrenaline with separate community and hospital Funding Rules records. The current source demonstrates provider requirements and a PSO limit; it does not contain a note condition.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-All-Funding-Rules.html"
+                  title="Bundle/SearchSet-Bundle-All-Funding-Rules">SearchSet-Bundle-All-Funding-Rules</a>
+            </td>
+            <td>
+<p>Example search result demonstrating a search for all funding ChargeItemDefinition records. GET [base]/ChargeItemDefinition?_profile=pharmac-charge-item-definition-funding-rules&amp;_count=1000&amp;_total=accurate</p>
 </td>
          </tr>
          <tr>
@@ -844,16 +1858,52 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Bundle/SearchSet-Bundle-All-Special-Authorities">SearchSet-Bundle-All-Special-Authorities</a>
             </td>
             <td>
-<p>Example search result demonstrating a search for all special authorization definitions. GET [base]/pharmac-charge-item-definition-special-authority?_count=1000&amp;_total=accurate</p>
+<p>Example search result demonstrating a search for all special authorization definitions. GET [base]/ChargeItemDefinition?_profile=pharmac-charge-item-definition-special-authority&amp;_count=1000&amp;_total=accurate</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Bundle-SearchSet-Bundle-Clexane-Pricing.html"
-                  title="Bundle/SearchSet-Bundle-Clexane-Pricing">SearchSet-Bundle-Clexane-Pricing</a>
+               <a href="Bundle-SearchSet-Bundle-Estradiol-Limit.html"
+                  title="Bundle/SearchSet-Bundle-Estradiol-Limit">SearchSet-Bundle-Estradiol-Limit</a>
             </td>
             <td>
-<p>Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Clexane&amp;_include=ChargeItemDefinition:instance</p>
+<p>Example search result demonstrating _revinclude to retrieve Estradiol Transdermal System with a community limit and provider requirement plus a hospital funding record.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-Etoposide-Authority-Endorsement.html"
+                  title="Bundle/SearchSet-Bundle-Etoposide-Authority-Endorsement">SearchSet-Bundle-Etoposide-Authority-Endorsement</a>
+            </td>
+            <td>
+<p>Example search result demonstrating _revinclude to retrieve Etoposide with separate Prescription, BSO, Rural PSO, and hospital Funding Rules records. The community pathways demonstrate provider and specialist endorsement conditions. No Special Authority resource applies to Etoposide.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-Famotidine-Endorsement-And-Note.html"
+                  title="Bundle/SearchSet-Bundle-Famotidine-Endorsement-And-Note">SearchSet-Bundle-Famotidine-Endorsement-And-Note</a>
+            </td>
+            <td>
+<p>Example search result demonstrating _revinclude to retrieve Famotidine with an endorsement, provider requirement, and Schedule memoranda note on the community funding pathway.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-Fluanxol-Multiple-Community-And-Hospital.html"
+                  title="Bundle/SearchSet-Bundle-Fluanxol-Multiple-Community-And-Hospital">SearchSet-Bundle-Fluanxol-Multiple-Community-And-Hospital</a>
+            </td>
+            <td>
+<p>Example search result demonstrating _revinclude to retrieve Fluanxol Depot with separate community and hospital Funding Rules records. The example covers Prescription, BSO, Rural PSO, PSO, provider, and limit patterns.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-SearchSet-Bundle-Nitisinone-Hospital-Restriction.html"
+                  title="Bundle/SearchSet-Bundle-Nitisinone-Hospital-Restriction">SearchSet-Bundle-Nitisinone-Hospital-Restriction</a>
+            </td>
+            <td>
+<p>Example search result demonstrating _revinclude to retrieve Nitisinone with a community Special Authority requirement and a separate hospital restriction.</p>
 </td>
          </tr>
       </tbody>
@@ -876,7 +1926,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 24, 2026 01:18+0000">2026-04-24</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 20:43+0000">2026-06-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,4 +1,4 @@
-# Medication Legal Classification - Pharmac Schedules FHIR API v1.0.1
+# Medication Legal Classification - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification | *Version*:1.0.1 |
-| Draft as of 2026-04-24 | *Computable Name*:MedicationLegalClassification |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification | *Version*:1.1.0 |
+| Draft as of 2026-06-24 | *Computable Name*:MedicationLegalClassification |
 
 Legal classification for a medication.
 
@@ -19,10 +19,9 @@ Legal classification for a medication.
 
 **Usages:**
 
-* Use this Extension: [PHARMAC Medication](StructureDefinition-pharmac-medication.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-All-Medications](Bundle-SearchSet-Bundle-All-Medications.md), [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md) and [Medication/Medication-Clexane-100mg-1ml-Syringe](Medication-Medication-Clexane-100mg-1ml-Syringe.md)
+* This Extension is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/medication-legal-classification)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/pharmac.fhir.pharmac-schedules|current/StructureDefinition/StructureDefinition-medication-legal-classification.json)
 
 ### Formal Views of Extension Content
 
@@ -43,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-medication-legal-cla
   "resourceType" : "StructureDefinition",
   "id" : "medication-legal-classification",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "MedicationLegalClassification",
   "title" : "Medication Legal Classification",
   "status" : "draft",
-  "date" : "2026-04-24T01:18:12+00:00",
+  "date" : "2026-06-24T20:43:54+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

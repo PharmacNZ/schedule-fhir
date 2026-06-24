@@ -1,0 +1,99 @@
+{
+  "resourceType" : "Medication",
+  "id" : "50270251000117100",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://standards.digital.health.nz/ns/nzmt-type-code",
+        "code" : "ctpp"
+      }],
+      "text" : "ctpp"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "20069071000116107",
+          "display" : "Preferred Term"
+        }],
+        "text" : "Preferred Term"
+      }
+    },
+    {
+      "url" : "term",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "50270251000117100",
+          "display" : "Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials"
+        }],
+        "text" : "Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://www.whocc.no/atc",
+        "code" : "A02BA03",
+        "display" : "famotidine"
+      }],
+      "text" : "famotidine"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "quantity",
+      "valueQuantity" : {
+        "value" : 10,
+        "unit" : "vial"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"
+  },
+  {
+    "extension" : [{
+      "url" : "price",
+      "valueMoney" : {
+        "value" : 57.02,
+        "currency" : "NZD"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://nzmt.org.nz",
+      "code" : "50270251000117100",
+      "display" : "Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials"
+    },
+    {
+      "extension" : [{
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding",
+        "valueBoolean" : true
+      }],
+      "system" : "https://standards.digital.health.nz/ns/pharmac-subsidy-code",
+      "code" : "2602776"
+    }],
+    "text" : "Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials"
+  },
+  "status" : "active",
+  "form" : {
+    "text" : "Inj 10 mg per ml, 4 ml"
+  },
+  "ingredient" : [{
+    "itemCodeableConcept" : {
+      "text" : "Famotidine"
+    },
+    "isActive" : true
+  }]
+}

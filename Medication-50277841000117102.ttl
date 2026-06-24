@@ -1,0 +1,119 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50277841000117102> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "50277841000117102"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://standards.digital.health.nz/ns/nzmt-type-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ctpp" ]
+       ] ) ;
+       fhir:text [ fhir:v "ctpp" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "20069071000116107" ] ;
+           fhir:display [ fhir:v "Preferred Term" ]
+         ] ) ;
+         fhir:text [ fhir:v "Preferred Term" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "term"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "50277841000117102" ] ;
+           fhir:display [ fhir:v "MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack" ]
+         ] ) ;
+         fhir:text [ fhir:v "MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "TODO" ] ;
+         fhir:display [ fhir:v "No WHO ATC identified - medical device" ]
+       ] ) ;
+       fhir:text [ fhir:v "No WHO ATC identified - medical device" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "quantity"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "pack" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "price"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v "219"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "50277841000117102" ] ;
+       fhir:display [ fhir:v "MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack" ]
+     ] [
+       fhir:system [ fhir:v "https://www.gs1.org/gtin"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "5705244019294" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://standards.digital.health.nz/ns/pharmac-subsidy-code"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "2591685" ]
+     ] ) ;
+     fhir:text [ fhir:v "MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:form [
+     fhir:text [ fhir:v "6 mm steel needle; 60 cm tubing x 10" ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "Insulin pump infusion set (steel cannula)" ]
+     ] ;
+     fhir:isActive [ fhir:v true ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

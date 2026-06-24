@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="50048881000117104"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+        <code value="ctpp"/>
+      </coding>
+      <text value="ctpp"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+    <extension url="type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://nzmt.org.nz"/>
+          <code value="20069071000116107"/>
+          <display value="Preferred Term"/>
+        </coding>
+        <text value="Preferred Term"/>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="term">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://nzmt.org.nz"/>
+          <code value="50048881000117104"/>
+          <display value="Hydrocortisone (ABM) powder, 25 g, jar"/>
+        </coding>
+        <text value="Hydrocortisone (ABM) powder, 25 g, jar"/>
+      </valueCodeableConcept>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://www.whocc.no/atc"/>
+        <code value="D07AA02"/>
+        <display value="hydrocortisone"/>
+      </coding>
+      <text value="hydrocortisone"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+    <extension url="quantity">
+      <valueQuantity>
+        <value value="25"/>
+        <unit value="g"/>
+      </valueQuantity>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+    <extension url="price">
+      <valueMoney>
+        <value value="49.95"/>
+        <currency value="NZD"/>
+      </valueMoney>
+    </extension>
+  </extension>
+  <code>
+    <coding>
+      <system value="http://nzmt.org.nz"/>
+      <code value="50048881000117104"/>
+      <display value="Hydrocortisone (ABM) powder, 25 g, jar"/>
+    </coding>
+    <coding>
+      <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+        <valueBoolean value="true"/>
+      </extension>
+      <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+      <code value="2322420"/>
+    </coding>
+    <text value="Hydrocortisone (ABM) powder, 25 g, jar"/>
+  </code>
+  <status value="active"/>
+  <form>
+    <text value="Powder"/>
+  </form>
+  <ingredient>
+    <itemCodeableConcept>
+      <text value="Hydrocortisone"/>
+    </itemCodeableConcept>
+    <isActive value="true"/>
+  </ingredient>
+</Medication>

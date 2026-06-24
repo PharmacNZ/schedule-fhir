@@ -9,14 +9,11 @@
 <https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/MedicationCategorySearchParam> a fhir:SearchParameter ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "MedicationCategorySearchParam"] ; # 
-  fhir:url [
-     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-category"^^xsd:anyURI ;
-     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-category>
-  ] ; # 
-  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-category"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.1.0"] ; # 
   fhir:name [ fhir:v "medication-category"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2026-04-24T01:18:12+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-06-24T20:43:54+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Pharmac"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Pharmac" ] ;
@@ -32,11 +29,11 @@
        fhir:use [ fhir:v "work" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "Search for medications by category"] ; # 
+  fhir:description [ fhir:v "Search for medications by ATC category"] ; # 
   fhir:code [ fhir:v "category"] ; # 
   fhir:base ( [ fhir:v "Medication"] ) ; # 
   fhir:type [ fhir:v "string"] ; # 
-  fhir:expression [ fhir:v "Medication.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1').value.ofType(string) | Medication.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2').value.ofType(string) | DeviceDefinition.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3').value.ofType(string)"] ; # 
+  fhir:expression [ fhir:v "Medication.extension.where(url='https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc').value.ofType(CodeableConcept).text"] ; # 
   fhir:xpathUsage [ fhir:v "normal"] ; # 
   fhir:target ( [ fhir:v "Medication"] ) . # 
 

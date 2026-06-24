@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="50046931000117109"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+        <code value="ctpp"/>
+      </coding>
+      <text value="ctpp"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+    <extension url="type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://nzmt.org.nz"/>
+          <code value="20069071000116107"/>
+          <display value="Preferred Term"/>
+        </coding>
+        <text value="Preferred Term"/>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="term">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://nzmt.org.nz"/>
+          <code value="50046931000117109"/>
+          <display value="Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules"/>
+        </coding>
+        <text value="Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules"/>
+      </valueCodeableConcept>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://www.whocc.no/atc"/>
+        <code value="C01CA24"/>
+        <display value="epinephrine"/>
+      </coding>
+      <text value="epinephrine"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+    <extension url="quantity">
+      <valueQuantity>
+        <value value="5"/>
+        <unit value="ampoule"/>
+      </valueQuantity>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+    <extension url="price">
+      <valueMoney>
+        <value value="4.98"/>
+        <currency value="NZD"/>
+      </valueMoney>
+    </extension>
+  </extension>
+  <code>
+    <coding>
+      <system value="http://nzmt.org.nz"/>
+      <code value="50046931000117109"/>
+      <display value="Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules"/>
+    </coding>
+    <coding>
+      <system value="https://www.gs1.org/gtin"/>
+      <code value="9331134001405"/>
+    </coding>
+    <coding>
+      <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+        <valueBoolean value="true"/>
+      </extension>
+      <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+      <code value="2309823"/>
+    </coding>
+    <text value="Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules"/>
+  </code>
+  <status value="active"/>
+  <form>
+    <text value="Inj 1 in 1,000, 1 ml ampoule"/>
+  </form>
+  <ingredient>
+    <itemCodeableConcept>
+      <text value="Adrenaline"/>
+    </itemCodeableConcept>
+    <isActive value="true"/>
+  </ingredient>
+</Medication>

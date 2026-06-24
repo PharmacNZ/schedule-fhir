@@ -3,11 +3,11 @@
 <ValueSet xmlns="http://hl7.org/fhir">
   <id value="medication-form-codes"/>
   <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes"/>
-  <version value="1.0.1"/>
+  <version value="1.1.0"/>
   <name value="MedicationFormCodes"/>
   <title value="Medication Form Codes"/>
   <status value="draft"/>
-  <date value="2026-04-24T01:18:12+00:00"/>
+  <date value="2026-06-24T20:43:54+00:00"/>
   <publisher value="Pharmac"/>
   <contact>
     <name value="Pharmac"/>

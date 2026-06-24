@@ -9,11 +9,8 @@
 <https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement> a fhir:CapabilityStatement ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "PharmacSchedulesCapabilityStatement"] ; # 
-  fhir:url [
-     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement"^^xsd:anyURI ;
-     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement>
-  ] ; # 
-  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.1.0"] ; # 
   fhir:name [ fhir:v "PharmacSchedulesCapabilityStatement"] ; # 
   fhir:title [ fhir:v "Pharmac Schedules Capability Statement"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
@@ -42,10 +39,7 @@
   ] ; # 
   fhir:implementation [
      fhir:description [ fhir:v "Pharmac Schedules API" ] ;
-     fhir:url [
-       fhir:v "https://example.com/fhir/ImplementationGuide/pharmac-schedules"^^xsd:anyURI ;
-       fhir:l <https://example.com/fhir/ImplementationGuide/pharmac-schedules>
-     ]
+     fhir:url [ fhir:v "https://example.com/fhir/ImplementationGuide/pharmac-schedules"^^xsd:anyURI ]
   ] ; # 
   fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
   fhir:format ( [ fhir:v "application/fhir+json"] ) ; # 
@@ -54,37 +48,23 @@
      fhir:security [
        fhir:extension ( [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "token"^^xsd:anyURI ;
-             fhir:l fhir:token
-           ] ;
+           fhir:url [ fhir:v "token"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Uri ;
-             fhir:v "https://example.com/openid-connect/token"^^xsd:anyURI ;
-             fhir:l <https://example.com/openid-connect/token>
+             a fhir:uri ;
+             fhir:v "https://example.com/openid-connect/token"^^xsd:anyURI
            ]
          ] [
-           fhir:url [
-             fhir:v "authorize"^^xsd:anyURI ;
-             fhir:l fhir:authorize
-           ] ;
+           fhir:url [ fhir:v "authorize"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Uri ;
-             fhir:v "https://example.com/openid-connect/token/openid-connect/authorize"^^xsd:anyURI ;
-             fhir:l <https://example.com/openid-connect/token/openid-connect/authorize>
+             a fhir:uri ;
+             fhir:v "https://example.com/openid-connect/token/openid-connect/authorize"^^xsd:anyURI
            ]
          ] ) ;
-         fhir:url [
-           fhir:v "http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris"^^xsd:anyURI ;
-           fhir:l <http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris>
-         ]
+         fhir:url [ fhir:v "http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris"^^xsd:anyURI ]
        ] [
-         fhir:url [
-           fhir:v "http://fhir-registry.smarthealthit.org/StructureDefinition/capabilities"^^xsd:anyURI ;
-           fhir:l <http://fhir-registry.smarthealthit.org/StructureDefinition/capabilities>
-         ] ;
+         fhir:url [ fhir:v "http://fhir-registry.smarthealthit.org/StructureDefinition/capabilities"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "client-confidential-symmetric"
          ]
        ] ) ;
@@ -100,7 +80,7 @@
        fhir:type [ fhir:v "Medication" ] ;
        fhir:profile [
          fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
+         fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
        ] ;
        fhir:interaction ( [
          fhir:code [ fhir:v "search-type" ] ;
@@ -120,7 +100,7 @@
        fhir:type [ fhir:v "ChargeItemDefinition" ] ;
        fhir:profile [
          fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition"^^xsd:anyURI ;
-         fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
+         fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition>
        ] ;
        fhir:interaction ( [
          fhir:code [ fhir:v "search-type" ] ;

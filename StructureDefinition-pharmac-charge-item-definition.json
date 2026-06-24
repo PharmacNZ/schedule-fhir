@@ -2,7 +2,7 @@
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-charge-item-definition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacChargeItemDefinition",
   "title" : "PHARMAC Charge Item Definition",
   "status" : "active",
@@ -811,7 +811,7 @@
       "path" : "ChargeItemDefinition.extension",
       "sliceName" : "statim",
       "short" : "Statim (urgent dispensing) flag",
-      "definition" : "Indicates whether stat (urgent) dispensing rules apply for this item.",
+      "definition" : "Indicates whether stat (urgent) dispensing rules apply for this medication.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -848,7 +848,7 @@
       "path" : "ChargeItemDefinition.extension",
       "sliceName" : "inCombination",
       "short" : "In-combination funding flag",
-      "definition" : "Indicates whether this item is only subsidised when used in combination with other medicines or treatments.",
+      "definition" : "Indicates whether this medication is only subsidised when used in combination with other medicines.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -896,6 +896,80 @@
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:fundingSubsidyAmount",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "fundingSubsidyAmount",
+      "short" : "Structured subsidy details",
+      "definition" : "Structured subsidy metadata including subsidy type, status, optional amount, and display label.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "DomainResource.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:scheduleFundingAttributes",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "scheduleFundingAttributes",
+      "short" : "Grouped schedule funding attributes",
+      "definition" : "Grouped funding attributes including contract markers, dispensing flags, and co-payment markers.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "DomainResource.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"]
       }],
       "condition" : ["ele-1"],
       "constraint" : [{
@@ -3117,7 +3191,7 @@
       "path" : "ChargeItemDefinition.extension",
       "sliceName" : "statim",
       "short" : "Statim (urgent dispensing) flag",
-      "definition" : "Indicates whether stat (urgent) dispensing rules apply for this item.",
+      "definition" : "Indicates whether stat (urgent) dispensing rules apply for this medication.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -3130,7 +3204,7 @@
       "path" : "ChargeItemDefinition.extension",
       "sliceName" : "inCombination",
       "short" : "In-combination funding flag",
-      "definition" : "Indicates whether this item is only subsidised when used in combination with other medicines or treatments.",
+      "definition" : "Indicates whether this medication is only subsidised when used in combination with other medicines.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -3149,6 +3223,32 @@
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"]
+      }]
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:fundingSubsidyAmount",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "fundingSubsidyAmount",
+      "short" : "Structured subsidy details",
+      "definition" : "Structured subsidy metadata including subsidy type, status, optional amount, and display label.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"]
+      }]
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:scheduleFundingAttributes",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "scheduleFundingAttributes",
+      "short" : "Grouped schedule funding attributes",
+      "definition" : "Grouped funding attributes including contract markers, dispensing flags, and co-payment markers.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"]
       }]
     },
     {

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ChargeItemDefinition-50048881000117104-Community-Case-2 - Pharmac Schedules FHIR API v1.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/logos.css" rel="stylesheet"/>
+<link href="assets/css/colours.css" rel="stylesheet" />
+<link href="assets/css/fonts.css" rel="stylesheet" />
+<link href="assets/css/no-heading-numbers.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"12.73"}
+    h3,h4,h5,h6{--heading-prefix:"12.73"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="pharmac-logo">
+  <img alt="Pharmac logo" src="assets/images/pharmac-logo.png"  height="35" />
+</div>
+
+<div id="blank-logo">
+  <img alt="" src="assets/images/blank-right-logo.png" height="35"/>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">1.1.0 - draft
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="use-cases.html">Use cases</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-pharmac-medication.html">Medication</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">ChargeItemDefinition - Special Authority</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guides
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="fhir-ig-to-xml.html">XML to FHIR Mapping</a>
+      </li>
+      <li>
+        <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a>
+      </li>
+      <li>
+        <a href="fr-json-schema-guide.html">JSON Schema for Funding Rules</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
+  <li>
+    <a href="relationships.html">Resource Relationships</a>
+  </li>
+  <li>
+    <a href="datamodel.html">Data Models</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="version-history.html">Version History</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a href="definitions.json.zip">Artefacts (JSON)</a>
+      </li>
+      <li>
+        <a href="definitions.xml.zip">Artefacts (XML)</a>
+      </li>
+      <li>
+        <a href="full-ig.zip">Download IG</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>ChargeItemDefinition-50048881000117104-Community-Case-2</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+
+  
+    <li>
+      <a href="ChargeItemDefinition-ChargeItemDefinition-50048881000117104-Community-Case-2.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">Example ChargeItemDefinition: ChargeItemDefinition-50048881000117104-Community-Case-2</h2>
+
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2026-04-24
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <div data-fhir="generated"><p class="res-header-id"/><a name="ChargeItemDefinition-50048881000117104-Community-Case-2"> </a><a name="hcChargeItemDefinition-50048881000117104-Community-Case-2"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">PHARMAC Charge Item Definition - Funding Rules</a></p></div><p><b>Pricing Effective Date</b>: 2026-04-24</p><blockquote><p><b>Funding Rule</b></p><blockquote><p><b>url</b></p>type</blockquote><p><b>value</b>: community</p><p><b>type</b>: CaseSequence</p><p><b>value</b>: 1</p><blockquote><p><b>url</b></p>rule</blockquote><p><b>type</b>: FundingMechanism</p><p><b>attribute</b>: BSO</p><blockquote><p><b>url</b></p>rule</blockquote></blockquote><blockquote><p><b>Funding Subsidy Amount</b></p><ul><li>subsidyType: subsidy</li><li>subsidyStatus: full</li><li>amount: <span title="New Zealand Dollar">NZ$49.95</span> (NZD)</li><li>display: Subsidy</li></ul></blockquote><blockquote><p><b>Schedule Funding Attributes</b></p><ul><li>costBrandSource: false</li><li>wastageClaimable: false</li><li>contractType: n/a</li><li>dvLimitPercent: 0</li><li>brandSwitchFee: false</li><li>statim: Must</li><li>inCombination: yes</li><li>section29: false</li><li>coPaymentMin: na</li><li>coPaymentMax: no</li><li>productMultiple: false</li><li>productMultiplier: 0</li><li>originalPack: false</li><li>safetyListMedicine: false</li></ul></blockquote><p><b>Authorization Schema</b>: <code>e30K</code></p><p><b>url</b>: <a href="ChargeItemDefinition-ChargeItemDefinition-50048881000117104-Community-Case-2.html">ChargeItemDefinition: extension = 2026-04-24,,,,e30K; url = https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-2; version = 1.1.0; status = active; experimental = ; date = 2026-04-24 00:58:18+0000; publisher = Pharmac; contact = Pharmac (https://www.pharmac.govt.nz/about/contact),Pharmac (enquiry@pharmac.govt.nz(Work)); description = Rules for Hydrocortisone (ABM) powder, 25 g, jar. community BSO.; jurisdiction = ; copyright = </a></p><p><b>version</b>: 1.1.0</p><p><b>status</b>: Active</p><p><b>experimental</b>: </p><p><b>date</b>: 2026-04-24 00:58:18+0000</p><p><b>publisher</b>: Pharmac</p><p><b>contact</b>: Pharmac: <a href="https://www.pharmac.govt.nz/about/contact">https://www.pharmac.govt.nz/about/contact</a>, Pharmac: <a href="mailto:enquiry@pharmac.govt.nz">enquiry@pharmac.govt.nz</a></p><p><b>description</b>: </p><div><p>Rules for Hydrocortisone (ABM) powder, 25 g, jar. community BSO.</p>
+</div><p><b>jurisdiction</b>: </p><p><b>copyright</b>: </p><p><b>instance</b>: <a href="Medication-50048881000117104.html">Hydrocortisone (ABM) powder, 25 g, jar</a></p><blockquote><p><b>applicability</b></p></blockquote></div>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 20:43+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

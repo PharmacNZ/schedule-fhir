@@ -1,0 +1,99 @@
+{
+  "resourceType" : "Medication",
+  "id" : "50121491000117102",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://standards.digital.health.nz/ns/nzmt-type-code",
+        "code" : "ctpp"
+      }],
+      "text" : "ctpp"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "20069071000116107",
+          "display" : "Preferred Term"
+        }],
+        "text" : "Preferred Term"
+      }
+    },
+    {
+      "url" : "term",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "50121491000117102",
+          "display" : "Estradot 75 microgram/24 hours patch, 8, sachet"
+        }],
+        "text" : "Estradot 75 microgram/24 hours patch, 8, sachet"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://www.whocc.no/atc",
+        "code" : "G03CA03",
+        "display" : "estradiol"
+      }],
+      "text" : "estradiol"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "quantity",
+      "valueQuantity" : {
+        "value" : 8,
+        "unit" : "patch"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"
+  },
+  {
+    "extension" : [{
+      "url" : "price",
+      "valueMoney" : {
+        "value" : 16.53,
+        "currency" : "NZD"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://nzmt.org.nz",
+      "code" : "50121491000117102",
+      "display" : "Estradot 75 microgram/24 hours patch, 8, sachet"
+    },
+    {
+      "extension" : [{
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding",
+        "valueBoolean" : true
+      }],
+      "system" : "https://standards.digital.health.nz/ns/pharmac-subsidy-code",
+      "code" : "2514346"
+    }],
+    "text" : "Estradot 75 microgram/24 hours patch, 8, sachet"
+  },
+  "status" : "active",
+  "form" : {
+    "text" : "Patch 75 mcg per day"
+  },
+  "ingredient" : [{
+    "itemCodeableConcept" : {
+      "text" : "Oestradiol"
+    },
+    "isActive" : true
+  }]
+}

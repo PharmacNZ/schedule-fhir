@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Version History - Pharmac Schedules FHIR API v1.0.1</title>
+    <title>Version History - Pharmac Schedules FHIR API v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">1.0.1 - draft
+            <span style="display:inline-block;">1.1.0 - draft
 
 
             </span>
@@ -108,9 +108,6 @@
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
@@ -208,7 +205,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Version History</h2>
   
 
@@ -226,11 +223,48 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
+  <li><a href="#110-2026-06-23" id="markdown-toc-110-2026-06-23">1.1.0 (2026-06-23)</a></li>
   <li><a href="#101-2026-04-24" id="markdown-toc-101-2026-04-24">1.0.1 (2026-04-24)</a></li>
   <li><a href="#100-2026-04-17" id="markdown-toc-100-2026-04-17">1.0.0 (2026-04-17)</a></li>
 </ul>
 
 </div>
+<h3 id="110-2026-06-23">1.1.0 (2026-06-23)</h3>
+
+<p><strong>Profiles and Data Model</strong></p>
+<ul>
+  <li>Updated the <a href="StructureDefinition-pharmac-medication.html">Medication profile</a></li>
+  <li>Updated the <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">Funding Rule profile</a></li>
+  <li>Updated the <a href="StructureDefinition-pharmac-charge-item-definition-special-authority.html">Special Authority profile</a></li>
+  <li>Moved medication-specific funding attributes to Funding Rules</li>
+  <li>Consolidated pricing and subsidy information into Funding Rules</li>
+  <li>Removed the separate Pricing ChargeItemDefinition</li>
+  <li>Removed deprecated product create date and brand elements</li>
+  <li>Updated the <a href="datamodel.html">Data Models</a></li>
+</ul>
+
+<p><strong>JSON Schema</strong></p>
+<ul>
+  <li>Updated the <a href="fr-json-schema-guide.html">JSON Schema for Funding Rules</a></li>
+  <li>Updated the <a href="sa-json-schema-guide.html">JSON Schema for Special Authorities</a></li>
+  <li>Added support for Authority, Restriction, Limit, Provider, Endorsement, and Note conditions</li>
+</ul>
+
+<p><strong>Examples</strong></p>
+<ul>
+  <li>Updated <a href="examples.html">Medication, Funding Rule, Special Authority, Bundle, and search examples</a></li>
+  <li>Corrected resource references, identifiers, effective dates, and search examples</li>
+</ul>
+
+<p><strong>Documentation</strong></p>
+<ul>
+  <li>Updated the <a href="fhir-ig-to-xml.html">XML to FHIR Mapping</a></li>
+  <li>Updated the <a href="api.html">API documentation</a></li>
+  <li>Updated the <a href="relationships.html">resource relationships</a></li>
+</ul>
+
+<hr />
+
 <h3 id="101-2026-04-24">1.0.1 (2026-04-24)</h3>
 
 <p><strong>Documentation</strong></p>
@@ -243,14 +277,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><strong>Examples</strong></p>
 <ul>
-  <li>Search examples: Minor corrections to search examples</li>
+  <li><a href="examples.html">Search examples</a>: Minor corrections</li>
 </ul>
 
 <hr />
 
 <h3 id="100-2026-04-17">1.0.0 (2026-04-17)</h3>
 
-<p>Initial release.</p>
+<p>Initial release.
+```</p>
 
 
 
@@ -271,7 +306,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 24, 2026 01:18+0000">2026-04-24</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 20:43+0000">2026-06-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,0 +1,215 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-1> a fhir:ChargeItemDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ChargeItemDefinition-50058961000117103-Community-Case-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-04-24"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [ fhir:v "attribute"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "Prescription"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "subsidyType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "subsidy"
+       ]
+     ] [
+       fhir:url [ fhir:v "subsidyStatus"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "full"
+       ]
+     ] [
+       fhir:url [ fhir:v "amount"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v 3.96 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "display"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Subsidy"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "costBrandSource"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "wastageClaimable"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "contractType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "PSS"
+       ]
+     ] [
+       fhir:url [ fhir:v "dvLimitPercent"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:decimal ;
+         fhir:v "5"^^xsd:decimal
+       ]
+     ] [
+       fhir:url [ fhir:v "brandSwitchFee"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "statim"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Must"
+       ]
+     ] [
+       fhir:url [ fhir:v "inCombination"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "section29"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMin"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "na"
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMax"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiple"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiplier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] [
+       fhir:url [ fhir:v "originalPack"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "safetyListMedicine"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "e30K"^^xsd:base64Binary
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-1"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.1.0"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Rules for Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial. community Prescription."] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50058961000117103> ;
+     fhir:reference [ fhir:v "Medication/50058961000117103" ] ;
+     fhir:display [ fhir:v "Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Case 1 - Community - Prescription - Subsidy" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

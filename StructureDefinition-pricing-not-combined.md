@@ -1,4 +1,4 @@
-# Pricing Not Combined - Pharmac Schedules FHIR API v1.0.1
+# Pricing Not Combined - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined | *Version*:1.0.1 |
-| Draft as of 2026-04-24 | *Computable Name*:PricingNotCombined |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined | *Version*:1.1.0 |
+| Draft as of 2026-06-24 | *Computable Name*:PricingNotCombined |
 
 Indicates whether Not Combined applies to this pricing record.
 
@@ -21,7 +21,7 @@ Indicates whether Not Combined applies to this pricing record.
 
 * Use this Extension: [PHARMAC Charge Item Definition](StructureDefinition-pharmac-charge-item-definition.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/pricing-not-combined)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/pharmac.fhir.pharmac-schedules|current/StructureDefinition/StructureDefinition-pricing-not-combined.json)
 
 ### Formal Views of Extension Content
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-pricing-not-combined
   "resourceType" : "StructureDefinition",
   "id" : "pricing-not-combined",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PricingNotCombined",
   "title" : "Pricing Not Combined",
   "status" : "draft",
-  "date" : "2026-04-24T01:18:12+00:00",
+  "date" : "2026-06-24T20:43:54+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

@@ -1,4 +1,4 @@
-# Contract Type - Pharmac Schedules FHIR API v1.0.1
+# Contract Type - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type | *Version*:1.0.1 |
-| Draft as of 2026-04-24 | *Computable Name*:ContractType |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type | *Version*:1.1.0 |
+| Draft as of 2026-06-24 | *Computable Name*:ContractType |
 
 Type of PHARMAC contract that applies to this item (for example, sole-supply, preferred).
 
@@ -20,9 +20,8 @@ Type of PHARMAC contract that applies to this item (for example, sole-supply, pr
 **Usages:**
 
 * Use this Extension: [PHARMAC Charge Item Definition](StructureDefinition-pharmac-charge-item-definition.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md) and [ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing](ChargeItemDefinition-ChargeItemDefinition-Clexane-Pricing.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/contract-type)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/pharmac.fhir.pharmac-schedules|current/StructureDefinition/StructureDefinition-contract-type.json)
 
 ### Formal Views of Extension Content
 
@@ -43,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-contract-type.csv), 
   "resourceType" : "StructureDefinition",
   "id" : "contract-type",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "ContractType",
   "title" : "Contract Type",
   "status" : "draft",
-  "date" : "2026-04-24T01:18:12+00:00",
+  "date" : "2026-06-24T20:43:54+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

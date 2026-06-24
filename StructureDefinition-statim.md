@@ -1,4 +1,4 @@
-# Statim (Urgent Dispensing) - Pharmac Schedules FHIR API v1.0.1
+# Statim (Urgent Dispensing) - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim | *Version*:1.0.1 |
-| Draft as of 2026-04-24 | *Computable Name*:Statim |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim | *Version*:1.1.0 |
+| Draft as of 2026-06-24 | *Computable Name*:Statim |
 
 Indicates whether stat (urgent) dispensing rules apply for this item.
 
@@ -20,9 +20,8 @@ Indicates whether stat (urgent) dispensing rules apply for this item.
 **Usages:**
 
 * Use this Extension: [PHARMAC Charge Item Definition](StructureDefinition-pharmac-charge-item-definition.md)
-* Examples for this Extension: [Bundle/SearchSet-Bundle-Clexane-Pricing](Bundle-SearchSet-Bundle-Clexane-Pricing.md) and [ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing](ChargeItemDefinition-ChargeItemDefinition-Clexane-Pricing.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/statim)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/pharmac.fhir.pharmac-schedules|current/StructureDefinition/StructureDefinition-statim.json)
 
 ### Formal Views of Extension Content
 
@@ -43,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-statim.csv), [Excel]
   "resourceType" : "StructureDefinition",
   "id" : "statim",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "Statim",
   "title" : "Statim (Urgent Dispensing)",
   "status" : "draft",
-  "date" : "2026-04-24T01:18:12+00:00",
+  "date" : "2026-06-24T20:43:54+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

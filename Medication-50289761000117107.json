@@ -1,0 +1,103 @@
+{
+  "resourceType" : "Medication",
+  "id" : "50289761000117107",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://standards.digital.health.nz/ns/nzmt-type-code",
+        "code" : "ctpp"
+      }],
+      "text" : "ctpp"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "20069071000116107",
+          "display" : "Preferred Term"
+        }],
+        "text" : "Preferred Term"
+      }
+    },
+    {
+      "url" : "term",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "50289761000117107",
+          "display" : "Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can"
+        }],
+        "text" : "Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://www.whocc.no/atc",
+        "code" : "V06DB",
+        "display" : "fat/carbohydrates/proteins/minerals/vitamins, combinations"
+      }],
+      "text" : "fat/carbohydrates/proteins/minerals/vitamins, combinations"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "quantity",
+      "valueQuantity" : {
+        "value" : 400,
+        "unit" : "g"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"
+  },
+  {
+    "extension" : [{
+      "url" : "price",
+      "valueMoney" : {
+        "value" : 93.97,
+        "currency" : "NZD"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://nzmt.org.nz",
+      "code" : "50289761000117107",
+      "display" : "Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can"
+    },
+    {
+      "system" : "https://www.gs1.org/gtin",
+      "code" : "4008976458876"
+    },
+    {
+      "extension" : [{
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding",
+        "valueBoolean" : true
+      }],
+      "system" : "https://standards.digital.health.nz/ns/pharmac-subsidy-code",
+      "code" : "2615568"
+    }],
+    "text" : "Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can"
+  },
+  "status" : "active",
+  "form" : {
+    "text" : "Powder (unflavoured)"
+  },
+  "ingredient" : [{
+    "itemCodeableConcept" : {
+      "text" : "Enteral/oral feed 1kcal/ml"
+    },
+    "isActive" : true
+  }]
+}

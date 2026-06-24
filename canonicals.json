@@ -2,393 +2,888 @@
   "id" : "funding-rule",
   "type" : "StructureDefinition",
   "url" : "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "FundingRule"
-},
-{
-  "id" : "ChargeItemDefinitionPricingEffectiveDateSearchParam",
-  "type" : "SearchParameter",
-  "url" : "https://fhir-ig.digital.health.nz/SearchParameter/chargeitemdefinition-pricing-effective-date",
-  "version" : "1.0.1",
-  "name" : "PricingEffectiveDate"
 },
 {
   "id" : "PharmacSchedulesCapabilityStatement",
   "type" : "CapabilityStatement",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/CapabilityStatement/PharmacSchedulesCapabilityStatement",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacSchedulesCapabilityStatement"
 },
 {
-  "id" : "ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2",
+  "id" : "ChargeItemDefinition-50003171000117108-Hospital-Case-7",
   "type" : "ChargeItemDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2",
-  "version" : "1.0.1"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50003171000117108-Hospital-Case-7",
+  "version" : "1.1.0"
 },
 {
-  "id" : "ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3",
+  "id" : "ChargeItemDefinition-50014861000117106-Community-Case-1",
   "type" : "ChargeItemDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3",
-  "version" : "1.0.1"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-1",
+  "version" : "1.1.0"
 },
 {
-  "id" : "ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1",
+  "id" : "ChargeItemDefinition-50014861000117106-Community-Case-2",
   "type" : "ChargeItemDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-Sequence-1",
-  "version" : "1.0.1"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-2",
+  "version" : "1.1.0"
 },
 {
-  "id" : "ChargeItemDefinition-Clexane-Pricing",
+  "id" : "ChargeItemDefinition-50014861000117106-Community-Case-3",
   "type" : "ChargeItemDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing",
-  "version" : "1.0.1"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-3",
+  "version" : "1.1.0"
 },
 {
-  "id" : "ChargeItemDefinition-SA9999-Authorization",
+  "id" : "ChargeItemDefinition-50014861000117106-Community-Case-4",
   "type" : "ChargeItemDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization",
-  "version" : "1.0.1"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-4",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50014861000117106-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50021691000117107-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50021691000117107-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50021691000117107-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50021691000117107-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50021721000117104-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50021721000117104-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50021721000117104-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50021721000117104-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50021991000117100-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50021991000117100-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50021991000117100-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50021991000117100-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50038111000117102-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50038111000117102-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50038111000117102-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50038111000117102-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50046921000117106-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50046921000117106-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50046921000117106-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50046921000117106-Community-Case-4",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-4",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50046921000117106-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50046931000117109-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50046931000117109-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50046931000117109-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50046931000117109-Community-Case-4",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-4",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50046931000117109-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50048881000117104-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50048881000117104-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50048881000117104-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50048881000117104-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50055641000117102-Hospital-Case-7",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50055641000117102-Hospital-Case-7",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50058961000117103-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50058961000117103-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50058961000117103-Community-Case-4",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-4",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50058961000117103-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50074861000117103-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50074861000117103-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50074861000117103-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50074861000117103-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50083491000117102-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50083491000117102-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50083491000117102-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50083491000117102-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50085781000117107-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50085781000117107-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50085781000117107-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50085781000117107-Community-Case-4",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-4",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50085781000117107-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50120021000117104-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50120021000117104-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50120021000117104-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50120021000117104-Hospital-Case-7",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Hospital-Case-7",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50121491000117102-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50121491000117102-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50121491000117102-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50121491000117102-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50148261000117103-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50148261000117103-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50148261000117103-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50148261000117103-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50225401000117106-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50225401000117106-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50225401000117106-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50225401000117106-Hospital-Case-7",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Hospital-Case-7",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50227471000117107-Community-Case-4",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50227471000117107-Community-Case-4",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50227471000117107-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50227471000117107-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50242281000117106-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50242281000117106-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50242281000117106-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50242281000117106-Hospital-Case-7",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Hospital-Case-7",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50248381000117100-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50248381000117100-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50248381000117100-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50248381000117100-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50270251000117100-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50270251000117100-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50270251000117100-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50270251000117100-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50277841000117102-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50277841000117102-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50277841000117102-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50277841000117102-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50283011000117109-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50283011000117109-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50289761000117107-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50289761000117107-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50289761000117107-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50289761000117107-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50301271000117101-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50301271000117101-Community-Case-2",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-2",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50301271000117101-Community-Case-3",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-3",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50301271000117101-Community-Case-4",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-4",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50301271000117101-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50308221000117108-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50308221000117108-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50320741000117103-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50320741000117103-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50320741000117103-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50320741000117103-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50324571000117108-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50324571000117108-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50350151000117104-Community-Case-1",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50350151000117104-Community-Case-1",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-50350151000117104-Hospital-Case-5",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50350151000117104-Hospital-Case-5",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-SA1098-Authorization",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA1098-Authorization",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-SA1329-Authorization",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA1329-Authorization",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-SA1683-Authorization",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA1683-Authorization",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-SA2139-Authorization",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-SA2185-Authorization",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2185-Authorization",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-SA2453-Authorization",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2453-Authorization",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-SA2536-Authorization",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2536-Authorization",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-SA2561-Authorization",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2561-Authorization",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-SA2620-Authorization",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2620-Authorization",
+  "version" : "1.1.0"
+},
+{
+  "id" : "ChargeItemDefinition-SA2628-Authorization",
+  "type" : "ChargeItemDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA2628-Authorization",
+  "version" : "1.1.0"
 },
 {
   "id" : "pharmac.fhir.pharmac-schedules",
   "type" : "ImplementationGuide",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "pharmacschedules"
 },
 {
   "id" : "ChargeItemDefinitionCodeSearchParam",
   "type" : "SearchParameter",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-code",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "ChargeItemDefinitionCode"
 },
 {
   "id" : "ChargeItemDefinitionDeviceReferenceSearchParam",
   "type" : "SearchParameter",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-device",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "device-definition-reference"
 },
 {
   "id" : "ChargeItemDefinitionInstanceSearchParam",
   "type" : "SearchParameter",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-instance",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "ChargeItemDefinitionInstance"
 },
 {
   "id" : "ChargeItemDefinitionSACodeSearchParam",
   "type" : "SearchParameter",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-special-authority-code",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "ChargeItemDefinitionSACode"
-},
-{
-  "id" : "MedicationBrandNameSearchParam",
-  "type" : "SearchParameter",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-brand-name",
-  "version" : "1.0.1",
-  "name" : "brand"
 },
 {
   "id" : "MedicationCategorySearchParam",
   "type" : "SearchParameter",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-category",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "medication-category"
 },
 {
   "id" : "MedicationNameSearchParam",
   "type" : "SearchParameter",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/medication-name",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "MedicationName"
 },
 {
   "id" : "authorization-case-count",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-case-count",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "AuthorizationCaseCount"
 },
 {
   "id" : "authorization-form",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-form",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "AuthorizationForm"
 },
 {
   "id" : "authorization-schema",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "AuthorizationSchema"
 },
 {
   "id" : "authorization-title",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-title",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "AuthorizationTitle"
 },
 {
   "id" : "brand-switch-fee",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/brand-switch-fee",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "BrandSwitchFee"
 },
 {
   "id" : "contract-type",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/contract-type",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "ContractType"
 },
 {
   "id" : "cost-brand-source",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/cost-brand-source",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "CostBrandSource"
 },
 {
   "id" : "device-definition-reference",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/device-definition-reference",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "DeviceDefinitionReference"
 },
 {
   "id" : "dv-limit-percent",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/dv-limit-percent",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "DVLimitPercent"
+},
+{
+  "id" : "funding-subsidy-amount",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount",
+  "version" : "1.1.0",
+  "name" : "FundingSubsidyAmount"
 },
 {
   "id" : "in-combination",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "InCombination"
 },
 {
-  "id" : "medication-atc-category-1",
+  "id" : "medication-atc",
   "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1",
-  "version" : "1.0.1",
-  "name" : "MedicationATCCategory1"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc",
+  "version" : "1.1.0",
+  "name" : "MedicationATC"
 },
 {
-  "id" : "medication-atc-category-2",
+  "id" : "medication-description",
   "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2",
-  "version" : "1.0.1",
-  "name" : "MedicationATCCategory2"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description",
+  "version" : "1.1.0",
+  "name" : "MedicationDescription"
 },
 {
-  "id" : "medication-atc-category-3",
+  "id" : "medication-legal-class",
   "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3",
-  "version" : "1.0.1",
-  "name" : "MedicationATCCategory3"
-},
-{
-  "id" : "medication-brand-name",
-  "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name",
-  "version" : "1.0.1",
-  "name" : "MedicationBrandName"
-},
-{
-  "id" : "medication-in-combination",
-  "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-in-combination",
-  "version" : "1.0.1",
-  "name" : "MedicationInCombination"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-class",
+  "version" : "1.1.0",
+  "name" : "MedicationLegalClass"
 },
 {
   "id" : "medication-legal-classification",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "MedicationLegalClassification"
 },
 {
-  "id" : "medication-original-pack",
+  "id" : "medication-nzmt-type",
   "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack",
-  "version" : "1.0.1",
-  "name" : "MedicationOriginalPack"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type",
+  "version" : "1.1.0",
+  "name" : "MedicationNZMTType"
 },
 {
-  "id" : "medication-package-size",
+  "id" : "medication-pack",
   "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size",
-  "version" : "1.0.1",
-  "name" : "MedicationPackageSize"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack",
+  "version" : "1.1.0",
+  "name" : "MedicationPack"
 },
 {
-  "id" : "medication-product-created-date",
+  "id" : "medication-price",
   "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date",
-  "version" : "1.0.1",
-  "name" : "MedicationProductCreatedDate"
-},
-{
-  "id" : "medication-product-multiple",
-  "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple",
-  "version" : "1.0.1",
-  "name" : "MedicationProductMultiple"
-},
-{
-  "id" : "medication-product-multiplier",
-  "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier",
-  "version" : "1.0.1",
-  "name" : "MedicationProductMultiplier"
-},
-{
-  "id" : "medication-rank",
-  "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank",
-  "version" : "1.0.1",
-  "name" : "MedicationRank"
-},
-{
-  "id" : "medication-safety-list-medicine",
-  "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine",
-  "version" : "1.0.1",
-  "name" : "MedicationSafetyListMedicine"
-},
-{
-  "id" : "medication-statim",
-  "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-statim",
-  "version" : "1.0.1",
-  "name" : "MedicationStatim"
-},
-{
-  "id" : "medication-strength",
-  "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength",
-  "version" : "1.0.1",
-  "name" : "MedicationStrength"
-},
-{
-  "id" : "medication-unit-of-measure",
-  "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure",
-  "version" : "1.0.1",
-  "name" : "MedicationUnitOfMeasure"
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price",
+  "version" : "1.1.0",
+  "name" : "MedicationPrice"
 },
 {
   "id" : "pharmac-charge-item-definition",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacChargeItemDefinition"
 },
 {
   "id" : "pharmac-charge-item-definition-funding-rules",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacChargeItemDefinitionFundingRules"
-},
-{
-  "id" : "pharmac-charge-item-definition-pricing",
-  "type" : "StructureDefinition",
-  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing",
-  "version" : "1.0.1",
-  "name" : "PharmacChargeItemDefinitionPricing"
 },
 {
   "id" : "pharmac-charge-item-definition-special-authority",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacChargeItemDefinitionSpecialAuthority"
+},
+{
+  "id" : "pharmac-is-primary-coding",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding",
+  "version" : "1.1.0",
+  "name" : "PharmacIsPrimaryCoding"
 },
 {
   "id" : "pharmac-medication",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacMedication"
 },
 {
   "id" : "pricing-copayment-max",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-copayment-max",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PricingCoPaymentMax"
 },
 {
   "id" : "pricing-effective-date",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PricingEffectiveDate"
 },
 {
   "id" : "pricing-expiry-date",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-expiry-date",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PricingExpiryDate"
 },
 {
   "id" : "pricing-not-combined",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-not-combined",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PricingNotCombined"
 },
 {
   "id" : "pricing-section-29",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PricingSection29"
+},
+{
+  "id" : "schedule-funding-attributes",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes",
+  "version" : "1.1.0",
+  "name" : "ScheduleFundingAttributes"
 },
 {
   "id" : "statim",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "Statim"
 },
 {
   "id" : "wastage-claimable",
   "type" : "StructureDefinition",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/wastage-claimable",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "WastageClaimable"
 },
 {
   "id" : "medication-form-codes",
   "type" : "ValueSet",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "MedicationFormCodes"
 },
 {
   "id" : "pharmac-medication-code",
   "type" : "ValueSet",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacMedicationCode"
 },
 {
   "id" : "snomed-ct-device-types",
   "type" : "ValueSet",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/snomed-ct-device-types",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "SNOMEDCTDeviceTypes"
 }]

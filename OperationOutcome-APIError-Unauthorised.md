@@ -1,4 +1,4 @@
-# APIError-Unauthorised - Pharmac Schedules FHIR API v1.0.1
+# APIError-Unauthorised - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

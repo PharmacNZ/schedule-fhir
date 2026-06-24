@@ -73,15 +73,23 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ChargeItemDefinition.extension:statim","ChargeItemDefinition.extension","statim","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/statim]]} {[]}
-","Statim (urgent dispensing) flag","Indicates whether stat (urgent) dispensing rules apply for this item.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","Statim (urgent dispensing) flag","Indicates whether stat (urgent) dispensing rules apply for this medication.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ChargeItemDefinition.extension:inCombination","ChargeItemDefinition.extension","inCombination","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/in-combination]]} {[]}
-","In-combination funding flag","Indicates whether this item is only subsidised when used in combination with other medicines or treatments.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","In-combination funding flag","Indicates whether this medication is only subsidised when used in combination with other medicines.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ChargeItemDefinition.extension:authorizationSchema","ChargeItemDefinition.extension","authorizationSchema","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema]]} {[]}
 ","JSON Schema for authorization form","Base64-encoded JSON Schema that defines the structure and validation rules for the Special Authorization application form. Clients should base64-decode the value to obtain the JSON Schema.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:fundingSubsidyAmount","ChargeItemDefinition.extension","fundingSubsidyAmount","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount]]} {[]}
+","Structured subsidy details","Structured subsidy metadata including subsidy type, status, optional amount, and display label.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes","ChargeItemDefinition.extension","scheduleFundingAttributes","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes]]} {[]}
+","Grouped schedule funding attributes","Grouped funding attributes including contract markers, dispensing flags, and co-payment markers.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ChargeItemDefinition.extension:PricingSection29","ChargeItemDefinition.extension","PricingSection29","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29]]} {[]}

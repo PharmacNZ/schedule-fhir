@@ -3,11 +3,11 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="pharmac.fhir.pharmac-schedules"/>
   <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ImplementationGuide/pharmac.fhir.pharmac-schedules"/>
-  <version value="1.0.1"/>
+  <version value="1.1.0"/>
   <name value="pharmacschedules"/>
   <title value="Pharmac Schedules FHIR API"/>
   <status value="draft"/>
-  <date value="2026-04-24T01:18:12+00:00"/>
+  <date value="2026-06-24T20:43:54+00:00"/>
   <publisher value="Pharmac"/>
   <contact>
     <name value="Pharmac"/>
@@ -34,7 +34,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="7.1.0"/>
+    <version value="7.2.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -42,7 +42,7 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="5.2.0"/>
+    <version value="5.3.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -567,10 +567,10 @@
         <valueString value="ChargeItemDefinition"/>
       </extension>
       <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"/>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50003171000117108-Hospital-Case-7"/>
       </reference>
-      <name value="ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"/>
-      <description value="Rules for Clexane 100 mg in 1 ml syringe - Case 1."/>
+      <name value="ChargeItemDefinition-50003171000117108-Hospital-Case-7"/>
+      <description value="Rules for Remicade 100 mg injection: powder for, 1 x 100 mg vial. hospital Prescription."/>
       <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
     </resource>
     <resource>
@@ -578,10 +578,10 @@
         <valueString value="ChargeItemDefinition"/>
       </extension>
       <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2"/>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-1"/>
       </reference>
-      <name value="ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2"/>
-      <description value="Rules for Clexane 100 mg in 1 ml syringe - Case 2."/>
+      <name value="ChargeItemDefinition-50014861000117106-Community-Case-1"/>
+      <description value="Rules for Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack. community Prescription."/>
       <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
     </resource>
     <resource>
@@ -589,10 +589,10 @@
         <valueString value="ChargeItemDefinition"/>
       </extension>
       <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3"/>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-2"/>
       </reference>
-      <name value="ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3"/>
-      <description value="Rules for Clexane 100 mg in 1 ml syringe - Case 3."/>
+      <name value="ChargeItemDefinition-50014861000117106-Community-Case-2"/>
+      <description value="Rules for Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack. community BSO."/>
       <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
     </resource>
     <resource>
@@ -600,10 +600,1044 @@
         <valueString value="ChargeItemDefinition"/>
       </extension>
       <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization"/>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-3"/>
       </reference>
-      <name value="ChargeItemDefinition-SA9999-Authorization"/>
-      <description value="Special Authorization SA9999"/>
+      <name value="ChargeItemDefinition-50014861000117106-Community-Case-3"/>
+      <description value="Rules for Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-4"/>
+      </reference>
+      <name value="ChargeItemDefinition-50014861000117106-Community-Case-4"/>
+      <description value="Rules for Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack. community PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50014861000117106-Hospital-Case-5"/>
+      <description value="Rules for Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50021691000117107-Community-Case-1"/>
+      <description value="Rules for Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50021691000117107-Community-Case-2"/>
+      <description value="Rules for Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50021691000117107-Community-Case-3"/>
+      <description value="Rules for Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50021691000117107-Hospital-Case-5"/>
+      <description value="Rules for Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50021721000117104-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50021721000117104-Community-Case-1"/>
+      <description value="Rules for Rectogesic 0.2% (2 mg/g) ointment, 30 g, tube. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50021721000117104-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50021721000117104-Hospital-Case-5"/>
+      <description value="Rules for Rectogesic 0.2% (2 mg/g) ointment, 30 g, tube. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50021991000117100-Community-Case-1"/>
+      <description value="Rules for Sulphur Precipitated (Midwest) powder, 100 g, jar. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50021991000117100-Community-Case-2"/>
+      <description value="Rules for Sulphur Precipitated (Midwest) powder, 100 g, jar. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50021991000117100-Community-Case-3"/>
+      <description value="Rules for Sulphur Precipitated (Midwest) powder, 100 g, jar. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50021991000117100-Hospital-Case-5"/>
+      <description value="Rules for Sulphur Precipitated (Midwest) powder, 100 g, jar. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50038111000117102-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50038111000117102-Community-Case-1"/>
+      <description value="Rules for EpiPen Auto-Injector 300 microgram/0.3 mL injection: solution, 1 x 0.3 mL prefilled injection device. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50038111000117102-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50038111000117102-Hospital-Case-5"/>
+      <description value="Rules for EpiPen Auto-Injector 300 microgram/0.3 mL injection: solution, 1 x 0.3 mL prefilled injection device. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50046921000117106-Community-Case-1"/>
+      <description value="Rules for Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50046921000117106-Community-Case-2"/>
+      <description value="Rules for Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50046921000117106-Community-Case-3"/>
+      <description value="Rules for Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-4"/>
+      </reference>
+      <name value="ChargeItemDefinition-50046921000117106-Community-Case-4"/>
+      <description value="Rules for Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle. community PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50046921000117106-Hospital-Case-5"/>
+      <description value="Rules for Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50046931000117109-Community-Case-1"/>
+      <description value="Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50046931000117109-Community-Case-2"/>
+      <description value="Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50046931000117109-Community-Case-3"/>
+      <description value="Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-4"/>
+      </reference>
+      <name value="ChargeItemDefinition-50046931000117109-Community-Case-4"/>
+      <description value="Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50046931000117109-Hospital-Case-5"/>
+      <description value="Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50048881000117104-Community-Case-1"/>
+      <description value="Rules for Hydrocortisone (ABM) powder, 25 g, jar. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50048881000117104-Community-Case-2"/>
+      <description value="Rules for Hydrocortisone (ABM) powder, 25 g, jar. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50048881000117104-Community-Case-3"/>
+      <description value="Rules for Hydrocortisone (ABM) powder, 25 g, jar. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50048881000117104-Hospital-Case-5"/>
+      <description value="Rules for Hydrocortisone (ABM) powder, 25 g, jar. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50055641000117102-Hospital-Case-7"/>
+      </reference>
+      <name value="ChargeItemDefinition-50055641000117102-Hospital-Case-7"/>
+      <description value="Rules for Thio-Tepa 15 mg injection: powder for, 1 x 15 mg vial. hospital Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50058961000117103-Community-Case-1"/>
+      <description value="Rules for Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50058961000117103-Community-Case-3"/>
+      <description value="Rules for Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-4"/>
+      </reference>
+      <name value="ChargeItemDefinition-50058961000117103-Community-Case-4"/>
+      <description value="Rules for Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial. community PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50058961000117103-Hospital-Case-5"/>
+      <description value="Rules for Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50074861000117103-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50074861000117103-Community-Case-1"/>
+      <description value="Rules for Laevolac 3.34 g/5 mL oral liquid: solution, 500 mL, bottle. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50074861000117103-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50074861000117103-Hospital-Case-5"/>
+      <description value="Rules for Laevolac 3.34 g/5 mL oral liquid: solution, 500 mL, bottle. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50083491000117102-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50083491000117102-Community-Case-1"/>
+      <description value="Rules for Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50083491000117102-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50083491000117102-Hospital-Case-5"/>
+      <description value="Rules for Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50085781000117107-Community-Case-1"/>
+      <description value="Rules for Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50085781000117107-Community-Case-2"/>
+      <description value="Rules for Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50085781000117107-Community-Case-3"/>
+      <description value="Rules for Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-4"/>
+      </reference>
+      <name value="ChargeItemDefinition-50085781000117107-Community-Case-4"/>
+      <description value="Rules for Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules. community PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50085781000117107-Hospital-Case-5"/>
+      <description value="Rules for Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50120021000117104-Community-Case-1"/>
+      <description value="Rules for Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50120021000117104-Community-Case-2"/>
+      <description value="Rules for Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50120021000117104-Community-Case-3"/>
+      <description value="Rules for Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Hospital-Case-7"/>
+      </reference>
+      <name value="ChargeItemDefinition-50120021000117104-Hospital-Case-7"/>
+      <description value="Rules for Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack. hospital Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50121491000117102-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50121491000117102-Community-Case-1"/>
+      <description value="Rules for Estradot 75 microgram/24 hours patch, 8, sachet. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50121491000117102-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50121491000117102-Hospital-Case-5"/>
+      <description value="Rules for Estradot 75 microgram/24 hours patch, 8, sachet. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50148261000117103-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50148261000117103-Community-Case-1"/>
+      <description value="Rules for Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50148261000117103-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50148261000117103-Hospital-Case-5"/>
+      <description value="Rules for Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50225401000117106-Community-Case-1"/>
+      <description value="Rules for Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50225401000117106-Community-Case-2"/>
+      <description value="Rules for Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50225401000117106-Community-Case-3"/>
+      <description value="Rules for Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50225401000117106-Hospital-Case-7"/>
+      </reference>
+      <name value="ChargeItemDefinition-50225401000117106-Hospital-Case-7"/>
+      <description value="Rules for Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial. hospital Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50227471000117107-Community-Case-4"/>
+      </reference>
+      <name value="ChargeItemDefinition-50227471000117107-Community-Case-4"/>
+      <description value="Rules for Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device. community PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50227471000117107-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50227471000117107-Hospital-Case-5"/>
+      <description value="Rules for Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50242281000117106-Community-Case-1"/>
+      <description value="Rules for Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50242281000117106-Community-Case-2"/>
+      <description value="Rules for Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50242281000117106-Community-Case-3"/>
+      <description value="Rules for Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50242281000117106-Hospital-Case-7"/>
+      </reference>
+      <name value="ChargeItemDefinition-50242281000117106-Hospital-Case-7"/>
+      <description value="Rules for Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle. hospital Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50248381000117100-Community-Case-1"/>
+      <description value="Rules for Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50248381000117100-Community-Case-2"/>
+      <description value="Rules for Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50248381000117100-Community-Case-3"/>
+      <description value="Rules for Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50248381000117100-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50248381000117100-Hospital-Case-5"/>
+      <description value="Rules for Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50270251000117100-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50270251000117100-Community-Case-1"/>
+      <description value="Rules for Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50270251000117100-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50270251000117100-Hospital-Case-5"/>
+      <description value="Rules for Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50277841000117102-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50277841000117102-Community-Case-1"/>
+      <description value="Rules for MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50277841000117102-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50277841000117102-Hospital-Case-5"/>
+      <description value="Rules for MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50283011000117109-Community-Case-1"/>
+      <description value="Rules for Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50283011000117109-Hospital-Case-5"/>
+      <description value="Rules for Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50289761000117107-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50289761000117107-Community-Case-1"/>
+      <description value="Rules for Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50289761000117107-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50289761000117107-Hospital-Case-5"/>
+      <description value="Rules for Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50301271000117101-Community-Case-1"/>
+      <description value="Rules for Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-2"/>
+      </reference>
+      <name value="ChargeItemDefinition-50301271000117101-Community-Case-2"/>
+      <description value="Rules for Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack. community BSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-3"/>
+      </reference>
+      <name value="ChargeItemDefinition-50301271000117101-Community-Case-3"/>
+      <description value="Rules for Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack. community Rural PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Community-Case-4"/>
+      </reference>
+      <name value="ChargeItemDefinition-50301271000117101-Community-Case-4"/>
+      <description value="Rules for Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack. community PSO."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50301271000117101-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50301271000117101-Hospital-Case-5"/>
+      <description value="Rules for Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50308221000117108-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50308221000117108-Community-Case-1"/>
+      <description value="Rules for Vegzelma 100 mg/4 mL injection: concentrated, 1 x 4 mL vial. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50320741000117103-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50320741000117103-Community-Case-1"/>
+      <description value="Rules for Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50320741000117103-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50320741000117103-Hospital-Case-5"/>
+      <description value="Rules for Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50324571000117108-Community-Case-1"/>
+      <description value="Rules for Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50324571000117108-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50324571000117108-Hospital-Case-5"/>
+      <description value="Rules for Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50350151000117104-Community-Case-1"/>
+      </reference>
+      <name value="ChargeItemDefinition-50350151000117104-Community-Case-1"/>
+      <description value="Rules for Teevir tablet: film-coated, 30 tablets, bottle. community Prescription."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-50350151000117104-Hospital-Case-5"/>
+      </reference>
+      <name value="ChargeItemDefinition-50350151000117104-Hospital-Case-5"/>
+      <description value="Rules for Teevir tablet: film-coated, 30 tablets, bottle. hospital n/a."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA1098-Authorization"/>
+      </reference>
+      <name value="ChargeItemDefinition-SA1098-Authorization"/>
+      <description value="Special Authority SA1098. Detailed eligibility criteria available via authorization form."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA1329-Authorization"/>
+      </reference>
+      <name value="ChargeItemDefinition-SA1329-Authorization"/>
+      <description value="Special Authority SA1329. Detailed eligibility criteria available via authorization form."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA1683-Authorization"/>
+      </reference>
+      <name value="ChargeItemDefinition-SA1683-Authorization"/>
+      <description value="Special Authority SA1683. Detailed eligibility criteria available via authorization form."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA2139-Authorization"/>
+      </reference>
+      <name value="ChargeItemDefinition-SA2139-Authorization"/>
+      <description value="Special Authority SA2139. Detailed eligibility criteria available via authorization form."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA2185-Authorization"/>
+      </reference>
+      <name value="ChargeItemDefinition-SA2185-Authorization"/>
+      <description value="Special Authority SA2185. Detailed eligibility criteria available via authorization form."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA2453-Authorization"/>
+      </reference>
+      <name value="ChargeItemDefinition-SA2453-Authorization"/>
+      <description value="Special Authority SA2453. Detailed eligibility criteria available via authorization form."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA2536-Authorization"/>
+      </reference>
+      <name value="ChargeItemDefinition-SA2536-Authorization"/>
+      <description value="Special Authority SA2536. Detailed eligibility criteria available via authorization form."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA2561-Authorization"/>
+      </reference>
+      <name value="ChargeItemDefinition-SA2561-Authorization"/>
+      <description value="Special Authority SA2561. Detailed eligibility criteria available via authorization form."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA2620-Authorization"/>
+      </reference>
+      <name value="ChargeItemDefinition-SA2620-Authorization"/>
+      <description value="Special Authority SA2620. Detailed eligibility criteria available via authorization form."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ChargeItemDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ChargeItemDefinition/ChargeItemDefinition-SA2628-Authorization"/>
+      </reference>
+      <name value="ChargeItemDefinition-SA2628-Authorization"/>
+      <description value="Special Authority SA2628. Detailed eligibility criteria available via authorization form."/>
       <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-special-authority"/>
     </resource>
     <resource>
@@ -644,33 +1678,11 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/ChargeItemDefinitionPricingEffectiveDateSearchParam"/>
-      </reference>
-      <name value="ChargeItemDefinitionPricingEffectiveDateSearchParam"/>
-      <description value="Search ChargeItemDefinition by pricing effective date extension"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="SearchParameter"/>
-      </extension>
-      <reference>
         <reference value="SearchParameter/ChargeItemDefinitionSACodeSearchParam"/>
       </reference>
       <name value="ChargeItemDefinitionSACodeSearchParam"/>
       <description value="Allow ChargeItemDefinition search by code eg special authority code"/>
       <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ChargeItemDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ChargeItemDefinition/ChargeItemDefinition-Clexane-Pricing"/>
-      </reference>
-      <name value="Clexane - Pricing"/>
-      <description value="Pricing information for Clexane (enoxaparin sodium injection). Demonstrates fully subsidized community and HML pricing."/>
-      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-pricing"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -732,6 +1744,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/funding-subsidy-amount"/>
+      </reference>
+      <name value="Funding Subsidy Amount"/>
+      <description value="Structured subsidy details for funding rule cases, including subsidy type, status, optional amount, and display label."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/in-combination"/>
       </reference>
       <name value="In-Combination"/>
@@ -743,10 +1766,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/medication-atc-category-1"/>
+        <reference value="StructureDefinition/medication-atc"/>
       </reference>
-      <name value="Medication ATC Category 1"/>
-      <description value="Used to describe ATC Category 1 (including id and name)"/>
+      <name value="Medication ATC"/>
+      <description value="ATC code and display for the medication."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -754,32 +1777,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/medication-atc-category-2"/>
+        <reference value="StructureDefinition/medication-description"/>
       </reference>
-      <name value="Medication ATC Category 2"/>
-      <description value="Used to describe ATC Category 2 (including id and name)"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/medication-atc-category-3"/>
-      </reference>
-      <name value="Medication ATC Category 3"/>
-      <description value="Used to describe ATC Category 3 (including id and name)"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/medication-brand-name"/>
-      </reference>
-      <name value="Medication Brand Name"/>
-      <description value="The brand or trade name of the medication. For example, 'Budesonide Te Arai' or 'Gaviscon Infant'."/>
+      <name value="Medication Description"/>
+      <description value="Structured description fields for medication terms."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -797,10 +1798,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/medication-in-combination"/>
+        <reference value="StructureDefinition/medication-legal-class"/>
       </reference>
-      <name value="Medication In Combination"/>
-      <description value="Indicates whether this medication is only subsidised when used in combination with other medicines."/>
+      <name value="Medication Legal Class"/>
+      <description value="Structured legal class code for a medication."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -819,10 +1820,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/medication-original-pack"/>
+        <reference value="StructureDefinition/medication-nzmt-type"/>
       </reference>
-      <name value="Medication Original Pack"/>
-      <description value="Indicates whether this pack represents the original pack supplied by the manufacturer."/>
+      <name value="Medication NZMT Type"/>
+      <description value="NZMT concept type for the medication code (for example CTPP)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -830,10 +1831,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/medication-package-size"/>
+        <reference value="StructureDefinition/medication-pack"/>
       </reference>
-      <name value="Medication Package Size"/>
-      <description value="Package size for a scheduled medication. For example, '30 x 650 mg sachets' would be represented as 'Sachet' in the form property and 30 in the packageSize extension property."/>
+      <name value="Medication Pack"/>
+      <description value="Pack details including NZMT medicine code, quantity, and size."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -841,87 +1842,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/medication-product-created-date"/>
+        <reference value="StructureDefinition/medication-price"/>
       </reference>
-      <name value="Medication Product Created Date"/>
-      <description value="The date a medication product record was created."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/medication-product-multiple"/>
-      </reference>
-      <name value="Medication Product Multiple"/>
-      <description value="Indicates whether this pack uses product multiples when calculating pricing or claims."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/medication-product-multiplier"/>
-      </reference>
-      <name value="Medication Product Multiplier"/>
-      <description value="Numeric multiplier applied when calculating pricing or claims for this pack."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/medication-rank"/>
-      </reference>
-      <name value="Medication Rank"/>
-      <description value="Ranking or priority of this medication formulation within the schedule. Lower numbers typically indicate higher priority or preferred formulations."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/medication-safety-list-medicine"/>
-      </reference>
-      <name value="Medication Safety List Medicine"/>
-      <description value="Indicates whether this medication is on a PHARMAC safety list."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/medication-statim"/>
-      </reference>
-      <name value="Medication Statim"/>
-      <description value="Indicates whether stat (urgent) dispensing rules apply for this medication."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/medication-strength"/>
-      </reference>
-      <name value="Medication Strength"/>
-      <description value="Strength for a medication."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/medication-unit-of-measure"/>
-      </reference>
-      <name value="Medication Unit of Measure"/>
-      <description value="The unit of measure used for this medication. For example, 'tab' (tablet), 'cap' (capsule), 'ml' (milliliter), 'sach' (sachet)."/>
+      <name value="Medication Price"/>
+      <description value="Medication-level schedule date and display price information."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -929,10 +1853,10 @@
         <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="Medication/Medication-Clexane-100mg-1ml-Syringe"/>
+        <reference value="Medication/50003171000117108"/>
       </reference>
-      <name value="Medication-Clexane-100mg-1ml-Syringe"/>
-      <description value="Medication representation of Clexane (enoxaparin sodium) Inj 100 mg in 1 ml syringe."/>
+      <name value="Medication-50003171000117108"/>
+      <description value="Medication representation of Remicade 100 mg injection: powder for, 1 x 100 mg vial."/>
       <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
     </resource>
     <resource>
@@ -940,10 +1864,10 @@
         <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="Medication/Medication-Fortisip-Multi-Fibre-Chocolate"/>
+        <reference value="Medication/50014861000117106"/>
       </reference>
-      <name value="Medication-Fortisip-Multi-Fibre-Chocolate"/>
-      <description value="Supplmentrepresentation of Fortisip Multi Fibre (chocolate) oral feed with fibre 1.5 kcal/ml."/>
+      <name value="Medication-50014861000117106"/>
+      <description value="Medication representation of Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack."/>
       <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
     </resource>
     <resource>
@@ -951,22 +1875,308 @@
         <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="Medication/Medication-Nutrison-800-Complete-Multi-Fibre"/>
+        <reference value="Medication/50021691000117107"/>
       </reference>
-      <name value="Medication-Nutrison-800-Complete-Multi-Fibre"/>
-      <description value="Supplement representation of Nutrison 800 Complete Multi Fibre (enteral feed with fibre 0.83 kcal/ml)."/>
+      <name value="Medication-50021691000117107"/>
+      <description value="Medication representation of Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack."/>
       <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="SearchParameter"/>
+        <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/MedicationBrandNameSearchParam"/>
+        <reference value="Medication/50021721000117104"/>
       </reference>
-      <name value="MedicationBrandNameSearchParam"/>
-      <description value="Search for medications by brand name (e.g., 'Gaviscon', 'Acidex', 'Budesonide'). Enables fuzzy matching on the medication-brand-name extension for discovery by product name."/>
-      <exampleBoolean value="false"/>
+      <name value="Medication-50021721000117104"/>
+      <description value="Medication representation of Rectogesic 0.2% (2 mg/g) ointment, 30 g, tube."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50021991000117100"/>
+      </reference>
+      <name value="Medication-50021991000117100"/>
+      <description value="Medication representation of Sulphur Precipitated (Midwest) powder, 100 g, jar."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50038111000117102"/>
+      </reference>
+      <name value="Medication-50038111000117102"/>
+      <description value="Medication representation of EpiPen Auto-Injector 300 microgram/0.3 mL injection: solution, 1 x 0.3 mL prefilled injection device."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50046921000117106"/>
+      </reference>
+      <name value="Medication-50046921000117106"/>
+      <description value="Medication representation of Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50046931000117109"/>
+      </reference>
+      <name value="Medication-50046931000117109"/>
+      <description value="Medication representation of Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50048881000117104"/>
+      </reference>
+      <name value="Medication-50048881000117104"/>
+      <description value="Medication representation of Hydrocortisone (ABM) powder, 25 g, jar."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50055641000117102"/>
+      </reference>
+      <name value="Medication-50055641000117102"/>
+      <description value="Medication representation of Thio-Tepa 15 mg injection: powder for, 1 x 15 mg vial."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50058961000117103"/>
+      </reference>
+      <name value="Medication-50058961000117103"/>
+      <description value="Medication representation of Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50074861000117103"/>
+      </reference>
+      <name value="Medication-50074861000117103"/>
+      <description value="Medication representation of Laevolac 3.34 g/5 mL oral liquid: solution, 500 mL, bottle."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50083491000117102"/>
+      </reference>
+      <name value="Medication-50083491000117102"/>
+      <description value="Medication representation of Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50085781000117107"/>
+      </reference>
+      <name value="Medication-50085781000117107"/>
+      <description value="Medication representation of Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50120021000117104"/>
+      </reference>
+      <name value="Medication-50120021000117104"/>
+      <description value="Medication representation of Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50121491000117102"/>
+      </reference>
+      <name value="Medication-50121491000117102"/>
+      <description value="Medication representation of Estradot 75 microgram/24 hours patch, 8, sachet."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50148261000117103"/>
+      </reference>
+      <name value="Medication-50148261000117103"/>
+      <description value="Medication representation of Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50225401000117106"/>
+      </reference>
+      <name value="Medication-50225401000117106"/>
+      <description value="Medication representation of Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50227471000117107"/>
+      </reference>
+      <name value="Medication-50227471000117107"/>
+      <description value="Medication representation of Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50242281000117106"/>
+      </reference>
+      <name value="Medication-50242281000117106"/>
+      <description value="Medication representation of Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50248381000117100"/>
+      </reference>
+      <name value="Medication-50248381000117100"/>
+      <description value="Medication representation of Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50270251000117100"/>
+      </reference>
+      <name value="Medication-50270251000117100"/>
+      <description value="Medication representation of Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50277841000117102"/>
+      </reference>
+      <name value="Medication-50277841000117102"/>
+      <description value="Medication representation of MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50283011000117109"/>
+      </reference>
+      <name value="Medication-50283011000117109"/>
+      <description value="Medication representation of Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50289761000117107"/>
+      </reference>
+      <name value="Medication-50289761000117107"/>
+      <description value="Medication representation of Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50301271000117101"/>
+      </reference>
+      <name value="Medication-50301271000117101"/>
+      <description value="Medication representation of Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50308221000117108"/>
+      </reference>
+      <name value="Medication-50308221000117108"/>
+      <description value="Medication representation of Vegzelma 100 mg/4 mL injection: concentrated, 1 x 4 mL vial."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50320741000117103"/>
+      </reference>
+      <name value="Medication-50320741000117103"/>
+      <description value="Medication representation of Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50324571000117108"/>
+      </reference>
+      <name value="Medication-50324571000117108"/>
+      <description value="Medication representation of Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/50350151000117104"/>
+      </reference>
+      <name value="Medication-50350151000117104"/>
+      <description value="Medication representation of Teevir tablet: film-coated, 30 tablets, bottle."/>
+      <exampleCanonical value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -976,7 +2186,7 @@
         <reference value="SearchParameter/MedicationCategorySearchParam"/>
       </reference>
       <name value="MedicationCategorySearchParam"/>
-      <description value="Search for medications by category"/>
+      <description value="Search for medications by ATC category"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1017,21 +2227,21 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/pharmac-charge-item-definition-pricing"/>
-      </reference>
-      <name value="PHARMAC Charge Item Definition - Pricing"/>
-      <description value="Profile for ChargeItemDefinition resources representing product pricing information for medications and devices in the PHARMAC schedule. This profile captures listed prices, PHARMAC subsidies, patient co-payments, and pricing-specific attributes such as contract type, DV limits, and statim requirements."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/pharmac-charge-item-definition-special-authority"/>
       </reference>
       <name value="PHARMAC Charge Item Definition - Special Authority"/>
       <description value="Profile for ChargeItemDefinition resources representing Special Authorization (SA) requirements and clinical eligibility criteria in the PHARMAC schedule. This profile captures SA codes, authorization case counts, clinical eligibility, and references to medications requiring special authorization."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pharmac-is-primary-coding"/>
+      </reference>
+      <name value="Pharmac Is Primary Coding"/>
+      <description value="Marks the primary pharmac subsidy coding within Medication.code.coding."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1042,7 +2252,7 @@
         <reference value="StructureDefinition/pharmac-medication"/>
       </reference>
       <name value="PHARMAC Medication"/>
-      <description value="Profile for Medication resources representing pharmaceutical products in the PHARMAC schedule. This profile defines the structure for medications including brand identification, pack codes, product names, form, and ingredients. Pricing information is provided via related ChargeItemDefinition resources that can be retrieved using the _include search parameter."/>
+      <description value="Profile for Medication resources representing pharmaceutical products in the PHARMAC schedule. This profile defines the structure for medications including product names, coding, form, ingredients, and medication-level extensions such as ATC, pack, price, and legal class."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1124,6 +2334,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/schedule-funding-attributes"/>
+      </reference>
+      <name value="Schedule Funding Attributes"/>
+      <description value="Grouped funding attributes for schedule records, including contract and dispensing flags, co-payment markers, and related indicators."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/SearchSet-Bundle-Adrenaline-Note-And-Limit"/>
+      </reference>
+      <name value="SearchSet-Bundle-Adrenaline-Note-And-Limit"/>
+      <description value="Example search result demonstrating _revinclude to retrieve Adrenaline with separate community and hospital Funding Rules records. The current source demonstrates provider requirements and a PSO limit; it does not contain a note condition."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/SearchSet-Bundle-All-Funding-Rules"/>
+      </reference>
+      <name value="SearchSet-Bundle-All-Funding-Rules"/>
+      <description value="Example search result demonstrating a search for all funding ChargeItemDefinition records. GET [base]/ChargeItemDefinition?_profile=pharmac-charge-item-definition-funding-rules&amp;_count=1000&amp;_total=accurate"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
@@ -1141,7 +2384,7 @@
         <reference value="Bundle/SearchSet-Bundle-All-Special-Authorities"/>
       </reference>
       <name value="SearchSet-Bundle-All-Special-Authorities"/>
-      <description value="Example search result demonstrating a search for all special authorization definitions. GET [base]/pharmac-charge-item-definition-special-authority?_count=1000&amp;_total=accurate"/>
+      <description value="Example search result demonstrating a search for all special authorization definitions. GET [base]/ChargeItemDefinition?_profile=pharmac-charge-item-definition-special-authority&amp;_count=1000&amp;_total=accurate"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1149,10 +2392,54 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/SearchSet-Bundle-Clexane-Pricing"/>
+        <reference value="Bundle/SearchSet-Bundle-Estradiol-Limit"/>
       </reference>
-      <name value="SearchSet-Bundle-Clexane-Pricing"/>
-      <description value="Example search result demonstrating _include to retrieve Medication resources with their associated ChargeItemDefinition pricing information. This would be the result of a query like: GET /Medication?name=Clexane&amp;_include=ChargeItemDefinition:instance"/>
+      <name value="SearchSet-Bundle-Estradiol-Limit"/>
+      <description value="Example search result demonstrating _revinclude to retrieve Estradiol Transdermal System with a community limit and provider requirement plus a hospital funding record."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/SearchSet-Bundle-Etoposide-Authority-Endorsement"/>
+      </reference>
+      <name value="SearchSet-Bundle-Etoposide-Authority-Endorsement"/>
+      <description value="Example search result demonstrating _revinclude to retrieve Etoposide with separate Prescription, BSO, Rural PSO, and hospital Funding Rules records. The community pathways demonstrate provider and specialist endorsement conditions. No Special Authority resource applies to Etoposide."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/SearchSet-Bundle-Famotidine-Endorsement-And-Note"/>
+      </reference>
+      <name value="SearchSet-Bundle-Famotidine-Endorsement-And-Note"/>
+      <description value="Example search result demonstrating _revinclude to retrieve Famotidine with an endorsement, provider requirement, and Schedule memoranda note on the community funding pathway."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/SearchSet-Bundle-Fluanxol-Multiple-Community-And-Hospital"/>
+      </reference>
+      <name value="SearchSet-Bundle-Fluanxol-Multiple-Community-And-Hospital"/>
+      <description value="Example search result demonstrating _revinclude to retrieve Fluanxol Depot with separate community and hospital Funding Rules records. The example covers Prescription, BSO, Rural PSO, PSO, provider, and limit patterns."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/SearchSet-Bundle-Nitisinone-Hospital-Restriction"/>
+      </reference>
+      <name value="SearchSet-Bundle-Nitisinone-Hospital-Restriction"/>
+      <description value="Example search result demonstrating _revinclude to retrieve Nitisinone with a community Special Authority requirement and a separate hospital restriction."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>

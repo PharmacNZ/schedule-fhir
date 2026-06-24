@@ -186,6 +186,222 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Optional JSON schema for authorization/funding validation","Base64-encoded JSON schema document that describes the structured format for funding/authorization case submissions.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:fundingSubsidyAmount","ChargeItemDefinition.extension","fundingSubsidyAmount","","",0,1,"Y","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount]]} {[]}
+","Funding Subsidy Amount","Structured subsidy details for funding rule cases, including subsidy type, status, optional amount, and display label.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes","ChargeItemDefinition.extension","scheduleFundingAttributes","","",0,1,"Y","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes]]} {[]}
+","Schedule Funding Attributes","Grouped funding attributes for schedule records, including contract and dispensing flags, co-payment markers, and related indicators.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.id","ChargeItemDefinition.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension","ChargeItemDefinition.extension.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiple","ChargeItemDefinition.extension.extension","productMultiple","","",0,1,"","","","Extension {[]} {[]}
+","Product multiple applies","Indicates whether this pack uses product multiples when calculating pricing or claims.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiple.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiple.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiple.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""productMultiple""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiple.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+","Product multiple flag","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiplier","ChargeItemDefinition.extension.extension","productMultiplier","","",0,1,"","","","Extension {[]} {[]}
+","Product multiplier value","Numeric multiplier applied when calculating pricing or claims for this pack.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiplier.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiplier.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiplier.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""productMultiplier""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiplier.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","integer {[]} {[]}
+","Product multiplier value","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:originalPack","ChargeItemDefinition.extension.extension","originalPack","","",0,1,"","","","Extension {[]} {[]}
+","Original pack flag","Indicates whether this pack represents the original pack supplied by the manufacturer.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:originalPack.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:originalPack.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:originalPack.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""originalPack""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:originalPack.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+","Original pack flag","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:safetyListMedicine","ChargeItemDefinition.extension.extension","safetyListMedicine","","",0,1,"","","","Extension {[]} {[]}
+","Safety list medicine flag","Indicates whether this medication is on a PHARMAC safety list.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:safetyListMedicine.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:safetyListMedicine.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:safetyListMedicine.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""safetyListMedicine""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:safetyListMedicine.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+","Safety list medicine flag","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:costBrandSource","ChargeItemDefinition.extension.extension","costBrandSource","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:costBrandSource.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:costBrandSource.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:costBrandSource.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""costBrandSource""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:costBrandSource.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+","Cost brand source flag","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:wastageClaimable","ChargeItemDefinition.extension.extension","wastageClaimable","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:wastageClaimable.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:wastageClaimable.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:wastageClaimable.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""wastageClaimable""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:wastageClaimable.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+","Wastage claimable flag","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:contractType","ChargeItemDefinition.extension.extension","contractType","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:contractType.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:contractType.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:contractType.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""contractType""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:contractType.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
+","Contract type","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:dvLimitPercent","ChargeItemDefinition.extension.extension","dvLimitPercent","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:dvLimitPercent.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:dvLimitPercent.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:dvLimitPercent.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""dvLimitPercent""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:dvLimitPercent.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","decimal {[]} {[]}
+","DV limit percentage","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:brandSwitchFee","ChargeItemDefinition.extension.extension","brandSwitchFee","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:brandSwitchFee.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:brandSwitchFee.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:brandSwitchFee.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""brandSwitchFee""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:brandSwitchFee.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+","Brand switch fee flag","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:statim","ChargeItemDefinition.extension.extension","statim","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:statim.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:statim.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:statim.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""statim""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:statim.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
+","Statim applicability","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:inCombination","ChargeItemDefinition.extension.extension","inCombination","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:inCombination.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:inCombination.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:inCombination.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""inCombination""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:inCombination.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","code {[]} {[]}
+","In-combination funding flag","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:section29","ChargeItemDefinition.extension.extension","section29","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:section29.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:section29.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:section29.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""section29""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:section29.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+","Section 29 applicability","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:coPaymentMin","ChargeItemDefinition.extension.extension","coPaymentMin","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:coPaymentMin.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:coPaymentMin.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:coPaymentMin.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""coPaymentMin""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:coPaymentMin.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","code {[]} {[]}
+","Co-payment minimum applicability","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:coPaymentMax","ChargeItemDefinition.extension.extension","coPaymentMax","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:coPaymentMax.id","ChargeItemDefinition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:coPaymentMax.extension","ChargeItemDefinition.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:coPaymentMax.url","ChargeItemDefinition.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""coPaymentMax""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.extension:coPaymentMax.value[x]","ChargeItemDefinition.extension.extension.value[x]","","","",0,1,"","","","code {[]} {[]}
+","Co-payment maximum applicability","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.url","ChargeItemDefinition.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"ChargeItemDefinition.extension:scheduleFundingAttributes.value[x]","ChargeItemDefinition.extension.value[x]","","","",0,0,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}Contributor {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
 "ChargeItemDefinition.extension:PricingSection29","ChargeItemDefinition.extension","PricingSection29","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29]]} {[]}
 ","Pricing Section 29","Indicates whether Section 29 applies to this pricing record.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

@@ -84,6 +84,14 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","JSON Schema for this SA form","Base64-encoded JSON Schema (application/schema+json) that defines the structure and validation rules for this Special Authority application form. Clients should base64-decode the value and use the resulting JSON Schema for form rendering and input validation.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:fundingSubsidyAmount","ChargeItemDefinition.extension","fundingSubsidyAmount","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount]]} {[]}
+","Structured subsidy details","Structured subsidy metadata including subsidy type, status, optional amount, and display label.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ChargeItemDefinition.extension:scheduleFundingAttributes","ChargeItemDefinition.extension","scheduleFundingAttributes","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes]]} {[]}
+","Grouped schedule funding attributes","Grouped funding attributes including contract markers, dispensing flags, and co-payment markers.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ChargeItemDefinition.extension:PricingSection29","ChargeItemDefinition.extension","PricingSection29","","",0,1,"","","","Extension {[CanonicalType[https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-section-29]]} {[]}
 ","Pricing Section 29","Indicates whether Section 29 applies to this pricing record.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

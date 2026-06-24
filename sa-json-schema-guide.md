@@ -1,4 +1,4 @@
-# JSON Schema for Special Authorities - Pharmac Schedules FHIR API v1.0.1
+# JSON Schema for Special Authorities - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * **JSON Schema for Special Authorities**

@@ -1,0 +1,122 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50083491000117102> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "50083491000117102"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://standards.digital.health.nz/ns/nzmt-type-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ctpp" ]
+       ] ) ;
+       fhir:text [ fhir:v "ctpp" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "20069071000116107" ] ;
+           fhir:display [ fhir:v "Preferred Term" ]
+         ] ) ;
+         fhir:text [ fhir:v "Preferred Term" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "term"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "50083491000117102" ] ;
+           fhir:display [ fhir:v "Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes" ]
+         ] ) ;
+         fhir:text [ fhir:v "Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "B01AB05" ] ;
+         fhir:display [ fhir:v "enoxaparin" ]
+       ] ) ;
+       fhir:text [ fhir:v "enoxaparin" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "quantity"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "10"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "syringe" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "price"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v 56.62 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "50083491000117102" ] ;
+       fhir:display [ fhir:v "Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes" ]
+     ] [
+       fhir:system [ fhir:v "https://www.gs1.org/gtin"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "09312319039673" ]
+     ] [
+       fhir:system [ fhir:v "https://www.gs1.org/gtin"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "09319733003464" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://standards.digital.health.nz/ns/pharmac-subsidy-code"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "2581892" ]
+     ] ) ;
+     fhir:text [ fhir:v "Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:form [
+     fhir:text [ fhir:v "Inj 80 mg in 0.8 ml syringe" ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "Enoxaparin sodium" ]
+     ] ;
+     fhir:isActive [ fhir:v true ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

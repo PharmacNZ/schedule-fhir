@@ -3,103 +3,1269 @@
 <Bundle xmlns="http://hl7.org/fhir">
   <id value="SearchSet-Bundle-All-Medications"/>
   <type value="searchset"/>
-  <total value="1000"/>
+  <total value="30"/>
   <link>
     <relation value="self"/>
-    <url value="https://pharmacfhirpoc-api.fhir.azurehealthcareapis.com/Medication"/>
-  </link>
-  <link>
-    <relation value="next"/>
-    <url value="https://pharmacfhirpoc-api.fhir.azurehealthcareapis.com/Medication?_count=1000&amp;ct=er97f5lRTbS5qY6poaGRqaWFoamliYWRkYmxiaVlLAAAAP%2F%2F"/>
+    <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/Medication?_count=1000&amp;_total=accurate"/>
   </link>
   <entry>
     <resource>
       <Medication>
-        <id value="Medication-Clexane-100mg-1ml-Syringe"/>
+        <id value="50003171000117108"/>
         <meta>
           <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
         </meta>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
-          <valueString value="Clexane"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
-          <valueString value="10"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50003171000117108"/>
+                <display value="Remicade 100 mg injection: powder for, 1 x 100 mg vial"/>
+              </coding>
+              <text value="Remicade 100 mg injection: powder for, 1 x 100 mg vial"/>
+            </valueCodeableConcept>
+          </extension>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
-          <valueString value="syringe"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="L04AB02"/>
+              <display value="infliximab"/>
+            </coding>
+            <text value="infliximab"/>
+          </valueCodeableConcept>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-rank">
-          <valueInteger value="4"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="1"/>
+              <unit value="vial"/>
+            </valueQuantity>
+          </extension>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
-          <valueString value="Blood and Blood Forming Organs"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="428"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
-          <valueString value="Antithrombotic Agents"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
-          <valueString value="Heparin and Antagonist Preparations"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiple">
-          <valueBoolean value="true"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-multiplier">
-          <valueInteger value="1"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-original-pack">
-          <valueBoolean value="false"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-safety-list-medicine">
-          <valueBoolean value="false"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-strength">
-          <valueString value="100 mg in 1 ml"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-legal-classification">
-          <valueString value="Presciption"/>
-        </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-product-created-date">
-          <valueDate value="2009-08-01"/>
-        </extension>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
-          <value value="B04070438932925"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
-          <value value="P2581906"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
-          <value value="C0407043893"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
-          <value value="F040704389329"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
-          <value value="2581906"/>
-        </identifier>
-        <identifier>
-          <system value="https://www.gs1.org/gtin"/>
-          <value value="09312319039680"/>
-        </identifier>
-        <identifier>
-          <system value="https://www.gs1.org/gtin"/>
-          <value value="09319733003402"/>
-        </identifier>
         <code>
           <coding>
             <system value="http://nzmt.org.nz"/>
-            <code value="50083501000117108"/>
-            <display value="Inj 100 mg in 1 ml syringe"/>
+            <code value="50003171000117108"/>
+            <display value="Remicade 100 mg injection: powder for, 1 x 100 mg vial"/>
           </coding>
-          <text value="Clexane"/>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9317376141802"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2016710"/>
+          </coding>
+          <text value="Remicade 100 mg injection: powder for, 1 x 100 mg vial"/>
         </code>
         <status value="active"/>
         <form>
-          <text value="Solution for injection"/>
+          <text value="Inj 100 mg"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Infliximab"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50014861000117106"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50014861000117106"/>
+                <display value="Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack"/>
+              </coding>
+              <text value="Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="G03XB01"/>
+              <display value="mifepristone"/>
+            </coding>
+            <text value="mifepristone"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="3"/>
+              <unit value="tablet"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="180"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50014861000117106"/>
+            <display value="Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2086522"/>
+          </coding>
+          <text value="Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Tab 200 mg"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Mifepristone"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50021691000117107"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50021691000117107"/>
+                <display value="Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack"/>
+              </coding>
+              <text value="Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="R03AK06"/>
+              <display value="salmeterol and fluticasone"/>
+            </coding>
+            <text value="salmeterol and fluticasone"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="60"/>
+              <unit value="actuation"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="44.08"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50021691000117107"/>
+            <display value="Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9300670198443"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2120224"/>
+          </coding>
+          <text value="Seretide Accuhaler 250/50 inhalation: powder for, 60 actuations, blister pack"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Powder for inhalation 250 mcg with salmeterol 50 mcg"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Fluticasone with salmeterol"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50021721000117104"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50021721000117104"/>
+                <display value="Rectogesic 0.2% (2 mg/g) ointment, 30 g, tube"/>
+              </coding>
+              <text value="Rectogesic 0.2% (2 mg/g) ointment, 30 g, tube"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="C05AE01"/>
+              <display value="glyceryl trinitrate"/>
+            </coding>
+            <text value="glyceryl trinitrate"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="30"/>
+              <unit value="g"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="22"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50021721000117104"/>
+            <display value="Rectogesic 0.2% (2 mg/g) ointment, 30 g, tube"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9325728000035"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2120313"/>
+          </coding>
+          <text value="Rectogesic 0.2% (2 mg/g) ointment, 30 g, tube"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Oint 0.2%"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Glyceryl trinitrate"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50021991000117100"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50021991000117100"/>
+                <display value="Sulphur Precipitated (Midwest) powder, 100 g, jar"/>
+              </coding>
+              <text value="Sulphur Precipitated (Midwest) powder, 100 g, jar"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="D10AB02"/>
+              <display value="sulfur"/>
+            </coding>
+            <text value="sulfur"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="100"/>
+              <unit value="g"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="6.35"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50021991000117100"/>
+            <display value="Sulphur Precipitated (Midwest) powder, 100 g, jar"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2121158"/>
+          </coding>
+          <text value="Sulphur Precipitated (Midwest) powder, 100 g, jar"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Precipitated"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Sulphur"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50038111000117102"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50038111000117102"/>
+                <display value="EpiPen Auto-Injector 300 microgram/0.3 mL injection: solution, 1 x 0.3 mL prefilled injection device"/>
+              </coding>
+              <text value="EpiPen Auto-Injector 300 microgram/0.3 mL injection: solution, 1 x 0.3 mL prefilled injection device"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="C01CA24"/>
+              <display value="epinephrine"/>
+            </coding>
+            <text value="epinephrine"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="1"/>
+              <unit value="prefilled injection device"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="85.5"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50038111000117102"/>
+            <display value="EpiPen Auto-Injector 300 microgram/0.3 mL injection: solution, 1 x 0.3 mL prefilled injection device"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9323610006158"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="223972"/>
+          </coding>
+          <text value="EpiPen Auto-Injector 300 microgram/0.3 mL injection: solution, 1 x 0.3 mL prefilled injection device"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Inj 0.3 mg per 0.3 ml auto-injector"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Adrenaline"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50046921000117106"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50046921000117106"/>
+                <display value="Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle"/>
+              </coding>
+              <text value="Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="J01EE01"/>
+              <display value="sulfamethoxazole and trimethoprim"/>
+            </coding>
+            <text value="sulfamethoxazole and trimethoprim"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="100"/>
+              <unit value="ml"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="4.95"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50046921000117106"/>
+            <display value="Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="5290665002128"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2309718"/>
+          </coding>
+          <text value="Deprim oral liquid+E15:Y15: suspension, 100 mL, bottle"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Oral liq 8 mg sulphamethoxazole 40 mg per ml"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Trimethoprim with sulphamethoxazole [Co-trimoxazole]"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50046931000117109"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50046931000117109"/>
+                <display value="Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules"/>
+              </coding>
+              <text value="Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="C01CA24"/>
+              <display value="epinephrine"/>
+            </coding>
+            <text value="epinephrine"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="5"/>
+              <unit value="ampoule"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="4.98"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50046931000117109"/>
+            <display value="Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9331134001405"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2309823"/>
+          </coding>
+          <text value="Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Inj 1 in 1,000, 1 ml ampoule"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Adrenaline"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50048881000117104"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50048881000117104"/>
+                <display value="Hydrocortisone (ABM) powder, 25 g, jar"/>
+              </coding>
+              <text value="Hydrocortisone (ABM) powder, 25 g, jar"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="D07AA02"/>
+              <display value="hydrocortisone"/>
+            </coding>
+            <text value="hydrocortisone"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="25"/>
+              <unit value="g"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="49.95"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50048881000117104"/>
+            <display value="Hydrocortisone (ABM) powder, 25 g, jar"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2322420"/>
+          </coding>
+          <text value="Hydrocortisone (ABM) powder, 25 g, jar"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Powder"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Hydrocortisone"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50055641000117102"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50055641000117102"/>
+                <display value="Thio-Tepa 15 mg injection: powder for, 1 x 15 mg vial"/>
+              </coding>
+              <text value="Thio-Tepa 15 mg injection: powder for, 1 x 15 mg vial"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="L01AC01"/>
+              <display value="thiotepa"/>
+            </coding>
+            <text value="thiotepa"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="1"/>
+              <unit value="vial"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="0"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50055641000117102"/>
+            <display value="Thio-Tepa 15 mg injection: powder for, 1 x 15 mg vial"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="256811"/>
+          </coding>
+          <text value="Thio-Tepa 15 mg injection: powder for, 1 x 15 mg vial"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Inj 15 mg vial"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Thiotepa"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50058961000117103"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50058961000117103"/>
+                <display value="Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial"/>
+              </coding>
+              <text value="Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="H02AB09"/>
+              <display value="hydrocortisone"/>
+            </coding>
+            <text value="hydrocortisone"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="1"/>
+              <unit value="vial"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="3.96"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50058961000117103"/>
+            <display value="Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9313212102938"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="265284"/>
+          </coding>
+          <text value="Solu-Cortef ACT-O-VIAL 100 mg injection: powder for, 1 x 100 mg dual chamber vial"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Inj 100 mg vial"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Hydrocortisone"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50074861000117103"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50074861000117103"/>
+                <display value="Laevolac 3.34 g/5 mL oral liquid: solution, 500 mL, bottle"/>
+              </coding>
+              <text value="Laevolac 3.34 g/5 mL oral liquid: solution, 500 mL, bottle"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="A06AD11"/>
+              <display value="lactulose"/>
+            </coding>
+            <text value="lactulose"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="500"/>
+              <unit value="ml"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="6.16"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50074861000117103"/>
+            <display value="Laevolac 3.34 g/5 mL oral liquid: solution, 500 mL, bottle"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2440210"/>
+          </coding>
+          <text value="Laevolac 3.34 g/5 mL oral liquid: solution, 500 mL, bottle"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Oral liq 10 g per 15 ml"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Lactulose"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50083491000117102"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50083491000117102"/>
+                <display value="Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes"/>
+              </coding>
+              <text value="Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="B01AB05"/>
+              <display value="enoxaparin"/>
+            </coding>
+            <text value="enoxaparin"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="10"/>
+              <unit value="syringe"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="56.62"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50083491000117102"/>
+            <display value="Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="09312319039673"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="09319733003464"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2581892"/>
+          </coding>
+          <text value="Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Inj 80 mg in 0.8 ml syringe"/>
         </form>
         <ingredient>
           <itemCodeableConcept>
@@ -110,131 +1276,1666 @@
       </Medication>
     </resource>
     <search>
-      <mode value="include"/>
+      <mode value="match"/>
     </search>
   </entry>
   <entry>
     <resource>
       <Medication>
-        <id value="Medication-Fortisip-Multi-Fibre-Chocolate"/>
+        <id value="50085781000117107"/>
         <meta>
           <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
         </meta>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
-          <valueString value="Fortisip Multi Fibre (chocolate)"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
-          <valueString value="200"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50085781000117107"/>
+                <display value="Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules"/>
+              </coding>
+              <text value="Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules"/>
+            </valueCodeableConcept>
+          </extension>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
-          <valueString value="ml"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="N05AF01"/>
+              <display value="flupentixol"/>
+            </coding>
+            <text value="flupentixol"/>
+          </valueCodeableConcept>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
-          <valueString value="Special Foods"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="5"/>
+              <unit value="ampoule"/>
+            </valueQuantity>
+          </extension>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
-          <valueString value="Standard Feeds"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="20.9"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
-          <valueString value="Standard Feeds"/>
-        </extension>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
-          <value value="B42063138522825"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
-          <value value="P2702614"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
-          <value value="C4206313852"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
-          <value value="F420631385228"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
-          <value value="2702614"/>
-        </identifier>
         <code>
           <coding>
             <system value="http://nzmt.org.nz"/>
-            <code value="50035701000117108"/>
+            <code value="50085781000117107"/>
+            <display value="Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules"/>
           </coding>
-          <text value="Fortisip Multi Fibre (chocolate)"/>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="5702157120116"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="437301"/>
+          </coding>
+          <text value="Fluanxol Depot 40 mg/2 mL injection: modified release, 5 x 2 mL ampoules"/>
         </code>
         <status value="active"/>
         <form>
-          <text value="Liquid"/>
+          <text value="Inj 20 mg per ml, 2 ml"/>
         </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Flupenthixol decanoate"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
       </Medication>
     </resource>
     <search>
-      <mode value="include"/>
+      <mode value="match"/>
     </search>
   </entry>
   <entry>
     <resource>
       <Medication>
-        <id value="Medication-Nutrison-800-Complete-Multi-Fibre"/>
+        <id value="50120021000117104"/>
         <meta>
           <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
         </meta>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-brand-name">
-          <valueString value="Nutrison 800 Complete Multi Fibre"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-package-size">
-          <valueString value="1000"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50120021000117104"/>
+                <display value="Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack"/>
+              </coding>
+              <text value="Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack"/>
+            </valueCodeableConcept>
+          </extension>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-unit-of-measure">
-          <valueString value="ml"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="L01BB05"/>
+              <display value="fludarabine"/>
+            </coding>
+            <text value="fludarabine"/>
+          </valueCodeableConcept>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-1">
-          <valueString value="Special Foods"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="20"/>
+              <unit value="tablet"/>
+            </valueQuantity>
+          </extension>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-2">
-          <valueString value="Standard Feeds"/>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="412"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
         </extension>
-        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc-category-3">
-          <valueString value="Standard Feeds"/>
-        </extension>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/brand"/>
-          <value value="B42063140742625"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/pack"/>
-          <value value="P2702398"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/chemical"/>
-          <value value="C4206314074"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/formulation"/>
-          <value value="F420631407426"/>
-        </identifier>
-        <identifier>
-          <system value="http://schedule.pharmac.govt.nz/ids/pharmacode"/>
-          <value value="2702398"/>
-        </identifier>
         <code>
           <coding>
             <system value="http://nzmt.org.nz"/>
-            <code value="50271881000117104"/>
+            <code value="50120021000117104"/>
+            <display value="Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack"/>
           </coding>
-          <text value="Nutrison 800 Complete Multi Fibre"/>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9323911001814"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2327988"/>
+          </coding>
+          <text value="Fludara Oral 10 mg tablet: film-coated, 20 tablets, blister pack"/>
         </code>
         <status value="active"/>
         <form>
-          <text value="Liquid"/>
+          <text value="Tab 10 mg"/>
         </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Fludarabine phosphate"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
       </Medication>
     </resource>
     <search>
-      <mode value="include"/>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50121491000117102"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50121491000117102"/>
+                <display value="Estradot 75 microgram/24 hours patch, 8, sachet"/>
+              </coding>
+              <text value="Estradot 75 microgram/24 hours patch, 8, sachet"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="G03CA03"/>
+              <display value="estradiol"/>
+            </coding>
+            <text value="estradiol"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="8"/>
+              <unit value="patch"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="16.53"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50121491000117102"/>
+            <display value="Estradot 75 microgram/24 hours patch, 8, sachet"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2514346"/>
+          </coding>
+          <text value="Estradot 75 microgram/24 hours patch, 8, sachet"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Patch 75 mcg per day"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Oestradiol"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50148261000117103"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50148261000117103"/>
+                <display value="Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]"/>
+              </coding>
+              <text value="Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="J01FA10"/>
+              <display value="azithromycin"/>
+            </coding>
+            <text value="azithromycin"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="30"/>
+              <unit value="tablet"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="8.19"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50148261000117103"/>
+            <display value="Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9416966008287"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2405296"/>
+          </coding>
+          <text value="Apo-Azithromycin 250 mg tablet: film-coated, 30 tablets, bottle [Obsolete]"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Tab 250 mg"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Azithromycin"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50225401000117106"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50225401000117106"/>
+                <display value="Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"/>
+              </coding>
+              <text value="Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="L01CB01"/>
+              <display value="etoposide"/>
+            </coding>
+            <text value="etoposide"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="1"/>
+              <unit value="vial"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="7.9"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50225401000117106"/>
+            <display value="Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2480913"/>
+          </coding>
+          <text value="Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Inj 20 mg per ml, 5 ml vial"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Etoposide"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50227471000117107"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50227471000117107"/>
+                <display value="Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device"/>
+              </coding>
+              <text value="Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="TODO"/>
+              <display value="No WHO ATC identified - medical device"/>
+            </coding>
+            <text value="No WHO ATC identified - medical device"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="1"/>
+              <unit value="device"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="9.54"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50227471000117107"/>
+            <display value="Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="5023323040503"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2489945"/>
+          </coding>
+          <text value="Mini-Wright Peak Flow Meter AFS Low Range diagnostic test: peak flow meter, 1 device"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Low range"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Peak flow meter"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50242281000117106"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50242281000117106"/>
+                <display value="Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle"/>
+              </coding>
+              <text value="Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="L01XX35"/>
+              <display value="anagrelide"/>
+            </coding>
+            <text value="anagrelide"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="100"/>
+              <unit value="capsule"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="1175.87"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50242281000117106"/>
+            <display value="Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9344359000016"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2583054"/>
+          </coding>
+          <text value="Agrylin (Shire) 500 microgram capsule: hard, 100 capsules, bottle"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Cap 0.5 mg"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Anagrelide hydrochloride"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50248381000117100"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50248381000117100"/>
+                <display value="Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack"/>
+              </coding>
+              <text value="Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="N02BF02"/>
+              <display value="pregabalin"/>
+            </coding>
+            <text value="pregabalin"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="56"/>
+              <unit value="capsule"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="2.65"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50248381000117100"/>
+            <display value="Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2534088"/>
+          </coding>
+          <text value="Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Cap 75 mg"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Pregabalin"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50270251000117100"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50270251000117100"/>
+                <display value="Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials"/>
+              </coding>
+              <text value="Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="A02BA03"/>
+              <display value="famotidine"/>
+            </coding>
+            <text value="famotidine"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="10"/>
+              <unit value="vial"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="57.02"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50270251000117100"/>
+            <display value="Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2602776"/>
+          </coding>
+          <text value="Famotidine (Mylan) 40 mg/4 mL injection: concentrated, 10 x 4 mL vials"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Inj 10 mg per ml, 4 ml"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Famotidine"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50277841000117102"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50277841000117102"/>
+                <display value="MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack"/>
+              </coding>
+              <text value="MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="TODO"/>
+              <display value="No WHO ATC identified - medical device"/>
+            </coding>
+            <text value="No WHO ATC identified - medical device"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="1"/>
+              <unit value="pack"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="219"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50277841000117102"/>
+            <display value="MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="5705244019294"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2591685"/>
+          </coding>
+          <text value="MiniMed Sure-T MMT-864A insulin pump infusion set (6 mm x 29 gauge steel needle x 10, 60 cm line x 10), 1 pack, composite pack"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="6 mm steel needle; 60 cm tubing x 10"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Insulin pump infusion set (steel cannula)"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50283011000117109"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50283011000117109"/>
+                <display value="Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet"/>
+              </coding>
+              <text value="Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="G03CA03"/>
+              <display value="estradiol"/>
+            </coding>
+            <text value="estradiol"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="8"/>
+              <unit value="patch"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="8.89"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50283011000117109"/>
+            <display value="Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="303784644164"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="00303784619261"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2601583"/>
+          </coding>
+          <text value="Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Patch 25 mcg per day"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Oestradiol"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50289761000117107"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50289761000117107"/>
+                <display value="Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can"/>
+              </coding>
+              <text value="Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="V06DB"/>
+              <display value="fat/carbohydrates/proteins/minerals/vitamins, combinations"/>
+            </coding>
+            <text value="fat/carbohydrates/proteins/minerals/vitamins, combinations"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="400"/>
+              <unit value="g"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="93.97"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50289761000117107"/>
+            <display value="Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="4008976458876"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2615568"/>
+          </coding>
+          <text value="Heparon Junior (2021 Formulation) oral liquid: powder for, 400 g, can"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Powder (unflavoured)"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Enteral/oral feed 1kcal/ml"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50301271000117101"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50301271000117101"/>
+                <display value="Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack"/>
+              </coding>
+              <text value="Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="G03AA07"/>
+              <display value="levonorgestrel and ethinylestradiol"/>
+            </coding>
+            <text value="levonorgestrel and ethinylestradiol"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="84"/>
+              <unit value="tablet"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="2.3"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50301271000117101"/>
+            <display value="Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9417924006895"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2637138"/>
+          </coding>
+          <text value="Oralcon 30 ED tablet: film-coated, 84 tablets [3 x 28 tablets], blister pack"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Tab 30 mcg with levonorgestrel 150 mcg and 7 inert tablets"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Ethinyloestradiol with levonorgestrel"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50308221000117108"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50308221000117108"/>
+                <display value="Vegzelma 100 mg/4 mL injection: concentrated, 1 x 4 mL vial"/>
+              </coding>
+              <text value="Vegzelma 100 mg/4 mL injection: concentrated, 1 x 4 mL vial"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="L01FG01"/>
+              <display value="bevacizumab"/>
+            </coding>
+            <text value="bevacizumab"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="1"/>
+              <unit value="vial"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="69"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50308221000117108"/>
+            <display value="Vegzelma 100 mg/4 mL injection: concentrated, 1 x 4 mL vial"/>
+          </coding>
+          <coding>
+            <system value="https://www.gs1.org/gtin"/>
+            <code value="9356004000203"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2700700"/>
+          </coding>
+          <text value="Vegzelma 100 mg/4 mL injection: concentrated, 1 x 4 mL vial"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Inj 25 mg per ml, 4 ml vial"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Bevacizumab"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50320741000117103"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50320741000117103"/>
+                <display value="Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle"/>
+              </coding>
+              <text value="Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="A11HA02"/>
+              <display value="pyridoxine (vit B6)"/>
+            </coding>
+            <text value="pyridoxine (vit B6)"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="90"/>
+              <unit value="tablet"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="3.43"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50320741000117103"/>
+            <display value="Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2473534"/>
+          </coding>
+          <text value="Vitamin B6 25 (Evara) 25 mg tablet: uncoated, 90 tablets, bottle"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Tab 25 mg"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Pyridoxine hydrochloride"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50324571000117108"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50324571000117108"/>
+                <display value="Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle"/>
+              </coding>
+              <text value="Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="A16AX04"/>
+              <display value="nitisinone"/>
+            </coding>
+            <text value="nitisinone"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="60"/>
+              <unit value="capsule"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="676"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50324571000117108"/>
+            <display value="Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2677687"/>
+          </coding>
+          <text value="Nitisinone (Logixx Pharma) 2 mg capsule: hard, 60 capsules, bottle"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Cap 2 mg"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Nitisinone"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <resource>
+      <Medication>
+        <id value="50350151000117104"/>
+        <meta>
+          <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"/>
+        </meta>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://standards.digital.health.nz/ns/nzmt-type-code"/>
+              <code value="ctpp"/>
+            </coding>
+            <text value="ctpp"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description">
+          <extension url="type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="20069071000116107"/>
+                <display value="Preferred Term"/>
+              </coding>
+              <text value="Preferred Term"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="term">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://nzmt.org.nz"/>
+                <code value="50350151000117104"/>
+                <display value="Teevir tablet: film-coated, 30 tablets, bottle"/>
+              </coding>
+              <text value="Teevir tablet: film-coated, 30 tablets, bottle"/>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.whocc.no/atc"/>
+              <code value="J05AR06"/>
+              <display value="emtricitabine, tenofovir disoproxil and efavirenz"/>
+            </coding>
+            <text value="emtricitabine, tenofovir disoproxil and efavirenz"/>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack">
+          <extension url="quantity">
+            <valueQuantity>
+              <value value="30"/>
+              <unit value="tablet"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price">
+          <extension url="price">
+            <valueMoney>
+              <value value="106.88"/>
+              <currency value="NZD"/>
+            </valueMoney>
+          </extension>
+        </extension>
+        <code>
+          <coding>
+            <system value="http://nzmt.org.nz"/>
+            <code value="50350151000117104"/>
+            <display value="Teevir tablet: film-coated, 30 tablets, bottle"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding">
+              <valueBoolean value="true"/>
+            </extension>
+            <system value="https://standards.digital.health.nz/ns/pharmac-subsidy-code"/>
+            <code value="2705508"/>
+          </coding>
+          <text value="Teevir tablet: film-coated, 30 tablets, bottle"/>
+        </code>
+        <status value="active"/>
+        <form>
+          <text value="Tab 600 mg with emtricitabine 200 mg and tenofovir disoproxil 245 mg (300 mg as a fumarate)"/>
+        </form>
+        <ingredient>
+          <itemCodeableConcept>
+            <text value="Efavirenz with emtricitabine and tenofovir disoproxil"/>
+          </itemCodeableConcept>
+          <isActive value="true"/>
+        </ingredient>
+      </Medication>
+    </resource>
+    <search>
+      <mode value="match"/>
     </search>
   </entry>
 </Bundle>

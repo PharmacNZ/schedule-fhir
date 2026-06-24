@@ -1,4 +1,4 @@
-# ChargeItemDefinitionDeviceReferenceSearchParam - Pharmac Schedules FHIR API v1.0.1
+# ChargeItemDefinitionDeviceReferenceSearchParam - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-device | *Version*:1.0.1 |
-| Active as of 2026-04-24 | *Computable Name*:device-definition-reference |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-device | *Version*:1.1.0 |
+| Active as of 2026-06-24 | *Computable Name*:device-definition-reference |
 
  
 Reference from ChargeItemDefinition to DeviceDefinition via IG extension. Enables searching for pricing and authorization rules by associated device. 
@@ -23,10 +23,10 @@ Reference from ChargeItemDefinition to DeviceDefinition via IG extension. Enable
   "resourceType" : "SearchParameter",
   "id" : "ChargeItemDefinitionDeviceReferenceSearchParam",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-device",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "device-definition-reference",
   "status" : "active",
-  "date" : "2026-04-24T01:18:12+00:00",
+  "date" : "2026-06-24T20:43:54+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

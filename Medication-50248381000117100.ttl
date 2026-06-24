@@ -1,0 +1,116 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50248381000117100> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "50248381000117100"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://standards.digital.health.nz/ns/nzmt-type-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ctpp" ]
+       ] ) ;
+       fhir:text [ fhir:v "ctpp" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "20069071000116107" ] ;
+           fhir:display [ fhir:v "Preferred Term" ]
+         ] ) ;
+         fhir:text [ fhir:v "Preferred Term" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "term"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "50248381000117100" ] ;
+           fhir:display [ fhir:v "Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack" ]
+         ] ) ;
+         fhir:text [ fhir:v "Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "N02BF02" ] ;
+         fhir:display [ fhir:v "pregabalin" ]
+       ] ) ;
+       fhir:text [ fhir:v "pregabalin" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "quantity"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "56"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "capsule" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "price"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v 2.65 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "50248381000117100" ] ;
+       fhir:display [ fhir:v "Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://standards.digital.health.nz/ns/pharmac-subsidy-code"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "2534088" ]
+     ] ) ;
+     fhir:text [ fhir:v "Pregabalin Pfizer 75 mg capsule: hard, 56 capsules, blister pack" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:form [
+     fhir:text [ fhir:v "Cap 75 mg" ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "Pregabalin" ]
+     ] ;
+     fhir:isActive [ fhir:v true ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

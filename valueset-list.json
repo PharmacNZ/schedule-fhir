@@ -1,7 +1,7 @@
 {
   "codeSystems" : [{
     "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes",
-    "version" : "1.0.1",
+    "version" : "1.1.0",
     "status" : "draft",
     "name" : "MedicationFormCodes",
     "title" : "Medication Form Codes",
@@ -10,7 +10,7 @@
   },
   {
     "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/pharmac-medication-code",
-    "version" : "1.0.1",
+    "version" : "1.1.0",
     "status" : "active",
     "name" : "PharmacMedicationCode",
     "title" : "PHARMAC Medication Code ValueSet",
@@ -19,7 +19,7 @@
   },
   {
     "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/snomed-ct-device-types",
-    "version" : "1.0.1",
+    "version" : "1.1.0",
     "status" : "draft",
     "name" : "SNOMEDCTDeviceTypes",
     "title" : "SNOMED CT Device Types",

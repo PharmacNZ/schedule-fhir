@@ -9,15 +9,12 @@
 <https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes> a fhir:ValueSet ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "medication-form-codes"] ; # 
-  fhir:url [
-     fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes"^^xsd:anyURI ;
-     fhir:l <https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes>
-  ] ; # 
-  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ValueSet/medication-form-codes"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.1.0"] ; # 
   fhir:name [ fhir:v "MedicationFormCodes"] ; # 
   fhir:title [ fhir:v "Medication Form Codes"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-04-24T01:18:12+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-06-24T20:43:54+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Pharmac"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Pharmac" ] ;
@@ -35,10 +32,7 @@
   ] ) ; # 
   fhir:compose [
      fhir:include ( [
-       fhir:system [
-         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-         fhir:l <http://snomed.info/sct>
-       ] ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
        fhir:filter ( [
          fhir:property [ fhir:v "concept" ] ;
          fhir:op [ fhir:v "is-a" ] ;

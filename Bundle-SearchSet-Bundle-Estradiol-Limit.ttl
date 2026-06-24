@@ -1,0 +1,558 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Estradiol-Limit> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SearchSet-Bundle-Estradiol-Limit"] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/Medication?code=50283011000117109&_revinclude=ChargeItemDefinition:instance"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50283011000117109"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50283011000117109> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Community-Case-1"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Community-Case-1> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Hospital-Case-5"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Hospital-Case-5> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50283011000117109> a fhir:Medication ;
+  fhir:id [ fhir:v "50283011000117109"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://standards.digital.health.nz/ns/nzmt-type-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ctpp" ]
+       ] ) ;
+       fhir:text [ fhir:v "ctpp" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "20069071000116107" ] ;
+           fhir:display [ fhir:v "Preferred Term" ]
+         ] ) ;
+         fhir:text [ fhir:v "Preferred Term" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "term"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "50283011000117109" ] ;
+           fhir:display [ fhir:v "Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet" ]
+         ] ) ;
+         fhir:text [ fhir:v "Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "G03CA03" ] ;
+         fhir:display [ fhir:v "estradiol" ]
+       ] ) ;
+       fhir:text [ fhir:v "estradiol" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "quantity"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "8"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "patch" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "price"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v 8.89 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "50283011000117109" ] ;
+       fhir:display [ fhir:v "Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet" ]
+     ] [
+       fhir:system [ fhir:v "https://www.gs1.org/gtin"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "303784644164" ]
+     ] [
+       fhir:system [ fhir:v "https://www.gs1.org/gtin"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "00303784619261" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://standards.digital.health.nz/ns/pharmac-subsidy-code"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "2601583" ]
+     ] ) ;
+     fhir:text [ fhir:v "Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:form [
+     fhir:text [ fhir:v "Patch 25 mcg per day" ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "Oestradiol" ]
+     ] ;
+     fhir:isActive [ fhir:v true ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Community-Case-1> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-50283011000117109-Community-Case-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-04-24"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [ fhir:v "attribute"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "Prescription"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "subsidyType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "subsidy"
+       ]
+     ] [
+       fhir:url [ fhir:v "subsidyStatus"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "full"
+       ]
+     ] [
+       fhir:url [ fhir:v "amount"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v 8.89 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "display"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Subsidy"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "costBrandSource"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "wastageClaimable"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "contractType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "PSS"
+       ]
+     ] [
+       fhir:url [ fhir:v "dvLimitPercent"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:decimal ;
+         fhir:v "5"^^xsd:decimal
+       ]
+     ] [
+       fhir:url [ fhir:v "brandSwitchFee"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "statim"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "inCombination"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "section29"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMin"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "na"
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMax"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiple"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiplier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 0
+       ]
+     ] [
+       fhir:url [ fhir:v "originalPack"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "safetyListMedicine"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNvbmRpdGlvbnMtNTAyODMwMTEwMDAxMTcxMDktQ2FzZS0xIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImxpbWl0IjogewogICAgICAidGl0bGUiOiAiRG9zZVdNYXgiLAogICAgICAidHlwZSI6ICJudW1iZXIiLAogICAgICAiZGVzY3JpcHRpb24iOiAiTWF4aW11bSBudW1iZXIgb2YgIHVuaXRzIHBlciB3ZWVrIiwKICAgICAgImNvbnN0IjogMiwKICAgICAgIiR1bml0IjogInBhdGNoIgogICAgfSwKICAgICJwcm92aWRlciI6IHsKICAgICAgInRpdGxlIjogIlByb3ZpZGVyIEluZm9ybWF0aW9uIiwKICAgICAgInR5cGUiOiAiYm9vbGVhbiIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJBdXRob3Jpc2VkIHByZXNjcmliZXIiCiAgICB9CiAgfSwKICAicmVxdWlyZWQiOiBbCiAgICAibGltaXQiLAogICAgInByb3ZpZGVyIgogIF0KfQo="^^xsd:base64Binary
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Community-Case-1"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Rules for Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet. community Prescription."] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50283011000117109> ;
+     fhir:reference [ fhir:v "Medication/50283011000117109" ] ;
+     fhir:display [ fhir:v "Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Case 1 - Community - Prescription - Subsidy" ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Hospital-Case-5> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-50283011000117109-Hospital-Case-5"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-04-24"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "hospital"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [ fhir:v "attribute"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "na"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "subsidyType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "none"
+       ]
+     ] [
+       fhir:url [ fhir:v "subsidyStatus"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "none"
+       ]
+     ] [
+       fhir:url [ fhir:v "amount"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "display"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "None"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "costBrandSource"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "wastageClaimable"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "contractType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "PSS"
+       ]
+     ] [
+       fhir:url [ fhir:v "dvLimitPercent"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:decimal ;
+         fhir:v "5"^^xsd:decimal
+       ]
+     ] [
+       fhir:url [ fhir:v "brandSwitchFee"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "statim"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "inCombination"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "section29"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMin"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "na"
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMax"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiple"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiplier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 0
+       ]
+     ] [
+       fhir:url [ fhir:v "originalPack"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "safetyListMedicine"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "e30K"^^xsd:base64Binary
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50283011000117109-Hospital-Case-5"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Rules for Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet. hospital n/a."] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50283011000117109> ;
+     fhir:reference [ fhir:v "Medication/50283011000117109" ] ;
+     fhir:display [ fhir:v "Estradiol Transdermal System (Mylan) (Twice weekly) 25 microgram/24 hours patch, 8, sachet" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Case 5 - Hospital - n/a - None" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

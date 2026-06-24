@@ -1,0 +1,99 @@
+{
+  "resourceType" : "Medication",
+  "id" : "50225401000117106",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://standards.digital.health.nz/ns/nzmt-type-code",
+        "code" : "ctpp"
+      }],
+      "text" : "ctpp"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "20069071000116107",
+          "display" : "Preferred Term"
+        }],
+        "text" : "Preferred Term"
+      }
+    },
+    {
+      "url" : "term",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://nzmt.org.nz",
+          "code" : "50225401000117106",
+          "display" : "Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"
+        }],
+        "text" : "Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://www.whocc.no/atc",
+        "code" : "L01CB01",
+        "display" : "etoposide"
+      }],
+      "text" : "etoposide"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "quantity",
+      "valueQuantity" : {
+        "value" : 1,
+        "unit" : "vial"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"
+  },
+  {
+    "extension" : [{
+      "url" : "price",
+      "valueMoney" : {
+        "value" : 7.9,
+        "currency" : "NZD"
+      }
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://nzmt.org.nz",
+      "code" : "50225401000117106",
+      "display" : "Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"
+    },
+    {
+      "extension" : [{
+        "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding",
+        "valueBoolean" : true
+      }],
+      "system" : "https://standards.digital.health.nz/ns/pharmac-subsidy-code",
+      "code" : "2480913"
+    }],
+    "text" : "Etoposide (Rex) 100 mg/5 mL injection: concentrated, 1 x 5 mL vial"
+  },
+  "status" : "active",
+  "form" : {
+    "text" : "Inj 20 mg per ml, 5 ml vial"
+  },
+  "ingredient" : [{
+    "itemCodeableConcept" : {
+      "text" : "Etoposide"
+    },
+    "isActive" : true
+  }]
+}

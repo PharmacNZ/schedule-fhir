@@ -12,18 +12,6 @@
     "http://hl7.org/fhir/R4/valueset-medication-status.html" : "Medication  status  codes"
   },
   {
-    "url" : "http://hl7.org/fhir/identifier-use",
-    "version" : "4.0.1",
-    "status" : "active",
-    "name" : "IdentifierUse",
-    "title" : "IdentifierUse",
-    "description" : "Identifies the purpose for this identifier, if known .",
-    "oids" : ["2.16.840.1.113883.4.642.4.58"],
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-identifier-use.html" : "IdentifierUse"
-  },
-  {
     "url" : "http://hl7.org/fhir/invoice-priceComponentType",
     "version" : "4.0.1",
     "status" : "draft",
@@ -57,9 +45,9 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "ValueSet-snomed-ct-device-types.html" : "SNOMED CT Device Types",
     "ValueSet-pharmac-medication-code.html" : "PHARMAC Medication Code ValueSet",
     "ValueSet-medication-form-codes.html" : "Medication Form Codes",
+    "ValueSet-snomed-ct-device-types.html" : "SNOMED CT Device Types",
     "http://hl7.org/fhir/R4/valueset-medication-form-codes.html" : "SNOMED CT Form Codes"
   },
   {
@@ -73,17 +61,5 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-chargeitem-billingcodes.html" : "ChargeItemCode"
-  },
-  {
-    "url" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-    "version" : "5.0.0",
-    "status" : "active",
-    "name" : "IdentifierType",
-    "title" : "identifierType",
-    "description" : "HL7-defined code system of concepts specifying type of identifier. Used in HL7 Version 2.x messaging data types CX, PLN, PPN, XCN and XON.",
-    "oids" : ["2.16.840.1.113883.18.108"],
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-identifier-type.html" : "IdentifierType"
   }]
 }

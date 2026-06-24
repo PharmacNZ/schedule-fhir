@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ChargeItemDefinition xmlns="http://hl7.org/fhir">
+  <id value="ChargeItemDefinition-50046931000117109-Community-Case-4"/>
+  <meta>
+    <profile value="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"/>
+  </meta>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date">
+    <valueDate value="2026-04-24"/>
+  </extension>
+  <extension url="http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule">
+    <extension url="type">
+      <valueCode value="community"/>
+    </extension>
+    <extension url="rule">
+      <extension url="type">
+        <valueCode value="CaseSequence"/>
+      </extension>
+      <extension url="value">
+        <valueInteger value="1"/>
+      </extension>
+    </extension>
+    <extension url="rule">
+      <extension url="type">
+        <valueCode value="FundingMechanism"/>
+      </extension>
+      <extension url="attribute">
+        <valueCode value="PSO"/>
+      </extension>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount">
+    <extension url="subsidyType">
+      <valueCode value="subsidy"/>
+    </extension>
+    <extension url="subsidyStatus">
+      <valueCode value="full"/>
+    </extension>
+    <extension url="amount">
+      <valueMoney>
+        <value value="4.98"/>
+        <currency value="NZD"/>
+      </valueMoney>
+    </extension>
+    <extension url="display">
+      <valueString value="Subsidy"/>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes">
+    <extension url="costBrandSource">
+      <valueBoolean value="false"/>
+    </extension>
+    <extension url="wastageClaimable">
+      <valueBoolean value="false"/>
+    </extension>
+    <extension url="contractType">
+      <valueString value="n/a"/>
+    </extension>
+    <extension url="dvLimitPercent">
+      <valueDecimal value="0"/>
+    </extension>
+    <extension url="brandSwitchFee">
+      <valueBoolean value="false"/>
+    </extension>
+    <extension url="statim">
+      <valueString value="n/a"/>
+    </extension>
+    <extension url="inCombination">
+      <valueCode value="no"/>
+    </extension>
+    <extension url="section29">
+      <valueBoolean value="false"/>
+    </extension>
+    <extension url="coPaymentMin">
+      <valueCode value="na"/>
+    </extension>
+    <extension url="coPaymentMax">
+      <valueCode value="no"/>
+    </extension>
+    <extension url="productMultiple">
+      <valueBoolean value="true"/>
+    </extension>
+    <extension url="productMultiplier">
+      <valueInteger value="1"/>
+    </extension>
+    <extension url="originalPack">
+      <valueBoolean value="false"/>
+    </extension>
+    <extension url="safetyListMedicine">
+      <valueBoolean value="false"/>
+    </extension>
+  </extension>
+  <extension url="https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema">
+    <valueBase64Binary value="ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNvbmRpdGlvbnMtNTAwNDY5MzEwMDAxMTcxMDktQ2FzZS00IiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImxpbWl0IjogewogICAgICAidGl0bGUiOiAiRm9ybU1heCIsCiAgICAgICJ0eXBlIjogIm51bWJlciIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJNYXhpbXVtIG51bWJlciBvZiB1bml0cyBwZXIgUFNPIiwKICAgICAgImNvbnN0IjogNSwKICAgICAgIiR1bml0IjogImFtcG91bGUiCiAgICB9LAogICAgInByb3ZpZGVyIjogewogICAgICAidGl0bGUiOiAiUHJvdmlkZXIgSW5mb3JtYXRpb24iLAogICAgICAidHlwZSI6ICJib29sZWFuIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkF1dGhvcmlzZWQgcHJlc2NyaWJlciIKICAgIH0KICB9LAogICJyZXF1aXJlZCI6IFsKICAgICJsaW1pdCIsCiAgICAicHJvdmlkZXIiCiAgXQp9Cg=="/>
+  </extension>
+  <url value="https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-4"/>
+  <version value="1.1.0"/>
+  <status value="active"/>
+  <date value="2026-04-24T00:58:18+00:00"/>
+  <publisher value="Pharmac"/>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.pharmac.govt.nz/about/contact"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Pharmac"/>
+    <telecom>
+      <system value="email"/>
+      <value value="enquiry@pharmac.govt.nz"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community PSO."/>
+  <instance>
+    <reference value="Medication/50046931000117109"/>
+    <display value="Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules"/>
+  </instance>
+  <applicability>
+    <description value="Case 4 - Community - PSO - Subsidy"/>
+  </applicability>
+</ChargeItemDefinition>

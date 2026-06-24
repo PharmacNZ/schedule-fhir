@@ -1,0 +1,1185 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Bundle/SearchSet-Bundle-Adrenaline-Note-And-Limit> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SearchSet-Bundle-Adrenaline-Note-And-Limit"] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/Medication?code=50046931000117109&_revinclude=ChargeItemDefinition:instance"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50046931000117109"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50046931000117109> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-1"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-1> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-2"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-2> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-3"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-3> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-4"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-4> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Hospital-Case-5"^^xsd:anyURI ] ;
+     fhir:resource ( <https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Hospital-Case-5> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50046931000117109> a fhir:Medication ;
+  fhir:id [ fhir:v "50046931000117109"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-medication>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-nzmt-type"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://standards.digital.health.nz/ns/nzmt-type-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ctpp" ]
+       ] ) ;
+       fhir:text [ fhir:v "ctpp" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "20069071000116107" ] ;
+           fhir:display [ fhir:v "Preferred Term" ]
+         ] ) ;
+         fhir:text [ fhir:v "Preferred Term" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "term"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "50046931000117109" ] ;
+           fhir:display [ fhir:v "Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules" ]
+         ] ) ;
+         fhir:text [ fhir:v "Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-description"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-atc"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "C01CA24" ] ;
+         fhir:display [ fhir:v "epinephrine" ]
+       ] ) ;
+       fhir:text [ fhir:v "epinephrine" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "quantity"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "5"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "ampoule" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-pack"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "price"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v 4.98 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/medication-price"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://nzmt.org.nz"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "50046931000117109" ] ;
+       fhir:display [ fhir:v "Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules" ]
+     ] [
+       fhir:system [ fhir:v "https://www.gs1.org/gtin"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "9331134001405" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-is-primary-coding"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://standards.digital.health.nz/ns/pharmac-subsidy-code"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "2309823" ]
+     ] ) ;
+     fhir:text [ fhir:v "Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:form [
+     fhir:text [ fhir:v "Inj 1 in 1,000, 1 ml ampoule" ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "Adrenaline" ]
+     ] ;
+     fhir:isActive [ fhir:v true ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-1> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-50046931000117109-Community-Case-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-04-24"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [ fhir:v "attribute"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "Prescription"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "subsidyType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "subsidy"
+       ]
+     ] [
+       fhir:url [ fhir:v "subsidyStatus"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "full"
+       ]
+     ] [
+       fhir:url [ fhir:v "amount"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v 4.98 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "display"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Subsidy"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "costBrandSource"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "wastageClaimable"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "contractType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "dvLimitPercent"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:decimal ;
+         fhir:v "0"^^xsd:decimal
+       ]
+     ] [
+       fhir:url [ fhir:v "brandSwitchFee"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "statim"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "inCombination"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "section29"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMin"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "na"
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMax"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiple"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiplier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] [
+       fhir:url [ fhir:v "originalPack"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "safetyListMedicine"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNvbmRpdGlvbnMtNTAwNDY5MzEwMDAxMTcxMDktQ2FzZS0xIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgInByb3ZpZGVyIjogewogICAgICAidGl0bGUiOiAiUHJvdmlkZXIgSW5mb3JtYXRpb24iLAogICAgICAidHlwZSI6ICJib29sZWFuIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkF1dGhvcmlzZWQgcHJlc2NyaWJlciwgcGhhcm1hY2lzdCIKICAgIH0KICB9LAogICJyZXF1aXJlZCI6IFsKICAgICJwcm92aWRlciIKICBdCn0K"^^xsd:base64Binary
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-1"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community Prescription."] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50046931000117109> ;
+     fhir:reference [ fhir:v "Medication/50046931000117109" ] ;
+     fhir:display [ fhir:v "Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Case 1 - Community - Prescription - Subsidy" ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-2> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-50046931000117109-Community-Case-2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-04-24"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [ fhir:v "attribute"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "BSO"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "subsidyType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "subsidy"
+       ]
+     ] [
+       fhir:url [ fhir:v "subsidyStatus"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "full"
+       ]
+     ] [
+       fhir:url [ fhir:v "amount"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v 4.98 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "display"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Subsidy"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "costBrandSource"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "wastageClaimable"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "contractType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "dvLimitPercent"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:decimal ;
+         fhir:v "0"^^xsd:decimal
+       ]
+     ] [
+       fhir:url [ fhir:v "brandSwitchFee"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "statim"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "inCombination"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "section29"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMin"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "na"
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMax"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiple"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiplier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] [
+       fhir:url [ fhir:v "originalPack"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "safetyListMedicine"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNvbmRpdGlvbnMtNTAwNDY5MzEwMDAxMTcxMDktQ2FzZS0yIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgInByb3ZpZGVyIjogewogICAgICAidGl0bGUiOiAiUHJvdmlkZXIgSW5mb3JtYXRpb24iLAogICAgICAidHlwZSI6ICJib29sZWFuIiwKICAgICAgImRlc2NyaXB0aW9uIjogIlZhY2NpbmF0b3IsIEhvc3BpdGFsIGNhcmUgb3BlcmF0b3IiCiAgICB9CiAgfSwKICAicmVxdWlyZWQiOiBbCiAgICAicHJvdmlkZXIiCiAgXQp9Cg=="^^xsd:base64Binary
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-2"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community BSO."] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50046931000117109> ;
+     fhir:reference [ fhir:v "Medication/50046931000117109" ] ;
+     fhir:display [ fhir:v "Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Case 2 - Community - BSO - Subsidy" ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-3> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-50046931000117109-Community-Case-3"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-04-24"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [ fhir:v "attribute"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "RuralPSO"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "subsidyType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "subsidy"
+       ]
+     ] [
+       fhir:url [ fhir:v "subsidyStatus"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "full"
+       ]
+     ] [
+       fhir:url [ fhir:v "amount"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v 4.98 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "display"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Subsidy"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "costBrandSource"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "wastageClaimable"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "contractType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "dvLimitPercent"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:decimal ;
+         fhir:v "0"^^xsd:decimal
+       ]
+     ] [
+       fhir:url [ fhir:v "brandSwitchFee"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "statim"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "inCombination"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "section29"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMin"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "na"
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMax"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiple"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiplier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] [
+       fhir:url [ fhir:v "originalPack"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "safetyListMedicine"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNvbmRpdGlvbnMtNTAwNDY5MzEwMDAxMTcxMDktQ2FzZS0zIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgInByb3ZpZGVyIjogewogICAgICAidGl0bGUiOiAiUHJvdmlkZXIgSW5mb3JtYXRpb24iLAogICAgICAidHlwZSI6ICJib29sZWFuIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkF1dGhvcmlzZWQgcHJlc2NyaWJlciIKICAgIH0KICB9LAogICJyZXF1aXJlZCI6IFsKICAgICJwcm92aWRlciIKICBdCn0K"^^xsd:base64Binary
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-3"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community Rural PSO."] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50046931000117109> ;
+     fhir:reference [ fhir:v "Medication/50046931000117109" ] ;
+     fhir:display [ fhir:v "Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Case 3 - Community - Rural PSO - Subsidy" ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-4> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-50046931000117109-Community-Case-4"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-04-24"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "community"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [ fhir:v "attribute"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "PSO"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "subsidyType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "subsidy"
+       ]
+     ] [
+       fhir:url [ fhir:v "subsidyStatus"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "full"
+       ]
+     ] [
+       fhir:url [ fhir:v "amount"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v 4.98 ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "display"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Subsidy"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "costBrandSource"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "wastageClaimable"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "contractType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "dvLimitPercent"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:decimal ;
+         fhir:v "0"^^xsd:decimal
+       ]
+     ] [
+       fhir:url [ fhir:v "brandSwitchFee"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "statim"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "inCombination"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "section29"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMin"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "na"
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMax"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiple"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiplier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] [
+       fhir:url [ fhir:v "originalPack"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "safetyListMedicine"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNvbmRpdGlvbnMtNTAwNDY5MzEwMDAxMTcxMDktQ2FzZS00IiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImxpbWl0IjogewogICAgICAidGl0bGUiOiAiRm9ybU1heCIsCiAgICAgICJ0eXBlIjogIm51bWJlciIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJNYXhpbXVtIG51bWJlciBvZiB1bml0cyBwZXIgUFNPIiwKICAgICAgImNvbnN0IjogNSwKICAgICAgIiR1bml0IjogImFtcG91bGUiCiAgICB9LAogICAgInByb3ZpZGVyIjogewogICAgICAidGl0bGUiOiAiUHJvdmlkZXIgSW5mb3JtYXRpb24iLAogICAgICAidHlwZSI6ICJib29sZWFuIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkF1dGhvcmlzZWQgcHJlc2NyaWJlciIKICAgIH0KICB9LAogICJyZXF1aXJlZCI6IFsKICAgICJsaW1pdCIsCiAgICAicHJvdmlkZXIiCiAgXQp9Cg=="^^xsd:base64Binary
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-4"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. community PSO."] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50046931000117109> ;
+     fhir:reference [ fhir:v "Medication/50046931000117109" ] ;
+     fhir:display [ fhir:v "Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Case 4 - Community - PSO - Subsidy" ]
+  ] ) . # 
+
+<https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Hospital-Case-5> a fhir:ChargeItemDefinition ;
+  fhir:id [ fhir:v "ChargeItemDefinition-50046931000117109-Hospital-Case-5"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"^^xsd:anyURI ;
+       fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:date ;
+       fhir:v "2026-04-24"^^xsd:date
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "hospital"
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "CaseSequence"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:integer ;
+           fhir:v 1
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "FundingMechanism"
+         ]
+       ] [
+         fhir:url [ fhir:v "attribute"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "na"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "rule"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "subsidyType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "none"
+       ]
+     ] [
+       fhir:url [ fhir:v "subsidyStatus"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "none"
+       ]
+     ] [
+       fhir:url [ fhir:v "amount"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Money ;
+         fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+         fhir:currency [ fhir:v "NZD" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "display"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "None"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "costBrandSource"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "wastageClaimable"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "contractType"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "dvLimitPercent"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:decimal ;
+         fhir:v "0"^^xsd:decimal
+       ]
+     ] [
+       fhir:url [ fhir:v "brandSwitchFee"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "statim"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "n/a"
+       ]
+     ] [
+       fhir:url [ fhir:v "inCombination"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "section29"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMin"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "na"
+       ]
+     ] [
+       fhir:url [ fhir:v "coPaymentMax"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "no"
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiple"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [ fhir:v "productMultiplier"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] [
+       fhir:url [ fhir:v "originalPack"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "safetyListMedicine"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:base64Binary ;
+       fhir:v "e30K"^^xsd:base64Binary
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Hospital-Case-5"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.1"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-04-24T00:58:18+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Pharmac"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.pharmac.govt.nz/about/contact" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Pharmac" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "enquiry@pharmac.govt.nz" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Rules for Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules. hospital n/a."] ; # 
+  fhir:instance ( [
+     fhir:link <https://fhir-ig.digital.health.nz/pharmac-schedules/Medication/50046931000117109> ;
+     fhir:reference [ fhir:v "Medication/50046931000117109" ] ;
+     fhir:display [ fhir:v "Adrenaline (Aspen) 1 in 1000 (1 mg/mL) injection: solution, 5 x 1 mL ampoules" ]
+  ] ) ; # 
+  fhir:applicability ( [
+     fhir:description [ fhir:v "Case 5 - Hospital - n/a - None" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

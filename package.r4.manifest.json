@@ -1,6 +1,6 @@
 {
-  "version" : "1.0.1",
-  "date" : "20260424011812",
+  "version" : "1.1.0",
+  "date" : "20260624204354",
   "notForPublication" : true,
   "name" : "pharmac.fhir.pharmac-schedules.r4"
 }

@@ -1,4 +1,4 @@
-# PHARMAC Charge Item Definition - Funding Rules - Pharmac Schedules FHIR API v1.0.1
+# PHARMAC Charge Item Definition - Funding Rules - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules | *Version*:1.0.1 |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules | *Version*:1.1.0 |
 | Active as of 2026-03-25 | *Computable Name*:PharmacChargeItemDefinitionFundingRules |
 
  
@@ -19,73 +19,72 @@ To define the structure for PHARMAC funding mechanisms and reimbursement rules i
 
 ### Overview
 
-The **PHARMAC Charge Item Definition - Funding Rules** profile captures funding mechanisms and reimbursement rules for medications and devices in the PHARMAC schedule. Each instance represents a single funding "case" — a specific combination of dispensary type, funding mechanism, case sequence, and associated conditions.
+The **PHARMAC Charge Item Definition - Funding Rules** profile represents a funding or reimbursement rule record for a scheduled product.
 
-### When to use this profile
+Each instance represents one funding case for a product, such as a community or hospital case. A product may have multiple Funding Rules records where different funding contexts or case sequences apply.
 
-Use this profile when you need to represent how a medication or device is funded. A single product may have multiple funding rule instances, each representing a different funding pathway. For example, Leuprorelin (Lucrin Depot) has five cases:
+### Profile
 
-1. **Community pharmacy — Prescription**(Case Sequence 1): with endorsement and provider conditions
-1. **Community pharmacy — Prescription**(Case Sequence 2): with provider condition only
-1. **Community pharmacy — BSO**(Case Sequence 1): for hospital care operator prescriptions
-1. **Community pharmacy — Rural PSO**(Case Sequence 1): for authorised prescribers
-1. **Hospital**(Case Sequence 1): default condition, zero reimbursement
+| | |
+| :--- | :--- |
+| FSH profile name | `PharmacChargeItemDefinitionFundingRules` |
+| StructureDefinition id | `pharmac-charge-item-definition-funding-rules` |
+| Parent profile | `PharmacChargeItemDefinition` |
+| FHIR resource | `ChargeItemDefinition` |
 
-### Key constraints (vs. base profile)
+### Key elements
 
-| | | | |
-| :--- | :--- | :--- | :--- |
-| `code` | **Prohibited**(0..0) — SA codes are not relevant to funding rules. |   |   |
-| `authorizationForm`,`authorizationTitle`,`authorizationCaseCount` | **Prohibited**(0..0) — authorization extensions are not used. |   |   |
-| Pricing extensions (`costBrandSource`,`contractType`, etc.) | **Prohibited**(0..0) — pricing attributes belong on the Pricing profile. |   |   |
-| `fundingRule` | **Required**(1..*) — at least one funding rule must be specified. |   |   |
-| <!– | `applicability` | **Required**(1..*) — conditions for when this funding applies. | –> |
+| | |
+| :--- | :--- |
+| `id` | Resource identifier for the funding rules record |
+| `meta.profile` | Declares conformance to`pharmac-charge-item-definition-funding-rules` |
+| `url` | Canonical identifier for the funding rules definition |
+| `version` | Business version of the definition |
+| `status` | Publication status |
+| `date` | Date the definitional resource was created or revised |
+| `description` | Human-readable description of the funding case |
+| `instance` | Reference to the associated`Medication` |
+| `pricing-effective-date` | Date from which the funding rules record applies |
+| `funding-rule` | Funding context, case sequence, and funding mechanism information |
+| `funding-subsidy-amount` | Subsidy type, status, amount, and display text |
+| `schedule-funding-attributes` | Grouped Schedule funding attributes |
+| `authorization-schema` | Structured condition information where the funding case has conditions |
+| `applicability.description` | Human-readable summary of the funding case |
 
-### Funding rule extension structure
+### Funding rule context
 
-The `fundingRule` complex extension contains:
+The `funding-rule` extension identifies the funding context represented by the record. It can include:
 
-| | | |
-| :--- | :--- | :--- |
-| `type` | code | Dispensary type — typically`community`or`hospital`. |
-| `rule[].type` | code | Rule type — common values:`CaseSequence`,`FundingMechanism`. |
-| `rule[].value` | integer | Numeric value, e.g., the case sequence number (1, 2, etc.). |
-| `rule[].attribute` | code | Attribute code, e.g.,`Prescription`,`BSO`,`RuralPSO`. |
+* funding type, such as `community` or `hospital`;
+* case sequence; and
+* funding mechanism, such as `Prescription`.
 
-### Applicability conditions
+### Subsidy and Schedule attributes
 
-**Approach:** Each funding rule instance includes an `authorizationSchema` extension containing a Base64-encoded JSON Schema that defines:
+Subsidy information is represented using `funding-subsidy-amount`.
 
-* **Provider conditions** — e.g., validation that prescription is from an authorised prescriber
-* **Endorsement conditions** — e.g., required form fields for endorsement scenarios (patient is a child/adolescent, specific intolerance documented)
-* **Case scenarios** — using `oneOf` to define distinct case structures
+Additional Schedule attributes are grouped under `schedule-funding-attributes`. These can include contract, dispensing, co-payment, product multiple, original pack, and related indicators.
 
-API clients should:
+### Effective date
 
-1. Base64-decode the`authorizationSchema`value
-1. Use the resulting JSON Schema for client-side form validation
-1. Validate submitted data against the schema before submission
+The effective date is represented using the `pricing-effective-date` extension.
 
-**For detailed examples and explanation of funding rule schemas, see the [JSON Schema for Funding Rules guide](fr-json-schema-guide.md).**
+```
+* extension[effectiveDate].valueDate = "2026-04-24"
 
-### Reimbursement amounts
+```
 
-The optional `propertyGroup` contains the subsidy or reimbursement amount for this funding case. When present, the `priceComponent` uses:
+`ChargeItemDefinition.date` and the effective-date extension have different purposes. `date` records when the definitional resource was created or revised, while the effective-date extension records when the funding rules apply.
 
-* **type**: `discount` (representing the PHARMAC subsidy)
-* **amount**: The reimbursement amount in NZD (may be `0` for hospital cases with no reimbursement)
+### Example
 
-### Examples
-
-* [Clexane Case 1](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1.md): Special Authority (SA9999) required + Authorised Providers
-* [Clexane Case 2](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2.md): PRIME service endorsement + Authorised Providers
-* [Clexane Case 3](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3.md): Hospital use only
+For further information about condition schemas carried by Funding Rules records, see [JSON Schema for Funding Rules](fr-json-schema-guide.md).
 
 **Usages:**
 
-* Examples for this Profile: [ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-2.md) and [ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3](ChargeItemDefinition-ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-3.md)
+* Examples for this Profile: [ChargeItemDefinition/ChargeItemDefinition-50003171000117108-Hospital-Case-7](ChargeItemDefinition-ChargeItemDefinition-50003171000117108-Hospital-Case-7.md), [ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50014861000117106-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-2](ChargeItemDefinition-ChargeItemDefinition-50014861000117106-Community-Case-2.md), [ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-3](ChargeItemDefinition-ChargeItemDefinition-50014861000117106-Community-Case-3.md)... Show 46 more, [ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Community-Case-4](ChargeItemDefinition-ChargeItemDefinition-50014861000117106-Community-Case-4.md), [ChargeItemDefinition/ChargeItemDefinition-50014861000117106-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50014861000117106-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50021691000117107-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-2](ChargeItemDefinition-ChargeItemDefinition-50021691000117107-Community-Case-2.md), [ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Community-Case-3](ChargeItemDefinition-ChargeItemDefinition-50021691000117107-Community-Case-3.md), [ChargeItemDefinition/ChargeItemDefinition-50021691000117107-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50021691000117107-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50021721000117104-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50021721000117104-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50021721000117104-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50021721000117104-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50021991000117100-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-2](ChargeItemDefinition-ChargeItemDefinition-50021991000117100-Community-Case-2.md), [ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Community-Case-3](ChargeItemDefinition-ChargeItemDefinition-50021991000117100-Community-Case-3.md), [ChargeItemDefinition/ChargeItemDefinition-50021991000117100-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50021991000117100-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50038111000117102-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50038111000117102-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50038111000117102-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50038111000117102-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50046921000117106-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-2](ChargeItemDefinition-ChargeItemDefinition-50046921000117106-Community-Case-2.md), [ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-3](ChargeItemDefinition-ChargeItemDefinition-50046921000117106-Community-Case-3.md), [ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Community-Case-4](ChargeItemDefinition-ChargeItemDefinition-50046921000117106-Community-Case-4.md), [ChargeItemDefinition/ChargeItemDefinition-50046921000117106-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50046921000117106-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50046931000117109-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-2](ChargeItemDefinition-ChargeItemDefinition-50046931000117109-Community-Case-2.md), [ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-3](ChargeItemDefinition-ChargeItemDefinition-50046931000117109-Community-Case-3.md), [ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Community-Case-4](ChargeItemDefinition-ChargeItemDefinition-50046931000117109-Community-Case-4.md), [ChargeItemDefinition/ChargeItemDefinition-50046931000117109-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50046931000117109-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50048881000117104-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-2](ChargeItemDefinition-ChargeItemDefinition-50048881000117104-Community-Case-2.md), [ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Community-Case-3](ChargeItemDefinition-ChargeItemDefinition-50048881000117104-Community-Case-3.md), [ChargeItemDefinition/ChargeItemDefinition-50048881000117104-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50048881000117104-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50055641000117102-Hospital-Case-7](ChargeItemDefinition-ChargeItemDefinition-50055641000117102-Hospital-Case-7.md), [ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50058961000117103-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-3](ChargeItemDefinition-ChargeItemDefinition-50058961000117103-Community-Case-3.md), [ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Community-Case-4](ChargeItemDefinition-ChargeItemDefinition-50058961000117103-Community-Case-4.md), [ChargeItemDefinition/ChargeItemDefinition-50058961000117103-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50058961000117103-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50074861000117103-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50074861000117103-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50074861000117103-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50074861000117103-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50083491000117102-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50083491000117102-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50083491000117102-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50083491000117102-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50085781000117107-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-2](ChargeItemDefinition-ChargeItemDefinition-50085781000117107-Community-Case-2.md), [ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-3](ChargeItemDefinition-ChargeItemDefinition-50085781000117107-Community-Case-3.md), [ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Community-Case-4](ChargeItemDefinition-ChargeItemDefinition-50085781000117107-Community-Case-4.md), [ChargeItemDefinition/ChargeItemDefinition-50085781000117107-Hospital-Case-5](ChargeItemDefinition-ChargeItemDefinition-50085781000117107-Hospital-Case-5.md), [ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-1](ChargeItemDefinition-ChargeItemDefinition-50120021000117104-Community-Case-1.md), [ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-2](ChargeItemDefinition-ChargeItemDefinition-50120021000117104-Community-Case-2.md), [ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Community-Case-3](ChargeItemDefinition-ChargeItemDefinition-50120021000117104-Community-Case-3.md) and [ChargeItemDefinition/ChargeItemDefinition-50120021000117104-Hospital-Case-7](ChargeItemDefinition-ChargeItemDefinition-50120021000117104-Hospital-Case-7.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/pharmac.fhir.pharmac-schedules|current/StructureDefinition/pharmac-charge-item-definition-funding-rules)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/pharmac.fhir.pharmac-schedules|current/StructureDefinition/StructureDefinition-pharmac-charge-item-definition-funding-rules.json)
 
 ### Formal Views of Profile Content
 
@@ -104,7 +103,7 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-charge-item-
   "resourceType" : "StructureDefinition",
   "id" : "pharmac-charge-item-definition-funding-rules",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "PharmacChargeItemDefinitionFundingRules",
   "title" : "PHARMAC Charge Item Definition - Funding Rules",
   "status" : "active",
@@ -293,6 +292,46 @@ Other representations of profile: [CSV](StructureDefinition-pharmac-charge-item-
       "short" : "Optional JSON schema for authorization/funding validation",
       "definition" : "Base64-encoded JSON schema document that describes the structured format for funding/authorization case submissions.",
       "mustSupport" : true
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:fundingSubsidyAmount",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "fundingSubsidyAmount",
+      "mustSupport" : true
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:scheduleFundingAttributes",
+      "path" : "ChargeItemDefinition.extension",
+      "sliceName" : "scheduleFundingAttributes",
+      "mustSupport" : true
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiple",
+      "path" : "ChargeItemDefinition.extension.extension",
+      "sliceName" : "productMultiple",
+      "short" : "Product multiple applies",
+      "definition" : "Indicates whether this pack uses product multiples when calculating pricing or claims."
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:scheduleFundingAttributes.extension:productMultiplier",
+      "path" : "ChargeItemDefinition.extension.extension",
+      "sliceName" : "productMultiplier",
+      "short" : "Product multiplier value",
+      "definition" : "Numeric multiplier applied when calculating pricing or claims for this pack."
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:scheduleFundingAttributes.extension:originalPack",
+      "path" : "ChargeItemDefinition.extension.extension",
+      "sliceName" : "originalPack",
+      "short" : "Original pack flag",
+      "definition" : "Indicates whether this pack represents the original pack supplied by the manufacturer."
+    },
+    {
+      "id" : "ChargeItemDefinition.extension:scheduleFundingAttributes.extension:safetyListMedicine",
+      "path" : "ChargeItemDefinition.extension.extension",
+      "sliceName" : "safetyListMedicine",
+      "short" : "Safety list medicine flag",
+      "definition" : "Indicates whether this medication is on a PHARMAC safety list."
     },
     {
       "id" : "ChargeItemDefinition.url",

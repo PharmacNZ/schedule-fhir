@@ -1,4 +1,4 @@
-# ChargeItemDefinitionInstanceSearchParam - Pharmac Schedules FHIR API v1.0.1
+# ChargeItemDefinitionInstanceSearchParam - Pharmac Schedules FHIR API v1.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-instance | *Version*:1.0.1 |
-| Active as of 2026-04-24 | *Computable Name*:ChargeItemDefinitionInstance |
+| *Official URL*:https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-instance | *Version*:1.1.0 |
+| Active as of 2026-06-24 | *Computable Name*:ChargeItemDefinitionInstance |
 
  
 Allow _revinclude from Medication to ChargeItemDefinition 
@@ -23,10 +23,10 @@ Allow _revinclude from Medication to ChargeItemDefinition
   "resourceType" : "SearchParameter",
   "id" : "ChargeItemDefinitionInstanceSearchParam",
   "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/SearchParameter/chargeitemdefinition-instance",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "ChargeItemDefinitionInstance",
   "status" : "active",
-  "date" : "2026-04-24T01:18:12+00:00",
+  "date" : "2026-06-24T20:43:54+00:00",
   "publisher" : "Pharmac",
   "contact" : [{
     "name" : "Pharmac",

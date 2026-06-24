@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>XML to FHIR Mapping - Pharmac Schedules FHIR API v1.0.1</title>
+    <title>XML to FHIR Mapping - Pharmac Schedules FHIR API v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">1.0.1 - draft
+            <span style="display:inline-block;">1.1.0 - draft
 
 
             </span>
@@ -108,9 +108,6 @@
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
@@ -208,7 +205,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>XML to FHIR Mapping</h2>
   
 
@@ -224,385 +221,1159 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#legacy-schedule-xml-to-fhir-mapping" id="markdown-toc-legacy-schedule-xml-to-fhir-mapping">Legacy Schedule XML to FHIR mapping</a>    <ul>
+      <li><a href="#mapping-conventions" id="markdown-toc-mapping-conventions">Mapping conventions</a></li>
+      <li><a href="#transformation-unit-and-hierarchy" id="markdown-toc-transformation-unit-and-hierarchy">Transformation unit and hierarchy</a></li>
+      <li><a href="#schedule-level-metadata" id="markdown-toc-schedule-level-metadata">Schedule-level metadata</a></li>
+      <li><a href="#medication-mapping" id="markdown-toc-medication-mapping">Medication mapping</a>        <ul>
+          <li><a href="#identification-and-coding" id="markdown-toc-identification-and-coding">Identification and coding</a></li>
+          <li><a href="#product-description-form-and-ingredient" id="markdown-toc-product-description-form-and-ingredient">Product description, form, and ingredient</a></li>
+          <li><a href="#pack-details" id="markdown-toc-pack-details">Pack details</a></li>
+          <li><a href="#product-price-and-classification" id="markdown-toc-product-price-and-classification">Product price and classification</a></li>
+        </ul>
+      </li>
+      <li><a href="#funding-rules-chargeitemdefinition-mapping" id="markdown-toc-funding-rules-chargeitemdefinition-mapping">Funding Rules ChargeItemDefinition mapping</a>        <ul>
+          <li><a href="#resource-identity-and-association" id="markdown-toc-resource-identity-and-association">Resource identity and association</a></li>
+          <li><a href="#legacy-rule-mapping" id="markdown-toc-legacy-rule-mapping">Legacy Rule mapping</a></li>
+          <li><a href="#funding-mechanism-normalisation" id="markdown-toc-funding-mechanism-normalisation">Funding mechanism normalisation</a></li>
+          <li><a href="#subsidy-mapping" id="markdown-toc-subsidy-mapping">Subsidy mapping</a></li>
+          <li><a href="#schedule-funding-attributes" id="markdown-toc-schedule-funding-attributes">Schedule funding attributes</a></li>
+          <li><a href="#funding-conditions-and-narrative" id="markdown-toc-funding-conditions-and-narrative">Funding conditions and narrative</a></li>
+        </ul>
+      </li>
+      <li><a href="#special-authority-chargeitemdefinition-mapping" id="markdown-toc-special-authority-chargeitemdefinition-mapping">Special Authority ChargeItemDefinition mapping</a></li>
+      <li><a href="#fields-not-carried-directly-into-the-current-fhir-model" id="markdown-toc-fields-not-carried-directly-into-the-current-fhir-model">Fields not carried directly into the current FHIR model</a></li>
+      <li><a href="#worked-example-mifegyne" id="markdown-toc-worked-example-mifegyne">Worked example: Mifegyne</a></li>
+      <li><a href="#related-pages" id="markdown-toc-related-pages">Related pages</a></li>
+    </ul>
+  </li>
+</ul>
+
 </div>
-<p>The examples used in this section are limited to the published example instances listed in the current IG Artifacts page. Clexane is used as the worked example for product, pricing, funding rules, and retrieval. The published <code class="language-plaintext highlighter-rouge">SA9999</code> example is included separately to illustrate the FHIR structure of a Special Authority record and is not presented as a real Clexane Special Authority.</p>
+<h1 id="legacy-schedule-xml-to-fhir-mapping">Legacy Schedule XML to FHIR mapping</h1>
 
-<p>The legacy XML presents schedule content as a nested structure. In the current Pharmac FHIR service, core product information is held in <code class="language-plaintext highlighter-rouge">Medication</code>, while pricing, funding rules, and Special Authority content are held in related <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources using the profiles <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code>, <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code>, and <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code>. The recommended retrieval pattern is to retrieve the <code class="language-plaintext highlighter-rouge">Medication</code> and include related <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources using <code class="language-plaintext highlighter-rouge">_revinclude=ChargeItemDefinition:instance</code>.</p>
+<p>This page describes how fields in the legacy PHARMAC Schedule XML are transformed into the FHIR resources used by this Implementation Guide.</p>
 
-<h2 id="product-and-identifiers">Product and identifiers</h2>
+<p>The mapping is not a direct copy of the XML hierarchy. The XML stores product, funding, and Special Authority information in a nested structure. The FHIR representation separates those concerns into linked resources:</p>
 
-<p>Product identity is anchored in <code class="language-plaintext highlighter-rouge">Medication</code>. In the Pharmac FHIR service, ATC hierarchy values, identifiers, brand name, pack size, unit of measure, rank, and strength are held on the <code class="language-plaintext highlighter-rouge">Medication</code> resource using core fields and named extensions such as <code class="language-plaintext highlighter-rouge">MedicationATCCategory1</code>, <code class="language-plaintext highlighter-rouge">MedicationATCCategory2</code>, <code class="language-plaintext highlighter-rouge">MedicationATCCategory3</code>, <code class="language-plaintext highlighter-rouge">MedicationBrandName</code>, <code class="language-plaintext highlighter-rouge">MedicationPackageSize</code>, <code class="language-plaintext highlighter-rouge">MedicationUnitOfMeasure</code>, <code class="language-plaintext highlighter-rouge">MedicationRank</code>, and <code class="language-plaintext highlighter-rouge">MedicationStrength</code>. The published Clexane example is the reference point for the FHIR examples below.</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Medication
+  ├── Funding Rules ChargeItemDefinition
+  └── Special Authority ChargeItemDefinition
+</code></pre></div></div>
+
+<p>The profiles used by this mapping are:</p>
 
 <table>
   <thead>
     <tr>
-      <th>Legacy XML</th>
-      <th>XML example</th>
-      <th>Current FHIR resource / exact profile</th>
-      <th>Current FHIR field(s)</th>
-      <th>FHIR example</th>
+      <th>Purpose</th>
+      <th>Profile</th>
+      <th>Profile ID</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">ATC1</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;ATC1 ID="..."&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:MedicationATCCategory1</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationATCCategory1].valueString = "Blood and Blood Forming Organs"</code></td>
+      <td>Scheduled pharmaceutical product</td>
+      <td><code class="language-plaintext highlighter-rouge">PharmacMedication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">ATC2</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;ATC2 ID="..."&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:MedicationATCCategory2</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationATCCategory2].valueString = "Antithrombotic Agents"</code></td>
+      <td>Funding and reimbursement case</td>
+      <td><code class="language-plaintext highlighter-rouge">PharmacChargeItemDefinitionFundingRules</code></td>
+      <td><code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">ATC3</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;ATC3 ID="..."&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:MedicationATCCategory3</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationATCCategory3].valueString = "Heparin and Antagonist Preparations"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Chemical/@ID</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Chemical ID="..."&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td>identifier for chemical</td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.identifier[chemicalId].value = "C0407043893"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Chemical/Name</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Chemical&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ingredient.itemCodeableConcept.text</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.ingredient.itemCodeableConcept.text = "Enoxaparin sodium"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Formulation/@ID</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Formulation ID="..."&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td>identifier for formulation</td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.identifier[formulationId].value = "F040704389329"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Formulation/Name</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Formulation&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td><code class="language-plaintext highlighter-rouge">form</code>, <code class="language-plaintext highlighter-rouge">extension:MedicationStrength</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.form = "Solution for injection"</code> and <code class="language-plaintext highlighter-rouge">Medication.extension[MedicationStrength].valueString = "100 mg in 1 ml"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Formulation/@Rank</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Rank="4"</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:MedicationRank</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationRank].valueInteger = 4</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Formulation/@Units</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Units="syringe"</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:MedicationUnitOfMeasure</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationUnitOfMeasure].valueString = "syringe"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Brand/@ID</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Brand ID="..."&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td>identifier for brand</td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.identifier[brandId].value = "B04070438932925"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Brand/Name</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Brand&gt;&lt;Name&gt;...&lt;/Name&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td><code class="language-plaintext highlighter-rouge">code.text</code>, <code class="language-plaintext highlighter-rouge">extension:MedicationBrandName</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.code.text = "Clexane"</code> and <code class="language-plaintext highlighter-rouge">Medication.extension[MedicationBrandName].valueString = "Clexane"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Pack/@ID</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Pack ID="..."&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td>identifier for pack</td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.identifier[packId].value = "P2581906"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Pack/@nzmt:ctpp_id</code></td>
-      <td><code class="language-plaintext highlighter-rouge">nzmt:ctpp_id="..."</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td><code class="language-plaintext highlighter-rouge">code</code></td>
-      <td><code class="language-plaintext highlighter-rouge">GET [base]/Medication?code=&lt;NZMT/CTPP code&gt;</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Pack/Quantity</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Quantity&gt;10&lt;/Quantity&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> / <code class="language-plaintext highlighter-rouge">pharmac-medication</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:MedicationPackageSize</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.extension[MedicationPackageSize].valueString = "10"</code></td>
+      <td>Special Authority definition</td>
+      <td><code class="language-plaintext highlighter-rouge">PharmacChargeItemDefinitionSpecialAuthority</code></td>
+      <td><code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
     </tr>
   </tbody>
 </table>
 
-<p>The published <code class="language-plaintext highlighter-rouge">Medication-Clexane-100mg-1ml-Syringe</code> example is the reference point for the values shown above, including brand name <code class="language-plaintext highlighter-rouge">Clexane</code>, package size <code class="language-plaintext highlighter-rouge">10</code>, unit of measure <code class="language-plaintext highlighter-rouge">syringe</code>, rank <code class="language-plaintext highlighter-rouge">4</code>, ATC Category 1 <code class="language-plaintext highlighter-rouge">Blood and Blood Forming Organs</code>, ATC Category 2 <code class="language-plaintext highlighter-rouge">Antithrombotic Agents</code>, ATC Category 3 <code class="language-plaintext highlighter-rouge">Heparin and Antagonist Preparations</code>, and strength <code class="language-plaintext highlighter-rouge">100 mg in 1 ml</code>.</p>
+<h2 id="mapping-conventions">Mapping conventions</h2>
 
-<h2 id="pricing">Pricing</h2>
-
-<p>Pricing is held in a linked <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> conforming to <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code>. Listed price, PHARMAC subsidy, patient surcharge, and patient co-payment are carried in <code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent</code>, and pricing-specific attributes such as <code class="language-plaintext highlighter-rouge">contractType</code>, <code class="language-plaintext highlighter-rouge">costBrandSource</code>, <code class="language-plaintext highlighter-rouge">wastageClaimable</code>, <code class="language-plaintext highlighter-rouge">dvLimitPercent</code>, and <code class="language-plaintext highlighter-rouge">brandSwitchFee</code> are carried as extensions. The published Clexane pricing example is the reference point for the FHIR examples below.</p>
+<p>The tables on this page use the following mapping classifications:</p>
 
 <table>
   <thead>
     <tr>
-      <th>Legacy XML</th>
-      <th>XML example</th>
-      <th>Current FHIR resource / exact profile</th>
-      <th>Current FHIR field(s)</th>
-      <th>FHIR example</th>
+      <th>Classification</th>
+      <th>Meaning</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Pack/Price</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Price&gt;...&lt;/Price&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
-      <td><code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.type</code>, <code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.amount</code></td>
-      <td><code class="language-plaintext highlighter-rouge">type = "base"</code> and <code class="language-plaintext highlighter-rouge">amount = 70.91 NZD</code></td>
+      <td>Direct</td>
+      <td>The XML value is copied to the FHIR element with only datatype or formatting conversion</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Pack/Subsidy</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Subsidy&gt;...&lt;/Subsidy&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
-      <td><code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.type</code>, <code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.amount</code></td>
-      <td><code class="language-plaintext highlighter-rouge">type = "discount"</code> and <code class="language-plaintext highlighter-rouge">amount = 70.91 NZD</code></td>
+      <td>Derived</td>
+      <td>The FHIR value is calculated, normalised, or assembled from one or more XML values</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Pack/Surcharge</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Surcharge&gt;...&lt;/Surcharge&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
-      <td><code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.type</code>, <code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.amount</code></td>
-      <td><code class="language-plaintext highlighter-rouge">type = "surcharge"</code> and <code class="language-plaintext highlighter-rouge">amount = 0 NZD</code></td>
+      <td>Inherited</td>
+      <td>The XML value is declared above the pack level and applies to descendant packs</td>
     </tr>
     <tr>
-      <td>patient co-payment outcome</td>
-      <td>derived from the price block</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
-      <td><code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.type</code>, <code class="language-plaintext highlighter-rouge">propertyGroup.priceComponent.amount</code></td>
-      <td><code class="language-plaintext highlighter-rouge">type = "informational"</code> and <code class="language-plaintext highlighter-rouge">amount = 0 NZD</code></td>
+      <td>Enriched</td>
+      <td>The FHIR value is obtained from another authoritative source, such as NZULM or WHO ATC data</td>
     </tr>
     <tr>
-      <td>pricing effective date</td>
-      <td>pricing date attribute in the published schedule context</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:pricingEffectiveDate</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[pricingEffectiveDate].valueDate = "2026-05-01"</code></td>
-    </tr>
-    <tr>
-      <td>contract type</td>
-      <td>legacy commercial contract marker</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:contractType</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[contractType].valueString = "PSS"</code></td>
-    </tr>
-    <tr>
-      <td>cost brand source indicator</td>
-      <td>legacy cost brand context</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:costBrandSource</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[costBrandSource].valueBoolean = false</code></td>
-    </tr>
-    <tr>
-      <td>wastage claimable indicator</td>
-      <td>legacy wastage-related pricing context</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:wastageClaimable</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[wastageClaimable].valueBoolean = false</code></td>
-    </tr>
-    <tr>
-      <td>daily volume limit percent</td>
-      <td>legacy DV limit context</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:dvLimitPercent</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[dvLimitPercent].valueDecimal = 5</code></td>
-    </tr>
-    <tr>
-      <td>brand switch fee</td>
-      <td>legacy switch-fee context</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:brandSwitchFee</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[brandSwitchFee].valueBoolean = false</code></td>
+      <td>Not currently represented</td>
+      <td>The legacy value has no approved location in the current FHIR profiles</td>
     </tr>
   </tbody>
 </table>
 
-<p>The published <code class="language-plaintext highlighter-rouge">Clexane - Pricing</code> example is the reference point for the pricing values shown above.</p>
+<p>XML paths are shown without namespace prefixes for readability.</p>
 
-<h2 id="funding-rules">Funding rules</h2>
+<h2 id="transformation-unit-and-hierarchy">Transformation unit and hierarchy</h2>
 
-<p>Funding rules are held in linked <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources conforming to <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code>. Each Funding Rules CID represents a single funding case. The required complex extension <code class="language-plaintext highlighter-rouge">fundingRule</code> carries the dispensary type in <code class="language-plaintext highlighter-rouge">type</code>, and carries rule content through <code class="language-plaintext highlighter-rouge">rule[].type</code>, <code class="language-plaintext highlighter-rouge">rule[].value</code>, and <code class="language-plaintext highlighter-rouge">rule[].attribute</code>. A single product can have multiple funding-rule instances representing different pathways. The published Clexane funding-rule examples are the reference point for the FHIR examples below.</p>
+<p>The primary product unit in the FHIR model is the XML <code class="language-plaintext highlighter-rouge">Pack</code> carrying an <code class="language-plaintext highlighter-rouge">nzmt:ctpp_id</code>.</p>
+
+<p>While the existing XML uses a structured hierarchy, the new FHIR service flattens the structure and provides the information at a Pack level.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Section
+  ATC1
+    ATC2
+      ATC3
+        Chemical
+          Formulation
+            Brand
+              Pack[@nzmt:ctpp_id]
+</code></pre></div></div>
+
+<p>For each qualifying <code class="language-plaintext highlighter-rouge">Pack</code>:</p>
+
+<ol>
+  <li>One <code class="language-plaintext highlighter-rouge">Medication</code> resource is created using the CTPP identifier.</li>
+  <li>Product values are taken from the <code class="language-plaintext highlighter-rouge">Pack</code> and its ancestor <code class="language-plaintext highlighter-rouge">Brand</code>, <code class="language-plaintext highlighter-rouge">Formulation</code>, and <code class="language-plaintext highlighter-rouge">Chemical</code> elements.</li>
+  <li>Rules, flags, and notes declared at any ancestor level are inherited by the descendant pack.</li>
+  <li>The inherited values are normalised into one or more Funding Rules <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources.</li>
+  <li>Any applicable <code class="language-plaintext highlighter-rouge">Request</code> elements are resolved to Special Authority definitions and linked to the relevant product and funding case.</li>
+</ol>
+
+<p>This means an XML rule declared on <code class="language-plaintext highlighter-rouge">Chemical</code> can result in a separate Funding Rules record for every descendant pack.</p>
+
+<h2 id="schedule-level-metadata">Schedule-level metadata</h2>
 
 <table>
   <thead>
     <tr>
-      <th>Legacy XML</th>
-      <th>XML example</th>
-      <th>Current FHIR resource / exact profile</th>
-      <th>Current FHIR field(s)</th>
-      <th>FHIR example</th>
+      <th>Legacy XML path</th>
+      <th>Example</th>
+      <th>FHIR location</th>
+      <th>Classification</th>
+      <th>Mapping rule</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Rule Type="FormMax" Value="..." Attribute="Rx"</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Rule Type="FormMax" Value="..." Attribute="Rx"/&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:fundingRule.type</code>, <code class="language-plaintext highlighter-rouge">rule[].type</code>, <code class="language-plaintext highlighter-rouge">rule[].value</code>, <code class="language-plaintext highlighter-rouge">rule[].attribute</code></td>
-      <td><code class="language-plaintext highlighter-rouge">fundingRule.type = "community"</code>, <code class="language-plaintext highlighter-rouge">rule.type = "CaseSequence"</code>, <code class="language-plaintext highlighter-rouge">rule.value = 1</code>, <code class="language-plaintext highlighter-rouge">rule.attribute = "Prescription"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Front/Title</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Pharmaceutical Schedule</code></td>
+      <td>IG or release metadata</td>
+      <td>Not currently represented</td>
+      <td>Static publication title; not repeated on each clinical resource</td>
     </tr>
     <tr>
-      <td>prescription funding pathway</td>
-      <td><code class="language-plaintext highlighter-rouge">Attribute="Rx"</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
-      <td><code class="language-plaintext highlighter-rouge">rule[].type = "FundingMechanism"</code>, <code class="language-plaintext highlighter-rouge">rule[].attribute</code></td>
-      <td><code class="language-plaintext highlighter-rouge">rule.type = "FundingMechanism"</code> and <code class="language-plaintext highlighter-rouge">rule.attribute = "Prescription"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Front/Country</code></td>
+      <td><code class="language-plaintext highlighter-rouge">New Zealand</code></td>
+      <td>IG or release metadata</td>
+      <td>Not currently represented</td>
+      <td>Static publication metadata</td>
     </tr>
     <tr>
-      <td>subsidy type</td>
-      <td>subsidy outcome implied by the XML rule set</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
-      <td><code class="language-plaintext highlighter-rouge">rule[].type = "SubsidyType"</code>, <code class="language-plaintext highlighter-rouge">rule[].attribute</code></td>
-      <td><code class="language-plaintext highlighter-rouge">rule.type = "SubsidyType"</code> and <code class="language-plaintext highlighter-rouge">rule.attribute = "Full"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Front/Edition</code></td>
+      <td><code class="language-plaintext highlighter-rouge">February 2026</code></td>
+      <td>Release metadata</td>
+      <td>Not currently represented</td>
+      <td>Retained as source-release metadata rather than repeated on every resource</td>
     </tr>
     <tr>
-      <td>community dispensary type</td>
-      <td>community branch in the published schedule context</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:fundingRule.type</code></td>
-      <td><code class="language-plaintext highlighter-rouge">fundingRule.type = "community"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Front/Volume</code></td>
+      <td><code class="language-plaintext highlighter-rouge">33</code></td>
+      <td>Release metadata</td>
+      <td>Not currently represented</td>
+      <td>Retained for source lineage if required</td>
     </tr>
     <tr>
-      <td>case sequencing</td>
-      <td>ordered rule grouping in XML</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
-      <td><code class="language-plaintext highlighter-rouge">rule[].type = "CaseSequence"</code>, <code class="language-plaintext highlighter-rouge">rule[].value</code></td>
-      <td><code class="language-plaintext highlighter-rouge">rule.type = "CaseSequence"</code> and <code class="language-plaintext highlighter-rouge">rule.value = 1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Front/Number</code></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+      <td>Release metadata</td>
+      <td>Not currently represented</td>
+      <td>Retained for source lineage if required</td>
     </tr>
     <tr>
-      <td>structured rule logic</td>
-      <td>inline rule combinations in XML</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:authorizationSchema</code> where present in the example</td>
-      <td>published example includes a Base64 JSON Schema value for the case structure</td>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Front/Published</code></td>
+      <td><code class="language-plaintext highlighter-rouge">2026-02-01</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-price.extension:scheduleDate.valueDate</code></td>
+      <td>Direct</td>
+      <td>Used as the Schedule date associated with the product price</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Front/Published</code></td>
+      <td><code class="language-plaintext highlighter-rouge">2026-02-01</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension:pricing-effective-date.valueDate</code></td>
+      <td>Derived/fallback</td>
+      <td>Used as the effective date where a more specific effective date is not available; this is distinct from <code class="language-plaintext highlighter-rouge">ChargeItemDefinition.date</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Section/@ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">B</code></td>
+      <td>Funding case classification</td>
+      <td>Derived</td>
+      <td>Contributes to determining the funding context and section-specific processing</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Section/Name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Community Pharmaceuticals</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension:funding-rule.extension:type.valueCode</code></td>
+      <td>Derived</td>
+      <td>A community section contributes <code class="language-plaintext highlighter-rouge">community</code>; other sections require an explicit mapping rule rather than a literal copy</td>
     </tr>
   </tbody>
 </table>
 
-<p>The published <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1</code> example is the reference point for the funding-rule values shown above. The Artifacts page also lists <code class="language-plaintext highlighter-rouge">Case-2</code> and <code class="language-plaintext highlighter-rouge">Case-3</code> for the same Clexane product.</p>
+<h2 id="medication-mapping">Medication mapping</h2>
 
-<h2 id="special-authority">Special Authority</h2>
+<p>Each XML pack with an NZMT CTPP identifier becomes one <code class="language-plaintext highlighter-rouge">Medication</code> resource.</p>
 
-<p>Special Authority is held in a linked <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> conforming to <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code>. The published IG currently includes <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-SA9999-Authorization</code> as an illustrative example of the SA structure. It shows the SA identifier in <code class="language-plaintext highlighter-rouge">code</code>, linked products in <code class="language-plaintext highlighter-rouge">instance</code>, the number of cases in <code class="language-plaintext highlighter-rouge">extension:authorizationCaseCount</code>, and the structured form logic in <code class="language-plaintext highlighter-rouge">extension:authorizationSchema</code>. This example illustrates the FHIR representation of an SA record and is not a real Clexane Special Authority.</p>
+<h3 id="identification-and-coding">Identification and coding</h3>
 
 <table>
   <thead>
     <tr>
-      <th>Legacy XML</th>
-      <th>XML example</th>
-      <th>Current FHIR resource / exact profile</th>
-      <th>Current FHIR field(s)</th>
-      <th>FHIR example</th>
+      <th>Legacy XML path</th>
+      <th>Example</th>
+      <th>FHIR location</th>
+      <th>Classification</th>
+      <th>Mapping rule</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Rule Attribute="Subsidy" Type="Special" xlink:href="SAxxxx"</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Rule Attribute="Subsidy" Type="Special" xlink:href="SAxxxx"/&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
-      <td><code class="language-plaintext highlighter-rouge">code.coding.code</code>, <code class="language-plaintext highlighter-rouge">code.text</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.code.coding.code = "SA9999"</code> and <code class="language-plaintext highlighter-rouge">ChargeItemDefinition.code.text = "SA9999"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/@nzmt:ctpp_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">50014861000117106</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.id</code></td>
+      <td>Direct</td>
+      <td>The CTPP identifier becomes the FHIR resource id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/@nzmt:ctpp_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">50014861000117106</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.code.coding</code> using <code class="language-plaintext highlighter-rouge">http://nzmt.org.nz</code></td>
+      <td>Direct</td>
+      <td>The same value is carried as the NZMT CTPP coding</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/@ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">P2086522</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.code.coding</code> using the PHARMAC subsidy-code system</td>
+      <td>Derived</td>
+      <td>The leading <code class="language-plaintext highlighter-rouge">P</code> is removed, producing subsidy code <code class="language-plaintext highlighter-rouge">2086522</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/@ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">P2086522</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.code.coding.extension:pharmac-is-primary-coding.valueBoolean</code></td>
+      <td>Derived</td>
+      <td>The primary PHARMAC subsidy coding is marked <code class="language-plaintext highlighter-rouge">true</code></td>
+    </tr>
+    <tr>
+      <td>CTPP concept type</td>
+      <td><code class="language-plaintext highlighter-rouge">ctpp</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-nzmt-type.valueCodeableConcept</code></td>
+      <td>Derived</td>
+      <td>Fixed to the NZMT type represented by the resource</td>
+    </tr>
+    <tr>
+      <td>GTIN</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.code.coding</code></td>
+      <td>Enriched</td>
+      <td>GTIN is not present in the legacy XML and is supplied from another product source where available</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="product-description-form-and-ingredient">Product description, form, and ingredient</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML path</th>
+      <th>Example</th>
+      <th>FHIR location</th>
+      <th>Classification</th>
+      <th>Mapping rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Chemical/Name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Mifepristone</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.ingredient.itemCodeableConcept.text</code></td>
+      <td>Direct</td>
+      <td>Used as ingredient text where a coded ingredient is not available</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Formulation/Name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Tab 200 mg</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.form.text</code></td>
+      <td>Direct</td>
+      <td>Used as the human-readable dose-form/formulation text</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Brand/Name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Mifegyne</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.code.text</code> and coding displays</td>
+      <td>Derived/enriched</td>
+      <td>Contributes to the product display; the preferred CTPP term is sourced from NZMT/NZULM where available</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Formulation/@Weight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">200</code></td>
+      <td>Included in product/form display or coded ingredient strength where available</td>
+      <td>Derived</td>
+      <td>The current examples do not carry this as a standalone Medication extension</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Formulation/@Rank</code></td>
+      <td><code class="language-plaintext highlighter-rouge">1</code></td>
+      <td>—</td>
+      <td>Not currently represented</td>
+      <td>The previous rank extension is not part of the current Medication model</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Chemical/@ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">C1325014129</code></td>
+      <td>—</td>
+      <td>Not currently represented</td>
+      <td>Legacy chemical identifier retained only for source lineage</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Formulation/@ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">F132501412925</code></td>
+      <td>—</td>
+      <td>Not currently represented</td>
+      <td>Legacy formulation identifier retained only for source lineage</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Brand/@ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">B13250141292525</code></td>
+      <td>—</td>
+      <td>Not currently represented</td>
+      <td>Legacy brand identifier retained only for source lineage</td>
+    </tr>
+    <tr>
+      <td>NZMT preferred term</td>
+      <td><code class="language-plaintext highlighter-rouge">Mifegyne 200 mg tablet: uncoated, 3 tablets, blister pack</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-description</code> and <code class="language-plaintext highlighter-rouge">Medication.code.text</code></td>
+      <td>Enriched</td>
+      <td>The preferred term is supplied by NZMT/NZULM rather than reconstructed solely from the XML hierarchy</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pack-details">Pack details</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML path</th>
+      <th>Example</th>
+      <th>FHIR location</th>
+      <th>Classification</th>
+      <th>Mapping rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/Quantity</code></td>
+      <td><code class="language-plaintext highlighter-rouge">3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-pack.extension:quantity.valueQuantity.value</code></td>
+      <td>Direct</td>
+      <td>Pack quantity value</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Formulation/@Units</code></td>
+      <td><code class="language-plaintext highlighter-rouge">tab</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-pack.extension:quantity.valueQuantity.unit</code></td>
+      <td>Inherited/direct</td>
+      <td>The formulation unit is applied to the pack quantity</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/@Specified</code></td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>No declared child in the current <code class="language-plaintext highlighter-rouge">MedicationPack</code> extension</td>
+      <td>Not currently represented</td>
+      <td>Examples using a <code class="language-plaintext highlighter-rouge">specified</code> child will not conform unless the extension definition is updated to declare it</td>
+    </tr>
+    <tr>
+      <td>NZMT medicine code</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-pack.extension:nzmtMedicineCode.valueCodeableConcept</code></td>
+      <td>Enriched</td>
+      <td>This is not the legacy <code class="language-plaintext highlighter-rouge">Pack/@ID</code>; it must come from an NZMT source if populated</td>
+    </tr>
+    <tr>
+      <td>Structured pack size</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-pack.extension:size.valueQuantity</code></td>
+      <td>Derived/enriched</td>
+      <td>Populate only when a distinct pack-size value and unit are available</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="product-price-and-classification">Product price and classification</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML path</th>
+      <th>Example</th>
+      <th>FHIR location</th>
+      <th>Classification</th>
+      <th>Mapping rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/Price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">180.00</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-price.extension:price.valueMoney.value</code></td>
+      <td>Direct</td>
+      <td>Currency is set to <code class="language-plaintext highlighter-rouge">NZD</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Front/Published</code></td>
+      <td><code class="language-plaintext highlighter-rouge">2026-02-01</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-price.extension:scheduleDate.valueDate</code></td>
+      <td>Direct</td>
+      <td>Schedule publication date associated with the price</td>
+    </tr>
+    <tr>
+      <td>Legacy <code class="language-plaintext highlighter-rouge">ATC1</code>, <code class="language-plaintext highlighter-rouge">ATC2</code>, and <code class="language-plaintext highlighter-rouge">ATC3</code> IDs/names</td>
+      <td><code class="language-plaintext highlighter-rouge">A132501</code>, <code class="language-plaintext highlighter-rouge">Antiprogesterones</code></td>
+      <td>—</td>
+      <td>Not directly represented</td>
+      <td>These legacy hierarchy values are not copied into the current Medication profile</td>
+    </tr>
+    <tr>
+      <td>WHO ATC code and display</td>
+      <td><code class="language-plaintext highlighter-rouge">G03XB01</code>, <code class="language-plaintext highlighter-rouge">mifepristone</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-atc.valueCodeableConcept</code></td>
+      <td>Enriched</td>
+      <td>Supplied through the approved WHO ATC mapping, not directly from the legacy XML category ID</td>
+    </tr>
+    <tr>
+      <td>Legal classification text</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-legal-classification.valueString</code></td>
+      <td>Enriched</td>
+      <td>Not present as a dedicated field in the legacy XML</td>
+    </tr>
+    <tr>
+      <td>Legal class code</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.extension:medication-legal-class.extension:code.valueCodeableConcept</code></td>
+      <td>Enriched</td>
+      <td>Supplied from an authoritative legal-class source where available</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="funding-rules-chargeitemdefinition-mapping">Funding Rules ChargeItemDefinition mapping</h2>
+
+<p>Each normalised funding case becomes a separate <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> conforming to <code class="language-plaintext highlighter-rouge">PharmacChargeItemDefinitionFundingRules</code>.</p>
+
+<p>The generated resource id follows this pattern:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ChargeItemDefinition-{CTPP}-{Community|Hospital}-Case-{sequence}
+</code></pre></div></div>
+
+<h3 id="resource-identity-and-association">Resource identity and association</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML source</th>
+      <th>FHIR location</th>
+      <th>Classification</th>
+      <th>Mapping rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Descendant <code class="language-plaintext highlighter-rouge">Pack/@nzmt:ctpp_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.instance</code></td>
+      <td>Direct</td>
+      <td>References <code class="language-plaintext highlighter-rouge">Medication/{ctpp_id}</code></td>
+    </tr>
+    <tr>
+      <td>Funding context derived from section and case processing</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension:funding-rule.extension:type.valueCode</code></td>
+      <td>Derived</td>
+      <td>Normalised to values such as <code class="language-plaintext highlighter-rouge">community</code> or <code class="language-plaintext highlighter-rouge">hospital</code></td>
+    </tr>
+    <tr>
+      <td>Order of normalised funding cases</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension:funding-rule.extension:rule[type=CaseSequence].extension:value</code></td>
+      <td>Derived</td>
+      <td>A sequence number is assigned within the product and funding context</td>
+    </tr>
+    <tr>
+      <td>Source product and case details</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.description</code></td>
+      <td>Derived</td>
+      <td>Human-readable summary generated from the product and case</td>
+    </tr>
+    <tr>
+      <td>Source product and case details</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.applicability.description</code></td>
+      <td>Derived</td>
+      <td>Concise case summary; not the location for machine-readable rule content</td>
+    </tr>
+    <tr>
+      <td>Source effective date or <code class="language-plaintext highlighter-rouge">/Schedule/Front/Published</code> fallback</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension:pricing-effective-date.valueDate</code></td>
+      <td>Direct/derived</td>
+      <td>Represents when the funding case applies</td>
+    </tr>
+    <tr>
+      <td>FHIR artifact generation timestamp</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.date</code></td>
+      <td>Generated</td>
+      <td>Represents creation or revision of the definitional resource, not the Schedule effective date</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="legacy-rule-mapping">Legacy Rule mapping</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Rule</code> elements can occur at <code class="language-plaintext highlighter-rouge">ATC2</code>, <code class="language-plaintext highlighter-rouge">ATC3</code>, <code class="language-plaintext highlighter-rouge">Chemical</code>, <code class="language-plaintext highlighter-rouge">Formulation</code>, or <code class="language-plaintext highlighter-rouge">Brand</code> level. A rule applies to descendant packs unless a narrower scope overrides it.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML field</th>
+      <th>Example</th>
+      <th>FHIR location</th>
+      <th>Classification</th>
+      <th>Mapping rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">FormMax</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:funding-rule.extension:rule.extension:type.valueCode</code></td>
+      <td>Direct/inherited</td>
+      <td>Rule type is copied using the agreed code form</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">15</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:funding-rule.extension:rule.extension:value.valueInteger</code> or <code class="language-plaintext highlighter-rouge">.valueDecimal</code></td>
+      <td>Direct/inherited</td>
+      <td>Datatype is selected from the source value</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Attribute</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PSO</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:funding-rule.extension:rule.extension:attribute.valueCode</code></td>
+      <td>Direct/inherited</td>
+      <td>Qualifies the rule or identifies the funding mechanism</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@xlink:href</code></td>
+      <td><code class="language-plaintext highlighter-rouge">SA2535</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:funding-rule.extension:rule.extension:href.valueCode</code></td>
+      <td>Direct/inherited</td>
+      <td>Reference code is copied without the XML namespace wrapper</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Waiver</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Special</code></td>
+      <td>—</td>
+      <td>Not currently represented</td>
+      <td>The current FundingRule extension has no <code class="language-plaintext highlighter-rouge">waiver</code> child; retain in transformation input or represent in condition content if required</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@NonPrinting</code></td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>—</td>
+      <td>Not currently represented</td>
+      <td>Presentation control from the legacy format is not part of the current FHIR extension</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="funding-mechanism-normalisation">Funding mechanism normalisation</h3>
+
+<p>The funding mechanism is carried as a generated FundingRule entry:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule.type = FundingMechanism
+rule.attribute = {normalised mechanism}
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy value/context</th>
+      <th>Normalised FHIR value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Attribute = Rx</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Prescription</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Attribute = PSO</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PSO</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Attribute = BSO</code></td>
+      <td><code class="language-plaintext highlighter-rouge">BSO</code></td>
+    </tr>
+    <tr>
+      <td>Rural practitioner supply context</td>
+      <td><code class="language-plaintext highlighter-rouge">RuralPSO</code></td>
+    </tr>
+    <tr>
+      <td>Pharmacy-specific supply context</td>
+      <td><code class="language-plaintext highlighter-rouge">Pharmacy</code></td>
+    </tr>
+    <tr>
+      <td>No applicable mechanism</td>
+      <td><code class="language-plaintext highlighter-rouge">na</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The mechanism is not always a direct copy of one XML attribute. It may be derived from the rule type, attribute, section, and surrounding narrative.</p>
+
+<h3 id="subsidy-mapping">Subsidy mapping</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML path</th>
+      <th>Example</th>
+      <th>FHIR location</th>
+      <th>Classification</th>
+      <th>Mapping rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/Subsidy</code></td>
+      <td><code class="language-plaintext highlighter-rouge">180.00</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:funding-subsidy-amount.extension:amount.valueMoney.value</code></td>
+      <td>Direct</td>
+      <td>Currency is set to <code class="language-plaintext highlighter-rouge">NZD</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/Subsidy</code> and <code class="language-plaintext highlighter-rouge">.../Pack/Price</code></td>
+      <td>both <code class="language-plaintext highlighter-rouge">180.00</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:funding-subsidy-amount.extension:subsidyStatus.valueCode</code></td>
+      <td>Derived</td>
+      <td>Common derivation: <code class="language-plaintext highlighter-rouge">full</code> when subsidy equals price, <code class="language-plaintext highlighter-rouge">partial</code> when subsidy is greater than zero but below price, and <code class="language-plaintext highlighter-rouge">none</code> where no subsidy applies</td>
+    </tr>
+    <tr>
+      <td>Funding case type</td>
+      <td><code class="language-plaintext highlighter-rouge">subsidy</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:funding-subsidy-amount.extension:subsidyType.valueCode</code></td>
+      <td>Derived</td>
+      <td>Set according to the funding outcome represented by the case</td>
+    </tr>
+    <tr>
+      <td>Funding outcome</td>
+      <td><code class="language-plaintext highlighter-rouge">Subsidy</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:funding-subsidy-amount.extension:display.valueString</code></td>
+      <td>Derived</td>
+      <td>Human-readable label generated from type/status</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/Alternate</code></td>
+      <td><code class="language-plaintext highlighter-rouge">180.00</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:funding-subsidy-amount.extension:subsidyStatus.valueCode</code></td>
+      <td>Derived</td>
+      <td>Follows the same structure and field as Subsidy, where <code class="language-plaintext highlighter-rouge">alternate</code> will be used instead of <code class="language-plaintext highlighter-rouge">subsidy</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.../Pack/Surcharge</code></td>
+      <td><code class="language-plaintext highlighter-rouge">0.00000</code></td>
+      <td>—</td>
+      <td>Not currently represented</td>
+      <td>The current model does not carry the legacy surcharge as a standalone value</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="schedule-funding-attributes">Schedule funding attributes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML source</th>
+      <th>Example</th>
+      <th>FHIR location</th>
+      <th>Classification</th>
+      <th>Mapping rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Chemical/@Statim</code> or <code class="language-plaintext highlighter-rouge">Formulation/@Statim</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Must</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:statim.valueString</code></td>
+      <td>Inherited/direct</td>
+      <td>The nearest applicable Statim value is used</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Brand/@S29</code></td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:section29.valueBoolean</code></td>
+      <td>Direct</td>
+      <td>XML boolean converted to FHIR boolean</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Brand/@PSS</code></td>
+      <td><code class="language-plaintext highlighter-rouge">2028-06-30</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:contractType.valueString</code></td>
+      <td>Derived</td>
+      <td>Presence maps to contract type <code class="language-plaintext highlighter-rouge">PSS</code>; the date is not separately represented by the current extension</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Brand/@ToBePSS</code></td>
+      <td>date</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:contractType.valueString</code></td>
+      <td>Derived</td>
+      <td>Indicates a future PSS state; the current extension does not preserve the transition date separately</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Brand/@SoleSupply</code></td>
+      <td>date</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:contractType.valueString</code></td>
+      <td>Derived</td>
+      <td>Contributes to contract classification where used</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/@OP</code></td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:originalPack.valueBoolean</code></td>
+      <td>Direct</td>
+      <td>Original-pack flag</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/@CBS</code></td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:costBrandSource.valueBoolean</code></td>
+      <td>Direct</td>
+      <td>Cost-brand-source flag</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Multiple</code></td>
+      <td><code class="language-plaintext highlighter-rouge">1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:productMultiple.valueBoolean</code></td>
+      <td>Derived</td>
+      <td>Presence produces <code class="language-plaintext highlighter-rouge">true</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Multiple</code></td>
+      <td><code class="language-plaintext highlighter-rouge">1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:productMultiplier.valueInteger</code></td>
+      <td>Direct</td>
+      <td>Numeric multiplier value</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Type = Wastage</code></td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:wastageClaimable.valueBoolean</code></td>
+      <td>Derived/inherited</td>
+      <td>Presence of an applicable Wastage rule produces <code class="language-plaintext highlighter-rouge">true</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Type = Brandswitch</code></td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:brandSwitchFee.valueBoolean</code></td>
+      <td>Derived/inherited</td>
+      <td>Presence of an applicable brand-switch rule produces <code class="language-plaintext highlighter-rouge">true</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Type = MaxCoPayment</code> and <code class="language-plaintext highlighter-rouge">Rule/@Value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code> or <code class="language-plaintext highlighter-rouge">5</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:coPaymentMax.valueCode</code></td>
+      <td>Derived</td>
+      <td>Requires a controlled transformation because the current target is coded rather than numeric</td>
+    </tr>
+    <tr>
+      <td>Section/rule information</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:coPaymentMin.valueCode</code></td>
+      <td>Derived</td>
+      <td>No single direct XML field; derive only where a defined business rule exists</td>
+    </tr>
+    <tr>
+      <td>Rule/narrative information</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:inCombination.valueCode</code></td>
+      <td>Derived</td>
+      <td>Derived from explicit rule or narrative content; not a simple element copy</td>
+    </tr>
+    <tr>
+      <td>Other Schedule source data</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:dvLimitPercent.valueDecimal</code></td>
+      <td>Enriched/derived</td>
+      <td>No consistent dedicated field was identified in the legacy XML</td>
+    </tr>
+    <tr>
+      <td>Other Schedule source data</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:schedule-funding-attributes.extension:safetyListMedicine.valueBoolean</code></td>
+      <td>Enriched/derived</td>
+      <td>No consistent dedicated field was identified in the legacy XML</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="funding-conditions-and-narrative">Funding conditions and narrative</h3>
+
+<p>The legacy XML can express conditions as <code class="language-plaintext highlighter-rouge">Rule</code> elements and XHTML narrative blocks at several hierarchy levels.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML source</th>
+      <th>FHIR location</th>
+      <th>Mapping rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">div[@class='Note']</code> and descendant XHTML</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension:authorization-schema</code> and/or generated <code class="language-plaintext highlighter-rouge">applicability.description</code></td>
+      <td>Narrative is normalised into the condition representation; the original XHTML hierarchy is not copied directly</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">div[@class='Xref']</code>, <code class="language-plaintext highlighter-rouge">p/@href</code>, or link targets</td>
+      <td>Funding rule reference or condition content</td>
+      <td>Retain the target as a reference where supported; otherwise preserve in descriptive condition content</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Type = Special</code> with <code class="language-plaintext highlighter-rouge">@xlink:href = SA####</code></td>
+      <td>FundingRule <code class="language-plaintext highlighter-rouge">href</code> and authority condition content</td>
+      <td>Establishes the logical relationship to the corresponding Special Authority definition</td>
+    </tr>
+    <tr>
+      <td>Provider or endorsement wording in notes</td>
+      <td><code class="language-plaintext highlighter-rouge">authorization-schema</code></td>
+      <td>Converted into the appropriate condition representation for that funding case</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="special-authority-chargeitemdefinition-mapping">Special Authority ChargeItemDefinition mapping</h2>
+
+<p>Each distinct legacy <code class="language-plaintext highlighter-rouge">Request/@Form</code> value becomes or refers to a Special Authority <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> conforming to <code class="language-plaintext highlighter-rouge">PharmacChargeItemDefinitionSpecialAuthority</code>.</p>
+
+<p>A single request can appear at <code class="language-plaintext highlighter-rouge">ATC2</code>, <code class="language-plaintext highlighter-rouge">ATC3</code>, <code class="language-plaintext highlighter-rouge">Chemical</code>, or <code class="language-plaintext highlighter-rouge">Formulation</code> level. Its scope determines which descendant Medication resources are associated with the form.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Legacy XML path or field</th>
+      <th>Example</th>
+      <th>FHIR location</th>
+      <th>Classification</th>
+      <th>Mapping rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/@Form</code></td>
+      <td><code class="language-plaintext highlighter-rouge">SA2535</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.code.coding.code</code></td>
+      <td>Direct</td>
+      <td>SA code is represented as a code value</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Request/@Form</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Request ... Form="SAxxxx"&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
-      <td><code class="language-plaintext highlighter-rouge">code.coding.code</code></td>
-      <td><code class="language-plaintext highlighter-rouge">GET [base]/ChargeItemDefinition?cid-code=SA9999</code></td>
+      <td><code class="language-plaintext highlighter-rouge">SA2535</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-form.valueString</code></td>
+      <td>Direct</td>
+      <td>Form identifier is copied</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Request/Title</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Title&gt;&lt;range&gt;...&lt;/range&gt;&lt;/Title&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
-      <td>SA title field on the CID</td>
-      <td>published example is titled <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-SA9999-Authorization</code> and described as <code class="language-plaintext highlighter-rouge">Special Authorization SA9999</code></td>
+      <td>Distinct descendant <code class="language-plaintext highlighter-rouge">Case</code> elements</td>
+      <td><code class="language-plaintext highlighter-rouge">4</code> cases</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-case-count.valueInteger</code></td>
+      <td>Derived</td>
+      <td>Count of application pathways represented for the SA definition</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Request/Case</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Case When="..."&gt;...&lt;/Case&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:authorizationCaseCount</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[authorizationCaseCount].valueInteger = 4</code></td>
+      <td>Request scope and explicit <code class="language-plaintext highlighter-rouge">Title/range/instance</code> values</td>
+      <td>product references</td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.instance</code></td>
+      <td>Derived</td>
+      <td>Associates the SA definition with applicable Medication resources</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Case/math</code></td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;math&gt;...&lt;/math&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
-      <td><code class="language-plaintext highlighter-rouge">extension:authorizationSchema</code></td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.extension[authorizationSchema].valueBase64Binary = "...base64..."</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Request/Title/range</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Budesonide - Cap 3 mg Controlled Release</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition.description</code> and code display where appropriate</td>
+      <td>Derived</td>
+      <td>Used to create the human-readable form description</td>
     </tr>
     <tr>
-      <td>linked product reference</td>
-      <td>same XML branch contains the request and the related product</td>
-      <td><code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> / <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code></td>
-      <td><code class="language-plaintext highlighter-rouge">instance</code></td>
-      <td>published example links by <code class="language-plaintext highlighter-rouge">instance</code> to <code class="language-plaintext highlighter-rouge">Medication/Nutrison-800-Complete-Multi-Fibre</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/Schedule/Front/Published</code> or a more specific effective date</td>
+      <td><code class="language-plaintext highlighter-rouge">2026-02-01</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:pricing-effective-date.valueDate</code></td>
+      <td>Direct/derived</td>
+      <td>Effective date for the SA definition</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Case/@When</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Initial application</code>, <code class="language-plaintext highlighter-rouge">Renewal</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-schema</code></td>
+      <td>Derived</td>
+      <td>Identifies the application pathway within the form content</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Case/@Category</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Crohn's disease</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-schema</code></td>
+      <td>Direct/derived</td>
+      <td>Used as pathway title or classification</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Case/@Form</code></td>
+      <td>related SA codes</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-schema</code></td>
+      <td>Derived</td>
+      <td>Retained as related-form information where applicable</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Case/Applicant</code></td>
+      <td><code class="language-plaintext highlighter-rouge">any relevant practitioner</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-schema</code></td>
+      <td>Direct/derived</td>
+      <td>Applicant requirement</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Case/Applicant/@Referring</code></td>
+      <td>specialist list</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-schema</code></td>
+      <td>Direct/derived</td>
+      <td>Referring-provider requirement</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Case/Term</code> and <code class="language-plaintext highlighter-rouge">@Measure</code></td>
+      <td><code class="language-plaintext highlighter-rouge">6</code>, <code class="language-plaintext highlighter-rouge">month</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-schema</code></td>
+      <td>Direct/derived</td>
+      <td>Approval validity period</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Case/Lapse</code> and <code class="language-plaintext highlighter-rouge">@Measure</code></td>
+      <td><code class="language-plaintext highlighter-rouge">6</code>, <code class="language-plaintext highlighter-rouge">year</code></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-schema</code></td>
+      <td>Direct/derived</td>
+      <td>Lapse or reapplication period where present</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Case/math</code> and descendant MathML</td>
+      <td>logical criteria</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-schema</code></td>
+      <td>Transformed</td>
+      <td>MathML logic is converted into the approved structured SA condition representation</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/Case/div</code> and request-level <code class="language-plaintext highlighter-rouge">div</code></td>
+      <td>notes and explanatory text</td>
+      <td><code class="language-plaintext highlighter-rouge">extension:authorization-schema</code></td>
+      <td>Transformed</td>
+      <td>Notes are preserved within the form/condition content</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/@To</code></td>
+      <td><code class="language-plaintext highlighter-rouge">HealthPAC</code></td>
+      <td>SA description or form metadata</td>
+      <td>Derived</td>
+      <td>No dedicated current core field</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/@For</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Subsidy</code></td>
+      <td>SA description or form metadata</td>
+      <td>Derived</td>
+      <td>No dedicated current core field</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/@Confidential</code></td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>—</td>
+      <td>Not currently represented</td>
+      <td>Requires an explicit profile decision if confidentiality metadata must be preserved</td>
     </tr>
   </tbody>
 </table>
 
-<p>The published <code class="language-plaintext highlighter-rouge">ChargeItemDefinition-SA9999-Authorization</code> example is used here only to show the Special Authority structure in FHIR.</p>
+<p>The XML MathML and XHTML are transformation inputs. JSON Schema condition logic will be provided within the <code class="language-plaintext highlighter-rouge">valueBase64Binary</code> field held on the Special Authority CID</p>
 
-<h2 id="retrieval-pattern">Retrieval pattern</h2>
+<h2 id="fields-not-carried-directly-into-the-current-fhir-model">Fields not carried directly into the current FHIR model</h2>
 
-<p>The legacy XML presents product, pricing, rules, and SA content as a single nested structure. In the Pharmac FHIR service, the same content is separated into linked resources. Product identity is held in <code class="language-plaintext highlighter-rouge">Medication</code>, pricing attributes are held in <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code>, funding pathways are held in <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code>, and Special Authority definitions are held in <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code>. Complete schedule context is retrieved by starting from <code class="language-plaintext highlighter-rouge">Medication</code> and returning related CID records using <code class="language-plaintext highlighter-rouge">_revinclude=ChargeItemDefinition:instance</code>.</p>
+<p>The following legacy fields do not currently have a direct, approved target:</p>
 
 <table>
   <thead>
     <tr>
-      <th>Legacy XML</th>
-      <th>XML example</th>
-      <th>Current FHIR representation</th>
-      <th>FHIR example</th>
+      <th>Legacy XML field</th>
+      <th>Current treatment</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>single nested XML branch containing product, price, rules, and SA together</td>
-      <td><code class="language-plaintext highlighter-rouge">ATC1 &gt; ATC2 &gt; ATC3 &gt; Chemical &gt; Formulation &gt; Brand &gt; Pack</code>, with inline <code class="language-plaintext highlighter-rouge">Rule</code> and <code class="language-plaintext highlighter-rouge">Request/Case</code> content</td>
-      <td>anchor-and-linked-resource model</td>
-      <td><code class="language-plaintext highlighter-rouge">GET [base]/Medication?name=Clexane&amp;_revinclude=ChargeItemDefinition:instance</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ATC1/@ID</code>, <code class="language-plaintext highlighter-rouge">ATC2/@ID</code>, <code class="language-plaintext highlighter-rouge">ATC3/@ID</code> and their names</td>
+      <td>Retained for source hierarchy and lineage; not used as the WHO ATC extension value</td>
     </tr>
     <tr>
-      <td>inline pack pricing beneath the branded product</td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Pack&gt;...&lt;Subsidy&gt;...&lt;Price&gt;...&lt;Surcharge&gt;...&lt;/Pack&gt;</code></td>
-      <td>linked Pricing CID</td>
-      <td>bundle returns <code class="language-plaintext highlighter-rouge">Medication</code> plus <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-pricing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Chemical/@ID</code>, <code class="language-plaintext highlighter-rouge">Formulation/@ID</code>, <code class="language-plaintext highlighter-rouge">Brand/@ID</code></td>
+      <td>Retained as legacy source identifiers; not exposed as Medication identifiers in the current profile</td>
     </tr>
     <tr>
-      <td>inline reimbursement rules beneath the product</td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Rule Type="FormMax".../&gt;</code> and related rule content</td>
-      <td>linked Funding Rules CID</td>
-      <td>bundle returns <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-funding-rules</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Formulation/@Rank</code></td>
+      <td>Not represented</td>
     </tr>
     <tr>
-      <td>inline SA request beneath the product</td>
-      <td><code class="language-plaintext highlighter-rouge">&lt;Rule Attribute="Subsidy" Type="Special".../&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;Request ...&gt;</code></td>
-      <td>linked Special Authority CID</td>
-      <td>bundle returns <code class="language-plaintext highlighter-rouge">pharmac-charge-item-definition-special-authority</code> where applicable</td>
+      <td><code class="language-plaintext highlighter-rouge">Pack/@Specified</code></td>
+      <td>Mapping gap until <code class="language-plaintext highlighter-rouge">MedicationPack</code> declares a <code class="language-plaintext highlighter-rouge">specified</code> child or the examples stop using it</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Alternate</code></td>
+      <td>Not carried as a separate value in the current approved extensions</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Surcharge</code></td>
+      <td>Not carried as a separate value in the current approved extensions</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Brand/@Update</code>, <code class="language-plaintext highlighter-rouge">Chemical/@Update</code>, <code class="language-plaintext highlighter-rouge">Formulation/@Update</code></td>
+      <td>Change-event metadata is not currently represented</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Brand/@ToBeDelisted</code></td>
+      <td>No direct approved target</td>
+    </tr>
+    <tr>
+      <td>PSS, sole-supply, or future-contract dates</td>
+      <td>Contract type can be represented, but the associated dates do not currently have a dedicated child</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@Waiver</code></td>
+      <td>No child exists in the current FundingRule extension</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule/@NonPrinting</code></td>
+      <td>Legacy presentation control is not carried into FHIR</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Request/@Confidential</code></td>
+      <td>No current SA profile element; requires a separate design decision</td>
     </tr>
   </tbody>
 </table>
+
+<p>These are deliberate mapping gaps or profile decisions that must be resolved before claiming full one-to-one source coverage.</p>
+
+<h2 id="worked-example-mifegyne">Worked example: Mifegyne</h2>
+
+<p>The legacy XML contains the following values for the Mifegyne pack:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Chemical</span> <span class="na">ID=</span><span class="s">"C1325014129"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Name&gt;</span>Mifepristone<span class="nt">&lt;/Name&gt;</span>
+  <span class="nt">&lt;Formulation</span> <span class="na">ID=</span><span class="s">"F132501412925"</span> <span class="na">Rank=</span><span class="s">"1"</span> <span class="na">Units=</span><span class="s">"tab"</span> <span class="na">Weight=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Name&gt;</span>Tab 200 mg<span class="nt">&lt;/Name&gt;</span>
+    <span class="nt">&lt;Rule</span> <span class="na">Type=</span><span class="s">"FormMax"</span> <span class="na">Value=</span><span class="s">"15"</span> <span class="na">Attribute=</span><span class="s">"PSO"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;Brand</span> <span class="na">ID=</span><span class="s">"B13250141292525"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Name&gt;</span>Mifegyne<span class="nt">&lt;/Name&gt;</span>
+      <span class="nt">&lt;Pack</span> <span class="na">ID=</span><span class="s">"P2086522"</span> <span class="na">Specified=</span><span class="s">"true"</span> <span class="na">nzmt:ctpp_id=</span><span class="s">"50014861000117106"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;Quantity&gt;</span>3<span class="nt">&lt;/Quantity&gt;</span>
+        <span class="nt">&lt;Subsidy&gt;</span>180.00<span class="nt">&lt;/Subsidy&gt;</span>
+        <span class="nt">&lt;Price&gt;</span>180.00<span class="nt">&lt;/Price&gt;</span>
+        <span class="nt">&lt;Alternate&gt;</span>180.00<span class="nt">&lt;/Alternate&gt;</span>
+        <span class="nt">&lt;Surcharge&gt;</span>0.00000<span class="nt">&lt;/Surcharge&gt;</span>
+      <span class="nt">&lt;/Pack&gt;</span>
+    <span class="nt">&lt;/Brand&gt;</span>
+  <span class="nt">&lt;/Formulation&gt;</span>
+<span class="nt">&lt;/Chemical&gt;</span>
+</code></pre></div></div>
+
+<p>The primary FHIR mappings are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>XML value</th>
+      <th>FHIR result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/@nzmt:ctpp_id = 50014861000117106</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.id = 50014861000117106</code> and NZMT coding</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/@ID = P2086522</code></td>
+      <td>PHARMAC subsidy coding <code class="language-plaintext highlighter-rouge">2086522</code> marked as primary</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Chemical/Name = Mifepristone</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.ingredient.itemCodeableConcept.text</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Formulation/Name = Tab 200 mg</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.form.text</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Quantity = 3</code> plus <code class="language-plaintext highlighter-rouge">Formulation/@Units = tab</code></td>
+      <td><code class="language-plaintext highlighter-rouge">medication-pack.quantity = 3 tab</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Price = 180.00</code></td>
+      <td><code class="language-plaintext highlighter-rouge">medication-price.price = NZD 180.00</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/Subsidy = 180.00</code></td>
+      <td>Funding Rules subsidy amount <code class="language-plaintext highlighter-rouge">NZD 180.00</code>, normally derived as fully subsidised because price and subsidy are equal</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rule Type=FormMax Value=15 Attribute=PSO</code></td>
+      <td>FundingRule entry with type <code class="language-plaintext highlighter-rouge">FormMax</code>, value <code class="language-plaintext highlighter-rouge">15</code>, and attribute <code class="language-plaintext highlighter-rouge">PSO</code>; contributes to the applicable PSO funding case</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Pack/@Specified = true</code></td>
+      <td>Current mapping gap because <code class="language-plaintext highlighter-rouge">specified</code> is not declared by <code class="language-plaintext highlighter-rouge">MedicationPack</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="related-pages">Related pages</h2>
+
+<ul>
+  <li><a href="datamodel.html">Data Models</a></li>
+  <li><a href="relationships.html">Resource Relationships</a></li>
+  <li><a href="api.html">FHIR API search examples</a></li>
+  <li><a href="examples.html">Examples</a></li>
+  <li><a href="fr-json-schema-guide.html">Funding Rules JSON Schema guide</a></li>
+  <li><a href="sa-json-schema-guide.html">Special Authority JSON Schema guide</a></li>
+</ul>
 
 
 
@@ -623,7 +1394,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 24, 2026 01:18+0000">2026-04-24</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 20:43+0000">2026-06-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

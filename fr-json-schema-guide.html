@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>JSON Schema for Funding Rules - Pharmac Schedules FHIR API v1.0.1</title>
+    <title>JSON Schema for Funding Rules - Pharmac Schedules FHIR API v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Pharmac Schedules FHIR API</span>
             <br/>
-            <span style="display:inline-block;">1.0.1 - draft
+            <span style="display:inline-block;">1.1.0 - draft
 
 
             </span>
@@ -108,9 +108,6 @@
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition.html">ChargeItemDefinition (Base)</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-pharmac-charge-item-definition-pricing.html">ChargeItemDefinition - Pricing</a>
       </li>
       <li>
         <a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">ChargeItemDefinition - Funding Rules</a>
@@ -208,7 +205,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Pharmac Schedules FHIR API - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir-ig.digital.health.nz/pharmac-schedules/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>JSON Schema for Funding Rules</h2>
   
 
@@ -224,358 +221,216 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
-</div>
-<p>This page explains how Pharmac defines funding rule conditions and authorization cases for medications — the eligibility criteria, provider restrictions, and special conditions that determine how medications are funded.</p>
-
-<h4 id="funding-condition-relationship-overview">Funding Condition Relationship Overview</h4>
-
-<p>Within Pharmac’s implementation of FHIR, a linked resource model is used rather than placing all funding conditions, pricing, and Special Authority content directly on the <code class="language-plaintext highlighter-rouge">Medication</code> resource. The <code class="language-plaintext highlighter-rouge">Medication</code> resource acts as the anchor resource, while related <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources carry the associated funding conditions, pricing, and Special Authority information.</p>
-
-<p>This approach is important because it reflects the underlying business structure of the Schedule. A medicine is not represented as having one single flat reimbursement or approval value. Instead, multiple linked records may exist to describe different pricing, funding, and authorisation contexts for the same medicine.</p>
-
-<p>The approach can be broken into three main principles:</p>
-
-<ol>
-  <li>The medication product is always the anchor resource and may have multiple linked <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources.</li>
-  <li>The relationship is carried through the <code class="language-plaintext highlighter-rouge">instance</code> element on <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code>, which references the associated <code class="language-plaintext highlighter-rouge">Medication</code>.</li>
-  <li>The API supports retrieval patterns that allow a vendor to query a medication and return the linked <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources in the same response.</li>
-</ol>
-
-<h4 id="pharmac-chargeitemdefinition-funding-rules">Pharmac <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> Funding Rules</h4>
-
-<p>The funding conditions <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> defines particular funding scenarios and reimbursement rules. It includes a <code class="language-plaintext highlighter-rouge">funding-rule</code> extension, case sequence information, funding mechanism type, and the condition logic that provides the circumstances in which the funding scenario applies.</p>
-
-<p>Where a Special Authority is present, the detailed approval criteria and case logic is held within the linked Special Authority <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code>, rather than being duplicated in the reimbursement condition logic itself.</p>
-
-<p>From a business perspective, it provides the contextual funding scenarios for the medicine, where reimbursement is determined through context, ordering, and conditions rather than through a single flat value.</p>
-
-<h4 id="funding-conditions-context-overview">Funding Conditions Context Overview</h4>
-
-<p>At a high level, funding conditions begin at the pack level and are then assessed through a series of contextual steps.</p>
-
-<ul>
-  <li>A medicine / product may have multiple funding conditions, each dependent on a particular combination of dispensary type, funding mechanism, ordered sequence, and condition set.</li>
-  <li>A medicine may be linked to one or more funding condition cases. Within a given dispensary context, one or more funding mechanisms may apply. Within a funding mechanism, one or more ordered sequences may exist. Each sequence may contain one or more conditions. Each condition set leads to a single reimbursement outcome.</li>
-  <li>This means that one medicine may have multiple distinct funding condition cases. Those cases may differ in funding mechanism, processing order, applicable conditions, and reimbursement result.</li>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#json-schema-for-funding-rules" id="markdown-toc-json-schema-for-funding-rules">JSON Schema for Funding Rules</a>    <ul>
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+      <li><a href="#relationship-to-medication" id="markdown-toc-relationship-to-medication">Relationship to Medication</a></li>
+      <li><a href="#funding-rules-resource-context" id="markdown-toc-funding-rules-resource-context">Funding Rules resource context</a>        <ul>
+          <li><a href="#example-fhir-context" id="markdown-toc-example-fhir-context">Example FHIR context</a></li>
+        </ul>
+      </li>
+      <li><a href="#funding-condition-schema" id="markdown-toc-funding-condition-schema">Funding-condition schema</a>        <ul>
+          <li><a href="#example-decoded-schema" id="markdown-toc-example-decoded-schema">Example decoded schema</a></li>
+        </ul>
+      </li>
+      <li><a href="#condition-types" id="markdown-toc-condition-types">Condition types</a>        <ul>
+          <li><a href="#authority-and-restriction-conditions" id="markdown-toc-authority-and-restriction-conditions">Authority and restriction conditions</a></li>
+          <li><a href="#limit-conditions" id="markdown-toc-limit-conditions">Limit conditions</a></li>
+          <li><a href="#text-based-conditions" id="markdown-toc-text-based-conditions">Text-based conditions</a></li>
+        </ul>
+      </li>
+      <li><a href="#required-conditions" id="markdown-toc-required-conditions">Required conditions</a></li>
+      <li><a href="#cases-without-condition-logic" id="markdown-toc-cases-without-condition-logic">Cases without condition logic</a></li>
+      <li><a href="#consumer-use" id="markdown-toc-consumer-use">Consumer use</a></li>
+      <li><a href="#related-pages" id="markdown-toc-related-pages">Related pages</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h4 id="funding-condition-case-types">Funding Condition Case Types</h4>
+</div>
+<h1 id="json-schema-for-funding-rules">JSON Schema for Funding Rules</h1>
 
-<h5 id="case-1---json-payload">Case 1 - JSON Payload</h5>
+<h2 id="overview">Overview</h2>
 
-<p>The following JSON shows the returned payload for the Clexane example. While three cases exist, the example below shows only <strong>Case 1</strong>.</p>
+<p>Funding and reimbursement cases are represented by <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> resources conforming to the <code class="language-plaintext highlighter-rouge">PharmacChargeItemDefinitionFundingRules</code> profile.</p>
+
+<p>Each resource represents one funding case for a scheduled product. The record carries the funding context, subsidy outcome, Schedule attributes, effective date, and—where conditions apply—a JSON Schema document in the <code class="language-plaintext highlighter-rouge">authorization-schema</code> extension.</p>
+
+<p>The API publishes this structured information for consumers. It does not receive funding applications, validate submitted case data, or determine reimbursement outcomes.</p>
+
+<h2 id="relationship-to-medication">Relationship to Medication</h2>
+
+<p>The Funding Rules resource references the scheduled product through <code class="language-plaintext highlighter-rouge">ChargeItemDefinition.instance</code>.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Funding Rules ChargeItemDefinition.instance -&gt; Medication
+</code></pre></div></div>
+
+<p>A single Medication can have multiple Funding Rules records, including different community or hospital cases and multiple case sequences.</p>
+
+<h2 id="funding-rules-resource-context">Funding Rules resource context</h2>
+
+<p>The following elements provide the FHIR context around the condition schema.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element or extension</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">instance</code></td>
+      <td>References the associated <code class="language-plaintext highlighter-rouge">Medication</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pricing-effective-date</code></td>
+      <td>Date from which the funding case applies</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">funding-rule</code></td>
+      <td>Funding type, case sequence, and funding mechanism</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">funding-subsidy-amount</code></td>
+      <td>Subsidy type, status, amount, and display label</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">schedule-funding-attributes</code></td>
+      <td>Grouped Schedule funding attributes</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">authorization-schema</code></td>
+      <td>Base64-encoded JSON Schema where conditions apply</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">applicability.description</code></td>
+      <td>Human-readable summary of the funding case</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-fhir-context">Example FHIR context</h3>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ChargeItemDefinition"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"valueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-02-01"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"community"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CaseSequence"</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"valueInteger"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-              </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FundingMechanism"</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attribute"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prescription"</span><span class="w">
-              </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SubsidyType"</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attribute"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Full"</span><span class="w">
-              </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"valueBase64Binary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDcvc2NoZW1hIyIsCiAgInRpdGxlIjogIkNsZXhhbmUgMTAwbWcgMW1sIFN5cmluZ2UgQ2FzZSAxIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgImF1dGhvcml0eSI6IHsKICAgICAgInRpdGxlIjogIlNBOTk5OSIsCiAgICAgICIkdXJsIjogImh0dHBzOi8vZmhpci1pZy5kaWdpdGFsLmhlYWx0aC5uei9waGFybWFjLXNjaGVkdWxlcy9DaGFyZ2VJdGVtRGVmaW5pdGlvbi9DaGFyZ2VJdGVtRGVmaW5pdGlvbi1TQTk5OTktQXV0aG9yaXphdGlvbiIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiSGFzIFNBOTk5OSIKICAgIH0sCiAgICAicHJvdmlkZXIiOiB7CiAgICAgICJ0aXRsZSI6ICJBdXRob3Jpc2VkIFByb3ZpZGVycyIsCiAgICAgICJ0eXBlIjogImJvb2xlYW4iLAogICAgICAiZGVzY3JpcHRpb24iOiAiUHJvdmlkZXIgVHlwZSBpcyBBdXRob3Jpc2VkIFByb3ZpZGVycyIKICAgIH0KICB9LAogICJyZXF1aXJlZCI6IFsKICAgICJhdXRob3JpdHkiLAogICAgInByb3ZpZGVyIgogIF0KfQo="</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-Clexane-100mg-1ml-Syringe-Case-Sequence-1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"publisher"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pharmac"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pharmac"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"telecom"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.pharmac.govt.nz/about/contact"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rules for Clexane 100 mg in 1 ml syringe. Community pharmacy prescription case sequence 1."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"instance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medication/Medication-Clexane-100mg-1ml-Syringe"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"propertyGroup"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"priceComponent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"discount"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHARMAC Subsidy"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">70.91</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NZD"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ChargeItemDefinition"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ChargeItemDefinition-50289761000117107-Community-Case-1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"include"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"instance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medication/50289761000117107"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-rule"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"community"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CaseSequence"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"valueInteger"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FundingMechanism"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attribute"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prescription"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subsidyType"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subsidy"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subsidyStatus"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueMoney"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">93.94</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NZD"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subsidy"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valueBase64Binary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-24"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h4 id="funding-rule-attributes">Funding Rule Attributes</h4>
+<h2 id="funding-condition-schema">Funding-condition schema</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Purpose</th>
-      <th>Example</th>
-      <th>Commentary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Pack / Product Anchor</strong></td>
-      <td>The medicine remains the anchor point for the case.</td>
-      <td><code class="language-plaintext highlighter-rouge">resource.instance.reference = Medication/Medication-Clexane-100mg-1ml-Syringe</code></td>
-      <td>This is the element that links the funding condition case back to the medicine.</td>
-    </tr>
-    <tr>
-      <td><strong>Profile / Resource Type</strong></td>
-      <td>The profile identifies the type of <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code> being returned.</td>
-      <td><code class="language-plaintext highlighter-rouge">resource.meta.profile = pharmac-charge-item-definition-funding-rules</code></td>
-      <td>This shows that the payload is a funding rules <code class="language-plaintext highlighter-rouge">ChargeItemDefinition</code></td>
-    </tr>
-    <tr>
-      <td><strong>Dispensary Type</strong></td>
-      <td>A medicine may be associated with one or many dispensary contexts. (Community, Wholesale, General Practice, and Hospital)</td>
-      <td><code class="language-plaintext highlighter-rouge">resource.extension.valueCode = community</code></td>
-      <td>The same medicine may be reimbursed differently depending on the dispensary context in which it is assessed. <br /> <br /> In this case, the dispensary context is <code class="language-plaintext highlighter-rouge">Community</code></td>
-    </tr>
-    <tr>
-      <td><strong>Funding Mechanism</strong></td>
-      <td>Within a given dispensary context, reimbursement is further qualified by the funding mechanism. (Prescription, BSO, PSO, Rural PSO, and Quitcard)</td>
-      <td><code class="language-plaintext highlighter-rouge">resource.extension.valueCode = Prescription</code></td>
-      <td>Funding mechanism forms part of the reimbursement context. It affects how the reimbursement case is assessed and what outcome may result. <br /> <br /> In this case, the Funding mechinism is <code class="language-plaintext highlighter-rouge">Prescription</code></td>
-    </tr>
-    <tr>
-      <td><strong>Sequence</strong></td>
-      <td>Sequence represents the order in which reimbursement cases are to be assessed. Where multiple cases exist for the same medicine within a broader context, they are assumed to be ordered. <br /> <br /> Each sequence may have one or more conditions which form the rule set that determines whether the reimbursement case applies. A condition set may include a single condition or multiple conditions grouped together within the same case.</td>
-      <td><code class="language-plaintext highlighter-rouge">resource.extension.valueInteger = 1</code></td>
-      <td>Sequence is an important part of case evaluation and must be preserved as ordered logic. <br /> <br /> In this case, the sequence is <code class="language-plaintext highlighter-rouge">1</code> meaning there is only a single sequence</td>
-    </tr>
-    <tr>
-      <td><strong>Conditions / Case Logic</strong></td>
-      <td>Conditions may represent matters such as endorsement, provider, authority, restriction-based criteria, or other qualifying rules.</td>
-      <td><code class="language-plaintext highlighter-rouge">resource.extension.valueBase64Binary = "Encoded base64 string"</code></td>
-      <td>Condtional logic is held in a encoded base64 string. <br /> <br /> This is an important distinction. The funding case is not holding the detailed logic as flat text. Instead, the case logic is encoded into the <code class="language-plaintext highlighter-rouge">valueBase64Binary</code> element and must be decoded to retrieve the JSON Schema.(Refer to later in this guide for a full explanation)</td>
-    </tr>
-    <tr>
-      <td><strong>Reimbursement Outcome / Price Component</strong></td>
-      <td>Each condition set results in one reimbursement outcome. One assessed case leads to <strong>one</strong> reimbursement outcome, even where that case contains multiple conditions. <br /> <br /> Reimbursment Outcomes include Subsidy, Alternate, Price, and None.</td>
-      <td><code class="language-plaintext highlighter-rouge">resource.propertyGroup.priceComponent.type = discount</code> <br /> <code class="language-plaintext highlighter-rouge">resource.propertyGroup.priceComponent.code.text = PHARMAC Subsidy</code> <br /> <code class="language-plaintext highlighter-rouge">resource.propertyGroup.priceComponent.amount.value = 70.91</code> <br /> <code class="language-plaintext highlighter-rouge">resource.propertyGroup.priceComponent.amount.currency = NZD</code></td>
-      <td>In this example, the reimbursement outcome is held in the <code class="language-plaintext highlighter-rouge">priceComponent</code> block. This is the part of the payload that holds the actual funding value returned for the case.</td>
-    </tr>
-  </tbody>
-</table>
+<p>The <code class="language-plaintext highlighter-rouge">authorization-schema</code> extension contains a Base64-encoded JSON Schema document. After decoding, the schema describes the conditions associated with the funding case.</p>
 
-<h4 id="what-is-json-schema">What is JSON Schema?</h4>
+<p>A funding-condition schema uses the standard JSON Schema object structure:</p>
 
-<p><strong>JSON Schema</strong> is a standard language for describing the structure and validation rules of JSON data. Think of it as a "blueprint" that specifies:</p>
 <ul>
-  <li>What fields must be present</li>
-  <li>What type each field must be (text, number, true/false)</li>
-  <li>What values are acceptable</li>
-  <li>When certain fields become mandatory based on other values</li>
+  <li><code class="language-plaintext highlighter-rouge">$schema</code> identifies the JSON Schema draft;</li>
+  <li><code class="language-plaintext highlighter-rouge">title</code> identifies the product and case;</li>
+  <li><code class="language-plaintext highlighter-rouge">type</code> is <code class="language-plaintext highlighter-rouge">object</code>;</li>
+  <li><code class="language-plaintext highlighter-rouge">properties</code> contains the condition fields; and</li>
+  <li><code class="language-plaintext highlighter-rouge">required</code> identifies the mandatory conditions for that case.</li>
 </ul>
 
-<p><strong>Real-world analogy:</strong> If a funding rule is a set of eligibility criteria, JSON Schema is the structured specification that says: "This medication is funded only if: Provider type is X, AND special conditions Y are met."</p>
+<h3 id="example-decoded-schema">Example decoded schema</h3>
 
-<h4 id="how-pharmac-uses-json-schema-for-funding-rules">How Pharmac Uses JSON Schema for Funding Rules</h4>
-
-<p>Pharmac embeds a <strong>JSON Schema</strong> inside each Funding Rules ChargeItemDefinition resource. This schema defines:</p>
-
-<ol>
-  <li><strong>Funding Case Structure</strong> — What different scenarios apply (e.g., "Hospital use", "Community use with Special Authority")</li>
-  <li><strong>Eligibility Conditions</strong> — What criteria must be met for funding to apply</li>
-  <li><strong>Provider Restrictions</strong> — Who is eligible to prescribe (e.g., specialists, hospitals, authorized providers)</li>
-  <li><strong>Special Authorizations</strong> — When a Special Authority (SA) is required</li>
-  <li><strong>Validation Rules</strong> — What combination of conditions is valid</li>
-</ol>
-
-<h4 id="example-flow">Example Flow</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pharmacy requests reimbursement for a medication
-                    ↓
-System checks applicable funding rules using the embedded JSON Schema:
-  • Identify which case applies (e.g., provider type: hospital vs. community)
-  • Validate required conditions are met (e.g., SA required?)
-  • Check special endorsements or restrictions
-                    ↓
-Schema validates the claim data against the defined rules
-                    ↓
-If valid → Reimbursement approved
-If invalid → Error shows what conditions are not met
-</code></pre></div></div>
-
-<h4 id="funding-rule-schema-structure">Funding Rule Schema Structure</h4>
-
-<p>Each Funding Rule schema is an object containing <strong>Case definitions</strong>. Each case represents a specific funding scenario with its own set of conditions and requirements.</p>
-
-<h5 id="key-components">Key Components</h5>
-
-<table>
-  <thead>
-    <tr>
-      <th>Component</th>
-      <th>Purpose</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Case</strong></td>
-      <td>A distinct funding scenario (e.g., "Hospital use", "Community with SA")</td>
-      <td><code class="language-plaintext highlighter-rouge">"Case-1"</code></td>
-    </tr>
-    <tr>
-      <td><strong>Properties</strong></td>
-      <td>Fields/conditions that apply to that case</td>
-      <td><code class="language-plaintext highlighter-rouge">{"authority", "provider"}</code></td>
-    </tr>
-    <tr>
-      <td><strong>Required</strong></td>
-      <td>Fields that MUST be met for the case to apply</td>
-      <td><code class="language-plaintext highlighter-rouge">["provider"]</code></td>
-    </tr>
-    <tr>
-      <td><strong>Type</strong></td>
-      <td>Data type for each field</td>
-      <td><code class="language-plaintext highlighter-rouge">boolean</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">integer</code></td>
-    </tr>
-    <tr>
-      <td><strong>Description</strong></td>
-      <td>Explanation of what the field represents</td>
-      <td><code class="language-plaintext highlighter-rouge">"Authorised Providers"</code>, <code class="language-plaintext highlighter-rouge">"Hospital"</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="pharmac-custom-schema-extensions">Pharmac Custom Schema Extensions</h4>
-
-<p>Pharmac uses custom keywords (prefixed with <code class="language-plaintext highlighter-rouge">$</code>) to add metadata specific to funding rules:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Purpose</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">$caseNumber</code></td>
-      <td>string</td>
-      <td>Identifier for the funding case</td>
-      <td><code class="language-plaintext highlighter-rouge">"Case-1"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">$description</code></td>
-      <td>string</td>
-      <td>Clinical/funding scenario this case covers</td>
-      <td><code class="language-plaintext highlighter-rouge">"For use within a Primary Response in Medical Emergencies"</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">$authority</code></td>
-      <td>string</td>
-      <td>Special Authority code if required</td>
-      <td><code class="language-plaintext highlighter-rouge">"SA9999"</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<h4 id="clexane-100mg-1ml-syringe--example-cases">Clexane 100mg 1ml Syringe — Example Cases</h4>
-
-<p>The medication <strong>Clexane 100mg 1ml Syringe</strong> has <strong>three distinct funding cases</strong>, each with different conditions:</p>
-
-<h4 id="case-1-special-authority-required">Case 1: Special Authority Required</h4>
+<p>The following example represents the community funding case for <code class="language-plaintext highlighter-rouge">Medication/50289761000117107</code>.</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema#"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clexane 100mg 1ml Syringe Case 1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conditions-50289761000117107-Case-1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SA9999"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"$url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-SA9999-Authorization"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Has SA9999"</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Special Authority"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://schedule.pharmac.govt.nz/latest/SA1098.pdf"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"const"</span><span class="p">:</span><span class="w"> </span><span class="mi">1098</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authorised Providers"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provider Information"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provider Type is Authorised Providers"</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provider Information Here"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -585,139 +440,135 @@ If invalid → Error shows what conditions are not met
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p><strong>When this case applies:</strong></p>
-<ul>
-  <li>The medication is funded <strong>only</strong> when prescribed by an Authorised Provider</li>
-  <li>A <strong>Special Authority (SA9999)</strong> approval is mandatory</li>
-  <li>Both conditions must be satisfied for funding to be approved</li>
-</ul>
+<h2 id="condition-types">Condition types</h2>
 
-<hr />
+<p>Funding schemas can contain the following condition types, depending on the Schedule case.</p>
 
-<h4 id="case-2-endorsed-service-use">Case 2: Endorsed Service Use</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Purpose</th>
+      <th>Typical JSON type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">authority</code></td>
+      <td>Identifies a required Special Authority</td>
+      <td><code class="language-plaintext highlighter-rouge">integer</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">restriction</code></td>
+      <td>Identifies a restriction form</td>
+      <td><code class="language-plaintext highlighter-rouge">integer</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">limit</code></td>
+      <td>Represents a numeric funding limit</td>
+      <td><code class="language-plaintext highlighter-rouge">number</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">provider</code></td>
+      <td>Represents provider information or requirements</td>
+      <td><code class="language-plaintext highlighter-rouge">boolean</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">endorsement</code></td>
+      <td>Represents an endorsement requirement</td>
+      <td><code class="language-plaintext highlighter-rouge">boolean</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">note</code></td>
+      <td>Carries a Schedule note or memorandum condition</td>
+      <td><code class="language-plaintext highlighter-rouge">boolean</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="authority-and-restriction-conditions">Authority and restriction conditions</h3>
+
+<p>Authority and restriction properties use a numeric constant for the form number. The <code class="language-plaintext highlighter-rouge">description</code> contains the relevant form URL.</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema#"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clexane 100mg 1ml Syringe Case 2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"endorsement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIME Service Endorsement"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For use within a Primary Response in Medical Emergencies (PRIME) service"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authorised Providers"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provider Type is Authorised Providers"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Special Authority"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://schedule.pharmac.govt.nz/latest/SA1098.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"const"</span><span class="p">:</span><span class="w"> </span><span class="mi">1098</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="limit-conditions">Limit conditions</h3>
+
+<p>Limit properties use the numeric value as <code class="language-plaintext highlighter-rouge">const</code> and can include the unit using <code class="language-plaintext highlighter-rouge">$unit</code>.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FormMax"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maximum quantity limit per dose"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"const"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"$unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tab"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="text-based-conditions">Text-based conditions</h3>
+
+<p>Provider, endorsement, and note conditions use the <code class="language-plaintext highlighter-rouge">description</code> field for the Schedule wording.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"endorsement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Endorsement"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prescription must be endorsed accordingly."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="required-conditions">Required conditions</h2>
+
+<p>The schema-level <code class="language-plaintext highlighter-rouge">required</code> array identifies which condition properties are mandatory for the funding case.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"endorsement"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"authority"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"provider"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p><strong>When this case applies:</strong></p>
-<ul>
-  <li>The medication is funded for use <strong>only</strong> within an approved PRIME service</li>
-  <li>The provider must be an <strong>Authorised Provider</strong> for the PRIME service</li>
-  <li>Endorsement documentation from the service is required</li>
-  <li>Both conditions must be satisfied</li>
-</ul>
+<p>A property can appear in <code class="language-plaintext highlighter-rouge">properties</code> without being listed in <code class="language-plaintext highlighter-rouge">required</code> when it is optional for that case.</p>
 
-<hr />
+<h2 id="cases-without-condition-logic">Cases without condition logic</h2>
 
-<h4 id="case-3-hospital-use-only">Case 3: Hospital Use Only</h4>
+<p>Where a hospital funding record exists but has no associated condition logic, the example data uses the literal value <code class="language-plaintext highlighter-rouge">N/A</code> in <code class="language-plaintext highlighter-rouge">authorization-schema.valueBase64Binary</code>.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema#"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clexane 100mg 1ml Syringe Case 3"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hospital"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provider Type is Hospital"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"provider"</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+<p>This indicates that the funding record exists but no condition schema is supplied for that case.</p>
 
-<p><strong>When this case applies:</strong></p>
-<ul>
-  <li>The medication is funded <strong>only</strong> for hospital use</li>
-  <li>No Special Authority or additional endorsement required</li>
-  <li>Prescriber must be hospital-based</li>
-</ul>
+<h2 id="consumer-use">Consumer use</h2>
 
-<hr />
-
-<h4 id="how-cases-are-applied">How Cases Are Applied</h4>
-
-<p>When a claim for Clexane is submitted, the funding system:</p>
-
-<ol>
-  <li><strong>Identifies the prescriber/provider</strong> (Hospital, Authorized Provider, PRIME service, etc.)</li>
-  <li><strong>Determines which case(s) might apply</strong> based on the provider type</li>
-  <li><strong>Validates the claim against the case schema</strong>:
-    <ul>
-      <li><strong>Case 1 applies?</strong> → Check SA9999 approval exists AND provider is authorized</li>
-      <li><strong>Case 2 applies?</strong> → Check PRIME endorsement AND provider is authorized</li>
-      <li><strong>Case 3 applies?</strong> → Check provider is hospital-based</li>
-    </ul>
-  </li>
-  <li><strong>Returns approval if any case is satisfied</strong></li>
-</ol>
-
-<hr />
-
-<h4 id="key-concepts">Key Concepts</h4>
-
-<h4 id="required-vs-optional-fields">Required vs. Optional Fields</h4>
+<p>A consuming application may decode the schema to:</p>
 
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">"required": ["authority", "provider"]</code></strong> means <strong>both</strong> fields must be true for the case to apply</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">"required": ["provider"]</code></strong> means only the provider restriction applies; other conditions are optional</li>
-  <li>If a field is not in <code class="language-plaintext highlighter-rouge">required</code>, it doesn't need to be checked</li>
+  <li>display the funding conditions associated with the case;</li>
+  <li>guide local user-interface generation;</li>
+  <li>map the condition structure into its own business processes; or</li>
+  <li>perform local validation where appropriate to the consumer's implementation.</li>
 </ul>
 
-<h4 id="field-types">Field Types</h4>
+<p>These activities are performed by the consuming system. The PHARMAC Schedule API publishes the structured data and does not process or approve submitted cases.</p>
+
+<h2 id="related-pages">Related pages</h2>
 
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">"type": "boolean"</code></strong> → Yes/No decision (true = condition met, false = not met)</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">"type": "string"</code></strong> → Text value (e.g., provider name, authorization code)</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">"type": "integer"</code></strong> → Numeric value (e.g., age, dosage quantity)</li>
+  <li><a href="StructureDefinition-pharmac-charge-item-definition-funding-rules.html">Funding Rules profile</a></li>
+  <li><a href="relationships.html">Resource Relationships</a></li>
+  <li><a href="api.html">API</a></li>
+  <li><a href="examples.html">Examples</a></li>
 </ul>
-
-<h4 id="property-descriptions">Property Descriptions</h4>
-
-<p>The <code class="language-plaintext highlighter-rouge">description</code> field explains what each condition means in plain language. This helps:</p>
-<ul>
-  <li>Implementers understand the funding rule</li>
-  <li>Form builders present clear questions to users</li>
-  <li>Audit systems document what was checked</li>
-</ul>
-
-<hr />
-
-<h2 id="integration-with-chargeitemdefinition">Integration with ChargeItemDefinition</h2>
-
-<p>Each Funding Rule case maps directly to a <strong>ChargeItemDefinition</strong> resource with profile <code class="language-plaintext highlighter-rouge">PharmacChargeItemDefinitionFundingRules</code>.</p>
-
-<p>The JSON Schema is embedded in the resource's <code class="language-plaintext highlighter-rouge">applicability</code> element, making it part of the FHIR representation and available for:</p>
-<ul>
-  <li>Dynamic form generation</li>
-  <li>Automated eligibility checking</li>
-  <li>Integration with pharmacy systems</li>
-  <li>Regulatory reporting</li>
-</ul>
-
-<p>For details on how to retrieve and use these schemas, see <a href="api.md">API documentation</a> and <a href="examples.md">Examples</a>.</p>
 
 
 
@@ -738,7 +589,7 @@ If invalid → Error shows what conditions are not met
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 24, 2026 01:18+0000">2026-04-24</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.pharmac.govt.nz/about/contact">Pharmac</a>.  Package pharmac.fhir.pharmac-schedules#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 20:43+0000">2026-06-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

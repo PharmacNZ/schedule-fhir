@@ -1,0 +1,172 @@
+# ChargeItemDefinition-50083491000117102-Community-Case-1 - Pharmac Schedules FHIR API v1.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ChargeItemDefinition-50083491000117102-Community-Case-1**
+
+## Example ChargeItemDefinition: ChargeItemDefinition-50083491000117102-Community-Case-1
+
+| |
+| :--- |
+| Active as of 2026-04-24 |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ChargeItemDefinition",
+  "id" : "ChargeItemDefinition-50083491000117102-Community-Case-1",
+  "meta" : {
+    "profile" : ["https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pharmac-charge-item-definition-funding-rules"]
+  },
+  "extension" : [{
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/pricing-effective-date",
+    "valueDate" : "2026-04-24"
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCode" : "community"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "CaseSequence"
+      },
+      {
+        "url" : "value",
+        "valueInteger" : 1
+      }],
+      "url" : "rule"
+    },
+    {
+      "extension" : [{
+        "url" : "type",
+        "valueCode" : "FundingMechanism"
+      },
+      {
+        "url" : "attribute",
+        "valueCode" : "Prescription"
+      }],
+      "url" : "rule"
+    }],
+    "url" : "http://schedule.pharmac.govt.nz/fhir/StructureDefinition/funding-rule"
+  },
+  {
+    "extension" : [{
+      "url" : "subsidyType",
+      "valueCode" : "subsidy"
+    },
+    {
+      "url" : "subsidyStatus",
+      "valueCode" : "full"
+    },
+    {
+      "url" : "amount",
+      "valueMoney" : {
+        "value" : 56.62,
+        "currency" : "NZD"
+      }
+    },
+    {
+      "url" : "display",
+      "valueString" : "Subsidy"
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/funding-subsidy-amount"
+  },
+  {
+    "extension" : [{
+      "url" : "costBrandSource",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "wastageClaimable",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "contractType",
+      "valueString" : "PSS"
+    },
+    {
+      "url" : "dvLimitPercent",
+      "valueDecimal" : 0
+    },
+    {
+      "url" : "brandSwitchFee",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "statim",
+      "valueString" : "n/a"
+    },
+    {
+      "url" : "inCombination",
+      "valueCode" : "no"
+    },
+    {
+      "url" : "section29",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "coPaymentMin",
+      "valueCode" : "na"
+    },
+    {
+      "url" : "coPaymentMax",
+      "valueCode" : "no"
+    },
+    {
+      "url" : "productMultiple",
+      "valueBoolean" : true
+    },
+    {
+      "url" : "productMultiplier",
+      "valueInteger" : 1
+    },
+    {
+      "url" : "originalPack",
+      "valueBoolean" : false
+    },
+    {
+      "url" : "safetyListMedicine",
+      "valueBoolean" : false
+    }],
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/schedule-funding-attributes"
+  },
+  {
+    "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/StructureDefinition/authorization-schema",
+    "valueBase64Binary" : "ew0KICAiJHNjaGVtYSI6ICJodHRwOi8vanNvbi1zY2hlbWEub3JnL2RyYWZ0LTA3L3NjaGVtYSMiLA0KICAidGl0bGUiOiAiQ29uZGl0aW9ucy01MDA4MzQ5MTAwMDExNzEwMi1DYXNlLTEiLA0KICAidHlwZSI6ICJvYmplY3QiLA0KICAicHJvcGVydGllcyI6IHsNCiAgICAiYXV0aG9yaXR5Ijogew0KICAgICAgInRpdGxlIjogIlNwZWNpYWwgQXV0aG9yaXR5IiwNCiAgICAgICJ0eXBlIjogImludGVnZXIiLA0KICAgICAgImRlc2NyaXB0aW9uIjogImh0dHBzOi8vc2NoZWR1bGUucGhhcm1hYy5nb3Z0Lm56L2xhdGVzdC9TQTI2MjgucGRmIiwNCiAgICAgICJjb25zdCI6IDI2MjgNCiAgICB9LA0KICAgICJwcm92aWRlciI6IHsNCiAgICAgICJ0aXRsZSI6ICJQcm92aWRlciBJbmZvcm1hdGlvbiIsDQogICAgICAidHlwZSI6ICJib29sZWFuIiwNCiAgICAgICJkZXNjcmlwdGlvbiI6ICJBdXRob3Jpc2VkIHByZXNjcmliZXIiDQogICAgfQ0KICB9LA0KICAicmVxdWlyZWQiOiBbDQogICAgImF1dGhvcml0eSIsDQogICAgInByb3ZpZGVyIg0KICBdDQp9"
+  }],
+  "url" : "https://fhir-ig.digital.health.nz/pharmac-schedules/ChargeItemDefinition/ChargeItemDefinition-50083491000117102-Community-Case-1",
+  "version" : "1.1.0",
+  "status" : "active",
+  "date" : "2026-04-24T00:58:18+00:00",
+  "publisher" : "Pharmac",
+  "contact" : [{
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.pharmac.govt.nz/about/contact"
+    }]
+  },
+  {
+    "name" : "Pharmac",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "enquiry@pharmac.govt.nz",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Rules for Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes. community Prescription.",
+  "instance" : [{
+    "reference" : "Medication/50083491000117102",
+    "display" : "Clexane 80 mg/0.8 mL injection: solution, 10 x 0.8 mL syringes"
+  }],
+  "applicability" : [{
+    "description" : "Case 1 - Community - Prescription - Subsidy"
+  }]
+}
+
+```
